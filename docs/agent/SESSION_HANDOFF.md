@@ -15,13 +15,14 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff
-- CONTROL PR #6 implements v7-lite registry, graph, orchestrator, event contracts, reconciliation, release evaluation, event-derived multi-repo readiness, event workflow and 8K prompt gate.
-- Verified CONTROL code head `43fa47d...`: CI #24 GREEN + Event Envelope #5 GREEN. Final state-sync head must be reverified before merge.
-- PRODUCT main `c0fd29e...`: Release Gate #999 rerun GREEN including full browser-webkit suite.
-- PRODUCT PR #69 head `9238d28...`: Event Envelope #1 GREEN, but Release Gate #1000 RED twice at Record→workout transition in existing WebKit regression test. Do not merge.
-- PR #69 changes only event workflow/emitter; causality with app timing is UNKNOWN. Keep diagnosis separate from adapter scope.
-- Existing product priorities remain real-device Golden Path validation and Founder release-channel decision.
-- Event artifacts are contracts/evidence only; no always-on consumer exists yet.
+- Founder OS v7-lite implementation is complete and merged across both registered repositories.
+- CONTROL main: `e25dbad8dd835dd6b5be88112c2d6742b4aa8ba9`; post-merge CI #26 GREEN and Event Envelope #9 GREEN.
+- PRODUCT main: `5c1f46c448a43e69025356bda5ca0a121ded4372`; post-merge GARANG Release Gate #1004 GREEN and Founder OS Event Envelope #3 GREEN.
+- PRODUCT PR #69 earlier exposed a transient PR-context WebKit route timeout; final PR revalidation and post-merge main both passed the complete suite, so no active blocker remains.
+- v7-lite provides Repository Registry, Project Graph, workstream Orchestrator, versioned Event Contracts, reconciliation, deterministic release readiness and read-only GitHub event artifacts.
+- Event artifacts are contracts/evidence only; no always-on external consumer exists yet.
+- Next product priorities: real-device Golden Path validation, then Founder release-channel decision.
+- Commercial-production readiness remains separate from beta/development GREEN.
 
 ## Handoff rule
 Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state/graph synchronization.
