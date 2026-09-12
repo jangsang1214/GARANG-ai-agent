@@ -25,6 +25,18 @@ Acceptance criteria:
 - Main event artifact emitted successfully. ✅
 Evidence: PR #69 merged as `5c1f46c...`; Release Gate #1004 GREEN; Event Envelope #3 GREEN.
 
+## P1 — Today Single Next Action
+Status: DONE
+Owner: Design Brand / Product / Engineering / Release QA
+Acceptance criteria:
+- Today exposes one visible next-action owner. ✅
+- Golden Path remains the sequence truth. ✅
+- first record → Coach → recovery/check-in → plan → execute → accumulation remains canonical. ✅
+- Existing Record/check-in/execution mutation owners are preserved. ✅
+- Mobile Today has no competing CTA or critical layout regression. ✅
+- Full pre-merge and post-merge Release Gates are GREEN. ✅
+Evidence: PR #73 merged as `99369b097da5d6655dbc083adf8c8aa1adb9c106`; PR Release Gate #1046 GREEN; post-merge Release Gate #1047 GREEN; Founder OS Event Envelope #94 GREEN.
+
 ## P1 — Validate deployed Golden Path on real target device
 Status: TODO
 Owner: Release QA + Product + Design Brand
