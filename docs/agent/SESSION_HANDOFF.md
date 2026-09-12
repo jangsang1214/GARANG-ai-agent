@@ -25,14 +25,14 @@ Update only facts that changed:
 
 Do not paste raw chat logs. Do not turn an unverified claim into a fact merely because an older handoff said it.
 
-## Handoff minimum
-When a session leaves unfinished work, preserve:
-- Current objective
-- Exact branch / PR / relevant commit
-- Work actually completed
-- Verification actually observed
-- Blocker or known risk
-- Exact next safe task
-
 ## Completion rule
-A handoff may say DONE only when Definition of Done is satisfied. Otherwise use PARTIAL/YELLOW and specify missing evidence.
+DONE requires implementation + acceptance criteria + verification evidence + regression consideration + material state synchronization. Otherwise use PARTIAL/YELLOW and name the missing evidence.
+
+## Current handoff
+- Objective: finalize Founder OS v5.1 and PR #2.
+- Branch/PR: `agent/founder-os-v5.1` / PR #2.
+- Code-bearing commit: `b4b733ed7bc6cd8cfc837ceea8bc897c21a8ff2d`.
+- Verified: GitHub Actions CI run #7 passed `npm run verify` on that commit.
+- Work completed: 7,688-char v5.1 constitution; evidence/DoD/recovery/scope protocols; centralized typed capability authorization; high-risk default deny; narrow Founder override; expanded tests.
+- Known risk: latest documentation/version head still needs its own CI before merge.
+- Exact next safe task: confirm latest PR #2 head CI GREEN, then request/perform Founder-approved squash merge.

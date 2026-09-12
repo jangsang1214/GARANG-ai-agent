@@ -16,28 +16,37 @@ Owner: Founder / Release
 Evidence: squash-merged to `main` as `15bcf93d8cdd655a0ae7d5a2dd693bd9cc76f90e`.
 
 ## P1 — Founder OS v5.1 operating constitution
-Status: IN PROGRESS
+Status: DONE
 Owner: Project Director / QA
-Acceptance criteria:
-- Project Instructions remain below the 8,000-character limit.
-- Evidence, escalation, scope, DoD, failure recovery, state mutation, and deterministic recovery order are defined.
-- Repository `AGENTS.md` is consistent with the project constitution.
-- Latest PR head CI is GREEN before merge.
+Evidence:
+- Project Instructions are 7,688 characters including spaces/newlines.
+- Evidence states, escalation, scope control, DoD, failure recovery, state mutation, and deterministic recovery order are defined.
+- Root `AGENTS.md` is aligned with the v5.1 constitution.
+- Code-bearing v5.1 commit passed CI run #7.
 
 ## P1 — Typed capability authorization
-Status: IN PROGRESS
+Status: DONE
 Owner: Engineering / Security / QA
-Acceptance criteria:
-- Actions declare capabilities, not self-selected risk.
+Evidence:
+- Actions declare typed capabilities rather than self-selected risk.
 - Central capability map determines risk.
 - High-risk capabilities are denied by default.
 - Narrow Founder-approved override is supported.
-- Planner can accept an explicit capability; natural-language inference is fallback only.
-- Tests cover mapping, blocking, override, and execution.
+- Planner accepts explicit `implementationCapability` with heuristic inference only as fallback.
+- Mapping, blocking, override, planner, execution, and regression tests passed CI run #7.
+
+## P1 — Merge PR #2
+Status: TODO
+Owner: Founder / Release
+Dependency: latest PR #2 head CI GREEN
+Acceptance criteria:
+- Latest head CI is GREEN.
+- No unresolved critical concern.
+- Squash merge preserves v5.1 state and capability policy.
 
 ## P2 — Improve runtime persistence
 Status: TODO
 Owner: Engineering
 Acceptance criteria:
-- Structured runtime state can persist/recover when needed without using chat history as a database.
+- Structured runtime state persists/recover when needed without using chat history as a database.
 - GitHub state docs remain human-readable summaries/source of truth.

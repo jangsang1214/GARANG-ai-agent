@@ -1,35 +1,37 @@
 # GARANG AI Agent
 
-GARANG AI Agent is the operating layer for running GARANG development as a persistent, safety-gated project system.
+GARANG AI Agent is the persistent, safety-gated operating layer for running GARANG development across replaceable ChatGPT work sessions.
 
-## V0.2 — Founder OS foundation
+## V0.3 — Founder OS v5.1
 
-This repository has two complementary layers:
+The repository has two complementary layers:
 
-1. **ChatGPT Project + GitHub operating layer** — works without a separate OpenAI API key. GitHub is the technical source of truth and `docs/agent/` is the persistent project-state layer across chat sessions.
-2. **Deterministic TypeScript core** — planner, repository scanning, permission gates, filesystem/terminal tools, explicit action execution, verification, recovery, and project-state loading. The model/provider layer remains separate so the core can be tested without an LLM.
+1. **ChatGPT Project + GitHub Founder OS** — works without a separate OpenAI API key. GitHub is the technical source of truth and `docs/agent/` carries durable state across chats.
+2. **Deterministic TypeScript core** — planning, repository context, capability-based permission gates, safe tools, explicit action execution, verification, recovery, and project-state loading without requiring an LLM.
+
+Founder OS v5.1 adds evidence discipline, deterministic session recovery, scope control, Definition of Done, failure recovery, and centralized typed capability authorization.
 
 ## Start a project session
 
-In the GARANG ChatGPT Project, use the instructions in `docs/agent/CHATGPT_PROJECT_INSTRUCTIONS.md` and begin a fresh session with:
+Use `docs/agent/CHATGPT_PROJECT_INSTRUCTIONS.md` as the ChatGPT Project instructions, then start a new project chat with:
 
 ```text
 PROJECT START
 ```
 
-The operating agent should read `AGENTS.md`, inspect the repository, then load the state files under `docs/agent/` before choosing work.
+Recovery order is defined in `docs/agent/SESSION_HANDOFF.md`. The agent reconciles state documents against the actual repository and CI before choosing work.
 
 ## Repository layout
 
 ```text
 src/
-  agent/        planning, permission-gated execution, verification, recovery
+  agent/        planning, execution, verification, recovery
   context/      repository and persistent project-state context
-  security/     permission gates
-  tools/        safe filesystem and terminal tools
-tests/          deterministic tests
-docs/agent/     long-lived project state and operating instructions
-AGENTS.md       repository-wide agent rules
+  security/     centralized capability/risk policy
+  tools/        bounded filesystem and terminal tools
+tests/          deterministic regression/security tests
+docs/agent/     long-lived state, handoff, release status, project instructions
+AGENTS.md       repository-wide operating rules
 ```
 
 ## Development
@@ -42,8 +44,14 @@ npm run build
 npm run verify
 ```
 
-`npm run verify` is the local release gate for the TypeScript core. High-risk operations remain blocked by default.
+`npm run verify` is the release gate for the TypeScript core.
+
+## Capability security
+
+Actions declare a typed capability such as `repository.write` or `release.deploy`; they do not choose their own risk level. `src/security/permissions.ts` centrally maps each capability to risk. High-risk capabilities are denied by default, and explicit Founder approval can be represented by a narrow capability override rather than enabling all high-risk work.
+
+The deterministic planner may infer an implementation capability from natural language as a fallback, but callers can supply an explicit capability. Actual action execution is authorized by the typed capability policy.
 
 ## Execution model
 
-`CodingAgent` can now execute **explicit, typed actions** supplied with a task, but it does not invent arbitrary tool inputs by itself. That separation is intentional: a ChatGPT/GitHub layer or future model provider can propose actions, while the deterministic core enforces permission checks, executes known tools, and verifies the repository afterward.
+`CodingAgent` executes explicit typed actions through registered tools, checks permission before execution, stops on failures, and verifies the repository afterward. It does not invent arbitrary shell inputs by itself. ChatGPT/GitHub currently supplies the active reasoning/action-proposal layer; a future provider adapter should emit structured typed actions rather than unrestricted command text.

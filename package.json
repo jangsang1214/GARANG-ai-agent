@@ -1,6 +1,6 @@
 {
   "name": "garang-ai-agent",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "GARANG Founder OS and autonomous coding-agent core",
   "type": "module",
