@@ -4,7 +4,7 @@ Last updated: 2026-09-12
 
 ## Current objective
 
-Establish the API-key-free Founder OS v5 operating layer and restore the TypeScript repository to its intended buildable structure.
+Founder OS v5 foundation is structurally repaired and verified. The next objective is to turn the deterministic orchestration scaffold into a real permission-gated execution cycle while preserving the API-key-free ChatGPT Project + GitHub workflow.
 
 ## Current branch
 
@@ -12,24 +12,26 @@ Establish the API-key-free Founder OS v5 operating layer and restore the TypeScr
 
 ## Stable
 
+- Source files are organized under `src/` and tests under `tests/` as required by imports and `tsconfig.json`.
+- `npm run verify` passed in GitHub Actions CI run #2 on this branch.
 - Deterministic planner/recovery/permission primitives exist.
-- Filesystem tool confines reads/writes to the repository root.
+- Filesystem reads/writes are confined to the repository root and covered by tests.
 - Terminal tool uses an allowlist.
 - High-risk plan steps are blocked by default.
+- Persistent project-state documents and session handoff protocol exist under `docs/agent/`.
+- `project-state.ts` can initialize and load the persistent state files.
 
 ## In progress
 
-- Restore source files under `src/` and tests under `tests/`.
-- Add persistent GitHub-backed project-state documents.
-- Add deterministic project-state loading and tests.
-- Add CI verification.
+- PR #1 is open for review/merge into `main`.
 
 ## Broken / blockers
 
-- `main` currently has TypeScript files flattened at repository root while imports and `tsconfig.json` expect `src/` and `tests/` directories.
+- No build/test blocker is currently known on this branch.
+- The TypeScript `CodingAgent` is still orchestration scaffolding: it plans and verifies but does not yet execute arbitrary implementation steps.
 
 ## Next priorities
 
-1. Get the structural repair and Founder OS changes through CI.
-2. Merge only after verification is GREEN.
-3. Design the next execution layer so plans can drive real tool actions without bypassing permission gates.
+1. Merge PR #1 after confirming the final CI remains GREEN.
+2. Design a typed execution-step contract with explicit tool inputs and permission checks.
+3. Add deterministic tests for successful, blocked, and recovery execution paths.

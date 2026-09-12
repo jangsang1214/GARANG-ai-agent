@@ -4,24 +4,37 @@ Last updated: 2026-09-12
 
 ## Current decision
 
-YELLOW
+GREEN for the Founder OS v5 foundation branch.
 
-## Evidence
+## Verification evidence
 
-- Repository structure on `main` is inconsistent with imports and `tsconfig.json`.
-- A structural repair and Founder OS foundation are being prepared on `agent/founder-os-v5`.
-- Verification is not GREEN until CI or an equivalent real run confirms `npm run verify`.
+GitHub Actions CI run #2 for commit `2d6b4d7c3e2056595bbccdd3013525b2eae6f7aa` completed successfully.
+
+The CI job successfully completed:
+
+- dependency installation
+- `npm run check`
+- build performed by the test script
+- permissions tests
+- planner tests
+- recovery tests
+- persistent project-state tests
+- filesystem repository-boundary tests
 
 ## Release gate
 
-- TypeScript check: PENDING
-- Tests: PENDING
-- Build: PENDING
-- Permission tests: PENDING
-- Persistent-state tests: PENDING
-- Filesystem boundary tests: PENDING
-- Critical known regression: repository layout on main
+- TypeScript check: PASS
+- Tests: PASS
+- Build: PASS
+- Permission tests: PASS
+- Persistent-state tests: PASS
+- Filesystem boundary tests: PASS
+- Critical known regression: NONE on the verified branch
 
-## GREEN criteria
+## Remaining non-blocking limitation
 
-All verification commands pass on the repaired branch and no high-risk permission boundary is weakened.
+The TypeScript `CodingAgent` still does not synthesize/execute arbitrary implementation steps; this is documented as technical debt and is not hidden behind a false autonomy claim.
+
+## Decision
+
+The Founder OS v5 foundation is mergeable once the current PR head's final CI remains GREEN.
