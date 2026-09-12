@@ -6,12 +6,12 @@
     {"id":"INIT-BETA-VALIDATION","kind":"initiative","title":"Validate the deployed beta before adding new product scope","status":"active","ownerWorkstream":"product","repositoryId":"product"},
     {"id":"TASK-REAL-DEVICE-VALIDATION","kind":"task","title":"Run deployed Golden Path validation on target real devices","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"DECISION-RELEASE-CHANNEL","kind":"decision","title":"Choose beta learning or commercial-production hardening as the next release channel","status":"blocked","ownerWorkstream":"command-center"},
-    {"id":"INIT-V7-LITE","kind":"initiative","title":"Make Founder OS multi-repository and event-ready without external autonomous runtime","status":"active","ownerWorkstream":"engineering","repositoryId":"control"},
-    {"id":"CHANGE-CONTROL-PR6","kind":"change","title":"Founder OS v7-lite control-plane PR #6","status":"active","ownerWorkstream":"engineering","repositoryId":"control"},
-    {"id":"VERIFY-CONTROL-CI24","kind":"verification","title":"Control CI #24 and Event Envelope #5 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"control"},
-    {"id":"CHANGE-PRODUCT-PR69","kind":"change","title":"Read-only PRODUCT Founder OS event-adapter PR #69","status":"blocked","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-PR69","kind":"verification","title":"PRODUCT PR #69 event workflow GREEN but Release Gate #1000 RED","status":"blocked","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"TASK-WEBKIT-PR-CONTEXT","kind":"task","title":"Isolate PR-context Record-to-workout WebKit transition instability","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"}
+    {"id":"INIT-V7-LITE","kind":"initiative","title":"Make Founder OS multi-repository and event-ready without external autonomous runtime","status":"done","ownerWorkstream":"engineering","repositoryId":"control"},
+    {"id":"CHANGE-CONTROL-PR6","kind":"change","title":"Founder OS v7-lite control-plane PR #6 merged as e25dbad","status":"done","ownerWorkstream":"engineering","repositoryId":"control"},
+    {"id":"VERIFY-CONTROL-POSTMERGE","kind":"verification","title":"CONTROL post-merge CI #26 and Event Envelope #9 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"control"},
+    {"id":"CHANGE-PRODUCT-PR69","kind":"change","title":"PRODUCT Founder OS event-adapter PR #69 merged as 5c1f46c","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-POSTMERGE","kind":"verification","title":"PRODUCT post-merge Release Gate #1004 and Event Envelope #3 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-V7-LITE-GREEN","kind":"result","title":"Founder OS v7-lite event-ready multi-repository integration GREEN","status":"done","ownerWorkstream":"command-center"}
   ],
   "edges": [
     {"from":"METRIC-REAL-DEVICE-CONFIDENCE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"measures"},
@@ -20,9 +20,10 @@
     {"from":"DECISION-RELEASE-CHANNEL","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"INIT-V7-LITE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"CHANGE-CONTROL-PR6","to":"INIT-V7-LITE","kind":"implements"},
-    {"from":"VERIFY-CONTROL-CI24","to":"CHANGE-CONTROL-PR6","kind":"verifies"},
+    {"from":"VERIFY-CONTROL-POSTMERGE","to":"CHANGE-CONTROL-PR6","kind":"verifies"},
     {"from":"CHANGE-PRODUCT-PR69","to":"INIT-V7-LITE","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-PR69","to":"CHANGE-PRODUCT-PR69","kind":"verifies"},
-    {"from":"TASK-WEBKIT-PR-CONTEXT","to":"CHANGE-PRODUCT-PR69","kind":"depends-on"}
+    {"from":"VERIFY-PRODUCT-POSTMERGE","to":"CHANGE-PRODUCT-PR69","kind":"verifies"},
+    {"from":"RESULT-V7-LITE-GREEN","to":"VERIFY-CONTROL-POSTMERGE","kind":"depends-on"},
+    {"from":"RESULT-V7-LITE-GREEN","to":"VERIFY-PRODUCT-POSTMERGE","kind":"depends-on"}
   ]
 }
