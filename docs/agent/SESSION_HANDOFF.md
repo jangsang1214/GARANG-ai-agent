@@ -1,44 +1,30 @@
-# GARANG Session Handoff & Recovery Protocol v5.1
+# GARANG Session Handoff & Recovery Protocol v7-lite
 
-A chat is a temporary work session. The project must be recoverable from GitHub without replaying chat history.
+A chat is temporary. Project identity/state must be recoverable from GitHub.
 
-## PROJECT START — deterministic recovery order
-1. Read root `AGENTS.md`.
-2. Read `PROJECT_STATE.md`.
-3. Read this `SESSION_HANDOFF.md`.
-4. Read `TASKS.md`.
-5. Read `DECISIONS.md`.
-6. Read `TECHNICAL_DEBT.md`.
-7. Read `RELEASE_STATUS.md`.
-8. Inspect Founder OS and product GitHub `main`, current branches, recent commits, open PR/issues, and relevant CI/deployment evidence.
-9. Reconcile documentation with repository evidence. Repository evidence wins for implementation facts.
-10. Label uncertain claims internally as VERIFIED / RECORDED / INFERRED / UNKNOWN.
-11. Select the top 1–3 priorities and proceed with the highest-value authorized safe work.
+## PROJECT START order
+1. `AGENTS.md`
+2. `docs/agent/REPOSITORIES.json`
+3. `PROJECT_STATE.md`
+4. `PROJECT_GRAPH.json`
+5. this `SESSION_HANDOFF.md`
+6. `TASKS.md`
+7. `DECISIONS.md`
+8. `TECHNICAL_DEBT.md`
+9. `RELEASE_STATUS.md`
+10. inspect CONTROL + PRODUCT default/current branches, recent commits, open PR/issues and relevant CI/deployment evidence
+11. reconcile observed evidence with recorded state/graph
+12. select top 1–3 priorities and route the highest-value authorized work
 
-## Before ending a meaningful work unit
-Update only facts that changed:
-- PROJECT_STATE: objective/branch/stable/in-progress/broken/blockers/next.
-- DECISIONS: durable new/superseded decisions.
-- TASKS: status/acceptance/evidence.
-- TECHNICAL_DEBT: created/changed/resolved debt.
-- RELEASE_STATUS: actual verification evidence and GREEN/YELLOW/RED.
-
-Do not paste raw chat logs. Do not turn an unverified claim into a fact merely because an older handoff said it.
-
-## Completion rule
-DONE requires implementation + acceptance criteria + verification evidence + regression consideration + material state synchronization. Otherwise use PARTIAL/YELLOW and name the missing evidence.
+## Handoff rule
+Update only facts that changed. DONE requires implementation + acceptance criteria + verification + regression consideration + material graph/state synchronization. Never turn an old handoff into current VERIFIED evidence without observing the source.
 
 ## Current handoff
-- Workstream: Command Center.
-- Objective: protect the verified product baseline, validate the deployed Golden Path on a real target device, and avoid starting production infrastructure until the Founder selects the next release channel.
-- Founder OS main: `7292f542c25b3cd7fd1fb66f26dbeab437f54311`; push CI #17 GREEN.
-- Product main: `c0fd29e06c4c29f3f504d940a8d2497e84d7c821`; GARANG Release Gate #999 GREEN; Pages deployment #746 successful.
-- Current product version: `0.11.0-beta.5` development build.
-- Automated Golden Path complete journey, Today/Coach/Planner flows, recovery, Firestore rules, Firebase public health, and mobile WebKit regression coverage passed on current product main.
-- Product PR #61 was closed as superseded after confirming it was 142 commits behind main and its latest Release Gate #857 was RED.
-- Historical product PR #1 remains an open draft, 1139 commits behind current main; audit for unique unresolved fixes before closing, never merge it as-is.
-- Production external service endpoints remain intentionally disconnected (`null`), and the reference backend uses process-local `MemoryStore`.
-- AI standalone repos are inactive scaffolds, not the active production path.
-- Release readiness: beta/demo GREEN, commercial production RED, overall Command Center YELLOW.
-- Founder decision required: continue beta/demo learning or intentionally enter commercial-production hardening.
-- Exact next safe task: perform/collect real-device validation evidence for the deployed current main on target iPhone Safari and target in-app browser; if any regression exists, open one narrow reproducible issue before new feature work.
+- Objective: implement and verify Founder OS v7-lite event-ready control plane without changing the healthy product beta runtime.
+- CONTROL base before branch: `99686bfa69593bd2dc7b45a1b679cc3db9ab30fe`; working branch `agent/founder-os-v7-lite`.
+- PRODUCT observed main: `c0fd29e06c4c29f3f504d940a8d2497e84d7c821`.
+- Product beta/demo remains recorded GREEN from Release Gate #999 and Pages #746.
+- v7-lite candidate is YELLOW until CI verifies the latest control head.
+- After control GREEN, install the same read-only event-envelope adapter in PRODUCT on a separate branch/PR and require product CI/release-gate evidence.
+- Event artifacts are contracts/evidence only; there is no always-on external consumer yet.
+- Existing product next actions remain: real-device Golden Path validation and Founder release-channel decision.

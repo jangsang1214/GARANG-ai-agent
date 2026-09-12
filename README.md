@@ -1,38 +1,66 @@
 # GARANG AI Agent
 
-GARANG AI Agent is the persistent, safety-gated operating layer for running GARANG development across replaceable ChatGPT work sessions.
+GARANG AI Agent is the persistent, safety-gated control plane for operating GARANG development across replaceable ChatGPT work sessions and multiple GitHub repositories.
 
-## V0.3 — Founder OS v5.1
+## V0.7-lite — Event-ready Founder OS
 
-The repository has two complementary layers:
+v7-lite keeps the v5.1 evidence/capability foundation and adds deterministic structures for:
 
-1. **ChatGPT Project + GitHub Founder OS** — works without a separate OpenAI API key. GitHub is the technical source of truth and `docs/agent/` carries durable state across chats.
-2. **Deterministic TypeScript core** — planning, repository context, capability-based permission gates, safe tools, explicit action execution, verification, recovery, and project-state loading without requiring an LLM.
+- multi-repository source-of-truth routing;
+- Goal → Metric → Initiative → Task/Change → Verification → Release → Result project graphs;
+- workstream orchestration;
+- versioned GitHub event envelopes;
+- repository-state reconciliation;
+- deterministic GREEN / YELLOW / RED release evaluation;
+- event artifacts that a future always-on runtime can consume without changing the contract.
 
-Founder OS v5.1 adds evidence discipline, deterministic session recovery, scope control, Definition of Done, failure recovery, and centralized typed capability authorization.
+It remains API-key-free in normal ChatGPT Project + GitHub use. It is **event-ready, not an always-on autonomous server**.
 
-## Start a project session
+## Repositories
 
-Use `docs/agent/CHATGPT_PROJECT_INSTRUCTIONS.md` as the ChatGPT Project instructions, then start a new project chat with:
+`docs/agent/REPOSITORIES.json` is the registry.
+
+- `control` → `jangsang1214/GARANG-ai-agent`: orchestration, policies, state, decisions, graph, event contracts.
+- `product` → `jangsang1214/-fitmind-ai`: application code, product tests/CI, UX, release evidence.
+
+## PROJECT START
+
+Use `docs/agent/CHATGPT_PROJECT_INSTRUCTIONS.md` as the Project Instructions and start a project chat with:
 
 ```text
 PROJECT START
 ```
 
-Recovery order is defined in `docs/agent/SESSION_HANDOFF.md`. The agent reconciles state documents against the actual repository and CI before choosing work.
+The recovery protocol loads repository identity and the Project Graph before reconciling both GitHub repositories with persistent state.
 
-## Repository layout
+## Architecture
 
 ```text
-src/
-  agent/        planning, execution, verification, recovery
-  context/      repository and persistent project-state context
-  security/     centralized capability/risk policy
-  tools/        bounded filesystem and terminal tools
-tests/          deterministic regression/security tests
-docs/agent/     long-lived state, handoff, release status, project instructions
-AGENTS.md       repository-wide operating rules
+Founder / ChatGPT Command Center
+            |
+      GARANG Control Plane
+            |
+  +---------+----------+
+  |                    |
+Control repo       Product repo
+  |                    |
+Policy/State       App/CI/Release
+  +---------+----------+
+            |
+ Repository Registry
+            |
+       Project Graph
+            |
+       Orchestrator
+            |
+     Event Contracts
+            |
+      Reconciler
+            |
+      Release Gate
 ```
+
+See `docs/agent/ARCHITECTURE_V7_LITE.md` and `docs/agent/EVENT_MODEL.md`.
 
 ## Development
 
@@ -44,14 +72,12 @@ npm run build
 npm run verify
 ```
 
-`npm run verify` is the release gate for the TypeScript core.
+`npm run verify` is the deterministic control-plane release gate.
 
-## Capability security
+## Event adapter
 
-Actions declare a typed capability such as `repository.write` or `release.deploy`; they do not choose their own risk level. `src/security/permissions.ts` centrally maps each capability to risk. High-risk capabilities are denied by default, and explicit Founder approval can be represented by a narrow capability override rather than enabling all high-risk work.
+`.github/workflows/founder-os-events.yml` normalizes PR, main, CI and release changes into a `founder-os-event.json` workflow artifact using `scripts/emit-event.mjs`. The artifact is evidence/a future-runtime contract; it does not independently wake ChatGPT or authorize code changes.
 
-The deterministic planner may infer an implementation capability from natural language as a fallback, but callers can supply an explicit capability. Actual action execution is authorized by the typed capability policy.
+## Safety
 
-## Execution model
-
-`CodingAgent` executes explicit typed actions through registered tools, checks permission before execution, stops on failures, and verifies the repository afterward. It does not invent arbitrary shell inputs by itself. ChatGPT/GitHub currently supplies the active reasoning/action-proposal layer; a future provider adapter should emit structured typed actions rather than unrestricted command text.
+Execution remains capability-gated. Events cannot grant permission. High-risk production, destructive data, secrets, billing, forced history, and major architecture actions remain denied by default unless the Founder grants a narrow explicit override.

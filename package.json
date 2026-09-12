@@ -1,12 +1,12 @@
 {
   "name": "garang-ai-agent",
-  "version": "0.3.0",
+  "version": "0.7.0-lite.0",
   "private": true,
-  "description": "GARANG Founder OS and autonomous coding-agent core",
+  "description": "GARANG Founder OS event-ready multi-repository agent control plane",
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "npm run build && node --test dist/tests/permissions.test.js dist/tests/planner.test.js dist/tests/recovery.test.js dist/tests/project-state.test.js dist/tests/filesystem.test.js dist/tests/agent.test.js",
+    "test": "npm run build && node --test dist/tests/permissions.test.js dist/tests/planner.test.js dist/tests/recovery.test.js dist/tests/project-state.test.js dist/tests/filesystem.test.js dist/tests/agent.test.js dist/tests/repository-registry.test.js dist/tests/project-graph.test.js dist/tests/orchestrator.test.js dist/tests/events.test.js dist/tests/reconciliation.test.js dist/tests/release-gate.test.js dist/tests/event-script.test.js",
     "check": "tsc --noEmit -p tsconfig.json",
     "verify": "npm run check && npm test"
   },

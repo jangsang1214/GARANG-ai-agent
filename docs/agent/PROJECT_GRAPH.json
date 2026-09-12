@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "goal",
+      "title": "Protect the verified Golden Path while learning from the development beta",
+      "status": "active",
+      "ownerWorkstream": "command-center"
+    },
+    {
+      "id": "METRIC-REAL-DEVICE-CONFIDENCE",
+      "kind": "metric",
+      "title": "Real-device Golden Path confidence on target iPhone and in-app browser",
+      "status": "active",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-BETA-VALIDATION",
+      "kind": "initiative",
+      "title": "Validate the deployed beta before adding new product scope",
+      "status": "active",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-REAL-DEVICE-VALIDATION",
+      "kind": "task",
+      "title": "Run deployed Golden Path validation on target real devices",
+      "status": "planned",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "DECISION-RELEASE-CHANNEL",
+      "kind": "decision",
+      "title": "Choose beta learning or commercial-production hardening as the next release channel",
+      "status": "blocked",
+      "ownerWorkstream": "command-center"
+    },
+    {
+      "id": "INIT-V7-LITE",
+      "kind": "initiative",
+      "title": "Make Founder OS multi-repository and event-ready without external autonomous runtime",
+      "status": "active",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "control"
+    }
+  ],
+  "edges": [
+    { "from": "METRIC-REAL-DEVICE-CONFIDENCE", "to": "GOAL-PROTECT-GOLDEN-PATH", "kind": "measures" },
+    { "from": "INIT-BETA-VALIDATION", "to": "GOAL-PROTECT-GOLDEN-PATH", "kind": "supports" },
+    { "from": "TASK-REAL-DEVICE-VALIDATION", "to": "INIT-BETA-VALIDATION", "kind": "supports" },
+    { "from": "DECISION-RELEASE-CHANNEL", "to": "GOAL-PROTECT-GOLDEN-PATH", "kind": "supports" },
+    { "from": "INIT-V7-LITE", "to": "GOAL-PROTECT-GOLDEN-PATH", "kind": "supports" }
+  ]
+}

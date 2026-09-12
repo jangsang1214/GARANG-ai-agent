@@ -3,56 +3,27 @@
 Last updated: 2026-09-12
 
 ## Current decision
-Overall Command Center status: YELLOW.
+Overall Command Center: YELLOW.
 
-- Development beta / demo: GREEN.
+- Founder OS v7-lite candidate: YELLOW until latest PR head passes `npm run verify` and cross-repo event adapter is verified.
+- Product development beta/demo: GREEN on the previously verified current product baseline.
 - Commercial production: RED until production-only gates are intentionally activated and completed.
 
-## Founder OS baseline
-- Main: `7292f542c25b3cd7fd1fb66f26dbeab437f54311`.
-- Push CI run #17: GREEN.
-- Evidence/recovery/capability policy remains stable.
+## Founder OS candidate
+- Base main observed before v7-lite branch: `99686bfa69593bd2dc7b45a1b679cc3db9ab30fe`.
+- Branch: `agent/founder-os-v7-lite`.
+- Added: Repository Registry, Project Graph, deterministic Orchestrator, event contracts/router/engine, repository-state reconciliation, release gate, GitHub event artifact adapter and regression tests.
+- Verification: UNKNOWN until GitHub Actions completes on the candidate head.
 
 ## Product baseline
 - Repository: `jangsang1214/-fitmind-ai`.
-- Main: `c0fd29e06c4c29f3f504d940a8d2497e84d7c821`.
-- Version: `0.11.0-beta.5` (`GARANG Commercial Core development build`).
-- Main push GARANG Release Gate #999: GREEN.
-- Pages build/deployment #746 for the same SHA: success.
+- Observed main: `c0fd29e06c4c29f3f504d940a8d2497e84d7c821`.
+- Recorded Release Gate #999: GREEN.
+- Recorded Pages build/deployment #746: success.
+- Real target-device post-PR-#68 validation remains unverified in this work session.
 
-## Verified Release Gate #999 coverage
-- locked dependency contract and production dependency security: PASS.
-- GARANG Intelligence Core v1: PASS.
-- Action & Data Reliability v1: PASS.
-- Commercial Core / regression suite: PASS.
-- runtime/build validation and browser build entry: PASS.
-- live Firebase public health: PASS.
-- Firestore rules emulator: PASS.
-- Today action flow and Today visual parity: PASS.
-- daily plan and Planner execution: PASS.
-- Nutrition recommendation flow: PASS.
-- truth surface / first-record flow: PASS.
-- Golden Path integration and complete journey: PASS.
-- authenticated app boot / Coach plan / conversational logging: PASS.
-- recovery mutation/touch flows: PASS.
-- mobile WebKit regressions, button health, and runtime stability stress: PASS.
-
-## Repository hygiene
-- Product PR #61: CLOSED as superseded. Latest head Release Gate #857 was RED and branch was 142 commits behind current main.
-- Product PR #1: OPEN DRAFT, 1139 commits behind current main. Treat as historical until a targeted unique-fix audit is completed; do not merge as-is.
-- Founder OS: no open PR or issue before this Command Center reconciliation branch.
-- `ai-agent-cloud` and `ai-server`: no open PR; neither is the active production path.
-
-## Commercial production blockers
-- Browser external-service config has `coachEndpoint`, `mealScanEndpoint`, `analyticsEndpoint`, `paymentCheckoutEndpoint`, and `paymentEntitlementEndpoint` set to `null`.
-- Reference backend persistence is `MemoryStore` using process-local Maps.
-- Production hosting/managed persistence, backup/restore, analytics/error monitoring, payments, legal/privacy/retention/health disclaimer, and staging load/security/end-to-end gates are not verified as complete.
-
-## Unverified / manual boundary
-- This recovery session did not freshly verify the post-PR-#68 deployed build on a physical target iPhone or target in-app browser.
-- Automated WebKit coverage is GREEN, including the Golden Path and mobile regressions, but real-device validation remains the next release-confidence task.
-
-## Release rule
-- Do not conflate automated beta readiness with commercial production readiness.
-- No new UI/feature merge should reduce the current Golden Path Release Gate coverage.
-- Production infrastructure work begins only after the Founder explicitly chooses the commercial-production hardening channel.
+## v7-lite release rule
+- Event contract tests, registry, graph, orchestration, reconciliation and release-gate tests are required.
+- Event adapter must be read-only and must not change product runtime behavior.
+- UNKNOWN required checks produce YELLOW, not GREEN.
+- Always-on runtime is explicitly out of scope for v7-lite.
