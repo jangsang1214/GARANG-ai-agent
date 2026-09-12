@@ -3,7 +3,7 @@
 Last updated: 2026-09-12
 
 ## Current decision
-GREEN for the merged Founder OS v5.1 code baseline. The latest PR #2 head `717453e72b51b79713dc8c24eabbc68efc7b19d3` passed GitHub Actions CI run #8 (`npm run verify`) immediately before squash merge to `ae2106b02605745cc0ac4261c420a04c08b4c679`.
+GREEN for the merged Founder OS v5.1 code baseline and the completed PR #3 state reconciliation. PR #2 latest head `717453e72b51b79713dc8c24eabbc68efc7b19d3` passed GitHub Actions CI run #8 (`npm run verify`) before squash merge to `ae2106b02605745cc0ac4261c420a04c08b4c679`. PR #3 latest head `8dc06a14353959eb13aae9c8ab6897a209e19fef` passed GitHub Actions CI run #14 before merge to `97341fcf0240f3c80a5946fbcf50e1266bbb2dfb`.
 
 ## Verified coverage on v5.1 code
 - TypeScript check: PASS on the latest PR #2 head.
@@ -18,10 +18,12 @@ GREEN for the merged Founder OS v5.1 code baseline. The latest PR #2 head `71745
 ## Baseline evidence
 - `15bcf93d8cdd655a0ae7d5a2dd693bd9cc76f90e`: PR #1 squash merge.
 - `ae2106b02605745cc0ac4261c420a04c08b4c679`: PR #2 squash merge.
-- No separate CI/status was observed on the PR #2 squash-merge commit itself; the authoritative merge-readiness evidence is the successful latest-head CI immediately before merge.
+- `97341fcf0240f3c80a5946fbcf50e1266bbb2dfb`: PR #3 merge.
+- PR #3 latest head `8dc06a14353959eb13aae9c8ab6897a209e19fef`: GitHub Actions CI run #14 GREEN.
+- No separate combined status was observed on the PR #3 merge commit itself; merge-readiness evidence is the successful latest-head CI immediately before merge.
 
 ## State synchronization
-PR #3 is a documentation-only reconciliation of `PROJECT_STATE.md`, `SESSION_HANDOFF.md`, `TASKS.md`, and `RELEASE_STATUS.md`. The first reconciliation head passed CI run #10. Any later PR #3 head must also be GREEN before merge.
+The stale pre-merge PR #3 wording has been removed from persistent state. Future state-only reconciliation changes must still use a working branch/PR and latest-head CI, but persistent docs should prefer durable historical evidence over self-referential claims that become stale immediately after merge.
 
 ## Remaining non-blocking limitations
 - Natural-language capability inference is a heuristic fallback. Actual action execution is authorized by explicit typed capability and central policy.
