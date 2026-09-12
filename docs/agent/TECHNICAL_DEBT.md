@@ -1,25 +1,34 @@
 # GARANG Technical Debt
 
-## TD-001 — No model/provider action-synthesis layer
+## TD-001 — No external always-on provider/runtime
 Severity: MEDIUM
 Area: orchestration boundary
-Problem: Deterministic core executes explicit typed actions but does not synthesize them from natural language by itself.
-Risk: Fully external autonomous operation needs a provider/orchestrator.
-Mitigation: API-key-free mode uses ChatGPT + GitHub for reasoning/action proposal.
-Recommended fix: If external autonomy becomes necessary, add a provider adapter that emits typed capabilities/actions, never unrestricted shell text.
+Problem: v7-lite emits/routes deterministic events but no external worker continuously consumes them and synthesizes approved actions.
+Mitigation: ChatGPT + GitHub handles active-session reasoning; event contracts are stable for a future worker.
+Recommended fix: webhook/queue/provider adapter only when background autonomy is explicitly needed.
 
 ## TD-002 — Runtime AgentMemory is process-local
 Severity: MEDIUM
 Area: `src/context/memory.ts`
-Problem: `AgentMemory` stores entries in a process-local `Map`.
-Risk: Runtime state disappears on process exit.
-Mitigation: `docs/agent/` persists human-readable project state; `project-state.ts` loads/initializes it.
-Recommended fix: Add structured runtime persistence only when needed.
+Problem: process exit loses runtime `Map` state.
+Mitigation: GitHub state + Project Graph remain durable control-plane state.
 
-## TD-003 — Natural-language capability inference is heuristic
+## TD-003 — Natural-language routing remains heuristic fallback
 Severity: LOW
-Area: `src/agent/planner.ts`
-Problem: When no explicit implementation capability is supplied, the deterministic planner still uses phrase matching to infer one.
-Risk: Planning metadata may be conservative or inaccurate for ambiguous requests.
-Mitigation: Actual action execution is authorized by explicit typed capability and central policy; callers may provide `implementationCapability` directly.
-Recommended fix: A future provider adapter should emit explicit capabilities from structured tool schemas.
+Area: planner/orchestrator
+Problem: ambiguous text can be conservatively misrouted.
+Mitigation: typed capabilities and explicit intent/repository may override heuristic inference.
+
+## TD-004 — Event artifacts are not automatically consumed
+Severity: EXPECTED / MEDIUM
+Area: event runtime
+Problem: workflows emit `FounderEventEnvelope` artifacts but no service wakes ChatGPT or executes follow-up work.
+Mitigation: no false autonomy claim; deterministic contract exists.
+
+## TD-005 — PRODUCT event adapter is not merge-ready
+Severity: MEDIUM
+Area: cross-repository integration
+Problem: PR #69 event workflow succeeds, but the existing product Release Gate #1000 fails in `browser-webkit-regression.test.cjs` at Record→workout after returning from Coach to Today.
+Evidence: failure reproduced on PR #69 retry; PRODUCT main Release Gate #999 rerun passes the same complete browser suite on application SHA `c0fd29e...`. PR #69 diff contains no app runtime code.
+Risk: merging while RED would violate the release constitution; current evidence does not prove the adapter caused an app regression.
+Recommended fix: isolate the PR-context transition instability in a separate diagnostic/test-reliability change, preserve the functional assertion, and require a GREEN product gate before merging the adapter.

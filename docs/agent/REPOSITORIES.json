@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "repositories": [
+    {
+      "id": "control",
+      "role": "control",
+      "fullName": "jangsang1214/GARANG-ai-agent",
+      "defaultBranch": "main",
+      "sourceOfTruthFor": [
+        "project-state",
+        "decisions",
+        "orchestration",
+        "policy",
+        "project-graph",
+        "event-contracts"
+      ],
+      "mutationPolicy": "branch-pr"
+    },
+    {
+      "id": "product",
+      "role": "product",
+      "fullName": "jangsang1214/-fitmind-ai",
+      "defaultBranch": "main",
+      "sourceOfTruthFor": [
+        "application-code",
+        "product-tests",
+        "product-ci",
+        "product-release",
+        "user-experience"
+      ],
+      "mutationPolicy": "branch-pr"
+    }
+  ]
+}

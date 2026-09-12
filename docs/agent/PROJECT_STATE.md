@@ -3,41 +3,36 @@
 Last updated: 2026-09-12
 
 ## Current objective
-Operate GARANG from the verified product baseline, not from stale infrastructure tasks. The immediate goal is to protect the Golden Path and validate the deployed beta on real target devices before adding new product scope or production infrastructure.
+Complete Founder OS v7-lite as an event-ready, multi-repository control plane without weakening the verified GARANG product baseline.
 
-## Verified baseline
-- Founder OS repository `jangsang1214/GARANG-ai-agent` main is `7292f542c25b3cd7fd1fb66f26dbeab437f54311`; push CI run #17 is GREEN.
-- Product repository `jangsang1214/-fitmind-ai` main is `c0fd29e06c4c29f3f504d940a8d2497e84d7c821` (merged PR #68: Today mobile motion + visual hierarchy).
-- Product main push Release Gate run #999 is GREEN.
-- Release Gate #999 passed core/build/rules, production dependency security, GARANG Intelligence Core, Action & Data Reliability, browser build, Today action flow, Today visual parity, Planner execution, Nutrition flow, truth/first-record flow, Golden Path integration, complete Golden Path journey, authenticated boot/Coach flows, recovery, mobile WebKit regressions, and runtime stability.
-- GitHub Pages build/deployment run #746 for the same product main SHA completed successfully.
-- Product package is `0.11.0-beta.5` and explicitly identifies itself as a Commercial Core development build.
-- PR #61 was closed as superseded after verification that it was 142 commits behind current main and its latest Release Gate #857 was RED.
-- Product PR #1 remains an old draft; it is 1139 commits behind current main and must not be merged without a targeted unique-fix audit.
-- `ai-agent-cloud` and `ai-server` have no open PRs and have not advanced since August 2026; they are not the active production path.
+## Repository observations
+- CONTROL: `jangsang1214/GARANG-ai-agent`; working PR #6 on `agent/founder-os-v7-lite`.
+- CONTROL verified code head before this state-sync commit: `43fa47db0a0f05fd4e4e069fbb0a8d5c7257c36a`.
+- CONTROL CI #24: GREEN. Founder OS Event Envelope #5: GREEN. Project Instructions 8,000-character gate: PASS.
+- PRODUCT: `jangsang1214/-fitmind-ai`; main `c0fd29e06c4c29f3f504d940a8d2497e84d7c821`.
+- PRODUCT main Release Gate #999 was re-run during this work and finished GREEN, including the complete `browser-webkit` suite.
+- PRODUCT event-adapter PR #69 head: `9238d28a6a2f0e5b8c5217ba64f6b5fb7807440c`.
+- PRODUCT Founder OS Event Envelope #1: GREEN and produced an artifact.
+- PRODUCT Release Gate #1000: RED on `browser-webkit-regression.test.cjs` route transition; the failed browser job was retried and reproduced the same timeout.
 
 ## Stable
-- Founder OS evidence, recovery, capability gating, and state conventions are stable.
-- Current product main is automated-release GREEN and deployed through GitHub Pages.
-- Golden Path automated coverage is present and passed on current product main.
-- Today / Record / Coach / Accumulation ownership and current mobile Today presentation are protected by regression coverage.
+- v5.1 evidence discipline, capability policy, DoD, recovery and scope rules remain intact.
+- v7-lite now has validated Repository Registry, Project Graph, Orchestrator, Event Contracts, Reconciler, deterministic Release Gate, CI-event release evaluation and read-only GitHub event artifacts.
+- CONTROL event artifacts are real workflow outputs, not claimed background execution.
+- PRODUCT main remains healthy on current evidence: Release Gate #999 rerun GREEN.
 
 ## In progress
-- Command Center project-wide state reconciliation on branch `command-center/project-start-2026-09-12`.
-- No new product feature implementation is designated as active work.
+- PR #6 final state synchronization and latest-head verification.
+- PR #69 is implemented but blocked from merge by its existing product Release Gate.
 
-## Broken / blockers
-- No known blocker for the current development beta/demo channel.
-- Commercial production is not ready: `coachEndpoint`, `mealScanEndpoint`, `analyticsEndpoint`, `paymentCheckoutEndpoint`, and `paymentEntitlementEndpoint` are all intentionally `null` in the browser service config.
-- The reference commercial backend still uses process-local `MemoryStore`; it is not a managed durable production database.
-- Post-merge automated WebKit is GREEN, but a fresh manual validation on a real target iPhone / in-app browser after PR #68 is not verified in this recovery session.
+## Blockers / unknowns
+- PR #69 merge-ref reproduces a 5-second timeout after Record→workout in `browser-webkit-regression.test.cjs`; main with the same application SHA passes the same test when re-run.
+- PR #69 changes only the read-only event workflow and emitter script, so causality between the adapter and app route timing is not established.
+- Do not merge PR #69 while its Release Gate is RED.
+- Real-device Golden Path validation remains outstanding.
+- Always-on event consumption still requires a future external runtime/provider; v7-lite intentionally stops at event-ready contracts.
 
 ## Next priorities
-1. Run a real-device deployed Golden Path check on current product main, especially iPhone Safari and the in-app browser class that motivated PR #68.
-2. Decide the intended next release channel: continue development beta/demo, or enter commercial-production hardening. Do not build production infrastructure without that Founder decision.
-3. Audit the remaining historical draft PR #1 for any genuinely unique unresolved fix, then close it if fully superseded.
-
-## Release readiness
-- Development beta / demo: GREEN based on current-main Release Gate #999 and successful Pages deployment.
-- Commercial production: RED until external service/backend persistence, legal/privacy, telemetry/payment, staging security/load/restore, and production environment gates are intentionally completed.
-- Overall Command Center status: YELLOW because the running beta baseline is healthy while production readiness is intentionally incomplete.
+1. Require latest CONTROL PR #6 head CI + Event Envelope GREEN, then mark PR #6 merge-ready.
+2. Keep PRODUCT PR #69 blocked; isolate the PR-context WebKit transition issue in a separate narrow test/reliability task rather than modifying app behavior speculatively.
+3. Preserve product priorities: real-device Golden Path validation, then explicit beta-vs-commercial-production decision.

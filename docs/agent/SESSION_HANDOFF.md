@@ -1,44 +1,27 @@
-# GARANG Session Handoff & Recovery Protocol v5.1
+# GARANG Session Handoff & Recovery Protocol v7-lite
 
-A chat is a temporary work session. The project must be recoverable from GitHub without replaying chat history.
-
-## PROJECT START — deterministic recovery order
-1. Read root `AGENTS.md`.
-2. Read `PROJECT_STATE.md`.
-3. Read this `SESSION_HANDOFF.md`.
-4. Read `TASKS.md`.
-5. Read `DECISIONS.md`.
-6. Read `TECHNICAL_DEBT.md`.
-7. Read `RELEASE_STATUS.md`.
-8. Inspect Founder OS and product GitHub `main`, current branches, recent commits, open PR/issues, and relevant CI/deployment evidence.
-9. Reconcile documentation with repository evidence. Repository evidence wins for implementation facts.
-10. Label uncertain claims internally as VERIFIED / RECORDED / INFERRED / UNKNOWN.
-11. Select the top 1–3 priorities and proceed with the highest-value authorized safe work.
-
-## Before ending a meaningful work unit
-Update only facts that changed:
-- PROJECT_STATE: objective/branch/stable/in-progress/broken/blockers/next.
-- DECISIONS: durable new/superseded decisions.
-- TASKS: status/acceptance/evidence.
-- TECHNICAL_DEBT: created/changed/resolved debt.
-- RELEASE_STATUS: actual verification evidence and GREEN/YELLOW/RED.
-
-Do not paste raw chat logs. Do not turn an unverified claim into a fact merely because an older handoff said it.
-
-## Completion rule
-DONE requires implementation + acceptance criteria + verification evidence + regression consideration + material state synchronization. Otherwise use PARTIAL/YELLOW and name the missing evidence.
+## PROJECT START order
+1 `AGENTS.md`
+2 `docs/agent/REPOSITORIES.json`
+3 `PROJECT_STATE.md`
+4 `PROJECT_GRAPH.json`
+5 `SESSION_HANDOFF.md`
+6 `TASKS.md`
+7 `DECISIONS.md`
+8 `TECHNICAL_DEBT.md`
+9 `RELEASE_STATUS.md`
+10 inspect CONTROL + PRODUCT branches/commits/open PRs/CI
+11 reconcile evidence with state/graph
+12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff
-- Workstream: Command Center.
-- Objective: protect the verified product baseline, validate the deployed Golden Path on a real target device, and avoid starting production infrastructure until the Founder selects the next release channel.
-- Founder OS main: `7292f542c25b3cd7fd1fb66f26dbeab437f54311`; push CI #17 GREEN.
-- Product main: `c0fd29e06c4c29f3f504d940a8d2497e84d7c821`; GARANG Release Gate #999 GREEN; Pages deployment #746 successful.
-- Current product version: `0.11.0-beta.5` development build.
-- Automated Golden Path complete journey, Today/Coach/Planner flows, recovery, Firestore rules, Firebase public health, and mobile WebKit regression coverage passed on current product main.
-- Product PR #61 was closed as superseded after confirming it was 142 commits behind main and its latest Release Gate #857 was RED.
-- Historical product PR #1 remains an open draft, 1139 commits behind current main; audit for unique unresolved fixes before closing, never merge it as-is.
-- Production external service endpoints remain intentionally disconnected (`null`), and the reference backend uses process-local `MemoryStore`.
-- AI standalone repos are inactive scaffolds, not the active production path.
-- Release readiness: beta/demo GREEN, commercial production RED, overall Command Center YELLOW.
-- Founder decision required: continue beta/demo learning or intentionally enter commercial-production hardening.
-- Exact next safe task: perform/collect real-device validation evidence for the deployed current main on target iPhone Safari and target in-app browser; if any regression exists, open one narrow reproducible issue before new feature work.
+- CONTROL PR #6 implements v7-lite registry, graph, orchestrator, event contracts, reconciliation, release evaluation, event-derived multi-repo readiness, event workflow and 8K prompt gate.
+- Verified CONTROL code head `43fa47d...`: CI #24 GREEN + Event Envelope #5 GREEN. Final state-sync head must be reverified before merge.
+- PRODUCT main `c0fd29e...`: Release Gate #999 rerun GREEN including full browser-webkit suite.
+- PRODUCT PR #69 head `9238d28...`: Event Envelope #1 GREEN, but Release Gate #1000 RED twice at Record→workout transition in existing WebKit regression test. Do not merge.
+- PR #69 changes only event workflow/emitter; causality with app timing is UNKNOWN. Keep diagnosis separate from adapter scope.
+- Existing product priorities remain real-device Golden Path validation and Founder release-channel decision.
+- Event artifacts are contracts/evidence only; no always-on consumer exists yet.
+
+## Handoff rule
+Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state/graph synchronization.
