@@ -5,6 +5,7 @@ export * from "./agent/recovery.js";
 export * from "./agent/verifier.js";
 export * from "./context/repository.js";
 export * from "./context/memory.js";
+export * from "./context/project-state.js";
 export * from "./security/permissions.js";
 export * from "./tools/tool.js";
 export * from "./tools/filesystem.js";

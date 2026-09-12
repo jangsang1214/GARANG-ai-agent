@@ -23,7 +23,7 @@ export class TerminalTool implements AgentTool {
       return {
         ok: false,
         output: "",
-        error: "Command is not allowed by the V0.1 terminal policy"
+        error: "Command is not allowed by the V0.2 terminal policy"
       };
     }
 
@@ -39,8 +39,7 @@ export class TerminalTool implements AgentTool {
         output: `${result.stdout}${result.stderr}`.trim()
       };
     } catch (error) {
-      const message =
-        error instanceof Error ? error.message : String(error);
+      const message = error instanceof Error ? error.message : String(error);
 
       return {
         ok: false,
