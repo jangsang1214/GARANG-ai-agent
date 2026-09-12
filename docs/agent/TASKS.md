@@ -44,15 +44,16 @@ Evidence:
 - No unresolved critical concern was observed in the recovered GitHub state.
 
 ## P1 — Reconcile persistent state after PR #2 merge
-Status: DONE WHEN MERGED
+Status: DONE
 Owner: Project Director / QA
 Acceptance criteria:
 - `PROJECT_STATE.md`, `SESSION_HANDOFF.md`, `TASKS.md`, and `RELEASE_STATUS.md` reflect the actual merged state.
 - Reconciliation changes are made on a working branch, not directly on `main`.
 - PR #3 latest-head CI is GREEN before merge.
 Evidence:
-- PR #3 is documentation-only and changes only the four intended `docs/agent/` state files.
-- The first reconciliation head passed CI run #10; the final head must be reverified after stable-state wording changes.
+- PR #3 changed only the four intended `docs/agent/` state files.
+- Final PR #3 head `8dc06a14353959eb13aae9c8ab6897a209e19fef` passed GitHub Actions CI run #14.
+- PR #3 was merged as `97341fcf0240f3c80a5946fbcf50e1266bbb2dfb`.
 
 ## P2 — Improve runtime persistence
 Status: TODO / NOT SCHEDULED
