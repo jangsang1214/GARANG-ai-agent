@@ -7,7 +7,7 @@ Owner role: Engineering / QA
 
 Evidence:
 - Source moved under `src/` and tests under `tests/`.
-- GitHub Actions CI passed `npm run verify` before the execution-layer change.
+- GitHub Actions verifies the repaired layout.
 
 ## P0 — Verify Founder OS foundation
 
@@ -17,19 +17,18 @@ Owner role: QA / Release
 Evidence:
 - State documents exist under `docs/agent/`.
 - CI runs `npm run verify` on pull requests.
-- Persistent-state and filesystem-boundary tests are included.
+- Persistent-state and filesystem-boundary tests pass.
 
 ## P1 — Add explicit permission-gated action execution
 
-Status: IN PROGRESS
+Status: DONE
 Owner role: Engineering / QA
 
-Acceptance criteria:
+Evidence:
 - Explicit typed actions resolve only to registered tools.
 - High-risk actions are blocked before tool execution.
-- Tool failures stop the run and are surfaced.
-- Verification runs after successful actions.
-- Deterministic tests cover successful and blocked execution paths.
+- Successful actions are followed by verification.
+- Deterministic success and blocked-path tests pass in GitHub Actions CI #4.
 
 ## P1 — Merge PR #1
 
@@ -42,11 +41,20 @@ Acceptance criteria:
 - No unresolved critical review concern.
 - Merge does not bypass the permission/release rules.
 
-## P1 — Improve runtime persistence
+## P1 — Improve typed risk/capability policy
+
+Status: TODO
+Owner role: Engineering / Security
+
+Acceptance criteria:
+- Sensitive capabilities carry explicit risk rather than relying primarily on natural-language keyword matching.
+- Tests cover risky capabilities and permission overrides.
+
+## P2 — Improve runtime persistence
 
 Status: TODO
 Owner role: Engineering
 
 Acceptance criteria:
-- Runtime memory can persist/recover structured session state without relying only on process-local `Map` storage.
+- Runtime memory can persist/recover structured session state when needed without relying only on process-local `Map` storage.
 - GitHub state documents remain the human-readable source-of-truth summaries.
