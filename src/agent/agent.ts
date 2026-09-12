@@ -61,6 +61,15 @@ export class CodingAgent {
       }
     }
 
+    if (!verification) {
+      return {
+        status: "failed",
+        summary: "Verification did not run.",
+        attempts: 0,
+        plan
+      };
+    }
+
     return {
       status: "failed",
       summary: "Recovery loop ended without verification success.",
