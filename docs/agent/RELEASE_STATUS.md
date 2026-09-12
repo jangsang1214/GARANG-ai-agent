@@ -3,32 +3,56 @@
 Last updated: 2026-09-12
 
 ## Current decision
-GREEN for the merged Founder OS v5.1 code baseline and the completed PR #3 state reconciliation. PR #2 latest head `717453e72b51b79713dc8c24eabbc68efc7b19d3` passed GitHub Actions CI run #8 (`npm run verify`) before squash merge to `ae2106b02605745cc0ac4261c420a04c08b4c679`. PR #3 latest head `8dc06a14353959eb13aae9c8ab6897a209e19fef` passed GitHub Actions CI run #14 before merge to `97341fcf0240f3c80a5946fbcf50e1266bbb2dfb`.
+Overall Command Center status: YELLOW.
 
-## Verified coverage on v5.1 code
-- TypeScript check: PASS on the latest PR #2 head.
-- production build: PASS on the latest PR #2 head.
-- existing recovery/project-state/filesystem regression tests: PASS.
-- centralized capability/risk mapping tests: PASS.
-- high-risk capability default blocking: PASS.
-- narrow Founder-approved capability override: PASS.
-- planner explicit/fallback capability behavior: PASS.
-- explicit action execution and verification path: PASS.
+- Development beta / demo: GREEN.
+- Commercial production: RED until production-only gates are intentionally activated and completed.
 
-## Baseline evidence
-- `15bcf93d8cdd655a0ae7d5a2dd693bd9cc76f90e`: PR #1 squash merge.
-- `ae2106b02605745cc0ac4261c420a04c08b4c679`: PR #2 squash merge.
-- `97341fcf0240f3c80a5946fbcf50e1266bbb2dfb`: PR #3 merge.
-- PR #3 latest head `8dc06a14353959eb13aae9c8ab6897a209e19fef`: GitHub Actions CI run #14 GREEN.
-- No separate combined status was observed on the PR #3 merge commit itself; merge-readiness evidence is the successful latest-head CI immediately before merge.
+## Founder OS baseline
+- Main: `7292f542c25b3cd7fd1fb66f26dbeab437f54311`.
+- Push CI run #17: GREEN.
+- Evidence/recovery/capability policy remains stable.
 
-## State synchronization
-The stale pre-merge PR #3 wording has been removed from persistent state. Future state-only reconciliation changes must still use a working branch/PR and latest-head CI, but persistent docs should prefer durable historical evidence over self-referential claims that become stale immediately after merge.
+## Product baseline
+- Repository: `jangsang1214/-fitmind-ai`.
+- Main: `c0fd29e06c4c29f3f504d940a8d2497e84d7c821`.
+- Version: `0.11.0-beta.5` (`GARANG Commercial Core development build`).
+- Main push GARANG Release Gate #999: GREEN.
+- Pages build/deployment #746 for the same SHA: success.
 
-## Remaining non-blocking limitations
-- Natural-language capability inference is a heuristic fallback. Actual action execution is authorized by explicit typed capability and central policy.
-- Runtime `AgentMemory` remains process-local; structured persistence is not scheduled without a concrete workflow need.
-- The current operating mode still relies on ChatGPT + GitHub for reasoning/action proposal rather than a separate provider adapter.
+## Verified Release Gate #999 coverage
+- locked dependency contract and production dependency security: PASS.
+- GARANG Intelligence Core v1: PASS.
+- Action & Data Reliability v1: PASS.
+- Commercial Core / regression suite: PASS.
+- runtime/build validation and browser build entry: PASS.
+- live Firebase public health: PASS.
+- Firestore rules emulator: PASS.
+- Today action flow and Today visual parity: PASS.
+- daily plan and Planner execution: PASS.
+- Nutrition recommendation flow: PASS.
+- truth surface / first-record flow: PASS.
+- Golden Path integration and complete journey: PASS.
+- authenticated app boot / Coach plan / conversational logging: PASS.
+- recovery mutation/touch flows: PASS.
+- mobile WebKit regressions, button health, and runtime stability stress: PASS.
 
-## Merge rule
-GitHub CI on the latest PR head is authoritative for merge readiness. Documentation/state synchronization follows the same branch/PR verification discipline as code changes.
+## Repository hygiene
+- Product PR #61: CLOSED as superseded. Latest head Release Gate #857 was RED and branch was 142 commits behind current main.
+- Product PR #1: OPEN DRAFT, 1139 commits behind current main. Treat as historical until a targeted unique-fix audit is completed; do not merge as-is.
+- Founder OS: no open PR or issue before this Command Center reconciliation branch.
+- `ai-agent-cloud` and `ai-server`: no open PR; neither is the active production path.
+
+## Commercial production blockers
+- Browser external-service config has `coachEndpoint`, `mealScanEndpoint`, `analyticsEndpoint`, `paymentCheckoutEndpoint`, and `paymentEntitlementEndpoint` set to `null`.
+- Reference backend persistence is `MemoryStore` using process-local Maps.
+- Production hosting/managed persistence, backup/restore, analytics/error monitoring, payments, legal/privacy/retention/health disclaimer, and staging load/security/end-to-end gates are not verified as complete.
+
+## Unverified / manual boundary
+- This recovery session did not freshly verify the post-PR-#68 deployed build on a physical target iPhone or target in-app browser.
+- Automated WebKit coverage is GREEN, including the Golden Path and mobile regressions, but real-device validation remains the next release-confidence task.
+
+## Release rule
+- Do not conflate automated beta readiness with commercial production readiness.
+- No new UI/feature merge should reduce the current Golden Path Release Gate coverage.
+- Production infrastructure work begins only after the Founder explicitly chooses the commercial-production hardening channel.
