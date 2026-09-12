@@ -36,17 +36,28 @@ Evidence:
 - Mapping, blocking, override, planner, execution, and regression tests passed CI run #7.
 
 ## P1 — Merge PR #2
-Status: TODO
+Status: DONE
 Owner: Founder / Release
-Dependency: latest PR #2 head CI GREEN
+Evidence:
+- Latest PR #2 head `717453e72b51b79713dc8c24eabbc68efc7b19d3` passed GitHub Actions CI run #8 (`npm run verify`).
+- PR #2 was squash-merged to `main` as `ae2106b02605745cc0ac4261c420a04c08b4c679`.
+- No unresolved critical concern was observed in the recovered GitHub state.
+
+## P1 — Reconcile persistent state after PR #2 merge
+Status: IN PROGRESS
+Owner: Project Director / QA
 Acceptance criteria:
-- Latest head CI is GREEN.
-- No unresolved critical concern.
-- Squash merge preserves v5.1 state and capability policy.
+- `PROJECT_STATE.md`, `SESSION_HANDOFF.md`, `TASKS.md`, and `RELEASE_STATUS.md` reflect the actual merged state.
+- Reconciliation changes are made on a working branch, not directly on `main`.
+- PR CI is GREEN before merge.
+Evidence:
+- Working branch: `agent/project-start-reconcile-2026-09-12`.
 
 ## P2 — Improve runtime persistence
-Status: TODO
+Status: TODO / NOT SCHEDULED
 Owner: Engineering
 Acceptance criteria:
+- A concrete workflow demonstrates that process-surviving runtime state is needed.
 - Structured runtime state persists/recover when needed without using chat history as a database.
 - GitHub state docs remain human-readable summaries/source of truth.
+Note: Do not build this only because it exists as technical debt; prioritize verified product/workflow value first.
