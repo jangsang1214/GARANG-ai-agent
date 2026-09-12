@@ -4,37 +4,22 @@ Last updated: 2026-09-12
 
 ## Current decision
 
-GREEN for the Founder OS v5 foundation branch.
+YELLOW — new permission-gated execution-layer changes are awaiting CI verification.
 
-## Verification evidence
+## Previously verified evidence
 
-GitHub Actions CI run #2 for commit `2d6b4d7c3e2056595bbccdd3013525b2eae6f7aa` completed successfully.
+GitHub Actions CI run #3 completed successfully for the Founder OS foundation before the latest execution-layer code change.
 
-The CI job successfully completed:
+## Current release gate
 
-- dependency installation
-- `npm run check`
-- build performed by the test script
-- permissions tests
-- planner tests
-- recovery tests
-- persistent project-state tests
-- filesystem repository-boundary tests
-
-## Release gate
-
-- TypeScript check: PASS
-- Tests: PASS
-- Build: PASS
-- Permission tests: PASS
-- Persistent-state tests: PASS
-- Filesystem boundary tests: PASS
-- Critical known regression: NONE on the verified branch
-
-## Remaining non-blocking limitation
-
-The TypeScript `CodingAgent` still does not synthesize/execute arbitrary implementation steps; this is documented as technical debt and is not hidden behind a false autonomy claim.
+- TypeScript check: PENDING for current head
+- Tests: PENDING for current head
+- Build: PENDING for current head
+- Permission tests: expected
+- Explicit action execution tests: NEW / PENDING
+- Persistent-state tests: expected
+- Filesystem boundary tests: expected
 
 ## Decision
 
-The Founder OS v5 foundation is mergeable once the current PR head's final CI remains GREEN.
+Do not merge until the current PR head is GREEN.

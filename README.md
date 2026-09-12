@@ -4,10 +4,10 @@ GARANG AI Agent is the operating layer for running GARANG development as a persi
 
 ## V0.2 — Founder OS foundation
 
-This repository now has two complementary layers:
+This repository has two complementary layers:
 
 1. **ChatGPT Project + GitHub operating layer** — works without a separate OpenAI API key. GitHub is the technical source of truth and `docs/agent/` is the persistent project-state layer across chat sessions.
-2. **Deterministic TypeScript core** — planner, repository scanning, permission gates, filesystem/terminal tools, verification, recovery, and project-state loading. The model/provider layer remains separate so the core can be tested without an LLM.
+2. **Deterministic TypeScript core** — planner, repository scanning, permission gates, filesystem/terminal tools, explicit action execution, verification, recovery, and project-state loading. The model/provider layer remains separate so the core can be tested without an LLM.
 
 ## Start a project session
 
@@ -23,7 +23,7 @@ The operating agent should read `AGENTS.md`, inspect the repository, then load t
 
 ```text
 src/
-  agent/        planning, verification, recovery, orchestration
+  agent/        planning, permission-gated execution, verification, recovery
   context/      repository and persistent project-state context
   security/     permission gates
   tools/        safe filesystem and terminal tools
@@ -44,6 +44,6 @@ npm run verify
 
 `npm run verify` is the local release gate for the TypeScript core. High-risk operations remain blocked by default.
 
-## Current limitation
+## Execution model
 
-The TypeScript `CodingAgent` currently plans and verifies but does not yet synthesize and execute arbitrary implementation steps by itself. In the API-key-free workflow, ChatGPT + the GitHub connector performs repository actions while this repository provides rules, state, safety, and deterministic primitives. See `docs/agent/TECHNICAL_DEBT.md` for the next engineering steps.
+`CodingAgent` can now execute **explicit, typed actions** supplied with a task, but it does not invent arbitrary tool inputs by itself. That separation is intentional: a ChatGPT/GitHub layer or future model provider can propose actions, while the deterministic core enforces permission checks, executes known tools, and verifies the repository afterward.

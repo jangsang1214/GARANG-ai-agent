@@ -1,15 +1,17 @@
 # GARANG Technical Debt
 
-## TD-001 — CodingAgent does not execute implementation steps
+## TD-001 — No model/provider action-synthesis layer
 
-Severity: HIGH
-Area: `src/agent/agent.ts`
+Severity: MEDIUM
+Area: orchestration boundary
 
-Problem: The agent creates a plan and checks permissions, but its run loop only executes verification. It does not bind the plan's inspect/implement steps to tool actions.
+Problem: The core can execute explicit typed actions with permission checks, but it does not synthesize those actions from natural-language tasks by itself.
 
-Risk: The TypeScript core can be described as orchestration scaffolding, but not yet as a self-contained autonomous coding executor.
+Risk: Fully external autonomous operation still needs a provider/orchestrator that converts intent into explicit actions.
 
-Recommended fix: Introduce an explicit execution-step contract that includes validated tool inputs, execute permitted steps, then verify and generate a bounded recovery action.
+Current mitigation: In the API-key-free workflow, ChatGPT + GitHub provides the reasoning/action proposal layer while the repository stores rules and state.
+
+Recommended fix: When external autonomy is actually needed, add a provider adapter that emits typed actions rather than allowing free-form shell execution.
 
 ## TD-002 — Runtime AgentMemory is process-local
 
@@ -20,7 +22,7 @@ Problem: `AgentMemory` stores entries only in a `Map`.
 
 Risk: Runtime state disappears when the process exits.
 
-Mitigation: `docs/agent/` is now the human-readable persistent project layer; `project-state.ts` can load/initialize it.
+Mitigation: `docs/agent/` is the human-readable persistent project layer; `project-state.ts` can load/initialize it.
 
 Recommended fix: Add a structured persistent runtime store only when needed, without making chat history the database.
 
@@ -33,4 +35,4 @@ Problem: High-risk detection is a small keyword list.
 
 Risk: Semantically risky work may be misclassified.
 
-Recommended fix: Replace/augment keywords with typed operation capabilities and explicit permission requirements.
+Recommended fix: Continue moving risk ownership toward typed actions/capabilities and explicit permission requirements.
