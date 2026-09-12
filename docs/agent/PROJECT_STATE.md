@@ -3,36 +3,36 @@
 Last updated: 2026-09-12
 
 ## Current objective
-Upgrade the control plane from Founder OS v5.1 to v7-lite: formalize the existing control/product multi-repository reality, connect work to a Project Graph, normalize GitHub events, detect recorded-state drift, and make release decisions deterministic without introducing an always-on external runtime.
+Complete Founder OS v7-lite as an event-ready, multi-repository control plane without weakening the verified GARANG product baseline.
 
 ## Repository observations
-- CONTROL registry target: `jangsang1214/GARANG-ai-agent`; v7-lite branch `agent/founder-os-v7-lite` is based on main `99686bfa69593bd2dc7b45a1b679cc3db9ab30fe`.
-- PRODUCT registry target: `jangsang1214/-fitmind-ai`; observed main `c0fd29e06c4c29f3f504d940a8d2497e84d7c821`.
-- Product beta/demo baseline remains the previously recorded Release Gate #999 GREEN / Pages deployment #746 success evidence.
+- CONTROL: `jangsang1214/GARANG-ai-agent`; working PR #6 on `agent/founder-os-v7-lite`.
+- CONTROL verified code head before this state-sync commit: `43fa47db0a0f05fd4e4e069fbb0a8d5c7257c36a`.
+- CONTROL CI #24: GREEN. Founder OS Event Envelope #5: GREEN. Project Instructions 8,000-character gate: PASS.
+- PRODUCT: `jangsang1214/-fitmind-ai`; main `c0fd29e06c4c29f3f504d940a8d2497e84d7c821`.
+- PRODUCT main Release Gate #999 was re-run during this work and finished GREEN, including the complete `browser-webkit` suite.
+- PRODUCT event-adapter PR #69 head: `9238d28a6a2f0e5b8c5217ba64f6b5fb7807440c`.
+- PRODUCT Founder OS Event Envelope #1: GREEN and produced an artifact.
+- PRODUCT Release Gate #1000: RED on `browser-webkit-regression.test.cjs` route transition; the failed browser job was retried and reproduced the same timeout.
 
 ## Stable
-- v5.1 evidence discipline, deterministic recovery, capability gating, Definition of Done and failure recovery remain the safety foundation.
-- Product Golden Path automated baseline is recorded GREEN on the current observed product main.
-- Product/commercial-production distinction remains unchanged.
+- v5.1 evidence discipline, capability policy, DoD, recovery and scope rules remain intact.
+- v7-lite now has validated Repository Registry, Project Graph, Orchestrator, Event Contracts, Reconciler, deterministic Release Gate, CI-event release evaluation and read-only GitHub event artifacts.
+- CONTROL event artifacts are real workflow outputs, not claimed background execution.
+- PRODUCT main remains healthy on current evidence: Release Gate #999 rerun GREEN.
 
 ## In progress
-- Founder OS v7-lite control-plane implementation on `agent/founder-os-v7-lite`.
-- Candidate adds Repository Registry, Project Graph, Orchestrator, Event Contracts, Reconciler, Release Gate and GitHub event-envelope adapter.
-- Candidate verification is UNKNOWN until the PR head passes `npm run verify`.
+- PR #6 final state synchronization and latest-head verification.
+- PR #69 is implemented but blocked from merge by its existing product Release Gate.
 
-## Broken / blockers
-- No known product beta blocker was introduced by this control-plane branch.
-- v7-lite must remain YELLOW until CI verifies the candidate.
-- Event artifacts do not create an always-on runtime; autonomous wake-up/consumption still requires future external infrastructure.
-- Real-device product validation and release-channel Founder decision remain outstanding from the prior state.
+## Blockers / unknowns
+- PR #69 merge-ref reproduces a 5-second timeout after Record→workout in `browser-webkit-regression.test.cjs`; main with the same application SHA passes the same test when re-run.
+- PR #69 changes only the read-only event workflow and emitter script, so causality between the adapter and app route timing is not established.
+- Do not merge PR #69 while its Release Gate is RED.
+- Real-device Golden Path validation remains outstanding.
+- Always-on event consumption still requires a future external runtime/provider; v7-lite intentionally stops at event-ready contracts.
 
 ## Next priorities
-1. Verify v7-lite core with CI and fix any regression before merge.
-2. Add the same read-only event-envelope adapter to the PRODUCT repository so both registered repos emit the contract.
-3. After both adapters are verified, reconcile graph/state and mark v7-lite event-ready GREEN.
-4. Preserve the existing product priorities: real-device Golden Path validation, then explicit beta-vs-production channel decision.
-
-## Release readiness
-- Founder OS v7-lite candidate: YELLOW pending verification.
-- Product development beta/demo: GREEN on previously verified current product main evidence.
-- Commercial production: RED until intentionally activated production gates are complete.
+1. Require latest CONTROL PR #6 head CI + Event Envelope GREEN, then mark PR #6 merge-ready.
+2. Keep PRODUCT PR #69 blocked; isolate the PR-context WebKit transition issue in a separate narrow test/reliability task rather than modifying app behavior speculatively.
+3. Preserve product priorities: real-device Golden Path validation, then explicit beta-vs-commercial-production decision.

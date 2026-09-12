@@ -1,39 +1,34 @@
 # GARANG Technical Debt
 
-## TD-001 — No external model/provider action-synthesis runtime
+## TD-001 — No external always-on provider/runtime
 Severity: MEDIUM
 Area: orchestration boundary
-Problem: The deterministic core routes work and executes explicit typed actions, but no external always-on provider turns events/natural-language goals into continuous action plans.
-Risk: True background autonomy is not available.
-Mitigation: ChatGPT + GitHub supplies active-session reasoning; v7-lite provides stable registry/graph/event contracts.
-Recommended fix: Only when background autonomy is needed, add a webhook/queue worker + provider adapter that emits typed capabilities/actions.
+Problem: v7-lite emits/routes deterministic events but no external worker continuously consumes them and synthesizes approved actions.
+Mitigation: ChatGPT + GitHub handles active-session reasoning; event contracts are stable for a future worker.
+Recommended fix: webhook/queue/provider adapter only when background autonomy is explicitly needed.
 
 ## TD-002 — Runtime AgentMemory is process-local
 Severity: MEDIUM
 Area: `src/context/memory.ts`
-Problem: Runtime memory uses a process-local `Map`.
-Risk: Runtime state disappears on exit.
-Mitigation: GitHub state and Project Graph are durable human-readable control-plane state.
-Recommended fix: Add structured runtime storage only when an always-on worker proves it necessary.
+Problem: process exit loses runtime `Map` state.
+Mitigation: GitHub state + Project Graph remain durable control-plane state.
 
-## TD-003 — Natural-language intent/capability inference is heuristic
+## TD-003 — Natural-language routing remains heuristic fallback
 Severity: LOW
-Area: `src/agent/planner.ts`, `src/orchestration/orchestrator.ts`
-Problem: Fallback text inference can classify ambiguous intent conservatively or incorrectly.
-Mitigation: Actual actions use typed capability authorization; callers may provide explicit intent/capability.
-Recommended fix: Future provider adapter emits structured intent, target repo and capabilities from tool schemas.
+Area: planner/orchestrator
+Problem: ambiguous text can be conservatively misrouted.
+Mitigation: typed capabilities and explicit intent/repository may override heuristic inference.
 
-## TD-004 — Event artifacts are not consumed automatically
+## TD-004 — Event artifacts are not automatically consumed
 Severity: EXPECTED / MEDIUM
 Area: event runtime
-Problem: GitHub workflows can emit FounderEventEnvelope artifacts, but no service subscribes and acts on them.
-Risk: Event-ready behavior still requires an active ChatGPT session or future worker.
-Mitigation: Contract and routing are deterministic/testable; no false claim of background execution.
-Recommended fix: Add webhook/queue consumer only after v7-lite workflow proves useful.
+Problem: workflows emit `FounderEventEnvelope` artifacts but no service wakes ChatGPT or executes follow-up work.
+Mitigation: no false autonomy claim; deterministic contract exists.
 
-## TD-005 — Cross-repository event coverage requires an adapter per repo
-Severity: LOW
-Area: GitHub workflows
-Problem: A workflow in CONTROL cannot receive PRODUCT repository events.
-Mitigation: Use the same envelope script/workflow contract in PRODUCT with read-only permissions.
-Recommended fix: Install and verify the PRODUCT adapter without changing app runtime behavior.
+## TD-005 — PRODUCT event adapter is not merge-ready
+Severity: MEDIUM
+Area: cross-repository integration
+Problem: PR #69 event workflow succeeds, but the existing product Release Gate #1000 fails in `browser-webkit-regression.test.cjs` at Record→workout after returning from Coach to Today.
+Evidence: failure reproduced on PR #69 retry; PRODUCT main Release Gate #999 rerun passes the same complete browser suite on application SHA `c0fd29e...`. PR #69 diff contains no app runtime code.
+Risk: merging while RED would violate the release constitution; current evidence does not prove the adapter caused an app regression.
+Recommended fix: isolate the PR-context transition instability in a separate diagnostic/test-reliability change, preserve the functional assertion, and require a GREEN product gate before merging the adapter.
