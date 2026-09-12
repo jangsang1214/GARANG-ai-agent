@@ -7,11 +7,20 @@ export type TaskStatus =
   | "failed"
   | "blocked";
 
+export interface AgentAction {
+  id: string;
+  description: string;
+  tool: string;
+  input: string;
+  risk: RiskLevel;
+}
+
 export interface AgentTask {
   id: string;
   request: string;
   status: TaskStatus;
   risk: RiskLevel;
+  actions?: AgentAction[];
 }
 
 export interface PlanStep {
@@ -32,6 +41,11 @@ export interface ToolResult {
   error?: string;
 }
 
+export interface ExecutedAction {
+  action: AgentAction;
+  result: ToolResult;
+}
+
 export interface VerificationResult {
   ok: boolean;
   checks: Array<{
@@ -46,5 +60,6 @@ export interface AgentRunResult {
   summary: string;
   attempts: number;
   plan: AgentPlan;
+  actions?: ExecutedAction[];
   verification?: VerificationResult;
 }
