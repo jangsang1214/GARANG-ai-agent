@@ -29,10 +29,11 @@ Do not paste raw chat logs. Do not turn an unverified claim into a fact merely b
 DONE requires implementation + acceptance criteria + verification evidence + regression consideration + material state synchronization. Otherwise use PARTIAL/YELLOW and name the missing evidence.
 
 ## Current handoff
-- Objective: finalize Founder OS v5.1 and PR #2.
-- Branch/PR: `agent/founder-os-v5.1` / PR #2.
-- Code-bearing commit: `b4b733ed7bc6cd8cfc837ceea8bc897c21a8ff2d`.
-- Verified: GitHub Actions CI run #7 passed `npm run verify` on that commit.
-- Work completed: 7,688-char v5.1 constitution; evidence/DoD/recovery/scope protocols; centralized typed capability authorization; high-risk default deny; narrow Founder override; expanded tests.
-- Known risk: latest documentation/version head still needs its own CI before merge.
-- Exact next safe task: confirm latest PR #2 head CI GREEN, then request/perform Founder-approved squash merge.
+- Objective: reconcile persistent state after the completed Founder OS v5.1 merge, then choose the next concrete work unit from verified needs.
+- `main` HEAD: `ae2106b02605745cc0ac4261c420a04c08b4c679` (PR #2 squash merge).
+- Reconciliation branch: `agent/project-start-reconcile-2026-09-12`.
+- Verified: PR #2 latest head `717453e72b51b79713dc8c24eabbc68efc7b19d3` passed GitHub Actions CI run #8 (`npm run verify`) before merge.
+- Verified: PR #2 is merged; there were no open PRs or issues at PROJECT START before the reconciliation branch was created.
+- Known limitation: the squash-merge commit itself had no separate CI/status observed; release evidence is the successful latest-head CI immediately before merge.
+- Technical debt remains: provider/action-synthesis layer (TD-001), process-local runtime memory (TD-002), heuristic fallback capability inference (TD-003).
+- Exact next safe task: finish the reconciliation branch, verify its PR CI, and merge when GREEN. After that, do not implement runtime persistence unless a concrete workflow demonstrates the need.
