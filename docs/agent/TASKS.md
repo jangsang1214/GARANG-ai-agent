@@ -1,60 +1,43 @@
 # GARANG Tasks
 
 ## P0 — Restore intended repository structure
-
 Status: DONE
-Owner role: Engineering / QA
-
-Evidence:
-- Source moved under `src/` and tests under `tests/`.
-- GitHub Actions verifies the repaired layout.
+Owner: Engineering / QA
+Evidence: `src/` and `tests/` restored; CI verifies layout.
 
 ## P0 — Verify Founder OS foundation
-
 Status: DONE
-Owner role: QA / Release
-
-Evidence:
-- State documents exist under `docs/agent/`.
-- CI runs `npm run verify` on pull requests.
-- Persistent-state and filesystem-boundary tests pass.
-
-## P1 — Add explicit permission-gated action execution
-
-Status: DONE
-Owner role: Engineering / QA
-
-Evidence:
-- Explicit typed actions resolve only to registered tools.
-- High-risk actions are blocked before tool execution.
-- Successful actions are followed by verification.
-- Deterministic success and blocked-path tests pass in GitHub Actions CI #4.
+Owner: QA / Release
+Evidence: persistent state, boundaries, action execution, tests, and CI were GREEN before PR #1 merge.
 
 ## P1 — Merge PR #1
+Status: DONE
+Owner: Founder / Release
+Evidence: squash-merged to `main` as `15bcf93d8cdd655a0ae7d5a2dd693bd9cc76f90e`.
 
-Status: TODO
-Owner role: Founder / Release
-Dependency: final PR CI GREEN
-
+## P1 — Founder OS v5.1 operating constitution
+Status: IN PROGRESS
+Owner: Project Director / QA
 Acceptance criteria:
-- PR head CI is GREEN.
-- No unresolved critical review concern.
-- Merge does not bypass the permission/release rules.
+- Project Instructions remain below the 8,000-character limit.
+- Evidence, escalation, scope, DoD, failure recovery, state mutation, and deterministic recovery order are defined.
+- Repository `AGENTS.md` is consistent with the project constitution.
+- Latest PR head CI is GREEN before merge.
 
-## P1 — Improve typed risk/capability policy
-
-Status: TODO
-Owner role: Engineering / Security
-
+## P1 — Typed capability authorization
+Status: IN PROGRESS
+Owner: Engineering / Security / QA
 Acceptance criteria:
-- Sensitive capabilities carry explicit risk rather than relying primarily on natural-language keyword matching.
-- Tests cover risky capabilities and permission overrides.
+- Actions declare capabilities, not self-selected risk.
+- Central capability map determines risk.
+- High-risk capabilities are denied by default.
+- Narrow Founder-approved override is supported.
+- Planner can accept an explicit capability; natural-language inference is fallback only.
+- Tests cover mapping, blocking, override, and execution.
 
 ## P2 — Improve runtime persistence
-
 Status: TODO
-Owner role: Engineering
-
+Owner: Engineering
 Acceptance criteria:
-- Runtime memory can persist/recover structured session state when needed without relying only on process-local `Map` storage.
-- GitHub state documents remain the human-readable source-of-truth summaries.
+- Structured runtime state can persist/recover when needed without using chat history as a database.
+- GitHub state docs remain human-readable summaries/source of truth.

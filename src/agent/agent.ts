@@ -8,22 +8,29 @@ import { createInitialPlan } from "./planner.js";
 import { decideRecovery } from "./recovery.js";
 import { verifyWithTool } from "./verifier.js";
 import type { AgentTool } from "../tools/tool.js";
-import { isAllowed, DEFAULT_PERMISSION_POLICY } from "../security/permissions.js";
+import {
+  isCapabilityAllowed,
+  DEFAULT_PERMISSION_POLICY,
+  type PermissionPolicy
+} from "../security/permissions.js";
 
 export interface AgentDependencies {
   terminal: AgentTool;
   tools?: AgentTool[];
   files: string[];
   cwd: string;
+  permissionPolicy?: PermissionPolicy;
 }
 
 export class CodingAgent {
   private readonly tools: ReadonlyMap<string, AgentTool>;
+  private readonly permissionPolicy: PermissionPolicy;
 
   constructor(private readonly deps: AgentDependencies) {
     this.tools = new Map(
       [deps.terminal, ...(deps.tools ?? [])].map((tool) => [tool.name, tool])
     );
+    this.permissionPolicy = deps.permissionPolicy ?? DEFAULT_PERMISSION_POLICY;
   }
 
   async plan(task: AgentTask) {
@@ -38,10 +45,10 @@ export class CodingAgent {
     const actions: ExecutedAction[] = [];
 
     for (const step of plan.steps) {
-      if (!isAllowed(step.risk, DEFAULT_PERMISSION_POLICY)) {
+      if (!isCapabilityAllowed(step.capability, this.permissionPolicy)) {
         return {
           status: "blocked",
-          summary: `Blocked high-risk step: ${step.description}`,
+          summary: `Blocked capability ${step.capability}: ${step.description}`,
           attempts: 0,
           plan,
           actions
@@ -50,10 +57,10 @@ export class CodingAgent {
     }
 
     for (const action of task.actions ?? []) {
-      if (!isAllowed(action.risk, DEFAULT_PERMISSION_POLICY)) {
+      if (!isCapabilityAllowed(action.capability, this.permissionPolicy)) {
         return {
           status: "blocked",
-          summary: `Blocked high-risk action: ${action.description}`,
+          summary: `Blocked capability ${action.capability}: ${action.description}`,
           attempts: 0,
           plan,
           actions
@@ -89,11 +96,7 @@ export class CodingAgent {
     const maxAttempts = 3;
 
     for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-      verification = await verifyWithTool(
-        this.deps.terminal,
-        this.deps.cwd
-      );
-
+      verification = await verifyWithTool(this.deps.terminal, this.deps.cwd);
       const decision = decideRecovery(verification, attempt, maxAttempts);
 
       if (!decision.shouldRetry) {

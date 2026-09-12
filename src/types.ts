@@ -1,5 +1,17 @@
 export type RiskLevel = "low" | "medium" | "high";
 
+export type Capability =
+  | "repository.read"
+  | "repository.write"
+  | "checks.run"
+  | "git.mutate"
+  | "git.force_update"
+  | "release.deploy"
+  | "data.destructive"
+  | "secrets.access"
+  | "billing.commit"
+  | "architecture.rewrite";
+
 export type TaskStatus =
   | "planned"
   | "running"
@@ -12,14 +24,13 @@ export interface AgentAction {
   description: string;
   tool: string;
   input: string;
-  risk: RiskLevel;
+  capability: Capability;
 }
 
 export interface AgentTask {
   id: string;
   request: string;
   status: TaskStatus;
-  risk: RiskLevel;
   actions?: AgentAction[];
 }
 
@@ -27,6 +38,7 @@ export interface PlanStep {
   id: string;
   description: string;
   tool: string;
+  capability: Capability;
   risk: RiskLevel;
 }
 

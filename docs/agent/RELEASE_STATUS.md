@@ -3,41 +3,21 @@
 Last updated: 2026-09-12
 
 ## Current decision
+YELLOW for `agent/founder-os-v5.1` until the new capability-policy and instruction changes pass CI on the latest branch head.
 
-GREEN for commit `fa371835b07519658dbf64bbfe16c9ce6049b7c9` and its permission-gated execution layer.
+## Last known GREEN baseline
+`main` commit `15bcf93d8cdd655a0ae7d5a2dd693bd9cc76f90e` (PR #1 squash merge). Final PR #1 head CI was GREEN before merge.
 
-## Verification evidence
-
-GitHub Actions CI run #4 completed successfully and executed `npm run verify`.
-
-Verified coverage includes:
-
+## v5.1 required verification
 - TypeScript check
 - production build
-- permission tests
-- planner tests
-- recovery tests
-- persistent project-state tests
-- filesystem repository-boundary tests
-- explicit action execution success path
-- explicit high-risk action blocking path
+- permission/capability tests
+- planner capability tests
+- explicit action execution/blocking/override tests
+- existing recovery, project-state, and filesystem-boundary regression tests
 
-## Release gate
+## Known non-blocking limitation
+Natural-language capability inference remains heuristic fallback. Execution authorization itself is typed and centrally policy-owned in v5.1.
 
-- TypeScript check: PASS
-- Tests: PASS
-- Build: PASS
-- Permission tests: PASS
-- Explicit action execution tests: PASS
-- Persistent-state tests: PASS
-- Filesystem boundary tests: PASS
-- Critical known regression: NONE on the verified commit
-
-## Remaining non-blocking limitations
-
-- Natural-language action synthesis is not part of the deterministic core; ChatGPT/GitHub currently supplies the reasoning/action-proposal layer.
-- Risk inference in the planner is still keyword-based and should evolve toward typed capabilities.
-
-## Decision
-
-The current code is GREEN. The final documentation-only PR head should still pass CI before merge.
+## Decision rule
+Set GREEN only after the latest PR head passes required CI. Missing evidence remains YELLOW; critical failure is RED.
