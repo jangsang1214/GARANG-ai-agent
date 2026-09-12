@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "npm run build && node --test dist/tests/permissions.test.js dist/tests/planner.test.js dist/tests/recovery.test.js dist/tests/project-state.test.js dist/tests/filesystem.test.js dist/tests/agent.test.js dist/tests/repository-registry.test.js dist/tests/project-graph.test.js dist/tests/orchestrator.test.js dist/tests/events.test.js dist/tests/reconciliation.test.js dist/tests/release-gate.test.js dist/tests/event-script.test.js",
+    "test": "npm run build && node --test dist/tests/permissions.test.js dist/tests/planner.test.js dist/tests/recovery.test.js dist/tests/project-state.test.js dist/tests/filesystem.test.js dist/tests/agent.test.js dist/tests/repository-registry.test.js dist/tests/project-graph.test.js dist/tests/orchestrator.test.js dist/tests/events.test.js dist/tests/reconciliation.test.js dist/tests/release-gate.test.js dist/tests/event-script.test.js dist/tests/event-release.test.js",
     "check": "tsc --noEmit -p tsconfig.json",
     "verify": "npm run check && npm test"
   },

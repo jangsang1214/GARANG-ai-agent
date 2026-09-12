@@ -19,3 +19,4 @@ export * from "./events/router.js";
 export * from "./events/engine.js";
 export * from "./reconciliation/state-reconciler.js";
 export * from "./release/release-gate.js";
+export * from "./release/event-release.js";

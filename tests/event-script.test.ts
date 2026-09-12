@@ -8,34 +8,58 @@ import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
 
-test("GitHub adapter emits a valid PR event envelope shape", async () => {
+async function emit(
+  eventName: string,
+  raw: Record<string, unknown>,
+  extraEnv: Record<string, string> = {}
+): Promise<{ type: string; source: { repositoryId: string }; payload: Record<string, unknown> }> {
   const directory = await mkdtemp(path.join(tmpdir(), "garang-event-"));
   const eventPath = path.join(directory, "event.json");
-  await writeFile(eventPath, JSON.stringify({
-    action: "opened",
-    number: 42,
-    pull_request: { number: 42, head: { ref: "feature/test", sha: "abc123" } }
-  }));
+  await writeFile(eventPath, JSON.stringify(raw));
 
   const script = path.resolve("scripts/emit-event.mjs");
   await execFileAsync(process.execPath, [script], {
     cwd: directory,
     env: {
       ...process.env,
-      GITHUB_EVENT_NAME: "pull_request",
+      GITHUB_EVENT_NAME: eventName,
       GITHUB_EVENT_PATH: eventPath,
       GITHUB_REPOSITORY: "jangsang1214/-fitmind-ai",
       GITHUB_RUN_ID: "99",
-      GITHUB_REF_NAME: "feature/test",
-      GITHUB_SHA: "abc123"
+      GITHUB_REF_NAME: "main",
+      GITHUB_SHA: "abc123",
+      ...extraEnv
     }
   });
 
-  const emitted = JSON.parse(
+  return JSON.parse(
     await readFile(path.join(directory, "artifacts", "founder-os-event.json"), "utf8")
-  ) as { type: string; source: { repositoryId: string }; payload: { pullRequestNumber: number } };
+  ) as { type: string; source: { repositoryId: string }; payload: Record<string, unknown> };
+}
+
+test("GitHub adapter emits a PR event envelope", async () => {
+  const emitted = await emit("pull_request", {
+    action: "opened",
+    number: 42,
+    pull_request: { number: 42, head: { ref: "feature/test", sha: "abc123" } }
+  });
 
   assert.equal(emitted.type, "pull_request.opened");
   assert.equal(emitted.source.repositoryId, "product");
   assert.equal(emitted.payload.pullRequestNumber, 42);
+});
+
+test("GitHub adapter maps release-gate completion to CI evidence", async () => {
+  const emitted = await emit("workflow_run", {
+    workflow_run: {
+      id: 1000,
+      conclusion: "failure",
+      head_branch: "main",
+      head_sha: "deadbeef"
+    }
+  });
+
+  assert.equal(emitted.type, "ci.failed");
+  assert.equal(emitted.payload.workflowRunId, 1000);
+  assert.equal(emitted.payload.workflowConclusion, "failure");
 });
