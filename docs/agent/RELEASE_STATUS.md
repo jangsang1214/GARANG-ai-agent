@@ -3,41 +3,23 @@
 Last updated: 2026-09-12
 
 ## Current decision
+GREEN for the code-bearing Founder OS v5.1 commit `b4b733ed7bc6cd8cfc837ceea8bc897c21a8ff2d` based on GitHub Actions CI run #7. PR #2 merge still requires the latest head CI to remain GREEN after documentation/version synchronization.
 
-GREEN for commit `fa371835b07519658dbf64bbfe16c9ce6049b7c9` and its permission-gated execution layer.
-
-## Verification evidence
-
-GitHub Actions CI run #4 completed successfully and executed `npm run verify`.
-
-Verified coverage includes:
-
-- TypeScript check
-- production build
-- permission tests
-- planner tests
-- recovery tests
-- persistent project-state tests
-- filesystem repository-boundary tests
-- explicit action execution success path
-- explicit high-risk action blocking path
-
-## Release gate
-
+## Verified coverage on v5.1 code
 - TypeScript check: PASS
-- Tests: PASS
-- Build: PASS
-- Permission tests: PASS
-- Explicit action execution tests: PASS
-- Persistent-state tests: PASS
-- Filesystem boundary tests: PASS
-- Critical known regression: NONE on the verified commit
+- production build: PASS
+- existing recovery/project-state/filesystem regression tests: PASS
+- centralized capability/risk mapping tests: PASS
+- high-risk capability default blocking: PASS
+- narrow Founder-approved capability override: PASS
+- planner explicit/fallback capability behavior: PASS
+- explicit action execution and verification path: PASS
 
-## Remaining non-blocking limitations
+## Last GREEN baseline on main
+`15bcf93d8cdd655a0ae7d5a2dd693bd9cc76f90e` (PR #1 squash merge).
 
-- Natural-language action synthesis is not part of the deterministic core; ChatGPT/GitHub currently supplies the reasoning/action-proposal layer.
-- Risk inference in the planner is still keyword-based and should evolve toward typed capabilities.
+## Remaining non-blocking limitation
+Natural-language capability inference is a heuristic fallback. Actual action execution is authorized by explicit typed capability and central policy.
 
-## Decision
-
-The current code is GREEN. The final documentation-only PR head should still pass CI before merge.
+## Merge rule
+GitHub CI on the latest PR head is authoritative for merge readiness. Documentation-only synchronization must not bypass that check.

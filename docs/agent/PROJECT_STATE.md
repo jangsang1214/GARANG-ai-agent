@@ -3,36 +3,27 @@
 Last updated: 2026-09-12
 
 ## Current objective
+Founder OS v5.1 implementation is complete on the code-bearing branch head and has passed CI. The current work unit is synchronizing documentation/version metadata and completing final latest-head verification for PR #2.
 
-Founder OS v5 foundation and the first permission-gated execution layer are implemented and verified. The immediate release task is to merge PR #1 after the final documentation-only head remains GREEN.
-
-## Current branch
-
-`agent/founder-os-v5`
+## Current branch / PR
+`agent/founder-os-v5.1` / PR #2
 
 ## Stable
-
-- Source files are organized under `src/` and tests under `tests/` as required by imports and `tsconfig.json`.
-- GitHub Actions CI #4 passed `npm run verify` for commit `fa371835b07519658dbf64bbfe16c9ce6049b7c9`.
-- Deterministic planner/recovery/permission primitives exist.
-- Explicit typed actions can resolve to registered tools and execute before repository verification.
-- High-risk actions are blocked before tool execution.
-- Filesystem reads/writes are confined to the repository root and covered by tests.
-- Terminal tool uses an allowlist.
-- Persistent project-state documents and session handoff protocol exist under `docs/agent/`.
-- `project-state.ts` can initialize and load persistent state files.
+- PR #1 was squash-merged into `main` as `15bcf93d8cdd655a0ae7d5a2dd693bd9cc76f90e`.
+- Founder OS v5 baseline, persistent state, action execution, repository boundaries, CI, and verification loop are stable on `main`.
+- v5.1 project instructions are 7,688 characters including spaces/newlines.
+- Code-bearing v5.1 commit `b4b733ed7bc6cd8cfc837ceea8bc897c21a8ff2d` passed GitHub Actions CI run #7 (`npm run verify`).
+- Typed capabilities now own execution risk centrally; high-risk capabilities are denied by default and narrow Founder-approved overrides are supported.
 
 ## In progress
-
-- PR #1 is open for review/merge into `main`.
+- Documentation/version synchronization after successful code verification.
+- Final CI check on the latest PR #2 head before merge.
 
 ## Broken / blockers
-
-- No build/test blocker is currently known on this branch.
-- Natural-language-to-action synthesis remains intentionally outside the deterministic core.
+- No known code/test blocker.
+- PR #2 should not merge unless its latest head remains GREEN.
 
 ## Next priorities
-
-1. Merge PR #1 after confirming the final PR head CI remains GREEN.
-2. Improve typed risk/capability classification beyond keyword inference.
-3. Improve runtime persistence only when needed, while keeping GitHub state documents human-readable.
+1. Confirm latest PR #2 head CI GREEN.
+2. Merge PR #2 after Founder approval.
+3. Improve structured runtime persistence only when it creates real value while keeping GitHub docs human-readable.
