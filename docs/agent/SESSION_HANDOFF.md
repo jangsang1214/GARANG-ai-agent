@@ -10,7 +10,7 @@ A chat is a temporary work session. The project must be recoverable from GitHub 
 5. Read `DECISIONS.md`.
 6. Read `TECHNICAL_DEBT.md`.
 7. Read `RELEASE_STATUS.md`.
-8. Inspect GitHub `main`, current branch, recent commits, open PR/issues, and relevant CI.
+8. Inspect Founder OS and product GitHub `main`, current branches, recent commits, open PR/issues, and relevant CI/deployment evidence.
 9. Reconcile documentation with repository evidence. Repository evidence wins for implementation facts.
 10. Label uncertain claims internally as VERIFIED / RECORDED / INFERRED / UNKNOWN.
 11. Select the top 1–3 priorities and proceed with the highest-value authorized safe work.
@@ -29,10 +29,16 @@ Do not paste raw chat logs. Do not turn an unverified claim into a fact merely b
 DONE requires implementation + acceptance criteria + verification evidence + regression consideration + material state synchronization. Otherwise use PARTIAL/YELLOW and name the missing evidence.
 
 ## Current handoff
-- Objective: Founder OS v5.1 baseline and its PR #3 state reconciliation are established; choose the next concrete GARANG work unit from verified needs rather than extending infrastructure by default.
-- Verified code baseline: PR #2 was squash-merged as `ae2106b02605745cc0ac4261c420a04c08b4c679`.
-- Verified PR #2 pre-merge CI: latest head `717453e72b51b79713dc8c24eabbc68efc7b19d3` passed GitHub Actions CI run #8 (`npm run verify`).
-- Verified state reconciliation: PR #3 latest head `8dc06a14353959eb13aae9c8ab6897a209e19fef` passed GitHub Actions CI run #14 and was merged as `97341fcf0240f3c80a5946fbcf50e1266bbb2dfb`.
-- At the 2026-09-12 PROJECT START recovery check, there was no active product/code feature and no open PR or issue before the state-reconciliation branch for this session was created.
-- Technical debt remains: provider/action-synthesis layer (TD-001), process-local runtime memory (TD-002), heuristic fallback capability inference (TD-003).
-- Exact next safe action after state synchronization: select one concrete GARANG product/user/engineering need, start a fresh working branch, define acceptance criteria, implement the smallest safe change, and verify it. Do not implement runtime persistence unless a real workflow demonstrates the need.
+- Workstream: Command Center.
+- Objective: protect the verified product baseline, validate the deployed Golden Path on a real target device, and avoid starting production infrastructure until the Founder selects the next release channel.
+- Founder OS main: `7292f542c25b3cd7fd1fb66f26dbeab437f54311`; push CI #17 GREEN.
+- Product main: `c0fd29e06c4c29f3f504d940a8d2497e84d7c821`; GARANG Release Gate #999 GREEN; Pages deployment #746 successful.
+- Current product version: `0.11.0-beta.5` development build.
+- Automated Golden Path complete journey, Today/Coach/Planner flows, recovery, Firestore rules, Firebase public health, and mobile WebKit regression coverage passed on current product main.
+- Product PR #61 was closed as superseded after confirming it was 142 commits behind main and its latest Release Gate #857 was RED.
+- Historical product PR #1 remains an open draft, 1139 commits behind current main; audit for unique unresolved fixes before closing, never merge it as-is.
+- Production external service endpoints remain intentionally disconnected (`null`), and the reference backend uses process-local `MemoryStore`.
+- AI standalone repos are inactive scaffolds, not the active production path.
+- Release readiness: beta/demo GREEN, commercial production RED, overall Command Center YELLOW.
+- Founder decision required: continue beta/demo learning or intentionally enter commercial-production hardening.
+- Exact next safe task: perform/collect real-device validation evidence for the deployed current main on target iPhone Safari and target in-app browser; if any regression exists, open one narrow reproducible issue before new feature work.
