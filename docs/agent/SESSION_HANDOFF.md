@@ -15,18 +15,18 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff
-- Founder OS v7-lite implementation remains complete and merged across both registered repositories.
-- CONTROL baseline remains GREEN; current state docs record the latest PRODUCT merge evidence.
-- PRODUCT main: `99369b097da5d6655dbc083adf8c8aa1adb9c106` from PR #73 `Unify Today next action ownership`.
-- PR #73 latest head `0029b94ae21f42ca9b4083572d7a337ca261c58f` passed GARANG Release Gate #1046 GREEN before merge.
-- PRODUCT post-merge GARANG Release Gate #1047 is GREEN: `core-build-rules`, complete `browser-webkit`, and final `verify` all passed on main.
-- PRODUCT post-merge Founder OS Event Envelope #94 is GREEN.
-- Today has one canonical visible next-action owner while Golden Path remains sequence truth; duplicate sibling surfaces are suppressed and canonical Record/check-in/execution mutation owners remain unchanged.
-- Verified Golden Path in WebKit: first record → Coach → recovery/check-in → plan → execute → accumulation, including authenticated Coach/recovery and mobile stability suites.
-- No active implementation blocker remains for Today Single Next Action.
-- Next product priorities: real-device Golden Path validation, then Founder release-channel decision.
-- Commercial-production readiness remains separate from beta/development GREEN.
-- Event artifacts are contracts/evidence only; no always-on external consumer exists yet.
+- Commercialization Stage 1 is complete and GREEN on PRODUCT main.
+- PRODUCT current verified main: `ecb7517897080b01ee81b717882826a061ae1df0` from PR #87 `Stage 1: make Coach decision-first without changing approval ownership`.
+- Stage 1 chain: PR #80 audit -> PR #83 analytics contract -> PR #84 workout Record prefill -> PR #87 Coach decision-first UX.
+- PR #87 head `5d54d90f9f68167961130dad24812303d82f84de` passed complete GARANG Release Gate #1092 GREEN before merge.
+- PRODUCT post-merge Release Gate #1093 is GREEN: core/build/security/Firebase/Firestore, complete WebKit regression, Today, Planner, Golden Path complete journey, authenticated Coach/recovery, Settings touch, mobile button health, runtime stability and final verify all passed.
+- PRODUCT post-merge Founder OS Event Envelope #201 is GREEN.
+- Stage 1 preserved existing Record/Coach/Planner/Today mutation ownership and introduced no production provider, secret, payment integration, destructive migration or architecture rewrite.
+- Today remains single-next-action; Coach remains user-facing judgment/approval owner; Planner remains execution/evidence surface.
+- Stage 2 is now active. First target is Plan-vs-Actual / Adaptive Loop v1: derive explainable execution outcome and bounded next-plan adjustment from existing canonical Daily Plan + actual workout/recovery/nutrition evidence.
+- Stage 2 v1 must remain provider-free, must not silently write plans, and must keep Coach approval ownership.
+- Real-device target iPhone/in-app-browser validation remains outstanding.
+- Commercial-production readiness remains separate and RED until production backend/data durability, payment/entitlement, monitoring, provider configuration, legal/privacy/retention, staging/security and real-device gates are completed.
 
 ## Handoff rule
-Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state/graph synchronization.
+Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization.
