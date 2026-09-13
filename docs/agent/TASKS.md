@@ -45,36 +45,44 @@ Acceptance criteria:
 - Golden Path complete journey remains GREEN. ✅
 - Authenticated Coach/recovery flows remain GREEN. ✅
 - Mobile button health and runtime stability remain GREEN. ✅
-- Post-merge PRODUCT Release Gate #1093 on `ecb7517897080b01ee81b717882826a061ae1df0` is GREEN. ✅
-Evidence: PR #80 `aac1eeb...`; PR #83 `33a7a422...`; PR #84 `0503979e...`; PR #87 `ecb75178...`; pre-merge Gate #1092 GREEN; post-merge Gate #1093 GREEN; Founder OS event #201 GREEN.
+Evidence: PR #80 `aac1eeb...`; PR #83 `33a7a422...`; PR #84 `0503979e...`; PR #87 `ecb75178...`; post-merge Gate #1093 GREEN.
 
 ## P4 — Stage 2 Plan-vs-Actual / Adaptive Loop v1
-Status: IN PROGRESS
+Status: DONE
 Owner: AI Data / Product / Engineering / Release QA
-Goal: convert actual execution outcomes into an explainable adaptation signal that can change the next Daily Plan.
 Acceptance criteria:
-- Compare canonical Daily Plan intent with actual workout/recovery/nutrition evidence using existing stored data.
-- Produce explicit interpretation: completed / partial / missed / recovery-constrained / insufficient-evidence where supported.
-- Produce a bounded next-plan adjustment recommendation with evidence and no silent write.
-- Coach remains the user-facing judgment/approval owner for behavior-changing plan changes.
-- No new external provider, secret, or production endpoint required for v1.
-- Golden Path and existing Stage 1 regressions remain GREEN.
-- Outcome/adaptation output has deterministic tests.
+- Compare canonical Daily Plan intent with actual workout/recovery/nutrition evidence using existing stored data. ✅
+- Produce explicit interpretation: completed / partial / missed / recovery-constrained / insufficient-evidence where supported. ✅
+- Produce a bounded next-plan adjustment recommendation with evidence and no silent write. ✅
+- Coach remains the user-facing judgment/approval owner for behavior-changing plan changes. ✅
+- Confirmed/user-edited plan ownership is preserved; no automatic progression increase. ✅
+- No new external provider, secret, or production endpoint required for v1. ✅
+- Golden Path and Stage 1 regressions remain GREEN. ✅
+- Outcome/adaptation output has deterministic tests. ✅
+Evidence: PR #88 merged as `c68ec3e915ae437dac35fbc1a9a39fc4ca6f6dbf`; complete Release Gate #1094 GREEN.
 
 ## P5 — Weekly Review driven by real outcome signals
-Status: TODO / AFTER ADAPTIVE LOOP V1
-Owner: Product / AI Data / Design Brand
-Acceptance criteria: weekly review summarizes planned vs actual, recovery/nutrition context, one explainable GARANG insight and one next-week adjustment without becoming a duplicate dashboard.
+Status: DONE
+Owner: Product / AI Data / Design Brand / Release QA
+Acceptance criteria:
+- Weekly Review consumes the canonical Plan-vs-Actual/adaptation evidence instead of a parallel model. ✅
+- Summarizes planned vs actual plus recovery/nutrition context. ✅
+- Produces one explainable GARANG insight and one bounded next-week adjustment. ✅
+- Remains read-only with no silent mutation or automatic progression increase. ✅
+- Behavior-changing adjustment requires Coach approval. ✅
+- Does not add a duplicate dashboard, router owner, persistence path or new screen. ✅
+- Full PRODUCT regression and post-merge Release Gate remain GREEN. ✅
+Evidence: PR #90 merged as `5f3d30e877e31d219623ebd521226e49265b46bf`; pre-merge Gate #1097 GREEN; post-merge Gate #1098 GREEN; Founder OS Event #214 GREEN.
 
 ## P1 — Validate deployed Golden Path on real target device
 Status: TODO
 Owner: Release QA + Product + Design Brand
-Acceptance criteria: target iPhone Safari/in-app browser completes Today->Record->Coach->plan->execution->persistence->Accumulation with no critical clipping/runtime failure.
+Acceptance criteria: target iPhone Safari/in-app browser completes Today->Record->Coach->plan->execution->persistence->Accumulation with no critical clipping/runtime failure, and Stage 2 adaptation/Weekly Review context is consistent with stored outcomes.
 
 ## P2 — Commercial production hardening
-Status: TODO / SEPARATE FROM STAGE 2
-Owner: Engineering + AI Data + Growth Business + Release QA
-Scope includes durable production backend/data, entitlement/payment, monitoring, production provider configuration, legal/privacy/retention gates and staging/security verification.
+Status: FOUNDER DECISION REQUIRED
+Owner: Founder / Engineering / AI Data / Growth Business / Release QA
+Scope: durable production backend/data, entitlement/payment, monitoring, production provider configuration, legal/privacy/retention gates and staging/security verification. This scope is separate from Stage 2 and must not be activated implicitly.
 
 ## P6 — Always-on external Founder OS runtime
 Status: DEFERRED
