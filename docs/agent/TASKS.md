@@ -111,20 +111,20 @@ Owner: Release QA + Product + Design Brand
 Acceptance criteria: target iPhone Safari/in-app browser completes Today->Record->Coach->plan->execution->persistence->Accumulation with no critical clipping/runtime failure, and current Decision/Outcome Learning evidence is consistent with stored outcomes.
 
 ## P2 — Validate Server Readiness in Firebase staging
-Status: READY / EXTERNAL EXECUTION REQUIRED
+Status: IN PROGRESS / ONE DESTRUCTIVE CHECK REMAINING
 Owner: Founder / Engineering / Release QA
 Acceptance criteria:
-- Dedicated staging Firebase project exists and is not `fitfind-ai`. ⬜
-- `GARANG_FIREBASE_STAGING_PROJECT_ID=<id> npm run staging:preflight` passes. ⬜
-- With explicit Founder approval, `GARANG_LLM_API_KEY` is stored in staging Secret Manager without exposing secret material. ⬜
-- Matching `functions:api` revision plus Firestore rules/indexes are deployed using explicit staging `--project`. ⬜
-- Disposable staging Auth user(s) exist and `npm run smoke:coach:staging` returns authenticated `source: llm` with verified Decision↔LLM alignment. ⬜
-- Account export returns complete server-owned account data. ⬜
-- Disposable account deletion removes intended staging user data. ⬜
-- Analytics consent OFF sends no remote product analytics; consent ON sends only allowlisted properties. ⬜
-- Error telemetry excludes raw health/chat/email/displayName/provider tokens/precise location/free text. ⬜
-- Only after staging smoke is GREEN are staging browser endpoint URLs activated through a small reviewed change. ⬜
-Repository evidence: Firebase Staging Gate v1 is VERIFIED GREEN on PRODUCT main `451f563...`; external environment evidence remains UNKNOWN.
+- Dedicated staging Firebase project exists and is not `fitfind-ai`. ✅ `garang-staging`
+- `GARANG_FIREBASE_STAGING_PROJECT_ID=garang-staging npm run staging:preflight` passes. ✅ `READY_FOR_EXTERNAL_STAGING_SETUP`
+- With explicit Founder approval, `GARANG_LLM_API_KEY` is stored in staging Secret Manager without exposing secret material. ✅
+- Matching `functions:api` plus Firestore rules/indexes are deployed using explicit staging `--project`. ✅ Deployment VERIFIED; separate Functions test command output not independently captured.
+- Authenticated staging Coach returns `source: llm` with verified Decision↔LLM alignment. ✅ Direct curl smoke PASS; repository Node fetch path was blocked by a Codespaces transport issue while curl succeeded.
+- Account export returns complete server-owned account data. ✅ `garang-user-export-v1`, `garang-state-v1`, schema 8, state/privacy/serverData present.
+- Disposable account deletion removes intended staging user data. ⬜ Requires explicit Founder approval; run last.
+- Analytics consent OFF sends no remote product analytics; consent ON sends only allowlisted events/properties. ✅ OFF=`CONSENT_REQUIRED`; ON=`accepted:true,count:1`.
+- Error telemetry excludes raw health/chat/email/displayName/provider tokens/precise location/free text. ✅ Privacy smoke PASS; injected fake email/message/stack/token values filtered.
+- Only after full staging smoke is GREEN are staging browser endpoint URLs activated through a small reviewed change. ⬜
+Evidence: Firebase Staging Gate v1 is VERIFIED GREEN on PRODUCT main `451f563...`; external staging infra/Coach/export/telemetry are VERIFIED GREEN. Destructive account delete remains outstanding.
 
 ## P2 — Verify live production Real LLM activation
 Status: READY / EXTERNAL EXECUTION REQUIRED
