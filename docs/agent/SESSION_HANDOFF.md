@@ -23,16 +23,18 @@
 - Functions deployment is VERIFIED; a separate `npm test --prefix functions` output was not directly captured and must not be promoted to VERIFIED.
 - Disposable delete endpoint and subsequent Auth deletion passed. An additional Firestore REST post-read returned HTTP 401 because the ad-hoc admin token was invalid; keep that auxiliary check INCONCLUSIVE rather than treating it as either PASS or deletion failure.
 - Codespaces Node `fetch` experienced ETIMEDOUT/IPv6 ENETUNREACH while curl to the same staging Cloud Function succeeded; treat it as an execution-environment issue.
+- Founder-run real-device validation has started on a real iPhone using Chrome on iOS. VERIFIED path: deployed app opens -> onboarding opens/completes -> Today renders -> first record completes -> Coach interpretation/feedback appears and behaves normally.
+- Do not promote the full real-device task to DONE yet: plan -> execution -> persistence -> Accumulation and a target in-app browser remain directly unverified.
 - GARANG deterministic Decision Intelligence remains the judgment owner; LLM output remains explanation/orchestration only and cannot mutate state directly.
 - Outcome Learning remains bounded/read-only with no automatic progression increase.
-- Real-device target iPhone/in-app-browser Golden Path validation remains outstanding and is the highest-priority unresolved product/release gate.
 - Live production Real LLM activation remains UNKNOWN.
-- Commercial-production readiness remains RED until real-device, payment/entitlement, monitoring, production provider/endpoints and legal/privacy/retention gates are completed.
+- Commercial-production readiness remains RED until full real-device, payment/entitlement, monitoring, production provider/endpoints and legal/privacy/retention gates are completed.
 
 ## Next recommended work
-1. Run the deployed Golden Path on target real iPhone/Safari and target in-app browser and capture evidence.
-2. If end-to-end staging browser validation is needed, create a separate staging browser config/deployment targeting `garang-staging`; do not replace committed production Firebase config.
-3. Keep production privileged endpoint activation, production Functions deployment and commercial release as separate explicit Founder decisions.
+1. Continue the same iPhone journey from Coach through plan -> execution -> persistence -> Accumulation and capture only pass/fail evidence.
+2. Repeat the Golden Path in the target in-app browser.
+3. If end-to-end staging browser validation is needed, create a separate staging browser config/deployment targeting `garang-staging`; do not replace committed production Firebase config.
+4. Keep production privileged endpoint activation, production Functions deployment and commercial release as separate explicit Founder decisions.
 
 ## Handoff rule
 Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization.

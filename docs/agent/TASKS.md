@@ -85,12 +85,17 @@ Acceptance criteria:
 Evidence: PRODUCT PR #103 merged as `419e947aaeec3f74e3c79b86a68362915b0c88d2`; pre-merge Gate #1220 + Event #478 GREEN; post-merge Gate #1221 + Event #480 GREEN; Pages deployment #770 GREEN.
 
 ## P1 — Validate deployed Golden Path on real target device
-Status: TODO
+Status: IN PROGRESS / PARTIAL GREEN
 Owner: Release QA + Product + Design Brand
 Acceptance criteria:
-- Target iPhone Safari and target in-app browser complete Today -> Record -> Coach -> plan -> execution -> persistence -> Accumulation.
-- No critical clipping, overlap, broken navigation or runtime failure.
-- Current Decision/Outcome Learning evidence remains consistent with stored outcomes.
+- Real iPhone Chrome opens the deployed GARANG start/login surface normally. ✅
+- Onboarding completes and reaches Today on the real iPhone. ✅
+- First record completes and Coach interpretation/feedback appears normally. ✅
+- Continue from Coach through plan -> execution -> persistence -> Accumulation. ⏳
+- Repeat the Golden Path in the target in-app browser. ⏳
+- No critical clipping, overlap, broken navigation or runtime failure across the completed target surfaces. ⏳
+- Current Decision/Outcome Learning evidence remains consistent with stored outcomes through the completed journey. ⏳
+Evidence: Founder-run real iPhone Chrome validation on 2026-09-15 is GREEN through app load -> onboarding -> Today -> first record -> Coach. Do not promote the remaining deeper journey or in-app-browser path to VERIFIED until directly exercised.
 
 ## P2 — Deploy and verify a separate staging browser client
 Status: READY / EXTERNAL CONFIGURATION REQUIRED

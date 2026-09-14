@@ -3,7 +3,7 @@
 Last updated: 2026-09-15
 
 ## Current objective
-Protect the verified Golden Path while moving from repository/server readiness into real-device validation. The isolated Firebase staging server path is GREEN, and PRODUCT now contains a fail-closed browser service boundary that exposes privileged account/telemetry endpoints only when the loaded Firebase browser config identifies the exact staging project `garang-staging`. Production `fitfind-ai` remains disabled for those privileged routes. Target real-device Golden Path validation remains the highest-value unresolved gate.
+Protect the verified Golden Path while moving from repository/server readiness into real-device validation. The isolated Firebase staging server path is GREEN, and PRODUCT now contains a fail-closed browser service boundary that exposes privileged account/telemetry endpoints only when the loaded Firebase browser config identifies the exact staging project `garang-staging`. Production `fitfind-ai` remains disabled for those privileged routes. Real-device validation has now started with a Founder-run iPhone Chrome pass through app load, onboarding, Today, first record and Coach; deeper plan/execution/persistence/Accumulation and target in-app-browser evidence remain unresolved.
 
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`; Founder OS v7-lite remains the control plane.
@@ -11,6 +11,12 @@ Protect the verified Golden Path while moving from repository/server readiness i
 - PRODUCT PR #103 pre-merge Release Gate #1220: GREEN; Founder OS Event #478: GREEN.
 - PRODUCT exact post-merge main `419e947...`: Release Gate #1221 GREEN through core/build/security/Firebase/Firestore, WebKit Golden Path, authenticated Coach, Real LLM, recovery, mobile regressions, runtime stability and final verify; Event #480 GREEN; GitHub Pages deployment #770 GREEN.
 - Prior baselines remain preserved: Server Readiness Stage 0 PR #101 (`b2ddbf4e...`) and Firebase Staging Gate v1 PR #102 (`451f5639...`) were fully GREEN before PR #103.
+
+## Real-device evidence
+- Founder opened the deployed GitHub Pages app on a real iPhone using Chrome on iOS and confirmed the GARANG start/login surface rendered normally.
+- Founder entered onboarding successfully and reached Today without reporting navigation or rendering failure.
+- Founder completed a first record and confirmed the Coach interpretation/feedback surface appeared and the exercised flow behaved normally.
+- This is VERIFIED only for the exercised iPhone Chrome path above. The full acceptance path through plan -> execution -> persistence -> Accumulation, plus a target in-app browser, remains outstanding.
 
 ## Firebase staging evidence
 - Dedicated staging project: `garang-staging`; production project: `fitfind-ai`.
@@ -41,13 +47,14 @@ Protect the verified Golden Path while moving from repository/server readiness i
 - Production privileged endpoint activation, production Functions deployment, payments and commercial release remain separate Founder decisions.
 
 ## In progress / unknowns
-- P1 real-device Golden Path validation on target iPhone Safari and target in-app browser remains outstanding.
+- P1 real-device Golden Path validation is IN PROGRESS: iPhone Chrome load/onboarding/Today/first-record/Coach is GREEN; plan/execution/persistence/Accumulation and target in-app browser remain outstanding.
 - A separately configured/deployed staging browser client using `garang-staging` has not yet been VERIFIED; PR #103 provides the safe activation mechanism, not that deployment.
 - Live production Real LLM environment evidence remains UNKNOWN.
-- Commercial-production readiness remains RED pending real-device, payment/entitlement, monitoring, legal/privacy/retention and production gates.
+- Commercial-production readiness remains RED pending full real-device completion, payment/entitlement, monitoring, legal/privacy/retention and production gates.
 - PRODUCT main branch governance hardening remains a separate deliberate Founder decision.
 
 ## Next priorities
-1. P1 — Validate the deployed Golden Path on target real iPhone/Safari and target in-app browser.
-2. P2 — If browser-path staging verification is still required, create a separate staging browser config/deployment without replacing committed production Firebase config, then exercise export/delete/telemetry through the real browser surface.
-3. P2 — Keep production Real LLM/privileged endpoint activation and commercial hardening as separate explicit Founder decisions.
+1. P1 — Continue the same real iPhone journey from Coach through plan -> execution -> persistence -> Accumulation and verify no critical mobile/runtime failure.
+2. P1 — Repeat the Golden Path in the target in-app browser and capture only pass/fail evidence.
+3. P2 — If browser-path staging verification is still required, create a separate staging browser config/deployment without replacing committed production Firebase config, then exercise export/delete/telemetry through the real browser surface.
+4. Keep production Real LLM/privileged endpoint activation and commercial hardening as separate explicit Founder decisions.
