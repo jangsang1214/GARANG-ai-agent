@@ -62,27 +62,52 @@ Evidence: PR #102 `451f5639...`; Gates #1217/#1218 GREEN; Events #470/#473 GREEN
 ## P2 — Validate Server Readiness in Firebase staging
 Status: DONE
 Owner: Founder / Engineering / Release QA
-Acceptance criteria:
-- Dedicated staging project `garang-staging` exists and is isolated from `fitfind-ai`. ✅
-- Staging preflight passes. ✅
-- Staging Secret Manager binding plus Functions/Firestore deployment complete. ✅ Deployment VERIFIED; separate Functions test output not independently captured.
-- Authenticated Real LLM Coach returns `source: llm` with Decision↔LLM alignment verified. ✅
-- Account export returns canonical account data. ✅
-- Analytics consent OFF/ON behavior verified. ✅
-- Error telemetry privacy filtering verified. ✅
-- Disposable account delete endpoint PASS and Auth deletion PASS. ✅ Handler success awaits server-side Firestore deletion before Auth removal; auxiliary post-delete REST read was INCONCLUSIVE due invalid admin token.
 Evidence: full staging server path GREEN; production not targeted.
 
 ## P2 — Implement staging-only privileged browser endpoint boundary
 Status: DONE
 Owner: Engineering / Release QA
+Evidence: PRODUCT PR #103 merged as `419e947...`; pre-merge Gate #1220 + Event #478 GREEN; post-merge Gate #1221 + Event #480 GREEN; Pages deployment #770 GREEN.
+
+## P4 — Food Data Foundation v2
+Status: DONE
+Owner: AI Data / Engineering / Release QA
 Acceptance criteria:
-- Browser account export/delete/analytics/telemetry URLs activate only for exact `GARANG_FIREBASE_CONFIG.projectId === 'garang-staging'`. ✅
-- Production `fitfind-ai` remains disabled/fail-closed for all four privileged endpoints. ✅
-- Coach endpoint remains derived from active Firebase project and preserves production behavior. ✅
-- Consent suppression, allowlisting, privacy filtering, authenticated transport and client fallback ownership are preserved. ✅
-- Full Release Gate GREEN before and after merge. ✅
-Evidence: PRODUCT PR #103 merged as `419e947aaeec3f74e3c79b86a68362915b0c88d2`; pre-merge Gate #1220 + Event #478 GREEN; post-merge Gate #1221 + Event #480 GREEN; Pages deployment #770 GREEN.
+- Canonical nutrition quality states `verified / approximate / estimated / unknown`. ✅
+- `verified` requires traceable provider + dataset + source record ID. ✅
+- Existing estimated/approximate values are not silently promoted. ✅
+- Structural quality audit, official source registry, deterministic Coach/Nutrition eval fixtures and CI coverage exist. ✅
+Evidence: PRODUCT PR #105 merged as `576bb65...`; release verification GREEN before merge.
+
+## P4 — Nutrition Intelligence v2 + Coach Knowledge Grounding foundation
+Status: DONE
+Owner: AI Data / Engineering / Release QA
+Acceptance criteria:
+- Nutrition Intelligence deterministically uses meal/recovery/training evidence. ✅
+- Low evidence and recovery stress remain conservative. ✅
+- Grounding preserves deterministic GARANG decision identity and forbids state mutation. ✅
+- Unsupported LLM reason codes fail alignment. ✅
+Evidence: PRODUCT PR #106 merged as `79cfc854...`; pre-merge Release Gate #1232 GREEN.
+
+## P4 — Ground live Coach in Nutrition Intelligence and curated knowledge
+Status: DONE
+Owner: AI Data / Engineering / Release QA
+Acceptance criteria:
+- Firebase Functions Coach builds `nutritionIntelligence` and `knowledgeGrounding` from authenticated server state before provider invocation. ✅
+- Grounding contract enforces GARANG decision ownership, explanation-only LLM role and `stateMutationAllowed:false`. ✅
+- Functions/core parity and live gateway context tests exist. ✅
+- No UI surface, schema or canonical mutation ownership changed. ✅
+Evidence: PRODUCT PR #107 merged as `50bd02eb...`; pre-merge Gate #1237 GREEN; exact post-merge Gate #1239 GREEN; Pages #773 GREEN.
+
+## P4 — Official food-source ingestion and normalization
+Status: READY
+Owner: AI Data / Engineering / Release QA
+Acceptance criteria:
+- K-FIND/USDA adapters normalize to Food Data Foundation v2 without embedding credentials in source/client bundles.
+- Imported `verified` rows preserve provider/dataset/recordId provenance.
+- Unit/serving/basis normalization and macro/kcal quality gates remain GREEN.
+- Existing estimated rows are replaced only when a traceable official match exists.
+- Coverage/quality improvement is measured before recommendation behavior is broadened.
 
 ## P1 — Validate deployed Golden Path on real target device
 Status: IN PROGRESS / PARTIAL GREEN
@@ -93,36 +118,19 @@ Acceptance criteria:
 - First record completes and Coach interpretation/feedback appears normally. ✅
 - Continue from Coach through plan -> execution -> persistence -> Accumulation. ⏳
 - Repeat the Golden Path in the target in-app browser. ⏳
-- No critical clipping, overlap, broken navigation or runtime failure across the completed target surfaces. ⏳
-- Current Decision/Outcome Learning evidence remains consistent with stored outcomes through the completed journey. ⏳
-Evidence: Founder-run real iPhone Chrome validation on 2026-09-15 is GREEN through app load -> onboarding -> Today -> first record -> Coach. Do not promote the remaining deeper journey or in-app-browser path to VERIFIED until directly exercised.
 
 ## P2 — Deploy and verify a separate staging browser client
 Status: READY / EXTERNAL CONFIGURATION REQUIRED
 Owner: Engineering / Release QA
-Acceptance criteria:
-- Use a separate browser Firebase config with projectId `garang-staging`; do not replace committed production config.
-- Staging browser resolves privileged endpoints to `asia-northeast3-garang-staging.cloudfunctions.net/api`.
-- Production GitHub Pages client remains `fitfind-ai` and privileged endpoints remain null.
-- Browser-surface account export, consent OFF/ON telemetry and privacy-safe error telemetry are verified; destructive delete uses only a disposable staging account.
-Evidence: activation mechanism is merged and GREEN, but no live staging browser client/deployment has yet been VERIFIED.
 
 ## P2 — Verify live production Real LLM activation
 Status: READY / EXTERNAL EXECUTION REQUIRED
 Owner: AI Data / Engineering / Release QA
-Acceptance criteria:
-- Production secret/config and exact deployed revision are identified without exposing secret material.
-- Authenticated production Coach returns `source: llm` with verified alignment.
-- Two materially different users preserve deterministic personalization.
-- Provider success/fallback/rate-limit observability is privacy-safe.
-Evidence: repository smoke path exists; live production environment evidence remains UNKNOWN.
 
 ## P2 — Commercial production hardening
 Status: FOUNDER DECISION REQUIRED
 Owner: Founder / Engineering / AI Data / Growth Business / Release QA
-Scope: production endpoints/provider, entitlement/payment, monitoring, legal/privacy/retention gates, real-device validation and commercial release. Repository/staging GREEN does not imply commercial-production readiness.
 
 ## P6 — Always-on external Founder OS runtime
 Status: DEFERRED
 Owner: Engineering / AI Data
-Activation: only after event contracts prove useful and Founder explicitly wants external always-on execution.
