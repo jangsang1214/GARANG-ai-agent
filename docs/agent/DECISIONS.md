@@ -45,3 +45,21 @@ Date: 2026-09-12
 Decision: GitHub events are normalized into versioned envelopes and routing directives, but no event grants authority or independently wakes ChatGPT.
 Reason: Preserve an API-key-free, testable control plane while creating a stable boundary for a future webhook/provider runtime.
 Impact: Future always-on automation should consume the existing event contract and capability policy rather than bypass them.
+
+## D-011 — GARANG decisions are machine-aligned before LLM explanations are accepted
+Date: 2026-09-14
+Decision: Real LLM Coach output must structurally echo the active deterministic GARANG `decisionId`, `decisionMode`, and only supported reason codes. Decision reversal or unsupported provider reasoning is rejected before an LLM success is surfaced.
+Reason: Prompt instructions alone are not a sufficient decision-ownership boundary.
+Impact: `GARANG decides → LLM explains → User confirms → GARANG acts` is enforced as a runtime contract rather than only product guidance.
+
+## D-012 — Longitudinal Outcome Learning may constrain progression but cannot create automatic progression increases
+Date: 2026-09-14
+Decision: Outcome Learning v2 may use sufficient longitudinal execution/recovery evidence to suppress progression or prefer reduced load, but cannot automatically increase progression or silently mutate user state.
+Reason: Early/beta outcome data is useful for conservative personalization but is not sufficient evidence for aggressive autonomous optimization.
+Impact: The system can learn from repeated execution gaps and recovery constraints while preserving user confirmation and avoiding overfitting.
+
+## D-013 — Repository readiness and live production provider readiness are separate evidence states
+Date: 2026-09-14
+Decision: A GREEN Real LLM code/CI baseline does not establish that the production provider is live. Secret/config presence, deployed revision, authenticated live `source: llm`, production personalization smoke and observability require separate target-environment verification.
+Reason: Deployment/config evidence cannot be inferred from source code or browser-mocked integration tests.
+Impact: Live Real LLM activation remains YELLOW/UNKNOWN until the canonical production smoke passes in the target environment.
