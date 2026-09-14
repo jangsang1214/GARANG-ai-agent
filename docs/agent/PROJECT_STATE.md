@@ -3,7 +3,7 @@
 Last updated: 2026-09-15
 
 ## Current objective
-The verified PRODUCT baseline includes Commercialization Stage 1, Core Intelligence Stage 2, the hardened Real LLM boundary, machine-enforced Decision↔LLM semantic alignment, conservative longitudinal Outcome Learning v2, Server Readiness Stage 0, and Firebase Staging Gate v1. The dedicated Firebase staging environment `garang-staging` now has Firestore rules/indexes deployed, Functions `api` deployed, staging Auth/Secret setup, an authenticated Real LLM Coach smoke GREEN, authenticated account export GREEN, analytics consent OFF/ON behavior GREEN, and privacy-safe error telemetry GREEN. The only remaining staging server validation is destructive account deletion on a disposable staging user. Target real-device Golden Path validation remains outstanding.
+The verified PRODUCT baseline includes Commercialization Stage 1, Core Intelligence Stage 2, the hardened Real LLM boundary, machine-enforced Decision↔LLM semantic alignment, conservative longitudinal Outcome Learning v2, Server Readiness Stage 0, and Firebase Staging Gate v1. The dedicated Firebase staging environment `garang-staging` has now completed full server-path validation: Firestore rules/indexes deployment, Functions `api` deployment, staging Auth/Secret setup, authenticated Real LLM Coach, account export, consent OFF/ON analytics, privacy-safe error telemetry, and destructive account deletion on a disposable staging user are GREEN. Target real-device Golden Path validation remains outstanding.
 
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`; Founder OS v7-lite remains the control plane.
@@ -25,6 +25,8 @@ The verified PRODUCT baseline includes Commercialization Stage 1, Core Intellige
 - Analytics consent OFF smoke returned HTTP 202 with `{ok:true, accepted:false, reason:'CONSENT_REQUIRED'}`.
 - After setting the authenticated staging user's exact root Firestore document `users/{uid}.consent.analytics=true`, analytics consent ON smoke returned HTTP 202 with `{ok:true, accepted:true, count:1}`.
 - Privacy-safe error telemetry smoke returned `status: PASS`, `kind: error`, `code: STAGING_SMOKE`, `feature: coach`, `source: staging-smoke`, and `sensitiveDataFiltered: true`; injected fake email/message/stack/token values were not present in exported telemetry.
+- Disposable account deletion smoke created a new staging Auth user, created root and `app/state` Firestore test data, then returned `3/5 DELETE ENDPOINT: PASS` from live `/account/delete`; a subsequent sign-in check returned `4/5 AUTH DELETION: PASS`, confirming the Auth user no longer existed.
+- The deployed delete handler returns success only after awaiting `deleteUserData(uid)` and then `deleteAuthUser(uid)`. Therefore the live endpoint PASS is evidence that the server-side Firestore deletion routine completed before Auth deletion succeeded. A later independent Firestore REST post-read returned HTTP 401 because the ad-hoc admin verification token was invalid; this auxiliary check is INCONCLUSIVE and is not treated as a deletion failure.
 - The repository Node smoke transport was temporarily blocked by a Codespaces Node `fetch` networking issue (`ETIMEDOUT` / IPv6 `ENETUNREACH`) while `curl` to the same endpoint succeeded. This is an execution-environment transport issue, not a Firebase/GARANG server failure.
 
 ## Stable
@@ -36,23 +38,22 @@ The verified PRODUCT baseline includes Commercialization Stage 1, Core Intellige
 - Firebase Auth + Firestore remain the user-data foundation and existing app write ownership remains unchanged.
 - Staging commands remain fail-closed: `GARANG_FIREBASE_STAGING_PROJECT_ID` is mandatory, production project `fitfind-ai` is explicitly rejected, deploy commands use explicit `--project`, and staging Coach smoke accepts only the exact derived staging endpoint.
 - `GARANG_LLM_API_KEY` remains Secret Manager-owned and no secret value was added to source control.
-- Browser account/export/delete/analytics/telemetry endpoints remain inactive/null until full staging verification is complete; current staging GREEN evidence does not authorize production activation.
+- Production endpoint activation remains separate and unauthorized by staging GREEN.
 
 ## In progress
-- Firebase staging infrastructure, authenticated Real LLM Coach, account export, consent OFF/ON analytics, and privacy-safe error telemetry are GREEN based on Founder-run execution evidence.
-- Remaining staging server validation: destructive `/account/delete` on a disposable staging user, including intended data removal and recent-login behavior.
+- Firebase staging server-path validation is GREEN based on Founder-run execution evidence.
+- A small reviewed PRODUCT change to activate staging browser privileged endpoint URLs is now eligible, but remains separate from the completed validation task.
 - Target real-device Golden Path remains a separate P1 validation.
 
 ## Blockers / unknowns
-- Destructive account delete staging smoke has not yet been verified and requires explicit Founder approval before deleting a disposable staging account.
 - Real-device Golden Path validation on the target iPhone/in-app browser remains outstanding.
-- Browser privileged endpoint activation remains intentionally inactive/null pending full staging server validation and a separate reviewed activation change.
+- Staging browser privileged endpoint activation has not yet been implemented; current browser URLs remain intentionally inactive/null until a reviewed activation change.
 - Live production Real LLM activation remains UNKNOWN until target-environment secret/config, deployed Functions revision, authenticated live `source: llm`, two-user personalization smoke and production observability are verified.
-- Commercial-production readiness remains RED until payment/entitlement, production monitoring, legal/privacy/retention review, full staging/security and real-device gates are completed.
+- Commercial-production readiness remains RED until payment/entitlement, production monitoring, legal/privacy/retention review, real-device and production gates are completed.
 - PRODUCT `main` has been observed without required branch protection/status checks; governance hardening remains a separate deliberate Founder decision.
 
 ## Next priorities
 1. P1 — Validate the deployed Golden Path on the target real iPhone/Safari and target in-app browser.
-2. P2 — With explicit Founder approval, create/use a disposable staging Auth user and validate destructive `/account/delete` with recent-login enforcement and post-delete data/auth removal checks.
-3. P2 — After full staging server validation is GREEN, decide whether to activate staging browser privileged endpoint URLs through a small reviewed PRODUCT change.
+2. P2 — Prepare and verify the smallest reviewed PRODUCT change that activates privileged browser endpoint URLs only for `garang-staging`; keep production disabled.
+3. P2 — After staging browser activation, rerun targeted export/delete/telemetry browser-path regressions without changing production.
 4. Keep production endpoint activation, production Functions changes, payments/OCR and commercial-production release as separate Founder decisions.

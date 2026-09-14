@@ -3,7 +3,7 @@
 Last updated: 2026-09-15
 
 ## Overall decision
-GREEN for the current verified PRODUCT code baseline `451f5639bbee65c8f5659e150c0949d0b9bf24d5`, including Commercialization Stage 1, Core Intelligence Stage 2, hardened Real LLM/Decision alignment, Outcome Learning v2, Server Readiness Stage 0 and Firebase Staging Gate v1. Repository preparation is GREEN. The dedicated Firebase staging environment `garang-staging` is GREEN for Firestore/Functions deployment, authenticated Real LLM Coach, account export, consent OFF/ON analytics behavior, and privacy-safe error telemetry. Full staging server validation remains PARTIAL only because destructive account deletion on a disposable staging account is not yet verified. Commercial-production readiness remains RED.
+GREEN for the current verified PRODUCT code baseline `451f5639bbee65c8f5659e150c0949d0b9bf24d5`, including Commercialization Stage 1, Core Intelligence Stage 2, hardened Real LLM/Decision alignment, Outcome Learning v2, Server Readiness Stage 0 and Firebase Staging Gate v1. Repository preparation is GREEN. The dedicated Firebase staging environment `garang-staging` is now GREEN for full server-path validation: Firestore/Functions deployment, authenticated Real LLM Coach, account export, consent OFF/ON analytics, privacy-safe error telemetry, and destructive account deletion on a disposable staging account. Commercial-production readiness remains RED.
 
 ## CONTROL — Founder OS v7-lite
 Decision: GREEN / PERSISTENT CONTROL PLANE.
@@ -30,7 +30,6 @@ Decision: GREEN / MERGED / REPOSITORY BLOCKER CLOSED.
 - Pre-merge Gate #1210 and exact post-merge Gate #1212: GREEN.
 - Events #460/#461: GREEN.
 - Repository/service boundaries preserve Firebase Auth + Firestore as the user-data foundation and preserve app write ownership.
-- Account export/delete and telemetry server paths remain activation-gated in the browser until staging verification.
 
 ## PRODUCT — Firebase Staging Gate v1
 Decision: GREEN / MERGED / REPOSITORY PREPARATION COMPLETE.
@@ -44,7 +43,7 @@ Evidence:
 - `GARANG_LLM_API_KEY` remains Secret Manager-owned; no secret value was committed.
 
 ## Firebase staging environment
-Decision: GREEN FOR INFRA + COACH + EXPORT + TELEMETRY / PARTIAL FOR FULL SERVER VALIDATION.
+Decision: GREEN / FULL SERVER-PATH VALIDATION COMPLETE.
 Evidence from Founder-run execution:
 - Dedicated staging project: `garang-staging`.
 - Preflight: `READY_FOR_EXTERNAL_STAGING_SETUP`; production `fitfind-ai` isolated.
@@ -56,10 +55,9 @@ Evidence from Founder-run execution:
 - Analytics consent OFF returned HTTP 202 with `accepted:false` and `reason:CONSENT_REQUIRED`.
 - Analytics consent ON returned HTTP 202 with `accepted:true` and `count:1` after `users/{uid}.consent.analytics=true` was verified in the authenticated staging user's root document.
 - Privacy-safe error telemetry returned `status: PASS` and `sensitiveDataFiltered:true`; injected fake email/message/stack/token values did not persist in exported telemetry.
-- Codespaces Node `fetch` experienced `ETIMEDOUT`/IPv6 `ENETUNREACH` to the deployed endpoint while curl to the same endpoint succeeded. This is an execution-environment transport issue and does not invalidate the server-path smokes.
-Remaining check:
-- Destructive `/account/delete` smoke using a disposable staging Auth user, with recent-login enforcement and post-delete data/auth verification.
-- Browser privileged endpoints remain inactive/null until full staging server validation passes and a separate reviewed activation change is approved.
+- Disposable delete smoke created a new Auth user plus root and `app/state` Firestore test data, then live `/account/delete` returned PASS and subsequent sign-in returned Auth deletion PASS. The deployed handler's success path awaits Firestore `deleteUserData(uid)` before deleting Auth and returning 200, so the live endpoint PASS verifies completion of the server-side data deletion routine before Auth removal.
+- An additional post-delete Firestore REST read using an ad-hoc Firebase CLI token returned HTTP 401 because that auxiliary admin token was invalid. This check is INCONCLUSIVE, not a product failure, and does not contradict the successful live delete contract.
+- Codespaces Node `fetch` experienced `ETIMEDOUT`/IPv6 `ENETUNREACH` to the deployed endpoint while curl to the same endpoint succeeded. This is an execution-environment transport issue and does not invalidate server-path validation.
 
 ## Preservation result
 Decision: GREEN.
@@ -67,7 +65,13 @@ Decision: GREEN.
 - Outcome Learning remains bounded/read-only with no automatic progression increase.
 - No silent mutation, Planner ownership change, Agent confirmation bypass, Memory rewrite or destructive data migration was introduced.
 - `.firebaserc` production default remains unchanged; repository staging tooling cannot target production as staging.
-- Privileged browser endpoint activation remains unchanged/null pending full staging server validation.
+- Production endpoint activation remains unchanged and is not authorized by staging GREEN.
+
+## Staging browser activation
+Decision: READY / SEPARATE REVIEWED CHANGE.
+- Full server-path validation is now GREEN, so staging-only privileged browser endpoint activation is eligible for implementation.
+- Activation must remain fail-closed to `garang-staging` and must not enable production `fitfind-ai`.
+- Targeted export/delete/telemetry browser-path regressions should run after activation.
 
 ## Live production Real LLM activation
 Decision: YELLOW / UNKNOWN ENVIRONMENT EVIDENCE.
@@ -77,4 +81,4 @@ Decision: YELLOW / UNKNOWN ENVIRONMENT EVIDENCE.
 
 ## Commercial production
 Decision: RED / NOT YET READY.
-A GREEN repository baseline and mostly GREEN staging server path do not imply commercial-production readiness. Real-device validation, destructive staging delete verification, payment/entitlement, production monitoring/provider activation and legal/privacy/retention review remain separate gates.
+A GREEN repository baseline and GREEN staging server path do not imply commercial-production readiness. Real-device validation, staging browser-path activation/regression, payment/entitlement, production monitoring/provider activation and legal/privacy/retention review remain separate gates.

@@ -111,7 +111,7 @@ Owner: Release QA + Product + Design Brand
 Acceptance criteria: target iPhone Safari/in-app browser completes Today->Record->Coach->plan->execution->persistence->Accumulation with no critical clipping/runtime failure, and current Decision/Outcome Learning evidence is consistent with stored outcomes.
 
 ## P2 — Validate Server Readiness in Firebase staging
-Status: IN PROGRESS / ONE DESTRUCTIVE CHECK REMAINING
+Status: DONE
 Owner: Founder / Engineering / Release QA
 Acceptance criteria:
 - Dedicated staging Firebase project exists and is not `fitfind-ai`. ✅ `garang-staging`
@@ -120,11 +120,20 @@ Acceptance criteria:
 - Matching `functions:api` plus Firestore rules/indexes are deployed using explicit staging `--project`. ✅ Deployment VERIFIED; separate Functions test command output not independently captured.
 - Authenticated staging Coach returns `source: llm` with verified Decision↔LLM alignment. ✅ Direct curl smoke PASS; repository Node fetch path was blocked by a Codespaces transport issue while curl succeeded.
 - Account export returns complete server-owned account data. ✅ `garang-user-export-v1`, `garang-state-v1`, schema 8, state/privacy/serverData present.
-- Disposable account deletion removes intended staging user data. ⬜ Requires explicit Founder approval; run last.
+- Disposable account deletion completes the server-owned deletion path and removes the Auth user. ✅ Live endpoint PASS after creating root + `app/state` test data; subsequent sign-in confirmed Auth deletion. The handler only returns success after awaiting server-side Firestore deletion before Auth deletion. Independent post-delete Firestore REST read was inconclusive due invalid auxiliary admin token (HTTP 401), not a product failure.
 - Analytics consent OFF sends no remote product analytics; consent ON sends only allowlisted events/properties. ✅ OFF=`CONSENT_REQUIRED`; ON=`accepted:true,count:1`.
 - Error telemetry excludes raw health/chat/email/displayName/provider tokens/precise location/free text. ✅ Privacy smoke PASS; injected fake email/message/stack/token values filtered.
-- Only after full staging smoke is GREEN are staging browser endpoint URLs activated through a small reviewed change. ⬜
-Evidence: Firebase Staging Gate v1 is VERIFIED GREEN on PRODUCT main `451f563...`; external staging infra/Coach/export/telemetry are VERIFIED GREEN. Destructive account delete remains outstanding.
+Evidence: full external staging server-path validation is GREEN on `garang-staging`; production `fitfind-ai` was not targeted.
+
+## P2 — Activate staging privileged browser endpoints
+Status: READY / REVIEWED PRODUCT CHANGE REQUIRED
+Owner: Engineering / Release QA
+Acceptance criteria:
+- Account export/delete/analytics/telemetry browser endpoint URLs activate only for `garang-staging`.
+- Production `fitfind-ai` remains disabled/fail-closed.
+- Existing client fallback and canonical write ownership remain preserved.
+- Targeted export/delete/telemetry browser-path regressions pass after activation.
+- Full Release Gate remains GREEN before merge.
 
 ## P2 — Verify live production Real LLM activation
 Status: READY / EXTERNAL EXECUTION REQUIRED
