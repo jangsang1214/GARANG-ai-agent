@@ -74,15 +74,42 @@ Acceptance criteria:
 - Full PRODUCT regression and post-merge Release Gate remain GREEN. ✅
 Evidence: PR #90 merged as `5f3d30e877e31d219623ebd521226e49265b46bf`; pre-merge Gate #1097 GREEN; post-merge Gate #1098 GREEN; Founder OS Event #214 GREEN.
 
+## P2 — Real LLM boundary + semantic alignment + Outcome Learning v2
+Status: DONE
+Owner: AI Data / Engineering / Release QA
+Acceptance criteria:
+- Authenticated Coach provider quotas and canonical server-owned user context preserve the production boundary. ✅ PR #97
+- LLM output remains explanation-only and cannot return or execute a state mutation contract. ✅
+- Provider output structurally echoes deterministic GARANG `decisionId`, `decisionMode`, and supported reason codes. ✅
+- Decision reversal or unsupported provider reasoning is rejected before success. ✅
+- LLM confidence cannot exceed deterministic GARANG confidence. ✅
+- Outcome Learning v2 uses bounded longitudinal evidence without overwriting recent Plan-vs-Actual truth. ✅
+- Longitudinal learning can only constrain progression or prefer reduced load; it cannot automatically increase progression. ✅
+- Missing/null outcome evidence cannot be learned as a missed outcome. ✅
+- Golden Path, authenticated Coach, Real LLM integration, recovery and mobile regressions remain GREEN. ✅
+Evidence: PR #99 merged as `bcb27d5a283eb04643f0080f71a8a70ead14f95d`; pre-merge Release Gate #1166 GREEN; post-merge Release Gate #1170 GREEN.
+
 ## P1 — Validate deployed Golden Path on real target device
 Status: TODO
 Owner: Release QA + Product + Design Brand
-Acceptance criteria: target iPhone Safari/in-app browser completes Today->Record->Coach->plan->execution->persistence->Accumulation with no critical clipping/runtime failure, and Stage 2 adaptation/Weekly Review context is consistent with stored outcomes.
+Acceptance criteria: target iPhone Safari/in-app browser completes Today->Record->Coach->plan->execution->persistence->Accumulation with no critical clipping/runtime failure, and current Decision/Outcome Learning evidence is consistent with stored outcomes.
+
+## P2 — Verify live production Real LLM activation
+Status: READY / EXTERNAL EXECUTION REQUIRED
+Owner: AI Data / Engineering / Release QA
+Acceptance criteria:
+- Target Firebase environment has the intended LLM secret/config without exposing secret material.
+- Current Coach Functions revision containing PR #99 behavior is deployed and identifiable.
+- Authenticated production Coach request returns `source: llm` and a verified Decision↔LLM alignment result.
+- Two authenticated test users with materially different state produce different deterministic GARANG decisions while preserving explanation alignment.
+- Provider success/fallback/rate-limit observability is visible without raw prompt, token, Memory value or full context leakage.
+- `npm run smoke:coach:prod` passes against the target endpoint.
+Evidence: repository smoke path exists on PRODUCT main; live target-environment evidence remains UNKNOWN.
 
 ## P2 — Commercial production hardening
 Status: FOUNDER DECISION REQUIRED
 Owner: Founder / Engineering / AI Data / Growth Business / Release QA
-Scope: durable production backend/data, entitlement/payment, monitoring, production provider configuration, legal/privacy/retention gates and staging/security verification. This scope is separate from Stage 2 and must not be activated implicitly.
+Scope: durable production backend/data, entitlement/payment, monitoring, production provider configuration, legal/privacy/retention gates and staging/security verification. This scope is broader than Real LLM activation and must not be inferred from an AI/Data release alone.
 
 ## P6 — Always-on external Founder OS runtime
 Status: DEFERRED

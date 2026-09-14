@@ -11,7 +11,15 @@
     {"id":"VERIFY-CONTROL-POSTMERGE","kind":"verification","title":"CONTROL post-merge CI #26 and Event Envelope #9 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"control"},
     {"id":"CHANGE-PRODUCT-PR69","kind":"change","title":"PRODUCT Founder OS event-adapter PR #69 merged as 5c1f46c","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-POSTMERGE","kind":"verification","title":"PRODUCT post-merge Release Gate #1004 and Event Envelope #3 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-V7-LITE-GREEN","kind":"result","title":"Founder OS v7-lite event-ready multi-repository integration GREEN","status":"done","ownerWorkstream":"command-center"}
+    {"id":"RESULT-V7-LITE-GREEN","kind":"result","title":"Founder OS v7-lite event-ready multi-repository integration GREEN","status":"done","ownerWorkstream":"command-center"},
+    {"id":"INIT-AI-DATA-HARDENING","kind":"initiative","title":"Harden GARANG explanation alignment and outcome learning without transferring decision ownership to the LLM","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"TASK-LLM-SEMANTIC-ALIGNMENT","kind":"task","title":"Enforce Decision-to-LLM semantic alignment as a structured runtime contract","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"TASK-OUTCOME-LEARNING-V2","kind":"task","title":"Add conservative longitudinal Outcome Learning v2","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR99","kind":"change","title":"PRODUCT PR #99 merged as bcb27d5 with semantic LLM alignment and Outcome Learning v2","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-PR99","kind":"verification","title":"PR #99 pre-merge Gate #1166 and post-merge Gate #1170 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-AI-DATA-HARDENING-GREEN","kind":"result","title":"AI/Data hardening preserves Golden Path and makes LLM alignment machine-enforced","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"INIT-PRODUCTION-LLM-VALIDATION","kind":"initiative","title":"Verify live Real LLM Coach activation in the target production environment","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run authenticated production Coach smoke with deployment/config and two-user evidence","status":"planned","ownerWorkstream":"ai-data","repositoryId":"product"}
   ],
   "edges": [
     {"from":"METRIC-REAL-DEVICE-CONFIDENCE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"measures"},
@@ -24,6 +32,15 @@
     {"from":"CHANGE-PRODUCT-PR69","to":"INIT-V7-LITE","kind":"implements"},
     {"from":"VERIFY-PRODUCT-POSTMERGE","to":"CHANGE-PRODUCT-PR69","kind":"verifies"},
     {"from":"RESULT-V7-LITE-GREEN","to":"VERIFY-CONTROL-POSTMERGE","kind":"depends-on"},
-    {"from":"RESULT-V7-LITE-GREEN","to":"VERIFY-PRODUCT-POSTMERGE","kind":"depends-on"}
+    {"from":"RESULT-V7-LITE-GREEN","to":"VERIFY-PRODUCT-POSTMERGE","kind":"depends-on"},
+    {"from":"INIT-AI-DATA-HARDENING","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"TASK-LLM-SEMANTIC-ALIGNMENT","to":"INIT-AI-DATA-HARDENING","kind":"supports"},
+    {"from":"TASK-OUTCOME-LEARNING-V2","to":"INIT-AI-DATA-HARDENING","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR99","to":"TASK-LLM-SEMANTIC-ALIGNMENT","kind":"implements"},
+    {"from":"CHANGE-PRODUCT-PR99","to":"TASK-OUTCOME-LEARNING-V2","kind":"implements"},
+    {"from":"VERIFY-PRODUCT-PR99","to":"CHANGE-PRODUCT-PR99","kind":"verifies"},
+    {"from":"RESULT-AI-DATA-HARDENING-GREEN","to":"VERIFY-PRODUCT-PR99","kind":"depends-on"},
+    {"from":"INIT-PRODUCTION-LLM-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"TASK-PRODUCTION-LLM-SMOKE","to":"INIT-PRODUCTION-LLM-VALIDATION","kind":"supports"}
   ]
 }

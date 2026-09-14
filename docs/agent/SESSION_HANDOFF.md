@@ -15,25 +15,24 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff
-- Commercialization Stage 1 and Core Intelligence Stage 2 are complete and GREEN on PRODUCT main.
-- PRODUCT current verified main: `5f3d30e877e31d219623ebd521226e49265b46bf` from PR #90 `Stage 2: add Weekly Review from real adaptation evidence`.
-- Stage 2 adaptation PR #88 merged as `c68ec3e915ae437dac35fbc1a9a39fc4ca6f6dbf` after full Release Gate #1094 GREEN.
-- Stage 2 Weekly Review PR #90 merged as `5f3d30e877e31d219623ebd521226e49265b46bf` after full pre-merge Release Gate #1097 GREEN.
-- PRODUCT post-merge Release Gate #1098 is GREEN: core/build/security/Firebase/Firestore, deterministic Stage 2 regressions, complete WebKit regression, Today, Daily Plan, Planner, Nutrition, Golden Path complete journey, authenticated Coach/recovery, Settings touch, mobile button health, runtime stability and final verify all passed.
-- PRODUCT post-merge Founder OS Event Envelope #214 is GREEN.
-- Plan-vs-Actual now turns stored Daily Plan + execution/recovery/nutrition evidence into completed / partial / missed / recovery-constrained / insufficient-evidence interpretation and bounded next-plan adjustment.
-- Confirmed/user-edited plans are not silently overwritten; automatic progression increase remains prohibited; Coach remains user-facing judgment/approval owner.
-- Weekly Review consumes the same adaptation evidence and returns planned-vs-actual context, recovery/nutrition context, one explainable insight and one bounded next-week adjustment without creating a duplicate dashboard or write owner.
-- Experimental duplicate PR #89 was closed without merge after #88 became the verified canonical implementation.
-- Stage 1 Record/Coach/Planner/Today mutation ownership and Golden Path remain preserved after Stage 2.
+- Commercialization Stage 1, Core Intelligence Stage 2 and the latest AI/Data hardening are complete and GREEN on the verified PRODUCT code baseline.
+- PRODUCT current verified main: `bcb27d5a283eb04643f0080f71a8a70ead14f95d` from PR #99 `Add semantic LLM alignment and longitudinal Outcome Learning v2`.
+- PR #99 pre-merge Release Gate #1166 is GREEN; post-merge Release Gate #1170 is GREEN across core/build/security/Firebase/Firestore, complete WebKit Golden Path, authenticated Coach, Real LLM integration, recovery, mobile regressions/stability and final verify.
+- PR #95 is the canonical Coach evidence/Real LLM release-gate stabilization; stale PR #93 was closed without merge as superseded.
+- PR #97 is the canonical authenticated Real LLM production-boundary hardening; stale PR #94 was closed without merge as superseded.
+- Deterministic GARANG Decision Intelligence remains the judgment owner. LLM output is explanation-only, must echo the active decision identity/mode and supported reasons, and cannot exceed GARANG confidence.
+- Outcome Learning v2 adds bounded longitudinal execution/recovery evidence while preserving the recent Plan-vs-Actual contract. It may suppress progression or prefer reduced load after sufficient evidence, but it cannot generate automatic progression increases.
+- Missing/null outcome data is not learned as a negative outcome.
+- Stage 1 Record/Coach/Planner/Today mutation ownership, Agent confirmation boundaries and Golden Path remain preserved.
 - Real-device target iPhone/in-app-browser validation remains outstanding and is the highest-priority product verification task.
-- Commercial-production readiness remains separate and RED until production backend/data durability, payment/entitlement, monitoring, production provider configuration, legal/privacy/retention, staging/security and real-device gates are completed.
-- PRODUCT main is currently observed without required branch protection/status checks; governance hardening is a separate deliberate Founder decision.
+- Live production Real LLM activation remains UNKNOWN until the target Firebase secret/config, deployed Functions revision, authenticated `source: llm`, two-user smoke and observability are verified. The PRODUCT repo now contains `npm run smoke:coach:prod` for this purpose.
+- Commercial-production readiness remains separate and RED until broader backend/data durability, payment/entitlement, monitoring, legal/privacy/retention, staging/security and real-device gates are completed.
+- PRODUCT main remains observed without required branch protection/status checks; governance hardening is a separate deliberate Founder decision.
 
 ## Next recommended work
-1. Real-device Golden Path + Stage 2 behavior validation on the target iPhone/in-app browser.
-2. Founder chooses whether to enter commercial-production hardening.
-3. If commercial hardening is approved, prioritize durable backend/data + monitoring + entitlement/payment foundations before adding new feature surfaces or provider complexity.
+1. Run the deployed Golden Path on the target real iPhone/Safari and in-app browser; record concrete device evidence.
+2. In AI/Data, connect to the target Firebase execution environment and run the production Coach activation smoke without exposing secret material.
+3. After real beta outcome history exists, measure execution/retention impact before adding broader learning rules, RAG, embeddings or additional AI surfaces.
 
 ## Handoff rule
 Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization.
