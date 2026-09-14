@@ -3,7 +3,7 @@
 Last updated: 2026-09-15
 
 ## Overall decision
-GREEN for the current verified PRODUCT main `419e947aaeec3f74e3c79b86a68362915b0c88d2`, including Commercialization Stage 1, Core Intelligence Stage 2, hardened Real LLM/Decision alignment, Outcome Learning v2, Server Readiness Stage 0, Firebase Staging Gate v1, and the staging-only privileged browser endpoint activation boundary from PR #103. Firebase staging server-path validation is GREEN. Commercial-production readiness remains RED.
+GREEN for the current verified PRODUCT main `419e947aaeec3f74e3c79b86a68362915b0c88d2`, including Commercialization Stage 1, Core Intelligence Stage 2, hardened Real LLM/Decision alignment, Outcome Learning v2, Server Readiness Stage 0, Firebase Staging Gate v1, and the staging-only privileged browser endpoint activation boundary from PR #103. Firebase staging server-path validation is GREEN. Real-device validation is PARTIAL GREEN: a Founder-run real iPhone Chrome journey is verified through app load, onboarding, Today, first record and Coach. Commercial-production readiness remains RED.
 
 ## PRODUCT — current main
 Decision: GREEN.
@@ -13,6 +13,14 @@ Decision: GREEN.
 - Exact post-merge Release Gate #1221: GREEN, including core/build/security, Intelligence Core, Action & Data Reliability, Commercial Core regressions, Firebase public health, Firestore emulator, full WebKit Golden Path, authenticated Coach, Real LLM, recovery, Settings/mobile regressions, button health, runtime stability stress and final verify.
 - Post-merge Founder OS Event #480: GREEN.
 - GitHub Pages build/deployment #770: GREEN.
+
+## Real-device validation
+Decision: PARTIAL GREEN / IN PROGRESS.
+- Founder opened the deployed GitHub Pages client on a real iPhone using Chrome on iOS and confirmed the start/login surface rendered normally.
+- Onboarding completed and Today rendered normally.
+- A first record completed and the Coach interpretation/feedback surface appeared and behaved normally.
+- No failure was reported on the exercised path.
+- The remaining acceptance path through plan -> execution -> persistence -> Accumulation and a target in-app browser has not yet been directly exercised, so the full real-device gate is not yet GREEN.
 
 ## Staging privileged browser endpoint boundary
 Decision: GREEN / MERGED / PRODUCTION FAIL-CLOSED.
@@ -43,7 +51,7 @@ Decision: GREEN.
 - Production privileged endpoint activation remains disabled and was not authorized.
 
 ## Remaining release gates
-- Real-device Golden Path on target iPhone Safari/in-app browser: UNKNOWN / OUTSTANDING.
+- Real-device Golden Path: PARTIAL GREEN. Real iPhone Chrome is verified through app load -> onboarding -> Today -> first record -> Coach; plan/execution/persistence/Accumulation and target in-app browser remain OUTSTANDING.
 - Live staging browser client configured with `garang-staging`: UNKNOWN / NOT YET VERIFIED. The code boundary is ready and GREEN, but the current deployed GitHub Pages config is production.
 - Live production Real LLM activation: UNKNOWN.
-- Commercial production: RED pending payment/entitlement, production monitoring/provider activation, legal/privacy/retention review, real-device evidence and production release gates.
+- Commercial production: RED pending full real-device completion, payment/entitlement, production monitoring/provider activation, legal/privacy/retention review and production release gates.
