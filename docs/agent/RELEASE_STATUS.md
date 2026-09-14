@@ -1,75 +1,74 @@
 # GARANG Release Status
 
-Last updated: 2026-09-14
+Last updated: 2026-09-15
 
 ## Overall decision
-GREEN for the current verified PRODUCT code baseline `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df`, including Commercialization Stage 1, Core Intelligence Stage 2, the hardened Real LLM boundary, semantic Decision↔LLM alignment, Outcome Learning v2 and Server Readiness Stage 0. The repository blocker for Server Readiness Stage 0 is CLOSED. Commercial-production readiness remains a separate RED gate; staging activation, real-device verification and live production environment evidence remain separate gates.
+GREEN for the current verified PRODUCT code baseline `451f5639bbee65c8f5659e150c0949d0b9bf24d5`, including Commercialization Stage 1, Core Intelligence Stage 2, hardened Real LLM/Decision alignment, Outcome Learning v2, Server Readiness Stage 0 and Firebase Staging Gate v1. Repository preparation for a separate staging environment is GREEN. The actual external staging environment is still YELLOW/UNKNOWN because no staging project creation, secret insertion, deploy or authenticated smoke has been verified. Commercial-production readiness remains RED.
 
 ## CONTROL — Founder OS v7-lite
 Decision: GREEN / PERSISTENT CONTROL PLANE.
 - Founder OS v7-lite remains the persistent multi-repository control plane for state, tasks, decisions, debt, Project Graph and release evidence.
-- This update reconciles PRODUCT PR #101 / main evidence into CONTROL state; CONTROL CI must still verify the state-only change before its merge.
 
 ## PRODUCT — Commercialization Stage 1
 Decision: GREEN / MERGED.
-- PR #80 commercialization preservation/gap audit merged.
-- PR #83 privacy-safe analytics contract merged.
-- PR #84 workout Record friction reduction merged.
-- PR #87 Coach decision-first UX merged.
-- Stage 1 post-merge Release Gate #1093: GREEN.
-- Existing Record/Coach/Planner/Today ownership remains preserved.
+- PRs #80, #83, #84 and #87 merged; post-merge Release Gate #1093 GREEN.
+- Record/Coach/Planner/Today ownership remains preserved.
 
 ## PRODUCT — Stage 2 Core Intelligence
 Decision: GREEN / MERGED.
-Evidence:
-- PR #88 Plan-vs-Actual / bounded Daily Plan adaptation merged as `c68ec3e915ae437dac35fbc1a9a39fc4ca6f6dbf`; Release Gate #1094 GREEN.
-- PR #90 Weekly Review merged as `5f3d30e877e31d219623ebd521226e49265b46bf`; pre-merge Gate #1097 and post-merge Gate #1098 GREEN.
-- Plan-vs-Actual, bounded adaptation and Weekly Review remain read-only until explicit Coach/user confirmation where behavior-changing action is involved.
+- PR #88 Plan-vs-Actual / bounded Daily Plan adaptation merged as `c68ec3e915ae437dac35fbc1a9a39fc4ca6f6dbf`; Gate #1094 GREEN.
+- PR #90 Weekly Review merged as `5f3d30e877e31d219623ebd521226e49265b46bf`; post-merge Gate #1098 GREEN.
 
 ## PRODUCT — Real LLM boundary + AI/Data hardening
-Decision: GREEN / MERGED for repository code and CI.
-Evidence:
-- PR #95 stabilized Coach evidence and Real LLM browser release behavior; stale PR #93 was closed as superseded.
-- PR #97 hardened the authenticated production boundary with quotas, canonical recovery normalization, explanation-only provider schema and privacy-safe observability; stale PR #94 was closed as superseded.
-- PR #99 added machine-enforced Decision↔LLM alignment and conservative longitudinal Outcome Learning v2 and merged as `bcb27d5a283eb04643f0080f71a8a70ead14f95d`.
-- PR #99 pre-merge Release Gate #1166 and post-merge Release Gate #1170: GREEN.
+Decision: GREEN / MERGED.
+- PRs #95/#97 preserve Real LLM release behavior and authenticated production boundary.
+- PR #99 Decision↔LLM alignment + Outcome Learning v2 merged as `bcb27d5a283eb04643f0080f71a8a70ead14f95d`; post-merge Gate #1170 GREEN.
 
 ## PRODUCT — Server Readiness Stage 0
 Decision: GREEN / MERGED / REPOSITORY BLOCKER CLOSED.
+- PR #101 merged as `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df`.
+- Pre-merge Gate #1210 and exact post-merge Gate #1212: GREEN.
+- Events #460/#461: GREEN.
+- Repository/service boundaries preserve Firebase Auth + Firestore as the user-data foundation and preserve app write ownership.
+- Account export/delete and telemetry server paths remain activation-gated in the browser until staging verification.
+
+## PRODUCT — Firebase Staging Gate v1
+Decision: GREEN / MERGED / REPOSITORY PREPARATION COMPLETE.
 Evidence:
-- PR #101 `Server Readiness Stage 0: harden data and privileged API boundaries` merged by squash as `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df`.
-- Final pre-merge head: `2c81080a5047aa93b84e7a7c03394ee47fe8c391`.
-- Pre-merge Release Gate #1210: GREEN.
-- Pre-merge Founder OS Event Envelope #456: GREEN.
-- Exact post-merge PRODUCT main Release Gate #1212 on `b2ddbf4e...`: GREEN.
-- Post-merge `core-build-rules`: GREEN, including locked dependencies, production dependency security, Intelligence Core, Action & Data Reliability, Commercial Core regressions, runtime/build, Firebase public health and Firestore emulator.
-- Post-merge `browser-webkit`: GREEN, including Today, Daily Plan, Simplified Shell, Planner, Nutrition, truth/first-record, Golden Path integration + complete journey, authenticated app/Coach, Real LLM Golden Path, conversational logging, recovery mutation/touch, WebKit mobile regression, Settings touch, mobile button health and runtime stability stress.
+- PR #102 `Add fail-closed Firebase staging gate` merged as `451f5639bbee65c8f5659e150c0949d0b9bf24d5`.
+- Final PR head: `948806883ed47f7371ca20037752bad3aca880eb`.
+- Pre-merge Release Gate #1217: GREEN, including the new staging production-isolation contract plus full core/build/security/Firebase/Firestore and WebKit Golden Path regression suite.
+- Exact post-merge PRODUCT main Release Gate #1218 on `451f563...`: GREEN.
+- Post-merge `core-build-rules`: GREEN, including staging contract, dependency/security, Intelligence Core, Action & Data Reliability, Commercial Core regressions, build, Firebase public health and Firestore emulator.
+- Post-merge `browser-webkit`: GREEN, including Today, Daily Plan, Simplified Shell, Planner, Nutrition, truth/first-record, Golden Path complete journey, authenticated Coach, Real LLM, recovery, Settings/mobile regression, button health and runtime stability stress.
 - Post-merge final `verify`: GREEN.
-- Founder OS Event Envelope #460 (push) and #461 (workflow_run) on exact main SHA: GREEN.
-- Repository/service boundaries preserve Firebase Auth + Firestore as user-data foundation and preserve existing app write ownership.
-- Account export/delete and telemetry server paths are server-ready, but browser endpoint configuration remains intentionally inactive until staging deploy/smoke verification.
+- Founder OS Event Envelope #470 on PR head and #473 on exact main SHA: GREEN.
+- Staging preflight requires `GARANG_FIREBASE_STAGING_PROJECT_ID` and refuses production project `fitfind-ai`.
+- Staging secret/deploy plans always use an explicit staging `--project`; staging Coach smoke only accepts the exact derived staging endpoint.
+- `GARANG_LLM_API_KEY` remains Secret Manager-owned; no secret value was committed.
 
 ## Preservation result
 Decision: GREEN.
-- GARANG deterministic Decision Intelligence remains the decision owner.
-- LLM remains explanation-only; provider outputs that reverse the active decision or cite unsupported reason codes are rejected.
-- LLM confidence remains capped by deterministic GARANG confidence.
-- Outcome Learning v2 is read-only and cannot automatically increase progression.
-- No silent mutation, Planner ownership change, Agent confirmation bypass, Memory Engine rewrite or destructive user-data migration was introduced by Server Readiness Stage 0.
-- Golden Path and mobile regressions remain GREEN after merge.
+- GARANG deterministic Decision Intelligence remains the decision owner; LLM remains explanation-only.
+- Outcome Learning remains bounded/read-only with no automatic progression increase.
+- No silent mutation, Planner ownership change, Agent confirmation bypass, Memory rewrite or destructive data migration was introduced.
+- `.firebaserc` production default remains unchanged; repository staging tooling cannot target production as staging.
+- Privileged browser endpoint activation remains unchanged/null until external staging verification passes.
 
-## Firebase staging activation
+## Firebase staging environment
 Decision: YELLOW / EXTERNAL ENVIRONMENT EVIDENCE REQUIRED.
-- Repository code and CI are VERIFIED GREEN.
-- Separate staging project/config, matching deployed Functions revision, allowed-origin settings, authenticated export/delete smoke, consent OFF/ON telemetry checks and privacy-safe error telemetry have not yet been verified.
-- Staging endpoint activation must occur only after staging server smoke is GREEN.
+- Repository staging tooling and CI are VERIFIED GREEN.
+- Dedicated staging Firebase project existence/ID is not yet verified.
+- Staging `GARANG_LLM_API_KEY` Secret Manager value has not been set in verified evidence.
+- Matching Functions/Firestore deployment, staging Auth users, authenticated `source: llm` Coach smoke, account export/delete smoke and consent-gated telemetry checks have not yet been verified.
+- External secret insertion/deployment requires explicit Founder approval and authorized Firebase credentials.
 
 ## Live production Real LLM activation
 Decision: YELLOW / UNKNOWN ENVIRONMENT EVIDENCE.
-- Repository code, CI and privacy-safe production smoke tooling are VERIFIED.
-- Secret presence/value, exact deployed Functions revision, authenticated live `source: llm`, two-user production personalization smoke and target-environment observability are not verified from the current connected execution environment.
-- `npm run smoke:coach:prod` remains the canonical live verification path once target endpoint and authorized test credentials are available.
+- Repository code and production smoke tooling are VERIFIED.
+- Production secret/config, exact deployed revision, authenticated live `source: llm`, two-user personalization and observability remain unverified.
+- `npm run smoke:coach:prod` remains the canonical live verification path once authorized production evidence is available.
 
 ## Commercial production
 Decision: RED / NOT YET READY.
-A GREEN repository baseline does not imply commercial-production readiness. Real-device validation, staging/security activation, payment entitlement, production monitoring, provider configuration and legal/privacy/retention review remain separate gates.
+A GREEN repository baseline does not imply commercial-production readiness. Real-device validation, external staging/security verification, payment/entitlement, production monitoring/provider activation and legal/privacy/retention review remain separate gates.
