@@ -89,17 +89,47 @@ Acceptance criteria:
 - Golden Path, authenticated Coach, Real LLM integration, recovery and mobile regressions remain GREEN. ✅
 Evidence: PR #99 merged as `bcb27d5a283eb04643f0080f71a8a70ead14f95d`; pre-merge Release Gate #1166 GREEN; post-merge Release Gate #1170 GREEN.
 
+## P2 — Server Readiness Stage 0
+Status: DONE
+Owner: Engineering / Release QA / AI Data
+Acceptance criteria:
+- Explicit `StateRepository`, `HistoryRepository` and `AuthService` boundaries exist without replacing Firebase Auth + Firestore or app write ownership. ✅
+- Server-state transport reuses the canonical schema/state contract instead of creating a parallel user-data model. ✅
+- Account export/delete can move to authenticated server ownership while existing client fallback remains available until endpoint activation. ✅
+- Origin/security middleware and staging activation contract are explicit. ✅
+- Analytics/error telemetry ingestion is consent-gated and property-allowlisted. ✅
+- Real LLM legacy transport compatibility is preserved. ✅
+- Privacy runtime v1.5 contracts are aligned across Settings and mobile stability regression tests. ✅
+- Full pre-merge Release Gate is GREEN. ✅ Gate #1210 on head `2c81080a5047aa93b84e7a7c03394ee47fe8c391`.
+- PR merges without bypassing the gate. ✅ PR #101 -> `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df`.
+- Exact post-merge main Release Gate is GREEN. ✅ Gate #1212, including core/build/security/Firebase/Firestore, Golden Path, authenticated Coach, Real LLM, Settings/mobile regressions, button health, runtime stability and final verify.
+- Main event envelopes are GREEN. ✅ Events #460 and #461.
+Evidence: PR #101 merged as `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df`; pre-merge Gate #1210 GREEN; post-merge Gate #1212 GREEN.
+
 ## P1 — Validate deployed Golden Path on real target device
 Status: TODO
 Owner: Release QA + Product + Design Brand
 Acceptance criteria: target iPhone Safari/in-app browser completes Today->Record->Coach->plan->execution->persistence->Accumulation with no critical clipping/runtime failure, and current Decision/Outcome Learning evidence is consistent with stored outcomes.
+
+## P2 — Validate Server Readiness in Firebase staging
+Status: READY / EXTERNAL ENVIRONMENT REQUIRED
+Owner: Founder / Engineering / Release QA
+Acceptance criteria:
+- Separate Firebase staging environment is identified/approved without exposing secrets in chat or source control.
+- Matching verified Functions revision is deployed to staging.
+- Allowed origins/security configuration is applied for staging.
+- Disposable authenticated account can export complete account data through the server path.
+- Disposable authenticated account can be deleted through the server path and user data is removed as intended.
+- Analytics consent OFF sends no remote product analytics; consent ON sends only allowlisted properties.
+- Error telemetry excludes raw health/chat/email/displayName/provider tokens/precise location/free text.
+- Only after staging smoke is GREEN are staging browser endpoint URLs activated through a small reviewed change.
 
 ## P2 — Verify live production Real LLM activation
 Status: READY / EXTERNAL EXECUTION REQUIRED
 Owner: AI Data / Engineering / Release QA
 Acceptance criteria:
 - Target Firebase environment has the intended LLM secret/config without exposing secret material.
-- Current Coach Functions revision containing PR #99 behavior is deployed and identifiable.
+- Current Coach Functions revision is deployed and identifiable.
 - Authenticated production Coach request returns `source: llm` and a verified Decision↔LLM alignment result.
 - Two authenticated test users with materially different state produce different deterministic GARANG decisions while preserving explanation alignment.
 - Provider success/fallback/rate-limit observability is visible without raw prompt, token, Memory value or full context leakage.
@@ -109,7 +139,7 @@ Evidence: repository smoke path exists on PRODUCT main; live target-environment 
 ## P2 — Commercial production hardening
 Status: FOUNDER DECISION REQUIRED
 Owner: Founder / Engineering / AI Data / Growth Business / Release QA
-Scope: durable production backend/data, entitlement/payment, monitoring, production provider configuration, legal/privacy/retention gates and staging/security verification. This scope is broader than Real LLM activation and must not be inferred from an AI/Data release alone.
+Scope: production endpoint activation, entitlement/payment, monitoring, production provider configuration, legal/privacy/retention gates, staging/security verification and real-device validation. Server Readiness Stage 0 GREEN does not imply commercial production readiness.
 
 ## P6 — Always-on external Founder OS runtime
 Status: DEFERRED
