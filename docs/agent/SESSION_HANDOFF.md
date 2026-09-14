@@ -15,24 +15,26 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff
-- Commercialization Stage 1, Core Intelligence Stage 2 and the latest AI/Data hardening are complete and GREEN on the verified PRODUCT code baseline.
-- PRODUCT current verified main: `bcb27d5a283eb04643f0080f71a8a70ead14f95d` from PR #99 `Add semantic LLM alignment and longitudinal Outcome Learning v2`.
-- PR #99 pre-merge Release Gate #1166 is GREEN; post-merge Release Gate #1170 is GREEN across core/build/security/Firebase/Firestore, complete WebKit Golden Path, authenticated Coach, Real LLM integration, recovery, mobile regressions/stability and final verify.
-- PR #95 is the canonical Coach evidence/Real LLM release-gate stabilization; stale PR #93 was closed without merge as superseded.
-- PR #97 is the canonical authenticated Real LLM production-boundary hardening; stale PR #94 was closed without merge as superseded.
+- Commercialization Stage 1, Core Intelligence Stage 2, Real LLM/Outcome Learning hardening and Server Readiness Stage 0 are complete and GREEN at repository/CI level.
+- PRODUCT current verified main: `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df` from PR #101 `Server Readiness Stage 0: harden data and privileged API boundaries`.
+- PR #101 final pre-merge head `2c81080a5047aa93b84e7a7c03394ee47fe8c391` passed full Release Gate #1210. PR #101 was squash merged without bypassing the gate.
+- PRODUCT post-merge Release Gate #1212 on exact main `b2ddbf4e...` is GREEN across core/build/security/Firebase/Firestore, complete WebKit Golden Path, authenticated Coach, Real LLM integration, recovery, Settings/mobile regressions, button health, runtime stability stress and final verify.
+- PRODUCT Founder OS Event Envelope #460 (push) and #461 (workflow_run) on exact main SHA completed successfully.
+- The prior CI blockers were resolved as compatibility/test-contract issues: legacy Real LLM transport compatibility was preserved; WebKit raw-coordinate touch flakiness was stabilized; Settings and mobile stability tests were aligned with canonical Privacy runtime v1.5.
+- Server Readiness Stage 0 adds repository/service boundaries, canonical server-state adaptation, server-ready account export/delete ownership, centralized origin/security middleware, and consent-gated analytics/error telemetry. Firebase Auth + Firestore remain the user-data foundation and existing app write owners remain unchanged.
+- Browser account/telemetry endpoints remain intentionally inactive/null until the matching Functions revision is deployed and smoke-verified in a separate Firebase staging environment.
 - Deterministic GARANG Decision Intelligence remains the judgment owner. LLM output is explanation-only, must echo the active decision identity/mode and supported reasons, and cannot exceed GARANG confidence.
-- Outcome Learning v2 adds bounded longitudinal execution/recovery evidence while preserving the recent Plan-vs-Actual contract. It may suppress progression or prefer reduced load after sufficient evidence, but it cannot generate automatic progression increases.
-- Missing/null outcome data is not learned as a negative outcome.
-- Stage 1 Record/Coach/Planner/Today mutation ownership, Agent confirmation boundaries and Golden Path remain preserved.
-- Real-device target iPhone/in-app-browser validation remains outstanding and is the highest-priority product verification task.
-- Live production Real LLM activation remains UNKNOWN until the target Firebase secret/config, deployed Functions revision, authenticated `source: llm`, two-user smoke and observability are verified. The PRODUCT repo now contains `npm run smoke:coach:prod` for this purpose.
-- Commercial-production readiness remains separate and RED until broader backend/data durability, payment/entitlement, monitoring, legal/privacy/retention, staging/security and real-device gates are completed.
-- PRODUCT main remains observed without required branch protection/status checks; governance hardening is a separate deliberate Founder decision.
+- Outcome Learning v2 remains bounded/read-only and cannot generate automatic progression increases.
+- Real-device target iPhone/in-app-browser validation remains outstanding.
+- Live production Real LLM activation remains UNKNOWN until target-environment secret/config, deployed Functions revision, authenticated `source: llm`, two-user smoke and observability are verified.
+- Commercial-production readiness remains separate and RED until staging/security activation, real-device verification, payment/entitlement, monitoring and legal/privacy/retention gates are completed.
+- PRODUCT main branch governance hardening remains a separate deliberate Founder decision.
 
 ## Next recommended work
-1. Run the deployed Golden Path on the target real iPhone/Safari and in-app browser; record concrete device evidence.
-2. In AI/Data, connect to the target Firebase execution environment and run the production Coach activation smoke without exposing secret material.
-3. After real beta outcome history exists, measure execution/retention impact before adding broader learning rules, RAG, embeddings or additional AI surfaces.
+1. Run the deployed Golden Path on the target real iPhone/Safari and target in-app browser; record concrete device evidence.
+2. Prepare/approve a separate Firebase staging environment without sharing secrets in chat/source control; deploy the exact verified Server Readiness revision and run authenticated account export/delete + telemetry/security smoke.
+3. Only after staging smoke is GREEN, activate staging account/telemetry endpoint URLs through a small reviewed change. Production activation remains a separate Founder decision.
+4. After real beta outcome history exists, measure execution/retention impact before adding broader learning rules, RAG, embeddings or additional AI surfaces.
 
 ## Handoff rule
 Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization.
