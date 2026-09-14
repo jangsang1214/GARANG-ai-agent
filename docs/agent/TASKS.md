@@ -102,9 +102,23 @@ Acceptance criteria:
 - Privacy runtime v1.5 contracts are aligned across Settings and mobile stability regression tests. ✅
 - Full pre-merge Release Gate is GREEN. ✅ Gate #1210 on head `2c81080a5047aa93b84e7a7c03394ee47fe8c391`.
 - PR merges without bypassing the gate. ✅ PR #101 -> `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df`.
-- Exact post-merge main Release Gate is GREEN. ✅ Gate #1212, including core/build/security/Firebase/Firestore, Golden Path, authenticated Coach, Real LLM, Settings/mobile regressions, button health, runtime stability and final verify.
-- Main event envelopes are GREEN. ✅ Events #460 and #461.
-Evidence: PR #101 merged as `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df`; pre-merge Gate #1210 GREEN; post-merge Gate #1212 GREEN.
+- Exact post-merge main Release Gate is GREEN. ✅ Gate #1212.
+Evidence: PR #101 merged as `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df`; pre-merge Release Gate #1210 GREEN; post-merge Gate #1212 GREEN.
+
+## P2 — Firebase staging preparation gate
+Status: DONE
+Owner: Engineering / Release QA
+Acceptance criteria:
+- Staging operations require an explicit Firebase project ID. ✅
+- Production Firebase project `fitfind-ai` is rejected as a staging target. ✅
+- Staging Coach smoke is bound to the exact `asia-northeast3` project-scoped endpoint. ✅
+- Production `.firebaserc` ownership remains unchanged. ✅
+- Provider secrets remain outside source control. ✅
+- Repository contract tests cover runtime/region/secret binding/env-file safety. ✅
+- Full pre-merge Release Gate remains GREEN. ✅ Gate #1217 on head `948806883ed47f7371ca20037752bad3aca880eb`.
+- Exact post-merge PRODUCT main Release Gate remains GREEN. ✅ Gate #1218 on `451f5639bbee65c8f5659e150c0949d0b9bf24d5`.
+- No external Firebase project creation, secret insertion, deployment or endpoint activation is falsely claimed. ✅
+Evidence: PR #102 merged as `451f5639bbee65c8f5659e150c0949d0b9bf24d5`; pre-merge Gate #1217 GREEN; post-merge Gate #1218 GREEN.
 
 ## P1 — Validate deployed Golden Path on real target device
 Status: TODO
@@ -112,17 +126,20 @@ Owner: Release QA + Product + Design Brand
 Acceptance criteria: target iPhone Safari/in-app browser completes Today->Record->Coach->plan->execution->persistence->Accumulation with no critical clipping/runtime failure, and current Decision/Outcome Learning evidence is consistent with stored outcomes.
 
 ## P2 — Validate Server Readiness in Firebase staging
-Status: READY / EXTERNAL ENVIRONMENT REQUIRED
+Status: READY / REPOSITORY GATE GREEN / EXTERNAL ENVIRONMENT REQUIRED
 Owner: Founder / Engineering / Release QA
 Acceptance criteria:
 - Separate Firebase staging environment is identified/approved without exposing secrets in chat or source control.
+- `staging:preflight` passes for the approved non-production project.
 - Matching verified Functions revision is deployed to staging.
 - Allowed origins/security configuration is applied for staging.
+- Authenticated staging Coach smoke returns aligned `source: llm` evidence where provider activation is intended.
 - Disposable authenticated account can export complete account data through the server path.
 - Disposable authenticated account can be deleted through the server path and user data is removed as intended.
 - Analytics consent OFF sends no remote product analytics; consent ON sends only allowlisted properties.
 - Error telemetry excludes raw health/chat/email/displayName/provider tokens/precise location/free text.
 - Only after staging smoke is GREEN are staging browser endpoint URLs activated through a small reviewed change.
+Evidence: repository staging gate is GREEN through PR #102 / Gate #1218; actual staging environment evidence remains UNKNOWN.
 
 ## P2 — Verify live production Real LLM activation
 Status: READY / EXTERNAL EXECUTION REQUIRED
@@ -139,7 +156,7 @@ Evidence: repository smoke path exists on PRODUCT main; live target-environment 
 ## P2 — Commercial production hardening
 Status: FOUNDER DECISION REQUIRED
 Owner: Founder / Engineering / AI Data / Growth Business / Release QA
-Scope: production endpoint activation, entitlement/payment, monitoring, production provider configuration, legal/privacy/retention gates, staging/security verification and real-device validation. Server Readiness Stage 0 GREEN does not imply commercial production readiness.
+Scope: production endpoint activation, entitlement/payment, monitoring, production provider configuration, legal/privacy/retention gates, staging/security verification and real-device validation. Repository staging preparation GREEN does not imply commercial production readiness.
 
 ## P6 — Always-on external Founder OS runtime
 Status: DEFERRED
