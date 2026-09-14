@@ -31,8 +31,14 @@
     {"id":"TASK-STAGING-PREP-GATE","kind":"task","title":"Add fail-closed staging project and Coach smoke guardrails","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
     {"id":"CHANGE-PRODUCT-PR102","kind":"change","title":"PRODUCT PR #102 fail-closed Firebase staging gate merged as 451f5639","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-PR102","kind":"verification","title":"PR #102 pre-merge Gate #1217 and post-merge Gate #1218 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-STAGING-REPO-GREEN","kind":"result","title":"Repository-level staging preparation is GREEN without authorizing external deployment","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-    {"id":"TASK-STAGING-ENV-SMOKE","kind":"task","title":"Create/configure isolated staging, deploy verified revision, and run authenticated Coach/account/telemetry/security smoke","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-STAGING-REPO-GREEN","kind":"result","title":"Repository-level staging preparation is GREEN without authorizing production deployment","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+    {"id":"TASK-STAGING-ENV-SMOKE","kind":"task","title":"Create/configure isolated staging, deploy verified revision, and run authenticated Coach/account/telemetry/security smoke","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"VERIFY-STAGING-SERVER-PATH","kind":"verification","title":"garang-staging server path GREEN for Coach, export, consent telemetry, privacy filtering and disposable deletion","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"TASK-STAGING-BROWSER-BOUNDARY","kind":"task","title":"Implement fail-closed browser privileged endpoints for exact garang-staging project identity","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR103","kind":"change","title":"PRODUCT PR #103 staging-only browser endpoint boundary merged as 419e947a","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-PR103","kind":"verification","title":"PR #103 Gate #1220 and exact post-merge Gate #1221 GREEN; Events #478/#480 and Pages #770 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-STAGING-BROWSER-BOUNDARY-GREEN","kind":"result","title":"Staging-only privileged browser activation boundary is GREEN while production remains fail-closed","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+    {"id":"TASK-STAGING-BROWSER-DEPLOY","kind":"task","title":"Deploy and verify a separate browser client configured for garang-staging without replacing production config","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"},
 
     {"id":"INIT-PRODUCTION-LLM-VALIDATION","kind":"initiative","title":"Verify live Real LLM Coach activation in the target production environment","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run authenticated production Coach smoke with deployment/config and two-user evidence","status":"planned","ownerWorkstream":"ai-data","repositoryId":"product"}
@@ -71,6 +77,12 @@
     {"from":"VERIFY-PRODUCT-PR102","to":"CHANGE-PRODUCT-PR102","kind":"verifies"},
     {"from":"RESULT-STAGING-REPO-GREEN","to":"VERIFY-PRODUCT-PR102","kind":"depends-on"},
     {"from":"TASK-STAGING-ENV-SMOKE","to":"INIT-STAGING-VALIDATION","kind":"supports"},
+    {"from":"VERIFY-STAGING-SERVER-PATH","to":"TASK-STAGING-ENV-SMOKE","kind":"verifies"},
+    {"from":"TASK-STAGING-BROWSER-BOUNDARY","to":"INIT-STAGING-VALIDATION","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR103","to":"TASK-STAGING-BROWSER-BOUNDARY","kind":"implements"},
+    {"from":"VERIFY-PRODUCT-PR103","to":"CHANGE-PRODUCT-PR103","kind":"verifies"},
+    {"from":"RESULT-STAGING-BROWSER-BOUNDARY-GREEN","to":"VERIFY-PRODUCT-PR103","kind":"depends-on"},
+    {"from":"TASK-STAGING-BROWSER-DEPLOY","to":"INIT-STAGING-VALIDATION","kind":"supports"},
 
     {"from":"INIT-PRODUCTION-LLM-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"TASK-PRODUCTION-LLM-SMOKE","to":"INIT-PRODUCTION-LLM-VALIDATION","kind":"supports"}
