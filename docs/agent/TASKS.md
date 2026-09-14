@@ -43,68 +43,67 @@ Acceptance criteria:
 - Planner remains execution/evidence surface without new write owner. ✅
 - Today remains single-next-action surface with Coach as judgment owner. ✅
 - Golden Path complete journey remains GREEN. ✅
-- Authenticated Coach/recovery flows remain GREEN. ✅
-- Mobile button health and runtime stability remain GREEN. ✅
-Evidence: PR #80 `aac1eeb...`; PR #83 `33a7a422...`; PR #84 `0503979e...`; PR #87 `ecb75178...`; post-merge Gate #1093 GREEN.
+Evidence: post-merge Gate #1093 GREEN.
 
 ## P4 — Stage 2 Plan-vs-Actual / Adaptive Loop v1
 Status: DONE
 Owner: AI Data / Product / Engineering / Release QA
 Acceptance criteria:
-- Compare canonical Daily Plan intent with actual workout/recovery/nutrition evidence using existing stored data. ✅
-- Produce explicit interpretation: completed / partial / missed / recovery-constrained / insufficient-evidence where supported. ✅
-- Produce a bounded next-plan adjustment recommendation with evidence and no silent write. ✅
-- Coach remains the user-facing judgment/approval owner for behavior-changing plan changes. ✅
+- Canonical Daily Plan intent is compared with actual workout/recovery/nutrition evidence. ✅
+- Explicit interpretation and bounded next-plan adjustment exist without silent write. ✅
+- Coach remains the behavior-changing approval owner. ✅
 - Confirmed/user-edited plan ownership is preserved; no automatic progression increase. ✅
-- No new external provider, secret, or production endpoint required for v1. ✅
 - Golden Path and Stage 1 regressions remain GREEN. ✅
-- Outcome/adaptation output has deterministic tests. ✅
-Evidence: PR #88 merged as `c68ec3e915ae437dac35fbc1a9a39fc4ca6f6dbf`; complete Release Gate #1094 GREEN.
+Evidence: PR #88 `c68ec3e...`; Release Gate #1094 GREEN.
 
 ## P5 — Weekly Review driven by real outcome signals
 Status: DONE
 Owner: Product / AI Data / Design Brand / Release QA
 Acceptance criteria:
-- Weekly Review consumes the canonical Plan-vs-Actual/adaptation evidence instead of a parallel model. ✅
-- Summarizes planned vs actual plus recovery/nutrition context. ✅
-- Produces one explainable GARANG insight and one bounded next-week adjustment. ✅
-- Remains read-only with no silent mutation or automatic progression increase. ✅
-- Behavior-changing adjustment requires Coach approval. ✅
-- Does not add a duplicate dashboard, router owner, persistence path or new screen. ✅
-- Full PRODUCT regression and post-merge Release Gate remain GREEN. ✅
-Evidence: PR #90 merged as `5f3d30e877e31d219623ebd521226e49265b46bf`; pre-merge Gate #1097 GREEN; post-merge Gate #1098 GREEN; Founder OS Event #214 GREEN.
+- Weekly Review consumes canonical Plan-vs-Actual/adaptation evidence. ✅
+- Produces one explainable insight and bounded next-week adjustment. ✅
+- Remains read-only; behavior-changing adjustment requires Coach approval. ✅
+- No duplicate screen/write owner. ✅
+Evidence: PR #90 `5f3d30e...`; post-merge Gate #1098 GREEN.
 
 ## P2 — Real LLM boundary + semantic alignment + Outcome Learning v2
 Status: DONE
 Owner: AI Data / Engineering / Release QA
 Acceptance criteria:
-- Authenticated Coach provider quotas and canonical server-owned user context preserve the production boundary. ✅ PR #97
-- LLM output remains explanation-only and cannot return or execute a state mutation contract. ✅
-- Provider output structurally echoes deterministic GARANG `decisionId`, `decisionMode`, and supported reason codes. ✅
-- Decision reversal or unsupported provider reasoning is rejected before success. ✅
+- Authenticated Coach provider boundary, quotas and canonical server context are preserved. ✅
+- LLM output remains explanation-only. ✅
+- Decision identity/mode/reason alignment is machine-enforced. ✅
 - LLM confidence cannot exceed deterministic GARANG confidence. ✅
-- Outcome Learning v2 uses bounded longitudinal evidence without overwriting recent Plan-vs-Actual truth. ✅
-- Longitudinal learning can only constrain progression or prefer reduced load; it cannot automatically increase progression. ✅
-- Missing/null outcome evidence cannot be learned as a missed outcome. ✅
-- Golden Path, authenticated Coach, Real LLM integration, recovery and mobile regressions remain GREEN. ✅
-Evidence: PR #99 merged as `bcb27d5a283eb04643f0080f71a8a70ead14f95d`; pre-merge Release Gate #1166 GREEN; post-merge Release Gate #1170 GREEN.
+- Outcome Learning v2 is bounded and cannot automatically increase progression. ✅
+- Golden Path, authenticated Coach, Real LLM, recovery and mobile regressions remain GREEN. ✅
+Evidence: PR #99 `bcb27d5a...`; post-merge Gate #1170 GREEN.
 
 ## P2 — Server Readiness Stage 0
 Status: DONE
 Owner: Engineering / Release QA / AI Data
 Acceptance criteria:
-- Explicit `StateRepository`, `HistoryRepository` and `AuthService` boundaries exist without replacing Firebase Auth + Firestore or app write ownership. ✅
-- Server-state transport reuses the canonical schema/state contract instead of creating a parallel user-data model. ✅
-- Account export/delete can move to authenticated server ownership while existing client fallback remains available until endpoint activation. ✅
+- Explicit repository/auth boundaries exist without replacing Firebase Auth + Firestore or app write ownership. ✅
+- Server-state transport reuses canonical schema/state contracts. ✅
+- Account export/delete has authenticated server ownership while client fallback remains until activation. ✅
 - Origin/security middleware and staging activation contract are explicit. ✅
-- Analytics/error telemetry ingestion is consent-gated and property-allowlisted. ✅
-- Real LLM legacy transport compatibility is preserved. ✅
-- Privacy runtime v1.5 contracts are aligned across Settings and mobile stability regression tests. ✅
-- Full pre-merge Release Gate is GREEN. ✅ Gate #1210 on head `2c81080a5047aa93b84e7a7c03394ee47fe8c391`.
-- PR merges without bypassing the gate. ✅ PR #101 -> `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df`.
-- Exact post-merge main Release Gate is GREEN. ✅ Gate #1212, including core/build/security/Firebase/Firestore, Golden Path, authenticated Coach, Real LLM, Settings/mobile regressions, button health, runtime stability and final verify.
-- Main event envelopes are GREEN. ✅ Events #460 and #461.
-Evidence: PR #101 merged as `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df`; pre-merge Gate #1210 GREEN; post-merge Gate #1212 GREEN.
+- Analytics/error telemetry ingestion is consent-gated and allowlisted. ✅
+- Real LLM compatibility and Privacy runtime v1.5 regressions remain GREEN. ✅
+- PR #101 merged without bypassing full Gate. ✅
+Evidence: PR #101 `b2ddbf4e...`; pre-merge Gate #1210 GREEN; post-merge Gate #1212 GREEN; Events #460/#461 GREEN.
+
+## P2 — Firebase Staging Gate v1
+Status: DONE
+Owner: Engineering / Release QA
+Acceptance criteria:
+- Staging project ID is mandatory for staging commands. ✅
+- Production project `fitfind-ai` is explicitly rejected as a staging target. ✅
+- Generated secret/deploy commands always carry an explicit staging `--project`. ✅
+- Staging Coach smoke derives and enforces the exact staging endpoint. ✅
+- Repository preflight checks Node 22, `asia-northeast3`, Secret Manager binding and env-file ignore safety. ✅
+- No secret value, staging project creation or deployment is performed by repository preparation. ✅
+- New staging contract is part of the normal test suite. ✅
+- Full Golden Path/Real LLM/mobile regressions remain GREEN before and after merge. ✅
+Evidence: PR #102 merged as `451f5639bbee65c8f5659e150c0949d0b9bf24d5`; pre-merge Gate #1217 GREEN on `948806883ed47f7371ca20037752bad3aca880eb`; post-merge Gate #1218 GREEN; Events #470/#473 GREEN.
 
 ## P1 — Validate deployed Golden Path on real target device
 Status: TODO
@@ -112,34 +111,37 @@ Owner: Release QA + Product + Design Brand
 Acceptance criteria: target iPhone Safari/in-app browser completes Today->Record->Coach->plan->execution->persistence->Accumulation with no critical clipping/runtime failure, and current Decision/Outcome Learning evidence is consistent with stored outcomes.
 
 ## P2 — Validate Server Readiness in Firebase staging
-Status: READY / EXTERNAL ENVIRONMENT REQUIRED
+Status: READY / EXTERNAL EXECUTION REQUIRED
 Owner: Founder / Engineering / Release QA
 Acceptance criteria:
-- Separate Firebase staging environment is identified/approved without exposing secrets in chat or source control.
-- Matching verified Functions revision is deployed to staging.
-- Allowed origins/security configuration is applied for staging.
-- Disposable authenticated account can export complete account data through the server path.
-- Disposable authenticated account can be deleted through the server path and user data is removed as intended.
-- Analytics consent OFF sends no remote product analytics; consent ON sends only allowlisted properties.
-- Error telemetry excludes raw health/chat/email/displayName/provider tokens/precise location/free text.
-- Only after staging smoke is GREEN are staging browser endpoint URLs activated through a small reviewed change.
+- Dedicated staging Firebase project exists and is not `fitfind-ai`. ⬜
+- `GARANG_FIREBASE_STAGING_PROJECT_ID=<id> npm run staging:preflight` passes. ⬜
+- With explicit Founder approval, `GARANG_LLM_API_KEY` is stored in staging Secret Manager without exposing secret material. ⬜
+- Matching `functions:api` revision plus Firestore rules/indexes are deployed using explicit staging `--project`. ⬜
+- Disposable staging Auth user(s) exist and `npm run smoke:coach:staging` returns authenticated `source: llm` with verified Decision↔LLM alignment. ⬜
+- Account export returns complete server-owned account data. ⬜
+- Disposable account deletion removes intended staging user data. ⬜
+- Analytics consent OFF sends no remote product analytics; consent ON sends only allowlisted properties. ⬜
+- Error telemetry excludes raw health/chat/email/displayName/provider tokens/precise location/free text. ⬜
+- Only after staging smoke is GREEN are staging browser endpoint URLs activated through a small reviewed change. ⬜
+Repository evidence: Firebase Staging Gate v1 is VERIFIED GREEN on PRODUCT main `451f563...`; external environment evidence remains UNKNOWN.
 
 ## P2 — Verify live production Real LLM activation
 Status: READY / EXTERNAL EXECUTION REQUIRED
 Owner: AI Data / Engineering / Release QA
 Acceptance criteria:
-- Target Firebase environment has the intended LLM secret/config without exposing secret material.
+- Target production Firebase environment has the intended secret/config without exposing secret material.
 - Current Coach Functions revision is deployed and identifiable.
-- Authenticated production Coach request returns `source: llm` and a verified Decision↔LLM alignment result.
-- Two authenticated test users with materially different state produce different deterministic GARANG decisions while preserving explanation alignment.
-- Provider success/fallback/rate-limit observability is visible without raw prompt, token, Memory value or full context leakage.
+- Authenticated production Coach request returns `source: llm` and verified Decision↔LLM alignment.
+- Two authenticated test users with materially different state preserve deterministic personalization and explanation alignment.
+- Provider success/fallback/rate-limit observability is visible without raw prompt/token/Memory/full context leakage.
 - `npm run smoke:coach:prod` passes against the target endpoint.
-Evidence: repository smoke path exists on PRODUCT main; live target-environment evidence remains UNKNOWN.
+Evidence: repository smoke path exists; live production environment evidence remains UNKNOWN.
 
 ## P2 — Commercial production hardening
 Status: FOUNDER DECISION REQUIRED
 Owner: Founder / Engineering / AI Data / Growth Business / Release QA
-Scope: production endpoint activation, entitlement/payment, monitoring, production provider configuration, legal/privacy/retention gates, staging/security verification and real-device validation. Server Readiness Stage 0 GREEN does not imply commercial production readiness.
+Scope: production endpoint activation, entitlement/payment, monitoring, production provider configuration, legal/privacy/retention gates, staging/security verification and real-device validation. Repository GREEN does not imply commercial production readiness.
 
 ## P6 — Always-on external Founder OS runtime
 Status: DEFERRED
