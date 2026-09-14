@@ -3,57 +3,51 @@
 Last updated: 2026-09-15
 
 ## Current objective
-The verified PRODUCT baseline includes Commercialization Stage 1, Core Intelligence Stage 2, the hardened Real LLM boundary, machine-enforced Decision↔LLM semantic alignment, conservative longitudinal Outcome Learning v2, Server Readiness Stage 0, and Firebase Staging Gate v1. The dedicated Firebase staging environment `garang-staging` has now completed full server-path validation: Firestore rules/indexes deployment, Functions `api` deployment, staging Auth/Secret setup, authenticated Real LLM Coach, account export, consent OFF/ON analytics, privacy-safe error telemetry, and destructive account deletion on a disposable staging user are GREEN. Target real-device Golden Path validation remains outstanding.
+Protect the verified Golden Path while moving from repository/server readiness into real-device validation. The isolated Firebase staging server path is GREEN, and PRODUCT now contains a fail-closed browser service boundary that exposes privileged account/telemetry endpoints only when the loaded Firebase browser config identifies the exact staging project `garang-staging`. Production `fitfind-ai` remains disabled for those privileged routes. Target real-device Golden Path validation remains the highest-value unresolved gate.
 
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`; Founder OS v7-lite remains the control plane.
-- PRODUCT: `jangsang1214/-fitmind-ai`; current verified main remains `451f5639bbee65c8f5659e150c0949d0b9bf24d5` from PR #102.
-- Stage 1 remains GREEN through PRs #80, #83, #84 and #87; post-merge Release Gate #1093 was GREEN.
-- Stage 2 Plan-vs-Actual / Adaptive Loop PR #88 merged as `c68ec3e915ae437dac35fbc1a9a39fc4ca6f6dbf`; Weekly Review PR #90 merged as `5f3d30e877e31d219623ebd521226e49265b46bf` with post-merge Gate #1098 GREEN.
-- AI/Data hardening through PRs #95, #97 and #99 remains GREEN; PR #99 merged as `bcb27d5a283eb04643f0080f71a8a70ead14f95d` with post-merge Gate #1170 GREEN.
-- Server Readiness Stage 0 PR #101 merged as `b2ddbf4e09c0c4861057135a61ab2f3e98ceb1df`; pre-merge Gate #1210 and post-merge Gate #1212 were GREEN.
-- Firebase Staging Gate v1 PR #102 merged as `451f5639bbee65c8f5659e150c0949d0b9bf24d5` after full pre-merge Release Gate #1217 GREEN; exact post-merge Gate #1218 on main is GREEN.
-- Founder OS Event Envelope #470 on PR #102 head and #473 on PRODUCT main completed successfully.
+- PRODUCT: `jangsang1214/-fitmind-ai`; current verified main is `419e947aaeec3f74e3c79b86a68362915b0c88d2` from PR #103 `Activate privileged browser endpoints only in verified Firebase staging`.
+- PRODUCT PR #103 pre-merge Release Gate #1220: GREEN; Founder OS Event #478: GREEN.
+- PRODUCT exact post-merge main `419e947...`: Release Gate #1221 GREEN through core/build/security/Firebase/Firestore, WebKit Golden Path, authenticated Coach, Real LLM, recovery, mobile regressions, runtime stability and final verify; Event #480 GREEN; GitHub Pages deployment #770 GREEN.
+- Prior baselines remain preserved: Server Readiness Stage 0 PR #101 (`b2ddbf4e...`) and Firebase Staging Gate v1 PR #102 (`451f5639...`) were fully GREEN before PR #103.
 
-## External staging evidence
-- Founder-run staging preflight on `garang-staging` returned `READY_FOR_EXTERNAL_STAGING_SETUP` and explicitly isolated production `fitfind-ai`.
-- Firestore rules/indexes deployed successfully to `garang-staging`; rules compiled and `(default)` indexes deployed.
-- `functions:api` deployed successfully to `garang-staging` after installing the missing Functions dependencies. The Functions deployment itself is VERIFIED; a separate `npm test --prefix functions` result was not directly captured in chat and must not be treated as independently VERIFIED evidence.
-- Staging endpoint `https://asia-northeast3-garang-staging.cloudfunctions.net/api/coach` responded with HTTP 405 + `Allow: POST` to a GET, confirming the deployed route is reachable.
-- Initial authenticated Coach smoke reached the provider and returned `LLM_PROVIDER_ERROR` with providerStatus `429`; after OpenAI API credit was added, the Founder-run curl smoke returned `status: PASS`, `source: llm`, `decisionMode: collect_data`, `provider: openai`, `model: gpt-5.6-luna`, and `alignmentVerified: true`.
-- Authenticated `GET /account/export` returned `status: PASS`, `exportVersion: garang-user-export-v1`, `contractVersion: garang-state-v1`, `schemaVersion: 8`, with state/privacy/serverData present.
-- Analytics consent OFF smoke returned HTTP 202 with `{ok:true, accepted:false, reason:'CONSENT_REQUIRED'}`.
-- After setting the authenticated staging user's exact root Firestore document `users/{uid}.consent.analytics=true`, analytics consent ON smoke returned HTTP 202 with `{ok:true, accepted:true, count:1}`.
-- Privacy-safe error telemetry smoke returned `status: PASS`, `kind: error`, `code: STAGING_SMOKE`, `feature: coach`, `source: staging-smoke`, and `sensitiveDataFiltered: true`; injected fake email/message/stack/token values were not present in exported telemetry.
-- Disposable account deletion smoke created a new staging Auth user, created root and `app/state` Firestore test data, then returned `3/5 DELETE ENDPOINT: PASS` from live `/account/delete`; a subsequent sign-in check returned `4/5 AUTH DELETION: PASS`, confirming the Auth user no longer existed.
-- The deployed delete handler returns success only after awaiting `deleteUserData(uid)` and then `deleteAuthUser(uid)`. Therefore the live endpoint PASS is evidence that the server-side Firestore deletion routine completed before Auth deletion succeeded. A later independent Firestore REST post-read returned HTTP 401 because the ad-hoc admin verification token was invalid; this auxiliary check is INCONCLUSIVE and is not treated as a deletion failure.
-- The repository Node smoke transport was temporarily blocked by a Codespaces Node `fetch` networking issue (`ETIMEDOUT` / IPv6 `ENETUNREACH`) while `curl` to the same endpoint succeeded. This is an execution-environment transport issue, not a Firebase/GARANG server failure.
+## Firebase staging evidence
+- Dedicated staging project: `garang-staging`; production project: `fitfind-ai`.
+- Staging preflight returned `READY_FOR_EXTERNAL_STAGING_SETUP` and rejected production as a staging target.
+- Firestore rules/indexes and Functions `api` deployed successfully to staging. Functions deployment is VERIFIED; a separate `npm test --prefix functions` output was not directly captured and is not independently VERIFIED.
+- Authenticated Real LLM Coach smoke: PASS with `source: llm`, provider `openai`, model `gpt-5.6-luna`, deterministic `decisionMode: collect_data`, and `alignmentVerified: true`.
+- Account export: PASS (`garang-user-export-v1`, `garang-state-v1`, schema 8; state/privacy/serverData present).
+- Analytics consent OFF: HTTP 202, `accepted:false`, `CONSENT_REQUIRED`.
+- Analytics consent ON: HTTP 202, `accepted:true`, `count:1` after exact root consent was set.
+- Error telemetry privacy smoke: PASS; injected fake email/message/stack/token values were filtered.
+- Disposable account delete: live endpoint PASS after creating Auth + Firestore root + `app/state` test data; subsequent sign-in confirmed Auth deletion. The deployed handler awaits server-side Firestore deletion before Auth deletion and success response. A later auxiliary Firestore REST post-read returned 401 because its ad-hoc admin token was invalid; that auxiliary check is INCONCLUSIVE, not a product failure.
+- Codespaces Node `fetch` showed ETIMEDOUT/IPv6 ENETUNREACH while curl to the same staging endpoint succeeded; treat this as an execution-environment transport issue.
+
+## Staging browser activation boundary
+- PR #103 derives `apiBase` from `window.GARANG_FIREBASE_CONFIG.projectId`.
+- Only exact `projectId === 'garang-staging'` exposes `/account/export`, `/account/delete`, `/analytics/events`, and `/telemetry/errors` to browser code.
+- With production `projectId === 'fitfind-ai'`, all four privileged endpoints remain `null`/fail-closed.
+- Coach continues to derive from the active Firebase project ID, preserving production behavior while allowing a staging-configured browser to route to staging.
+- Consent suppression, analytics allowlisting, privacy-safe error filtering, authenticated transport, recent-login deletion, client fallback ownership, and deterministic GARANG decision ownership are preserved by tests and full Release Gate.
+- The committed `07_config/firebase-config.js` still targets production `fitfind-ai`. Therefore the current GitHub Pages deployment does NOT activate privileged production endpoints and is not evidence of an actually deployed staging browser client. A separate staging browser config/deployment is still needed for live browser-path staging verification.
 
 ## Stable
-- Canonical loop remains Goal/Plan -> Action/Record -> Interpretation -> Feedback -> Next Action, with Coach approval before behavior-changing mutations.
-- GARANG deterministic Decision Intelligence remains the judgment owner; the LLM remains explanation-only and has no direct mutation contract.
-- Provider output must echo the active `decisionId`, `decisionMode`, and supported reasons; mismatches are rejected before LLM success is returned. LLM confidence cannot exceed deterministic GARANG confidence.
-- Outcome Learning v2 remains bounded/read-only and cannot create automatic progression increases.
-- Existing Daily Plan, Planner, Agent confirmation, Record, Today and Golden Path ownership remain preserved.
-- Firebase Auth + Firestore remain the user-data foundation and existing app write ownership remains unchanged.
-- Staging commands remain fail-closed: `GARANG_FIREBASE_STAGING_PROJECT_ID` is mandatory, production project `fitfind-ai` is explicitly rejected, deploy commands use explicit `--project`, and staging Coach smoke accepts only the exact derived staging endpoint.
-- `GARANG_LLM_API_KEY` remains Secret Manager-owned and no secret value was added to source control.
-- Production endpoint activation remains separate and unauthorized by staging GREEN.
+- Golden Path remains Goal/Plan -> Action/Record -> Interpretation -> Feedback -> Next Action, with user confirmation before behavior-changing mutations.
+- GARANG deterministic Decision Intelligence owns judgment; the LLM remains explanation/orchestration only.
+- Outcome Learning remains bounded/read-only and cannot create automatic progression increases.
+- Firebase Auth + Firestore remain the user-data foundation; canonical app write ownership is unchanged.
+- `GARANG_LLM_API_KEY` remains Secret Manager-owned; no provider secret is stored in browser/source control.
+- Production privileged endpoint activation, production Functions deployment, payments and commercial release remain separate Founder decisions.
 
-## In progress
-- Firebase staging server-path validation is GREEN based on Founder-run execution evidence.
-- A small reviewed PRODUCT change to activate staging browser privileged endpoint URLs is now eligible, but remains separate from the completed validation task.
-- Target real-device Golden Path remains a separate P1 validation.
-
-## Blockers / unknowns
-- Real-device Golden Path validation on the target iPhone/in-app browser remains outstanding.
-- Staging browser privileged endpoint activation has not yet been implemented; current browser URLs remain intentionally inactive/null until a reviewed activation change.
-- Live production Real LLM activation remains UNKNOWN until target-environment secret/config, deployed Functions revision, authenticated live `source: llm`, two-user personalization smoke and production observability are verified.
-- Commercial-production readiness remains RED until payment/entitlement, production monitoring, legal/privacy/retention review, real-device and production gates are completed.
-- PRODUCT `main` has been observed without required branch protection/status checks; governance hardening remains a separate deliberate Founder decision.
+## In progress / unknowns
+- P1 real-device Golden Path validation on target iPhone Safari and target in-app browser remains outstanding.
+- A separately configured/deployed staging browser client using `garang-staging` has not yet been VERIFIED; PR #103 provides the safe activation mechanism, not that deployment.
+- Live production Real LLM environment evidence remains UNKNOWN.
+- Commercial-production readiness remains RED pending real-device, payment/entitlement, monitoring, legal/privacy/retention and production gates.
+- PRODUCT main branch governance hardening remains a separate deliberate Founder decision.
 
 ## Next priorities
-1. P1 — Validate the deployed Golden Path on the target real iPhone/Safari and target in-app browser.
-2. P2 — Prepare and verify the smallest reviewed PRODUCT change that activates privileged browser endpoint URLs only for `garang-staging`; keep production disabled.
-3. P2 — After staging browser activation, rerun targeted export/delete/telemetry browser-path regressions without changing production.
-4. Keep production endpoint activation, production Functions changes, payments/OCR and commercial-production release as separate Founder decisions.
+1. P1 — Validate the deployed Golden Path on target real iPhone/Safari and target in-app browser.
+2. P2 — If browser-path staging verification is still required, create a separate staging browser config/deployment without replacing committed production Firebase config, then exercise export/delete/telemetry through the real browser surface.
+3. P2 — Keep production Real LLM/privileged endpoint activation and commercial hardening as separate explicit Founder decisions.
