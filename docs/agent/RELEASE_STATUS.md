@@ -3,7 +3,7 @@
 Last updated: 2026-09-15
 
 ## Overall decision
-GREEN for the current verified PRODUCT code baseline `451f5639bbee65c8f5659e150c0949d0b9bf24d5`, including Commercialization Stage 1, Core Intelligence Stage 2, hardened Real LLM/Decision alignment, Outcome Learning v2, Server Readiness Stage 0 and Firebase Staging Gate v1. Repository preparation is GREEN. The dedicated Firebase staging environment `garang-staging` has now completed Firestore rules/indexes deployment, Functions `api` deployment, staging Auth/Secret setup, and authenticated Real LLM Coach smoke with `source: llm` and verified Decision↔LLM alignment. Remaining staging server checks are account export/delete and consent-gated telemetry. Commercial-production readiness remains RED.
+GREEN for the current verified PRODUCT code baseline `451f5639bbee65c8f5659e150c0949d0b9bf24d5`, including Commercialization Stage 1, Core Intelligence Stage 2, hardened Real LLM/Decision alignment, Outcome Learning v2, Server Readiness Stage 0 and Firebase Staging Gate v1. Repository preparation is GREEN. The dedicated Firebase staging environment `garang-staging` is GREEN for Firestore/Functions deployment, authenticated Real LLM Coach, account export, consent OFF/ON analytics behavior, and privacy-safe error telemetry. Full staging server validation remains PARTIAL only because destructive account deletion on a disposable staging account is not yet verified. Commercial-production readiness remains RED.
 
 ## CONTROL — Founder OS v7-lite
 Decision: GREEN / PERSISTENT CONTROL PLANE.
@@ -44,20 +44,22 @@ Evidence:
 - `GARANG_LLM_API_KEY` remains Secret Manager-owned; no secret value was committed.
 
 ## Firebase staging environment
-Decision: GREEN FOR INFRA + AUTHENTICATED REAL LLM COACH / PARTIAL FOR FULL SERVER VALIDATION.
+Decision: GREEN FOR INFRA + COACH + EXPORT + TELEMETRY / PARTIAL FOR FULL SERVER VALIDATION.
 Evidence from Founder-run execution:
 - Dedicated staging project: `garang-staging`.
 - Preflight: `READY_FOR_EXTERNAL_STAGING_SETUP`; production `fitfind-ai` isolated.
 - Firestore rules compiled and released; indexes deployed successfully to `(default)`.
-- Functions `api` deployed successfully to staging.
-- Deployed Coach route reachable: unauthenticated GET returned HTTP 405 with `Allow: POST`.
+- Functions `api` deployed successfully to staging after installing missing Functions dependencies. The deployment is VERIFIED; a separate Functions test command result was not directly captured and is not independently VERIFIED.
+- Deployed Coach route reachable: GET returned HTTP 405 with `Allow: POST`.
 - Authenticated Coach path reached OpenAI. Initial providerStatus 429 identified missing API credit; after credit funding, direct curl smoke returned `status: PASS`, `source: llm`, `provider: openai`, `model: gpt-5.6-luna`, `decisionMode: collect_data`, and `alignmentVerified: true`.
-- Codespaces Node `fetch` experienced `ETIMEDOUT`/IPv6 `ENETUNREACH` to the deployed endpoint while curl to the same endpoint succeeded. This is an execution-environment transport issue and does not invalidate the server-path smoke.
-Remaining checks:
-- `GET /account/export` staging smoke.
-- Consent OFF/ON analytics and privacy-safe error telemetry staging smoke.
-- Destructive `/account/delete` smoke using a disposable staging Auth user with recent-login enforcement.
-- Browser privileged endpoints remain inactive/null until these checks pass.
+- Authenticated account export returned `status: PASS`, `exportVersion: garang-user-export-v1`, `contractVersion: garang-state-v1`, `schemaVersion: 8`, and confirmed state/privacy/serverData presence.
+- Analytics consent OFF returned HTTP 202 with `accepted:false` and `reason:CONSENT_REQUIRED`.
+- Analytics consent ON returned HTTP 202 with `accepted:true` and `count:1` after `users/{uid}.consent.analytics=true` was verified in the authenticated staging user's root document.
+- Privacy-safe error telemetry returned `status: PASS` and `sensitiveDataFiltered:true`; injected fake email/message/stack/token values did not persist in exported telemetry.
+- Codespaces Node `fetch` experienced `ETIMEDOUT`/IPv6 `ENETUNREACH` to the deployed endpoint while curl to the same endpoint succeeded. This is an execution-environment transport issue and does not invalidate the server-path smokes.
+Remaining check:
+- Destructive `/account/delete` smoke using a disposable staging Auth user, with recent-login enforcement and post-delete data/auth verification.
+- Browser privileged endpoints remain inactive/null until full staging server validation passes and a separate reviewed activation change is approved.
 
 ## Preservation result
 Decision: GREEN.
@@ -75,4 +77,4 @@ Decision: YELLOW / UNKNOWN ENVIRONMENT EVIDENCE.
 
 ## Commercial production
 Decision: RED / NOT YET READY.
-A GREEN repository baseline and GREEN staging Coach path do not imply commercial-production readiness. Real-device validation, remaining staging/privacy checks, payment/entitlement, production monitoring/provider activation and legal/privacy/retention review remain separate gates.
+A GREEN repository baseline and mostly GREEN staging server path do not imply commercial-production readiness. Real-device validation, destructive staging delete verification, payment/entitlement, production monitoring/provider activation and legal/privacy/retention review remain separate gates.
