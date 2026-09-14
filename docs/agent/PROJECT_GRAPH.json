@@ -6,18 +6,34 @@
     {"id":"INIT-BETA-VALIDATION","kind":"initiative","title":"Validate the deployed beta before adding new product scope","status":"active","ownerWorkstream":"product","repositoryId":"product"},
     {"id":"TASK-REAL-DEVICE-VALIDATION","kind":"task","title":"Run deployed Golden Path validation on target real devices","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"DECISION-RELEASE-CHANNEL","kind":"decision","title":"Choose beta learning or commercial-production hardening as the next release channel","status":"blocked","ownerWorkstream":"command-center"},
+
     {"id":"INIT-V7-LITE","kind":"initiative","title":"Make Founder OS multi-repository and event-ready without external autonomous runtime","status":"done","ownerWorkstream":"engineering","repositoryId":"control"},
     {"id":"CHANGE-CONTROL-PR6","kind":"change","title":"Founder OS v7-lite control-plane PR #6 merged as e25dbad","status":"done","ownerWorkstream":"engineering","repositoryId":"control"},
     {"id":"VERIFY-CONTROL-POSTMERGE","kind":"verification","title":"CONTROL post-merge CI #26 and Event Envelope #9 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"control"},
     {"id":"CHANGE-PRODUCT-PR69","kind":"change","title":"PRODUCT Founder OS event-adapter PR #69 merged as 5c1f46c","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-POSTMERGE","kind":"verification","title":"PRODUCT post-merge Release Gate #1004 and Event Envelope #3 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"RESULT-V7-LITE-GREEN","kind":"result","title":"Founder OS v7-lite event-ready multi-repository integration GREEN","status":"done","ownerWorkstream":"command-center"},
+
     {"id":"INIT-AI-DATA-HARDENING","kind":"initiative","title":"Harden GARANG explanation alignment and outcome learning without transferring decision ownership to the LLM","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"TASK-LLM-SEMANTIC-ALIGNMENT","kind":"task","title":"Enforce Decision-to-LLM semantic alignment as a structured runtime contract","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"TASK-OUTCOME-LEARNING-V2","kind":"task","title":"Add conservative longitudinal Outcome Learning v2","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"CHANGE-PRODUCT-PR99","kind":"change","title":"PRODUCT PR #99 merged as bcb27d5 with semantic LLM alignment and Outcome Learning v2","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-PR99","kind":"verification","title":"PR #99 pre-merge Gate #1166 and post-merge Gate #1170 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"RESULT-AI-DATA-HARDENING-GREEN","kind":"result","title":"AI/Data hardening preserves Golden Path and makes LLM alignment machine-enforced","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+
+    {"id":"INIT-SERVER-READINESS","kind":"initiative","title":"Prepare authenticated server boundaries without replacing canonical Firebase user-data ownership","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"TASK-SERVER-READINESS-STAGE0","kind":"task","title":"Implement Server Readiness Stage 0 repository/service/security/telemetry boundaries","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR101","kind":"change","title":"PRODUCT PR #101 Server Readiness Stage 0 merged as b2ddbf4e","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-PR101","kind":"verification","title":"PR #101 pre-merge Gate #1210 and post-merge Gate #1212 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-SERVER-READINESS-GREEN","kind":"result","title":"Server Readiness Stage 0 repository blocker closed with activation still gated","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+
+    {"id":"INIT-STAGING-VALIDATION","kind":"initiative","title":"Validate Server Readiness safely in an isolated Firebase staging environment","status":"active","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"TASK-STAGING-PREP-GATE","kind":"task","title":"Add fail-closed staging project and Coach smoke guardrails","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR102","kind":"change","title":"PRODUCT PR #102 fail-closed Firebase staging gate merged as 451f5639","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-PR102","kind":"verification","title":"PR #102 pre-merge Gate #1217 and post-merge Gate #1218 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-STAGING-REPO-GREEN","kind":"result","title":"Repository-level staging preparation is GREEN without authorizing external deployment","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+    {"id":"TASK-STAGING-ENV-SMOKE","kind":"task","title":"Create/configure isolated staging, deploy verified revision, and run authenticated Coach/account/telemetry/security smoke","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"},
+
     {"id":"INIT-PRODUCTION-LLM-VALIDATION","kind":"initiative","title":"Verify live Real LLM Coach activation in the target production environment","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run authenticated production Coach smoke with deployment/config and two-user evidence","status":"planned","ownerWorkstream":"ai-data","repositoryId":"product"}
   ],
@@ -26,6 +42,7 @@
     {"from":"INIT-BETA-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"TASK-REAL-DEVICE-VALIDATION","to":"INIT-BETA-VALIDATION","kind":"supports"},
     {"from":"DECISION-RELEASE-CHANNEL","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+
     {"from":"INIT-V7-LITE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"CHANGE-CONTROL-PR6","to":"INIT-V7-LITE","kind":"implements"},
     {"from":"VERIFY-CONTROL-POSTMERGE","to":"CHANGE-CONTROL-PR6","kind":"verifies"},
@@ -33,6 +50,7 @@
     {"from":"VERIFY-PRODUCT-POSTMERGE","to":"CHANGE-PRODUCT-PR69","kind":"verifies"},
     {"from":"RESULT-V7-LITE-GREEN","to":"VERIFY-CONTROL-POSTMERGE","kind":"depends-on"},
     {"from":"RESULT-V7-LITE-GREEN","to":"VERIFY-PRODUCT-POSTMERGE","kind":"depends-on"},
+
     {"from":"INIT-AI-DATA-HARDENING","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"TASK-LLM-SEMANTIC-ALIGNMENT","to":"INIT-AI-DATA-HARDENING","kind":"supports"},
     {"from":"TASK-OUTCOME-LEARNING-V2","to":"INIT-AI-DATA-HARDENING","kind":"supports"},
@@ -40,6 +58,20 @@
     {"from":"CHANGE-PRODUCT-PR99","to":"TASK-OUTCOME-LEARNING-V2","kind":"implements"},
     {"from":"VERIFY-PRODUCT-PR99","to":"CHANGE-PRODUCT-PR99","kind":"verifies"},
     {"from":"RESULT-AI-DATA-HARDENING-GREEN","to":"VERIFY-PRODUCT-PR99","kind":"depends-on"},
+
+    {"from":"INIT-SERVER-READINESS","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"TASK-SERVER-READINESS-STAGE0","to":"INIT-SERVER-READINESS","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR101","to":"TASK-SERVER-READINESS-STAGE0","kind":"implements"},
+    {"from":"VERIFY-PRODUCT-PR101","to":"CHANGE-PRODUCT-PR101","kind":"verifies"},
+    {"from":"RESULT-SERVER-READINESS-GREEN","to":"VERIFY-PRODUCT-PR101","kind":"depends-on"},
+
+    {"from":"INIT-STAGING-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"TASK-STAGING-PREP-GATE","to":"INIT-STAGING-VALIDATION","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR102","to":"TASK-STAGING-PREP-GATE","kind":"implements"},
+    {"from":"VERIFY-PRODUCT-PR102","to":"CHANGE-PRODUCT-PR102","kind":"verifies"},
+    {"from":"RESULT-STAGING-REPO-GREEN","to":"VERIFY-PRODUCT-PR102","kind":"depends-on"},
+    {"from":"TASK-STAGING-ENV-SMOKE","to":"INIT-STAGING-VALIDATION","kind":"supports"},
+
     {"from":"INIT-PRODUCTION-LLM-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"TASK-PRODUCTION-LLM-SMOKE","to":"INIT-PRODUCTION-LLM-VALIDATION","kind":"supports"}
   ]
