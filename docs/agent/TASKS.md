@@ -38,7 +38,7 @@ Evidence: PR #99 `bcb27d5a...`; post-merge Gate #1170 GREEN.
 ## P2 — Server Readiness / Firebase staging boundaries
 Status: DONE
 Owner: Engineering / Release QA / AI Data
-Evidence: PRs #101–#103; corresponding gates GREEN. Production activation remains separate.
+Evidence: PRs #101–#103; corresponding gates GREEN. Production activation is tracked separately below.
 
 ## P4 — Food Data Foundation v2
 Status: DONE
@@ -71,33 +71,33 @@ Acceptance:
 Evidence: PRODUCT PR #118 merged as `3c3844edbe07920db41d9054aa968cb8be8bf8f4`; 500 foods = `232 verified / 3 approximate / 265 estimated / 0 unknown`; 151 official upgrades; Gate #1347/#1348 GREEN.
 
 ## P1 — Production Real AI Coach activation / verification
-Status: BLOCKED ON FIREBASE CI CREDENTIAL / REPOSITORY GREEN
+Status: DEPLOYED + PUBLIC BOUNDARIES VERIFIED / AUTHENTICATED LIVE SMOKE PENDING
 Owner: AI Data / Engineering / Release QA
 Acceptance:
 - Repository Real LLM/provider/gateway/alignment/personalization/Agent-boundary tests pass. ✅
-- Fail-closed production route preflight exists. ✅
-- Founder approved production secret/deploy/smoke bundle. ✅
-- Fail-closed one-shot production activation workflow is merged. ✅
-- A Firebase deployment credential is connected to PRODUCT GitHub Actions. ⛔
-- Current production `api` Function is deployed at the intended revision. ⏳
-- `GARANG_LLM_API_KEY` is confirmed/configured in Firebase Secret Manager without exposure. ⏳
-- Route changes from 404 to expected 401/405 boundaries. ⏳
+- Fail-closed production activation workflow is merged. ✅
+- Firebase deployment credential is connected to PRODUCT GitHub Actions. ✅
+- `GARANG_LLM_API_KEY` is confirmed/configured in Firebase Secret Manager without exposure. ✅
+- Current production `api` Function is deployed at the intended revision. ✅
+- Route changed from prior 404 to expected unauthenticated POST 401 / GET 405 boundaries. ✅
+- Pre-auth provider invocation and user-data read are blocked. ✅
 - Authenticated live Coach smoke succeeds with `source: llm`. ⏳
 - Two-user personalization differentiation is demonstrated. ⏳
 - GARANG decision ownership and confirmation boundary remain intact. ✅
-Evidence: PR #119 repository preflight GREEN. PR #120 exact head `ae2b6b4148ea995af50869ab7395ce59b9b5c837`; exact-head Release Gate #1355 GREEN; merged PRODUCT main `e80cb61179c7108ddd65c78793a8adb31aed5da0`. Production Coach Activation run #1 (`35003841570`) failed safely at the Firebase authentication preflight because `FIREBASE_SERVICE_ACCOUNT_FITFIND_AI`, `GOOGLE_APPLICATION_CREDENTIALS_JSON`, and `FIREBASE_TOKEN` were all absent. Secret Manager query, Function deploy, route verification and provider smoke were skipped; no production mutation or provider call occurred.
-Next unblock: add one approved Firebase CI credential to PRODUCT repository Actions secrets. Recommended long-term path is Application Default Credentials/service-account or workload-identity style auth; the workflow currently supports service-account JSON. The legacy `FIREBASE_TOKEN` path is supported only as a short-lived fallback. After credential connection, rerun failed activation run #1.
+Evidence: PRODUCT PR #121 merged as current main `074cb1f3fcdd3fc9958c78c67314dc65dcd6ce6c`; exact-head Gate #1357 GREEN; post-merge Gate #1358 GREEN; Pages #790 GREEN. Production Coach Activation run #2 `35010146340` SUCCESS: Firebase auth/project access PASS, secret metadata preserved, `functions:api` successful update, route preflight PASS with POST 401 / GET 405 and no pre-auth provider/user-data access. Authenticated smoke was explicitly `SKIPPED_NO_TOKEN`; do not count it as PASS.
+Next unblock: obtain authenticated production evidence through a secure token/test-identity path without exposing Firebase ID tokens in chat, then run canonical production smoke and, if available, a second intentionally different user.
 
 ## P1 — Validate deployed Golden Path on real target device
 Status: IN PROGRESS / PARTIAL GREEN
 Owner: Release QA + Product + Design Brand
 Acceptance:
-- iPhone Chrome load/onboarding/Today/first record/Coach. ✅
+- iPhone Chrome load/onboarding/Today/first record/Coach. ✅ (pre-current-production-LLM deploy)
+- Post-deploy live provider evidence. ⏳
 - Plan → execution → persistence → Accumulation. ⏳
 - Target in-app browser Golden Path. ⏳
 
 ## P1 — Wanted AI Championship submission
-Status: PLANNED AFTER PRODUCTION AI + REAL-DEVICE EVIDENCE
+Status: PLANNED AFTER AUTHENTICATED PRODUCTION AI + REAL-DEVICE EVIDENCE
 Owner: Founder / Growth Business / Product
 
 ## P2 — Commercial production hardening
