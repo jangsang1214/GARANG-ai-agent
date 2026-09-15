@@ -15,30 +15,35 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff
-- PRODUCT current VERIFIED main is `9e853e8f9ba854b616eb894af5b178805bbce0e8`, merge commit for PR #114 `Merge Today workout execution into preparation`.
-- PR #114 verified head `60be81a43e9f5e6c40e0c4bf21241b9ca4be19ba` passed exact-head Release Gate #1318: GREEN.
-- PR #114 merged to main as `9e853e8f...` and post-merge push Release Gate #1319 passed `core-build-rules`, `browser-webkit`, and `verify`: GREEN.
-- Pages #780 on the merge commit completed GREEN; Founder OS Event Envelope runs for main completed GREEN.
-- Final Today model: GARANG judgment/plan → `오늘 운동 준비하기` → optional progressive details → `운동 시작` → canonical Workout execution; separate standalone execute CTA stays as canonical owner in DOM but is visually/accessibility-hidden only after successful preparation integration.
-- Generated workout plans reuse the existing Workout Intelligence import path; otherwise `운동 시작` delegates to the canonical Today execute action. No new mutation path exists.
-- Bottom `체크인` remains the bottom-most touch-safe Today utility and reuses the existing canonical check-in modal/write owner.
-- Advanced workout generation controls remain available behind disclosure.
-- Product Consolidation PR #104 and PR #111 lifecycle/check-in integrity remain preserved.
+- PRODUCT current VERIFIED main is `074cb1f3fcdd3fc9958c78c67314dc65dcd6ce6c`, merge commit for PR #121 production Coach Functions dependency-install fix.
+- PR #121 exact head `48020dde072bff74a6d5e8ede428aedb60c2f37a`; exact-head Release Gate #1357 GREEN.
+- Post-merge Release Gate #1358 GREEN through final verify; Pages #790 GREEN; current-main Founder OS Event Envelope runs GREEN.
+- Production Coach Activation run #2 `35010146340` SUCCESS on current main.
+- Firebase service-account authentication and `fitfind-ai` project access are VERIFIED.
+- `GARANG_LLM_API_KEY` exists in Firebase Secret Manager and the production runtime identity has Secret Accessor; no secret value was exposed in chat or repository files.
+- `api(asia-northeast3)` production Function updated successfully and Firebase deploy completed.
+- Production route `https://asia-northeast3-fitfind-ai.cloudfunctions.net/api/coach` passes fail-closed boundary preflight: unauthenticated POST 401, wrong-method GET 405, no provider invocation and no user-data read before authentication.
+- Authenticated live production smoke did NOT run because no `GARANG_FIREBASE_ID_TOKEN` / alternate token was available in Actions. Workflow recorded `SKIPPED_NO_TOKEN`; do not treat this as provider PASS.
+- Therefore live `source: llm`, live decision alignment, and two-user production personalization remain pending.
 - GARANG deterministic decision identity remains authoritative. LLM remains explanation/orchestration only and cannot mutate state directly.
-- Repository/UI final integration is GREEN. Do not start another broad UI redesign without new external-user evidence.
-- Founder real-device validation remains PARTIAL GREEN through iPhone Chrome app load → onboarding → Today → first record → Coach; later plan/execution/persistence/Accumulation and target in-app browser remain unverified.
-- Live production Real LLM activation remains UNKNOWN. Commercial-production readiness remains RED.
+- Repository/UI/automated Golden Path and production infrastructure/public security boundary are GREEN. Commercial production readiness remains separate and RED.
+- Founder real-device validation is PARTIAL GREEN through iPhone Chrome app load → onboarding → Today → first record → Coach from before the current production provider deployment; post-deploy provider evidence and later plan/execution/persistence/Accumulation remain unverified.
+- Nutrition corpus remains locked/reviewed at 500 foods = `232 verified / 3 approximate / 265 estimated / 0 unknown`.
 
 ## Product quality judgment
-- Today / Record / Coach / Progress is the locked release IA baseline.
-- The final Today workout preparation/execution integration closes the remaining duplicate-action UX gap without changing canonical ownership.
-- Repository/product implementation is GREEN; this is not equivalent to commercial production readiness.
+- Today / Record / Coach / Progress remains the locked release IA baseline.
+- Production Coach infrastructure is now live behind correct authentication/method boundaries without changing GARANG decision ownership.
+- Deployment success is not equivalent to authenticated provider success; keep Real AI activation YELLOW until live `source: llm` evidence exists.
+
+## Non-blocking deployment debt
+- Firebase CLI warns the current `firebase-functions` version is outdated and an upgrade may have breaking changes; isolate in a dedicated regression-tested PR later.
+- Successful deploy also reported a build-image cleanup warning that may create a small monthly Artifact Registry/GCR cost. Manual deletion is destructive/cost-related and requires explicit Founder approval.
 
 ## Next recommended work
-1. Production Real AI Coach activation/verification: production API/secret activation (explicit Founder approval required) → Functions production config/deploy verification → authenticated live Coach smoke → two-user personalization differentiation.
-2. Complete real iPhone Golden Path through plan → execution → persistence → Accumulation and target in-app browser.
-3. Prepare Wanted AI Championship submission copy/demo evidence and submit after production and real-device evidence are complete.
-4. In parallel when approved official nutrition data is available, run the corpus planner, review ambiguous mappings, apply only traceable replacements and re-audit quality counts.
+1. Close authenticated production Coach evidence safely: obtain a secure short-lived test identity/token path without exposing tokens in chat, run canonical `source: llm` smoke and verify decision alignment.
+2. If secure evidence is available, repeat with a deliberately different user for personalization/deterministic-decision differentiation.
+3. Complete real iPhone Golden Path through plan → execution → persistence → Accumulation and target in-app browser.
+4. Prepare Wanted AI Championship submission copy/demo evidence after authenticated production AI + real-device evidence are complete.
 
 ## Handoff rule
 Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization.
