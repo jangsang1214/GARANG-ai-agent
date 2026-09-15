@@ -71,7 +71,17 @@
     {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run authenticated production Coach smoke with deployment/config and two-user evidence","status":"in_progress","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"CHANGE-PRODUCT-PR121","kind":"change","title":"PRODUCT PR #121 merged production Coach dependency-install fix as 074cb1f3","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
     {"id":"VERIFY-PRODUCTION-COACH-DEPLOY","kind":"verification","title":"Production activation run 35010146340 deploys api and verifies POST 401 / GET 405 with no pre-auth provider or user-data access","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-PRODUCTION-COACH-BOUNDARY-GREEN","kind":"result","title":"Production Coach infrastructure, secret binding and public fail-closed boundaries are GREEN; authenticated provider smoke remains pending","status":"done","ownerWorkstream":"command-center","repositoryId":"product"}
+    {"id":"RESULT-PRODUCTION-COACH-BOUNDARY-GREEN","kind":"result","title":"Production Coach infrastructure, secret binding and public fail-closed boundaries are GREEN","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCTION-LLM-TIMEOUT","kind":"verification","title":"Real authenticated production Coach reaches provider path, records LLM_TIMEOUT under old 8s deadline, and fails closed to local Coach","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR122","kind":"change","title":"PRODUCT PR #122 raises provider timeout to 20s, Function timeout to 30s and fixes deployment-trigger coverage","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCTION-COACH-TIMEOUT-DEPLOY","kind":"verification","title":"PR #122 Gate #1359, activation run 35013994128, post-merge Gate #1360, Pages #791 and Event #783 are GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-PRODUCTION-COACH-TIMEOUT-HEADROOM-GREEN","kind":"result","title":"Production timeout headroom and fail-closed deployment path are GREEN; post-fix authenticated external response remains pending","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+
+    {"id":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"initiative","title":"Harden release integrity and Functions supply chain after live AI stabilization","status":"planned","ownerWorkstream":"engineering"},
+    {"id":"TASK-FUNCTIONS-LOCK-AUDIT","kind":"task","title":"Lock and separately audit Firebase Functions runtime dependencies","status":"planned","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"TASK-MAIN-PROTECTION","kind":"task","title":"Enforce PR and CI protection for CONTROL and PRODUCT main branches","status":"planned","ownerWorkstream":"command-center"},
+    {"id":"TASK-CI-TOOLCHAIN-MODERNIZATION","kind":"task","title":"Modernize GitHub Actions and dev/deploy dependency tooling without changing product behavior","status":"planned","ownerWorkstream":"engineering"},
+    {"id":"TASK-DEPLOY-WIF","kind":"task","title":"Replace long-lived deployment JSON key with short-lived OIDC Workload Identity Federation after live AI stabilization","status":"planned","ownerWorkstream":"engineering","repositoryId":"product"}
   ],
   "edges": [
     {"from":"METRIC-REAL-DEVICE-CONFIDENCE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"measures"},
@@ -146,6 +156,16 @@
     {"from":"TASK-PRODUCTION-LLM-SMOKE","to":"INIT-PRODUCTION-LLM-VALIDATION","kind":"supports"},
     {"from":"CHANGE-PRODUCT-PR121","to":"TASK-PRODUCTION-LLM-SMOKE","kind":"implements"},
     {"from":"VERIFY-PRODUCTION-COACH-DEPLOY","to":"CHANGE-PRODUCT-PR121","kind":"verifies"},
-    {"from":"RESULT-PRODUCTION-COACH-BOUNDARY-GREEN","to":"VERIFY-PRODUCTION-COACH-DEPLOY","kind":"depends-on"}
+    {"from":"RESULT-PRODUCTION-COACH-BOUNDARY-GREEN","to":"VERIFY-PRODUCTION-COACH-DEPLOY","kind":"depends-on"},
+    {"from":"VERIFY-PRODUCTION-LLM-TIMEOUT","to":"TASK-PRODUCTION-LLM-SMOKE","kind":"verifies"},
+    {"from":"CHANGE-PRODUCT-PR122","to":"TASK-PRODUCTION-LLM-SMOKE","kind":"implements"},
+    {"from":"VERIFY-PRODUCTION-COACH-TIMEOUT-DEPLOY","to":"CHANGE-PRODUCT-PR122","kind":"verifies"},
+    {"from":"RESULT-PRODUCTION-COACH-TIMEOUT-HEADROOM-GREEN","to":"VERIFY-PRODUCTION-COACH-TIMEOUT-DEPLOY","kind":"depends-on"},
+
+    {"from":"INIT-RELEASE-INTEGRITY-HARDENING","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"TASK-FUNCTIONS-LOCK-AUDIT","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
+    {"from":"TASK-MAIN-PROTECTION","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
+    {"from":"TASK-CI-TOOLCHAIN-MODERNIZATION","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
+    {"from":"TASK-DEPLOY-WIF","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"}
   ]
 }
