@@ -63,3 +63,9 @@ Date: 2026-09-14
 Decision: A GREEN Real LLM code/CI baseline does not establish that the production provider is live. Secret/config presence, deployed revision, authenticated live `source: llm`, production personalization smoke and observability require separate target-environment verification.
 Reason: Deployment/config evidence cannot be inferred from source code or browser-mocked integration tests.
 Impact: Live Real LLM activation remains YELLOW/UNKNOWN until the canonical production smoke passes in the target environment.
+
+## D-014 — Official nutrition data requires traceable provenance and review before canonical replacement
+Date: 2026-09-15
+Decision: K-FIND/USDA nutrition rows may be classified as `verified` only when provider, dataset, source record ID and complete core kcal/protein/carbs/fat are present. Official-source matches never overwrite canonical GARANG food rows automatically; unique exact name/alias matches create reviewable replacement proposals and ambiguous mappings require manual review. Source credentials remain outside source/client bundles.
+Reason: An official source does not eliminate unit, identity, serving-basis or mapping errors. Automatic replacement could turn uncertain mappings into confidently wrong nutrition recommendations.
+Impact: GARANG can ingest official nutrition data at scale while keeping Food Data Foundation quality gates, deterministic recommendation math and human-review boundaries intact. Repository ingestion readiness must remain distinct from actual corpus quality uplift until reviewed replacements are applied and re-audited.
