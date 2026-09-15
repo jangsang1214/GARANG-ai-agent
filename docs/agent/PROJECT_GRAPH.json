@@ -54,6 +54,13 @@
     {"id":"RESULT-STAGING-BROWSER-BOUNDARY-GREEN","kind":"result","title":"Staging-only privileged browser activation boundary is GREEN while production remains fail-closed","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
     {"id":"TASK-STAGING-BROWSER-DEPLOY","kind":"task","title":"Deploy and verify a separate browser client configured for garang-staging without replacing production config","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"},
 
+    {"id":"INIT-TODAY-ACTION-RELIABILITY","kind":"initiative","title":"Finalize Today action hierarchy and protect Golden Path state integrity","status":"done","ownerWorkstream":"product","repositoryId":"product"},
+    {"id":"TASK-TODAY-CHECKIN-HIERARCHY","kind":"task","title":"Preserve workout execution as primary action and add canonical bottom Check-in utility","status":"done","ownerWorkstream":"product","repositoryId":"product"},
+    {"id":"TASK-LIFECYCLE-STATE-DURABILITY","kind":"task","title":"Prevent stale route-transition writes from dropping Coach evidence","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR111","kind":"change","title":"PRODUCT PR #111 Today Check-in and lifecycle durability merged as 84589d66","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-PR111","kind":"verification","title":"PR #111 Gate #1288 and exact post-merge main Gate #1289 GREEN; Pages #779 and Event #628 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-TODAY-BASELINE-GREEN","kind":"result","title":"Today action hierarchy and automated Golden Path are GREEN; broad UI redesign is no longer prioritized","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+
     {"id":"INIT-PRODUCTION-LLM-VALIDATION","kind":"initiative","title":"Verify live Real LLM Coach activation in the target production environment","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run authenticated production Coach smoke with deployment/config and two-user evidence","status":"planned","ownerWorkstream":"ai-data","repositoryId":"product"}
   ],
@@ -111,6 +118,14 @@
     {"from":"VERIFY-PRODUCT-PR103","to":"CHANGE-PRODUCT-PR103","kind":"verifies"},
     {"from":"RESULT-STAGING-BROWSER-BOUNDARY-GREEN","to":"VERIFY-PRODUCT-PR103","kind":"depends-on"},
     {"from":"TASK-STAGING-BROWSER-DEPLOY","to":"INIT-STAGING-VALIDATION","kind":"supports"},
+
+    {"from":"INIT-TODAY-ACTION-RELIABILITY","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"TASK-TODAY-CHECKIN-HIERARCHY","to":"INIT-TODAY-ACTION-RELIABILITY","kind":"supports"},
+    {"from":"TASK-LIFECYCLE-STATE-DURABILITY","to":"INIT-TODAY-ACTION-RELIABILITY","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR111","to":"TASK-TODAY-CHECKIN-HIERARCHY","kind":"implements"},
+    {"from":"CHANGE-PRODUCT-PR111","to":"TASK-LIFECYCLE-STATE-DURABILITY","kind":"implements"},
+    {"from":"VERIFY-PRODUCT-PR111","to":"CHANGE-PRODUCT-PR111","kind":"verifies"},
+    {"from":"RESULT-TODAY-BASELINE-GREEN","to":"VERIFY-PRODUCT-PR111","kind":"depends-on"},
 
     {"from":"INIT-PRODUCTION-LLM-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"TASK-PRODUCTION-LLM-SMOKE","to":"INIT-PRODUCTION-LLM-VALIDATION","kind":"supports"}
