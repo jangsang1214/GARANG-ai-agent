@@ -1,27 +1,18 @@
 # GARANG Release Status
 
-Last updated: 2026-09-15
+Last updated: 2026-09-16
 
 ## Overall decision
-GREEN for current VERIFIED PRODUCT main `6d6222590285359a75300c9c3292eebf6549bf9e` (merged PR #116). Repository-level Product/Golden Path/UI integration remains GREEN, and the reviewed second official K-FIND food-corpus batch is GREEN with the canonical 500-food corpus at `81 verified / 10 approximate / 409 estimated / 0 unknown`. Real-device validation remains PARTIAL GREEN. Live production Real LLM activation remains UNKNOWN. Commercial-production readiness remains RED.
+GREEN for current VERIFIED PRODUCT main `3c3844edbe07920db41d9054aa968cb8be8bf8f4` (merged PR #118). Repository-level Product/Golden Path/UI integration remains GREEN, and the reviewed multi-source official food-corpus v3 release is GREEN with the canonical 500-food corpus at `232 verified / 3 approximate / 265 estimated / 0 unknown`. Real-device validation remains PARTIAL GREEN. Live production Real LLM activation remains UNKNOWN. Commercial-production readiness remains RED.
 
 ## PRODUCT — current main
 Decision: GREEN.
-- PR #116 `Apply second official K-FIND food corpus batch` merged as `6d6222590285359a75300c9c3292eebf6549bf9e`.
-- PR #116 was first reconciled onto the latest UI/Design main `34116a7fade65fb589b7fc6c00b406d73076290e`; exact verified PR head: `5ec44f9241af36b7fbc8a5d5b8a4383d9bb63e3e`.
-- Pre-merge exact-head Release Gate #1338: GREEN. `core-build-rules`, `browser-webkit`, and final `verify` all PASS.
-- Post-merge main Release Gate #1339: GREEN. `core-build-rules`, `browser-webkit`, and final `verify` all PASS.
-- Pages #783 on the merge SHA: GREEN.
-- Founder OS Event Envelope #734 for the main push/workflow completion: GREEN.
-
-## Final Today / UI integration
-Decision: GREEN / PRESERVED.
-- PR #114 Today workout integration remains intact: `오늘 운동 준비하기` is the single visible workout execution entry and delegates to canonical execution ownership.
-- PR #115 Progress/Accumulation language consolidation is included in the PR #116 exact head before merge and remains preserved on main.
-- Bottom `체크인` remains the bottom-most Today control, touch-safe, and continues to open the canonical check-in modal/write owner.
-- Advanced workout generation controls remain available behind progressive disclosure.
-- No new Workout mutation path, state-schema change, Planner ownership change, Agent Contract change, Decision Intelligence rewrite, LLM architecture change, or canonical Workout write-owner change was introduced by PR #116.
-- Golden Path execution meaning remains intact.
+- PR #118 `Apply reviewed official food corpus v3` merged as `3c3844edbe07920db41d9054aa968cb8be8bf8f4`.
+- Exact verified PR head: `6cee4f5eb5b8185cf1e089ece7720ee60befbab4`.
+- Pre-merge exact-head Release Gate #1347: GREEN. `core-build-rules`, `browser-webkit`, and final `verify` all PASS.
+- Post-merge main Release Gate #1348: GREEN. `core-build-rules`, `browser-webkit`, and final `verify` all PASS.
+- Pages #787 on the merge SHA: GREEN.
+- Founder OS Event Envelope #754 on the main push: GREEN.
 
 ## Golden Path / regression preservation
 Decision: GREEN in automated release gate.
@@ -31,23 +22,23 @@ Decision: GREEN in automated release gate.
 - No silent mutation or confirmation-boundary bypass was introduced.
 
 ## Official nutrition data result
-Decision: GREEN / SECOND VERIFIED K-FIND BATCH MERGED.
-- Official source normalization continues to support K-FIND, USDA FoodData Central and Data.go.kr nationwide nutrition standard records.
-- `verified` requires traceable provider/dataset/record ID and complete kcal/protein/carbs/fat.
-- PR #116 uses Founder-provided MFDS K-FIND `KDDB_HOME_ANALYZED`, source date 2026-08-28, with a 100g basis and 482 eligible source rows.
-- 82 canonical foods had exact-name matches; ambiguous `라면` was explicitly excluded from automatic replacement.
-- 81 reviewed safe official records are committed. Five were previously verified and 76 additional canonical foods were upgraded in PR #116.
-- The canonical 500-food corpus now audits to `81 verified / 10 approximate / 409 estimated / 0 unknown`.
-- Exactly 76 canonical rows received the new official upgrade; the remaining 424 canonical rows were not replaced by this batch.
+Decision: GREEN / REVIEWED MULTI-SOURCE V3 MERGED.
+- PR #117 established fail-closed multi-source matching for K-FIND 음식DB (KDDB), K-FIND 가공식품DB (PFDB), and 국가표준식품성분표 (KFCT), with 100g normalization and canonical identity preservation.
+- PR #118 applied 151 additional reviewed official replacements: K-FIND 음식DB analyzed 86, 국가표준식품성분표 10.4 63, K-FIND 가공식품DB 2.
+- The canonical 500-food corpus now audits to `232 verified / 3 approximate / 265 estimated / 0 unknown`.
+- Exactly 151 canonical rows received the v3 upgrade and 349 rows were unchanged by this materialization.
 - Food IDs, canonical names, categories, serving labels and corpus order are preserved.
-- The quality gate locks the reviewed semantic source payload to the workbook-derived SHA-256 and verifies exact official nutrient equality and provenance for reviewed rows.
-- Unsupported or semantically ambiguous source matches remain fail-closed rather than silently promoted to `verified`.
+- Generic or ambiguous identities remain fail-closed. In particular, generic `라면` was not promoted to verified merely because official ramen products exist.
+- Remaining approximate rows are `라면`, `오트밀`, `그릭요거트`.
+- The v3 audit locks source hashes, reviewed source row identity, provider/dataset/record ID, mapping rule, target identity hash, canonical byte hash and exact nutrient equality for the 151 new upgrades.
 
-## Food corpus release boundary
-Decision: GREEN for the reviewed 81-record verified coverage; future expansion remains evidence-gated.
-- Current verified canonical baseline: 500 foods = `81 verified / 10 approximate / 409 estimated / 0 unknown`.
-- No claim is made that all 500 foods are official-source verified.
-- Further verified-coverage expansion requires additional traceable official mappings and semantic review; ambiguous matches must remain excluded until resolved.
+## Remaining 265 estimated boundary
+Decision: ACCEPTED / NOT A RELEASE BLOCKER.
+- The 265 estimated foods are not unknown or empty records; they retain usable GARANG nutrition values.
+- They remain estimated because the reviewed official sources did not support a sufficiently safe one-to-one official replacement under the current verification contract. Typical blockers are recipe variance, cooking-form mismatch, generic food names, brand/SKU ambiguity, multiple plausible official candidates, or incomplete basis/nutrient comparability.
+- Category distribution: 고기/구이/볶음 40; 빵/디저트 36; 생선/해산물 30; 외식/패스트푸드/음료 30; 분식/간편식 27; 유제품/계란/콩 26; 밥/곡류/면 19; 국/찌개/탕 18; 반찬/김치/나물 17; 과일/견과 13; 기타/추가 9.
+- No claim is made that all 500 foods are official-source verified. Current verified coverage is 232/500 (46.4%).
+- Further promotion requires stronger traceable identity/evidence or manual review; raising the verified count alone is not a valid reason to replace a value.
 
 ## Real-device validation
 Decision: PARTIAL GREEN / IN PROGRESS.
@@ -57,7 +48,7 @@ Decision: PARTIAL GREEN / IN PROGRESS.
 
 ## Remaining release gates
 - Repository/UI/automated Golden Path integration: GREEN.
-- Reviewed K-FIND food-corpus batch through 81 verified foods: GREEN.
+- Reviewed food-corpus v3 through 232 verified foods: GREEN.
 - Production Real AI Coach activation: READY TO START, but production secret/deployment changes require explicit Founder approval.
 - Authenticated live production Coach + two-user personalization evidence: UNKNOWN.
 - Real-device full Golden Path: PARTIAL GREEN.
