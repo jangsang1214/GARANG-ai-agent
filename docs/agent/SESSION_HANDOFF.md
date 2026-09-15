@@ -15,23 +15,29 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff
-- PRODUCT latest observed main is `66b0e0f04274afee30b9d92f7752518de9b9ae52`. Its tree is identical to merged PR #110 tree, so the official corpus planner is present on current main.
-- Design consolidation PR #104 is merged. PR #110 was based on the post-design main and did not revert UI/runtime work.
-- PR #108 established K-FIND/USDA official ingestion with fail-closed provenance; exact post-merge Gate #1247 GREEN.
-- PR #110 `Add official corpus upgrade planning for GARANG food data` merged as `1763c4f9...` and adds Data.go.kr standard normalization, secure paginated retrieval support, before/projected quality reporting, and exact/ambiguous corpus matching boundaries.
-- Current integrated main Gate #1264 is GREEN across full tests/build/Firebase/Firestore and complete WebKit Golden Path including authenticated Coach, Real LLM, recovery and mobile/runtime stress. Pages #778 GREEN.
+- PRODUCT current VERIFIED main is `84589d66d0cce2c818982a97b7206ce6fc9d5fa5`, merged PR #111 `Make Today bottom CTA open Check-in`.
+- PR #111 final Today model: GARANG judgment/plan → primary `오늘 운동 실행` → separate bottom `체크인` utility. Check-in reuses the existing canonical app modal/write owner; no duplicate mutation path exists.
+- During final verification a real P2 stale-state race was found: Coach evidence could exist in bridge/localStorage and then be overwritten by an older app snapshot during Coach → Today routing. The lifecycle durability boundary now resynchronizes app state from the canonical Agent State Bridge after durable commit.
+- PWA delivery is hardened: state-durability and Today Check-in dynamic runtime versions are explicitly matched to service-worker precache; app shell is v24.
+- PR #111 exact-head pre-merge Gate #1288: GREEN.
+- Post-merge PRODUCT main Gate #1289: GREEN across core/build/security/Firebase/Firestore and every WebKit stage including complete Golden Path, authenticated Coach, Real LLM, recovery, mobile regression, Settings touch, button health and runtime stress.
+- Pages #779: GREEN. Founder OS Event Envelope #628: GREEN.
+- Design consolidation PR #104, Food Data Foundation/Nutrition Intelligence, PR #108 official ingestion and PR #110 official corpus-planning capability remain preserved.
 - `food-db.json` has NOT been bulk-upgraded. Last verified audit remains 500 foods = 0 verified / 12 approximate / 488 estimated.
-- Actual quality uplift requires a current approved official Data.go.kr/K-FIND/USDA artifact or a secure external environment with approved source access. Never paste or commit service keys.
-- Corpus planner rules: unsupported volume basis fails closed; exactly one verified exact candidate creates a review proposal; multiple candidates require manual review; no automatic canonical rewrite.
-- GARANG deterministic decision identity remains authoritative. LLM remains explanation-only and cannot mutate state directly.
-- Founder real-device validation remains PARTIAL GREEN through iPhone Chrome app load -> onboarding -> Today -> first record -> Coach; later plan/execution/persistence/Accumulation and target in-app browser remain unverified.
+- GARANG deterministic decision identity remains authoritative. LLM remains explanation/orchestration only and cannot mutate state directly.
+- Founder real-device validation remains PARTIAL GREEN through iPhone Chrome app load → onboarding → Today → first record → Coach; later plan/execution/persistence/Accumulation and target in-app browser remain unverified.
 - Live production Real LLM activation remains UNKNOWN. Commercial-production readiness remains RED.
 
+## Product quality judgment
+- The current Today/Record/Coach/Progress product structure and Today action hierarchy should be treated as the release baseline.
+- Do not start another broad UI redesign without new external-user evidence. Further visual/IA changes now have lower expected value than production AI and real-device validation and carry Golden Path regression risk.
+- Repository/product implementation is GREEN; this is not equivalent to commercial production readiness.
+
 ## Next recommended work
-1. Complete real-device Golden Path through plan -> execution -> persistence -> Accumulation and target in-app browser.
-2. Obtain an approved official nutrition dataset artifact or run the merged importer in a secure key-enabled environment; generate the 500-food replacement plan and review ambiguous mappings.
-3. Apply only traceable reviewed replacements, re-audit quality counts, then re-run full Release Gate before raising recommendation confidence.
-4. Continue collecting real beta Coach/Nutrition failure scenarios before changing deterministic decision behavior.
+1. Production Real AI Coach activation/verification: production API/secret activation (explicit Founder approval required) → Functions verification → authenticated live Coach smoke → two-user personalization differentiation.
+2. Complete real iPhone Golden Path through plan → execution → persistence → Accumulation and target in-app browser.
+3. Prepare demo/submission copy and evidence, then submit to the Wanted AI Championship after the production and real-device evidence is complete.
+4. In parallel when approved official nutrition data is available, run the corpus planner, review ambiguous mappings, apply only traceable replacements and re-audit quality counts.
 
 ## Handoff rule
 Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization.
