@@ -54,6 +54,12 @@
     {"id":"RESULT-STAGING-BROWSER-BOUNDARY-GREEN","kind":"result","title":"Staging-only privileged browser activation boundary is GREEN while production remains fail-closed","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
     {"id":"TASK-STAGING-BROWSER-DEPLOY","kind":"task","title":"Deploy and verify a separate browser client configured for garang-staging without replacing production config","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"},
 
+    {"id":"INIT-PRODUCT-CONSOLIDATION","kind":"initiative","title":"Consolidate existing GARANG capabilities into four clear product surfaces without changing intelligence ownership","status":"done","ownerWorkstream":"design-brand","repositoryId":"product"},
+    {"id":"TASK-FOUR-SURFACE-CONSOLIDATION","kind":"task","title":"Present Today, Record, Coach and Progress as the primary mental model while preserving capabilities","status":"done","ownerWorkstream":"design-brand","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR104","kind":"change","title":"PRODUCT PR #104 Product Consolidation merged as 0058e1ba","status":"done","ownerWorkstream":"design-brand","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-PR104","kind":"verification","title":"PR #104 exact-head merge-ref Release Gate #1259 GREEN across core, full WebKit Golden Path and mobile runtime stability","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-PRODUCT-CONSOLIDATION-GREEN","kind":"result","title":"Four-surface Product Consolidation is merged GREEN with decorative droplet motion removed and canonical capabilities preserved","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+
     {"id":"INIT-PRODUCTION-LLM-VALIDATION","kind":"initiative","title":"Verify live Real LLM Coach activation in the target production environment","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run authenticated production Coach smoke with deployment/config and two-user evidence","status":"planned","ownerWorkstream":"ai-data","repositoryId":"product"}
   ],
@@ -111,6 +117,12 @@
     {"from":"VERIFY-PRODUCT-PR103","to":"CHANGE-PRODUCT-PR103","kind":"verifies"},
     {"from":"RESULT-STAGING-BROWSER-BOUNDARY-GREEN","to":"VERIFY-PRODUCT-PR103","kind":"depends-on"},
     {"from":"TASK-STAGING-BROWSER-DEPLOY","to":"INIT-STAGING-VALIDATION","kind":"supports"},
+
+    {"from":"INIT-PRODUCT-CONSOLIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"TASK-FOUR-SURFACE-CONSOLIDATION","to":"INIT-PRODUCT-CONSOLIDATION","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR104","to":"TASK-FOUR-SURFACE-CONSOLIDATION","kind":"implements"},
+    {"from":"VERIFY-PRODUCT-PR104","to":"CHANGE-PRODUCT-PR104","kind":"verifies"},
+    {"from":"RESULT-PRODUCT-CONSOLIDATION-GREEN","to":"VERIFY-PRODUCT-PR104","kind":"depends-on"},
 
     {"from":"INIT-PRODUCTION-LLM-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"TASK-PRODUCTION-LLM-SMOKE","to":"INIT-PRODUCTION-LLM-VALIDATION","kind":"supports"}
