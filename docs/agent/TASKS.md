@@ -77,27 +77,31 @@ Evidence: PR #108 `6fdc51ae...`; Gate #1245 and exact post-merge #1247 GREEN; Pa
 ## P4 — Official nutrition corpus planner
 Status: DONE / REPOSITORY VERIFIED
 Owner: AI Data / Engineering / Release QA
-Evidence: PRODUCT PR #110 merged as `1763c4f9...`; verified gates GREEN. Canonical food replacement remains separate.
+Evidence: PRODUCT PR #110 merged as `1763c4f9...`; verified gates GREEN.
 
 ## P4 — Execute official nutrition corpus replacement
-Status: READY / EXTERNAL OFFICIAL DATA ACCESS REQUIRED
-Owner: AI Data / Engineering / Founder Review
-Acceptance:
-- Obtain current official Data.go.kr/K-FIND/USDA artifact or use secure approved API environment without exposing credentials.
-- Run corpus planner against canonical GARANG food IDs.
-- Review all ambiguous/multi-candidate mappings.
-- Apply only traceable reviewed replacements.
-- Re-audit quality counts and re-run full Release Gate.
-Current evidence: canonical Food DB remains 500 records = 0 verified / 12 approximate / 488 estimated. No quality uplift is claimed yet.
-
-## P1 — Production Real AI Coach activation / verification
-Status: READY / FOUNDER APPROVAL REQUIRED FOR PRODUCTION SECRET OR DEPLOYMENT
+Status: DONE / VERIFIED GREEN
 Owner: AI Data / Engineering / Release QA
 Acceptance:
-- Production Functions config/deploy is verified against the intended revision.
-- Authenticated live Coach smoke succeeds.
-- Two-user personalization differentiation is demonstrated.
-- GARANG decision ownership and confirmation boundary remain intact.
+- Official K-FIND 음식DB, K-FIND 가공식품DB and 국가표준식품성분표 source artifacts were reviewed. ✅
+- Ambiguous/generic mappings remain fail-closed. ✅
+- Traceable reviewed replacements only were promoted to verified. ✅
+- Canonical food identity/order/serving contract remains preserved. ✅
+- Quality counts and full Release Gate were re-audited. ✅
+Evidence: PRODUCT PR #118 merged as `3c3844edbe07920db41d9054aa968cb8be8bf8f4`; exact-head Gate #1347 GREEN; post-merge Gate #1348 GREEN; canonical 500 foods = `232 verified / 3 approximate / 265 estimated / 0 unknown`; 151 additional official upgrades applied and 349 rows unchanged.
+
+## P1 — Production Real AI Coach activation / verification
+Status: REPOSITORY PREFLIGHT GREEN / FOUNDER APPROVAL REQUIRED FOR PRODUCTION SECRET + DEPLOY
+Owner: AI Data / Engineering / Release QA
+Acceptance:
+- Repository Real LLM/provider/gateway/alignment/personalization/Agent-boundary tests pass. ✅
+- Zero-provider-cost production route probe exists and fails closed on auth/method boundaries after deployment. ✅
+- Current production Functions route is deployed at the intended revision. ⏳
+- `GARANG_LLM_API_KEY` is configured/confirmed in Firebase Secret Manager without exposure. ⏳
+- Authenticated live Coach smoke succeeds with `source: llm`. ⏳
+- Two-user personalization differentiation is demonstrated. ⏳
+- GARANG decision ownership and confirmation boundary remain intact. ✅
+Evidence: PRODUCT PR #119 exact head `99d7d56966e49d828c98d67083bb1447d2c130b8`; exact-head Release Gate #1352 GREEN. Live production probe on 2026-09-16 reached `fitfind-ai` but unauthenticated `POST https://asia-northeast3-fitfind-ai.cloudfunctions.net/api/coach` returned HTTP 404 instead of the repository contract 401, proving the current production Functions surface does not yet expose the Real Coach route. Provider-secret existence remains unverified and no production deployment or privileged smoke has been performed.
 
 ## P1 — Validate deployed Golden Path on real target device
 Status: IN PROGRESS / PARTIAL GREEN
