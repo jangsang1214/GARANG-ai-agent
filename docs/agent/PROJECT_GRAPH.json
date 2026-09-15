@@ -68,7 +68,10 @@
     {"id":"RESULT-FINAL-UI-INTEGRATION-GREEN","kind":"result","title":"Final repository/UI Golden Path integration is GREEN and broad UI redesign is closed","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
 
     {"id":"INIT-PRODUCTION-LLM-VALIDATION","kind":"initiative","title":"Verify live Real LLM Coach activation in the target production environment","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run authenticated production Coach smoke with deployment/config and two-user evidence","status":"planned","ownerWorkstream":"ai-data","repositoryId":"product"}
+    {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run authenticated production Coach smoke with deployment/config and two-user evidence","status":"in_progress","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR121","kind":"change","title":"PRODUCT PR #121 merged production Coach dependency-install fix as 074cb1f3","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCTION-COACH-DEPLOY","kind":"verification","title":"Production activation run 35010146340 deploys api and verifies POST 401 / GET 405 with no pre-auth provider or user-data access","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-PRODUCTION-COACH-BOUNDARY-GREEN","kind":"result","title":"Production Coach infrastructure, secret binding and public fail-closed boundaries are GREEN; authenticated provider smoke remains pending","status":"done","ownerWorkstream":"command-center","repositoryId":"product"}
   ],
   "edges": [
     {"from":"METRIC-REAL-DEVICE-CONFIDENCE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"measures"},
@@ -140,6 +143,9 @@
     {"from":"RESULT-FINAL-UI-INTEGRATION-GREEN","to":"VERIFY-PRODUCT-PR114","kind":"depends-on"},
 
     {"from":"INIT-PRODUCTION-LLM-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"TASK-PRODUCTION-LLM-SMOKE","to":"INIT-PRODUCTION-LLM-VALIDATION","kind":"supports"}
+    {"from":"TASK-PRODUCTION-LLM-SMOKE","to":"INIT-PRODUCTION-LLM-VALIDATION","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR121","to":"TASK-PRODUCTION-LLM-SMOKE","kind":"implements"},
+    {"from":"VERIFY-PRODUCTION-COACH-DEPLOY","to":"CHANGE-PRODUCT-PR121","kind":"verifies"},
+    {"from":"RESULT-PRODUCTION-COACH-BOUNDARY-GREEN","to":"VERIFY-PRODUCTION-COACH-DEPLOY","kind":"depends-on"}
   ]
 }
