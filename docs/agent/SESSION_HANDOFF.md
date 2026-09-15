@@ -15,26 +15,23 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff
-- PRODUCT current verified main is `6fdc51ae6184527bfbc4a8df75fa33ac7c37f8cc` from PR #108 `Add official K-FIND and USDA food ingestion pipeline`.
-- PR #105 established Food Data Foundation v2 quality/provenance contracts, source registry, audit gates and Coach/Nutrition eval foundations.
-- PR #106 established deterministic Nutrition Intelligence v2 and Coach Knowledge Grounding v2; Gate #1232 GREEN.
-- PR #107 wired nutrition + curated knowledge grounding into the Firebase Functions Coach path; Gate #1237 and exact post-merge Gate #1239 GREEN; Pages #773 GREEN.
-- PR #108 added executable official-source adapters and import/proposal tooling for K-FIND and USDA. Pre-merge Gate #1245 GREEN; exact post-merge Gate #1247 GREEN; Pages #774 GREEN.
-- PR #108 does not auto-rewrite `food-db.json`. `verified` requires provider + dataset + recordId and complete kcal/protein/carbs/fat. Unique exact name/alias matches generate review proposals; ambiguous matches require manual review.
-- Current food corpus has not yet been bulk-upgraded. Last verified baseline remains 500 records = 0 verified / 12 approximate / 488 estimated. Do not claim quality uplift until official data are actually pulled, proposed, reviewed, applied and re-audited.
-- Source credentials must remain outside source/client bundles. Never paste or commit K-FIND/USDA credentials.
-- Coach grounding preserves deterministic GARANG decision identity. Contract remains `decisionOwnedBy: GARANG`, `llmRole: explain_only`, `stateMutationAllowed:false`.
-- Active Design consolidation PR #104 is a separate UI/runtime effort. AI/Data PRs #105–#108 intentionally did not edit its UI surfaces.
-- Founder-run real-device validation remains PARTIAL GREEN: deployed app opens -> onboarding -> Today -> first record -> Coach on real iPhone Chrome. Plan -> execution -> persistence -> Accumulation and target in-app browser remain unverified.
-- Live production Real LLM activation remains UNKNOWN.
-- Commercial-production readiness remains RED until full real-device, payment/entitlement, monitoring, production provider/endpoints and legal/privacy/retention gates are completed.
+- PRODUCT latest observed main is `66b0e0f04274afee30b9d92f7752518de9b9ae52`. Its tree is identical to merged PR #110 tree, so the official corpus planner is present on current main.
+- Design consolidation PR #104 is merged. PR #110 was based on the post-design main and did not revert UI/runtime work.
+- PR #108 established K-FIND/USDA official ingestion with fail-closed provenance; exact post-merge Gate #1247 GREEN.
+- PR #110 `Add official corpus upgrade planning for GARANG food data` merged as `1763c4f9...` and adds Data.go.kr standard normalization, secure paginated retrieval support, before/projected quality reporting, and exact/ambiguous corpus matching boundaries.
+- Current integrated main Gate #1264 is GREEN across full tests/build/Firebase/Firestore and complete WebKit Golden Path including authenticated Coach, Real LLM, recovery and mobile/runtime stress. Pages #778 GREEN.
+- `food-db.json` has NOT been bulk-upgraded. Last verified audit remains 500 foods = 0 verified / 12 approximate / 488 estimated.
+- Actual quality uplift requires a current approved official Data.go.kr/K-FIND/USDA artifact or a secure external environment with approved source access. Never paste or commit service keys.
+- Corpus planner rules: unsupported volume basis fails closed; exactly one verified exact candidate creates a review proposal; multiple candidates require manual review; no automatic canonical rewrite.
+- GARANG deterministic decision identity remains authoritative. LLM remains explanation-only and cannot mutate state directly.
+- Founder real-device validation remains PARTIAL GREEN through iPhone Chrome app load -> onboarding -> Today -> first record -> Coach; later plan/execution/persistence/Accumulation and target in-app browser remain unverified.
+- Live production Real LLM activation remains UNKNOWN. Commercial-production readiness remains RED.
 
 ## Next recommended work
-1. Continue real iPhone Golden Path from Coach through plan -> execution -> persistence -> Accumulation.
-2. Preserve Design parallelism while PR #104 is active.
-3. For AI/Data, run an approved current K-FIND/USDA source pull using external credentials/environment, generate replacement proposals and a before/after quality report, then review ambiguous mappings before any canonical food-data update.
-4. Expand Coach/Nutrition eval scenarios using real beta failures and edge cases before changing deterministic decision behavior.
-5. Keep production privileged endpoint activation, production Functions deployment and commercial release as separate explicit Founder decisions.
+1. Complete real-device Golden Path through plan -> execution -> persistence -> Accumulation and target in-app browser.
+2. Obtain an approved official nutrition dataset artifact or run the merged importer in a secure key-enabled environment; generate the 500-food replacement plan and review ambiguous mappings.
+3. Apply only traceable reviewed replacements, re-audit quality counts, then re-run full Release Gate before raising recommendation confidence.
+4. Continue collecting real beta Coach/Nutrition failure scenarios before changing deterministic decision behavior.
 
 ## Handoff rule
 Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization.
