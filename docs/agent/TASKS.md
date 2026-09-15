@@ -43,20 +43,11 @@ Evidence: PR #99 `bcb27d5a...`; post-merge Gate #1170 GREEN.
 ## P2 — Server Readiness Stage 0
 Status: DONE
 Owner: Engineering / Release QA / AI Data
-Acceptance criteria:
-- Authenticated server boundaries for export/delete/telemetry exist without replacing Firebase Auth + Firestore or canonical app write ownership. ✅
-- Security/origin boundary and consent-gated allowlisted telemetry are present. ✅
-- Real LLM and Privacy runtime regressions remain GREEN. ✅
 Evidence: PR #101 `b2ddbf4e...`; Gates #1210/#1212 GREEN; Events #460/#461 GREEN.
 
 ## P2 — Firebase Staging Gate v1
 Status: DONE
 Owner: Engineering / Release QA
-Acceptance criteria:
-- Staging project ID mandatory; production `fitfind-ai` rejected as staging. ✅
-- Deploy/secret commands require explicit staging `--project`. ✅
-- Staging Coach smoke enforces exact staging endpoint. ✅
-- No secret value committed. ✅
 Evidence: PR #102 `451f5639...`; Gates #1217/#1218 GREEN; Events #470/#473 GREEN.
 
 ## P2 — Validate Server Readiness in Firebase staging
@@ -67,7 +58,7 @@ Evidence: full staging server path GREEN; production not targeted.
 ## P2 — Implement staging-only privileged browser endpoint boundary
 Status: DONE
 Owner: Engineering / Release QA
-Evidence: PRODUCT PR #103 merged as `419e947...`; pre-merge Gate #1220 + Event #478 GREEN; post-merge Gate #1221 + Event #480 GREEN; Pages deployment #770 GREEN.
+Evidence: PRODUCT PR #103 merged as `419e947...`; pre-merge Gate #1220 + Event #478 GREEN; post-merge Gate #1221 + Event #480 GREEN; Pages #770 GREEN.
 
 ## P4 — Food Data Foundation v2
 Status: DONE
@@ -100,14 +91,26 @@ Acceptance criteria:
 Evidence: PRODUCT PR #107 merged as `50bd02eb...`; pre-merge Gate #1237 GREEN; exact post-merge Gate #1239 GREEN; Pages #773 GREEN.
 
 ## P4 — Official food-source ingestion and normalization
-Status: READY
+Status: DONE / REPOSITORY VERIFIED
 Owner: AI Data / Engineering / Release QA
 Acceptance criteria:
-- K-FIND/USDA adapters normalize to Food Data Foundation v2 without embedding credentials in source/client bundles.
-- Imported `verified` rows preserve provider/dataset/recordId provenance.
-- Unit/serving/basis normalization and macro/kcal quality gates remain GREEN.
-- Existing estimated rows are replaced only when a traceable official match exists.
-- Coverage/quality improvement is measured before recommendation behavior is broadened.
+- K-FIND/USDA adapters normalize to Food Data Foundation v2 without embedding credentials in source/client bundles. ✅
+- `verified` rows require traceable provider/dataset/recordId plus complete kcal/protein/carbs/fat. ✅
+- K-FIND declared basis and USDA 100g/kJ->kcal normalization are contract-tested. ✅
+- Existing GARANG food rows are never automatically overwritten; exact unique matches produce reviewable proposals and ambiguous matches require review. ✅
+- Full Release Gate GREEN before and after merge. ✅
+Evidence: PRODUCT PR #108 merged as `6fdc51ae...`; pre-merge Gate #1245 GREEN; exact post-merge Gate #1247 GREEN; Pages #774 GREEN.
+
+## P4 — Execute official nutrition corpus upgrade
+Status: READY / EXTERNAL SOURCE ACCESS REQUIRED
+Owner: AI Data / Engineering / Founder Review
+Acceptance criteria:
+- Pull current official K-FIND and/or USDA records through approved source access without exposing credentials.
+- Generate exact-match proposals against canonical GARANG food IDs.
+- Report verified / approximate / estimated / unknown counts before and after proposed replacement.
+- Review ambiguous matches and reject unsafe mappings.
+- Apply canonical data changes only from traceable official records and re-run Release Gate.
+Current evidence: canonical Food DB bulk replacement has not occurred; last verified baseline is 500 records = 0 verified / 12 approximate / 488 estimated.
 
 ## P1 — Validate deployed Golden Path on real target device
 Status: IN PROGRESS / PARTIAL GREEN
