@@ -61,6 +61,12 @@
     {"id":"VERIFY-PRODUCT-PR111","kind":"verification","title":"PR #111 Gate #1288 and exact post-merge main Gate #1289 GREEN; Pages #779 and Event #628 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"RESULT-TODAY-BASELINE-GREEN","kind":"result","title":"Today action hierarchy and automated Golden Path are GREEN; broad UI redesign is no longer prioritized","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
 
+    {"id":"INIT-TODAY-WORKOUT-FINAL-INTEGRATION","kind":"initiative","title":"Complete the final Today workout preparation/execution integration without changing canonical ownership","status":"done","ownerWorkstream":"product","repositoryId":"product"},
+    {"id":"TASK-TODAY-WORKOUT-PREP-EXECUTION","kind":"task","title":"Make Today workout preparation the single visible entry and delegate to canonical Workout execution","status":"done","ownerWorkstream":"product","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR114","kind":"change","title":"PRODUCT PR #114 merged final Today workout preparation/execution integration as 9e853e8","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-PR114","kind":"verification","title":"PR #114 exact-head Gate #1318 and post-merge main Gate #1319 GREEN; Pages #780 and Founder OS events GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-FINAL-UI-INTEGRATION-GREEN","kind":"result","title":"Final repository/UI Golden Path integration is GREEN and broad UI redesign is closed","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+
     {"id":"INIT-PRODUCTION-LLM-VALIDATION","kind":"initiative","title":"Verify live Real LLM Coach activation in the target production environment","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run authenticated production Coach smoke with deployment/config and two-user evidence","status":"planned","ownerWorkstream":"ai-data","repositoryId":"product"}
   ],
@@ -126,6 +132,12 @@
     {"from":"CHANGE-PRODUCT-PR111","to":"TASK-LIFECYCLE-STATE-DURABILITY","kind":"implements"},
     {"from":"VERIFY-PRODUCT-PR111","to":"CHANGE-PRODUCT-PR111","kind":"verifies"},
     {"from":"RESULT-TODAY-BASELINE-GREEN","to":"VERIFY-PRODUCT-PR111","kind":"depends-on"},
+
+    {"from":"INIT-TODAY-WORKOUT-FINAL-INTEGRATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"TASK-TODAY-WORKOUT-PREP-EXECUTION","to":"INIT-TODAY-WORKOUT-FINAL-INTEGRATION","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR114","to":"TASK-TODAY-WORKOUT-PREP-EXECUTION","kind":"implements"},
+    {"from":"VERIFY-PRODUCT-PR114","to":"CHANGE-PRODUCT-PR114","kind":"verifies"},
+    {"from":"RESULT-FINAL-UI-INTEGRATION-GREEN","to":"VERIFY-PRODUCT-PR114","kind":"depends-on"},
 
     {"from":"INIT-PRODUCTION-LLM-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"TASK-PRODUCTION-LLM-SMOKE","to":"INIT-PRODUCTION-LLM-VALIDATION","kind":"supports"}
