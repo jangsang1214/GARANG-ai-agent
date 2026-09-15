@@ -3,53 +3,46 @@
 Last updated: 2026-09-15
 
 ## Current objective
-Protect the verified Golden Path while moving from repository/UI hardening to production Real AI Coach validation. PRODUCT now includes the merged Design consolidation, Food Data Foundation v2, Nutrition Intelligence v2, Coach Knowledge Grounding v2, official-source ingestion, fail-closed official nutrition corpus planning, and the final Today Check-in/workout-action reliability fix from PR #111. Large-scale UI modification is no longer a priority; the next highest-value work is production Real AI Coach activation/verification, followed by remaining real-device validation and Wanted AI Championship submission preparation.
+The repository/UI final integration phase is complete. Protect the verified Golden Path and move next to production Real AI Coach activation/verification, followed by remaining real-device validation and Wanted AI Championship submission preparation. Large-scale UI redesign is no longer a priority.
 
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`; Founder OS v7-lite remains the control plane.
-- PRODUCT: `jangsang1214/-fitmind-ai`; latest VERIFIED main is `84589d66d0cce2c818982a97b7206ce6fc9d5fa5`, the merge commit for PR #111 `Make Today bottom CTA open Check-in`.
-- Design consolidation PR #104 is MERGED and preserved.
-- PR #108 `Add official K-FIND and USDA food ingestion pipeline` merged as `6fdc51ae...`; exact post-merge Gate #1247 GREEN; Pages #774 GREEN.
-- PR #110 `Add official corpus upgrade planning for GARANG food data` merged as `1763c4f9...`; its nutrition/data capabilities remain present after PR #111.
-- PR #111 preserves workout execution as Today’s primary Golden Path action (`오늘 운동 실행`) and adds a separate bottom-most Check-in utility that reuses the existing canonical check-in modal/write owner.
-- PR #111 also closes a P2 state-integrity race: after a lifecycle write, app state is resynchronized from the canonical Agent State Bridge so Coach evidence such as `ai_chat_answered` is not overwritten by a stale route-transition snapshot.
-- Critical dynamic runtimes are explicitly version-aligned with PWA precache; app-shell cache is rotated to v24 for the state-durability fix.
-- PR #111 pre-merge exact-head Release Gate #1288: GREEN.
-- Current PRODUCT main Release Gate #1289: GREEN across core/build/security, Firebase public health, Firestore emulator, complete WebKit Golden Path, authenticated Coach, Real LLM integration, recovery, mobile regression, Settings touch, button health and runtime stress.
-- Pages #779 for main `84589d66...`: GREEN.
-- Founder OS Event Envelope #628 for main `84589d66...`: GREEN.
+- PRODUCT: `jangsang1214/-fitmind-ai`; current VERIFIED main is `9e853e8f9ba854b616eb894af5b178805bbce0e8`, merge commit for PR #114 `Merge Today workout execution into preparation`.
+- CONTROL mutation policy and PRODUCT mutation policy are both `branch-pr` per `docs/agent/REPOSITORIES.json`.
+- Product Consolidation PR #104 remains merged and preserved.
+- PR #111 Today bottom Check-in/lifecycle durability remains preserved.
+- PR #114 finalizes the visible Today workout path as `오늘 운동 준비하기` → optional details → `운동 시작` → canonical Workout execution.
+- PR #114 exact verified head was `60be81a43e9f5e6c40e0c4bf21241b9ca4be19ba`.
+- PR #114 exact-head Release Gate #1318: GREEN. `core-build-rules`, `browser-webkit`, and final `verify` all passed.
+- PRODUCT post-merge main Release Gate #1319 on `9e853e8f...`: GREEN across core/build/security, Firebase public health, Firestore emulator, full WebKit Golden Path, authenticated Coach, Real LLM integration, recovery, mobile regression, Settings touch, button health and runtime stress.
+- Pages #780 on PRODUCT main: GREEN.
+- Founder OS Event Envelope for the merge/main workflow completed GREEN.
 
-## AI/Data v2 verified baseline
-- Food quality states remain `verified / approximate / estimated / unknown`; `verified` requires traceable provider + dataset + record ID plus complete kcal/protein/carbs/fat.
-- Official adapters cover K-FIND, USDA FoodData Central and the Data.go.kr nationwide nutrition standard contract.
-- Data.go.kr fields including food code/name/type, basis, kcal, protein, fat, carbs, sugar, fiber, sodium and related provenance are normalized into Food Data Foundation v2.
-- Volume-basis records such as `100ml` are not silently treated as `100g`; unsupported basis conversion fails closed.
-- `corpusUpgradePlan` compares current GARANG foods against verified official records, measures before/projected quality, creates proposals only for one exact name/alias candidate, routes multiple official candidates to manual review, and never mutates `food-db.json` automatically.
-- `scripts/import-official-food-data.cjs` supports credential-safe Data.go.kr pagination through `DATA_GO_KR_SERVICE_KEY` plus K-FIND/USDA flows; secrets are never stored or printed.
+## Today / Golden Path final integration
+- Today now exposes `오늘 운동 준비하기` as the single visible workout execution entry.
+- The canonical Today workout execute owner remains in the DOM and retains execution ownership; it is visually hidden and `aria-hidden` only when the preparation integration is successfully mounted.
+- The preparation surface exposes a touch-safe `운동 시작` action and reuses the existing generated-workout import path when available; otherwise it delegates to the canonical Today execute action.
+- No new Workout mutation path, state schema, Planner ownership, Agent Contract, Decision Intelligence, LLM architecture, or canonical Workout write owner was introduced.
+- The bottom `체크인` remains the bottom-most touch-safe Today utility and continues to reuse the canonical check-in modal/write owner.
+- Advanced workout generation controls remain available behind progressive disclosure.
+- Golden Path semantics remain Onboarding → Today → Record → Coach → Plan → Confirmation → Execution → Record → Progress.
+- Repository-level final UI/Golden Path integration is GREEN. Do not start another broad UI redesign without new external-user evidence.
+
+## AI/Data verified baseline
 - GARANG deterministic Decision Intelligence remains judgment owner; LLM remains explanation/orchestration only and cannot mutate user state directly.
-
-## Food corpus evidence
-- Canonical `food-db.json` has NOT yet been bulk-replaced by official records.
-- Last verified corpus audit remains 500 records: 0 verified / 12 approximate / 488 estimated.
-- Therefore measured production-corpus quality uplift remains UNKNOWN, not failed.
-- The public Data.go.kr grid allows downloadable data but is limited to 50,000 records; full dataset access is through the official API and requires approved service-key access.
-- The repo is ready to generate safe replacement proposals and before/after quality reporting as soon as an approved official dataset artifact or secure external API environment is available.
-
-## Today / Golden Path state
-- Today’s canonical hierarchy is stable: GARANG judgment/plan → primary `오늘 운동 실행` → bottom secondary `체크인` utility.
-- Check-in remains the existing canonical check-in mutation path; no duplicate state owner was introduced.
-- Automated Golden Path now verifies Coach evidence survives Coach → Today route transitions and subsequent state writes.
-- Additional UI redesign is not recommended without new user evidence; it would add regression risk and scope without improving the current Golden Path.
+- Food quality states remain `verified / approximate / estimated / unknown`; `verified` requires traceable provider + dataset + record ID plus complete kcal/protein/carbs/fat.
+- Official adapters cover K-FIND, USDA FoodData Central and Data.go.kr nationwide nutrition standard records.
+- Canonical `food-db.json` has not yet been bulk-replaced by official records; last verified corpus audit remains 500 records: 0 verified / 12 approximate / 488 estimated.
 
 ## Real-device evidence
 - Founder verified deployed iPhone Chrome flow through app load → onboarding → Today → first record → Coach.
 - Full real-device plan → execution → persistence → Accumulation and target in-app browser remain outstanding.
 
 ## Stable
-- Golden Path remains Goal/Plan → Action/Record → Interpretation → Feedback → Next Action, with user confirmation before behavior-changing mutations.
-- Outcome Learning remains bounded/read-only with no automatic progression increase.
+- Core loop remains Goal → Plan → Action → Record → Interpretation → Feedback → Next Action → Long-term Change.
+- AI contract remains Memory → State Intelligence → Outcome Intelligence → Decision Intelligence → LLM Explanation → User Confirmation → Agent Contract → State Mutation → Outcome → Learning.
+- `GARANG decides → LLM explains → User confirms → GARANG acts.` remains enforced.
 - Firebase Auth + Firestore remain user-data foundations; canonical write ownership is unchanged.
-- No official-food source credential is stored in repo/client code.
 - Repository/UI release readiness is GREEN on current PRODUCT main.
 - Commercial-production readiness remains separate from repository GREEN status.
 
@@ -61,7 +54,7 @@ Protect the verified Golden Path while moving from repository/UI hardening to pr
 - Commercial production readiness: RED pending remaining production/commercial gates.
 
 ## Next priorities
-1. P1 — Production Real AI Coach activation/verification: production API/secret activation (approval-gated) → Functions verification → authenticated live Coach smoke → two-user personalization differentiation.
-2. P1 — Complete real-device Golden Path through plan → execution → persistence → Accumulation and target in-app browser.
-3. P1 — Prepare submission copy/demo evidence and submit the verified product to the Wanted AI Championship after the production/real-device evidence is complete.
-4. P4 — In parallel when approved official data access is available, run the merged nutrition corpus planner, review ambiguous mappings, apply only traceable replacements, and re-audit verified coverage.
+1. P1 — Production Real AI Coach activation/verification: production API/secret activation (approval-gated) → Functions production config/deploy verification → authenticated live Coach smoke → two-user personalization differentiation.
+2. P1 — Complete real iPhone Golden Path through plan → execution → persistence → Accumulation and target in-app browser.
+3. P1 — Prepare Wanted AI Championship submission copy/demo evidence, then submit after the production/real-device evidence is complete.
+4. P4 — When approved official nutrition data access is available, run the corpus planner, review ambiguous mappings, apply only traceable replacements, and re-audit verified coverage.

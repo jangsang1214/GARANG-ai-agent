@@ -10,6 +10,22 @@ Status: DONE
 Owner: Design Brand / Product / Engineering / Release QA
 Evidence: Golden Path and single next-action ownership preserved.
 
+## P1 — Final Today workout preparation / execution integration
+Status: DONE / VERIFIED GREEN
+Owner: Product / Design Brand / Engineering / Release QA
+Acceptance:
+- `.garang-daily-workout` exists in Today execute state. ✅
+- `오늘 운동 준비하기` is the single visible workout execution entry. ✅
+- preparation exposes touch-safe `운동 시작`. ✅
+- canonical Today workout execute owner remains in DOM. ✅
+- standalone canonical CTA is visually hidden and `aria-hidden` only after successful integration. ✅
+- bottom Check-in remains bottom-most and touch-safe. ✅
+- `운동 시작` routes into canonical Workout execution. ✅
+- generated workout plans reuse the existing Workout Intelligence import path. ✅
+- no new Workout mutation path, state schema, Planner ownership, Agent Contract, Decision Intelligence or LLM architecture change. ✅
+- Golden Path, authenticated Coach, Real LLM integration, recovery, Settings touch, mobile layout/button/runtime regressions pass. ✅
+Evidence: PRODUCT PR #114 verified head `60be81a43e9f5e6c40e0c4bf21241b9ca4be19ba`; exact-head Release Gate #1318 GREEN; merged main `9e853e8f9ba854b616eb894af5b178805bbce0e8`; post-merge Gate #1319 GREEN; Pages #780 GREEN; Founder OS Event Envelope GREEN.
+
 ## P1 — Commercialization Stage 1 stabilization
 Status: DONE
 Owner: Product / Design Brand / Engineering / Growth Data / Release QA
@@ -56,24 +72,12 @@ Evidence: PRs #106 `79cfc854...` and #107 `50bd02eb...`; verified gates GREEN.
 ## P4 — Official food-source ingestion and normalization
 Status: DONE / REPOSITORY VERIFIED
 Owner: AI Data / Engineering / Release QA
-Acceptance:
-- K-FIND and USDA normalize into Food Data Foundation v2. ✅
-- Traceable `verified` promotion is fail-closed. ✅
-- Existing canonical foods are never automatically overwritten. ✅
 Evidence: PR #108 `6fdc51ae...`; Gate #1245 and exact post-merge #1247 GREEN; Pages #774 GREEN.
 
 ## P4 — Official nutrition corpus planner
 Status: DONE / REPOSITORY VERIFIED
 Owner: AI Data / Engineering / Release QA
-Acceptance:
-- Data.go.kr nationwide nutrition standard adapter supports official food code/name/type/basis/core nutrients/provenance. ✅
-- `100ml` or unsupported volume basis is not silently converted to grams. ✅
-- Corpus planner reports before/projected quality. ✅
-- One exact official candidate creates a review proposal only. ✅
-- Multiple official candidates are routed to manual review. ✅
-- Data.go.kr full API pagination uses environment-only `DATA_GO_KR_SERVICE_KEY`; no key is committed or printed. ✅
-- Full GARANG regressions remain GREEN. ✅
-Evidence: PRODUCT PR #110 merged as `1763c4f9...`; pre-merge Gate #1261 GREEN after non-reproducing WebKit timing retry; current integrated main `66b0e0f...` Gate #1264 GREEN; Pages #778 GREEN.
+Evidence: PRODUCT PR #110 merged as `1763c4f9...`; verified gates GREEN. Canonical food replacement remains separate.
 
 ## P4 — Execute official nutrition corpus replacement
 Status: READY / EXTERNAL OFFICIAL DATA ACCESS REQUIRED
@@ -86,17 +90,26 @@ Acceptance:
 - Re-audit quality counts and re-run full Release Gate.
 Current evidence: canonical Food DB remains 500 records = 0 verified / 12 approximate / 488 estimated. No quality uplift is claimed yet.
 
+## P1 — Production Real AI Coach activation / verification
+Status: READY / FOUNDER APPROVAL REQUIRED FOR PRODUCTION SECRET OR DEPLOYMENT
+Owner: AI Data / Engineering / Release QA
+Acceptance:
+- Production Functions config/deploy is verified against the intended revision.
+- Authenticated live Coach smoke succeeds.
+- Two-user personalization differentiation is demonstrated.
+- GARANG decision ownership and confirmation boundary remain intact.
+
 ## P1 — Validate deployed Golden Path on real target device
 Status: IN PROGRESS / PARTIAL GREEN
 Owner: Release QA + Product + Design Brand
 Acceptance:
 - iPhone Chrome load/onboarding/Today/first record/Coach. ✅
-- Plan -> execution -> persistence -> Accumulation. ⏳
+- Plan → execution → persistence → Accumulation. ⏳
 - Target in-app browser Golden Path. ⏳
 
-## P2 — Verify live production Real LLM activation
-Status: READY / EXTERNAL EXECUTION REQUIRED
-Owner: AI Data / Engineering / Release QA
+## P1 — Wanted AI Championship submission
+Status: PLANNED AFTER PRODUCTION AI + REAL-DEVICE EVIDENCE
+Owner: Founder / Growth Business / Product
 
 ## P2 — Commercial production hardening
 Status: FOUNDER DECISION REQUIRED
