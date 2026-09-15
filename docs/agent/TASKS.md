@@ -16,6 +16,20 @@ Acceptance criteria:
 - Golden Path remains first record -> Coach -> recovery/check-in -> plan -> execute -> accumulation. ✅
 - Existing Record/check-in/execution mutation owners are preserved. ✅
 
+## P1 — Product Consolidation into Today / Record / Coach / Progress
+Status: DONE / MERGED
+Owner: Design Brand / Product / Engineering / Release QA
+Acceptance criteria:
+- Primary product navigation is exactly Today / Record / Coach / Progress. ✅
+- Today presents state -> deterministic GARANG judgment summary -> Training/Recovery/Nutrition plan -> one next action -> Coach rationale entry. ✅
+- Record integrates Workout / Running / Nutrition / Body / Recovery while preserving canonical write owners. ✅
+- Coach remains the canonical judgment/rationale/action disclosure owner and preserves proposal -> confirmation -> Agent Contract. ✅
+- Progress presents actual records -> what GARANG learned -> next judgment using existing accumulation/weekly-review intelligence. ✅
+- Planner and Memory remain directly routable capabilities but do not compete as first-level product surfaces. ✅
+- Decorative falling-water-droplet runtime is not mounted; static evidence controls remain touch-safe at 44x48. ✅
+- Full exact-head Release Gate is GREEN with Golden Path/authenticated Coach/Real LLM/mobile/runtime regressions. ✅
+Evidence: PRODUCT PR #104 merged as `0058e1ba...`; exact-head merge-ref Release Gate #1259 GREEN.
+
 ## P1 — Commercialization Stage 1 stabilization
 Status: DONE
 Owner: Product / Design Brand / Engineering / Growth Data / Release QA
@@ -119,7 +133,7 @@ Acceptance criteria:
 - Real iPhone Chrome opens the deployed GARANG start/login surface normally. ✅
 - Onboarding completes and reaches Today on the real iPhone. ✅
 - First record completes and Coach interpretation/feedback appears normally. ✅
-- Continue from Coach through plan -> execution -> persistence -> Accumulation. ⏳
+- Continue from Coach through plan -> execution -> persistence -> Progress/Accumulation. ⏳
 - Repeat the Golden Path in the target in-app browser. ⏳
 
 ## P2 — Deploy and verify a separate staging browser client
@@ -129,6 +143,12 @@ Owner: Engineering / Release QA
 ## P2 — Verify live production Real LLM activation
 Status: READY / EXTERNAL EXECUTION REQUIRED
 Owner: AI Data / Engineering / Release QA
+Acceptance criteria:
+- Confirm production provider secret/config without exposing secret material.
+- Verify the exact production Functions deployment/revision and fail-closed endpoint behavior.
+- Run authenticated live Coach smoke against production provider path.
+- Verify two distinct users receive state-grounded/personalized explanations while GARANG deterministic decisions remain canonical.
+- Preserve proposal -> user confirmation -> Agent Contract before state mutation.
 
 ## P2 — Commercial production hardening
 Status: FOUNDER DECISION REQUIRED
