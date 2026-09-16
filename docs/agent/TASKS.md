@@ -3,42 +3,51 @@
 Last updated: 2026-09-17
 
 ## Active P1 — Wanted derivative public deployment + final submission
-Status: RED / SOURCE+CI GREEN, PUBLIC ACCESS BLOCKED BY VERCEL AUTH
+Status: YELLOW / SOURCE+CI+PUBLIC ROOT GREEN, HUMAN CLICK-THROUGH PENDING
 Owner: Founder / Growth Business / Product / Release QA
 Goal: publish the verified Wanted derivative at its own public URL and complete the competition submission without destabilizing commercial GARANG.
 Acceptance:
 - Commercial source snapshot is PRODUCT main `b863a7634bd64b03a6e6f3772950c43cc81afb6f`. ✅
 - Wanted derivative release branch is `wanted/2026-release`. ✅
-- Current Wanted release SHA is `711517a4d62c9383716498fceb5d22030b98e033`. ✅
+- Current Wanted release SHA is `149ba11fe9dba33033aa3b1d201f7b3141f782ec`. ✅
 - Relative 14-day synthetic judge dataset is release-merged and CI-verified. ✅
 - Dataset includes 14 daily check-ins, 42 meals, workout/running/body history and fatigue-driven plan-adjustment evidence. ✅
-- Founder-observed initial judge-entry freeze was root-caused to deployment-origin relative asset loading. ✅
-- PR #134 deployment-origin hotfix merged to Wanted release only. ✅
-- PR #134 Wanted gate #20 / `35125457506`: GREEN. ✅
-- PR #134 full GARANG Release Gate #1455 / `35125457469`: FULL GREEN. ✅
-- Post-merge Wanted gate #21 / `35126068695`: GREEN. ✅
-- Deployment-origin compatibility is now a permanent Wanted CI check. ✅
+- Deployment-origin compatibility remains a permanent Wanted CI check. ✅
+- Founder-observed second public entry failure led to a competition-only MutationObserver safety fix. ✅
+- PR #137 Wanted gate #32 / `35131048847`: GREEN. ✅
+- PR #137 full GARANG Release Gate #1461 / `35131048722`: FULL GREEN. ✅
+- PR #137 merged as `149ba11fe9dba33033aa3b1d201f7b3141f782ec`. ✅
+- Post-merge Wanted gate #33 / `35131663143`: GREEN. ✅
 - Commercial GARANG remains canonical and unchanged. ✅
-- Submission narrative exists as `WANTED_SUBMISSION.md`; paste-ready form copy exists as `WANTED_FORM_COPY.md`. ✅
-- Vercel production redeployed after hotfix; deployment `dpl_6Ei1Xn4hvoWNbSndGUKAHWXCbEnM` returned READY. ✅ deployment evidence
-- Public alias is `https://garang-wanted-2026-jangsang1214.vercel.app`. ✅ candidate URL
-- Fresh unauthenticated browser-render fetch can open the alias without Vercel login. ❌ current evidence: `login_required`
-- Disable Vercel Authentication / SSO Deployment Protection for the Wanted project. ⬜ Founder account-level setting; current connected toolset has no protection-write action
-- Fresh/incognito alias smoke passes `60초 심사 체험 → Today → Coach → Progress`. ⬜ blocked until anonymous access is enabled
-- Replace `[WANTED_PUBLIC_URL]` in final submission copy only after the anonymous smoke passes. ⬜
-- Wanted participation registration and final submission are completed. ⬜ Founder action / submission UI
+- Vercel Authentication / SSO Deployment Protection disabled by Founder. ✅
+- Vercel production redeployed from exact Wanted release SHA; deployment `dpl_Bc7dxWoziC633y8EEZ6BWDJUFQWE` returned READY. ✅
+- Public alias is `https://garang-wanted-2026-jangsang1214.vercel.app`. ✅
+- Fresh unauthenticated rendered fetch opens the GARANG page without `login_required`. ✅
+- Fresh/incognito human smoke passes `60초 심사 체험 → Today → Coach → Progress`. ⬜ final public-runtime evidence
+- Replace `[WANTED_PUBLIC_URL]` in final submission copy after the human smoke passes. ⬜
+- Wanted participation registration and final submission are completed. ⬜ Founder final action
+
+## Closed P1 — Wanted judge-entry observer hotfix
+Status: DONE / VERIFIED GREEN AT SOURCE+CI
+Owner: Engineering / Release QA
+Acceptance:
+- Identify source-level risk behind public signed-out judge transition. ✅
+- Filter redundant `hidden` mutations only during Wanted runtime bootstrap. ✅
+- Preserve real visibility changes and restore native MutationObserver. ✅
+- Add regression coverage for redundant vs real visibility mutations. ✅
+- Preserve commercial Golden Path, authenticated Coach, Real LLM and mobile regression behavior. ✅
+Evidence: PRODUCT PR #137 merged as `149ba11f…`; Wanted gate #32 GREEN; full Release Gate #1461 FULL GREEN; post-merge Wanted gate #33 GREEN.
 
 ## Closed P1 — Wanted judge-entry deployment-origin hotfix
 Status: DONE / VERIFIED GREEN AT SOURCE+CI
 Owner: Engineering / Release QA
 Acceptance:
-- Reproduce the structural cause of initial public judge-entry freeze. ✅
 - Derive competition asset root from loaded `version.js`, not Vercel document origin. ✅
 - Route 14-day dataset and competition CSS/JS to the same frozen asset root. ✅
 - Leave unrelated runtime fetches untouched. ✅
 - Add deployment-origin compatibility regression test. ✅
 - Preserve commercial Golden Path, authenticated Coach, Real LLM and mobile regression behavior. ✅
-Evidence: PRODUCT PR #134 merged as `711517a4…`; Wanted gate #20 GREEN; full Release Gate #1455 FULL GREEN; post-merge Wanted gate #21 GREEN.
+Evidence: PRODUCT PR #134 merged; Wanted gate #20 GREEN; full Release Gate #1455 FULL GREEN; post-merge Wanted gate #21 GREEN.
 
 ## Closed P1 — Wanted 14-day judge data upgrade
 Status: DONE / VERIFIED GREEN
@@ -61,25 +70,12 @@ Acceptance:
 - Keep real production GPT/photo Coach on the existing authenticated path. ✅
 - Preserve the full commercial regression suite. ✅
 
-## Closed P1 — Coach photo composer simplification
+## Closed P1 — Commercial critical-path baselines
 Status: DONE / VERIFIED GREEN
-Owner: Product / Design Brand / Engineering / Release QA
-Evidence: PR #130 merged at `9452cea2929d6940f20d39806b2b3d30bc3bb004`; Gate #1444 GREEN.
-
-## Closed P1 — Mobile route intent across remounts
-Status: DONE / VERIFIED GREEN
-Owner: Engineering / Release QA
-Evidence: PR #131 exact-head Gate #1448 / `35109312382` FULL GREEN; commercial main `b863a763…`; post-merge Gate #1449 / `35110020514` FULL GREEN.
-
-## Closed P1 — Coach reconnect + production AI stabilization
-Status: DONE / VERIFIED GREEN
-Owner: Engineering / Release QA / AI Data
-Evidence: Production Coach Live Smoke `35101459492` SUCCESS for authenticated text + photo.
-
-## Closed P1 — Intelligence Learning Contract v1
-Status: DONE / VERIFIED GREEN
-Owner: AI Data / Engineering / Release QA
-Goal: causal learning attribution across `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
+- Coach photo composer simplification — PR #130 / Gate #1444 GREEN.
+- Mobile route intent across remounts — PR #131 / post-merge Gate #1449 FULL GREEN.
+- Coach reconnect + production AI stabilization — Production Coach Live Smoke `35101459492` SUCCESS.
+- Intelligence Learning Contract v1 — causal `decisionId → recommendationId → actionId → planId → executionId → outcomeId` released.
 
 ## P2 — Protect CONTROL + PRODUCT main
 Status: PLANNED / NON-BLOCKING

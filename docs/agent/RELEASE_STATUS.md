@@ -3,7 +3,7 @@
 Last updated: 2026-09-17
 
 ## Overall decision
-GREEN for the canonical commercial GARANG web baseline and GREEN for the repository-level Wanted derivative release snapshot. Wanted public deployment is RED until anonymous access is enabled because the current Vercel alias returns `login_required` to a fresh unauthenticated browser fetch.
+GREEN for the canonical commercial GARANG web baseline and GREEN for the repository-level Wanted derivative release snapshot. Wanted public root access is GREEN; the end-to-end public judge click path remains YELLOW until one fresh human click-through confirms the latest redeploy.
 
 ## Commercial PRODUCT main
 Decision: GREEN / FROZEN FOR SUBMISSION WINDOW.
@@ -17,21 +17,21 @@ Decision: GREEN / FROZEN FOR SUBMISSION WINDOW.
 Decision: GREEN / RELEASE SNAPSHOT VERIFIED.
 - Source commercial snapshot: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
 - Release branch: `wanted/2026-release`.
-- Current release SHA: `711517a4d62c9383716498fceb5d22030b98e033`.
-- PR #134 merged into the Wanted release branch only; commercial main is unchanged.
+- Current release SHA: `149ba11fe9dba33033aa3b1d201f7b3141f782ec`.
+- PR #137 merged into the Wanted release branch only; commercial main is unchanged.
 
-### Judge-entry hotfix
-- Founder observed the first public Vercel judge flow freezing after tapping `60초 심사 체험`.
-- Root cause: the 14-day synthetic dataset used a document-relative URL while the public shell loaded competition assets from a frozen external origin.
-- PR #134 makes `07_config/version.js` derive the asset root from its own loaded URL and route Wanted JS/CSS and the judge dataset to that same root.
-- A dedicated deployment-origin compatibility test verifies this behavior and verifies unrelated fetches are not rewritten.
+### Judge-entry runtime hotfix
+- Founder observed that the public judge entry still did not enter the app after Vercel Authentication had been disabled.
+- Source inspection VERIFIED a mutation-loop hazard in the competition-only auth/app visibility observer: it observed `hidden` changes while unconditionally writing those same `hidden` values.
+- PR #137 temporarily wraps MutationObserver during Wanted runtime bootstrap, filters redundant `hidden` mutations, preserves real visibility transitions and restores native MutationObserver immediately after script load.
+- Regression coverage verifies redundant writes are filtered, real visibility changes are propagated, and the native observer is restored.
 
 ### Verification
-- PR #134 Wanted derivative gate #20 / run `35125457506`: GREEN.
-- PR #134 full GARANG Release Gate #1455 / run `35125457469`: FULL GREEN.
-- Full release browser checks include real browser interactions, mobile layout, Today, Planner, Nutrition, Golden Path complete journey, authenticated app/Coach, Real LLM integration, recovery mutation/touch, mobile regression, Settings, button health and runtime stress.
-- Post-merge Wanted derivative gate #21 / run `35126068695`: GREEN on release SHA `711517a4d62c9383716498fceb5d22030b98e033`.
-- Post-merge Wanted gate verifies 14-day dataset, deployment-origin compatibility, build output/assets and the 60-second WebKit judging journey.
+- PR #137 Wanted derivative gate #32 / run `35131048847`: GREEN.
+- PR #137 full GARANG Release Gate #1461 / run `35131048722`: FULL GREEN.
+- Full release browser checks passed real interactions, Today, Planner, Nutrition, truth/first-record, Golden Path integration + complete journey, authenticated app/Coach, Real LLM Golden Path, conversational logging, recovery mutation/touch, mobile regression, Settings touch, button health and runtime stress.
+- PR #137 merged as `149ba11fe9dba33033aa3b1d201f7b3141f782ec`.
+- Post-merge Wanted derivative gate #33 / run `35131663143`: GREEN on the exact merge SHA, including dataset, deployment-origin/observer compatibility, build/assets and 60-second WebKit judging journey.
 
 ### Competition-only behavior
 - `60초 심사 체험` remains isolated to the Wanted derivative.
@@ -41,13 +41,14 @@ Decision: GREEN / RELEASE SNAPSHOT VERIFIED.
 - No Firebase production config/provider secret was changed.
 
 ## Vercel public deployment
-Decision: RED / ANONYMOUS ACCESS BLOCKED.
+Decision: YELLOW / PUBLIC ROOT GREEN, END-TO-END CLICK PENDING.
 - Alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
-- Latest production deployment id: `dpl_6Ei1Xn4hvoWNbSndGUKAHWXCbEnM`; deployment response reported `READY`.
-- Public shell pins its asset root to exact Wanted release SHA `711517a4d62c9383716498fceb5d22030b98e033`; it does not follow commercial `main`.
-- Fresh unauthenticated browser-render fetch on 2026-09-17 returned `login_required`.
-- Therefore repository/build readiness is not the current problem; Vercel Deployment Protection / Vercel Authentication is blocking judges before application runtime.
-- Release cannot be considered public-runtime GREEN until Vercel Authentication / SSO protection is disabled for this Wanted project and a fresh anonymous `60초 심사 체험 → Today → Coach → Progress` pass succeeds.
+- Founder disabled Vercel Authentication / SSO Deployment Protection.
+- Latest production deployment id: `dpl_Bc7dxWoziC633y8EEZ6BWDJUFQWE`; deployment response reported `READY`.
+- Public shell pins its asset root to exact Wanted release SHA `149ba11fe9dba33033aa3b1d201f7b3141f782ec`; it does not follow commercial `main`.
+- Exact-SHA CDN `version.js` and Wanted runtime were reachable before deploy.
+- Fresh unauthenticated rendered fetch of the cache-busted production alias returned `GARANG — Quietly Becoming`, so the previous Vercel `login_required` blocker is no longer present.
+- Interactive public button-click verification is still UNKNOWN from the current tool surface; one Founder fresh-browser `60초 심사 체험 → Today → Coach → Progress` pass is required before final submission URL sign-off.
 
 ## Intelligence ownership
 Decision: GREEN / unchanged.
@@ -59,9 +60,11 @@ Decision: GREEN / unchanged.
 ## Deployment status
 - Commercial deployment: GREEN.
 - Wanted repository release snapshot: GREEN.
+- Wanted exact-head full Release Gate #1461: GREEN.
+- Wanted post-merge derivative gate #33: GREEN.
 - Wanted Vercel deployment creation/readiness: GREEN evidence from deploy response.
-- Wanted anonymous public access: RED — `login_required`.
-- Wanted fresh public judge path: BLOCKED until deployment protection is disabled.
+- Wanted anonymous public root access: GREEN.
+- Wanted fresh public judge click path: YELLOW / human verification pending.
 
 ## Release-channel boundary
 Commercial GARANG PRODUCT main is canonical. Wanted/competition submission is a separate derivative from the verified stable snapshot. Competition-only changes do not redefine or automatically modify commercial GARANG.
