@@ -15,48 +15,61 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff — 2026-09-16
-- PRODUCT current merged main remains `4c18ce254494e458de43c1d9e7030a09bfdb0a22`.
-- PRODUCT PR #123 `agent/coach-multimodal-hardening-2026-09-16` is OPEN / UNMERGED at `ef17f0673b47b4adb0b807ed89d423b9a0d97813`.
-- PR #123 carries Coach reconnect hardening (25s + one transient retry, 60s Function timeout, relaxed rate limits) plus Today/Shell/Nutrition timing fixes. Deterministic Decision Intelligence ownership and local fail-closed fallback must remain unchanged.
-- Exact-head #123 GitHub Release Gate core job is GREEN, but browser WebKit run `35067308863` failed `Today bottom Check-in CTA`. Do not treat PR #123 as release-complete.
-- The exact privacy-safe `code` for the Founder's newest production AI connection failure is still UNKNOWN. Do not assume it is the earlier `LLM_TIMEOUT`.
+- PRODUCT canonical commercial main: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
+- PRODUCT PR #130 (Coach composer photo `+`) is MERGED.
+- PRODUCT PR #131 (mobile route intent across remounts) is MERGED.
+- PR #131 exact-head Release Gate #1448 / run `35109312382`: FULL GREEN.
+- Post-merge current-main Release Gate #1449 / run `35110020514`: FULL GREEN.
+- Current-main Pages #799 / run `35110017165`: SUCCESS.
+- Founder OS Event Envelope #968 / run `35110020344`: SUCCESS.
+- Deployed web URL: `https://jangsang1214.github.io/-fitmind-ai/`.
 
-## AI/Data P1 implemented
-- PRODUCT Draft PR #124 `agent/intelligence-learning-contract-v1-2026-09-16` is OPEN / UNMERGED and stacked on PR #123.
-- Exact #124 head: `aabf5eadf38324a4503abc1000ff1c0ad1fa33ac`.
-- Purpose: make intervention evidence attributable across `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
-- Existing recommendation proposal/modify/confirm lifecycle is reused; no parallel action system was added.
-- Canonical plan rows and confirmation actionLog now retain decision/recommendation identity.
-- Browser/core + Functions learning graphs are read-only and derive stable execution/outcome IDs from existing evidence.
-- Outcome Learning v2 exposes intervention learning as advisory-only evidence; it cannot silently mutate state or automatically increase progression.
-- Focused causal-linkage tests were added to the root test chain.
-- Exact-head #124 core/build/security/Functions/Firebase/Firestore gate is GREEN.
+## Coach photo UX
+- Photo upload is no longer a separate tools row.
+- Composer contains a compact `+` control, hidden image picker, inline thumbnail preview and remove action.
+- One JPG/PNG/WebP image up to 8 MB is supported.
+- Attachment is ephemeral: next Coach request consumes it, then local draft is cleared.
+- Released contract forbids raw image persistence in GARANG state, localStorage, Firestore, telemetry and conversation text history.
 
-## Browser blocker evidence
-Three bounded WebKit attempts were observed on the #124 stacked head:
-1. Attempt 1 failed `Today bottom Check-in CTA` with `standalone Today workout execution CTA must be visually removed`.
-2. Attempt 2 passed that CTA and all browser checks through Golden Path integration, then failed `Golden Path complete journey` because WebKit captured two production `/api/coach` access-control/CORS console errors.
-3. Attempt 3 failed the same Today CTA assertion again.
+## Route stability
+- Post-#130 main exposed a repeatable WebKit physical-tap loss during Golden Path complete journey even though PR head and merge tree had zero file differences.
+- Root pattern: presentation DOM could remount between touch intent and compatibility click.
+- PR #131 hardened the canonical Router by carrying short non-drag touch intent through pointerup for existing Today/Record route controls only.
+- Router public version remains frozen `garang-router-v1.3.0`; mouse/keyboard and data ownership are unchanged.
+- Exact-head #1448 and post-merge #1449 both pass Golden Path complete journey plus authenticated Coach, Real LLM integration, recovery, mobile, Settings, button health and runtime stress.
 
-Judgment: stop blind reruns. The repeated Today CTA failure is a VERIFIED stacked-base release blocker. The likely restore/reconcile timing race in `garang-today-workout-prep-integration-v1.js` remains INFERRED until targeted UI/Release work verifies a fix. The later `/api/coach` CORS signal should be rechecked only after the CTA blocker is fixed. Do not patch unrelated UI behavior inside #124 AI/Data scope.
+## Production AI evidence
+- Production Coach Live Smoke run `35101459492`: SUCCESS.
+- Disposable Firebase identity verified authenticated production Text Coach and Photo Coach and was deleted afterward.
+- Text Coach: `source=llm`, provider `openai`, model `gpt-5.6-luna`, GARANG decision alignment verified.
+- Photo Coach: `source=llm`, provider `openai`, model `gpt-5.6-luna`, alignment + grounding + image context verified.
+- PR #130/#131 did not change Functions code, so no new Functions deployment was required for those frontend changes.
 
-## Required release sequence
-1. Fix the smallest #123 Today workout-preparation CTA restore/reconcile race and run one full WebKit gate.
-2. If the gate reaches complete journey, recheck whether production `/api/coach` CORS/access-control console errors reproduce.
-3. When #123 is reliably GREEN, merge only with Founder approval.
-4. After approved merge, deploy Functions/Pages and verify unauthenticated POST 401 / wrong-method GET 405.
-5. Run real authenticated production text Coach + photo Coach. On failure record only `code` and `providerStatus`; never tokens or API keys.
-6. Rebase/retarget #124 onto the resulting main and run its complete Release Gate again.
-7. Merge #124 only with Founder approval and reliable GREEN evidence.
-8. Then start User Performance Model v1 using `State × Recommendation × Action × Outcome` with confidence/sample-size/evidence IDs; do not jump to ML/vector infrastructure first.
+## AI/Data released state
+- Deterministic GARANG State/Decision Intelligence remains judgment owner.
+- LLM remains bounded explanation/language layer.
+- Intelligence Learning Contract v1 is released: `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
+- Outcome Learning remains advisory-only: no silent mutation and no automatic progression increase.
+- Remaining personalization follow-up: rejected/dismissed recommendations are not yet durable causal evidence.
 
-## Known remaining AI/Data gap
-The current #124 contract closes attribution for confirmed/applied recommendations. Durable learning from explicitly rejected/dismissed recommendations is not yet part of the causal graph. Treat this as follow-up personalization work, not a reason to expand the current release-critical scope.
+## Release-channel decision
+Commercial GARANG PRODUCT main is the source product. Wanted/competition work must begin from a copied VERIFIED stable snapshot in a separate derivative build/repo/deployment target. Competition-specific judge copy/demo/presentation changes do not automatically flow back to commercial GARANG.
+
+## Current priority
+1. Freeze/copy PRODUCT main `b863a763…` as the Wanted derivative source snapshot.
+2. Complete submission packaging and judge-facing narrative without adding new commercial scope.
+3. After submission, resume User Performance Model v1 / recommendation-outcome personalization.
+
+## Non-blocking debt
+- Functions dependency audit: 9 moderate findings; breaking upgrade path requires dedicated release work.
+- Root dev/tooling informational audit: 23 findings; production-runtime audit remains clean.
+- CONTROL/PRODUCT main are not server-protected.
+- Production deploy auth should migrate to OIDC/WIF after replacement verification.
+- Firebase build-image retention cleanup remains cost hygiene and requires reviewed/destructive handling.
 
 ## CONTROL state
-- CONTROL reconciliation branch: `agent/reconcile-learning-contract-2026-09-16`.
-- `PROJECT_STATE.md`, `TASKS.md`, `RELEASE_STATUS.md` and this handoff are reconciled on that branch.
-- CONTROL main has not been changed by this work.
+- Reconciliation branch: `agent/reconcile-learning-contract-2026-09-16`.
+- Persistent state is being closed through CONTROL PR #32 after PRODUCT release evidence above.
 
 ## Handoff rule
-Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization. Merge/deployment/live provider success are separate evidence states.
+Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization. Merge/deployment/live-provider evidence remain separate states.
