@@ -3,7 +3,7 @@
 Last updated: 2026-09-17
 
 ## Overall decision
-GREEN for the canonical commercial GARANG web baseline and GREEN for the repository-level Wanted derivative release snapshot. Wanted public deployment remains YELLOW only until one fresh external browser click-through confirms the redeployed alias.
+GREEN for the canonical commercial GARANG web baseline and GREEN for the repository-level Wanted derivative release snapshot. Wanted public deployment is RED until anonymous access is enabled because the current Vercel alias returns `login_required` to a fresh unauthenticated browser fetch.
 
 ## Commercial PRODUCT main
 Decision: GREEN / FROZEN FOR SUBMISSION WINDOW.
@@ -21,7 +21,7 @@ Decision: GREEN / RELEASE SNAPSHOT VERIFIED.
 - PR #134 merged into the Wanted release branch only; commercial main is unchanged.
 
 ### Judge-entry hotfix
-- Founder observed the public Vercel judge flow freezing after tapping `60초 심사 체험`.
+- Founder observed the first public Vercel judge flow freezing after tapping `60초 심사 체험`.
 - Root cause: the 14-day synthetic dataset used a document-relative URL while the public shell loaded competition assets from a frozen external origin.
 - PR #134 makes `07_config/version.js` derive the asset root from its own loaded URL and route Wanted JS/CSS and the judge dataset to that same root.
 - A dedicated deployment-origin compatibility test verifies this behavior and verifies unrelated fetches are not rewritten.
@@ -41,13 +41,13 @@ Decision: GREEN / RELEASE SNAPSHOT VERIFIED.
 - No Firebase production config/provider secret was changed.
 
 ## Vercel public deployment
-Decision: YELLOW / NEW DEPLOYMENT READY, EXTERNAL CLICK-THROUGH PENDING.
-- Public alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
-- Latest production deployment id: `dpl_6Ei1Xn4hvoWNbSndGUKAHWXCbEnM`.
-- Vercel returned `READY` for this production deployment.
+Decision: RED / ANONYMOUS ACCESS BLOCKED.
+- Alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
+- Latest production deployment id: `dpl_6Ei1Xn4hvoWNbSndGUKAHWXCbEnM`; deployment response reported `READY`.
 - Public shell pins its asset root to exact Wanted release SHA `711517a4d62c9383716498fceb5d22030b98e033`; it does not follow commercial `main`.
-- Vercel connector deployment read-back still returns 404, so independent remote click-through from the current execution environment remains unavailable.
-- Release becomes public-runtime GREEN after one fresh/incognito `60초 심사 체험 → Today → Coach → Progress` pass on the alias.
+- Fresh unauthenticated browser-render fetch on 2026-09-17 returned `login_required`.
+- Therefore repository/build readiness is not the current problem; Vercel Deployment Protection / Vercel Authentication is blocking judges before application runtime.
+- Release cannot be considered public-runtime GREEN until Vercel Authentication / SSO protection is disabled for this Wanted project and a fresh anonymous `60초 심사 체험 → Today → Coach → Progress` pass succeeds.
 
 ## Intelligence ownership
 Decision: GREEN / unchanged.
@@ -60,7 +60,8 @@ Decision: GREEN / unchanged.
 - Commercial deployment: GREEN.
 - Wanted repository release snapshot: GREEN.
 - Wanted Vercel deployment creation/readiness: GREEN evidence from deploy response.
-- Wanted fresh external public runtime: YELLOW pending click-through.
+- Wanted anonymous public access: RED — `login_required`.
+- Wanted fresh public judge path: BLOCKED until deployment protection is disabled.
 
 ## Release-channel boundary
 Commercial GARANG PRODUCT main is canonical. Wanted/competition submission is a separate derivative from the verified stable snapshot. Competition-only changes do not redefine or automatically modify commercial GARANG.
