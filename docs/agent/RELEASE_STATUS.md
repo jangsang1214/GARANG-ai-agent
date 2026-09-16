@@ -3,39 +3,35 @@
 Last updated: 2026-09-16
 
 ## Overall decision
-GREEN for the current Wanted/demo web release baseline.
+GREEN for the current verified commercial GARANG web baseline and as the source snapshot for the Wanted derivative.
 
-This does not claim full commercial production readiness. It means the exact current PRODUCT main has passed the repository release gate, deployed successfully to GitHub Pages, and passed a real authenticated production text/photo Coach smoke against the production Firebase Function.
+This does not claim universal commercial-production readiness across every physical device/channel. It means the exact current PRODUCT main passed the full repository release gate, deployed to GitHub Pages, and the production Firebase Coach backend has independently passed authenticated text/photo LLM smoke.
 
 ## PRODUCT main
 Decision: GREEN.
-- Current main: `01473986568a6bbb122ab9ff05c8927a73b5622b`.
-- PR #123 Coach multimodal/release hardening: MERGED.
-- PR #124 Intelligence Learning Contract v1: MERGED.
-- PR #128 shell-navigation reconciliation: MERGED.
-- PR #129 Today remount self-healing + disposable production Coach smoke: MERGED.
+- Current main: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
+- PR #130 ChatGPT-style Coach composer photo `+`: MERGED.
+- PR #131 mobile route-intent stabilization: MERGED.
+- Earlier Real AI Coach / learning / Today stabilization PRs remain incorporated.
 
 ## Release Gate evidence
-### PR exact head
-Release Gate #1441 / run `35100746180`: GREEN.
+### PR exact heads
+- PR #130 Release Gate #1444: FULL GREEN.
+- PR #131 Release Gate #1448 / run `35109312382`: FULL GREEN.
 
-### Post-merge main
-Release Gate #1442 / run `35101459478`: GREEN.
+### Current post-merge main
+Release Gate #1449 / run `35110020514`: FULL GREEN.
 - locked dependencies: PASS
-- production + Functions dependency security: PASS
+- production + Functions dependency security gates: PASS
 - GARANG Intelligence Core: PASS
 - Action & Data Reliability: PASS
 - Commercial Core/regressions: PASS
 - runtime/build: PASS
 - Firebase public health: PASS
 - Firestore emulator rules: PASS
-- Today action flow: PASS
-- Today bottom Check-in + remount path: PASS
-- Today visual parity: PASS
-- Daily Plan: PASS
-- Simplified Shell: PASS
-- Planner execution: PASS
-- Nutrition recommendation flow: PASS
+- browser interaction/mobile layout: PASS
+- Today action / bottom Check-in / visual parity: PASS
+- Daily Plan / Simplified Shell / Planner / Nutrition: PASS
 - truth surface / first record: PASS
 - Golden Path integration: PASS
 - Golden Path complete journey: PASS
@@ -44,36 +40,53 @@ Release Gate #1442 / run `35101459478`: GREEN.
 - Real LLM Golden Path integration: PASS
 - Coach conversational logging: PASS
 - recovery mutation/touch: PASS
-- mobile regressions / Settings / button health / runtime stress: PASS
-- final aggregate verify: PASS
+- mobile regression / Settings / button health / runtime stress: PASS
+- aggregate verify: PASS
 
 ## Deployment
 Decision: GREEN.
-- GitHub Pages run #797 / `35101457283`: SUCCESS on exact main `01473986568a6bbb122ab9ff05c8927a73b5622b`.
+- GitHub Pages #799 / run `35110017165`: SUCCESS on exact main `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
+- Founder OS Event Envelope #968 / run `35110020344`: SUCCESS.
 - Public deployment URL: `https://jangsang1214.github.io/-fitmind-ai/`.
 
-## Production Real AI Coach
-Decision: GREEN for current smoke scope.
-- Production Coach Live Smoke run `35101459492`: SUCCESS on exact main.
-- Authentication: disposable Firebase email/password identity created at runtime; short-lived ID token and refresh token masked; no durable `GARANG_FIREBASE_ID_TOKEN` secret required.
-- Text Coach: `source=llm`, provider `openai`, model `gpt-5.6-luna`, GARANG alignment verified.
-- Photo Coach: `source=llm`, provider `openai`, model `gpt-5.6-luna`, alignment verified, grounding verified, image context accepted.
-- Disposable Firebase identity deletion: PASS.
-- The smoke account has no longitudinal data, so `collect_data` / insufficient-evidence judgment is expected and is not a provider failure.
-
-## Intelligence Learning Contract
+## Coach photo composer
 Decision: GREEN / RELEASED.
-- Chain: `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
-- Deterministic GARANG decision ownership preserved.
+- Photo attachment entry is a compact `+` inside the Coach composer.
+- Legacy standalone photo tools/note row is removed.
+- Hidden picker + thumbnail preview + remove action are composer-owned.
+- Supported input: one JPG/PNG/WebP image, max 8 MB.
+- Photo input remains one-request ephemeral and clears after consumption.
+- Raw photo data is not persisted to GARANG state/localStorage/Firestore/telemetry/conversation text history by this path.
+
+## Mobile route stability
+Decision: GREEN / RELEASED.
+- Canonical Router captures touch intent only for existing Today/Record route controls.
+- Short non-drag pointerup commits through `GarangRouter.navigate` even if presentation DOM remounts between touch phases.
+- Mouse/keyboard behavior and data ownership are unchanged.
+- Frozen Router version contract remains `garang-router-v1.3.0`.
+- Exact-head and post-merge full WebKit gates pass.
+
+## Production Real AI Coach
+Decision: GREEN for verified smoke scope.
+- Production Coach Live Smoke run `35101459492`: SUCCESS.
+- Authentication: disposable Firebase email/password identity created at runtime; short-lived tokens masked; identity deleted after smoke.
+- Text Coach: `source=llm`, provider `openai`, model `gpt-5.6-luna`, GARANG alignment verified.
+- Photo Coach: `source=llm`, provider `openai`, model `gpt-5.6-luna`, alignment + grounding verified and image context accepted.
+- PR #130/#131 are frontend-only changes; no Functions redeploy was required by those changes.
+
+## Intelligence ownership
+Decision: GREEN / unchanged.
+- Deterministic GARANG State/Decision Intelligence owns judgment.
 - LLM remains an explanation/language layer.
-- Outcome Learning remains read-only/advisory with no silent mutation or automatic progression increase.
+- Intelligence Learning Contract: `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
+- Outcome Learning remains read-only/advisory: no silent state mutation or automatic progression increase.
 
-## Golden Path / regression
-Decision: GREEN for the current web submission baseline.
-- The previously intermittent Today workout-preparation remount failure was addressed with bounded self-healing and passed both exact-head and post-merge full WebKit gates.
-- The earlier transient complete-journey Coach/CORS signal did not reproduce in the final full gates.
+## Release-channel boundary
+Commercial GARANG PRODUCT main is canonical. Wanted/competition submission is a separate derivative created from this verified stable snapshot. Competition-only copy/demo/presentation changes do not redefine or automatically modify commercial GARANG.
 
-## Remaining release distinctions
-- Wanted/demo submission readiness: GREEN technically; packaging/copy remains the active task.
-- Full commercial production readiness: separate gate, not claimed here.
-- Manual coverage on every physical device/in-app browser remains useful but is not a blocker for the currently verified web submission path.
+## Remaining non-blocking debt
+- Functions dependency family has 9 moderate advisory findings; full fix requires breaking upgrade and dedicated verification.
+- Root dev/tooling informational audit still has 23 findings while production-runtime audit remains clean.
+- Main branch protection is not server-enforced.
+- Production deployment credential should migrate to short-lived OIDC/WIF after verified replacement.
+- Firebase build-image retention/cost cleanup remains a reviewed maintenance task.
