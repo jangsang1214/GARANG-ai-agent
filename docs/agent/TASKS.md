@@ -3,25 +3,40 @@
 Last updated: 2026-09-17
 
 ## Active P1 — Wanted derivative public deployment + final submission
-Status: YELLOW / CODE GREEN, PUBLIC RUNTIME UNVERIFIED
+Status: YELLOW / SOURCE+CI GREEN, FRESH PUBLIC CLICK-THROUGH PENDING
 Owner: Founder / Growth Business / Product / Release QA
 Goal: publish the verified Wanted derivative at its own public URL and complete the competition submission without destabilizing commercial GARANG.
 Acceptance:
 - Commercial source snapshot is PRODUCT main `b863a7634bd64b03a6e6f3772950c43cc81afb6f`. ✅
 - Wanted derivative release branch is `wanted/2026-release`. ✅
-- Wanted derivative release SHA is `561d900b82b2ff5aa85769457e4f39c1b4c14767`. ✅
-- PR #133 full GARANG Release Gate #1454 / `35122058195`: FULL GREEN. ✅
-- Post-merge Wanted derivative gate #13 / `35122761724`: GREEN. ✅
+- Current Wanted release SHA is `711517a4d62c9383716498fceb5d22030b98e033`. ✅
 - Relative 14-day synthetic judge dataset is release-merged and CI-verified. ✅
-- Judge dataset includes 14 daily check-ins, 42 meals, workout/running/body history and fatigue-driven plan adjustment evidence. ✅
-- Synthetic sample mode contains no real-user data and does not claim a live GPT call. ✅
-- Commercial GARANG remains canonical and unchanged by the derivative merge. ✅
+- Dataset includes 14 daily check-ins, 42 meals, workout/running/body history and fatigue-driven plan-adjustment evidence. ✅
+- Founder-observed public judge-entry freeze was root-caused to deployment-origin relative asset loading. ✅
+- PR #134 deployment-origin hotfix merged to Wanted release only. ✅
+- PR #134 Wanted gate #20 / `35125457506`: GREEN. ✅
+- PR #134 full GARANG Release Gate #1455 / `35125457469`: FULL GREEN. ✅
+- Post-merge Wanted gate #21 / `35126068695`: GREEN. ✅
+- Deployment-origin compatibility is now a permanent Wanted CI check. ✅
+- Commercial GARANG remains canonical and unchanged. ✅
 - Submission narrative exists as `WANTED_SUBMISSION.md`; paste-ready form copy exists as `WANTED_FORM_COPY.md`. ✅
-- Vercel production deployment request accepted for `garang-wanted-2026`, deployment id `dpl_26o2uL2sWEQQNFuZaDLXoieUiB8t`, candidate alias `https://garang-wanted-2026-jangsang1214.vercel.app`. ✅ deployment creation only
-- Candidate public alias returns the Wanted experience in a fresh browser. ⬜ UNKNOWN — connector read-back 404 / environment DNS unavailable
-- Fresh-browser mobile smoke passes `60초 심사 체험 → Today → Coach → Progress` on the public alias. ⬜
-- Replace `[WANTED_PUBLIC_URL]` in `WANTED_FORM_COPY.md` only after the public smoke passes. ⬜
+- Vercel production redeployed after hotfix; deployment `dpl_6Ei1Xn4hvoWNbSndGUKAHWXCbEnM` returned READY. ✅ deployment evidence
+- Public alias is `https://garang-wanted-2026-jangsang1214.vercel.app`. ✅ candidate URL
+- Fresh/incognito alias smoke passes `60초 심사 체험 → Today → Coach → Progress`. ⬜ final external runtime evidence
+- Replace `[WANTED_PUBLIC_URL]` in final submission copy after the public smoke passes. ⬜
 - Wanted participation registration and final submission are completed. ⬜ Founder action / submission UI
+
+## Closed P1 — Wanted judge-entry deployment-origin hotfix
+Status: DONE / VERIFIED GREEN AT SOURCE+CI
+Owner: Engineering / Release QA
+Acceptance:
+- Reproduce the structural cause of public judge-entry freeze. ✅
+- Derive competition asset root from loaded `version.js`, not Vercel document origin. ✅
+- Route 14-day dataset and competition CSS/JS to the same frozen asset root. ✅
+- Leave unrelated runtime fetches untouched. ✅
+- Add deployment-origin compatibility regression test. ✅
+- Preserve commercial Golden Path, authenticated Coach, Real LLM and mobile regression behavior. ✅
+Evidence: PRODUCT PR #134 merged as `711517a4…`; Wanted gate #20 GREEN; full Release Gate #1455 FULL GREEN; post-merge Wanted gate #21 GREEN.
 
 ## Closed P1 — Wanted 14-day judge data upgrade
 Status: DONE / VERIFIED GREEN
@@ -32,7 +47,7 @@ Acceptance:
 - Exercise nutrition, recovery and body accumulation are visible to Today/Coach/Progress. ✅
 - Strengthen CI so the 14-day dataset and 60-second WebKit journey are both verified. ✅
 - Keep commercial main unchanged. ✅
-Evidence: PRODUCT PR #133 merged to `wanted/2026-release` as `561d900b…`; Release Gate #1454 `35122058195` SUCCESS; post-merge Wanted gate #13 `35122761724` SUCCESS.
+Evidence: PRODUCT PR #133 merged to `wanted/2026-release`; Release Gate #1454 `35122058195` SUCCESS; post-merge Wanted gate #13 `35122761724` SUCCESS.
 
 ## Closed P1 — Wanted judging derivative build
 Status: DONE / VERIFIED GREEN
@@ -42,21 +57,12 @@ Acceptance:
 - Seed only synthetic local sample records. ✅
 - Guide judges through Today → Coach → Progress. ✅
 - Keep real production GPT/photo Coach on the existing authenticated path. ✅
-- Pin derivative metadata to verified commercial source SHA. ✅
 - Preserve the full commercial regression suite. ✅
-Evidence: PRODUCT PR #132 established the derivative; PR #133 then upgraded the judge history while preserving the commercial boundary.
 
 ## Closed P1 — Coach photo composer simplification
 Status: DONE / VERIFIED GREEN
 Owner: Product / Design Brand / Engineering / Release QA
-Acceptance:
-- Separate photo-tools row removed. ✅
-- Compact `+` control lives inside the Coach chat composer. ✅
-- Hidden picker and preview/remove state remain composer-owned. ✅
-- One JPG/PNG/WebP photo up to 8 MB remains supported. ✅
-- Photo remains ephemeral and is consumed/cleared after the next request. ✅
-- Raw image is not persisted to GARANG state/localStorage/Firestore/telemetry/text history. ✅
-Evidence: PRODUCT PR #130 merged at `9452cea2929d6940f20d39806b2b3d30bc3bb004`; Gate #1444 GREEN.
+Evidence: PR #130 merged at `9452cea2929d6940f20d39806b2b3d30bc3bb004`; Gate #1444 GREEN.
 
 ## Closed P1 — Mobile route intent across remounts
 Status: DONE / VERIFIED GREEN
@@ -81,15 +87,15 @@ Acceptance: enforce PR-based changes/status checks and block force-push/deletion
 ## P2 — Production deployment credential hardening
 Status: PLANNED / NON-BLOCKING
 Owner: Engineering / Release QA
-Acceptance: migrate toward GitHub OIDC / Google Workload Identity Federation; retire the long-lived JSON key only after replacement is VERIFIED.
+Acceptance: migrate toward GitHub OIDC / Google Workload Identity Federation; retire long-lived credentials only after replacement is VERIFIED.
 
 ## P2 — Dependency/tooling hardening
 Status: PLANNED / NON-BLOCKING FOR CURRENT WEB BASELINE
 Owner: Engineering / Release QA
 Acceptance:
-- Resolve the 9 moderate Functions findings through a dedicated breaking-upgrade PR with emulator + production smoke evidence.
+- Resolve moderate Functions findings through a dedicated breaking-upgrade PR with emulator + production smoke evidence.
 - Reduce root dev/tooling audit findings separately from the clean production-runtime audit.
-- Modernize CONTROL checkout/setup-node Actions from v4 in a dedicated verified PR.
+- Modernize CONTROL tooling in a dedicated verified PR.
 
 ## P6 — Repository / cloud cost hygiene
 Status: PLANNED
