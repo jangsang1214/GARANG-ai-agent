@@ -3,7 +3,7 @@
 Last updated: 2026-09-17
 
 ## Overall decision
-GREEN for the canonical commercial GARANG web baseline and GREEN for the repository-level Wanted derivative release snapshot. Wanted public root access is GREEN; the end-to-end public judge click path remains YELLOW until one fresh human click-through confirms the latest redeploy.
+GREEN for the canonical commercial GARANG web baseline and GREEN for the repository-level Wanted derivative release snapshot. The latest Wanted production deployment is anonymously reachable and pinned to the verified release SHA; final public human confirmation of the newly changed UX is YELLOW/pending.
 
 ## Commercial PRODUCT main
 Decision: GREEN / FROZEN FOR SUBMISSION WINDOW.
@@ -17,38 +17,38 @@ Decision: GREEN / FROZEN FOR SUBMISSION WINDOW.
 Decision: GREEN / RELEASE SNAPSHOT VERIFIED.
 - Source commercial snapshot: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
 - Release branch: `wanted/2026-release`.
-- Current release SHA: `149ba11fe9dba33033aa3b1d201f7b3141f782ec`.
-- PR #137 merged into the Wanted release branch only; commercial main is unchanged.
+- Current release SHA: `5ac577094cf5ff4350ce33a7dbba2b79f8ba90cd`.
+- PR #138 merged into the Wanted release branch only; commercial main is unchanged.
 
-### Judge-entry runtime hotfix
-- Founder observed that the public judge entry still did not enter the app after Vercel Authentication had been disabled.
-- Source inspection VERIFIED a mutation-loop hazard in the competition-only auth/app visibility observer: it observed `hidden` changes while unconditionally writing those same `hidden` values.
-- PR #137 temporarily wraps MutationObserver during Wanted runtime bootstrap, filters redundant `hidden` mutations, preserves real visibility transitions and restores native MutationObserver immediately after script load.
-- Regression coverage verifies redundant writes are filtered, real visibility changes are propagated, and the native observer is restored.
+### Judge UX fixes
+- Root cause of Coach usability issue: the competition judging guide was fixed near the bottom of the viewport and could cover the Coach composer.
+- Wanted-only fix auto-collapses the guide on Coach, adds a manual open/close control, and places collapsed state away from the composer.
+- Wanted-only Today fix adds a compact `+` beside `오늘의 계획`; it routes directly to Planner using the canonical GARANG router.
+- Dedicated browser regression verifies Today `+ → Planner`, Coach auto-collapse, textarea focus/text entry, and no geometric guide/composer overlap.
 
 ### Verification
-- PR #137 Wanted derivative gate #32 / run `35131048847`: GREEN.
-- PR #137 full GARANG Release Gate #1461 / run `35131048722`: FULL GREEN.
-- Full release browser checks passed real interactions, Today, Planner, Nutrition, truth/first-record, Golden Path integration + complete journey, authenticated app/Coach, Real LLM Golden Path, conversational logging, recovery mutation/touch, mobile regression, Settings touch, button health and runtime stress.
-- PR #137 merged as `149ba11fe9dba33033aa3b1d201f7b3141f782ec`.
-- Post-merge Wanted derivative gate #33 / run `35131663143`: GREEN on the exact merge SHA, including dataset, deployment-origin/observer compatibility, build/assets and 60-second WebKit judging journey.
+- PR #138 Wanted derivative gate #41 / run `35133826320`: GREEN.
+- PR #138 full GARANG Release Gate #1463 / run `35133826275`: FULL GREEN.
+- Full release browser checks passed real interactions, Today, Planner, Nutrition, Golden Path complete journey, authenticated app/Coach, Real LLM Golden Path, conversational logging, recovery, mobile regression, Settings touch, button health and runtime stress.
+- PR #138 merged as `5ac577094cf5ff4350ce33a7dbba2b79f8ba90cd`.
+- Post-merge Wanted derivative gate #42 / run `35134431895`: GREEN on the exact merge SHA, including the new judge UX affordance test.
 
 ### Competition-only behavior
-- `60초 심사 체험` remains isolated to the Wanted derivative.
-- Synthetic judging records are local-only and contain no real-user data.
+- `60초 심사 체험` and the guide/Today shortcut adjustments remain isolated to the Wanted derivative.
+- Synthetic judging records remain local-only and contain no real-user data.
 - Dataset remains current-date-relative with 14 daily check-ins, 42 meals, workout/running/body history and fatigue-driven plan-adjustment evidence.
 - Sample Coach output does not claim a live GPT call; real GPT/photo Coach remains on the authenticated production path.
 - No Firebase production config/provider secret was changed.
 
 ## Vercel public deployment
-Decision: YELLOW / PUBLIC ROOT GREEN, END-TO-END CLICK PENDING.
-- Alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
-- Founder disabled Vercel Authentication / SSO Deployment Protection.
-- Latest production deployment id: `dpl_Bc7dxWoziC633y8EEZ6BWDJUFQWE`; deployment response reported `READY`.
-- Public shell pins its asset root to exact Wanted release SHA `149ba11fe9dba33033aa3b1d201f7b3141f782ec`; it does not follow commercial `main`.
-- Exact-SHA CDN `version.js` and Wanted runtime were reachable before deploy.
-- Fresh unauthenticated rendered fetch of the cache-busted production alias returned `GARANG — Quietly Becoming`, so the previous Vercel `login_required` blocker is no longer present.
-- Interactive public button-click verification is still UNKNOWN from the current tool surface; one Founder fresh-browser `60초 심사 체험 → Today → Coach → Progress` pass is required before final submission URL sign-off.
+Decision: YELLOW / ROOT+DEPLOYMENT GREEN, NEW UX HUMAN SMOKE PENDING.
+- Stable alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
+- Vercel Authentication / SSO Deployment Protection remains disabled.
+- Latest production deployment id: `dpl_87pRSKTnUgw3iAi5RDrPCBjg8Hg4`; deployment response reported `READY` and assigned the stable alias.
+- Public shell pins its asset root to exact Wanted release SHA `5ac577094cf5ff4350ce33a7dbba2b79f8ba90cd`; it does not follow commercial `main`.
+- Exact-SHA `version.js`, new Wanted UX CSS and new Wanted UX JS were independently reachable through jsDelivr.
+- Fresh unauthenticated rendered fetch of the cache-busted stable alias returned `GARANG — Quietly Becoming`; anonymous public root access remains GREEN.
+- The requested interaction behavior is VERIFIED in exact-release WebKit CI; a human public click-through of the freshly deployed SHA remains the last confidence check.
 
 ## Intelligence ownership
 Decision: GREEN / unchanged.
@@ -60,11 +60,11 @@ Decision: GREEN / unchanged.
 ## Deployment status
 - Commercial deployment: GREEN.
 - Wanted repository release snapshot: GREEN.
-- Wanted exact-head full Release Gate #1461: GREEN.
-- Wanted post-merge derivative gate #33: GREEN.
-- Wanted Vercel deployment creation/readiness: GREEN evidence from deploy response.
+- Wanted exact-head full Release Gate #1463: GREEN.
+- Wanted post-merge derivative gate #42: GREEN.
+- Wanted Vercel deployment creation/readiness: GREEN.
 - Wanted anonymous public root access: GREEN.
-- Wanted fresh public judge click path: YELLOW / human verification pending.
+- Wanted new UX public human smoke: YELLOW / pending.
 
 ## Release-channel boundary
 Commercial GARANG PRODUCT main is canonical. Wanted/competition submission is a separate derivative from the verified stable snapshot. Competition-only changes do not redefine or automatically modify commercial GARANG.
