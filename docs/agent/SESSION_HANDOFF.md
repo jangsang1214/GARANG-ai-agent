@@ -18,7 +18,7 @@
 - PRODUCT current merged main remains `4c18ce254494e458de43c1d9e7030a09bfdb0a22`.
 - PRODUCT PR #123 `agent/coach-multimodal-hardening-2026-09-16` is OPEN / UNMERGED at `ef17f0673b47b4adb0b807ed89d423b9a0d97813`.
 - PR #123 carries Coach reconnect hardening (25s + one transient retry, 60s Function timeout, relaxed rate limits) plus Today/Shell/Nutrition timing fixes. Deterministic Decision Intelligence ownership and local fail-closed fallback must remain unchanged.
-- Exact-head #123 GitHub Release Gate core job is GREEN, but browser WebKit run `35067308863` failed `Today bottom Check-in CTA`. Do not treat PR #123 as release-complete until a reliable full browser gate is GREEN.
+- Exact-head #123 GitHub Release Gate core job is GREEN, but browser WebKit run `35067308863` failed `Today bottom Check-in CTA`. Do not treat PR #123 as release-complete.
 - The exact privacy-safe `code` for the Founder's newest production AI connection failure is still UNKNOWN. Do not assume it is the earlier `LLM_TIMEOUT`.
 
 ## AI/Data P1 implemented
@@ -32,27 +32,30 @@
 - Focused causal-linkage tests were added to the root test chain.
 - Exact-head #124 core/build/security/Functions/Firebase/Firestore gate is GREEN.
 
-## #124 browser verification
-- Initial WebKit attempt failed the same `Today bottom Check-in CTA` assertion as #123.
-- First bounded rerun passed that CTA and all browser slices through Golden Path integration, then failed `Golden Path complete journey` because WebKit captured two access-control/CORS console errors from the production `/api/coach` endpoint.
-- This movement between unrelated failures on identical AI/Data code is evidence of browser/environment instability, but final classification remains YELLOW until the bounded final rerun completes.
-- Do not weaken the release gate or suppress browser errors just to obtain GREEN.
+## Browser blocker evidence
+Three bounded WebKit attempts were observed on the #124 stacked head:
+1. Attempt 1 failed `Today bottom Check-in CTA` with `standalone Today workout execution CTA must be visually removed`.
+2. Attempt 2 passed that CTA and all browser checks through Golden Path integration, then failed `Golden Path complete journey` because WebKit captured two production `/api/coach` access-control/CORS console errors.
+3. Attempt 3 failed the same Today CTA assertion again.
+
+Judgment: stop blind reruns. The repeated Today CTA failure is a VERIFIED stacked-base release blocker. The likely restore/reconcile timing race in `garang-today-workout-prep-integration-v1.js` remains INFERRED until targeted UI/Release work verifies a fix. The later `/api/coach` CORS signal should be rechecked only after the CTA blocker is fixed. Do not patch unrelated UI behavior inside #124 AI/Data scope.
 
 ## Required release sequence
-1. Reconcile the final bounded WebKit rerun. If a stable failure repeats, fix the smallest verified #123 runtime/test race; do not contaminate #124 with unrelated UI fixes.
-2. When #123 is reliably GREEN, merge only with Founder approval.
-3. After approved merge, deploy Functions/Pages and verify unauthenticated POST 401 / wrong-method GET 405.
-4. Run real authenticated production text Coach + photo Coach. On failure record only `code` and `providerStatus`; never tokens or API keys.
-5. Rebase/retarget #124 onto the resulting main and run its complete Release Gate again.
-6. Merge #124 only with Founder approval and reliable GREEN evidence.
-7. Then start User Performance Model v1 using `State × Recommendation × Action × Outcome` with confidence/sample-size/evidence IDs; do not jump to ML/vector infrastructure first.
+1. Fix the smallest #123 Today workout-preparation CTA restore/reconcile race and run one full WebKit gate.
+2. If the gate reaches complete journey, recheck whether production `/api/coach` CORS/access-control console errors reproduce.
+3. When #123 is reliably GREEN, merge only with Founder approval.
+4. After approved merge, deploy Functions/Pages and verify unauthenticated POST 401 / wrong-method GET 405.
+5. Run real authenticated production text Coach + photo Coach. On failure record only `code` and `providerStatus`; never tokens or API keys.
+6. Rebase/retarget #124 onto the resulting main and run its complete Release Gate again.
+7. Merge #124 only with Founder approval and reliable GREEN evidence.
+8. Then start User Performance Model v1 using `State × Recommendation × Action × Outcome` with confidence/sample-size/evidence IDs; do not jump to ML/vector infrastructure first.
 
 ## Known remaining AI/Data gap
 The current #124 contract closes attribution for confirmed/applied recommendations. Durable learning from explicitly rejected/dismissed recommendations is not yet part of the causal graph. Treat this as follow-up personalization work, not a reason to expand the current release-critical scope.
 
 ## CONTROL state
 - CONTROL reconciliation branch: `agent/reconcile-learning-contract-2026-09-16`.
-- `PROJECT_STATE.md`, `TASKS.md`, `RELEASE_STATUS.md` and this handoff were reconciled on that branch.
+- `PROJECT_STATE.md`, `TASKS.md`, `RELEASE_STATUS.md` and this handoff are reconciled on that branch.
 - CONTROL main has not been changed by this work.
 
 ## Handoff rule
