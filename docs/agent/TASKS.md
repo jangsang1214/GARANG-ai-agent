@@ -3,44 +3,56 @@
 Last updated: 2026-09-17
 
 ## Active P1 — Wanted derivative public deployment + final submission
-Status: YELLOW / SOURCE+CI+PUBLIC ROOT GREEN, NEW UX HUMAN SMOKE PENDING
+Status: YELLOW / SOURCE+CI+PUBLIC ROOT GREEN, CORRECTED UX HUMAN SMOKE PENDING
 Owner: Founder / Growth Business / Product / Release QA
 Goal: publish the verified Wanted derivative at its stable public URL and complete the competition submission without destabilizing commercial GARANG.
 Acceptance:
 - Commercial source snapshot is PRODUCT main `b863a7634bd64b03a6e6f3772950c43cc81afb6f`. ✅
 - Wanted derivative release branch is `wanted/2026-release`. ✅
-- Current Wanted release SHA is `5ac577094cf5ff4350ce33a7dbba2b79f8ba90cd`. ✅
+- Current Wanted release SHA is `24dcacd29cf17ada5df63d857aaa93cc4a608e33`. ✅
 - Relative 14-day synthetic judge dataset remains release-merged and CI-verified. ✅
 - Deployment-origin compatibility and judge-entry observer safety remain permanent Wanted CI checks. ✅
-- Founder previously verified `60초 심사 체험` entered the app on the prior public release. ✅
 - Coach judging guide no longer covers chat: auto-collapse on Coach + manual open/close control. ✅ source/CI
-- Today `오늘의 계획` has a compact `+` that routes to Planner. ✅ source/CI
-- Dedicated WebKit verifies Today `+ → Planner`, Coach textarea entry and no guide/composer overlap. ✅
-- PR #138 Wanted gate #41 / `35133826320`: GREEN. ✅
-- PR #138 full GARANG Release Gate #1463 / `35133826275`: FULL GREEN. ✅
-- PR #138 merged as `5ac577094cf5ff4350ce33a7dbba2b79f8ba90cd`. ✅
-- Post-merge Wanted gate #42 / `35134431895`: GREEN. ✅
+- Founder reported the Today `오늘의 계획 +` was absent on the public app. ✅ observed
+- Root cause identified: Today shortcut/sync incorrectly depended on `garang_wanted_demo_active_v1`. ✅ verified
+- Today `+ → Planner` now works across the Wanted derivative regardless of judge-mode localStorage state. ✅ source/CI
+- Dedicated WebKit removes the judge-mode flag before requiring Today `+` visibility and Planner navigation. ✅
+- PR #140 exact-head Wanted gate / `35137650732`: GREEN. ✅
+- PR #140 full GARANG Release Gate #1468 / `35137651074`: FULL GREEN. ✅
+- PR #140 merged as `24dcacd29cf17ada5df63d857aaa93cc4a608e33`. ✅
+- Post-merge Wanted gate #51 / `35138268989`: GREEN. ✅
 - Commercial GARANG remains canonical and unchanged. ✅
 - Vercel Authentication / SSO Deployment Protection disabled. ✅
 - Stable public alias is `https://garang-wanted-2026-jangsang1214.vercel.app`. ✅
-- Production deployment `dpl_87pRSKTnUgw3iAi5RDrPCBjg8Hg4` returned READY and pins exact release SHA `5ac57709…`. ✅
-- Exact-SHA new UX JS/CSS assets are reachable on jsDelivr. ✅
+- Production deployment `dpl_4Nvd8QzzXwD7X5Psw6R8NSnZdMbP` returned READY and pins exact release SHA `24dcacd2…`. ✅
+- Exact-SHA corrected UX JS and loader are reachable on jsDelivr. ✅
 - Fresh unauthenticated rendered fetch opens the GARANG page without `login_required`. ✅
-- Fresh human smoke passes `60초 심사 체험 → Today + → Planner → Coach 입력`. ⬜ final public UX confidence check
+- Founder fresh-browser smoke confirms `Today → 오늘의 계획 + → Planner → Coach 입력`. ⬜ final public UX confidence check
 - Wanted participation registration and final submission are completed. ⬜ Founder final action
 
-## Closed P1 — Wanted Coach guide + Today Planner affordance
+## Closed P1 — Wanted Today Planner shortcut judge-mode gating fix
 Status: DONE / VERIFIED GREEN AT SOURCE+CI
+Owner: Product / Engineering / Release QA
+Acceptance:
+- Reproduce why the shortcut is absent outside judge mode. ✅
+- Keep Coach judging guide behavior judge-mode-only. ✅
+- Decouple Today planner shortcut from judge-mode state. ✅
+- Keep shortcut synchronized across Today rerenders. ✅
+- Verify with judge-mode localStorage explicitly removed. ✅
+- Preserve commercial Golden Path, authenticated Coach, Real LLM and mobile regression behavior. ✅
+Evidence: PRODUCT PR #140 merged as `24dcacd2…`; exact-head Wanted gate `35137650732` GREEN; full Release Gate #1468 FULL GREEN; post-merge Wanted gate #51 GREEN.
+
+## Closed P1 — Wanted Coach guide + Today Planner affordance
+Status: DONE / SUPERSEDED FOR TODAY-SHORTCUT GATING BY PR #140
 Owner: Product / Engineering / Design Brand / Release QA
 Acceptance:
 - Prevent the judging guide from covering the Coach composer. ✅
 - Preserve the recommended judging route while allowing explicit collapse/expand. ✅
 - Auto-collapse on Coach. ✅
 - Keep Coach textarea focus and typing functional. ✅
-- Add compact Today plan `+` shortcut to Planner. ✅
+- Add compact Today plan `+` shortcut to Planner. ✅ initial implementation
 - Keep all changes isolated to Wanted derivative. ✅
-- Preserve commercial Golden Path, authenticated Coach, Real LLM and mobile regression behavior. ✅
-Evidence: PRODUCT PR #138 merged as `5ac57709…`; Wanted gate #41 GREEN; full Release Gate #1463 FULL GREEN; post-merge Wanted gate #42 GREEN.
+Evidence: PRODUCT PR #138 merged as `5ac57709…`; Wanted gate #41 GREEN; full Release Gate #1463 FULL GREEN; post-merge Wanted gate #42 GREEN. Founder public observation later exposed judge-mode-only gating of the Today shortcut; PR #140 corrected it.
 
 ## Closed P1 — Wanted judge-entry observer hotfix
 Status: DONE / VERIFIED GREEN AT SOURCE+CI
