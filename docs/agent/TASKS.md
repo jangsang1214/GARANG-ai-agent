@@ -2,86 +2,105 @@
 
 Last updated: 2026-09-16
 
-## Active P1 — Coach reconnect + release stabilization
-Status: IN PROGRESS / YELLOW
+## Active P1 — Wanted AI Championship submission
+Status: READY FOR PACKAGING / TECHNICAL BASELINE GREEN
+Owner: Founder / Growth Business / Product / Release QA
+Goal: submit a stable deployed GARANG experience that makes the Personal Performance Intelligence thesis understandable within the first interaction.
+Acceptance:
+- Deployed web service remains publicly reachable through the judging period. ✅ current Pages deployment verified
+- Submission states the real user problem, GARANG solution, AI usage method and major AI tools used.
+- Submission does not describe GARANG as a generic chatbot; explain `Signal → Interpretation → Recommendation → Action → Outcome → Learning` and `GARANG decides → LLM explains`.
+- Judge can understand the core value from signup/onboarding → Today → Record → Coach → next action without requiring hidden instructions.
+- No private user data, secrets or company-confidential material appears in the submission.
+- Avoid new major features before submission; any code change must preserve the GREEN release gate.
+Evidence: PRODUCT main `01473986568a6bbb122ab9ff05c8927a73b5622b`; post-merge Release Gate #1442 GREEN; Pages #797 SUCCESS; Production Coach Live Smoke `35101459492` SUCCESS.
+
+## Closed P1 — Coach reconnect + release stabilization
+Status: DONE / VERIFIED GREEN
 Owner: Engineering / Release QA / AI Data / Design Brand
 Acceptance:
-- PR #123 preserves deterministic GARANG decision ownership and fail-closed local Coach fallback.
-- Provider budget is 25s with at most one transient-only retry; 401/auth failures are not retried.
-- Firebase Function timeout is 60s; Coach limits are 40/10min and 200/day.
-- Today bottom Check-in, Today action flow, Simplified Shell and Nutrition readiness regressions are stable in full WebKit.
-- Exact-head Core/Functions/security/Commercial Core/Build/Firebase/Firestore remain GREEN.
-- Full WebKit is reliably GREEN before merge.
-- After Founder-approved merge, production Functions/Pages deploy is verified with POST 401 / GET 405 and real text + photo Coach smoke.
-Evidence: PRODUCT PR #123 OPEN / UNMERGED, head `ef17f0673b47b4adb0b807ed89d423b9a0d97813`; exact-head run `35067308863` core GREEN but browser failed Today bottom Check-in CTA. New production failure `code` remains UNKNOWN.
+- Deterministic GARANG decision ownership and fail-closed local Coach behavior preserved. ✅
+- 25s provider budget with at most one transient-only retry; auth failures are not retried. ✅
+- Firebase Function timeout 60s; Coach limits 40/10min and 200/day. ✅
+- Signed-out demo entry removed. ✅
+- One-photo ephemeral Coach path released. ✅
+- Today action / bottom Check-in / remount / Simplified Shell / Nutrition regressions stable in full WebKit. ✅
+- Core/Functions/security/build/Firebase/Firestore GREEN. ✅
+- Real production text Coach verified. ✅
+- Real production photo Coach verified. ✅
+Evidence: PR #123 merged; PR #128 and #129 closed final UI races; exact main #1442 GREEN.
 
-## Active P1 — Intelligence Learning Contract v1
-Status: IMPLEMENTED / VERIFICATION YELLOW
+## Closed P1 — Intelligence Learning Contract v1
+Status: DONE / VERIFIED GREEN
 Owner: AI Data / Engineering / Release QA
-Goal: close the first causal learning layer across `decisionId → recommendationId → actionId → planId → executionId → outcomeId` so GARANG can learn from intervention-response evidence rather than chat history alone.
+Goal: causal learning layer across `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
 Acceptance:
-- Existing Agent Contract recommendation lifecycle is reused instead of creating a parallel system. ✅
+- Existing Agent Contract recommendation lifecycle reused. ✅
 - `decisionId` / `decisionMode` persist through proposal, modification and confirmation. ✅
 - Confirmed canonical plan rows and confirmation actionLog retain decision/recommendation attribution. ✅
-- Browser/core and Functions build stable read-only causal graphs. ✅
+- Browser/core + Functions build read-only causal graphs. ✅
 - Outcome Learning consumes the graph as advisory-only evidence. ✅
-- No autonomous LLM tool calling, no silent mutation, no automatic progression increase. ✅
-- Focused linkage tests are included in `npm test`. ✅
-- Core/Functions/security/Commercial Core/Build/Firebase/Firestore pass. ✅
-- Full stacked WebKit release verification is reliably GREEN. ⏳
-- Rebase/retarget onto post-#123 main and re-run full gate before merge. ⏳
-Evidence: PRODUCT Draft PR #124 OPEN / UNMERGED, stacked on #123, head `aabf5eadf38324a4503abc1000ff1c0ad1fa33ac`; exact-head core-build-rules GREEN. Browser attempts have moved between a Today CTA timing failure and a complete-journey production `/api/coach` access-control/CORS console failure, so overall status remains YELLOW until bounded rerun evidence is stable.
+- No autonomous LLM tool calling, silent mutation or automatic progression increase. ✅
+- Focused linkage tests included in root test chain. ✅
+- Full release verification GREEN. ✅
+Evidence: PR #124 merged at `ba31fa971b2d4a84ac69072229903fc048543056`; later post-merge main #1442 remains GREEN.
 
-## Active P1 — Validate deployed Golden Path on real target device
-Status: IN PROGRESS / PARTIAL GREEN
-Owner: Release QA / Product / Design Brand
+## Closed P1 — Repeatable production Coach authentication smoke
+Status: DONE / VERIFIED GREEN
+Owner: Engineering / Release QA / AI Data
 Acceptance:
-- iPhone Chrome load/onboarding/Today/first record/Coach. ✅
-- Authenticated production provider path reaches safe fallback on failure. ✅
-- Post-#123 live text Coach succeeds or returns a verified privacy-safe error code. ⏳
-- Post-#123 photo Coach succeeds or returns a verified privacy-safe error code. ⏳
-- Plan → execution → persistence → Accumulation. ⏳
-- Target in-app browser Golden Path. ⏳
+- Do not depend on a manually maintained, expiring `GARANG_FIREBASE_ID_TOKEN` secret. ✅
+- Create a disposable Firebase identity at smoke time. ✅
+- Mask short-lived ID/refresh tokens. ✅
+- Verify authenticated production text Coach. ✅
+- Verify authenticated production photo Coach. ✅
+- Delete disposable Firebase identity in cleanup. ✅
+Evidence: workflow `Production Coach Live Smoke`, run `35101459492`, SUCCESS on main `01473986568a6bbb122ab9ff05c8927a73b5622b`.
 
-## Active P1 — Wanted AI Championship submission
-Status: PLANNED AFTER RELEASE STABILIZATION + REAL-DEVICE EVIDENCE
-Owner: Founder / Growth Business / Product
+## P3 — Judge-first clarity polish
+Status: OPTIONAL / SMALL ONLY
+Owner: Product / Design Brand / Growth Business
+Acceptance direction:
+- Maximum a few restrained copy/first-60-second changes.
+- Clarify GARANG as Personal Performance Intelligence, not “AI 운동 챗봇”.
+- Preserve Today / Record / Coach / Progress shell and Golden Path.
+- No anonymous demo reintroduction.
+- Full release gate required after any code change.
 
 ## Next P4 — User Performance Model v1
-Status: PLANNED AFTER INTELLIGENCE LEARNING CONTRACT RELEASE
+Status: PLANNED AFTER SUBMISSION BASELINE FREEZE
 Owner: AI Data / Product / Engineering
 Acceptance direction:
 - Learn living user dimensions from attributable evidence, not onboarding alone.
-- Each learned dimension includes value, confidence, sample size, last updated time and evidence IDs.
-- Start with deterministic evidence aggregation; do not introduce ML/vector infrastructure without measured need.
+- Each dimension includes value, confidence, sample size, last updated time and evidence IDs.
+- Start with deterministic aggregation; do not introduce ML/vector infrastructure without measured need.
 - Use `State × Recommendation × Action × Outcome` as the proprietary learning unit.
+- Add explicit rejected/dismissed recommendation evidence in the future personalization layer.
 
 ## P2 — Protect CONTROL + PRODUCT main
-Status: PLANNED
+Status: PLANNED / NON-BLOCKING FOR SUBMISSION
 Owner: Command Center / Release QA
 Acceptance: require PR-based changes/status checks and block force-push/deletion where repository plan/capabilities permit.
-Evidence: current protection remains procedural rather than server-enforced.
 
 ## P2 — Production deployment credential hardening
-Status: PLANNED AFTER LIVE AI STABILIZATION
+Status: PLANNED / NON-BLOCKING FOR SUBMISSION
 Owner: Engineering / Release QA
-Acceptance: least-privilege review and migration toward short-lived OIDC / Workload Identity Federation where practical; do not rotate working credentials until replacement is VERIFIED.
+Acceptance: least-privilege review and migration toward short-lived OIDC / Workload Identity Federation where practical; do not rotate working production credentials until replacement is VERIFIED.
 
 ## P6 — Repository / cloud cost hygiene
 Status: PLANNED
 Owner: Command Center / Engineering
-Acceptance: close superseded experiment PRs and handle Firebase build-artifact retention only through safe reviewed changes.
+Acceptance: close superseded experiments and handle Firebase build-artifact retention through safe reviewed changes.
 
 ## Closed / verified baselines
 - Founder OS v7-lite event-ready control plane — DONE.
 - Today Single Next Action — DONE.
-- Final Today workout preparation / execution integration — DONE / VERIFIED GREEN on prior merged baseline.
+- Today workout preparation / execution integration — DONE / self-healing remount verified.
 - Commercialization Stage 1 stabilization — DONE.
 - Stage 2 Plan-vs-Actual / Adaptive Loop v1 — DONE.
 - Weekly Review driven by real outcome signals — DONE.
 - Real LLM boundary + semantic alignment + Outcome Learning v2 — DONE.
-- Server readiness / Firebase staging boundaries — DONE.
+- Server readiness / Firebase boundaries — DONE.
 - Food Data Foundation v2 — DONE.
 - Nutrition Intelligence v2 + Coach Knowledge Grounding — DONE.
 - Official food-source ingestion/normalization and reviewed corpus replacement — DONE / VERIFIED GREEN.
-- Production Real AI Coach baseline infrastructure, secret binding, public auth/method boundary and prior timeout-fix deploy — VERIFIED; latest #123 release remains separate and unmerged.
