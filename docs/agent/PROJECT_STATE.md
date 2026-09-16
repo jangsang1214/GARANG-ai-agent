@@ -3,70 +3,74 @@
 Last updated: 2026-09-17
 
 ## Current objective
-Keep the VERIFIED commercial GARANG baseline frozen while finishing the isolated Wanted/competition public runtime and submission. The latest P1 fixed the Wanted Today plan-to-Planner shortcut so it remains visible even when the 60-second judge-mode localStorage flag is not active.
+Keep the VERIFIED commercial GARANG baseline frozen while finishing the Wanted/competition submission. The current P1 is final public-runtime confidence and submission.
 
 ## Repository observations
-- CONTROL: `jangsang1214/GARANG-ai-agent`; orchestration/policy/project state.
-- PRODUCT: `jangsang1214/-fitmind-ai`; implementation/tests/CI/releases.
-- PRODUCT canonical commercial main: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
-- Wanted derivative release branch: `wanted/2026-release`.
-- Wanted derivative current release SHA: `24dcacd29cf17ada5df63d857aaa93cc4a608e33`.
-- PRODUCT PR #140 `Keep Wanted Today planner shortcut visible` is MERGED into the Wanted release branch only; commercial `main` remains unchanged.
-- During branch-head diagnosis, two temporary probe files were accidentally committed directly to the Wanted release branch and immediately deleted before PR #140. Net release tree is clean; the history contains the create/delete commits.
+- CONTROL: `jangsang1214/GARANG-ai-agent`.
+- PRODUCT: `jangsang1214/-fitmind-ai`.
+- Commercial PRODUCT main remains frozen at `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
+- Wanted release branch: `wanted/2026-release`.
+- Wanted release SHA: `23990db387c9e1f6570dc971a8da34d56946bc85`.
+- PRODUCT PR #141 `Enable Wanted Real AI Coach` is merged into Wanted only.
 
-## VERIFIED commercial release evidence
-- Commercial main Release Gate #1449 / run `35110020514`: FULL GREEN.
-- Commercial-main GitHub Pages #799 / run `35110017165`: SUCCESS.
-- Public commercial URL: `https://jangsang1214.github.io/-fitmind-ai/`.
-- Production Coach Live Smoke run `35101459492`: authenticated text + photo `source=llm` SUCCESS.
+## VERIFIED commercial evidence
+- Release Gate #1449 / `35110020514`: FULL GREEN.
+- Pages #799 / `35110017165`: SUCCESS.
+- Production Coach Live Smoke `35101459492`: authenticated text + photo `source=llm` SUCCESS.
 
-## VERIFIED Wanted derivative evidence
-- 14-day synthetic judging history remains local-only and date-relative with 14 daily check-ins, 42 meals, workout/running/body history and fatigue-driven plan-adjustment evidence.
-- Previous deployment-origin, judge-entry observer, and Coach-guide overlap fixes remain release-merged and regression-covered.
-- Founder observed that the Today `오늘의 계획` adjacent `+` was missing on the stable public URL.
-- Source inspection VERIFIED the shortcut was incorrectly gated by `garang_wanted_demo_active_v1`; both `ensureTodayPlannerPlus()` and the shared sync path required judge mode, so normal Wanted Today could not render the shortcut.
-- PR #140 keeps the Coach judging guide gated to judge mode but makes Today `+ → Planner` available across the Wanted derivative regardless of the judge-mode flag. The observer/sync path also remains active across Today rerenders.
-- Dedicated WebKit regression explicitly removes the judge-mode localStorage flag, navigates to Today, requires the `+` to be visible, taps it, and verifies the canonical route becomes Planner.
-- PR #140 exact-head Wanted derivative gate / run `35137650732`: GREEN, including the new non-judge-mode Today `+ → Planner` regression.
-- PR #140 full GARANG Release Gate #1468 / run `35137651074`: FULL GREEN, including complete Golden Path, authenticated Coach, Real LLM, mobile regression, button health and runtime stress.
-- PR #140 merged as Wanted release SHA `24dcacd29cf17ada5df63d857aaa93cc4a608e33`.
-- Post-merge Wanted derivative gate #51 / run `35138268989`: GREEN on the exact merge SHA.
+## VERIFIED Wanted Real AI evidence
+- Canonical `/coach` remains Firebase-authenticated.
+- Signed-out judge mode uses isolated `/wanted/coach` only for the explicit synthetic 14-day contract.
+- Browser does not forge Firebase Authorization.
+- Server sanitizes/whitelists judge context, rejects images, enforces exact Wanted origin, quotas and judging-period expiry.
+- Existing `GARANG_LLM_API_KEY` remains server-side.
+- PR #141 Wanted Gate #69 / `35141844675`: GREEN.
+- Full Release Gate #1476 / `35141844625`: FULL GREEN.
+- Post-merge Wanted Gate #71 / `35142457444`: GREEN.
+- Activation run `35142457402`: GREEN.
+- Production `/coach` preflight after deploy: unauthenticated POST `401`, wrong-method GET `405`, provider not invoked, user data not read.
+- Production `/wanted/coach` live smoke returned `source:"llm"`, request `fb37b74b-c376-4e74-8854-8e4f64ec2898`, decision mode `recover`.
 
-## Wanted public deployment observation
-Evidence class: YELLOW / NEW DEPLOYMENT ROOT VERIFIED, CURRENT UX HUMAN CLICK-THROUGH PENDING.
-- Stable Vercel alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
-- Vercel Authentication / SSO Deployment Protection remains disabled.
-- Latest production deployment `dpl_4Nvd8QzzXwD7X5Psw6R8NSnZdMbP` returned `READY` and retained the stable alias.
-- The deployed shell pins its `<base>` to exact Wanted release SHA `24dcacd29cf17ada5df63d857aaa93cc4a608e33` via jsDelivr.
-- Exact-SHA `version.js` and `garang-wanted-ux-fixes-v1.js` are independently reachable from jsDelivr.
-- Fresh unauthenticated rendered fetch of the stable alias with `?v=24dcacd2` returned `GARANG — Quietly Becoming`, so anonymous public root access remains GREEN.
-- The corrected Today shortcut behavior is VERIFIED in exact-release WebKit CI. A fresh Founder check on the deployed alias remains the final public UX confirmation.
+## Wanted public deployment incident and recovery
+Evidence class: GREEN for judge entry + 14-day interactive runtime after recovery; visible public Coach answer still pending Founder confirmation.
+
+Incident:
+- A Vercel production redeploy created a shell without the required exact-SHA asset-root behavior.
+- Observable symptom matched Founder report: static login surface appeared, `60초 심사 체험`/14-day state did not appear correctly and taps were non-functional.
+- Exact release CDN assets remained healthy, so this was a deployment-shell regression rather than loss of synthetic data or failure of the Real LLM backend.
+
+Recovery:
+- Stable alias remains `https://garang-wanted-2026-jangsang1214.vercel.app`.
+- Repaired production deployment: `dpl_92kMMBx2tPepvsfBZNdY84B942bh` / READY.
+- The repaired shell keeps the Vercel page origin while loading the exact release `23990db387c9e1f6570dc971a8da34d56946bc85` from jsDelivr.
+- TinyFish live browser automation on the stable alias VERIFIED:
+  - `60초 심사 체험` exists.
+  - Button click succeeds.
+  - `JUDGING MODE · 14 DAYS SYNTHETIC DATA` loads.
+  - Today judge surfaces and 14-day state render.
+  - Toggle/tap interactions work.
+  - No visible loading/error/broken-element failure was observed in that smoke.
 
 ## Product / AI state
-- Commercial Golden Path remains: Onboarding → Today → Record → Coach → Plan → Confirmation → Execution → Record → Progress/Accumulation.
-- Deterministic GARANG State/Decision Intelligence remains the judgment owner; LLM remains bounded explanation/language/multimodal context.
-- Intelligence Learning Contract v1 remains released: `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
-- Outcome Learning remains advisory-only: no silent mutation and no automatic progression increase.
+- Deterministic GARANG State/Decision Intelligence remains judgment owner.
+- LLM remains bounded explanation/language/multimodal context.
+- Wanted no-login judge mode uses sanitized synthetic context with Real LLM text explanation only.
+- Public judge photo interpretation remains disabled; authenticated Production Coach owns photo analysis.
 
 ## Stable
-- Commercial product baseline remains frozen and GREEN.
-- Wanted source snapshot `24dcacd2…` is isolated and regression-verified.
-- Today `+ → Planner` outside judge mode is VERIFIED in dedicated Wanted WebKit coverage.
-- Coach guide auto-collapse/composer usability remains VERIFIED.
-- Full Release Gate #1468 and post-merge Wanted Gate #51 are GREEN.
-- Stable public Vercel alias remains anonymously reachable and is pinned to the latest exact Wanted SHA.
-- Real production text/photo Coach path remains VERIFIED.
+- Commercial GARANG baseline: GREEN / frozen.
+- Wanted source/CI: GREEN.
+- Wanted production Firebase API: GREEN.
+- Wanted production Real LLM backend: GREEN.
+- Wanted stable public alias after shell recovery: judge entry + 14-day interaction GREEN.
 
 ## Broken / blockers
-- No VERIFIED P0/P1 repository or CI blocker remains for commercial GARANG or Wanted source.
-- Remaining release-confidence item: Founder fresh-browser confirmation on the latest public deployment that Today `+` is visible and opens Planner, and Coach chat remains unobstructed.
-- Full commercial-production readiness across every physical device/channel is a separate standard and is not implied by the competition/web baseline.
-
-## Durable release-channel decision
-Commercial GARANG PRODUCT main is canonical. Wanted/competition work is a separate derivative from a VERIFIED stable snapshot. Competition-only demo/copy/presentation/deployment changes do not automatically flow back to commercial GARANG.
+- No VERIFIED P0/P1 source, CI, Firebase, provider, judge-entry or touch blocker remains.
+- Final confidence item: Founder opens the stable URL, enters `60초 심사 체험`, asks Coach `오늘 회복 상태를 알려줘`, and confirms the visible answer succeeds.
+- Firebase build-image cleanup warning remains non-blocking cost hygiene.
 
 ## Next priorities
-1. P1 Founder smoke the latest public deployment once: `Today → 오늘의 계획 + → Planner → Coach 입력`.
-2. P1 on PASS, keep the stable Vercel alias as the submitted service URL and finish the Wanted submission checklist/form.
-3. Keep commercial GARANG frozen unless a real P0/P1 defect appears before submission.
-4. After submission, resume P4 User Performance Model v1 using attributable `State × Recommendation × Action × Outcome` evidence.
+1. P1 Founder visible Coach smoke on the repaired stable alias.
+2. P1 finalize Wanted submission form/checklist using the stable root URL without cache-buster query params.
+3. Freeze competition runtime after submission except critical outage/bug handling.
+4. After submission, resume P4 User Performance Model v1.
