@@ -3,76 +3,85 @@
 Last updated: 2026-09-17
 
 ## Overall decision
-GREEN for the canonical commercial GARANG web baseline and GREEN for the repository-level Wanted derivative release snapshot. Latest Wanted production root is GREEN and pinned to the corrected release SHA; final human confirmation of the redeployed Today shortcut is YELLOW/pending.
+- Commercial GARANG web baseline: GREEN / FROZEN FOR SUBMISSION WINDOW.
+- Wanted repository release, Firebase backend, live LLM provider path, Vercel production deployment and anonymous public root: GREEN.
+- Final human public UI click-through: YELLOW / pending one Founder smoke.
 
 ## Commercial PRODUCT main
-Decision: GREEN / FROZEN FOR SUBMISSION WINDOW.
-- Current canonical main: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
+Decision: GREEN / UNCHANGED.
+- Canonical main: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
 - Release Gate #1449 / run `35110020514`: FULL GREEN.
 - GitHub Pages #799 / run `35110017165`: SUCCESS.
-- Public commercial URL: `https://jangsang1214.github.io/-fitmind-ai/`.
-- Production Coach Live Smoke `35101459492`: authenticated text + photo LLM SUCCESS.
+- Public URL: `https://jangsang1214.github.io/-fitmind-ai/`.
+- Production Coach Live Smoke `35101459492`: authenticated text + photo `source=llm` SUCCESS.
+- Wanted work did not modify commercial `main`.
 
 ## Wanted derivative
 Decision: GREEN / RELEASE SNAPSHOT VERIFIED.
-- Source commercial snapshot: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
 - Release branch: `wanted/2026-release`.
-- Current release SHA: `24dcacd29cf17ada5df63d857aaa93cc4a608e33`.
-- PR #140 merged into the Wanted release branch only; commercial main is unchanged.
+- Current release SHA: `23990db387c9e1f6570dc971a8da34d56946bc85`.
+- PR #141 `Enable Wanted Real AI Coach`: MERGED into Wanted release only.
 
-### Today Planner shortcut correction
-- Founder observed the previously added Today `+` was absent on the stable public URL.
-- Root cause was source-level and VERIFIED: the shortcut and sync path were gated by the `garang_wanted_demo_active_v1` judge-mode localStorage flag.
-- PR #140 leaves the Coach judging guide judge-mode-only while making Today `오늘의 계획 + → Planner` available throughout the Wanted derivative.
-- The browser regression explicitly removes the judge-mode flag before checking shortcut visibility and Planner navigation.
+### Real AI Coach correction
+Root cause:
+- Judge mode is intentionally signed-out and stores its 14-day synthetic state in localStorage.
+- Canonical `/coach` requires Firebase authentication and canonical cloud user state, so the no-login judge flow previously failed auth and fell back to local Coach.
+
+Released boundary:
+- Canonical `/coach` remains Firebase-authenticated and unchanged.
+- Judge mode uses `/wanted/coach` only when no signed-in user exists.
+- Browser sends no forged Firebase Authorization header.
+- Server accepts only the explicit `garang-wanted-judge-data-v1` synthetic 14-day contract and sanitizes/whitelists supported fields before GARANG intelligence/LLM use.
+- Identity/free-text fields are excluded from the Wanted server context.
+- Exact stable Vercel origin is required.
+- Anonymous judge route is text-only; photo analysis remains authenticated Production Coach only.
+- Per-client/global quotas are enforced and the route auto-expires after the judging period (`2026-10-18 00:00 KST`).
+- Existing `GARANG_LLM_API_KEY` remains server-side and was preserved during deployment.
 
 ### Verification
-- PR #140 exact-head Wanted derivative gate / run `35137650732`: GREEN.
-- PR #140 full GARANG Release Gate #1468 / run `35137651074`: FULL GREEN.
-- Full release browser checks passed real interactions, Today, Planner, Nutrition, Golden Path complete journey, authenticated app/Coach, Real LLM Golden Path, conversational logging, recovery, mobile regression, Settings touch, button health and runtime stress.
-- PR #140 merged as `24dcacd29cf17ada5df63d857aaa93cc4a608e33`.
-- Post-merge Wanted derivative gate #51 / run `35138268989`: GREEN on the exact merge SHA, including the corrected UX affordance test.
-
-### Competition-only behavior
-- `60초 심사 체험`, judging guide and Today shortcut remain isolated to the Wanted derivative.
-- Coach guide auto-collapse/manual toggle remains active only in judge mode.
-- Today `+ → Planner` is no longer dependent on judge mode within the Wanted derivative.
-- Synthetic judging records remain local-only and contain no real-user data.
-- Sample Coach output does not claim a live GPT call; real GPT/photo Coach remains on the authenticated production path.
-- No Firebase production config/provider secret was changed.
+- PR #141 Wanted Gate #69 / run `35141844675`: GREEN.
+- PR #141 full GARANG Release Gate #1476 / run `35141844625`: FULL GREEN.
+- Full release browser checks passed Today, Planner, Nutrition, complete Golden Path, authenticated app/Coach, existing Real LLM integration, conversational logging, recovery, mobile regression, Settings touch, button health and runtime stress.
+- PR #141 merged as `23990db387c9e1f6570dc971a8da34d56946bc85`.
+- Post-merge Wanted Gate #71 / run `35142457444`: GREEN on exact release SHA.
+- Wanted Real AI Coach Activation run `35142457402`: GREEN.
+- Firebase `functions:api(asia-northeast3)` production update: SUCCESS.
+- Canonical `/coach` post-deploy preflight: unauthenticated POST `401`, wrong-method GET `405`, provider not invoked, user data not read.
+- Wanted production smoke returned `source:"llm"`, request ID `fb37b74b-c376-4e74-8854-8e4f64ec2898`, decision mode `recover`.
 
 ## Vercel public deployment
-Decision: YELLOW / ROOT+DEPLOYMENT GREEN, CORRECTED UX HUMAN SMOKE PENDING.
+Decision: GREEN for deployment/root/assets; human click-through pending.
 - Stable alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
-- Vercel Authentication / SSO Deployment Protection remains disabled.
-- Latest production deployment id: `dpl_4Nvd8QzzXwD7X5Psw6R8NSnZdMbP`; deployment response reported `READY` and assigned the stable alias.
-- Public shell pins its asset root to exact Wanted release SHA `24dcacd29cf17ada5df63d857aaa93cc4a608e33`; it does not follow commercial `main`.
-- Exact-SHA `version.js` and corrected Wanted UX JS were independently reachable through jsDelivr.
-- Fresh unauthenticated rendered fetch of `https://garang-wanted-2026-jangsang1214.vercel.app/?v=24dcacd2` returned `GARANG — Quietly Becoming`; anonymous public root access is GREEN.
-- The corrected interaction behavior is VERIFIED in exact-release WebKit CI; one Founder public click-through remains the final confidence check.
+- Latest production deployment: `dpl_Hicw8pdoT3Jo5zogrNe78nzWx7S8` / READY.
+- Public shell pins its asset root to exact Wanted SHA `23990db387c9e1f6570dc971a8da34d56946bc85`; it does not follow commercial `main`.
+- Fresh rendered fetch of `?v=23990db3` returned `GARANG — Quietly Becoming`.
+- Exact-SHA `07_config/garang-services-config.js` and `06_features/ui/runtime/garang-wanted-real-llm-v1.js` are publicly reachable.
+- Interactive browser automation could not execute because the connected TinyFish account rejected custom-step runs before start; this is a tooling limitation, not app evidence.
 
 ## Intelligence ownership
 Decision: GREEN / unchanged.
 - Deterministic GARANG State/Decision Intelligence owns judgment.
 - LLM remains explanation/language/multimodal-context layer.
-- Intelligence Learning Contract: `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
+- Wanted public route uses sanitized synthetic context with the same deterministic GARANG judgment/grounding; only text explanation is generated by the live LLM.
+- Intelligence Learning Contract remains `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
 - Outcome Learning remains read-only/advisory.
 
 ## Deployment status
 - Commercial deployment: GREEN.
-- Wanted repository release snapshot: GREEN.
-- Wanted exact-head full Release Gate #1468: GREEN.
-- Wanted post-merge derivative gate #51: GREEN.
-- Wanted Vercel deployment creation/readiness: GREEN.
-- Wanted anonymous public root access: GREEN.
-- Wanted corrected Today shortcut public human smoke: YELLOW / pending.
+- Wanted source/CI: GREEN.
+- Wanted production Firebase API: GREEN.
+- Canonical authenticated Coach boundary after deploy: GREEN.
+- Wanted production Real LLM smoke: GREEN.
+- Wanted Vercel deployment/readiness: GREEN.
+- Wanted anonymous public root/assets: GREEN.
+- Wanted visible public Coach human smoke: YELLOW / pending.
 
 ## Release-channel boundary
-Commercial GARANG PRODUCT main is canonical. Wanted/competition submission is a separate derivative from the verified stable snapshot. Competition-only changes do not redefine or automatically modify commercial GARANG.
+Commercial GARANG PRODUCT main is canonical. Wanted/competition submission is a separate derivative from a verified stable snapshot. Competition-only demo/copy/presentation/deployment/backend-route changes do not redefine or automatically modify commercial GARANG.
 
 ## Remaining non-blocking debt
+- Firebase deploy reported build-image cleanup warning; build-artifact retention/cost cleanup remains maintenance work.
 - Functions dependency family breaking upgrade remains dedicated follow-up work.
-- CONTROL CI Actions v4 modernization remains planned.
+- CONTROL tooling modernization remains planned.
 - Main branch protection is not server-enforced.
 - Production deployment credential should migrate to short-lived OIDC/WIF after verified replacement.
-- Firebase build-image retention/cost cleanup remains a reviewed maintenance task.
