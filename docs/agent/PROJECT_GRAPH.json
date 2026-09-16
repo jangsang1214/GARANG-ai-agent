@@ -6,7 +6,7 @@
     {"id":"INIT-BETA-VALIDATION","kind":"initiative","title":"Validate the deployed beta before adding new product scope","status":"active","ownerWorkstream":"product","repositoryId":"product"},
     {"id":"TASK-REAL-DEVICE-VALIDATION","kind":"task","title":"Run deployed Golden Path validation on target real devices","status":"in_progress","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"VERIFY-IPHONE-CHROME-PARTIAL","kind":"verification","title":"Real iPhone Chrome passes deployed app load, onboarding, Today, first record and Coach","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"DECISION-RELEASE-CHANNEL","kind":"decision","title":"Choose beta learning or commercial-production hardening as the next release channel","status":"blocked","ownerWorkstream":"command-center"},
+    {"id":"DECISION-RELEASE-CHANNEL","kind":"decision","title":"Commercial GARANG remains canonical; competition work uses a separate verified snapshot derivative","status":"done","ownerWorkstream":"command-center"},
 
     {"id":"INIT-V7-LITE","kind":"initiative","title":"Make Founder OS multi-repository and event-ready without external autonomous runtime","status":"done","ownerWorkstream":"engineering","repositoryId":"control"},
     {"id":"CHANGE-CONTROL-PR6","kind":"change","title":"Founder OS v7-lite control-plane PR #6 merged as e25dbad","status":"done","ownerWorkstream":"engineering","repositoryId":"control"},
@@ -67,21 +67,33 @@
     {"id":"VERIFY-PRODUCT-PR114","kind":"verification","title":"PR #114 exact-head Gate #1318 and post-merge main Gate #1319 GREEN; Pages #780 and Founder OS events GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"RESULT-FINAL-UI-INTEGRATION-GREEN","kind":"result","title":"Final repository/UI Golden Path integration is GREEN and broad UI redesign is closed","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
 
-    {"id":"INIT-PRODUCTION-LLM-VALIDATION","kind":"initiative","title":"Verify live Real LLM Coach activation in the target production environment","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run authenticated production Coach smoke with deployment/config and two-user evidence","status":"in_progress","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"INIT-PRODUCTION-LLM-VALIDATION","kind":"initiative","title":"Verify live Real LLM Coach activation in the target production environment","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run repeatable authenticated production text/photo Coach smoke","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"CHANGE-PRODUCT-PR121","kind":"change","title":"PRODUCT PR #121 merged production Coach dependency-install fix as 074cb1f3","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCTION-COACH-DEPLOY","kind":"verification","title":"Production activation run 35010146340 deploys api and verifies POST 401 / GET 405 with no pre-auth provider or user-data access","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCTION-COACH-DEPLOY","kind":"verification","title":"Production activation deploys api and verifies public fail-closed 401/405 boundaries","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"RESULT-PRODUCTION-COACH-BOUNDARY-GREEN","kind":"result","title":"Production Coach infrastructure, secret binding and public fail-closed boundaries are GREEN","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCTION-LLM-TIMEOUT","kind":"verification","title":"Real authenticated production Coach reaches provider path, records LLM_TIMEOUT under old 8s deadline, and fails closed to local Coach","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR122","kind":"change","title":"PRODUCT PR #122 raises provider timeout to 20s, Function timeout to 30s and fixes deployment-trigger coverage","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCTION-COACH-TIMEOUT-DEPLOY","kind":"verification","title":"PR #122 Gate #1359, activation run 35013994128, post-merge Gate #1360, Pages #791 and Event #783 are GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-PRODUCTION-COACH-TIMEOUT-HEADROOM-GREEN","kind":"result","title":"Production timeout headroom and fail-closed deployment path are GREEN; post-fix authenticated external response remains pending","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCTION-LLM-TIMEOUT","kind":"verification","title":"Earlier authenticated production Coach timeout was observed and failed closed before timeout hardening","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR122","kind":"change","title":"PRODUCT PR #122 adds provider timeout headroom and deployment-trigger coverage","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCTION-COACH-TIMEOUT-DEPLOY","kind":"verification","title":"PR #122 release/deployment evidence GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCTION-LIVE-TEXT-PHOTO","kind":"verification","title":"Production Coach Live Smoke 35101459492 verifies authenticated text and photo source=llm with GARANG alignment and disposable-user cleanup","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-PRODUCTION-LLM-GREEN","kind":"result","title":"Real production text/photo Coach path is VERIFIED GREEN for current smoke scope","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
 
-    {"id":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"initiative","title":"Harden release integrity and Functions supply chain after live AI stabilization","status":"planned","ownerWorkstream":"engineering"},
-    {"id":"TASK-FUNCTIONS-LOCK-AUDIT","kind":"task","title":"Lock and separately audit Firebase Functions runtime dependencies","status":"planned","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"initiative","title":"Harden release integrity and Functions supply chain after live AI stabilization","status":"active","ownerWorkstream":"engineering"},
+    {"id":"TASK-FUNCTIONS-LOCK-AUDIT","kind":"task","title":"Lock and separately audit Firebase Functions runtime dependencies","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
     {"id":"TASK-MAIN-PROTECTION","kind":"task","title":"Enforce PR and CI protection for CONTROL and PRODUCT main branches","status":"planned","ownerWorkstream":"command-center"},
-    {"id":"TASK-CI-TOOLCHAIN-MODERNIZATION","kind":"task","title":"Modernize GitHub Actions and dev/deploy dependency tooling without changing product behavior","status":"planned","ownerWorkstream":"engineering"},
-    {"id":"TASK-DEPLOY-WIF","kind":"task","title":"Replace long-lived deployment JSON key with short-lived OIDC Workload Identity Federation after live AI stabilization","status":"planned","ownerWorkstream":"engineering","repositoryId":"product"}
+    {"id":"TASK-CI-TOOLCHAIN-MODERNIZATION","kind":"task","title":"Modernize GitHub Actions runtime without changing product behavior","status":"done","ownerWorkstream":"engineering"},
+    {"id":"TASK-DEPLOY-WIF","kind":"task","title":"Replace long-lived deployment JSON key with short-lived OIDC Workload Identity Federation","status":"planned","ownerWorkstream":"engineering","repositoryId":"product"},
+
+    {"id":"GOAL-WANTED-DERIVATIVE","kind":"goal","title":"Submit a stable Wanted derivative without redefining or destabilizing commercial GARANG","status":"active","ownerWorkstream":"command-center"},
+    {"id":"INIT-FREEZE-WANTED-SNAPSHOT","kind":"initiative","title":"Freeze verified commercial main and use it as the source snapshot for the separate Wanted derivative","status":"active","ownerWorkstream":"command-center","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR130","kind":"change","title":"PR #130 moves Coach photo attachment into the chat composer as a compact plus control","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-PR130","kind":"verification","title":"PR #130 exact-head Release Gate #1444 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR131","kind":"change","title":"PR #131 preserves mobile Today/Record route intent across presentation remounts","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-PR131","kind":"verification","title":"PR #131 exact-head Release Gate #1448 / 35109312382 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-MAIN-1449","kind":"verification","title":"Current PRODUCT main b863a763 passes post-merge Release Gate #1449 / 35110020514 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RELEASE-PAGES-799","kind":"release","title":"GitHub Pages #799 / 35110017165 deploys exact current main b863a763 successfully","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","kind":"result","title":"Commercial GARANG web baseline is VERIFIED GREEN and ready to be copied as the Wanted derivative source snapshot","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+    {"id":"TASK-COPY-WANTED-DERIVATIVE","kind":"task","title":"Copy the frozen commercial snapshot into a separate Wanted derivative build/repo/deployment target","status":"planned","ownerWorkstream":"growth-business"}
   ],
   "edges": [
     {"from":"METRIC-REAL-DEVICE-CONFIDENCE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"measures"},
@@ -89,6 +101,7 @@
     {"from":"TASK-REAL-DEVICE-VALIDATION","to":"INIT-BETA-VALIDATION","kind":"supports"},
     {"from":"VERIFY-IPHONE-CHROME-PARTIAL","to":"TASK-REAL-DEVICE-VALIDATION","kind":"verifies"},
     {"from":"DECISION-RELEASE-CHANNEL","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"DECISION-RELEASE-CHANNEL","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"},
 
     {"from":"INIT-V7-LITE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"CHANGE-CONTROL-PR6","to":"INIT-V7-LITE","kind":"implements"},
@@ -160,12 +173,25 @@
     {"from":"VERIFY-PRODUCTION-LLM-TIMEOUT","to":"TASK-PRODUCTION-LLM-SMOKE","kind":"verifies"},
     {"from":"CHANGE-PRODUCT-PR122","to":"TASK-PRODUCTION-LLM-SMOKE","kind":"implements"},
     {"from":"VERIFY-PRODUCTION-COACH-TIMEOUT-DEPLOY","to":"CHANGE-PRODUCT-PR122","kind":"verifies"},
-    {"from":"RESULT-PRODUCTION-COACH-TIMEOUT-HEADROOM-GREEN","to":"VERIFY-PRODUCTION-COACH-TIMEOUT-DEPLOY","kind":"depends-on"},
+    {"from":"VERIFY-PRODUCTION-LIVE-TEXT-PHOTO","to":"TASK-PRODUCTION-LLM-SMOKE","kind":"verifies"},
+    {"from":"RESULT-PRODUCTION-LLM-GREEN","to":"VERIFY-PRODUCTION-LIVE-TEXT-PHOTO","kind":"depends-on"},
 
     {"from":"INIT-RELEASE-INTEGRITY-HARDENING","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
     {"from":"TASK-FUNCTIONS-LOCK-AUDIT","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
     {"from":"TASK-MAIN-PROTECTION","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
     {"from":"TASK-CI-TOOLCHAIN-MODERNIZATION","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
-    {"from":"TASK-DEPLOY-WIF","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"}
+    {"from":"TASK-DEPLOY-WIF","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
+
+    {"from":"INIT-FREEZE-WANTED-SNAPSHOT","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR130","to":"INIT-FREEZE-WANTED-SNAPSHOT","kind":"implements"},
+    {"from":"VERIFY-PRODUCT-PR130","to":"CHANGE-PRODUCT-PR130","kind":"verifies"},
+    {"from":"CHANGE-PRODUCT-PR131","to":"INIT-FREEZE-WANTED-SNAPSHOT","kind":"implements"},
+    {"from":"VERIFY-PRODUCT-PR131","to":"CHANGE-PRODUCT-PR131","kind":"verifies"},
+    {"from":"VERIFY-PRODUCT-MAIN-1449","to":"CHANGE-PRODUCT-PR131","kind":"verifies"},
+    {"from":"RELEASE-PAGES-799","to":"VERIFY-PRODUCT-MAIN-1449","kind":"releases"},
+    {"from":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","to":"VERIFY-PRODUCT-MAIN-1449","kind":"depends-on"},
+    {"from":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","to":"RELEASE-PAGES-799","kind":"depends-on"},
+    {"from":"TASK-COPY-WANTED-DERIVATIVE","to":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","kind":"depends-on"},
+    {"from":"TASK-COPY-WANTED-DERIVATIVE","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"}
   ]
 }
