@@ -3,15 +3,15 @@
 Last updated: 2026-09-17
 
 ## Current objective
-Keep the VERIFIED commercial GARANG web baseline frozen while finishing the separately isolated Wanted/competition public runtime and final submission. The only remaining competition gate is a fresh human click-through of the newly redeployed judge path.
+Keep the VERIFIED commercial GARANG baseline frozen while finishing the isolated Wanted/competition public runtime and submission. The latest work fixes two competition-only UX blockers: the fixed judging guide covering Coach chat and the missing Today plan-to-Planner shortcut.
 
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`; orchestration/policy/project state.
 - PRODUCT: `jangsang1214/-fitmind-ai`; implementation/tests/CI/releases.
 - PRODUCT canonical commercial main: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
 - Wanted derivative release branch: `wanted/2026-release`.
-- Wanted derivative current release SHA: `149ba11fe9dba33033aa3b1d201f7b3141f782ec`.
-- PRODUCT PR #137 `Fix Wanted judge-mode entry freeze` is MERGED into the Wanted release branch only; commercial `main` remains unchanged.
+- Wanted derivative current release SHA: `5ac577094cf5ff4350ce33a7dbba2b79f8ba90cd`.
+- PRODUCT PR #138 `Improve Wanted judge navigation and Coach usability` is MERGED into the Wanted release branch only; commercial `main` remains unchanged.
 
 ## VERIFIED commercial release evidence
 - Commercial main Release Gate #1449 / run `35110020514`: FULL GREEN.
@@ -21,23 +21,26 @@ Keep the VERIFIED commercial GARANG web baseline frozen while finishing the sepa
 
 ## VERIFIED Wanted derivative evidence
 - 14-day synthetic judging history remains local-only and date-relative with 14 daily check-ins, 42 meals, workout/running/body history and fatigue-driven plan-adjustment evidence.
-- PR #134 fixed deployment-origin asset resolution; its exact-head Wanted gate #20 was GREEN, full Release Gate #1455 FULL GREEN, and post-merge Wanted gate #21 GREEN.
-- Founder later observed that, after Vercel Authentication was disabled, tapping the 14-day / `60초 심사 체험` entry still failed to enter the application.
-- Source inspection VERIFIED a judge-mode mutation hazard: the Wanted runtime observed `hidden` changes on auth/app views while its callback unconditionally rewrote those same `hidden` values.
-- PR #137 makes the Wanted loader temporarily wrap the MutationObserver used during judge-runtime bootstrap, filters redundant `hidden` mutations, preserves real visibility changes, and restores the native observer immediately after the Wanted script loads.
-- PR #137 exact-head Wanted derivative gate #32 / run `35131048847`: GREEN, including the new observer regression test and 60-second WebKit journey.
-- PR #137 full GARANG Release Gate #1461 / run `35131048722`: FULL GREEN. Core/build/rules and the complete browser WebKit suite passed, including authenticated app/Coach, Real LLM Golden Path, Golden Path complete journey, mobile regressions, button health and runtime stress.
-- PR #137 merged as Wanted release SHA `149ba11fe9dba33033aa3b1d201f7b3141f782ec`.
-- Post-merge Wanted derivative gate #33 / run `35131663143`: GREEN on the exact merge SHA, including dataset, deployment-origin/observer compatibility, build/assets and 60-second judging journey.
+- Previous deployment-origin and judge-entry observer hotfixes remain release-merged and regression-covered.
+- Founder previously confirmed the public `60초 심사 체험` successfully entered the app on release `149ba11f…` after Vercel Authentication was disabled.
+- Current UX diagnosis VERIFIED the judging guide was fixed near the bottom of the viewport and could geometrically cover the Coach composer.
+- PR #138 adds a Wanted-only UX layer: the guide auto-collapses on Coach and can be manually opened/closed; collapsed state moves away from the composer.
+- PR #138 also adds a compact `+` beside Today’s `오늘의 계획` that routes directly to Planner using the canonical GARANG router.
+- Dedicated WebKit regression verifies `Today + → Planner`, Coach guide auto-collapse, textarea focus/text entry, and zero guide/composer overlap.
+- PR #138 exact-head Wanted derivative gate #41 / run `35133826320`: GREEN.
+- PR #138 full GARANG Release Gate #1463 / run `35133826275`: FULL GREEN, including complete Golden Path, authenticated Coach, Real LLM, mobile regression, button health and runtime stress.
+- PR #138 merged as Wanted release SHA `5ac577094cf5ff4350ce33a7dbba2b79f8ba90cd`.
+- Post-merge Wanted derivative gate #42 / run `35134431895`: GREEN on the exact merge SHA, including the new judge UX affordance browser test.
 
 ## Wanted public deployment observation
-Evidence class: YELLOW / PUBLIC ROOT VERIFIED, CLICK-THROUGH PENDING.
-- Vercel production alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
-- Founder disabled Vercel Authentication / SSO Deployment Protection after the prior anonymous `login_required` blocker was identified.
-- New production deployment `dpl_Bc7dxWoziC633y8EEZ6BWDJUFQWE` returned `READY` and pins the public shell to exact Wanted release SHA `149ba11fe9dba33033aa3b1d201f7b3141f782ec` via jsDelivr.
-- The frozen CDN `version.js` and Wanted runtime script at that exact SHA were independently reachable before deployment.
-- Fresh unauthenticated rendered fetch of `https://garang-wanted-2026-jangsang1214.vercel.app/?v=149ba11f` returned the GARANG page title instead of `login_required`; anonymous public root access is therefore restored.
-- Interactive browser automation is unavailable in the current tool surface, so the actual public `60초 심사 체험 → Today → Coach → Progress` click path remains UNKNOWN until Founder performs one fresh-browser click-through.
+Evidence class: YELLOW / NEW DEPLOYMENT ROOT VERIFIED, CURRENT UX HUMAN CLICK-THROUGH PENDING.
+- Stable Vercel alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
+- Vercel Authentication / SSO Deployment Protection remains disabled.
+- New production deployment `dpl_87pRSKTnUgw3iAi5RDrPCBjg8Hg4` returned `READY` and the stable alias was assigned.
+- The deployed shell pins its `<base>` to exact Wanted release SHA `5ac577094cf5ff4350ce33a7dbba2b79f8ba90cd` via jsDelivr.
+- Exact-SHA `version.js`, `garang-wanted-ux-fixes-v1.css`, and `garang-wanted-ux-fixes-v1.js` are independently reachable from jsDelivr.
+- Fresh unauthenticated rendered fetch of the stable alias with `?v=5ac57709` returned `GARANG — Quietly Becoming`, so anonymous public root access remains available.
+- The exact requested interactions are VERIFIED in WebKit CI, but a fresh human public smoke of this newly redeployed SHA is still pending because interactive public-browser automation is unavailable in the current tool surface.
 
 ## Product / AI state
 - Commercial Golden Path remains: Onboarding → Today → Record → Coach → Plan → Confirmation → Execution → Record → Progress/Accumulation.
@@ -47,22 +50,22 @@ Evidence class: YELLOW / PUBLIC ROOT VERIFIED, CLICK-THROUGH PENDING.
 
 ## Stable
 - Commercial product baseline remains frozen and GREEN.
-- Wanted source snapshot `149ba11f…` is isolated and regression-verified.
-- Wanted exact-head full release gate and post-merge derivative gate are GREEN.
-- Anonymous access to the latest Vercel alias is restored.
+- Wanted source snapshot `5ac57709…` is isolated and regression-verified.
+- Requested Coach-guide and Today-Planner UX changes are VERIFIED in dedicated Wanted WebKit coverage.
+- Full Release Gate #1463 and post-merge Wanted Gate #42 are GREEN.
+- Stable public Vercel alias remains anonymously reachable.
 - Real production text/photo Coach path remains VERIFIED.
 
 ## Broken / blockers
 - No VERIFIED P0/P1 repository or CI blocker remains for commercial GARANG or Wanted source.
-- Remaining P1 release gate: human fresh-browser confirmation that the latest public alias completes `60초 심사 체험 → Today → Coach → Progress` without freeze.
+- Remaining release-confidence item: Founder fresh-browser confirmation on the new public deployment that Coach chat is unobstructed and Today `+` opens Planner.
 - Full commercial-production readiness across every physical device/channel is a separate standard and is not implied by the competition/web baseline.
 
 ## Durable release-channel decision
 Commercial GARANG PRODUCT main is canonical. Wanted/competition work is a separate derivative from a VERIFIED stable snapshot. Competition-only demo/copy/presentation/deployment changes do not automatically flow back to commercial GARANG.
 
 ## Next priorities
-1. P1 Founder smoke the new public deployment once in a fresh/incognito browser: `60초 심사 체험 → Today → Coach → Progress`.
-2. P1 on PASS, replace `[WANTED_PUBLIC_URL]` in final submission copy with the stable alias and perform the final submission checklist.
-3. P1 complete Wanted participation/submission form and final-submit action.
-4. Keep commercial GARANG frozen unless a real P0/P1 defect appears before submission.
-5. After submission, resume P4 User Performance Model v1 using attributable `State × Recommendation × Action × Outcome` evidence.
+1. P1 Founder smoke the current public deployment once: `60초 심사 체험 → Today + → Planner → Coach 입력`.
+2. P1 on PASS, keep the stable Vercel alias as the submitted service URL and finish the Wanted submission checklist/form.
+3. Keep commercial GARANG frozen unless a real P0/P1 defect appears before submission.
+4. After submission, resume P4 User Performance Model v1 using attributable `State × Recommendation × Action × Outcome` evidence.
