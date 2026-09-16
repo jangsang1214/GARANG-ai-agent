@@ -1,19 +1,36 @@
 # GARANG Tasks
 
-Last updated: 2026-09-16
+Last updated: 2026-09-17
 
-## Active P1 — Wanted derivative snapshot + submission packaging
-Status: READY / SOURCE BASELINE GREEN
+## Active P1 — Wanted derivative deployment + final submission
+Status: READY / DERIVATIVE RELEASE GREEN
 Owner: Founder / Growth Business / Product / Release QA
-Goal: copy the verified commercial GARANG baseline into a separate competition derivative and complete the Wanted submission without destabilizing commercial GARANG.
+Goal: publish the verified Wanted derivative at its own public URL and complete the competition submission without destabilizing commercial GARANG.
 Acceptance:
-- Source snapshot is PRODUCT main `b863a7634bd64b03a6e6f3772950c43cc81afb6f`. ✅
-- Source snapshot full post-merge Release Gate is GREEN. ✅ Gate #1449 / run `35110020514`
-- Source snapshot Pages deployment is SUCCESS. ✅ Pages #799 / run `35110017165`
-- Commercial GARANG remains the canonical product; competition-specific copy/demo/presentation changes stay isolated unless separately reviewed for upstreaming. ✅ durable decision recorded
-- Submission explains GARANG as Personal Performance Intelligence, not a generic chatbot.
-- Submission communicates `Signal → Interpretation → Recommendation → Action → Outcome → Learning` and `GARANG decides → LLM explains`.
-- No secrets/private user data appear in the derivative or submission.
+- Commercial source snapshot is PRODUCT main `b863a7634bd64b03a6e6f3772950c43cc81afb6f`. ✅
+- Wanted derivative release branch is `wanted/2026-release`. ✅
+- Wanted derivative release SHA is `6f7a6e97792971a550a2bf79e49c0ac07c071aa4`. ✅
+- PR #132 full GARANG Release Gate #1451 / `35116671610`: FULL GREEN. ✅
+- PR #132 Wanted 60-second WebKit Gate #4 / `35116671535`: GREEN. ✅
+- Post-merge Wanted 60-second WebKit Gate #5 / `35117403297`: GREEN. ✅
+- Synthetic sample mode contains no real-user data and does not claim a live GPT call. ✅
+- Commercial GARANG remains canonical and unchanged by the derivative merge. ✅
+- Submission narrative exists as `WANTED_SUBMISSION.md`. ✅
+- Derivative is deployed to a separate public URL. ⬜
+- Fresh-browser mobile smoke passes on the public derivative URL. ⬜
+- Wanted participation registration and final submission are completed. ⬜ Founder action / submission UI
+
+## Closed P1 — Wanted judging derivative build
+Status: DONE / VERIFIED GREEN
+Owner: Product / Design Brand / Engineering / Release QA
+Acceptance:
+- Add a clear `60초 심사 체험` entry without reintroducing the retired commercial demo flag. ✅
+- Seed only synthetic local sample records. ✅
+- Guide judges through Today → Coach → Progress. ✅
+- Keep real production GPT/photo Coach on the existing authenticated path. ✅
+- Pin derivative metadata to verified commercial source SHA. ✅
+- Preserve the full commercial regression suite. ✅
+Evidence: PRODUCT PR #132 merged to `wanted/2026-release` as `6f7a6e97…`; Release Gate #1451 FULL GREEN; derivative WebKit #4 and post-merge #5 GREEN.
 
 ## Closed P1 — Coach photo composer simplification
 Status: DONE / VERIFIED GREEN
@@ -25,44 +42,22 @@ Acceptance:
 - One JPG/PNG/WebP photo up to 8 MB remains supported. ✅
 - Photo remains ephemeral and is consumed/cleared after the next request. ✅
 - Raw image is not persisted to GARANG state/localStorage/Firestore/telemetry/text history. ✅
-- Full regression gate passes. ✅ PR #130 Gate #1444 GREEN
-Evidence: PRODUCT PR #130 merged at `9452cea2929d6940f20d39806b2b3d30bc3bb004`; composer contract test included in root test chain.
+Evidence: PRODUCT PR #130 merged at `9452cea2929d6940f20d39806b2b3d30bc3bb004`; Gate #1444 GREEN.
 
 ## Closed P1 — Mobile route intent across remounts
 Status: DONE / VERIFIED GREEN
 Owner: Engineering / Release QA
-Goal: prevent physical mobile route taps from being lost when Today/Record presentation nodes remount between touch intent and compatibility click.
-Acceptance:
-- Touch intent captured only for existing canonical route controls. ✅
-- Drag/scroll gestures are not converted into navigation. ✅
-- Route commit goes through canonical `GarangRouter`; no data/state mutation owner changes. ✅
-- Frozen Router public version contract remains `garang-router-v1.3.0`. ✅
-- Golden Path complete journey passes in WebKit. ✅
-- Authenticated Coach, Real LLM integration, recovery, Settings, button health and runtime stress pass. ✅
-Evidence: PR #131 exact-head Gate #1448 / `35109312382` FULL GREEN; merged main `b863a763…`; post-merge Gate #1449 / `35110020514` FULL GREEN.
+Evidence: PR #131 exact-head Gate #1448 / `35109312382` FULL GREEN; commercial main `b863a763…`; post-merge Gate #1449 / `35110020514` FULL GREEN.
 
 ## Closed P1 — Coach reconnect + production AI stabilization
 Status: DONE / VERIFIED GREEN
 Owner: Engineering / Release QA / AI Data
-Acceptance:
-- Deterministic GARANG decision ownership preserved. ✅
-- Bounded provider retry/timeouts and fail-closed fallback released. ✅
-- Signed-out demo removed. ✅
-- Real authenticated production text Coach verified. ✅
-- Real authenticated production photo Coach verified. ✅
-Evidence: Production Coach Live Smoke `35101459492` SUCCESS.
+Evidence: Production Coach Live Smoke `35101459492` SUCCESS for authenticated text + photo.
 
 ## Closed P1 — Intelligence Learning Contract v1
 Status: DONE / VERIFIED GREEN
 Owner: AI Data / Engineering / Release QA
 Goal: causal learning attribution across `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
-Acceptance:
-- Existing Agent Contract lifecycle reused. ✅
-- Confirmed plans/actionLog retain decision/recommendation identity. ✅
-- Browser/core + Functions build read-only causal graphs. ✅
-- Outcome Learning remains advisory-only. ✅
-- No autonomous LLM tool calling, silent mutation or automatic progression increase. ✅
-Evidence: PR #124 merged; later current-main Gate #1449 remains GREEN.
 
 ## P2 — Protect CONTROL + PRODUCT main
 Status: PLANNED / NON-BLOCKING
@@ -80,6 +75,7 @@ Owner: Engineering / Release QA
 Acceptance:
 - Resolve the 9 moderate Functions findings through a dedicated breaking-upgrade PR with emulator + production smoke evidence.
 - Reduce root dev/tooling audit findings separately from the clean production-runtime audit.
+- Modernize CONTROL checkout/setup-node Actions from v4 in a dedicated verified PR.
 
 ## P6 — Repository / cloud cost hygiene
 Status: PLANNED

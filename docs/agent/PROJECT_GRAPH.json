@@ -86,15 +86,22 @@
     {"id":"TASK-DEPLOY-WIF","kind":"task","title":"Replace long-lived deployment JSON key with short-lived OIDC Workload Identity Federation","status":"planned","ownerWorkstream":"engineering","repositoryId":"product"},
 
     {"id":"GOAL-WANTED-DERIVATIVE","kind":"goal","title":"Submit a stable Wanted derivative without redefining or destabilizing commercial GARANG","status":"active","ownerWorkstream":"command-center"},
-    {"id":"INIT-FREEZE-WANTED-SNAPSHOT","kind":"initiative","title":"Freeze verified commercial main and use it as the source snapshot for the separate Wanted derivative","status":"active","ownerWorkstream":"command-center","repositoryId":"product"},
+    {"id":"INIT-FREEZE-WANTED-SNAPSHOT","kind":"initiative","title":"Freeze verified commercial main and use it as the source snapshot for the separate Wanted derivative","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
     {"id":"CHANGE-PRODUCT-PR130","kind":"change","title":"PR #130 moves Coach photo attachment into the chat composer as a compact plus control","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-PR130","kind":"verification","title":"PR #130 exact-head Release Gate #1444 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"CHANGE-PRODUCT-PR131","kind":"change","title":"PR #131 preserves mobile Today/Record route intent across presentation remounts","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-PR131","kind":"verification","title":"PR #131 exact-head Release Gate #1448 / 35109312382 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-MAIN-1449","kind":"verification","title":"Current PRODUCT main b863a763 passes post-merge Release Gate #1449 / 35110020514 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"RELEASE-PAGES-799","kind":"release","title":"GitHub Pages #799 / 35110017165 deploys exact current main b863a763 successfully","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","kind":"result","title":"Commercial GARANG web baseline is VERIFIED GREEN and ready to be copied as the Wanted derivative source snapshot","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-    {"id":"TASK-COPY-WANTED-DERIVATIVE","kind":"task","title":"Copy the frozen commercial snapshot into a separate Wanted derivative build/repo/deployment target","status":"planned","ownerWorkstream":"growth-business"}
+    {"id":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","kind":"result","title":"Commercial GARANG web baseline is VERIFIED GREEN and frozen as the Wanted derivative source snapshot","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+    {"id":"TASK-COPY-WANTED-DERIVATIVE","kind":"task","title":"Build and verify the separate Wanted judging derivative from the frozen commercial snapshot","status":"done","ownerWorkstream":"growth-business","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR132","kind":"change","title":"PR #132 adds the isolated 60-second Wanted judging derivative and submission narrative","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-WANTED-RELEASE-GATE-1451","kind":"verification","title":"PR #132 exact-head full GARANG Release Gate #1451 / 35116671610 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"VERIFY-WANTED-JUDGE-GATE-4","kind":"verification","title":"PR #132 Wanted 60-second mobile WebKit gate #4 / 35116671535 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RELEASE-WANTED-2026","kind":"release","title":"wanted/2026-release freezes PR #132 as 6f7a6e97792971a550a2bf79e49c0ac07c071aa4","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+    {"id":"VERIFY-WANTED-POSTMERGE-5","kind":"verification","title":"Wanted post-merge judge-mode gate #5 / 35117403297 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-WANTED-DERIVATIVE-GREEN","kind":"result","title":"Wanted derivative repository snapshot is VERIFIED GREEN without modifying commercial GARANG main","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
+    {"id":"TASK-DEPLOY-WANTED-PUBLIC","kind":"task","title":"Deploy wanted/2026-release to a separate public URL and verify a fresh-browser judge journey","status":"planned","ownerWorkstream":"growth-business"}
   ],
   "edges": [
     {"from":"METRIC-REAL-DEVICE-CONFIDENCE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"measures"},
@@ -194,6 +201,15 @@
     {"from":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","to":"VERIFY-PRODUCT-MAIN-1449","kind":"depends-on"},
     {"from":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","to":"RELEASE-PAGES-799","kind":"depends-on"},
     {"from":"TASK-COPY-WANTED-DERIVATIVE","to":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","kind":"depends-on"},
-    {"from":"TASK-COPY-WANTED-DERIVATIVE","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"}
+    {"from":"TASK-COPY-WANTED-DERIVATIVE","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR132","to":"TASK-COPY-WANTED-DERIVATIVE","kind":"implements"},
+    {"from":"VERIFY-WANTED-RELEASE-GATE-1451","to":"CHANGE-PRODUCT-PR132","kind":"verifies"},
+    {"from":"VERIFY-WANTED-JUDGE-GATE-4","to":"CHANGE-PRODUCT-PR132","kind":"verifies"},
+    {"from":"RELEASE-WANTED-2026","to":"VERIFY-WANTED-RELEASE-GATE-1451","kind":"releases"},
+    {"from":"VERIFY-WANTED-POSTMERGE-5","to":"RELEASE-WANTED-2026","kind":"verifies"},
+    {"from":"RESULT-WANTED-DERIVATIVE-GREEN","to":"VERIFY-WANTED-POSTMERGE-5","kind":"depends-on"},
+    {"from":"RESULT-WANTED-DERIVATIVE-GREEN","to":"VERIFY-WANTED-JUDGE-GATE-4","kind":"depends-on"},
+    {"from":"TASK-DEPLOY-WANTED-PUBLIC","to":"RESULT-WANTED-DERIVATIVE-GREEN","kind":"depends-on"},
+    {"from":"TASK-DEPLOY-WANTED-PUBLIC","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"}
   ]
 }
