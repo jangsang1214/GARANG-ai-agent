@@ -3,7 +3,7 @@
 Last updated: 2026-09-16
 
 ## Overall decision
-YELLOW for the current release train. PRODUCT main `4c18ce254494e458de43c1d9e7030a09bfdb0a22` remains the last merged baseline. PR #123 and stacked Draft PR #124 are both open/unmerged. Core/build/security/Firebase/Firestore verification is GREEN, but full WebKit stability is not yet reliably GREEN, so merge/production deployment must not be reported as complete.
+YELLOW for the current release train. PRODUCT main `4c18ce254494e458de43c1d9e7030a09bfdb0a22` remains the last merged baseline. PR #123 and stacked Draft PR #124 are both open/unmerged. Core/build/security/Firebase/Firestore verification is GREEN, but full WebKit is not reliably GREEN, so merge/production deployment must not be reported as complete.
 
 ## PRODUCT main
 Decision: GREEN as the last merged baseline.
@@ -18,11 +18,10 @@ Decision: YELLOW / OPEN / UNMERGED.
 - Deterministic GARANG decision ownership and fail-closed local Coach fallback remain required invariants.
 - UI scope includes Today bottom Check-in, Today action flow, Simplified Shell auth/render timing and Nutrition test readiness race.
 - Exact-head Release Gate run `35067308863`: core-build-rules GREEN; browser-webkit FAILED at `Verify Today bottom Check-in CTA`; final verify FAILED.
-- Founder reported targeted follow-up WebKit checks GREEN and a final full WebKit revalidation in progress, but GitHub exact-head evidence is not yet a complete GREEN release gate.
 - Merge: NOT DONE. Production Functions/Pages deploy for #123: NOT DONE.
 
 ## PR #124 — Intelligence Learning Contract v1
-Decision: YELLOW / IMPLEMENTED / CORE GREEN / FULL BROWSER GATE NOT RELIABLY GREEN.
+Decision: YELLOW / IMPLEMENTED / CORE GREEN / STACKED BROWSER BLOCKER.
 - Draft PR #124 is stacked on PR #123.
 - Exact head: `aabf5eadf38324a4503abc1000ff1c0ad1fa33ac`.
 - Learning chain: `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
@@ -38,9 +37,10 @@ Decision: YELLOW / IMPLEMENTED / CORE GREEN / FULL BROWSER GATE NOT RELIABLY GRE
 - Functions production dependency security: GREEN.
 - Firebase public health: GREEN.
 - Firestore emulator rules: GREEN.
-- First browser-webkit attempt: FAILED at `Today bottom Check-in CTA`, matching the base #123 failure.
-- First bounded rerun: the previous CTA failure PASSED; Today visual parity, Daily Plan, Simplified Shell, Planner, Nutrition, truth surface and Golden Path integration also PASSED. It then FAILED `Golden Path complete journey` because the test captured two production `/api/coach` access-control/CORS console errors.
-- Because failures moved between unrelated browser assertions on the same code and the AI/Data core suite stayed GREEN, current evidence points to browser/environment timing/network instability rather than a proven deterministic Learning Contract regression. This remains an INFERRED diagnosis until the bounded final rerun finishes.
+- Browser attempt 1: FAILED `Today bottom Check-in CTA`, matching base #123.
+- Browser attempt 2: previous CTA PASSED; Today visual parity, Daily Plan, Simplified Shell, Planner, Nutrition, truth surface and Golden Path integration PASSED; then `Golden Path complete journey` FAILED because WebKit captured two production `/api/coach` access-control/CORS console errors.
+- Browser attempt 3: FAILED the same `Today bottom Check-in CTA` assertion again.
+- Bounded retries are stopped. The repeated CTA failure is a VERIFIED release blocker in the stacked #123 browser/UI baseline. The exact race mechanism is still INFERRED until a targeted patch is verified.
 - Merge/deploy: NOT DONE.
 
 ## Production Real AI Coach
@@ -52,18 +52,19 @@ Decision: YELLOW.
 
 ## Golden Path / regression
 Decision: YELLOW for the unmerged release train.
-- Core and most browser slices are GREEN.
-- Full WebKit currently has instability across Today CTA / complete-journey network-console assertions.
-- Do not weaken the release gate or suppress real browser errors merely to make CI green.
-- Fix the smallest verified runtime/test race if the bounded rerun reproduces a stable root cause.
+- Core and most isolated browser slices are GREEN.
+- Repeated WebKit blocker: Today workout-preparation integration sometimes fails to keep the legacy standalone workout execution CTA visually removed.
+- One run progressed beyond that blocker and exposed production `/api/coach` access-control/CORS console errors in the complete-journey test; treat this as a secondary signal and re-evaluate only after the CTA blocker is fixed.
+- Do not weaken the release gate, hide browser errors, or alter AI/Data behavior merely to force GREEN.
 
 ## Remaining release sequence
-1. Obtain a reliable full WebKit verdict for PR #123 release scope.
-2. If stable GREEN: merge #123 only with Founder approval.
-3. Deploy Functions/Pages only after approved merge.
-4. Verify public 401/405 boundaries and real authenticated text/photo Coach behavior.
-5. Rebase/retarget #124 onto resulting main and run the full gate again.
-6. Merge #124 only after its own reliable GREEN and Founder approval.
-7. Then proceed to User Performance Model v1 / Recommendation Outcome Learner work.
+1. Fix the smallest verified #123 Today workout-preparation CTA restore/reconcile race and run one complete WebKit gate.
+2. If the gate reaches complete journey, determine whether `/api/coach` access-control/CORS console errors reproduce.
+3. When reliably GREEN: merge #123 only with Founder approval.
+4. Deploy Functions/Pages only after approved merge.
+5. Verify public 401/405 boundaries and real authenticated text/photo Coach behavior.
+6. Rebase/retarget #124 onto resulting main and run the full gate again.
+7. Merge #124 only after its own reliable GREEN and Founder approval.
+8. Then proceed to User Performance Model v1 / Recommendation Outcome Learner work.
 
 Commercial production readiness remains a separate gate and is not implied by any repository CI result above.
