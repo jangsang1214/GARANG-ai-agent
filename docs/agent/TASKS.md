@@ -3,38 +3,51 @@
 Last updated: 2026-09-17
 
 ## Active P1 — Wanted derivative public deployment + final submission
-Status: YELLOW / SOURCE+CI+PUBLIC ROOT GREEN, HUMAN CLICK-THROUGH PENDING
+Status: YELLOW / SOURCE+CI+PUBLIC ROOT GREEN, NEW UX HUMAN SMOKE PENDING
 Owner: Founder / Growth Business / Product / Release QA
-Goal: publish the verified Wanted derivative at its own public URL and complete the competition submission without destabilizing commercial GARANG.
+Goal: publish the verified Wanted derivative at its stable public URL and complete the competition submission without destabilizing commercial GARANG.
 Acceptance:
 - Commercial source snapshot is PRODUCT main `b863a7634bd64b03a6e6f3772950c43cc81afb6f`. ✅
 - Wanted derivative release branch is `wanted/2026-release`. ✅
-- Current Wanted release SHA is `149ba11fe9dba33033aa3b1d201f7b3141f782ec`. ✅
-- Relative 14-day synthetic judge dataset is release-merged and CI-verified. ✅
-- Dataset includes 14 daily check-ins, 42 meals, workout/running/body history and fatigue-driven plan-adjustment evidence. ✅
-- Deployment-origin compatibility remains a permanent Wanted CI check. ✅
-- Founder-observed second public entry failure led to a competition-only MutationObserver safety fix. ✅
-- PR #137 Wanted gate #32 / `35131048847`: GREEN. ✅
-- PR #137 full GARANG Release Gate #1461 / `35131048722`: FULL GREEN. ✅
-- PR #137 merged as `149ba11fe9dba33033aa3b1d201f7b3141f782ec`. ✅
-- Post-merge Wanted gate #33 / `35131663143`: GREEN. ✅
+- Current Wanted release SHA is `5ac577094cf5ff4350ce33a7dbba2b79f8ba90cd`. ✅
+- Relative 14-day synthetic judge dataset remains release-merged and CI-verified. ✅
+- Deployment-origin compatibility and judge-entry observer safety remain permanent Wanted CI checks. ✅
+- Founder previously verified `60초 심사 체험` entered the app on the prior public release. ✅
+- Coach judging guide no longer covers chat: auto-collapse on Coach + manual open/close control. ✅ source/CI
+- Today `오늘의 계획` has a compact `+` that routes to Planner. ✅ source/CI
+- Dedicated WebKit verifies Today `+ → Planner`, Coach textarea entry and no guide/composer overlap. ✅
+- PR #138 Wanted gate #41 / `35133826320`: GREEN. ✅
+- PR #138 full GARANG Release Gate #1463 / `35133826275`: FULL GREEN. ✅
+- PR #138 merged as `5ac577094cf5ff4350ce33a7dbba2b79f8ba90cd`. ✅
+- Post-merge Wanted gate #42 / `35134431895`: GREEN. ✅
 - Commercial GARANG remains canonical and unchanged. ✅
-- Vercel Authentication / SSO Deployment Protection disabled by Founder. ✅
-- Vercel production redeployed from exact Wanted release SHA; deployment `dpl_Bc7dxWoziC633y8EEZ6BWDJUFQWE` returned READY. ✅
-- Public alias is `https://garang-wanted-2026-jangsang1214.vercel.app`. ✅
+- Vercel Authentication / SSO Deployment Protection disabled. ✅
+- Stable public alias is `https://garang-wanted-2026-jangsang1214.vercel.app`. ✅
+- Production deployment `dpl_87pRSKTnUgw3iAi5RDrPCBjg8Hg4` returned READY and pins exact release SHA `5ac57709…`. ✅
+- Exact-SHA new UX JS/CSS assets are reachable on jsDelivr. ✅
 - Fresh unauthenticated rendered fetch opens the GARANG page without `login_required`. ✅
-- Fresh/incognito human smoke passes `60초 심사 체험 → Today → Coach → Progress`. ⬜ final public-runtime evidence
-- Replace `[WANTED_PUBLIC_URL]` in final submission copy after the human smoke passes. ⬜
+- Fresh human smoke passes `60초 심사 체험 → Today + → Planner → Coach 입력`. ⬜ final public UX confidence check
 - Wanted participation registration and final submission are completed. ⬜ Founder final action
+
+## Closed P1 — Wanted Coach guide + Today Planner affordance
+Status: DONE / VERIFIED GREEN AT SOURCE+CI
+Owner: Product / Engineering / Design Brand / Release QA
+Acceptance:
+- Prevent the judging guide from covering the Coach composer. ✅
+- Preserve the recommended judging route while allowing explicit collapse/expand. ✅
+- Auto-collapse on Coach. ✅
+- Keep Coach textarea focus and typing functional. ✅
+- Add compact Today plan `+` shortcut to Planner. ✅
+- Keep all changes isolated to Wanted derivative. ✅
+- Preserve commercial Golden Path, authenticated Coach, Real LLM and mobile regression behavior. ✅
+Evidence: PRODUCT PR #138 merged as `5ac57709…`; Wanted gate #41 GREEN; full Release Gate #1463 FULL GREEN; post-merge Wanted gate #42 GREEN.
 
 ## Closed P1 — Wanted judge-entry observer hotfix
 Status: DONE / VERIFIED GREEN AT SOURCE+CI
 Owner: Engineering / Release QA
 Acceptance:
-- Identify source-level risk behind public signed-out judge transition. ✅
 - Filter redundant `hidden` mutations only during Wanted runtime bootstrap. ✅
 - Preserve real visibility changes and restore native MutationObserver. ✅
-- Add regression coverage for redundant vs real visibility mutations. ✅
 - Preserve commercial Golden Path, authenticated Coach, Real LLM and mobile regression behavior. ✅
 Evidence: PRODUCT PR #137 merged as `149ba11f…`; Wanted gate #32 GREEN; full Release Gate #1461 FULL GREEN; post-merge Wanted gate #33 GREEN.
 
@@ -43,32 +56,18 @@ Status: DONE / VERIFIED GREEN AT SOURCE+CI
 Owner: Engineering / Release QA
 Acceptance:
 - Derive competition asset root from loaded `version.js`, not Vercel document origin. ✅
-- Route 14-day dataset and competition CSS/JS to the same frozen asset root. ✅
+- Route competition assets to the same frozen release root. ✅
 - Leave unrelated runtime fetches untouched. ✅
-- Add deployment-origin compatibility regression test. ✅
-- Preserve commercial Golden Path, authenticated Coach, Real LLM and mobile regression behavior. ✅
 Evidence: PRODUCT PR #134 merged; Wanted gate #20 GREEN; full Release Gate #1455 FULL GREEN; post-merge Wanted gate #21 GREEN.
 
 ## Closed P1 — Wanted 14-day judge data upgrade
 Status: DONE / VERIFIED GREEN
 Owner: Product / Engineering / Release QA
 Acceptance:
-- Replace shallow sample history with a date-relative two-week synthetic history. ✅
-- Keep all sample records local-only and clearly synthetic. ✅
-- Exercise nutrition, recovery and body accumulation are visible to Today/Coach/Progress. ✅
-- Strengthen CI so the 14-day dataset and 60-second WebKit journey are both verified. ✅
-- Keep commercial main unchanged. ✅
-Evidence: PRODUCT PR #133 merged to `wanted/2026-release`; Release Gate #1454 `35122058195` SUCCESS; post-merge Wanted gate #13 `35122761724` SUCCESS.
-
-## Closed P1 — Wanted judging derivative build
-Status: DONE / VERIFIED GREEN
-Owner: Product / Design Brand / Engineering / Release QA
-Acceptance:
-- Add a clear `60초 심사 체험` entry without reintroducing the retired commercial demo flag. ✅
-- Seed only synthetic local sample records. ✅
-- Guide judges through Today → Coach → Progress. ✅
-- Keep real production GPT/photo Coach on the existing authenticated path. ✅
-- Preserve the full commercial regression suite. ✅
+- Date-relative two-week synthetic history with recovery/nutrition/workout/body evidence. ✅
+- Local-only, clearly synthetic data. ✅
+- 60-second WebKit journey verified. ✅
+Evidence: PRODUCT PR #133 merged; Release Gate #1454 SUCCESS; post-merge Wanted gate #13 SUCCESS.
 
 ## Closed P1 — Commercial critical-path baselines
 Status: DONE / VERIFIED GREEN
@@ -108,16 +107,3 @@ Acceptance direction:
 - Each dimension includes value, confidence, sample size, last-updated time and evidence IDs.
 - Start deterministic; do not introduce ML/vector infrastructure without measured need.
 - Add explicit rejected/dismissed recommendation evidence to future personalization.
-
-## Closed / verified baselines
-- Founder OS v7-lite event-ready control plane — DONE.
-- Today Single Next Action — DONE.
-- Today workout preparation/execution integration — DONE.
-- Commercialization Stage 1 stabilization — DONE.
-- Plan-vs-Actual / Adaptive Loop v1 — DONE.
-- Weekly Review real outcome signals — DONE.
-- Real LLM alignment + Outcome Learning v2 — DONE.
-- Server readiness / Firebase boundaries — DONE.
-- Food Data Foundation v2 — DONE.
-- Nutrition Intelligence v2 + Coach Knowledge Grounding — DONE.
-- Official food-source ingestion/normalization + reviewed corpus replacement — DONE / VERIFIED GREEN.
