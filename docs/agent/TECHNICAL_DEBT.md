@@ -64,10 +64,10 @@ Resolution: PRODUCT now contains a Functions lockfile; Release Gate installs Fun
 ## TD-011 — Dev/deploy tooling advisory backlog
 Severity: MEDIUM / P2
 Area: development/deployment tooling
-Problem: GitHub Actions runtime migration is complete (`actions/checkout@v7`, `actions/setup-node@v7`), but the informational root dev/tooling audit still reports 23 findings: 1 critical, 3 high and 19 moderate.
-Risk: these are not current production-runtime blockers, but old tooling/transitive packages create future maintenance/security pressure.
-Mitigation: root production audit is clean; tooling audit is reported separately and remains non-blocking for the verified web baseline.
-Recommended fix: isolate toolchain upgrades into dedicated PRs and keep full release regression coverage.
+Problem: PRODUCT release workflows have migrated to `actions/checkout@v7` and `actions/setup-node@v7`, but CONTROL CI #90 still uses `actions/checkout@v4` and `actions/setup-node@v4`. Separately, the PRODUCT root informational dev/tooling audit still reports 23 findings: 1 critical, 3 high and 19 moderate.
+Risk: these are not current production-runtime blockers, but old workflow/tooling/transitive packages create future maintenance/security pressure.
+Mitigation: PRODUCT root production audit is clean; tooling audit is reported separately; CONTROL CI #90 is VERIFIED GREEN despite the older Action majors.
+Recommended fix: modernize CONTROL Actions in a dedicated no-product-behavior PR, and isolate dependency/toolchain upgrades with full verification.
 
 ## TD-012 — Long-lived Firebase deployment key in GitHub Actions
 Severity: MEDIUM / P2
