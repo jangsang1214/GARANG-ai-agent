@@ -46,9 +46,10 @@ Implemented scope:
 
 VERIFIED #124 evidence:
 - Core/Functions/security/Commercial Core/build/Firebase public health/Firestore emulator are GREEN on exact head `aabf5ead...`.
-- First WebKit run failed at the same Today bottom Check-in CTA assertion already observed on #123.
-- First WebKit rerun passed Today CTA, Today visual parity, Daily Plan, Simplified Shell, Planner, Nutrition, truth surface and Golden Path integration, then failed `Golden Path complete journey` only because WebKit recorded two production `/api/coach` access-control/CORS console errors.
-- A final bounded WebKit rerun was started to distinguish environmental/timing instability from a deterministic regression; verdict must be taken from GitHub CI, not inferred.
+- Browser attempt 1 failed `Today bottom Check-in CTA`, the same assertion already observed on #123.
+- Browser attempt 2 passed Today CTA, Today visual parity, Daily Plan, Simplified Shell, Planner, Nutrition, truth surface and Golden Path integration, then failed `Golden Path complete journey` because WebKit recorded two production `/api/coach` access-control/CORS console errors.
+- Browser attempt 3 failed the same `Today bottom Check-in CTA` assertion as attempts on #123/attempt 1.
+- After three bounded attempts, further blind reruns are stopped. The repeated CTA failure is now a VERIFIED stacked-base WebKit release blocker; the one later CORS failure remains a secondary browser/network stability signal to recheck after the CTA blocker is fixed.
 - No merge or production deploy has been performed for #124.
 
 ## AI/Data architecture judgment
@@ -64,15 +65,17 @@ VERIFIED #124 evidence:
 - Main has not changed during this AI/Data work.
 
 ## In progress / blockers
-- P1 PR #123 full WebKit/release reconciliation: YELLOW until a reliable complete browser gate is GREEN.
+- P1 PR #123 full WebKit/release reconciliation: YELLOW. Repeated blocker: standalone Today workout execution CTA is sometimes visually restored after the workout-preparation integration owns execution.
+- The likely race is in the #123 Today workout-prep presentation/reconcile path, but exact root cause remains INFERRED until the UI/Release owner patches and re-verifies it.
 - P1 PR #123 merge/deploy: NOT DONE.
 - P1 newest production Coach failure root cause: UNKNOWN until privacy-safe live `code` / `providerStatus` is captured after deployment.
-- P1 PR #124 Intelligence Learning Contract: IMPLEMENTED, core verification GREEN, full browser/release verification YELLOW while stacked base WebKit instability is unresolved.
+- P1 PR #124 Intelligence Learning Contract: IMPLEMENTED, core verification GREEN, full release verification YELLOW because its stacked base is not browser-stable.
 - Real production text Coach + photo Coach post-deploy smoke: NOT RUN for the #123 bundle.
 - Commercial production readiness remains separate and not implied by repository GREEN.
 
 ## Next priorities
-1. Finish bounded WebKit diagnosis on PR #123/#124. If failures continue to move between timing/network assertions, treat as release-test instability and repair the smallest test/runtime race in #123 scope rather than altering AI/Data behavior.
-2. When PR #123 is reliably GREEN, Founder-approved sequence is merge #123 → deploy Functions/Pages → verify POST 401 / GET 405 → run real authenticated text Coach + photo Coach; capture only privacy-safe error metadata if failure recurs.
-3. Rebase/retarget #124 onto the resulting main, run the full Release Gate again, then merge only with approval.
-4. After P1 linkage is released, start User Performance Model v1 using `State × Recommendation × Action × Outcome` evidence with confidence/sample-size/evidence IDs; do not jump to ML/vector infrastructure first.
+1. Fix/reconcile the smallest #123 Today workout-preparation CTA restore/reconcile race and run one complete WebKit gate; do not modify #124 AI/Data logic to mask this UI blocker.
+2. If full WebKit then reaches `Golden Path complete journey`, recheck whether production `/api/coach` CORS/access-control console errors reproduce; fix only if reproducible.
+3. When PR #123 is reliably GREEN, Founder-approved sequence is merge #123 → deploy Functions/Pages → verify POST 401 / GET 405 → run real authenticated text Coach + photo Coach; capture only privacy-safe error metadata if failure recurs.
+4. Rebase/retarget #124 onto the resulting main, run the full Release Gate again, then merge only with approval.
+5. After P1 linkage is released, start User Performance Model v1 using `State × Recommendation × Action × Outcome` evidence with confidence/sample-size/evidence IDs; do not jump to ML/vector infrastructure first.
