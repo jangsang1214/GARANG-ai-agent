@@ -81,7 +81,8 @@
     {"id":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"initiative","title":"Harden release integrity and Functions supply chain after live AI stabilization","status":"active","ownerWorkstream":"engineering"},
     {"id":"TASK-FUNCTIONS-LOCK-AUDIT","kind":"task","title":"Lock and separately audit Firebase Functions runtime dependencies","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
     {"id":"TASK-MAIN-PROTECTION","kind":"task","title":"Enforce PR and CI protection for CONTROL and PRODUCT main branches","status":"planned","ownerWorkstream":"command-center"},
-    {"id":"TASK-CI-TOOLCHAIN-MODERNIZATION","kind":"task","title":"Modernize GitHub Actions runtime without changing product behavior","status":"done","ownerWorkstream":"engineering"},
+    {"id":"TASK-CI-TOOLCHAIN-MODERNIZATION","kind":"task","title":"Modernize PRODUCT GitHub Actions runtime without changing product behavior","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"TASK-CONTROL-CI-ACTIONS-MODERNIZATION","kind":"task","title":"Modernize CONTROL CI checkout/setup-node Actions from v4 to a current verified major","status":"planned","ownerWorkstream":"engineering","repositoryId":"control"},
     {"id":"TASK-DEPLOY-WIF","kind":"task","title":"Replace long-lived deployment JSON key with short-lived OIDC Workload Identity Federation","status":"planned","ownerWorkstream":"engineering","repositoryId":"product"},
 
     {"id":"GOAL-WANTED-DERIVATIVE","kind":"goal","title":"Submit a stable Wanted derivative without redefining or destabilizing commercial GARANG","status":"active","ownerWorkstream":"command-center"},
@@ -180,6 +181,7 @@
     {"from":"TASK-FUNCTIONS-LOCK-AUDIT","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
     {"from":"TASK-MAIN-PROTECTION","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
     {"from":"TASK-CI-TOOLCHAIN-MODERNIZATION","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
+    {"from":"TASK-CONTROL-CI-ACTIONS-MODERNIZATION","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
     {"from":"TASK-DEPLOY-WIF","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
 
     {"from":"INIT-FREEZE-WANTED-SNAPSHOT","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"},
