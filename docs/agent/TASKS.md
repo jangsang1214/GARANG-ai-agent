@@ -3,7 +3,7 @@
 Last updated: 2026-09-17
 
 ## Active P1 — Wanted derivative public deployment + final submission
-Status: YELLOW / SOURCE+CI GREEN, FRESH PUBLIC CLICK-THROUGH PENDING
+Status: RED / SOURCE+CI GREEN, PUBLIC ACCESS BLOCKED BY VERCEL AUTH
 Owner: Founder / Growth Business / Product / Release QA
 Goal: publish the verified Wanted derivative at its own public URL and complete the competition submission without destabilizing commercial GARANG.
 Acceptance:
@@ -12,7 +12,7 @@ Acceptance:
 - Current Wanted release SHA is `711517a4d62c9383716498fceb5d22030b98e033`. ✅
 - Relative 14-day synthetic judge dataset is release-merged and CI-verified. ✅
 - Dataset includes 14 daily check-ins, 42 meals, workout/running/body history and fatigue-driven plan-adjustment evidence. ✅
-- Founder-observed public judge-entry freeze was root-caused to deployment-origin relative asset loading. ✅
+- Founder-observed initial judge-entry freeze was root-caused to deployment-origin relative asset loading. ✅
 - PR #134 deployment-origin hotfix merged to Wanted release only. ✅
 - PR #134 Wanted gate #20 / `35125457506`: GREEN. ✅
 - PR #134 full GARANG Release Gate #1455 / `35125457469`: FULL GREEN. ✅
@@ -22,15 +22,17 @@ Acceptance:
 - Submission narrative exists as `WANTED_SUBMISSION.md`; paste-ready form copy exists as `WANTED_FORM_COPY.md`. ✅
 - Vercel production redeployed after hotfix; deployment `dpl_6Ei1Xn4hvoWNbSndGUKAHWXCbEnM` returned READY. ✅ deployment evidence
 - Public alias is `https://garang-wanted-2026-jangsang1214.vercel.app`. ✅ candidate URL
-- Fresh/incognito alias smoke passes `60초 심사 체험 → Today → Coach → Progress`. ⬜ final external runtime evidence
-- Replace `[WANTED_PUBLIC_URL]` in final submission copy after the public smoke passes. ⬜
+- Fresh unauthenticated browser-render fetch can open the alias without Vercel login. ❌ current evidence: `login_required`
+- Disable Vercel Authentication / SSO Deployment Protection for the Wanted project. ⬜ Founder account-level setting; current connected toolset has no protection-write action
+- Fresh/incognito alias smoke passes `60초 심사 체험 → Today → Coach → Progress`. ⬜ blocked until anonymous access is enabled
+- Replace `[WANTED_PUBLIC_URL]` in final submission copy only after the anonymous smoke passes. ⬜
 - Wanted participation registration and final submission are completed. ⬜ Founder action / submission UI
 
 ## Closed P1 — Wanted judge-entry deployment-origin hotfix
 Status: DONE / VERIFIED GREEN AT SOURCE+CI
 Owner: Engineering / Release QA
 Acceptance:
-- Reproduce the structural cause of public judge-entry freeze. ✅
+- Reproduce the structural cause of initial public judge-entry freeze. ✅
 - Derive competition asset root from loaded `version.js`, not Vercel document origin. ✅
 - Route 14-day dataset and competition CSS/JS to the same frozen asset root. ✅
 - Leave unrelated runtime fetches untouched. ✅
