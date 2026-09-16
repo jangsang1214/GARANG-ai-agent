@@ -69,3 +69,9 @@ Date: 2026-09-15
 Decision: K-FIND/USDA nutrition rows may be classified as `verified` only when provider, dataset, source record ID and complete core kcal/protein/carbs/fat are present. Official-source matches never overwrite canonical GARANG food rows automatically; unique exact name/alias matches create reviewable replacement proposals and ambiguous mappings require manual review. Source credentials remain outside source/client bundles.
 Reason: An official source does not eliminate unit, identity, serving-basis or mapping errors. Automatic replacement could turn uncertain mappings into confidently wrong nutrition recommendations.
 Impact: GARANG can ingest official nutrition data at scale while keeping Food Data Foundation quality gates, deterministic recommendation math and human-review boundaries intact. Repository ingestion readiness must remain distinct from actual corpus quality uplift until reviewed replacements are applied and re-audited.
+
+## D-015 — Commercial GARANG remains the source product; competition builds fork from a verified snapshot
+Date: 2026-09-16
+Decision: The commercial GARANG PRODUCT main is the canonical source product. Wanted/competition submission work starts by copying a verified stable snapshot into a separate derivative build/repository or deployment target; the competition build may optimize judge-facing clarity without redefining commercial GARANG or automatically merging those changes back.
+Reason: Competition constraints and presentation goals can differ from long-term commercial product priorities, while both should begin from the same verified technical foundation.
+Impact: Freeze and verify the commercial source first, then create the Wanted fork. Submission-specific demo state, copy or presentation changes stay isolated unless separately reviewed as valuable for commercial GARANG.
