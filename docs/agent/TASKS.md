@@ -2,62 +2,60 @@
 
 Last updated: 2026-09-17
 
-## Active P1 — Wanted visible Coach smoke + final submission
-Status: YELLOW / IMPLEMENTATION+CI+BACKEND+LIVE LLM+PUBLIC JUDGE RUNTIME GREEN, VISIBLE COACH ANSWER + FINAL SUBMISSION PENDING
+## Active P1 — Wanted final submission
+Status: YELLOW / PUBLIC RUNTIME GREEN, FINAL SUBMISSION PENDING
 Owner: Founder / Growth Business / Product / Release QA
-Goal: finish the Wanted submission on the stable public URL without destabilizing commercial GARANG.
+Goal: complete the Wanted submission on the stable public URL without destabilizing commercial GARANG.
 
 Acceptance:
 - Commercial PRODUCT main remains frozen at `b863a7634bd64b03a6e6f3772950c43cc81afb6f`. ✅
 - Wanted release branch is `wanted/2026-release`. ✅
-- Current Wanted release SHA is `23990db387c9e1f6570dc971a8da34d56946bc85`. ✅
-- 14-day synthetic judge dataset remains release-merged and CI-verified. ✅
-- Today `오늘의 계획 + → Planner` and Coach guide/composer UX remain regression-covered. ✅
-- No-login Wanted Coach text requests use isolated `/wanted/coach`. ✅
+- Current Wanted release SHA is `3acd2ae654ce0d387b64174c96a6243d89cb9b74`. ✅
+- 14-day synthetic judge dataset and judge UX remain release-merged and regression-covered. ✅
 - Canonical `/coach` remains Firebase-authenticated. ✅
-- Wanted synthetic context is sanitized/contract-bound; images rejected; origin/quota/expiry enforced. ✅
-- PR #141 Wanted Gate #69 / `35141844675`: GREEN. ✅
-- Full Release Gate #1476 / `35141844625`: FULL GREEN. ✅
-- PR #141 merged as `23990db3…`. ✅
-- Post-merge Wanted Gate #71 / `35142457444`: GREEN. ✅
-- Production activation run `35142457402`: GREEN. ✅
-- Canonical `/coach` post-deploy remains fail-closed at unauthenticated `401`. ✅
-- Wanted production live smoke returns `source:"llm"` request `fb37b74b-c376-4e74-8854-8e4f64ec2898`. ✅
+- Wanted `/wanted/coach` remains synthetic-contract-bound, text-only, exact-origin/quota/expiry constrained. ✅
+- Browser CORS activation is deployed (PR #150/#152). ✅
+- Remaining browser transport mismatch fixed by PR #154: public judge request strips inherited custom headers and sends only `Content-Type`. ✅
+- PR #154 Wanted Gate #97 / `35183623414`: GREEN. ✅
+- PR #154 full Release Gate #1494 / `35183623380`: FULL GREEN. ✅
+- PR #154 merged as `3acd2ae6…`. ✅
 - Stable public alias is `https://garang-wanted-2026-jangsang1214.vercel.app`. ✅
-- A bad Vercel shell redeploy causing login-only/non-interactive behavior was diagnosed as deployment-shell regression, not data/LLM failure. ✅
-- Repaired production deployment `dpl_92kMMBx2tPepvsfBZNdY84B942bh` is READY. ✅
-- Live browser smoke verifies `60초 심사 체험` visible/clickable, 14-day judging mode loads, and tap/toggle interaction works. ✅
-- Founder smoke verifies Coach visible answer for `오늘 회복 상태를 알려줘`. ⬜
+- Production deployment `dpl_DXa432LkkUdPcC2fD61ZcHHX3wDx` is READY and loads exact release `3acd2ae6…`. ✅
+- Live public browser smoke passes `60초 심사 체험 → Coach → 나 준나 강해지고싶어` with a visible context-aware Real AI answer and no local fallback message. ✅
 - Wanted participation/final submission completed before deadline. ⬜ Founder final action
 
-## Closed P1 — Wanted public shell recovery
-Status: DONE / VERIFIED GREEN FOR JUDGE ENTRY + 14-DAY INTERACTION
-Owner: Engineering / Release QA
-Evidence: stable alias recovered on Vercel deployment `dpl_92kMMBx2tPepvsfBZNdY84B942bh`; live browser automation clicked `60초 심사 체험`, entered `JUDGING MODE · 14 DAYS SYNTHETIC DATA`, and verified responsive taps/toggles with no visible error.
+## Closed P1 — Wanted public browser Real AI transport
+Status: DONE / VERIFIED GREEN END-TO-END
+Owner: AI Data / Engineering / Release QA
+Evidence: Founder-observed fallback reproduced by TinyFish; PR #154 fixes inherited-header leakage; Wanted Gate #97 GREEN; full Release Gate #1494 FULL GREEN; release `3acd2ae6…`; Vercel `dpl_DXa432LkkUdPcC2fD61ZcHHX3wDx`; live browser same-prompt smoke returns Real AI response without fallback.
 
-## Closed P1 — Wanted no-login Real AI Coach
-Status: DONE / VERIFIED GREEN AT SOURCE+CI+PRODUCTION PROVIDER
-Evidence: PRODUCT PR #141; Wanted Gate #69 `35141844675`; full Release Gate #1476 `35141844625`; release SHA `23990db3…`; post-merge Wanted Gate #71 `35142457444`; activation `35142457402`; live request `fb37b74b-c376-4e74-8854-8e4f64ec2898`.
+## Closed P1 — Wanted public shell recovery
+Status: DONE / VERIFIED GREEN
+Evidence: login-only/non-interactive Vercel shell regression was repaired; 60-second entry, 14-day state and touch interaction restored.
+
+## Closed P1 — Wanted no-login Real AI Coach backend
+Status: DONE / VERIFIED GREEN
+Evidence: PRODUCT PR #141; production activation `35142457402`; direct provider smoke `source:llm`; canonical `/coach` stayed auth-closed.
 
 ## Closed P1 — Wanted Today Planner shortcut judge-mode gating fix
 Status: DONE / VERIFIED GREEN
-Evidence: PR #140 merged as `24dcacd2…`; exact-head Wanted gate `35137650732`; full Release Gate #1468; post-merge Wanted Gate #51.
+Evidence: PR #140.
 
 ## Closed P1 — Wanted Coach guide + Today Planner affordance
-Status: DONE / SUPERSEDED FOR TODAY GATING BY PR #140
-Evidence: PR #138 merged as `5ac57709…`; Wanted Gate #41; full Release Gate #1463; post-merge Wanted Gate #42.
+Status: DONE
+Evidence: PR #138 + PR #140 correction.
 
 ## Closed P1 — Wanted judge-entry observer hotfix
 Status: DONE / VERIFIED GREEN
-Evidence: PR #137 merged as `149ba11f…`; Wanted Gate #32; full Release Gate #1461; post-merge Wanted Gate #33.
+Evidence: PR #137.
 
 ## Closed P1 — Wanted deployment-origin hotfix
 Status: DONE / VERIFIED GREEN
-Evidence: PR #134; Wanted Gate #20; full Release Gate #1455; post-merge Wanted Gate #21.
+Evidence: PR #134.
 
 ## Closed P1 — Wanted 14-day judge data upgrade
 Status: DONE / VERIFIED GREEN
-Evidence: PR #133; Release Gate #1454; post-merge Wanted Gate #13.
+Evidence: PR #133.
 
 ## P2 — Protect CONTROL + PRODUCT main
 Status: PLANNED / NON-BLOCKING
