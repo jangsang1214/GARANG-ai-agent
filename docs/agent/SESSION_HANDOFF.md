@@ -15,54 +15,54 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff — 2026-09-17
-- Commercial PRODUCT main remains canonical and frozen: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
-- Commercial main Release Gate #1449 / run `35110020514`: FULL GREEN.
-- Commercial Pages #799 / run `35110017165`: SUCCESS.
+- Commercial PRODUCT main remains canonical at `b863a7634bd64b03a6e6f3772950c43cc81afb6f` through the completed competition submission phase.
+- Commercial Release Gate #1449 / `35110020514`: FULL GREEN.
+- Commercial Pages #799 / `35110017165`: SUCCESS.
 - Production Coach Live Smoke `35101459492`: authenticated text + photo `source=llm` SUCCESS.
-- Wanted source base: exact commercial SHA `b863a763…`.
-- Wanted submission development branch: `wanted/2026-submission`.
 - Wanted release branch: `wanted/2026-release`.
-- PRODUCT PR #132 merged Wanted derivative as `6f7a6e97792971a550a2bf79e49c0ac07c071aa4`.
-- PR #132 exact-head full Release Gate #1451 / `35116671610`: FULL GREEN.
-- PR #132 exact-head Wanted judge-mode gate #4 / `35116671535`: GREEN.
-- Wanted post-merge judge-mode gate #5 / `35117403297`: GREEN.
+- Wanted release SHA: `3acd2ae654ce0d387b64174c96a6243d89cb9b74`.
+- Wanted PR #154 `Fix Wanted browser Real AI transport` merged.
+- Wanted Gate #97 / `35183623414`: GREEN.
+- Full Release Gate #1494 / `35183623380`: FULL GREEN.
+- Wanted production Vercel deployment: `dpl_DXa432LkkUdPcC2fD61ZcHHX3wDx` / READY.
+- Wanted stable alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
+- Live public browser smoke VERIFIED `60초 심사 체험 → Coach → 나 준나 강해지고싶어` returns context-aware Real AI output without local fallback.
 
-## Wanted judging experience
-- Auth surface adds a competition-only `60초 심사 체험` action.
-- Entry seeds only synthetic local state; it does not use Firebase user data or real-user samples.
-- Judge guide routes Today → Coach → Progress to expose the core causal loop before secondary features.
-- Sample mode is explicitly labeled `JUDGING MODE · SAMPLE DATA`.
-- Sample Coach explanation is not represented as a live GPT call; normal signup/login remains available for the real production GPT/photo Coach path.
-- Derivative metadata is pinned to the verified commercial source SHA.
-- Submission narrative and judge sequence live in `WANTED_SUBMISSION.md`.
-
-## Coach photo UX / production AI
-- Photo upload is the compact composer `+` control with preview/remove.
-- One JPG/PNG/WebP image up to 8 MB; attachment is consumed by the next request then cleared.
-- Raw photo data is not persisted to GARANG state/localStorage/Firestore/telemetry/conversation text history by the released path.
-- Production authenticated text/photo Coach remains independently VERIFIED through disposable Firebase identity smoke.
+## Competition submissions
+Evidence class: RECORDED from Founder report on 2026-09-17; submission receipts/forms were not independently re-opened during this reconciliation.
+- Wanted: submitted.
+- 롯데: submitted.
+- 브로제이: submitted.
+- Competition submission P1 is operationally closed.
+- Keep competition-specific deployed/runtime surfaces stable after submission; change only for critical outage/bug handling or organizer-required updates.
 
 ## AI/Data released state
 - Deterministic GARANG State/Decision Intelligence remains judgment owner.
-- LLM remains bounded explanation/language layer.
+- LLM remains bounded explanation/language/multimodal context.
 - Intelligence Learning Contract v1: `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
 - Outcome Learning remains advisory-only: no silent mutation and no automatic progression increase.
 
-## Release-channel decision
-Commercial GARANG PRODUCT main is the source product. Wanted/competition work is an isolated derivative. Competition-specific judge copy/demo/presentation changes do not automatically flow back to commercial GARANG.
+## Next core priority — User Performance Model v1
+Route: Product + AI Data + Engineering + Release QA.
+Goal: turn accumulated action/execution/outcome evidence into a durable, inspectable model of how this user performs and responds over time.
 
-## Current priority
-1. Deploy `wanted/2026-release @ 6f7a6e97…` to a separate public URL.
-2. Run fresh-browser mobile smoke on that deployed URL and keep it public through the judging period.
-3. Complete Wanted participation/submission fields from `WANTED_SUBMISSION.md` and separately disclose current commercial service status if applicable.
-4. After submission, resume User Performance Model v1 / recommendation-outcome personalization.
+Guardrails:
+- Reuse existing canonical state and learning IDs; do not create a competing truth store.
+- Separate observations from inferences and attach confidence/evidence.
+- Improve interpretation and recommendation inside the Golden Path before adding UI surface.
+- No silent goal/plan changes.
+- Insufficient/stale data must fail conservatively.
+- Verification must include persistence and regression of the existing Golden Path/Coach.
+
+## Release-channel decision
+Commercial GARANG PRODUCT main is the canonical product. Competition derivatives remain isolated snapshots and do not automatically flow back into commercial GARANG.
 
 ## Non-blocking debt
-- Functions dependency audit has moderate advisory findings requiring a dedicated breaking-upgrade PR.
-- CONTROL CI still uses checkout/setup-node v4; modernization is planned separately.
+- Functions dependency audit requires a dedicated breaking-upgrade PR.
+- CONTROL tooling modernization remains planned.
 - CONTROL/PRODUCT main are not server-protected.
-- Production deploy auth should migrate to OIDC/WIF after replacement verification.
+- Production deploy auth should migrate to OIDC/WIF after verified replacement.
 - Firebase build-image retention cleanup remains reviewed cost hygiene.
 
 ## Handoff rule
-Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization. Merge/deployment/live-provider evidence remain separate states.
+Never turn old handoff text into VERIFIED evidence without observing the source. Founder-reported external actions are RECORDED until their artifacts are independently observed. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization.
