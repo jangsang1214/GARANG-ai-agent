@@ -4,8 +4,8 @@ Last updated: 2026-09-17
 
 ## Overall decision
 - Commercial GARANG web baseline: GREEN / FROZEN FOR SUBMISSION WINDOW.
-- Wanted source/CI, Firebase backend, live LLM provider path and repaired public judge runtime: GREEN.
-- Final visible Coach-answer smoke and competition submission: YELLOW / pending Founder confirmation/action.
+- Wanted source/CI, Firebase backend, browser transport, live LLM provider path and public judge runtime: GREEN.
+- Wanted final competition submission: YELLOW / pending Founder final action.
 
 ## Commercial PRODUCT main
 Decision: GREEN / UNCHANGED.
@@ -18,45 +18,37 @@ Decision: GREEN / UNCHANGED.
 ## Wanted derivative
 Decision: GREEN / RELEASE SNAPSHOT VERIFIED.
 - Release branch: `wanted/2026-release`.
-- Release SHA: `23990db387c9e1f6570dc971a8da34d56946bc85`.
-- PR #141 `Enable Wanted Real AI Coach`: MERGED into Wanted release only.
-- Wanted Gate #69 / `35141844675`: GREEN.
-- Full GARANG Release Gate #1476 / `35141844625`: FULL GREEN.
-- Post-merge Wanted Gate #71 / `35142457444`: GREEN.
+- Release SHA: `3acd2ae654ce0d387b64174c96a6243d89cb9b74`.
+- PR #154 `Fix Wanted browser Real AI transport`: MERGED into Wanted release only.
+- Wanted Gate #97 / `35183623414`: GREEN.
+- Full GARANG Release Gate #1494 / `35183623380`: FULL GREEN.
 
 ## Real AI Coach boundary
 Decision: GREEN.
 - Canonical `/coach` remains Firebase-authenticated.
 - No-login judge mode uses isolated `/wanted/coach` only for the sanitized `garang-wanted-judge-data-v1` synthetic contract.
-- Images are rejected on the public judge route; production authenticated Coach retains photo analysis.
-- Exact stable Vercel origin, quotas and judging-period expiry are enforced.
-- Existing server-side `GARANG_LLM_API_KEY` was preserved.
-- Activation run `35142457402`: GREEN.
-- Post-deploy canonical `/coach`: unauthenticated POST `401`, wrong-method GET `405`, no provider/user-data access.
-- Wanted live production smoke: `source:"llm"`, request `fb37b74b-c376-4e74-8854-8e4f64ec2898`, decision mode `recover`.
+- Images remain rejected on the public judge route; authenticated Production Coach retains photo analysis.
+- Exact stable Vercel origin, quotas and judging-period expiry remain enforced.
+- PR #150/#152 established and activated the Wanted-only browser CORS boundary.
+- PR #154 fixes the remaining browser transport mismatch by dropping inherited custom headers and sending only `Content-Type` for public judge requests.
+- Regression explicitly verifies caller headers such as `X-Garang-Client` / `X-Trace-Id` cannot leak into the public Wanted request and no Authorization header is attached.
 
-## Vercel public deployment
-Decision: GREEN for recovered judge entry, 14-day runtime and touch interaction.
+## Public runtime verification
+Decision: GREEN / END-TO-END VERIFIED.
 - Stable alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
-- A production redeploy briefly regressed the shell asset root, producing a static login-only/non-interactive symptom while exact release CDN assets and backend stayed healthy.
-- Repaired production deployment: `dpl_92kMMBx2tPepvsfBZNdY84B942bh` / READY.
-- Repaired shell loads exact Wanted release `23990db387c9e1f6570dc971a8da34d56946bc85` while retaining the Vercel page origin.
-- Live TinyFish browser smoke on the stable alias VERIFIED:
-  - `60초 심사 체험` visible and clickable.
-  - 14-day judging experience loads with `JUDGING MODE · 14 DAYS SYNTHETIC DATA`.
-  - Today/14-day judge surfaces render.
-  - Tap/toggle interactions work.
-  - No visible error or broken element observed in that smoke.
+- Production deployment: `dpl_DXa432LkkUdPcC2fD61ZcHHX3wDx` / READY.
+- Shell loads exact Wanted release `3acd2ae654ce0d387b64174c96a6243d89cb9b74` while retaining the stable Vercel origin.
+- TinyFish live browser smoke on the stable alias entered `60초 심사 체험`, opened Coach, sent exactly `나 준나 강해지고싶어`, and received a context-aware response without the local fallback text.
+- Visible response used judging context including recent squat/RDL work, readiness 43, fatigue 55 and a recovery-first recommendation (~30 min, ~50% intensity, ~55% volume).
+- Therefore the previously observed `외부 AI 연결에 실패해 로컬 데이터 분석으로 전환했습니다` fallback is no longer reproduced on the current deployed release.
 
 ## Deployment status
 - Commercial deployment: GREEN.
 - Wanted source/CI: GREEN.
-- Wanted production Firebase API: GREEN.
-- Canonical authenticated Coach boundary: GREEN.
-- Wanted production Real LLM smoke: GREEN.
-- Wanted repaired public judge entry + 14-day interaction: GREEN.
-- Wanted visible public Coach response: YELLOW / pending Founder check.
-- Wanted final submission: YELLOW / pending Founder final action.
+- Wanted production Firebase/CORS boundary: GREEN.
+- Wanted public judge entry + 14-day interaction: GREEN.
+- Wanted visible public Real AI Coach response: GREEN.
+- Wanted final submission: YELLOW / pending Founder action.
 
 ## Release-channel boundary
 Commercial GARANG PRODUCT main is canonical. Wanted/competition submission is a separate derivative. Competition-only demo/deployment/backend-route changes do not redefine commercial GARANG.
