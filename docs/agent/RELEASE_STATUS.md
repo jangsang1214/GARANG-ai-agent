@@ -3,9 +3,11 @@
 Last updated: 2026-09-17
 
 ## Overall decision
-- Commercial GARANG web baseline: GREEN / FROZEN FOR SUBMISSION WINDOW.
+- Commercial GARANG web baseline: GREEN / CANONICAL.
 - Wanted source/CI, Firebase backend, browser transport, live LLM provider path and public judge runtime: GREEN.
-- Wanted final competition submission: YELLOW / pending Founder final action.
+- Competition submissions: RECORDED COMPLETE BY FOUNDER REPORT for Wanted / 롯데 / 브로제이.
+- Submission receipts/forms were not independently re-opened here; submission completion is RECORDED rather than tool-VERIFIED.
+- Competition-specific deployed surfaces are change-frozen except for critical outage/bug handling or organizer-required changes.
 
 ## Commercial PRODUCT main
 Decision: GREEN / UNCHANGED.
@@ -29,18 +31,21 @@ Decision: GREEN.
 - No-login judge mode uses isolated `/wanted/coach` only for the sanitized `garang-wanted-judge-data-v1` synthetic contract.
 - Images remain rejected on the public judge route; authenticated Production Coach retains photo analysis.
 - Exact stable Vercel origin, quotas and judging-period expiry remain enforced.
-- PR #150/#152 established and activated the Wanted-only browser CORS boundary.
-- PR #154 fixes the remaining browser transport mismatch by dropping inherited custom headers and sending only `Content-Type` for public judge requests.
-- Regression explicitly verifies caller headers such as `X-Garang-Client` / `X-Trace-Id` cannot leak into the public Wanted request and no Authorization header is attached.
+- PR #154 drops inherited custom headers and sends only `Content-Type` for public judge requests.
 
-## Public runtime verification
+## Wanted public runtime verification
 Decision: GREEN / END-TO-END VERIFIED.
 - Stable alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
 - Production deployment: `dpl_DXa432LkkUdPcC2fD61ZcHHX3wDx` / READY.
 - Shell loads exact Wanted release `3acd2ae654ce0d387b64174c96a6243d89cb9b74` while retaining the stable Vercel origin.
-- TinyFish live browser smoke on the stable alias entered `60초 심사 체험`, opened Coach, sent exactly `나 준나 강해지고싶어`, and received a context-aware response without the local fallback text.
-- Visible response used judging context including recent squat/RDL work, readiness 43, fatigue 55 and a recovery-first recommendation (~30 min, ~50% intensity, ~55% volume).
-- Therefore the previously observed `외부 AI 연결에 실패해 로컬 데이터 분석으로 전환했습니다` fallback is no longer reproduced on the current deployed release.
+- Live browser smoke entered `60초 심사 체험`, opened Coach, sent exactly `나 준나 강해지고싶어`, and received a context-aware response without local fallback.
+
+## Competition submission status
+Evidence class: RECORDED from Founder report on 2026-09-17.
+- Wanted: SUBMITTED.
+- 롯데: SUBMITTED.
+- 브로제이: SUBMITTED.
+- Competition submission execution is operationally closed.
 
 ## Deployment status
 - Commercial deployment: GREEN.
@@ -48,10 +53,13 @@ Decision: GREEN / END-TO-END VERIFIED.
 - Wanted production Firebase/CORS boundary: GREEN.
 - Wanted public judge entry + 14-day interaction: GREEN.
 - Wanted visible public Real AI Coach response: GREEN.
-- Wanted final submission: YELLOW / pending Founder action.
+- Competition submission phase: RECORDED COMPLETE.
 
 ## Release-channel boundary
-Commercial GARANG PRODUCT main is canonical. Wanted/competition submission is a separate derivative. Competition-only demo/deployment/backend-route changes do not redefine commercial GARANG.
+Commercial GARANG PRODUCT main is canonical. Competition derivatives are separate release channels and do not redefine commercial GARANG.
+
+## Next release focus
+User Performance Model v1 should be developed against canonical commercial GARANG, preserving existing Golden Path behavior and current VERIFIED capabilities.
 
 ## Remaining non-blocking debt
 - Firebase build-image retention/cost cleanup.
