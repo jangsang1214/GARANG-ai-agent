@@ -1,6 +1,6 @@
 # GARANG Tasks
 
-Last updated: 2026-09-17
+Last updated: 2026-09-20
 
 ## Closed P1 — Competition submissions
 Status: DONE / RECORDED COMPLETE BY FOUNDER REPORT
@@ -22,12 +22,19 @@ Wanted technical acceptance remains VERIFIED:
 - Production deployment `dpl_DXa432LkkUdPcC2fD61ZcHHX3wDx` is READY. ✅
 - Live public browser smoke passes `60초 심사 체험 → Coach → 나 준나 강해지고싶어` with a visible context-aware Real AI answer and no local fallback. ✅
 
-## Active P4 — User Performance Model v1
-Status: PLANNED / NEXT CORE INTELLIGENCE WORK
+## P4 — User Performance Model v1
+Status: V1 RELEASED / LONGITUDINAL VALIDATION NEXT
 Owner: Product / AI Data / Engineering / Release QA
 Goal: make GARANG progressively understand the user from accumulated action, execution and outcome evidence rather than only responding to the latest record.
 
-Acceptance direction:
+Verified implementation:
+- PR #156 merged with exact-head Release Gate #1500 GREEN.
+- Common evidence-aware dimensions expose `value / confidence / sampleSize / lastUpdated / evidenceIds`.
+- Confidence-gated context withholds missing/low-confidence dimensions.
+- Intelligence Bridge exposure is read-only; `affectsDecision=false`; no automatic progression or state mutation.
+- Existing recommendation accepted/rejected/dismissed evidence is durable and contributes to responsiveness evidence.
+
+Next acceptance direction:
 - Define a compact durable user-performance state derived from existing verified data, not a new parallel source of truth.
 - Link model updates to the existing learning contract: `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
 - Separate observed facts, inferred traits/trends and confidence.
@@ -64,3 +71,23 @@ Status: PLANNED / NON-BLOCKING
 
 ## P6 — Repository / cloud cost hygiene
 Status: PLANNED
+
+
+## Closed P1 — Production external AI health and Coach failure classification
+Status: DONE / PROVIDER VERIFIED GREEN / POST-MERGE GATE PENDING
+Owner: Engineering / AI Data / Release QA
+Goal: determine whether the reported "external AI connection failure" is a provider outage and remove misleading client diagnostics.
+
+Evidence:
+- Production Coach Live Smoke #2 / `35455269231`: authenticated text and photo both returned `source=llm`, provider `openai`, model `gpt-5.6-luna`; alignment passed, photo grounding passed, disposable account cleanup passed.
+- Root diagnostic defect: browser previously mapped every non-2xx/auth/network failure to one generic external-connection-failure message.
+- PR #158 merged as `6260bcb2051f458c0a77dcbb83d95986c3fabad4` after exact-head Release Gate #1503 FULL GREEN.
+- Pages #811 deployed the fix successfully; deployed app.js was directly observed with the new error classifier.
+- Post-merge Release Gate #1505 is still IN PROGRESS at this observation.
+
+Behavior after fix:
+- 429/rate limit surfaces a retry-oriented message.
+- 401/auth surfaces relogin/refresh guidance.
+- provider/timeout/network failures are distinguished.
+- deterministic GARANG local fallback remains available.
+- exact historical error code for the user's earlier request is UNKNOWN; current provider health is VERIFIED GREEN.
