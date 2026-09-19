@@ -14,11 +14,13 @@
 11 reconcile evidence with state/graph
 12 select top 1–3 priorities and route authorized work.
 
-## Current handoff — 2026-09-17
-- Commercial PRODUCT main remains canonical at `b863a7634bd64b03a6e6f3772950c43cc81afb6f` through the completed competition submission phase.
-- Commercial Release Gate #1449 / `35110020514`: FULL GREEN.
-- Commercial Pages #799 / `35110017165`: SUCCESS.
-- Production Coach Live Smoke `35101459492`: authenticated text + photo `source=llm` SUCCESS.
+## Current handoff — 2026-09-20
+- Commercial PRODUCT main is canonical at `6260bcb2051f458c0a77dcbb83d95986c3fabad4`.
+- PR #156 User Performance context exact-head Release Gate #1500 / `35454549905`: FULL GREEN and merged.
+- PR #158 Coach gateway error-classification exact-head Release Gate #1503 / `35455176855`: FULL GREEN and merged.
+- Pages #811 / `35455497330`: SUCCESS; deployed app.js directly observed with the new classifier.
+- Post-merge main Release Gate #1505 / `35455497834`: IN PROGRESS at this observation.
+- Production Coach Live Smoke #2 / `35455269231`: authenticated text + photo `source=llm`, OpenAI `gpt-5.6-luna`, alignment verified and photo grounding verified; disposable identity deleted.
 - Wanted release branch: `wanted/2026-release`.
 - Wanted release SHA: `3acd2ae654ce0d387b64174c96a6243d89cb9b74`.
 - Wanted PR #154 `Fix Wanted browser Real AI transport` merged.
@@ -39,10 +41,12 @@ Evidence class: RECORDED from Founder report on 2026-09-17; submission receipts/
 ## AI/Data released state
 - Deterministic GARANG State/Decision Intelligence remains judgment owner.
 - LLM remains bounded explanation/language/multimodal context.
-- Intelligence Learning Contract v1: `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
-- Outcome Learning remains advisory-only: no silent mutation and no automatic progression increase.
+- User Performance Model v1 is now released as read-only confidence-gated context with evidence-aware dimensions.
+- Durable recommendation accepted/rejected/dismissed evidence is persisted through the canonical action durability path.
+- Production Real AI Coach was re-verified live on 2026-09-20; there is no VERIFIED provider outage.
+- PR #158 fixes a misleading browser diagnostic that previously called all gateway/auth/rate-limit/network failures "external AI connection failure".
 
-## Next core priority — User Performance Model v1
+## Next core priority — User Performance Model v1 longitudinal validation
 Route: Product + AI Data + Engineering + Release QA.
 Goal: turn accumulated action/execution/outcome evidence into a durable, inspectable model of how this user performs and responds over time.
 
