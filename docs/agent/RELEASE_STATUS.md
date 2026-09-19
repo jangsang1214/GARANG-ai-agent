@@ -1,6 +1,6 @@
 # GARANG Release Status
 
-Last updated: 2026-09-17
+Last updated: 2026-09-20
 
 ## Overall decision
 - Commercial GARANG web baseline: GREEN / CANONICAL.
@@ -10,12 +10,13 @@ Last updated: 2026-09-17
 - Competition-specific deployed surfaces are change-frozen except for critical outage/bug handling or organizer-required changes.
 
 ## Commercial PRODUCT main
-Decision: GREEN / UNCHANGED.
-- Canonical main: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
-- Release Gate #1449 / `35110020514`: FULL GREEN.
-- Pages #799 / `35110017165`: SUCCESS.
-- Production Coach Live Smoke `35101459492`: authenticated text + photo `source=llm` SUCCESS.
-- Wanted work did not modify commercial `main`.
+Decision: YELLOW ONLY FOR POST-MERGE GATE COMPLETION; EXACT-HEAD AND DEPLOYED CLIENT ARE GREEN.
+- Canonical main: `6260bcb2051f458c0a77dcbb83d95986c3fabad4`.
+- PR #156 User Performance context exact-head Gate #1500 / `35454549905`: FULL GREEN; merged.
+- Production Coach Live Smoke #2 / `35455269231`: authenticated text + photo `source=llm` SUCCESS with OpenAI `gpt-5.6-luna`; alignment/grounding contracts verified as applicable.
+- PR #158 Coach gateway error-classification exact-head Gate #1503 / `35455176855`: FULL GREEN; merged.
+- Pages #811 / `35455497330`: SUCCESS; deployed client directly observed with the new classifier.
+- Post-merge main Gate #1505 / `35455497834`: IN PROGRESS at this observation.
 
 ## Wanted derivative
 Decision: GREEN / RELEASE SNAPSHOT VERIFIED.
@@ -26,7 +27,7 @@ Decision: GREEN / RELEASE SNAPSHOT VERIFIED.
 - Full GARANG Release Gate #1494 / `35183623380`: FULL GREEN.
 
 ## Real AI Coach boundary
-Decision: GREEN.
+Decision: GREEN / LIVE PROVIDER RE-VERIFIED 2026-09-20.
 - Canonical `/coach` remains Firebase-authenticated.
 - No-login judge mode uses isolated `/wanted/coach` only for the sanitized `garang-wanted-judge-data-v1` synthetic contract.
 - Images remain rejected on the public judge route; authenticated Production Coach retains photo analysis.
@@ -67,3 +68,11 @@ User Performance Model v1 should be developed against canonical commercial GARAN
 - CONTROL tooling modernization.
 - Main branch protection is not server-enforced.
 - Production deployment credential should migrate to short-lived OIDC/WIF after verified replacement.
+
+
+## 2026-09-20 Coach incident reconciliation
+- Reported UI symptom: "external AI connection failure".
+- Current live provider status: VERIFIED GREEN by authenticated text/photo smoke.
+- VERIFIED client defect: the prior UI collapsed rate-limit, auth, provider, timeout and network failures into the same connection-failure sentence.
+- Fix: PR #158 preserves canonical server error codes, Retry-After and differentiates the user-facing fallback while maintaining local deterministic GARANG analysis.
+- Exact error code for the earlier individual request: UNKNOWN because request-specific evidence was not observed.
