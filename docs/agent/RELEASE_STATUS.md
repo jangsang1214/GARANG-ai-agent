@@ -4,7 +4,7 @@ Last updated: 2026-09-20
 
 ## Overall decision
 - Production Real AI Coach: GREEN / VERIFIED.
-- Commercial web current main: YELLOW until post-merge Release Gate #1527 completes.
+- Commercial web current main: GREEN / VERIFIED.
 - Current PRODUCT main: `47d95a71c4a526ba966656a8f923ebf0b1db46cf`.
 - Current verified production Coach backend deployment revision: `e238b6164da976219da328ef0fe3bd20ea0e7807`.
 - The difference is intentional: PR #164 includes server-side User Performance attribution source changes that have not received a new production deployment approval.
@@ -21,12 +21,12 @@ Decision: GREEN / LIVE PROVIDER VERIFIED.
 - Pages #815: SUCCESS.
 
 ## Current commercial PRODUCT main
-Decision: YELLOW / POST-MERGE GATE PENDING.
+Decision: GREEN / CURRENT MAIN VERIFIED.
 - Main: `47d95a71c4a526ba966656a8f923ebf0b1db46cf`.
 - PR #164: merged, outcome-attributed User Performance learning.
 - PR #164 exact-head Gate #1525 / `35502377218`: GREEN.
 - Pages #816 / `35502863525`: SUCCESS.
-- Post-merge Gate #1527 / `35502864020`: RUNNING at the time of this reconciliation.
+- Post-merge Gate #1527 / `35502864020`: FULL GREEN.
 - Production Coach Activation #12 for #164: SKIPPED by design because the merge commit was not an explicit activation marker.
 
 ## User Performance Model release state
@@ -49,12 +49,12 @@ Decision: YELLOW / POST-MERGE GATE PENDING.
 Competition derivatives remain separate release channels. Founder-reported Wanted / 롯데 / 브로제이 submission completion stays RECORDED unless submission artifacts are independently re-opened.
 
 ## Release gate
-Current status: YELLOW.
+Current status: YELLOW only for production server parity; current commercial web main itself is GREEN.
 - Provider connectivity: PASS.
 - Production authenticated live smoke: PASS.
 - Previous exact production revision gate: PASS.
 - Current main Pages deployment: PASS.
-- Current main post-merge Release Gate #1527: PENDING.
+- Current main post-merge Release Gate #1527: PASS.
 - Current main server-side UPM parity in production: PENDING explicit production activation.
 
 ## Remaining non-blocking debt
