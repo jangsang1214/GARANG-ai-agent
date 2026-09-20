@@ -1,233 +1,1444 @@
 {
   "version": 1,
   "nodes": [
-    {"id":"GOAL-PROTECT-GOLDEN-PATH","kind":"goal","title":"Protect the verified Golden Path while learning from the development beta","status":"active","ownerWorkstream":"command-center"},
-    {"id":"METRIC-REAL-DEVICE-CONFIDENCE","kind":"metric","title":"Real-device Golden Path confidence on target iPhone and in-app browser","status":"active","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"INIT-BETA-VALIDATION","kind":"initiative","title":"Validate the deployed beta before adding new product scope","status":"active","ownerWorkstream":"product","repositoryId":"product"},
-    {"id":"TASK-REAL-DEVICE-VALIDATION","kind":"task","title":"Run deployed Golden Path validation on target real devices","status":"in_progress","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"VERIFY-IPHONE-CHROME-PARTIAL","kind":"verification","title":"Real iPhone Chrome passes deployed app load, onboarding, Today, first record and Coach","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"DECISION-RELEASE-CHANNEL","kind":"decision","title":"Commercial GARANG remains canonical; competition work uses a separate verified snapshot derivative","status":"done","ownerWorkstream":"command-center"},
-
-    {"id":"INIT-V7-LITE","kind":"initiative","title":"Make Founder OS multi-repository and event-ready without external autonomous runtime","status":"done","ownerWorkstream":"engineering","repositoryId":"control"},
-    {"id":"CHANGE-CONTROL-PR6","kind":"change","title":"Founder OS v7-lite control-plane PR #6 merged as e25dbad","status":"done","ownerWorkstream":"engineering","repositoryId":"control"},
-    {"id":"VERIFY-CONTROL-POSTMERGE","kind":"verification","title":"CONTROL post-merge CI #26 and Event Envelope #9 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"control"},
-    {"id":"CHANGE-PRODUCT-PR69","kind":"change","title":"PRODUCT Founder OS event-adapter PR #69 merged as 5c1f46c","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-POSTMERGE","kind":"verification","title":"PRODUCT post-merge Release Gate #1004 and Event Envelope #3 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-V7-LITE-GREEN","kind":"result","title":"Founder OS v7-lite event-ready multi-repository integration GREEN","status":"done","ownerWorkstream":"command-center"},
-
-    {"id":"INIT-AI-DATA-HARDENING","kind":"initiative","title":"Harden GARANG explanation alignment and outcome learning without transferring decision ownership to the LLM","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-LLM-SEMANTIC-ALIGNMENT","kind":"task","title":"Enforce Decision-to-LLM semantic alignment as a structured runtime contract","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-OUTCOME-LEARNING-V2","kind":"task","title":"Add conservative longitudinal Outcome Learning v2","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR99","kind":"change","title":"PRODUCT PR #99 merged as bcb27d5 with semantic LLM alignment and Outcome Learning v2","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-PR99","kind":"verification","title":"PR #99 pre-merge Gate #1166 and post-merge Gate #1170 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-AI-DATA-HARDENING-GREEN","kind":"result","title":"AI/Data hardening preserves Golden Path and makes LLM alignment machine-enforced","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-
-    {"id":"INIT-KNOWLEDGE-NUTRITION-V2","kind":"initiative","title":"Raise Coach and nutrition intelligence quality with traceable knowledge and official food-data foundations","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-FOOD-DATA-FOUNDATION-V2","kind":"task","title":"Establish traceable Food Data Foundation v2 quality and eval gates","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR105","kind":"change","title":"PRODUCT PR #105 Food Data Foundation v2 merged as 576bb65","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-NUTRITION-INTELLIGENCE-V2","kind":"task","title":"Add deterministic Nutrition Intelligence v2 and Coach grounding foundation","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR106","kind":"change","title":"PRODUCT PR #106 Nutrition Intelligence v2 and Coach grounding foundation merged as 79cfc854","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-COACH-GROUNDING-LIVE-V2","kind":"task","title":"Ground the live Coach gateway in deterministic nutrition signals and curated knowledge","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR107","kind":"change","title":"PRODUCT PR #107 live Coach grounding merged as 50bd02eb","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-OFFICIAL-FOOD-INGESTION-V2","kind":"task","title":"Implement fail-closed K-FIND and USDA official-food ingestion and replacement proposal tooling","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR108","kind":"change","title":"PRODUCT PR #108 official K-FIND and USDA ingestion pipeline merged as 6fdc51ae","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-PR108","kind":"verification","title":"PR #108 pre-merge Gate #1245 and exact post-merge Gate #1247 GREEN; Pages #774 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-OFFICIAL-INGESTION-READY","kind":"result","title":"Official nutrition ingestion is repository-ready without automatic canonical replacement","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-OFFICIAL-CORPUS-UPGRADE","kind":"task","title":"Pull approved official nutrition data, review mappings, apply safe replacements and measure verified coverage uplift","status":"planned","ownerWorkstream":"ai-data","repositoryId":"product"},
-
-    {"id":"INIT-SERVER-READINESS","kind":"initiative","title":"Prepare authenticated server boundaries without replacing canonical Firebase user-data ownership","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"TASK-SERVER-READINESS-STAGE0","kind":"task","title":"Implement Server Readiness Stage 0 repository/service/security/telemetry boundaries","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR101","kind":"change","title":"PRODUCT PR #101 Server Readiness Stage 0 merged as b2ddbf4e","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-PR101","kind":"verification","title":"PR #101 pre-merge Gate #1210 and post-merge Gate #1212 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-SERVER-READINESS-GREEN","kind":"result","title":"Server Readiness Stage 0 repository blocker closed with activation still gated","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-
-    {"id":"INIT-STAGING-VALIDATION","kind":"initiative","title":"Validate Server Readiness safely in an isolated Firebase staging environment","status":"active","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"TASK-STAGING-PREP-GATE","kind":"task","title":"Add fail-closed staging project and Coach smoke guardrails","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR102","kind":"change","title":"PRODUCT PR #102 fail-closed Firebase staging gate merged as 451f5639","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-PR102","kind":"verification","title":"PR #102 pre-merge Gate #1217 and post-merge Gate #1218 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-STAGING-REPO-GREEN","kind":"result","title":"Repository-level staging preparation is GREEN without authorizing production deployment","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-    {"id":"TASK-STAGING-ENV-SMOKE","kind":"task","title":"Create/configure isolated staging, deploy verified revision, and run authenticated Coach/account/telemetry/security smoke","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"VERIFY-STAGING-SERVER-PATH","kind":"verification","title":"garang-staging server path GREEN for Coach, export, consent telemetry, privacy filtering and disposable deletion","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"TASK-STAGING-BROWSER-BOUNDARY","kind":"task","title":"Implement fail-closed browser privileged endpoints for exact garang-staging project identity","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR103","kind":"change","title":"PRODUCT PR #103 staging-only browser endpoint boundary merged as 419e947a","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-PR103","kind":"verification","title":"PR #103 Gate #1220 and exact post-merge Gate #1221 GREEN; Events #478/#480 and Pages #770 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-STAGING-BROWSER-BOUNDARY-GREEN","kind":"result","title":"Staging-only privileged browser activation boundary is GREEN while production remains fail-closed","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-    {"id":"TASK-STAGING-BROWSER-DEPLOY","kind":"task","title":"Deploy and verify a separate browser client configured for garang-staging without replacing production config","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"},
-
-    {"id":"INIT-TODAY-ACTION-RELIABILITY","kind":"initiative","title":"Finalize Today action hierarchy and protect Golden Path state integrity","status":"done","ownerWorkstream":"product","repositoryId":"product"},
-    {"id":"TASK-TODAY-CHECKIN-HIERARCHY","kind":"task","title":"Preserve workout execution as primary action and add canonical bottom Check-in utility","status":"done","ownerWorkstream":"product","repositoryId":"product"},
-    {"id":"TASK-LIFECYCLE-STATE-DURABILITY","kind":"task","title":"Prevent stale route-transition writes from dropping Coach evidence","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR111","kind":"change","title":"PRODUCT PR #111 Today Check-in and lifecycle durability merged as 84589d66","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-PR111","kind":"verification","title":"PR #111 Gate #1288 and exact post-merge main Gate #1289 GREEN; Pages #779 and Event #628 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-TODAY-BASELINE-GREEN","kind":"result","title":"Today action hierarchy and automated Golden Path are GREEN; broad UI redesign is no longer prioritized","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-
-    {"id":"INIT-TODAY-WORKOUT-FINAL-INTEGRATION","kind":"initiative","title":"Complete the final Today workout preparation/execution integration without changing canonical ownership","status":"done","ownerWorkstream":"product","repositoryId":"product"},
-    {"id":"TASK-TODAY-WORKOUT-PREP-EXECUTION","kind":"task","title":"Make Today workout preparation the single visible entry and delegate to canonical Workout execution","status":"done","ownerWorkstream":"product","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR114","kind":"change","title":"PRODUCT PR #114 merged final Today workout preparation/execution integration as 9e853e8","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-PR114","kind":"verification","title":"PR #114 exact-head Gate #1318 and post-merge main Gate #1319 GREEN; Pages #780 and Founder OS events GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-FINAL-UI-INTEGRATION-GREEN","kind":"result","title":"Final repository/UI Golden Path integration is GREEN and broad UI redesign is closed","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-
-    {"id":"INIT-PRODUCTION-LLM-VALIDATION","kind":"initiative","title":"Verify live Real LLM Coach activation in the target production environment","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-PRODUCTION-LLM-SMOKE","kind":"task","title":"Run repeatable authenticated production text/photo Coach smoke","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR121","kind":"change","title":"PRODUCT PR #121 merged production Coach dependency-install fix as 074cb1f3","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCTION-COACH-DEPLOY","kind":"verification","title":"Production activation deploys api and verifies public fail-closed 401/405 boundaries","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-PRODUCTION-COACH-BOUNDARY-GREEN","kind":"result","title":"Production Coach infrastructure, secret binding and public fail-closed boundaries are GREEN","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCTION-LLM-TIMEOUT","kind":"verification","title":"Earlier authenticated production Coach timeout was observed and failed closed before timeout hardening","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR122","kind":"change","title":"PRODUCT PR #122 adds provider timeout headroom and deployment-trigger coverage","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCTION-COACH-TIMEOUT-DEPLOY","kind":"verification","title":"PR #122 release/deployment evidence GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCTION-LIVE-TEXT-PHOTO","kind":"verification","title":"Production Coach Live Smoke 35101459492 verifies authenticated text and photo source=llm with GARANG alignment and disposable-user cleanup","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-PRODUCTION-LLM-GREEN","kind":"result","title":"Real production text/photo Coach path is VERIFIED GREEN for current smoke scope","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-
-    {"id":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"initiative","title":"Harden release integrity and Functions supply chain after live AI stabilization","status":"active","ownerWorkstream":"engineering"},
-    {"id":"TASK-FUNCTIONS-LOCK-AUDIT","kind":"task","title":"Lock and separately audit Firebase Functions runtime dependencies","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"TASK-MAIN-PROTECTION","kind":"task","title":"Enforce PR and CI protection for CONTROL and PRODUCT main branches","status":"planned","ownerWorkstream":"command-center"},
-    {"id":"TASK-CI-TOOLCHAIN-MODERNIZATION","kind":"task","title":"Modernize PRODUCT GitHub Actions runtime without changing product behavior","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"TASK-CONTROL-CI-ACTIONS-MODERNIZATION","kind":"task","title":"Modernize CONTROL CI checkout/setup-node Actions from v4 to a current verified major","status":"planned","ownerWorkstream":"engineering","repositoryId":"control"},
-    {"id":"TASK-DEPLOY-WIF","kind":"task","title":"Replace long-lived deployment JSON key with short-lived OIDC Workload Identity Federation","status":"planned","ownerWorkstream":"engineering","repositoryId":"product"},
-
-    {"id":"GOAL-WANTED-DERIVATIVE","kind":"goal","title":"Submit a stable Wanted derivative without redefining or destabilizing commercial GARANG","status":"active","ownerWorkstream":"command-center"},
-    {"id":"INIT-FREEZE-WANTED-SNAPSHOT","kind":"initiative","title":"Freeze verified commercial main and use it as the source snapshot for the separate Wanted derivative","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR130","kind":"change","title":"PR #130 moves Coach photo attachment into the chat composer as a compact plus control","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-PR130","kind":"verification","title":"PR #130 exact-head Release Gate #1444 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR131","kind":"change","title":"PR #131 preserves mobile Today/Record route intent across presentation remounts","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-PR131","kind":"verification","title":"PR #131 exact-head Release Gate #1448 / 35109312382 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-MAIN-1449","kind":"verification","title":"Current PRODUCT main b863a763 passes post-merge Release Gate #1449 / 35110020514 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RELEASE-PAGES-799","kind":"release","title":"GitHub Pages #799 / 35110017165 deploys exact current main b863a763 successfully","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","kind":"result","title":"Commercial GARANG web baseline is VERIFIED GREEN and frozen as the Wanted derivative source snapshot","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-    {"id":"TASK-COPY-WANTED-DERIVATIVE","kind":"task","title":"Build and verify the separate Wanted judging derivative from the frozen commercial snapshot","status":"done","ownerWorkstream":"growth-business","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR132","kind":"change","title":"PR #132 adds the isolated 60-second Wanted judging derivative and submission narrative","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-WANTED-RELEASE-GATE-1451","kind":"verification","title":"PR #132 exact-head full GARANG Release Gate #1451 / 35116671610 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"VERIFY-WANTED-JUDGE-GATE-4","kind":"verification","title":"PR #132 Wanted 60-second mobile WebKit gate #4 / 35116671535 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RELEASE-WANTED-2026","kind":"release","title":"wanted/2026-release freezes PR #132 as 6f7a6e97792971a550a2bf79e49c0ac07c071aa4","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-    {"id":"VERIFY-WANTED-POSTMERGE-5","kind":"verification","title":"Wanted post-merge judge-mode gate #5 / 35117403297 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-WANTED-DERIVATIVE-GREEN","kind":"result","title":"Wanted derivative repository snapshot is VERIFIED GREEN without modifying commercial GARANG main","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-    {"id":"TASK-DEPLOY-WANTED-PUBLIC","kind":"task","title":"Deploy wanted/2026-release to a separate public URL and verify a fresh-browser judge journey","status":"planned","ownerWorkstream":"growth-business"},
-    {"id":"INIT-USER-PERFORMANCE-V1","kind":"initiative","title":"Build an inspectable User Performance Model from durable behavior and outcome evidence","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR158-161","kind":"change","title":"PRs #158-#161 repair Coach failure UX, collect-data conversation, mandatory live smoke and confidence-gated UPM context","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCTION-COACH-20260920","kind":"verification","title":"Production Coach Activation #11 / 35502595878 returns source=llm via OpenAI gpt-5.6-luna with alignment verified and disposable-user cleanup","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR164","kind":"change","title":"PR #164 adds outcome-attributed User Performance learning and merges as 47d95a71","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-PR164-HEAD","kind":"verification","title":"PR #164 exact-head Release Gate #1525 / 35502377218 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RELEASE-PAGES-816","kind":"release","title":"Pages #816 / 35502863525 deploys PRODUCT main 47d95a71 successfully","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-MAIN-1527","kind":"verification","title":"Post-merge PRODUCT main Release Gate #1527 / 35502864020 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"TASK-PRODUCTION-UPM-PARITY","kind":"task","title":"Production UPM server parity activated and authenticated live-smoke verified","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCTION-UPM-PARITY","kind":"verification","title":"Production Coach Activation #13 / 35503623842 verifies current-main UPM parity with source=llm OpenAI gpt-5.6-luna and alignment verified","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"}
+    {
+      "id": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "goal",
+      "title": "Protect the verified Golden Path while learning from the development beta",
+      "status": "active",
+      "ownerWorkstream": "command-center"
+    },
+    {
+      "id": "METRIC-REAL-DEVICE-CONFIDENCE",
+      "kind": "metric",
+      "title": "Real-device Golden Path confidence on target iPhone and in-app browser",
+      "status": "active",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-BETA-VALIDATION",
+      "kind": "initiative",
+      "title": "Validate the deployed beta before adding new product scope",
+      "status": "active",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-REAL-DEVICE-VALIDATION",
+      "kind": "task",
+      "title": "Run deployed Golden Path validation on target real devices",
+      "status": "in_progress",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-IPHONE-CHROME-PARTIAL",
+      "kind": "verification",
+      "title": "Real iPhone Chrome passes deployed app load, onboarding, Today, first record and Coach",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "DECISION-RELEASE-CHANNEL",
+      "kind": "decision",
+      "title": "Commercial GARANG remains canonical; competition work uses a separate verified snapshot derivative",
+      "status": "done",
+      "ownerWorkstream": "command-center"
+    },
+    {
+      "id": "INIT-V7-LITE",
+      "kind": "initiative",
+      "title": "Make Founder OS multi-repository and event-ready without external autonomous runtime",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "control"
+    },
+    {
+      "id": "CHANGE-CONTROL-PR6",
+      "kind": "change",
+      "title": "Founder OS v7-lite control-plane PR #6 merged as e25dbad",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "control"
+    },
+    {
+      "id": "VERIFY-CONTROL-POSTMERGE",
+      "kind": "verification",
+      "title": "CONTROL post-merge CI #26 and Event Envelope #9 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "control"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR69",
+      "kind": "change",
+      "title": "PRODUCT Founder OS event-adapter PR #69 merged as 5c1f46c",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-POSTMERGE",
+      "kind": "verification",
+      "title": "PRODUCT post-merge Release Gate #1004 and Event Envelope #3 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-V7-LITE-GREEN",
+      "kind": "result",
+      "title": "Founder OS v7-lite event-ready multi-repository integration GREEN",
+      "status": "done",
+      "ownerWorkstream": "command-center"
+    },
+    {
+      "id": "INIT-AI-DATA-HARDENING",
+      "kind": "initiative",
+      "title": "Harden GARANG explanation alignment and outcome learning without transferring decision ownership to the LLM",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-LLM-SEMANTIC-ALIGNMENT",
+      "kind": "task",
+      "title": "Enforce Decision-to-LLM semantic alignment as a structured runtime contract",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-OUTCOME-LEARNING-V2",
+      "kind": "task",
+      "title": "Add conservative longitudinal Outcome Learning v2",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR99",
+      "kind": "change",
+      "title": "PRODUCT PR #99 merged as bcb27d5 with semantic LLM alignment and Outcome Learning v2",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR99",
+      "kind": "verification",
+      "title": "PR #99 pre-merge Gate #1166 and post-merge Gate #1170 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-AI-DATA-HARDENING-GREEN",
+      "kind": "result",
+      "title": "AI/Data hardening preserves Golden Path and makes LLM alignment machine-enforced",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "kind": "initiative",
+      "title": "Raise Coach and nutrition intelligence quality with traceable knowledge and official food-data foundations",
+      "status": "active",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-FOOD-DATA-FOUNDATION-V2",
+      "kind": "task",
+      "title": "Establish traceable Food Data Foundation v2 quality and eval gates",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR105",
+      "kind": "change",
+      "title": "PRODUCT PR #105 Food Data Foundation v2 merged as 576bb65",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-NUTRITION-INTELLIGENCE-V2",
+      "kind": "task",
+      "title": "Add deterministic Nutrition Intelligence v2 and Coach grounding foundation",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR106",
+      "kind": "change",
+      "title": "PRODUCT PR #106 Nutrition Intelligence v2 and Coach grounding foundation merged as 79cfc854",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-COACH-GROUNDING-LIVE-V2",
+      "kind": "task",
+      "title": "Ground the live Coach gateway in deterministic nutrition signals and curated knowledge",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR107",
+      "kind": "change",
+      "title": "PRODUCT PR #107 live Coach grounding merged as 50bd02eb",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-OFFICIAL-FOOD-INGESTION-V2",
+      "kind": "task",
+      "title": "Implement fail-closed K-FIND and USDA official-food ingestion and replacement proposal tooling",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR108",
+      "kind": "change",
+      "title": "PRODUCT PR #108 official K-FIND and USDA ingestion pipeline merged as 6fdc51ae",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR108",
+      "kind": "verification",
+      "title": "PR #108 pre-merge Gate #1245 and exact post-merge Gate #1247 GREEN; Pages #774 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-OFFICIAL-INGESTION-READY",
+      "kind": "result",
+      "title": "Official nutrition ingestion is repository-ready without automatic canonical replacement",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-OFFICIAL-CORPUS-UPGRADE",
+      "kind": "task",
+      "title": "Pull approved official nutrition data, review mappings, apply safe replacements and measure verified coverage uplift",
+      "status": "planned",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-SERVER-READINESS",
+      "kind": "initiative",
+      "title": "Prepare authenticated server boundaries without replacing canonical Firebase user-data ownership",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-SERVER-READINESS-STAGE0",
+      "kind": "task",
+      "title": "Implement Server Readiness Stage 0 repository/service/security/telemetry boundaries",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR101",
+      "kind": "change",
+      "title": "PRODUCT PR #101 Server Readiness Stage 0 merged as b2ddbf4e",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR101",
+      "kind": "verification",
+      "title": "PR #101 pre-merge Gate #1210 and post-merge Gate #1212 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-SERVER-READINESS-GREEN",
+      "kind": "result",
+      "title": "Server Readiness Stage 0 repository blocker closed with activation still gated",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-STAGING-VALIDATION",
+      "kind": "initiative",
+      "title": "Validate Server Readiness safely in an isolated Firebase staging environment",
+      "status": "active",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-STAGING-PREP-GATE",
+      "kind": "task",
+      "title": "Add fail-closed staging project and Coach smoke guardrails",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR102",
+      "kind": "change",
+      "title": "PRODUCT PR #102 fail-closed Firebase staging gate merged as 451f5639",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR102",
+      "kind": "verification",
+      "title": "PR #102 pre-merge Gate #1217 and post-merge Gate #1218 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-STAGING-REPO-GREEN",
+      "kind": "result",
+      "title": "Repository-level staging preparation is GREEN without authorizing production deployment",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-STAGING-ENV-SMOKE",
+      "kind": "task",
+      "title": "Create/configure isolated staging, deploy verified revision, and run authenticated Coach/account/telemetry/security smoke",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-STAGING-SERVER-PATH",
+      "kind": "verification",
+      "title": "garang-staging server path GREEN for Coach, export, consent telemetry, privacy filtering and disposable deletion",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-STAGING-BROWSER-BOUNDARY",
+      "kind": "task",
+      "title": "Implement fail-closed browser privileged endpoints for exact garang-staging project identity",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR103",
+      "kind": "change",
+      "title": "PRODUCT PR #103 staging-only browser endpoint boundary merged as 419e947a",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR103",
+      "kind": "verification",
+      "title": "PR #103 Gate #1220 and exact post-merge Gate #1221 GREEN; Events #478/#480 and Pages #770 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-STAGING-BROWSER-BOUNDARY-GREEN",
+      "kind": "result",
+      "title": "Staging-only privileged browser activation boundary is GREEN while production remains fail-closed",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-STAGING-BROWSER-DEPLOY",
+      "kind": "task",
+      "title": "Deploy and verify a separate browser client configured for garang-staging without replacing production config",
+      "status": "planned",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-TODAY-ACTION-RELIABILITY",
+      "kind": "initiative",
+      "title": "Finalize Today action hierarchy and protect Golden Path state integrity",
+      "status": "done",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-TODAY-CHECKIN-HIERARCHY",
+      "kind": "task",
+      "title": "Preserve workout execution as primary action and add canonical bottom Check-in utility",
+      "status": "done",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-LIFECYCLE-STATE-DURABILITY",
+      "kind": "task",
+      "title": "Prevent stale route-transition writes from dropping Coach evidence",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR111",
+      "kind": "change",
+      "title": "PRODUCT PR #111 Today Check-in and lifecycle durability merged as 84589d66",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR111",
+      "kind": "verification",
+      "title": "PR #111 Gate #1288 and exact post-merge main Gate #1289 GREEN; Pages #779 and Event #628 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-TODAY-BASELINE-GREEN",
+      "kind": "result",
+      "title": "Today action hierarchy and automated Golden Path are GREEN; broad UI redesign is no longer prioritized",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-TODAY-WORKOUT-FINAL-INTEGRATION",
+      "kind": "initiative",
+      "title": "Complete the final Today workout preparation/execution integration without changing canonical ownership",
+      "status": "done",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-TODAY-WORKOUT-PREP-EXECUTION",
+      "kind": "task",
+      "title": "Make Today workout preparation the single visible entry and delegate to canonical Workout execution",
+      "status": "done",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR114",
+      "kind": "change",
+      "title": "PRODUCT PR #114 merged final Today workout preparation/execution integration as 9e853e8",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR114",
+      "kind": "verification",
+      "title": "PR #114 exact-head Gate #1318 and post-merge main Gate #1319 GREEN; Pages #780 and Founder OS events GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-FINAL-UI-INTEGRATION-GREEN",
+      "kind": "result",
+      "title": "Final repository/UI Golden Path integration is GREEN and broad UI redesign is closed",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-PRODUCTION-LLM-VALIDATION",
+      "kind": "initiative",
+      "title": "Verify live Real LLM Coach activation in the target production environment",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-PRODUCTION-LLM-SMOKE",
+      "kind": "task",
+      "title": "Run repeatable authenticated production text/photo Coach smoke",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR121",
+      "kind": "change",
+      "title": "PRODUCT PR #121 merged production Coach dependency-install fix as 074cb1f3",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCTION-COACH-DEPLOY",
+      "kind": "verification",
+      "title": "Production activation deploys api and verifies public fail-closed 401/405 boundaries",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-PRODUCTION-COACH-BOUNDARY-GREEN",
+      "kind": "result",
+      "title": "Production Coach infrastructure, secret binding and public fail-closed boundaries are GREEN",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCTION-LLM-TIMEOUT",
+      "kind": "verification",
+      "title": "Earlier authenticated production Coach timeout was observed and failed closed before timeout hardening",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR122",
+      "kind": "change",
+      "title": "PRODUCT PR #122 adds provider timeout headroom and deployment-trigger coverage",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCTION-COACH-TIMEOUT-DEPLOY",
+      "kind": "verification",
+      "title": "PR #122 release/deployment evidence GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCTION-LIVE-TEXT-PHOTO",
+      "kind": "verification",
+      "title": "Production Coach Live Smoke 35101459492 verifies authenticated text and photo source=llm with GARANG alignment and disposable-user cleanup",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-PRODUCTION-LLM-GREEN",
+      "kind": "result",
+      "title": "Real production text/photo Coach path is VERIFIED GREEN for current smoke scope",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-RELEASE-INTEGRITY-HARDENING",
+      "kind": "initiative",
+      "title": "Harden release integrity and Functions supply chain after live AI stabilization",
+      "status": "active",
+      "ownerWorkstream": "engineering"
+    },
+    {
+      "id": "TASK-FUNCTIONS-LOCK-AUDIT",
+      "kind": "task",
+      "title": "Lock and separately audit Firebase Functions runtime dependencies",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-MAIN-PROTECTION",
+      "kind": "task",
+      "title": "Enforce PR and CI protection for CONTROL and PRODUCT main branches",
+      "status": "planned",
+      "ownerWorkstream": "command-center"
+    },
+    {
+      "id": "TASK-CI-TOOLCHAIN-MODERNIZATION",
+      "kind": "task",
+      "title": "Modernize PRODUCT GitHub Actions runtime without changing product behavior",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-CONTROL-CI-ACTIONS-MODERNIZATION",
+      "kind": "task",
+      "title": "Modernize CONTROL CI checkout/setup-node Actions from v4 to a current verified major",
+      "status": "planned",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "control"
+    },
+    {
+      "id": "TASK-DEPLOY-WIF",
+      "kind": "task",
+      "title": "Replace long-lived deployment JSON key with short-lived OIDC Workload Identity Federation",
+      "status": "planned",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "GOAL-WANTED-DERIVATIVE",
+      "kind": "goal",
+      "title": "Submit a stable Wanted derivative without redefining or destabilizing commercial GARANG",
+      "status": "active",
+      "ownerWorkstream": "command-center"
+    },
+    {
+      "id": "INIT-FREEZE-WANTED-SNAPSHOT",
+      "kind": "initiative",
+      "title": "Freeze verified commercial main and use it as the source snapshot for the separate Wanted derivative",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR130",
+      "kind": "change",
+      "title": "PR #130 moves Coach photo attachment into the chat composer as a compact plus control",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR130",
+      "kind": "verification",
+      "title": "PR #130 exact-head Release Gate #1444 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR131",
+      "kind": "change",
+      "title": "PR #131 preserves mobile Today/Record route intent across presentation remounts",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR131",
+      "kind": "verification",
+      "title": "PR #131 exact-head Release Gate #1448 / 35109312382 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1449",
+      "kind": "verification",
+      "title": "Current PRODUCT main b863a763 passes post-merge Release Gate #1449 / 35110020514 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-799",
+      "kind": "release",
+      "title": "GitHub Pages #799 / 35110017165 deploys exact current main b863a763 successfully",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-COMMERCIAL-SNAPSHOT-GREEN",
+      "kind": "result",
+      "title": "Commercial GARANG web baseline is VERIFIED GREEN and frozen as the Wanted derivative source snapshot",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-COPY-WANTED-DERIVATIVE",
+      "kind": "task",
+      "title": "Build and verify the separate Wanted judging derivative from the frozen commercial snapshot",
+      "status": "done",
+      "ownerWorkstream": "growth-business",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR132",
+      "kind": "change",
+      "title": "PR #132 adds the isolated 60-second Wanted judging derivative and submission narrative",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-WANTED-RELEASE-GATE-1451",
+      "kind": "verification",
+      "title": "PR #132 exact-head full GARANG Release Gate #1451 / 35116671610 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-WANTED-JUDGE-GATE-4",
+      "kind": "verification",
+      "title": "PR #132 Wanted 60-second mobile WebKit gate #4 / 35116671535 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-WANTED-2026",
+      "kind": "release",
+      "title": "wanted/2026-release freezes PR #132 as 6f7a6e97792971a550a2bf79e49c0ac07c071aa4",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-WANTED-POSTMERGE-5",
+      "kind": "verification",
+      "title": "Wanted post-merge judge-mode gate #5 / 35117403297 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-WANTED-DERIVATIVE-GREEN",
+      "kind": "result",
+      "title": "Wanted derivative repository snapshot is VERIFIED GREEN without modifying commercial GARANG main",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-DEPLOY-WANTED-PUBLIC",
+      "kind": "task",
+      "title": "Deploy wanted/2026-release to a separate public URL and verify a fresh-browser judge journey",
+      "status": "planned",
+      "ownerWorkstream": "growth-business"
+    },
+    {
+      "id": "INIT-USER-PERFORMANCE-V1",
+      "kind": "initiative",
+      "title": "Build an inspectable User Performance Model from durable behavior and outcome evidence",
+      "status": "active",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR158-161",
+      "kind": "change",
+      "title": "PRs #158-#161 repair Coach failure UX, collect-data conversation, mandatory live smoke and confidence-gated UPM context",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCTION-COACH-20260920",
+      "kind": "verification",
+      "title": "Production Coach Activation #11 / 35502595878 returns source=llm via OpenAI gpt-5.6-luna with alignment verified and disposable-user cleanup",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR164",
+      "kind": "change",
+      "title": "PR #164 adds outcome-attributed User Performance learning and merges as 47d95a71",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR164-HEAD",
+      "kind": "verification",
+      "title": "PR #164 exact-head Release Gate #1525 / 35502377218 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-816",
+      "kind": "release",
+      "title": "Pages #816 / 35502863525 deploys PRODUCT main 47d95a71 successfully",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1527",
+      "kind": "verification",
+      "title": "Post-merge PRODUCT main Release Gate #1527 / 35502864020 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-PRODUCTION-UPM-PARITY",
+      "kind": "task",
+      "title": "Production UPM server parity activated and authenticated live-smoke verified",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCTION-UPM-PARITY",
+      "kind": "verification",
+      "title": "Production Coach Activation #13 / 35503623842 verifies current-main UPM parity with source=llm OpenAI gpt-5.6-luna and alignment verified",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-AUTONOMOUS-INTELLIGENCE-LOOP-V1",
+      "kind": "initiative",
+      "title": "Connect longitudinal evidence to safe bounded GARANG actions",
+      "status": "active",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-BOUNDED-COACH-DATA-TOOLS-V1",
+      "kind": "task",
+      "title": "Implement typed user-scoped autonomous Coach data tools with transaction, evidence, idempotency and rollback boundaries",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-LONGITUDINAL-LEARNING-METRICS-V1",
+      "kind": "task",
+      "title": "Measure recommendation resolution through execution, outcome and later recommendation coverage",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-PERSONALIZATION-POLICY-V1",
+      "kind": "task",
+      "title": "Apply confidence-gated deterministic personalization constraints without automatic progression increase",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR166",
+      "kind": "change",
+      "title": "PRODUCT PR #166 builds Autonomous Intelligence Loop v1 at 173f2515",
+      "status": "in_progress",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR166-HEAD",
+      "kind": "verification",
+      "title": "PR #166 exact-head Release Gate #1530 / 35505697471 attempt 2 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-AUTONOMOUS-INTELLIGENCE-PR-READY",
+      "kind": "result",
+      "title": "Autonomous Intelligence Loop v1 is source/CI GREEN and review-ready, but not merged or deployed",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION",
+      "kind": "task",
+      "title": "After Founder-approved merge, deploy and live-smoke bounded Coach write execution in production",
+      "status": "planned",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    }
   ],
   "edges": [
-    {"from":"METRIC-REAL-DEVICE-CONFIDENCE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"measures"},
-    {"from":"INIT-BETA-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"TASK-REAL-DEVICE-VALIDATION","to":"INIT-BETA-VALIDATION","kind":"supports"},
-    {"from":"VERIFY-IPHONE-CHROME-PARTIAL","to":"TASK-REAL-DEVICE-VALIDATION","kind":"verifies"},
-    {"from":"DECISION-RELEASE-CHANNEL","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"DECISION-RELEASE-CHANNEL","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"},
-
-    {"from":"INIT-V7-LITE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"CHANGE-CONTROL-PR6","to":"INIT-V7-LITE","kind":"implements"},
-    {"from":"VERIFY-CONTROL-POSTMERGE","to":"CHANGE-CONTROL-PR6","kind":"verifies"},
-    {"from":"CHANGE-PRODUCT-PR69","to":"INIT-V7-LITE","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-POSTMERGE","to":"CHANGE-PRODUCT-PR69","kind":"verifies"},
-    {"from":"RESULT-V7-LITE-GREEN","to":"VERIFY-CONTROL-POSTMERGE","kind":"depends-on"},
-    {"from":"RESULT-V7-LITE-GREEN","to":"VERIFY-PRODUCT-POSTMERGE","kind":"depends-on"},
-
-    {"from":"INIT-AI-DATA-HARDENING","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"TASK-LLM-SEMANTIC-ALIGNMENT","to":"INIT-AI-DATA-HARDENING","kind":"supports"},
-    {"from":"TASK-OUTCOME-LEARNING-V2","to":"INIT-AI-DATA-HARDENING","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR99","to":"TASK-LLM-SEMANTIC-ALIGNMENT","kind":"implements"},
-    {"from":"CHANGE-PRODUCT-PR99","to":"TASK-OUTCOME-LEARNING-V2","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-PR99","to":"CHANGE-PRODUCT-PR99","kind":"verifies"},
-    {"from":"RESULT-AI-DATA-HARDENING-GREEN","to":"VERIFY-PRODUCT-PR99","kind":"depends-on"},
-
-    {"from":"INIT-KNOWLEDGE-NUTRITION-V2","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"TASK-FOOD-DATA-FOUNDATION-V2","to":"INIT-KNOWLEDGE-NUTRITION-V2","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR105","to":"TASK-FOOD-DATA-FOUNDATION-V2","kind":"implements"},
-    {"from":"TASK-NUTRITION-INTELLIGENCE-V2","to":"INIT-KNOWLEDGE-NUTRITION-V2","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR106","to":"TASK-NUTRITION-INTELLIGENCE-V2","kind":"implements"},
-    {"from":"TASK-COACH-GROUNDING-LIVE-V2","to":"INIT-KNOWLEDGE-NUTRITION-V2","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR107","to":"TASK-COACH-GROUNDING-LIVE-V2","kind":"implements"},
-    {"from":"TASK-OFFICIAL-FOOD-INGESTION-V2","to":"INIT-KNOWLEDGE-NUTRITION-V2","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR108","to":"TASK-OFFICIAL-FOOD-INGESTION-V2","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-PR108","to":"CHANGE-PRODUCT-PR108","kind":"verifies"},
-    {"from":"RESULT-OFFICIAL-INGESTION-READY","to":"VERIFY-PRODUCT-PR108","kind":"depends-on"},
-    {"from":"TASK-OFFICIAL-CORPUS-UPGRADE","to":"INIT-KNOWLEDGE-NUTRITION-V2","kind":"supports"},
-
-    {"from":"INIT-SERVER-READINESS","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"TASK-SERVER-READINESS-STAGE0","to":"INIT-SERVER-READINESS","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR101","to":"TASK-SERVER-READINESS-STAGE0","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-PR101","to":"CHANGE-PRODUCT-PR101","kind":"verifies"},
-    {"from":"RESULT-SERVER-READINESS-GREEN","to":"VERIFY-PRODUCT-PR101","kind":"depends-on"},
-
-    {"from":"INIT-STAGING-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"TASK-STAGING-PREP-GATE","to":"INIT-STAGING-VALIDATION","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR102","to":"TASK-STAGING-PREP-GATE","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-PR102","to":"CHANGE-PRODUCT-PR102","kind":"verifies"},
-    {"from":"RESULT-STAGING-REPO-GREEN","to":"VERIFY-PRODUCT-PR102","kind":"depends-on"},
-    {"from":"TASK-STAGING-ENV-SMOKE","to":"INIT-STAGING-VALIDATION","kind":"supports"},
-    {"from":"VERIFY-STAGING-SERVER-PATH","to":"TASK-STAGING-ENV-SMOKE","kind":"verifies"},
-    {"from":"TASK-STAGING-BROWSER-BOUNDARY","to":"INIT-STAGING-VALIDATION","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR103","to":"TASK-STAGING-BROWSER-BOUNDARY","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-PR103","to":"CHANGE-PRODUCT-PR103","kind":"verifies"},
-    {"from":"RESULT-STAGING-BROWSER-BOUNDARY-GREEN","to":"VERIFY-PRODUCT-PR103","kind":"depends-on"},
-    {"from":"TASK-STAGING-BROWSER-DEPLOY","to":"INIT-STAGING-VALIDATION","kind":"supports"},
-
-    {"from":"INIT-TODAY-ACTION-RELIABILITY","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"TASK-TODAY-CHECKIN-HIERARCHY","to":"INIT-TODAY-ACTION-RELIABILITY","kind":"supports"},
-    {"from":"TASK-LIFECYCLE-STATE-DURABILITY","to":"INIT-TODAY-ACTION-RELIABILITY","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR111","to":"TASK-TODAY-CHECKIN-HIERARCHY","kind":"implements"},
-    {"from":"CHANGE-PRODUCT-PR111","to":"TASK-LIFECYCLE-STATE-DURABILITY","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-PR111","to":"CHANGE-PRODUCT-PR111","kind":"verifies"},
-    {"from":"RESULT-TODAY-BASELINE-GREEN","to":"VERIFY-PRODUCT-PR111","kind":"depends-on"},
-
-    {"from":"INIT-TODAY-WORKOUT-FINAL-INTEGRATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"TASK-TODAY-WORKOUT-PREP-EXECUTION","to":"INIT-TODAY-WORKOUT-FINAL-INTEGRATION","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR114","to":"TASK-TODAY-WORKOUT-PREP-EXECUTION","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-PR114","to":"CHANGE-PRODUCT-PR114","kind":"verifies"},
-    {"from":"RESULT-FINAL-UI-INTEGRATION-GREEN","to":"VERIFY-PRODUCT-PR114","kind":"depends-on"},
-
-    {"from":"INIT-PRODUCTION-LLM-VALIDATION","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"TASK-PRODUCTION-LLM-SMOKE","to":"INIT-PRODUCTION-LLM-VALIDATION","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR121","to":"TASK-PRODUCTION-LLM-SMOKE","kind":"implements"},
-    {"from":"VERIFY-PRODUCTION-COACH-DEPLOY","to":"CHANGE-PRODUCT-PR121","kind":"verifies"},
-    {"from":"RESULT-PRODUCTION-COACH-BOUNDARY-GREEN","to":"VERIFY-PRODUCTION-COACH-DEPLOY","kind":"depends-on"},
-    {"from":"VERIFY-PRODUCTION-LLM-TIMEOUT","to":"TASK-PRODUCTION-LLM-SMOKE","kind":"verifies"},
-    {"from":"CHANGE-PRODUCT-PR122","to":"TASK-PRODUCTION-LLM-SMOKE","kind":"implements"},
-    {"from":"VERIFY-PRODUCTION-COACH-TIMEOUT-DEPLOY","to":"CHANGE-PRODUCT-PR122","kind":"verifies"},
-    {"from":"VERIFY-PRODUCTION-LIVE-TEXT-PHOTO","to":"TASK-PRODUCTION-LLM-SMOKE","kind":"verifies"},
-    {"from":"RESULT-PRODUCTION-LLM-GREEN","to":"VERIFY-PRODUCTION-LIVE-TEXT-PHOTO","kind":"depends-on"},
-
-    {"from":"INIT-RELEASE-INTEGRITY-HARDENING","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"TASK-FUNCTIONS-LOCK-AUDIT","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
-    {"from":"TASK-MAIN-PROTECTION","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
-    {"from":"TASK-CI-TOOLCHAIN-MODERNIZATION","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
-    {"from":"TASK-CONTROL-CI-ACTIONS-MODERNIZATION","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
-    {"from":"TASK-DEPLOY-WIF","to":"INIT-RELEASE-INTEGRITY-HARDENING","kind":"supports"},
-
-    {"from":"INIT-FREEZE-WANTED-SNAPSHOT","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR130","to":"INIT-FREEZE-WANTED-SNAPSHOT","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-PR130","to":"CHANGE-PRODUCT-PR130","kind":"verifies"},
-    {"from":"CHANGE-PRODUCT-PR131","to":"INIT-FREEZE-WANTED-SNAPSHOT","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-PR131","to":"CHANGE-PRODUCT-PR131","kind":"verifies"},
-    {"from":"VERIFY-PRODUCT-MAIN-1449","to":"CHANGE-PRODUCT-PR131","kind":"verifies"},
-    {"from":"RELEASE-PAGES-799","to":"VERIFY-PRODUCT-MAIN-1449","kind":"releases"},
-    {"from":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","to":"VERIFY-PRODUCT-MAIN-1449","kind":"depends-on"},
-    {"from":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","to":"RELEASE-PAGES-799","kind":"depends-on"},
-    {"from":"TASK-COPY-WANTED-DERIVATIVE","to":"RESULT-COMMERCIAL-SNAPSHOT-GREEN","kind":"depends-on"},
-    {"from":"TASK-COPY-WANTED-DERIVATIVE","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR132","to":"TASK-COPY-WANTED-DERIVATIVE","kind":"implements"},
-    {"from":"VERIFY-WANTED-RELEASE-GATE-1451","to":"CHANGE-PRODUCT-PR132","kind":"verifies"},
-    {"from":"VERIFY-WANTED-JUDGE-GATE-4","to":"CHANGE-PRODUCT-PR132","kind":"verifies"},
-    {"from":"RELEASE-WANTED-2026","to":"VERIFY-WANTED-RELEASE-GATE-1451","kind":"releases"},
-    {"from":"VERIFY-WANTED-POSTMERGE-5","to":"RELEASE-WANTED-2026","kind":"verifies"},
-    {"from":"RESULT-WANTED-DERIVATIVE-GREEN","to":"VERIFY-WANTED-POSTMERGE-5","kind":"depends-on"},
-    {"from":"RESULT-WANTED-DERIVATIVE-GREEN","to":"VERIFY-WANTED-JUDGE-GATE-4","kind":"depends-on"},
-    {"from":"TASK-DEPLOY-WANTED-PUBLIC","to":"RESULT-WANTED-DERIVATIVE-GREEN","kind":"depends-on"},
-    {"from":"TASK-DEPLOY-WANTED-PUBLIC","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"},
-    {"from":"INIT-USER-PERFORMANCE-V1","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
-    {"from":"CHANGE-PRODUCT-PR158-161","to":"INIT-USER-PERFORMANCE-V1","kind":"implements"},
-    {"from":"VERIFY-PRODUCTION-COACH-20260920","to":"CHANGE-PRODUCT-PR158-161","kind":"verifies"},
-    {"from":"CHANGE-PRODUCT-PR164","to":"INIT-USER-PERFORMANCE-V1","kind":"implements"},
-    {"from":"VERIFY-PRODUCT-PR164-HEAD","to":"CHANGE-PRODUCT-PR164","kind":"verifies"},
-    {"from":"RELEASE-PAGES-816","to":"CHANGE-PRODUCT-PR164","kind":"releases"},
-    {"from":"VERIFY-PRODUCT-MAIN-1527","to":"CHANGE-PRODUCT-PR164","kind":"verifies"},
-    {"from":"TASK-PRODUCTION-UPM-PARITY","to":"CHANGE-PRODUCT-PR164","kind":"depends-on"},
-    {"from":"VERIFY-PRODUCTION-UPM-PARITY","to":"TASK-PRODUCTION-UPM-PARITY","kind":"verifies"}
+    {
+      "from": "METRIC-REAL-DEVICE-CONFIDENCE",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "measures"
+    },
+    {
+      "from": "INIT-BETA-VALIDATION",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-REAL-DEVICE-VALIDATION",
+      "to": "INIT-BETA-VALIDATION",
+      "kind": "supports"
+    },
+    {
+      "from": "VERIFY-IPHONE-CHROME-PARTIAL",
+      "to": "TASK-REAL-DEVICE-VALIDATION",
+      "kind": "verifies"
+    },
+    {
+      "from": "DECISION-RELEASE-CHANNEL",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "DECISION-RELEASE-CHANNEL",
+      "to": "GOAL-WANTED-DERIVATIVE",
+      "kind": "supports"
+    },
+    {
+      "from": "INIT-V7-LITE",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-CONTROL-PR6",
+      "to": "INIT-V7-LITE",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-CONTROL-POSTMERGE",
+      "to": "CHANGE-CONTROL-PR6",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR69",
+      "to": "INIT-V7-LITE",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-POSTMERGE",
+      "to": "CHANGE-PRODUCT-PR69",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-V7-LITE-GREEN",
+      "to": "VERIFY-CONTROL-POSTMERGE",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-V7-LITE-GREEN",
+      "to": "VERIFY-PRODUCT-POSTMERGE",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-AI-DATA-HARDENING",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-LLM-SEMANTIC-ALIGNMENT",
+      "to": "INIT-AI-DATA-HARDENING",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-OUTCOME-LEARNING-V2",
+      "to": "INIT-AI-DATA-HARDENING",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR99",
+      "to": "TASK-LLM-SEMANTIC-ALIGNMENT",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR99",
+      "to": "TASK-OUTCOME-LEARNING-V2",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR99",
+      "to": "CHANGE-PRODUCT-PR99",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-AI-DATA-HARDENING-GREEN",
+      "to": "VERIFY-PRODUCT-PR99",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-FOOD-DATA-FOUNDATION-V2",
+      "to": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR105",
+      "to": "TASK-FOOD-DATA-FOUNDATION-V2",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-NUTRITION-INTELLIGENCE-V2",
+      "to": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR106",
+      "to": "TASK-NUTRITION-INTELLIGENCE-V2",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-COACH-GROUNDING-LIVE-V2",
+      "to": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR107",
+      "to": "TASK-COACH-GROUNDING-LIVE-V2",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-OFFICIAL-FOOD-INGESTION-V2",
+      "to": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR108",
+      "to": "TASK-OFFICIAL-FOOD-INGESTION-V2",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR108",
+      "to": "CHANGE-PRODUCT-PR108",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-OFFICIAL-INGESTION-READY",
+      "to": "VERIFY-PRODUCT-PR108",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-OFFICIAL-CORPUS-UPGRADE",
+      "to": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "kind": "supports"
+    },
+    {
+      "from": "INIT-SERVER-READINESS",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-SERVER-READINESS-STAGE0",
+      "to": "INIT-SERVER-READINESS",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR101",
+      "to": "TASK-SERVER-READINESS-STAGE0",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR101",
+      "to": "CHANGE-PRODUCT-PR101",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-SERVER-READINESS-GREEN",
+      "to": "VERIFY-PRODUCT-PR101",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-STAGING-VALIDATION",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-STAGING-PREP-GATE",
+      "to": "INIT-STAGING-VALIDATION",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR102",
+      "to": "TASK-STAGING-PREP-GATE",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR102",
+      "to": "CHANGE-PRODUCT-PR102",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-STAGING-REPO-GREEN",
+      "to": "VERIFY-PRODUCT-PR102",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-STAGING-ENV-SMOKE",
+      "to": "INIT-STAGING-VALIDATION",
+      "kind": "supports"
+    },
+    {
+      "from": "VERIFY-STAGING-SERVER-PATH",
+      "to": "TASK-STAGING-ENV-SMOKE",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-STAGING-BROWSER-BOUNDARY",
+      "to": "INIT-STAGING-VALIDATION",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR103",
+      "to": "TASK-STAGING-BROWSER-BOUNDARY",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR103",
+      "to": "CHANGE-PRODUCT-PR103",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-STAGING-BROWSER-BOUNDARY-GREEN",
+      "to": "VERIFY-PRODUCT-PR103",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-STAGING-BROWSER-DEPLOY",
+      "to": "INIT-STAGING-VALIDATION",
+      "kind": "supports"
+    },
+    {
+      "from": "INIT-TODAY-ACTION-RELIABILITY",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-TODAY-CHECKIN-HIERARCHY",
+      "to": "INIT-TODAY-ACTION-RELIABILITY",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-LIFECYCLE-STATE-DURABILITY",
+      "to": "INIT-TODAY-ACTION-RELIABILITY",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR111",
+      "to": "TASK-TODAY-CHECKIN-HIERARCHY",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR111",
+      "to": "TASK-LIFECYCLE-STATE-DURABILITY",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR111",
+      "to": "CHANGE-PRODUCT-PR111",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-TODAY-BASELINE-GREEN",
+      "to": "VERIFY-PRODUCT-PR111",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-TODAY-WORKOUT-FINAL-INTEGRATION",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-TODAY-WORKOUT-PREP-EXECUTION",
+      "to": "INIT-TODAY-WORKOUT-FINAL-INTEGRATION",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR114",
+      "to": "TASK-TODAY-WORKOUT-PREP-EXECUTION",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR114",
+      "to": "CHANGE-PRODUCT-PR114",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-FINAL-UI-INTEGRATION-GREEN",
+      "to": "VERIFY-PRODUCT-PR114",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-PRODUCTION-LLM-VALIDATION",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-PRODUCTION-LLM-SMOKE",
+      "to": "INIT-PRODUCTION-LLM-VALIDATION",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR121",
+      "to": "TASK-PRODUCTION-LLM-SMOKE",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCTION-COACH-DEPLOY",
+      "to": "CHANGE-PRODUCT-PR121",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-PRODUCTION-COACH-BOUNDARY-GREEN",
+      "to": "VERIFY-PRODUCTION-COACH-DEPLOY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCTION-LLM-TIMEOUT",
+      "to": "TASK-PRODUCTION-LLM-SMOKE",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR122",
+      "to": "TASK-PRODUCTION-LLM-SMOKE",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCTION-COACH-TIMEOUT-DEPLOY",
+      "to": "CHANGE-PRODUCT-PR122",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCTION-LIVE-TEXT-PHOTO",
+      "to": "TASK-PRODUCTION-LLM-SMOKE",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-PRODUCTION-LLM-GREEN",
+      "to": "VERIFY-PRODUCTION-LIVE-TEXT-PHOTO",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-RELEASE-INTEGRITY-HARDENING",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-FUNCTIONS-LOCK-AUDIT",
+      "to": "INIT-RELEASE-INTEGRITY-HARDENING",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-MAIN-PROTECTION",
+      "to": "INIT-RELEASE-INTEGRITY-HARDENING",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-CI-TOOLCHAIN-MODERNIZATION",
+      "to": "INIT-RELEASE-INTEGRITY-HARDENING",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-CONTROL-CI-ACTIONS-MODERNIZATION",
+      "to": "INIT-RELEASE-INTEGRITY-HARDENING",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-DEPLOY-WIF",
+      "to": "INIT-RELEASE-INTEGRITY-HARDENING",
+      "kind": "supports"
+    },
+    {
+      "from": "INIT-FREEZE-WANTED-SNAPSHOT",
+      "to": "GOAL-WANTED-DERIVATIVE",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR130",
+      "to": "INIT-FREEZE-WANTED-SNAPSHOT",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR130",
+      "to": "CHANGE-PRODUCT-PR130",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR131",
+      "to": "INIT-FREEZE-WANTED-SNAPSHOT",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR131",
+      "to": "CHANGE-PRODUCT-PR131",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1449",
+      "to": "CHANGE-PRODUCT-PR131",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-799",
+      "to": "VERIFY-PRODUCT-MAIN-1449",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-COMMERCIAL-SNAPSHOT-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-1449",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-COMMERCIAL-SNAPSHOT-GREEN",
+      "to": "RELEASE-PAGES-799",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-COPY-WANTED-DERIVATIVE",
+      "to": "RESULT-COMMERCIAL-SNAPSHOT-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-COPY-WANTED-DERIVATIVE",
+      "to": "GOAL-WANTED-DERIVATIVE",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR132",
+      "to": "TASK-COPY-WANTED-DERIVATIVE",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-WANTED-RELEASE-GATE-1451",
+      "to": "CHANGE-PRODUCT-PR132",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-WANTED-JUDGE-GATE-4",
+      "to": "CHANGE-PRODUCT-PR132",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-WANTED-2026",
+      "to": "VERIFY-WANTED-RELEASE-GATE-1451",
+      "kind": "releases"
+    },
+    {
+      "from": "VERIFY-WANTED-POSTMERGE-5",
+      "to": "RELEASE-WANTED-2026",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-WANTED-DERIVATIVE-GREEN",
+      "to": "VERIFY-WANTED-POSTMERGE-5",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-WANTED-DERIVATIVE-GREEN",
+      "to": "VERIFY-WANTED-JUDGE-GATE-4",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-DEPLOY-WANTED-PUBLIC",
+      "to": "RESULT-WANTED-DERIVATIVE-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-DEPLOY-WANTED-PUBLIC",
+      "to": "GOAL-WANTED-DERIVATIVE",
+      "kind": "supports"
+    },
+    {
+      "from": "INIT-USER-PERFORMANCE-V1",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR158-161",
+      "to": "INIT-USER-PERFORMANCE-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCTION-COACH-20260920",
+      "to": "CHANGE-PRODUCT-PR158-161",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR164",
+      "to": "INIT-USER-PERFORMANCE-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR164-HEAD",
+      "to": "CHANGE-PRODUCT-PR164",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-816",
+      "to": "CHANGE-PRODUCT-PR164",
+      "kind": "releases"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1527",
+      "to": "CHANGE-PRODUCT-PR164",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-PRODUCTION-UPM-PARITY",
+      "to": "CHANGE-PRODUCT-PR164",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCTION-UPM-PARITY",
+      "to": "TASK-PRODUCTION-UPM-PARITY",
+      "kind": "verifies"
+    },
+    {
+      "from": "INIT-AUTONOMOUS-INTELLIGENCE-LOOP-V1",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-BOUNDED-COACH-DATA-TOOLS-V1",
+      "to": "INIT-AUTONOMOUS-INTELLIGENCE-LOOP-V1",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-LONGITUDINAL-LEARNING-METRICS-V1",
+      "to": "INIT-AUTONOMOUS-INTELLIGENCE-LOOP-V1",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-PERSONALIZATION-POLICY-V1",
+      "to": "INIT-AUTONOMOUS-INTELLIGENCE-LOOP-V1",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR166",
+      "to": "TASK-BOUNDED-COACH-DATA-TOOLS-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR166",
+      "to": "TASK-LONGITUDINAL-LEARNING-METRICS-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR166",
+      "to": "TASK-PERSONALIZATION-POLICY-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR166-HEAD",
+      "to": "CHANGE-PRODUCT-PR166",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-AUTONOMOUS-INTELLIGENCE-PR-READY",
+      "to": "VERIFY-PRODUCT-PR166-HEAD",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION",
+      "to": "CHANGE-PRODUCT-PR166",
+      "kind": "depends-on"
+    }
   ]
 }
