@@ -1,69 +1,65 @@
 # GARANG Release Status
 
-Last updated: 2026-09-17
+Last updated: 2026-09-20
 
 ## Overall decision
-- Commercial GARANG web baseline: GREEN / CANONICAL.
-- Wanted source/CI, Firebase backend, browser transport, live LLM provider path and public judge runtime: GREEN.
-- Competition submissions: RECORDED COMPLETE BY FOUNDER REPORT for Wanted / 롯데 / 브로제이.
-- Submission receipts/forms were not independently re-opened here; submission completion is RECORDED rather than tool-VERIFIED.
-- Competition-specific deployed surfaces are change-frozen except for critical outage/bug handling or organizer-required changes.
+- Production Real AI Coach: GREEN / VERIFIED.
+- Commercial web current main: YELLOW until post-merge Release Gate #1527 completes.
+- Current PRODUCT main: `47d95a71c4a526ba966656a8f923ebf0b1db46cf`.
+- Current verified production Coach backend deployment revision: `e238b6164da976219da328ef0fe3bd20ea0e7807`.
+- The difference is intentional: PR #164 includes server-side User Performance attribution source changes that have not received a new production deployment approval.
 
-## Commercial PRODUCT main
-Decision: GREEN / UNCHANGED.
-- Canonical main: `b863a7634bd64b03a6e6f3772950c43cc81afb6f`.
-- Release Gate #1449 / `35110020514`: FULL GREEN.
-- Pages #799 / `35110017165`: SUCCESS.
-- Production Coach Live Smoke `35101459492`: authenticated text + photo `source=llm` SUCCESS.
-- Wanted work did not modify commercial `main`.
+## Production Coach
+Decision: GREEN / LIVE PROVIDER VERIFIED.
+- Production Coach Activation run #11 / `35502595878`: SUCCESS.
+- Firebase project: `fitfind-ai`; deployed Function: `api`.
+- Existing `GARANG_LLM_API_KEY` was preserved.
+- Authenticated disposable-user live smoke: PASS.
+- Response evidence: `source=llm`, provider `openai`, model `gpt-5.6-luna`, alignment verified.
+- Disposable smoke identity deletion: PASS.
+- Release Gate #1526 / `35502595898`: FULL GREEN.
+- Pages #815: SUCCESS.
 
-## Wanted derivative
-Decision: GREEN / RELEASE SNAPSHOT VERIFIED.
-- Release branch: `wanted/2026-release`.
-- Release SHA: `3acd2ae654ce0d387b64174c96a6243d89cb9b74`.
-- PR #154 `Fix Wanted browser Real AI transport`: MERGED into Wanted release only.
-- Wanted Gate #97 / `35183623414`: GREEN.
-- Full GARANG Release Gate #1494 / `35183623380`: FULL GREEN.
+## Current commercial PRODUCT main
+Decision: YELLOW / POST-MERGE GATE PENDING.
+- Main: `47d95a71c4a526ba966656a8f923ebf0b1db46cf`.
+- PR #164: merged, outcome-attributed User Performance learning.
+- PR #164 exact-head Gate #1525 / `35502377218`: GREEN.
+- Pages #816 / `35502863525`: SUCCESS.
+- Post-merge Gate #1527 / `35502864020`: RUNNING at the time of this reconciliation.
+- Production Coach Activation #12 for #164: SKIPPED by design because the merge commit was not an explicit activation marker.
 
-## Real AI Coach boundary
-Decision: GREEN.
-- Canonical `/coach` remains Firebase-authenticated.
-- No-login judge mode uses isolated `/wanted/coach` only for the sanitized `garang-wanted-judge-data-v1` synthetic contract.
-- Images remain rejected on the public judge route; authenticated Production Coach retains photo analysis.
-- Exact stable Vercel origin, quotas and judging-period expiry remain enforced.
-- PR #154 drops inherited custom headers and sends only `Content-Type` for public judge requests.
+## User Performance Model release state
+- Evidence-aware UPM v1: merged.
+- Recovery/check-in legacy fallback defect: fixed.
+- Recommendation resolution evidence persistence: merged.
+- Confidence-gated read-only UPM context: merged.
+- Coach consumes confidence-gated UPM context while Decision Intelligence retains ownership.
+- Outcome-attributed score from fully linked recommendation → execution → outcome cycles: merged in PR #164.
+- Browser/main deployment includes #164 via Pages #816.
+- Production server context does not yet include the #164 server-side attribution changes.
 
-## Wanted public runtime verification
-Decision: GREEN / END-TO-END VERIFIED.
-- Stable alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
-- Production deployment: `dpl_DXa432LkkUdPcC2fD61ZcHHX3wDx` / READY.
-- Shell loads exact Wanted release `3acd2ae654ce0d387b64174c96a6243d89cb9b74` while retaining the stable Vercel origin.
-- Live browser smoke entered `60초 심사 체험`, opened Coach, sent exactly `나 준나 강해지고싶어`, and received a context-aware response without local fallback.
+## Coach UX repair
+- PR #158 classifies gateway failures instead of exposing one generic external-AI failure.
+- PR #159 keeps `collect_data` responses useful and conversational while preserving conservative confidence boundaries.
+- PR #160 makes authenticated live LLM smoke mandatory inside production activation.
+- PR #161 supplies confidence-gated UPM context to Coach without state mutation or LLM decision ownership.
 
-## Competition submission status
-Evidence class: RECORDED from Founder report on 2026-09-17.
-- Wanted: SUBMITTED.
-- 롯데: SUBMITTED.
-- 브로제이: SUBMITTED.
-- Competition submission execution is operationally closed.
+## Competition channel
+Competition derivatives remain separate release channels. Founder-reported Wanted / 롯데 / 브로제이 submission completion stays RECORDED unless submission artifacts are independently re-opened.
 
-## Deployment status
-- Commercial deployment: GREEN.
-- Wanted source/CI: GREEN.
-- Wanted production Firebase/CORS boundary: GREEN.
-- Wanted public judge entry + 14-day interaction: GREEN.
-- Wanted visible public Real AI Coach response: GREEN.
-- Competition submission phase: RECORDED COMPLETE.
-
-## Release-channel boundary
-Commercial GARANG PRODUCT main is canonical. Competition derivatives are separate release channels and do not redefine commercial GARANG.
-
-## Next release focus
-User Performance Model v1 should be developed against canonical commercial GARANG, preserving existing Golden Path behavior and current VERIFIED capabilities.
+## Release gate
+Current status: YELLOW.
+- Provider connectivity: PASS.
+- Production authenticated live smoke: PASS.
+- Previous exact production revision gate: PASS.
+- Current main Pages deployment: PASS.
+- Current main post-merge Release Gate #1527: PENDING.
+- Current main server-side UPM parity in production: PENDING explicit production activation.
 
 ## Remaining non-blocking debt
-- Firebase build-image retention/cost cleanup.
-- Functions dependency breaking upgrade.
-- CONTROL tooling modernization.
-- Main branch protection is not server-enforced.
-- Production deployment credential should migrate to short-lived OIDC/WIF after verified replacement.
+- Server-enforced main branch protection.
+- Long-lived Firebase deployment credential → OIDC/WIF.
+- Firebase Functions dependency-family upgrade.
+- Firebase build-image cleanup/cost hygiene.
+- Active runtime ownership simplification where duplicate owners are VERIFIED.
