@@ -108,7 +108,7 @@
     {"id":"CHANGE-PRODUCT-PR164","kind":"change","title":"PR #164 adds outcome-attributed User Performance learning and merges as 47d95a71","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-PR164-HEAD","kind":"verification","title":"PR #164 exact-head Release Gate #1525 / 35502377218 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"RELEASE-PAGES-816","kind":"release","title":"Pages #816 / 35502863525 deploys PRODUCT main 47d95a71 successfully","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCT-MAIN-1527","kind":"verification","title":"Post-merge PRODUCT main Release Gate #1527 / 35502864020","status":"in_progress","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-MAIN-1527","kind":"verification","title":"Post-merge PRODUCT main Release Gate #1527 / 35502864020 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"TASK-PRODUCTION-UPM-PARITY","kind":"task","title":"Explicitly activate current server-side UPM attribution in production and repeat authenticated Coach smoke","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"}
   ],
   "edges": [
