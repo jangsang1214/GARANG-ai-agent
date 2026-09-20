@@ -110,7 +110,15 @@
     {"id":"RELEASE-PAGES-816","kind":"release","title":"Pages #816 / 35502863525 deploys PRODUCT main 47d95a71 successfully","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-MAIN-1527","kind":"verification","title":"Post-merge PRODUCT main Release Gate #1527 / 35502864020 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"TASK-PRODUCTION-UPM-PARITY","kind":"task","title":"Production UPM server parity activated and authenticated live-smoke verified","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"VERIFY-PRODUCTION-UPM-PARITY","kind":"verification","title":"Production Coach Activation #13 / 35503623842 verifies current-main UPM parity with source=llm OpenAI gpt-5.6-luna and alignment verified","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"}
+    {"id":"VERIFY-PRODUCTION-UPM-PARITY","kind":"verification","title":"Production Coach Activation #13 / 35503623842 verifies current-main UPM parity with source=llm OpenAI gpt-5.6-luna and alignment verified","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"INIT-AUTONOMOUS-INTELLIGENCE-LOOP-V1","kind":"initiative","title":"Connect longitudinal evidence to safe bounded GARANG actions","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"TASK-BOUNDED-COACH-DATA-TOOLS-V1","kind":"task","title":"Implement typed user-scoped autonomous Coach data tools with transaction, evidence, idempotency and rollback boundaries","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"TASK-LONGITUDINAL-LEARNING-METRICS-V1","kind":"task","title":"Measure recommendation resolution through execution, outcome and later recommendation coverage","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"TASK-PERSONALIZATION-POLICY-V1","kind":"task","title":"Apply confidence-gated deterministic personalization constraints without automatic progression increase","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR166","kind":"change","title":"PRODUCT PR #166 builds Autonomous Intelligence Loop v1 at 173f2515","status":"in_progress","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-PR166-HEAD","kind":"verification","title":"PR #166 exact-head Release Gate #1530 / 35505697471 attempt 2 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-AUTONOMOUS-INTELLIGENCE-PR-READY","kind":"result","title":"Autonomous Intelligence Loop v1 is source/CI GREEN and review-ready, but not merged or deployed","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","kind":"task","title":"After Founder-approved merge, deploy and live-smoke bounded Coach write execution in production","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"}
   ],
   "edges": [
     {"from":"METRIC-REAL-DEVICE-CONFIDENCE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"measures"},
@@ -228,6 +236,16 @@
     {"from":"RELEASE-PAGES-816","to":"CHANGE-PRODUCT-PR164","kind":"releases"},
     {"from":"VERIFY-PRODUCT-MAIN-1527","to":"CHANGE-PRODUCT-PR164","kind":"verifies"},
     {"from":"TASK-PRODUCTION-UPM-PARITY","to":"CHANGE-PRODUCT-PR164","kind":"depends-on"},
-    {"from":"VERIFY-PRODUCTION-UPM-PARITY","to":"TASK-PRODUCTION-UPM-PARITY","kind":"verifies"}
+    {"from":"VERIFY-PRODUCTION-UPM-PARITY","to":"TASK-PRODUCTION-UPM-PARITY","kind":"verifies"},
+    {"from":"INIT-AUTONOMOUS-INTELLIGENCE-LOOP-V1","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"TASK-BOUNDED-COACH-DATA-TOOLS-V1","to":"INIT-AUTONOMOUS-INTELLIGENCE-LOOP-V1","kind":"supports"},
+    {"from":"TASK-LONGITUDINAL-LEARNING-METRICS-V1","to":"INIT-AUTONOMOUS-INTELLIGENCE-LOOP-V1","kind":"supports"},
+    {"from":"TASK-PERSONALIZATION-POLICY-V1","to":"INIT-AUTONOMOUS-INTELLIGENCE-LOOP-V1","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR166","to":"TASK-BOUNDED-COACH-DATA-TOOLS-V1","kind":"implements"},
+    {"from":"CHANGE-PRODUCT-PR166","to":"TASK-LONGITUDINAL-LEARNING-METRICS-V1","kind":"implements"},
+    {"from":"CHANGE-PRODUCT-PR166","to":"TASK-PERSONALIZATION-POLICY-V1","kind":"implements"},
+    {"from":"VERIFY-PRODUCT-PR166-HEAD","to":"CHANGE-PRODUCT-PR166","kind":"verifies"},
+    {"from":"RESULT-AUTONOMOUS-INTELLIGENCE-PR-READY","to":"VERIFY-PRODUCT-PR166-HEAD","kind":"depends-on"},
+    {"from":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","to":"CHANGE-PRODUCT-PR166","kind":"depends-on"}
   ]
 }

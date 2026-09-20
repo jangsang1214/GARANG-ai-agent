@@ -1,6 +1,6 @@
 # GARANG Technical Debt
 
-Last updated: 2026-09-16
+Last updated: 2026-09-20
 
 ## TD-001 — No external always-on provider/runtime
 Severity: MEDIUM
@@ -86,8 +86,7 @@ Mitigation: current main + CONTROL state are authoritative.
 Recommended fix: close superseded PRs with a short pointer to the newer verified baseline.
 
 ## TD-014 — Rejected recommendation learning is incomplete
-Severity: LOW / P4
+Status: RESOLVED
+Previous severity: LOW / P4
 Area: personalization / AI·Data
-Problem: Intelligence Learning Contract v1 attributes confirmed/applied recommendations through `decisionId → recommendationId → actionId → planId → executionId → outcomeId`, but explicit rejected/dismissed recommendations are not yet durably represented as learning evidence.
-Mitigation: no automatic progression or silent state mutation depends on this missing signal.
-Recommended fix: add rejection/dismissal evidence when User Performance Model v1 resumes after submission freeze.
+Resolution: PRODUCT now durably persists recommendation resolution evidence for accepted, rejected, dismissed and ignored recommendations through the canonical action-data boundary. User Performance Model v1 consumes this evidence, and PR #166 additionally measures resolution coverage in Longitudinal Learning Metrics v1. No separate truth store was introduced.

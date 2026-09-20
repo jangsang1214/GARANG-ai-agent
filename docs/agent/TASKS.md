@@ -2,6 +2,35 @@
 
 Last updated: 2026-09-20
 
+## Active P4 — Autonomous Intelligence Loop v1
+Status: IMPLEMENTED IN PR #166 / EXACT-HEAD RELEASE GATE GREEN / NOT MERGED / NOT DEPLOYED
+Owner: AI Data / Engineering / Release QA
+Goal: connect GARANG longitudinal evidence to safe actions so the Coach can execute bounded user-requested state changes while deterministic GARANG retains decision ownership.
+
+Implemented on PR #166:
+- Typed user-scoped tools for plan/goal/memory/workout/meal/body/check-in writes. ✅
+- No raw DB, destructive, bulk, account/security, schema, secret, billing or production tool exposure. ✅
+- Explicit current-message or verified-source evidence gates; factual numeric values cannot be invented. ✅
+- Authenticated transactional user-state mutation with owner pinning, idempotency receipts, audit evidence and rollback metadata. ✅
+- Longitudinal metrics across recommendation → resolution → plan/action → execution → outcome → later recommendation. ✅
+- Deterministic confidence-gated Personalization Policy v1 can simplify/constrain/reduce but cannot autonomously increase progression. ✅
+- Agent Context and Coach structured tool-call integration preserve decisionId/mode alignment. ✅
+- Browser/server parity and autonomous-write regression tests added to the standard gates. ✅
+
+Verification:
+- PR #166 head: `173f251542f7172dd8328f1a8c014b4035c7d0da`.
+- Release Gate #1530 / `35505697471` attempt 2: FULL GREEN. ✅
+- Core/build/dependency/Firestore emulator: PASS. ✅
+- Golden Path / authenticated Coach / Real LLM integration / mobile WebKit regression: PASS. ✅
+- Attempt 1 Today Check-in timeout passed unchanged on same-SHA rerun; treat as runtime timing evidence, not an AI regression.
+
+Next acceptance:
+- Founder approval to merge PR #166.
+- Post-merge exact-main Release Gate.
+- Separate Founder approval for production Coach deployment.
+- Authenticated production live smoke proving bounded write execution, denial/confirmation boundaries and no cross-user mutation.
+- 2/4/8-week longitudinal usefulness validation.
+
 ## Active P4 — User Performance Model v1 longitudinal learning
 Status: IMPLEMENTED IN MAIN / CURRENT WEB RELEASE VERIFIED GREEN
 Owner: Product / AI Data / Engineering / Release QA
