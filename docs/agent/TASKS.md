@@ -1,65 +1,67 @@
 # GARANG Tasks
 
-Last updated: 2026-09-17
+Last updated: 2026-09-20
+
+## Active P4 — User Performance Model v1 production activation
+Status: SOURCE+CI GREEN / PRODUCTION ACTIVATION PENDING EXPLICIT FOUNDER APPROVAL
+Owner: Product / AI Data / Engineering / Release QA
+Goal: make accumulated user-performance evidence available to the live authenticated Coach explanation layer without transferring deterministic decision ownership.
+
+Completed acceptance:
+- Existing UPM v1 derives compact performance dimensions from canonical user state. ✅ VERIFIED
+- Recommendation-response evidence persists through the existing Action/Data boundary. ✅ VERIFIED (PR #155)
+- Confidence-gated read-only context is exposed through the browser Intelligence Bridge. ✅ VERIFIED (PR #156)
+- Low-confidence/missing dimensions are withheld rather than promoted as user facts. ✅ VERIFIED
+- Guardrails remain `readOnly=true`, `affectsDecision=false`, no decision mutation, no automatic progression. ✅ VERIFIED
+- Server Agent Context builds the same UPM semantics as the browser model. ✅ VERIFIED
+- Browser/server parity regression prevents silent semantic drift. ✅ VERIFIED
+- Authenticated Coach explanation context receives `userPerformance`. ✅ VERIFIED
+- Deterministic `decide()` inputs remain unchanged. ✅ VERIFIED
+- PR #161 exact-head Gate #1509 / `35500189808`: FULL GREEN. ✅
+- PR #161 merged as PRODUCT main `25f369307424e845a895c8c15c28a5fbddf73346`. ✅
+- Post-merge Gate #1513 / `35500590433`: FULL GREEN including authenticated Coach and Real LLM Golden Path. ✅
+
+Pending acceptance:
+- Production Firebase Coach deploys the `25f36930...` server context. ⬜ Founder approval required
+- Live authenticated production smoke passes after deploy. ⬜
+- Security/auth boundaries remain fail-closed after deploy. ⬜
+- Runtime evidence confirms no regression before UPM Coach context is marked production GREEN. ⬜
+
+## Verification note — WebKit flake
+Status: CLOSED / RETRY PASS
+- First PR #161 Gate #1509 browser attempt timed out in Golden Path complete while the app remained on Today before Coach.
+- PR #161 changed no browser/router code.
+- One failed-job rerun passed the same journey plus authenticated Coach, Real LLM and all remaining browser/mobile stress checks.
+- Post-merge Gate #1513 also passed the same full suite.
+- Treat as observed transient test flake unless recurrence provides contrary evidence.
+
+## Closed P4 slice — UPM durable recommendation evidence
+Status: DONE / VERIFIED
+Evidence: PRODUCT PR #155.
+
+## Closed P4 slice — UPM confidence-gated browser context
+Status: DONE / VERIFIED
+Evidence: PRODUCT PR #156.
+
+## Closed P4 slice — UPM authenticated Coach source integration
+Status: DONE / VERIFIED SOURCE+CI
+Evidence: PRODUCT PR #161; exact-head Gate #1509 FULL GREEN; post-merge Gate #1513 FULL GREEN; merge `25f36930...`.
+Note: source integration is not equivalent to production runtime activation.
 
 ## Closed P1 — Competition submissions
 Status: DONE / RECORDED COMPLETE BY FOUNDER REPORT
-Owner: Founder / Growth Business / Product / Release QA
-Goal: submit GARANG to the active competition/application tracks without destabilizing the commercial product.
-
-Recorded completion:
 - Wanted: submitted. ✅ RECORDED
 - 롯데: submitted. ✅ RECORDED
 - 브로제이: submitted. ✅ RECORDED
-- Submission receipts/forms were not independently re-opened in this reconciliation; do not upgrade this evidence class beyond RECORDED without observing those artifacts.
-
-Wanted technical acceptance remains VERIFIED:
-- Commercial PRODUCT main remains frozen at `b863a7634bd64b03a6e6f3772950c43cc81afb6f`. ✅
-- Wanted release branch is `wanted/2026-release`. ✅
-- Current Wanted release SHA is `3acd2ae654ce0d387b64174c96a6243d89cb9b74`. ✅
-- PR #154 Wanted Gate #97 / `35183623414`: GREEN. ✅
-- PR #154 full Release Gate #1494 / `35183623380`: FULL GREEN. ✅
-- Production deployment `dpl_DXa432LkkUdPcC2fD61ZcHHX3wDx` is READY. ✅
-- Live public browser smoke passes `60초 심사 체험 → Coach → 나 준나 강해지고싶어` with a visible context-aware Real AI answer and no local fallback. ✅
-
-## Active P4 — User Performance Model v1
-Status: PLANNED / NEXT CORE INTELLIGENCE WORK
-Owner: Product / AI Data / Engineering / Release QA
-Goal: make GARANG progressively understand the user from accumulated action, execution and outcome evidence rather than only responding to the latest record.
-
-Acceptance direction:
-- Define a compact durable user-performance state derived from existing verified data, not a new parallel source of truth.
-- Link model updates to the existing learning contract: `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
-- Separate observed facts, inferred traits/trends and confidence.
-- Recommendations must be attributable to evidence and reversible; no silent goal or plan mutation.
-- Strengthen Golden Path interpretation/recommendation without adding a new top-level screen unless evidence proves it is necessary.
-- Add regression coverage for persistence, stale/insufficient-data behavior and recommendation changes.
 
 ## Competition runtime protection
 Status: ACTIVE POLICY
-- Do not change competition-specific deployed surfaces after submission except critical outage/bug fixes or organizer-required changes.
-- Commercial GARANG evolution continues separately; competition derivatives do not redefine canonical PRODUCT main.
-
-## Closed P1 — Wanted public browser Real AI transport
-Status: DONE / VERIFIED GREEN END-TO-END
-Evidence: PR #154; Wanted Gate #97 GREEN; full Release Gate #1494 FULL GREEN; release `3acd2ae6…`; Vercel `dpl_DXa432LkkUdPcC2fD61ZcHHX3wDx`; live browser same-prompt smoke returns Real AI response without fallback.
-
-## Closed P1 — Wanted public shell recovery
-Status: DONE / VERIFIED GREEN
-
-## Closed P1 — Wanted no-login Real AI Coach backend
-Status: DONE / VERIFIED GREEN
-
-## Closed P1 — Wanted Today Planner shortcut judge-mode gating fix
-Status: DONE / VERIFIED GREEN
+- Do not change submitted competition-specific surfaces except critical outage/bug fixes or organizer-required changes.
 
 ## P2 — Protect CONTROL + PRODUCT main
 Status: PLANNED / NON-BLOCKING
 
 ## P2 — Production deployment credential hardening
-Status: PLANNED / NON-BLOCKING
-
-## P2 — Dependency/tooling hardening
 Status: PLANNED / NON-BLOCKING
 
 ## P6 — Repository / cloud cost hygiene
