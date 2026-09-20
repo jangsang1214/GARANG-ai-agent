@@ -106,3 +106,12 @@ Problem: PRODUCT README still describes User Performance Model v1 as roadmap wor
 Risk: stale docs create false implementation assumptions and pricing artifacts can be mistaken for validated monetization.
 Mitigation: implementation and CONTROL state remain authoritative.
 Recommended fix: refresh commercial docs after current validation priorities settle; keep payment/subscription build gated behind external retained-value evidence.
+
+## TD-017 — Coach server/browser write semantics diverged
+Severity: HIGH / P1
+Area: Coach action ownership / Golden Path
+Evidence status: INFERRED runtime risk from VERIFIED source contracts; duplicate production behavior has not yet been reproduced.
+Problem: the production server can autonomously execute a bounded low-risk `createPlan` for an explicit user write request, while active browser Coach Agent v4 still runs the same user text through a mock confirmation-only Agent adapter and can render another `createPlan` proposal. Browser tests encode the older confirmation-only behavior and do not consume server `toolResults`.
+Risk: one user request could create misleading UI state or a duplicate plan if the server write succeeds and the user then approves the browser proposal.
+Mitigation: server writes remain bounded/idempotent within their own call path and browser proposal writes remain confirmation-gated, but they currently use different call IDs/contracts.
+Recommended fix: unify the action lifecycle end to end. Carry server tool execution/result metadata into Coach message state, suppress local mock proposals when the server already handled the intent, and keep the mock adapter only for explicit offline/fallback mode. Add an authenticated browser regression before further feature expansion.

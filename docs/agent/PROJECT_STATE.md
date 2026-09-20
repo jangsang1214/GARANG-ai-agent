@@ -52,14 +52,15 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - No VERIFIED P0/P1 source or provider outage remains.
 
 ## Broken / blockers
-- No VERIFIED P0/P1 blocker.
-- Current PRODUCT main Release Gate #1543 attempt 3 is VERIFIED GREEN.
+- INFERRED P1 Coach action-ownership risk requires runtime verification before more feature expansion: production server now autonomously persists explicit low-risk plan writes, while active browser `garang-coach-agent-v4.js` still reprocesses the same user message through a mock Agent adapter that can generate a second pending `createPlan` proposal. Existing browser tests still assert the older confirmation-only contract and do not exercise server `toolResults`.
+- Current PRODUCT main Release Gate #1543 attempt 3 is VERIFIED GREEN, so this is a newly identified contract-drift risk rather than a reproduced gate failure.
 - Autonomous Intelligence production activation is VERIFIED GREEN via Activation #18.
 - Server-side #164 UPM attribution is production-activated and live-smoke verified.
 - Main branch protection, OIDC/WIF deployment auth migration, Functions dependency-family upgrade and runtime ownership simplification remain non-blocking engineering debt.
 
 ## Next priorities
-1. P2 release integrity: remove recurrent WebKit lifecycle/timing nondeterminism on the active Today / Golden Path runtime instead of normalizing reruns.
-2. P4/P5 real longitudinal validation: recommendation → resolution → execution → outcome → later recommendation quality over 2/4/8-week windows, plus activation/retention funnel measurement on external users.
-3. P3/P6 simplify active frontend ownership and repository noise before adding new screens; keep branch protection / OIDC-WIF / dependency hardening as dedicated integrity work.
-4. Defer payment/subscription build and broader feature expansion until external validation shows which retained value users will pay for.
+1. P1 verify/fix Coach write ownership: one user intent must produce one canonical write path, never a server write plus browser mock proposal.
+2. P2 release integrity: remove recurrent WebKit lifecycle/timing nondeterminism on the active Today / Golden Path runtime instead of normalizing reruns.
+3. P4/P5 real longitudinal validation: recommendation → resolution → execution → outcome → later recommendation quality over 2/4/8-week windows, plus activation/retention funnel measurement on external users.
+4. P3/P6 simplify active frontend ownership and repository noise before adding new screens; keep branch protection / OIDC-WIF / dependency hardening as dedicated integrity work.
+5. Defer payment/subscription build and broader feature expansion until external validation shows which retained value users will pay for.

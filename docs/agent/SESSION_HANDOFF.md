@@ -52,10 +52,11 @@
 - Deterministic Decision Intelligence still owns judgment; typed server policy owns mutations.
 
 ## Next core work
-1. Fix recurrent WebKit lifecycle/timing nondeterminism in active Today / Golden Path runtime ownership.
-2. Measure real longitudinal behavior and recommendation usefulness over 2/4/8-week windows with external users and canonical funnel events.
-3. Continue active-runtime simplification and stale-PR/repository cleanup before adding new screens.
-4. Keep payment/subscription implementation gated behind external retained-value validation.
+1. Verify/fix Coach action ownership drift: server-autonomous bounded write and browser mock confirmation proposal must not both act on the same intent.
+2. Fix recurrent WebKit lifecycle/timing nondeterminism in active Today / Golden Path runtime ownership.
+3. Measure real longitudinal behavior and recommendation usefulness over 2/4/8-week windows with external users and canonical funnel events.
+4. Continue active-runtime simplification and stale-PR/repository cleanup before adding new screens.
+5. Keep payment/subscription implementation gated behind external retained-value validation.
 
 ## Non-blocking debt
 - Main branches are not server-protected.

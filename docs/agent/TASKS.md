@@ -77,6 +77,22 @@ Evidence:
 - Release Gate #1529 / `35503623868`: FULL GREEN.
 - Pages #817 / `35503623353`: SUCCESS.
 
+## Active P1 — Coach write ownership unification
+Status: VERIFICATION REQUIRED / CONTRACT DRIFT FOUND
+Owner: Engineering / AI Data / Product / Release QA
+Problem: production server `/coach` now executes bounded low-risk writes when the current user explicitly requests them, but active browser `garang-coach-agent-v4.js` independently replays the same user message through `GarangAgentContract.createMockAdapter()` and can produce a second confirmation-only `createPlan` proposal.
+Evidence:
+- Production Activation #18 proves server `createPlan` execution + persistence.
+- Active Coach Agent v4 lines 86–105 create a local mock session from the preceding user message and render its proposals.
+- Agent Contract mock adapter creates `createPlan` for plan/schedule intent and states nothing is saved until approval.
+- Current browser Real LLM/Coach-plan tests still expect Planner to remain unchanged until proposal approval and do not model production `toolResults`.
+Acceptance:
+- Reproduce with one authenticated disposable/staging user using an explicit save-plan request.
+- Establish one canonical action owner: server-executed tool result OR browser confirmation proposal, never both for the same intent.
+- Persist/display action result and audit status consistently.
+- Add regression covering explicit server write + rendered Coach response + no duplicate proposal/write.
+- Run full Release Gate and production-safe smoke before activation.
+
 ## Active P2 — WebKit lifecycle determinism
 Status: OPEN / RELEASE-INTEGRITY DEBT
 Owner: Engineering / Release QA
