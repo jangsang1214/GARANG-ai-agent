@@ -19,7 +19,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Pages #815: SUCCESS for the same revision.
 - PR #164 exact-head Release Gate #1525 / `35502377218`: GREEN before merge.
 - Pages #816 / `35502863525`: SUCCESS for current PRODUCT main `47d95a71...`.
-- Post-merge Release Gate #1527 / `35502864020` is still running at this reconciliation point; do not upgrade current-main release status to fully GREEN until it completes successfully.
+- Post-merge Release Gate #1527 / `35502864020`: FULL GREEN for current PRODUCT main.
 
 ## Product / AI state
 - Deterministic GARANG State/Decision Intelligence remains judgment owner.
@@ -48,13 +48,12 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 
 ## Broken / blockers
 - No VERIFIED P0/P1 blocker.
-- Current-main Release Gate #1527 remains pending at this observation point.
+- Current PRODUCT main Release Gate #1527 is VERIFIED GREEN.
 - Server-side #164 UPM attribution is not yet production-activated.
 - Main branch protection, OIDC/WIF deployment auth migration, Functions dependency-family upgrade and runtime ownership simplification remain non-blocking engineering debt.
 
 ## Next priorities
-1. Close Release Gate #1527 for current PRODUCT main.
-2. If Founder approves, deploy current server-side UPM attribution to production and repeat authenticated live Coach smoke.
-3. Begin longitudinal external validation: recommendation → accept/modify/dismiss → execution → outcome → later recommendation quality.
-4. Continue runtime ownership simplification only where active boot-path evidence shows duplicate ownership or flake.
-5. Keep P2 branch-protection / OIDC-WIF / dependency hardening separate from product-intelligence work.
+1. If Founder approves, deploy current server-side UPM attribution to production and repeat authenticated live Coach smoke.
+2. Begin longitudinal external validation: recommendation → accept/modify/dismiss → execution → outcome → later recommendation quality.
+3. Continue runtime ownership simplification only where active boot-path evidence shows duplicate ownership or flake.
+4. Keep P2 branch-protection / OIDC-WIF / dependency hardening separate from product-intelligence work.
