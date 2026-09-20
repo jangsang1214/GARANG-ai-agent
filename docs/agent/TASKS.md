@@ -3,7 +3,7 @@
 Last updated: 2026-09-20
 
 ## Active P4 — Autonomous Intelligence Loop v1
-Status: IMPLEMENTED IN MAIN / CURRENT WEB RELEASE VERIFIED GREEN / PRODUCTION NOT DEPLOYED
+Status: IMPLEMENTED IN PRODUCTION / VERIFIED GREEN
 Owner: AI Data / Engineering / Release QA
 Goal: connect GARANG longitudinal evidence to safe actions so the Coach can execute bounded user-requested state changes while deterministic GARANG retains decision ownership.
 
@@ -28,12 +28,16 @@ Merge/release evidence:
 - PR #166 merged to PRODUCT main as `5483b848e2973f2bf66a1a67148f3c5a5142fb66`. ✅
 - Post-merge Release Gate #1531 / `35506440313` attempt 2: FULL GREEN. ✅
 - Pages #818 / `35506439803`: SUCCESS. ✅
-- Production Coach Activation #14: SKIPPED by design; new server/write path is not deployed. ⏳
+- Production Coach Activation #18 / `35511759697`: SUCCESS on current main `c4da0000...`. ✅
+- Authenticated production smoke: `source=llm`, OpenAI `gpt-5.6-luna`, alignment verified. ✅
+- Authenticated autonomous-write smoke: bounded `createPlan` executed + persisted; sensitive write stayed denied/confirmation-gated; disposable account cleanup passed. ✅
+- Pages #822 / `35511758482`: SUCCESS. ✅
+- Release Gate #1543 / `35511759634` attempt 3: FULL GREEN. ✅
 
 Next acceptance:
-- Separate Founder approval for production Coach deployment.
-- Authenticated production live smoke proving bounded write execution, denial/confirmation boundaries and no cross-user mutation.
-- 2/4/8-week longitudinal usefulness validation.
+- 2/4/8-week longitudinal usefulness validation with external users.
+- Measure canonical activation → recommendation → resolution → execution → accumulation/retention funnel.
+- Add a dedicated isolation verification strategy for cross-user mutation beyond current owner-policy/CI evidence if a safe staging two-account smoke is justified.
 
 ## Active P4 — User Performance Model v1 longitudinal learning
 Status: IMPLEMENTED IN MAIN / CURRENT WEB RELEASE VERIFIED GREEN
@@ -72,6 +76,29 @@ Evidence:
 - Live response: `source=llm`, provider `openai`, model `gpt-5.6-luna`, alignment verified.
 - Release Gate #1529 / `35503623868`: FULL GREEN.
 - Pages #817 / `35503623353`: SUCCESS.
+
+## Active P2 — WebKit lifecycle determinism
+Status: OPEN / RELEASE-INTEGRITY DEBT
+Owner: Engineering / Release QA
+Goal: make current-main browser verification deterministic without relying on repeated reruns.
+Evidence:
+- Release Gate #1543 attempt 1 failed a Golden Path Coach-action wait on `c4da0000...`.
+- Attempt 2 failed Today bottom Check-in readiness on the identical SHA.
+- Attempt 3 passed the entire browser/Golden Path suite unchanged.
+Acceptance:
+- Identify the active lifecycle/observer/readiness race.
+- Remove duplicate/retry ownership rather than increasing arbitrary waits.
+- Demonstrate repeated same-SHA WebKit success without functional regression.
+
+## Active P5 — External longitudinal validation
+Status: PLANNED / PRODUCT CAPABILITY READY
+Owner: Product / Growth Business / AI Data
+Goal: prove that GARANG's connected loop changes behavior and becomes more useful over time.
+Acceptance:
+- Unknown-user activation tests across onboarding → first record → Coach → plan → execution → accumulation.
+- Measure canonical events already defined in `garang-analytics-v1`.
+- 2/4/8-week recommendation resolution, execution, outcome and return behavior.
+- Do not add major feature surface until the largest observed activation/retention break is identified.
 
 ## Active P3 — Runtime ownership simplification
 Status: IN PROGRESS / EVIDENCE-DRIVEN
