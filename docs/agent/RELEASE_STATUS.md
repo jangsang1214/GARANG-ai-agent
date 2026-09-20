@@ -3,7 +3,8 @@
 Last updated: 2026-09-20
 
 ## Overall decision
-- Production Real AI Coach + Autonomous Intelligence Loop v1: GREEN / VERIFIED.
+- Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
+- End-to-end Coach action ownership: YELLOW / newly identified contract-drift risk pending runtime reproduction and unification.
 - Commercial web current main: GREEN / VERIFIED on `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
 - Current PRODUCT main: `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
 - Current verified production Coach backend deployment revision: `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
@@ -60,7 +61,8 @@ Decision: PRODUCTION GREEN / VERIFIED.
 Competition derivatives remain separate release channels. Founder-reported Wanted / 롯데 / 브로제이 submission completion stays RECORDED unless submission artifacts are independently re-opened.
 
 ## Release gate
-Current source/web/production status: GREEN.
+Automated source/web/production gate status: GREEN.
+Product-action confidence: YELLOW until the server-autonomous-write vs browser-confirmation-proposal ownership drift is verified/fixed.
 Release confidence note: recurrent same-SHA WebKit timing failures remain a P2 determinism debt.
 - Provider connectivity: PASS.
 - Production authenticated live smoke: PASS.
