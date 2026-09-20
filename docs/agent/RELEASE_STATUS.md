@@ -5,7 +5,7 @@ Last updated: 2026-09-20
 ## Overall decision
 - Production Real AI Coach: GREEN / VERIFIED.
 - Commercial web current main: GREEN / VERIFIED.
-- Current PRODUCT main: `47d95a71c4a526ba966656a8f923ebf0b1db46cf`.
+- Current PRODUCT main: `fca5357d1c844bd34353a118f9b23e81410e7ca9`.
 - Current verified production Coach backend deployment revision: `fca5357d1c844bd34353a118f9b23e81410e7ca9`.
 - Browser/main and production Coach server-side User Performance attribution are now in parity.
 
@@ -22,12 +22,23 @@ Decision: GREEN / LIVE PROVIDER VERIFIED.
 
 ## Current commercial PRODUCT main
 Decision: GREEN / CURRENT MAIN VERIFIED.
-- Main: `47d95a71c4a526ba966656a8f923ebf0b1db46cf`.
+- Main: `fca5357d1c844bd34353a118f9b23e81410e7ca9`.
 - PR #164: merged, outcome-attributed User Performance learning.
 - PR #164 exact-head Gate #1525 / `35502377218`: GREEN.
 - Pages #816 / `35502863525`: SUCCESS.
 - Post-merge Gate #1527 / `35502864020`: FULL GREEN.
 - PR #165 explicitly activated current server-side UPM parity after Founder approval.
+
+## Autonomous Intelligence Loop v1 candidate
+Decision: SOURCE/CI GREEN / NOT MERGED / NOT DEPLOYED.
+- PRODUCT PR #166 is OPEN and review-ready.
+- Exact head: `173f251542f7172dd8328f1a8c014b4035c7d0da`.
+- Release Gate #1530 / `35505697471` attempt 2: FULL GREEN.
+- Core/build/dependency checks, Firestore emulator, authenticated Coach plan flow, Real LLM Golden Path, Golden Path complete journey and full WebKit regression: PASS.
+- Attempt 1 failed only an unchanged Today bottom Check-in WebKit wait timeout; identical SHA passed that step and the complete browser job on attempt 2.
+- Candidate includes bounded typed Coach writes, authenticated transactions, explicit evidence gating, idempotency/audit/rollback metadata, longitudinal loop metrics and deterministic Personalization Policy v1.
+- Raw database authority and destructive/bulk/account/security/schema/secret/billing/production actions remain unavailable to the LLM.
+- Production Coach has NOT been updated to this candidate. A merge plus separate deployment/live-smoke approval is still required.
 
 ## User Performance Model release state
 - Evidence-aware UPM v1: merged.
@@ -54,7 +65,8 @@ Current status: GREEN.
 - Production authenticated live smoke: PASS.
 - Previous exact production revision gate: PASS.
 - Current main Pages deployment: PASS.
-- Current main post-merge Release Gate #1527: PASS.
+- Current main post-merge Release Gate #1529: PASS.
+- PR #166 exact-head Release Gate #1530 attempt 2: PASS (candidate only; not released).
 - Current main server-side UPM parity in production: PASS.
 
 ## Remaining non-blocking debt
