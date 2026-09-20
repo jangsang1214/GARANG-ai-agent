@@ -3,7 +3,7 @@
 Last updated: 2026-09-20
 
 ## Active P4 — Autonomous Intelligence Loop v1
-Status: IMPLEMENTED IN PR #166 / EXACT-HEAD RELEASE GATE GREEN / NOT MERGED / NOT DEPLOYED
+Status: IMPLEMENTED IN MAIN / CURRENT WEB RELEASE VERIFIED GREEN / PRODUCTION NOT DEPLOYED
 Owner: AI Data / Engineering / Release QA
 Goal: connect GARANG longitudinal evidence to safe actions so the Coach can execute bounded user-requested state changes while deterministic GARANG retains decision ownership.
 
@@ -24,9 +24,13 @@ Verification:
 - Golden Path / authenticated Coach / Real LLM integration / mobile WebKit regression: PASS. ✅
 - Attempt 1 Today Check-in timeout passed unchanged on same-SHA rerun; treat as runtime timing evidence, not an AI regression.
 
+Merge/release evidence:
+- PR #166 merged to PRODUCT main as `5483b848e2973f2bf66a1a67148f3c5a5142fb66`. ✅
+- Post-merge Release Gate #1531 / `35506440313` attempt 2: FULL GREEN. ✅
+- Pages #818 / `35506439803`: SUCCESS. ✅
+- Production Coach Activation #14: SKIPPED by design; new server/write path is not deployed. ⏳
+
 Next acceptance:
-- Founder approval to merge PR #166.
-- Post-merge exact-main Release Gate.
 - Separate Founder approval for production Coach deployment.
 - Authenticated production live smoke proving bounded write execution, denial/confirmation boundaries and no cross-user mutation.
 - 2/4/8-week longitudinal usefulness validation.
