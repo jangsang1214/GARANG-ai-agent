@@ -101,7 +101,15 @@
     {"id":"RELEASE-WANTED-2026","kind":"release","title":"wanted/2026-release freezes PR #132 as 6f7a6e97792971a550a2bf79e49c0ac07c071aa4","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
     {"id":"VERIFY-WANTED-POSTMERGE-5","kind":"verification","title":"Wanted post-merge judge-mode gate #5 / 35117403297 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"RESULT-WANTED-DERIVATIVE-GREEN","kind":"result","title":"Wanted derivative repository snapshot is VERIFIED GREEN without modifying commercial GARANG main","status":"done","ownerWorkstream":"command-center","repositoryId":"product"},
-    {"id":"TASK-DEPLOY-WANTED-PUBLIC","kind":"task","title":"Deploy wanted/2026-release to a separate public URL and verify a fresh-browser judge journey","status":"planned","ownerWorkstream":"growth-business"}
+    {"id":"TASK-DEPLOY-WANTED-PUBLIC","kind":"task","title":"Deploy wanted/2026-release to a separate public URL and verify a fresh-browser judge journey","status":"planned","ownerWorkstream":"growth-business"},
+    {"id":"INIT-USER-PERFORMANCE-V1","kind":"initiative","title":"Build an inspectable User Performance Model from durable behavior and outcome evidence","status":"active","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR158-161","kind":"change","title":"PRs #158-#161 repair Coach failure UX, collect-data conversation, mandatory live smoke and confidence-gated UPM context","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCTION-COACH-20260920","kind":"verification","title":"Production Coach Activation #11 / 35502595878 returns source=llm via OpenAI gpt-5.6-luna with alignment verified and disposable-user cleanup","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR164","kind":"change","title":"PR #164 adds outcome-attributed User Performance learning and merges as 47d95a71","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-PR164-HEAD","kind":"verification","title":"PR #164 exact-head Release Gate #1525 / 35502377218 GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RELEASE-PAGES-816","kind":"release","title":"Pages #816 / 35502863525 deploys PRODUCT main 47d95a71 successfully","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-MAIN-1527","kind":"verification","title":"Post-merge PRODUCT main Release Gate #1527 / 35502864020 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"TASK-PRODUCTION-UPM-PARITY","kind":"task","title":"Explicitly activate current server-side UPM attribution in production and repeat authenticated Coach smoke","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"}
   ],
   "edges": [
     {"from":"METRIC-REAL-DEVICE-CONFIDENCE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"measures"},
@@ -210,6 +218,14 @@
     {"from":"RESULT-WANTED-DERIVATIVE-GREEN","to":"VERIFY-WANTED-POSTMERGE-5","kind":"depends-on"},
     {"from":"RESULT-WANTED-DERIVATIVE-GREEN","to":"VERIFY-WANTED-JUDGE-GATE-4","kind":"depends-on"},
     {"from":"TASK-DEPLOY-WANTED-PUBLIC","to":"RESULT-WANTED-DERIVATIVE-GREEN","kind":"depends-on"},
-    {"from":"TASK-DEPLOY-WANTED-PUBLIC","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"}
+    {"from":"TASK-DEPLOY-WANTED-PUBLIC","to":"GOAL-WANTED-DERIVATIVE","kind":"supports"},
+    {"from":"INIT-USER-PERFORMANCE-V1","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"CHANGE-PRODUCT-PR158-161","to":"INIT-USER-PERFORMANCE-V1","kind":"implements"},
+    {"from":"VERIFY-PRODUCTION-COACH-20260920","to":"CHANGE-PRODUCT-PR158-161","kind":"verifies"},
+    {"from":"CHANGE-PRODUCT-PR164","to":"INIT-USER-PERFORMANCE-V1","kind":"implements"},
+    {"from":"VERIFY-PRODUCT-PR164-HEAD","to":"CHANGE-PRODUCT-PR164","kind":"verifies"},
+    {"from":"RELEASE-PAGES-816","to":"CHANGE-PRODUCT-PR164","kind":"releases"},
+    {"from":"VERIFY-PRODUCT-MAIN-1527","to":"CHANGE-PRODUCT-PR164","kind":"verifies"},
+    {"from":"TASK-PRODUCTION-UPM-PARITY","to":"CHANGE-PRODUCT-PR164","kind":"depends-on"}
   ]
 }
