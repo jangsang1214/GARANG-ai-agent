@@ -19,7 +19,7 @@
 - PR #164 outcome-attributed User Performance learning is merged.
 - PR #164 exact-head Release Gate #1525 / `35502377218`: GREEN.
 - Pages #816 / `35502863525`: SUCCESS for current main.
-- Post-merge Release Gate #1527 / `35502864020`: still running at this observation point.
+- Post-merge Release Gate #1527 / `35502864020`: FULL GREEN.
 - Production Coach backend was explicitly activated at `e238b6164da976219da328ef0fe3bd20ea0e7807`.
 - Production Coach Activation #11 / `35502595878`: SUCCESS.
 - Authenticated disposable-user smoke returned `source=llm`, provider `openai`, model `gpt-5.6-luna`, alignment verified, then deleted the disposable identity.
@@ -42,11 +42,10 @@
 - Do not claim production server parity with #164 until an explicitly approved deployment + authenticated live smoke succeeds.
 
 ## Next core work
-1. Close current-main Gate #1527.
-2. Ask Founder for explicit approval before deploying #164 server changes to production.
-3. Measure real longitudinal behavior rather than adding chatbot breadth: recommendation shown → accept/modify/dismiss → execution → outcome → subsequent recommendation.
-4. Use the accumulated evidence to validate UPM confidence and recommendation usefulness over 2/4/8-week windows.
-5. Continue active-runtime simplification based on verified ownership conflicts, not inactive files.
+1. Ask Founder for explicit approval before deploying #164 server changes to production.
+2. Measure real longitudinal behavior rather than adding chatbot breadth: recommendation shown → accept/modify/dismiss → execution → outcome → subsequent recommendation.
+3. Use the accumulated evidence to validate UPM confidence and recommendation usefulness over 2/4/8-week windows.
+4. Continue active-runtime simplification based on verified ownership conflicts, not inactive files.
 
 ## Non-blocking debt
 - Main branches are not server-protected.
