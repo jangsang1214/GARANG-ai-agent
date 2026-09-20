@@ -15,7 +15,7 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff — 2026-09-20
-- PRODUCT canonical main: `47d95a71c4a526ba966656a8f923ebf0b1db46cf`.
+- PRODUCT canonical main: `fca5357d1c844bd34353a118f9b23e81410e7ca9`.
 - PR #164 outcome-attributed User Performance learning is merged.
 - PR #164 exact-head Release Gate #1525 / `35502377218`: GREEN.
 - Pages #816 / `35502863525`: SUCCESS for current main.
@@ -25,6 +25,15 @@
 - Authenticated disposable-user smoke returned `source=llm`, provider `openai`, model `gpt-5.6-luna`, alignment verified, then deleted the disposable identity.
 - Release Gate #1529 / `35503623868`: FULL GREEN.
 - Pages #817 / `35503623353`: SUCCESS.
+
+## AI/Data candidate — PR #166
+- PRODUCT PR #166 `Build Autonomous Intelligence Loop v1` is OPEN / review-ready / NOT MERGED.
+- Head: `173f251542f7172dd8328f1a8c014b4035c7d0da`.
+- Exact-head Release Gate #1530 / `35505697471` attempt 2: FULL GREEN.
+- The candidate adds bounded typed user-scoped Coach write tools; explicit-evidence gates for factual records; authenticated Firestore transaction ownership; idempotency and rollback metadata; longitudinal learning metrics; deterministic Personalization Policy v1; and structured LLM tool calls.
+- Raw DB authority, delete/bulk/account/security/schema/secret/billing/production tools are not exposed to the LLM.
+- Production remains on `fca5357d...`; no new Coach write path has been deployed or live-smoke verified yet.
+- Attempt 1 had an unchanged Today bottom Check-in WebKit wait timeout; the same SHA rerun passed all browser/Golden Path checks.
 
 ## AI/Data released state
 - GARANG deterministic Intelligence remains the decision owner.
@@ -42,9 +51,10 @@
 - Deterministic Decision Intelligence still owns judgment; UPM context remains read-only and confidence-gated.
 
 ## Next core work
-1. Measure real longitudinal behavior rather than adding chatbot breadth: recommendation shown → accept/modify/dismiss → execution → outcome → subsequent recommendation.
-2. Use the accumulated evidence to validate UPM confidence and recommendation usefulness over 2/4/8-week windows.
-3. Continue active-runtime simplification based on verified ownership conflicts, not inactive files.
+1. Review/approve PR #166 merge.
+2. After merge, separately gate production activation and authenticated live smoke for structured tool calls and actual transactional user-data writes.
+3. Measure real longitudinal behavior and recommendation usefulness over 2/4/8-week windows.
+4. Continue active-runtime simplification based on verified ownership conflicts, not inactive files.
 
 ## Non-blocking debt
 - Main branches are not server-protected.
