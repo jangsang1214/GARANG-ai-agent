@@ -3,7 +3,7 @@
 Last updated: 2026-09-20
 
 ## Active P4 — User Performance Model v1 longitudinal learning
-Status: IMPLEMENTED IN MAIN / CURRENT RELEASE VERIFICATION IN PROGRESS
+Status: IMPLEMENTED IN MAIN / CURRENT WEB RELEASE VERIFIED GREEN
 Owner: Product / AI Data / Engineering / Release QA
 Goal: make GARANG progressively understand how the user responds to recommendations from durable action, execution and outcome evidence.
 
@@ -21,11 +21,10 @@ Verification:
 - PR #164 exact-head Release Gate #1525 / `35502377218`: GREEN. ✅
 - PR #164 merged to PRODUCT main as `47d95a71c4a526ba966656a8f923ebf0b1db46cf`. ✅
 - Pages #816 / `35502863525`: SUCCESS. ✅
-- Post-merge Release Gate #1527 / `35502864020`: RUNNING at this observation point. ⏳
+- Post-merge Release Gate #1527 / `35502864020`: FULL GREEN. ✅
 - Production server-side #164 UPM attribution: NOT DEPLOYED; explicit production approval required. ⏳
 
 Next acceptance:
-- Post-merge Gate #1527 GREEN.
 - If approved, production Function deployment from current main followed by authenticated live `source=llm` smoke.
 - Real-user longitudinal validation at 2/4/8-week windows.
 - Measure recommendation shown → accept/modify/dismiss → execution → outcome → subsequent recommendation quality.
