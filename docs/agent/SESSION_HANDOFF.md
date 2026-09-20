@@ -14,55 +14,45 @@
 11 reconcile evidence with state/graph
 12 select top 1–3 priorities and route authorized work.
 
-## Current handoff — 2026-09-17
-- Commercial PRODUCT main remains canonical at `b863a7634bd64b03a6e6f3772950c43cc81afb6f` through the completed competition submission phase.
-- Commercial Release Gate #1449 / `35110020514`: FULL GREEN.
-- Commercial Pages #799 / `35110017165`: SUCCESS.
-- Production Coach Live Smoke `35101459492`: authenticated text + photo `source=llm` SUCCESS.
-- Wanted release branch: `wanted/2026-release`.
-- Wanted release SHA: `3acd2ae654ce0d387b64174c96a6243d89cb9b74`.
-- Wanted PR #154 `Fix Wanted browser Real AI transport` merged.
-- Wanted Gate #97 / `35183623414`: GREEN.
-- Full Release Gate #1494 / `35183623380`: FULL GREEN.
-- Wanted production Vercel deployment: `dpl_DXa432LkkUdPcC2fD61ZcHHX3wDx` / READY.
-- Wanted stable alias: `https://garang-wanted-2026-jangsang1214.vercel.app`.
-- Live public browser smoke VERIFIED `60초 심사 체험 → Coach → 나 준나 강해지고싶어` returns context-aware Real AI output without local fallback.
+## Current handoff — 2026-09-20
+- CONTROL repository: `jangsang1214/GARANG-ai-agent`.
+- PRODUCT repository: `jangsang1214/-fitmind-ai`.
+- Canonical PRODUCT main: `25f369307424e845a895c8c15c28a5fbddf73346`.
+- Previous CONTROL references to commercial main `b863a763...` are historical, not current.
+- PRODUCT PR #159 is included on main and improves collect-data Coach wording without changing deterministic decisions.
+- PRODUCT PR #161 `Feed confidence-gated User Performance context to Coach` merged as `25f36930...`.
+- PR #161 exact-head Release Gate #1509 / `35500189808`: FULL GREEN after one transient WebKit rerun.
+- Post-merge Release Gate #1513 / `35500590433`: FULL GREEN.
+- Production Coach Activation #10 / `35500590430`: SKIPPED. New UPM Coach context is therefore not yet production-runtime VERIFIED.
+
+## User Performance Model v1 current state
+- UPM v1 is already a repository capability, not a future blank-slate task.
+- PR #155 persists durable recommendation-resolution evidence through the existing Action/Data boundary.
+- PR #156 exposes confidence-gated UPM context in the read-only browser Intelligence Bridge.
+- PR #161 adds server parity and passes confidence-gated `userPerformance` into authenticated Coach explanation context.
+- Browser/server model parity is regression-tested.
+- Low-confidence dimensions are withheld.
+- Guardrails: read-only, `affectsDecision=false`, no decision mutation, no automatic progression.
+- Deterministic Decision Intelligence inputs remain `userState + memory + outcome`; UPM does not own or alter the decision.
+
+## Current P4 gate
+Production activation is the next incomplete step and is HIGH-IMPACT because it changes the live Firebase Coach function.
+- Do not deploy production merely because source/CI are GREEN.
+- Require explicit Founder approval.
+- If approved, deploy through the established production activation path, preserve auth/security boundaries, and run authenticated live smoke.
+- Do not mark UPM production GREEN until live evidence exists.
 
 ## Competition submissions
-Evidence class: RECORDED from Founder report on 2026-09-17; submission receipts/forms were not independently re-opened during this reconciliation.
+Evidence class: RECORDED from Founder report.
 - Wanted: submitted.
 - 롯데: submitted.
 - 브로제이: submitted.
-- Competition submission P1 is operationally closed.
-- Keep competition-specific deployed/runtime surfaces stable after submission; change only for critical outage/bug handling or organizer-required updates.
+- Competition-specific runtimes stay frozen except critical fixes or organizer-required changes.
 
-## AI/Data released state
-- Deterministic GARANG State/Decision Intelligence remains judgment owner.
-- LLM remains bounded explanation/language/multimodal context.
-- Intelligence Learning Contract v1: `decisionId → recommendationId → actionId → planId → executionId → outcomeId`.
-- Outcome Learning remains advisory-only: no silent mutation and no automatic progression increase.
-
-## Next core priority — User Performance Model v1
-Route: Product + AI Data + Engineering + Release QA.
-Goal: turn accumulated action/execution/outcome evidence into a durable, inspectable model of how this user performs and responds over time.
-
-Guardrails:
-- Reuse existing canonical state and learning IDs; do not create a competing truth store.
-- Separate observations from inferences and attach confidence/evidence.
-- Improve interpretation and recommendation inside the Golden Path before adding UI surface.
-- No silent goal/plan changes.
-- Insufficient/stale data must fail conservatively.
-- Verification must include persistence and regression of the existing Golden Path/Coach.
-
-## Release-channel decision
-Commercial GARANG PRODUCT main is the canonical product. Competition derivatives remain isolated snapshots and do not automatically flow back into commercial GARANG.
-
-## Non-blocking debt
-- Functions dependency audit requires a dedicated breaking-upgrade PR.
-- CONTROL tooling modernization remains planned.
-- CONTROL/PRODUCT main are not server-protected.
-- Production deploy auth should migrate to OIDC/WIF after verified replacement.
-- Firebase build-image retention cleanup remains reviewed cost hygiene.
+## Next
+1. Founder decision on production UPM Coach activation.
+2. If approved: deploy + authenticated production smoke + CONTROL reconciliation.
+3. Then measure whether accumulated UPM evidence improves explanation/personalization quality before considering any decision influence.
 
 ## Handoff rule
-Never turn old handoff text into VERIFIED evidence without observing the source. Founder-reported external actions are RECORDED until their artifacts are independently observed. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization.
+Never convert repository/source success into production-runtime success without deployment/runtime evidence. Never turn Founder-reported external submission actions into VERIFIED without observing the external artifacts.
