@@ -22,10 +22,9 @@ Verification:
 - PR #164 merged to PRODUCT main as `47d95a71c4a526ba966656a8f923ebf0b1db46cf`. ✅
 - Pages #816 / `35502863525`: SUCCESS. ✅
 - Post-merge Release Gate #1527 / `35502864020`: FULL GREEN. ✅
-- Production server-side #164 UPM attribution: NOT DEPLOYED; explicit production approval required. ⏳
+- Production server-side #164 UPM attribution: DEPLOYED and authenticated live-smoke VERIFIED. ✅
 
 Next acceptance:
-- If approved, production Function deployment from current main followed by authenticated live `source=llm` smoke.
 - Real-user longitudinal validation at 2/4/8-week windows.
 - Measure recommendation shown → accept/modify/dismiss → execution → outcome → subsequent recommendation quality.
 
@@ -36,9 +35,10 @@ Evidence:
 - PR #159 conversational/actionable collect-data response merged.
 - PR #160 mandatory authenticated activation smoke merged.
 - PR #161 confidence-gated User Performance Coach context merged.
-- Production activation #11 / `35502595878`: SUCCESS.
+- Production activation #13 / `35503623842`: SUCCESS on current commercial main.
 - Live response: `source=llm`, provider `openai`, model `gpt-5.6-luna`, alignment verified.
-- Release Gate #1526 / `35502595898`: FULL GREEN.
+- Release Gate #1529 / `35503623868`: FULL GREEN.
+- Pages #817 / `35503623353`: SUCCESS.
 
 ## Active P3 — Runtime ownership simplification
 Status: IN PROGRESS / EVIDENCE-DRIVEN

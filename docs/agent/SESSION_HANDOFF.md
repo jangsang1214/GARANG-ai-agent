@@ -20,10 +20,11 @@
 - PR #164 exact-head Release Gate #1525 / `35502377218`: GREEN.
 - Pages #816 / `35502863525`: SUCCESS for current main.
 - Post-merge Release Gate #1527 / `35502864020`: FULL GREEN.
-- Production Coach backend was explicitly activated at `e238b6164da976219da328ef0fe3bd20ea0e7807`.
-- Production Coach Activation #11 / `35502595878`: SUCCESS.
+- Production Coach backend is explicitly activated on current commercial main `fca5357d1c844bd34353a118f9b23e81410e7ca9`.
+- Production Coach Activation #13 / `35503623842`: SUCCESS.
 - Authenticated disposable-user smoke returned `source=llm`, provider `openai`, model `gpt-5.6-luna`, alignment verified, then deleted the disposable identity.
-- Release Gate #1526 / `35502595898`: FULL GREEN for the verified production Coach revision.
+- Release Gate #1529 / `35503623868`: FULL GREEN.
+- Pages #817 / `35503623353`: SUCCESS.
 
 ## AI/Data released state
 - GARANG deterministic Intelligence remains the decision owner.
@@ -35,17 +36,15 @@
 - Confidence-gated User Performance context is available to Coach with `affectsDecision=false`.
 - PR #164 adds read-only `attributedOutcomeScore` from fully attributed finalized learning cycles; it does not claim causality.
 
-## Important deployment boundary
-- Pages/current commercial web includes #164.
-- Production Coach backend is still the verified `e238b616...` deployment.
-- #164 changes server-side UPM attribution source, but its Production Coach Activation run was skipped by design.
-- Do not claim production server parity with #164 until an explicitly approved deployment + authenticated live smoke succeeds.
+## Production parity
+- Current commercial web and production Coach backend both include PR #164 server-side User Performance attribution.
+- Production parity is VERIFIED by Activation #13 plus authenticated `source=llm` smoke.
+- Deterministic Decision Intelligence still owns judgment; UPM context remains read-only and confidence-gated.
 
 ## Next core work
-1. Ask Founder for explicit approval before deploying #164 server changes to production.
-2. Measure real longitudinal behavior rather than adding chatbot breadth: recommendation shown → accept/modify/dismiss → execution → outcome → subsequent recommendation.
-3. Use the accumulated evidence to validate UPM confidence and recommendation usefulness over 2/4/8-week windows.
-4. Continue active-runtime simplification based on verified ownership conflicts, not inactive files.
+1. Measure real longitudinal behavior rather than adding chatbot breadth: recommendation shown → accept/modify/dismiss → execution → outcome → subsequent recommendation.
+2. Use the accumulated evidence to validate UPM confidence and recommendation usefulness over 2/4/8-week windows.
+3. Continue active-runtime simplification based on verified ownership conflicts, not inactive files.
 
 ## Non-blocking debt
 - Main branches are not server-protected.

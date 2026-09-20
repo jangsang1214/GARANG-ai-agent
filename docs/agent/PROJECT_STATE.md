@@ -32,10 +32,11 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 
 ## Runtime / deployment boundary
 - Commercial web source of truth is PRODUCT main `47d95a71...`; Pages #816 has deployed it.
-- Production Coach backend is VERIFIED at deployment revision `e238b616...`.
-- PR #164 also changes server-side User Performance attribution code, but Production Coach Activation run #12 was intentionally skipped because #164 was not an explicit production-activation commit.
-- Therefore browser/main and production backend are temporarily one intelligence slice apart. This is YELLOW release-integrity drift, not a current Coach outage.
-- A new production Function deployment for #164 requires explicit Founder approval.
+- Production Coach backend is now VERIFIED on current commercial main `fca5357d1c844bd34353a118f9b23e81410e7ca9` after explicit Founder approval.
+- Production Coach Activation #13 / `35503623842`: SUCCESS.
+- The activation deployed the current server-side User Performance attribution from PR #164, preserved the existing LLM secret, ran authenticated live smoke, and cleaned up the disposable Firebase identity.
+- Live smoke returned `source=llm`, provider `openai`, model `gpt-5.6-luna`, with alignment verified.
+- Browser/main and production Coach server parity is therefore VERIFIED GREEN.
 
 ## Stable
 - Production Real AI Coach connectivity: VERIFIED GREEN.
@@ -49,11 +50,10 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Broken / blockers
 - No VERIFIED P0/P1 blocker.
 - Current PRODUCT main Release Gate #1527 is VERIFIED GREEN.
-- Server-side #164 UPM attribution is not yet production-activated.
+- Server-side #164 UPM attribution is production-activated and live-smoke verified.
 - Main branch protection, OIDC/WIF deployment auth migration, Functions dependency-family upgrade and runtime ownership simplification remain non-blocking engineering debt.
 
 ## Next priorities
-1. If Founder approves, deploy current server-side UPM attribution to production and repeat authenticated live Coach smoke.
-2. Begin longitudinal external validation: recommendation → accept/modify/dismiss → execution → outcome → later recommendation quality.
-3. Continue runtime ownership simplification only where active boot-path evidence shows duplicate ownership or flake.
-4. Keep P2 branch-protection / OIDC-WIF / dependency hardening separate from product-intelligence work.
+1. Begin longitudinal external validation: recommendation → accept/modify/dismiss → execution → outcome → later recommendation quality.
+2. Continue runtime ownership simplification only where active boot-path evidence shows duplicate ownership or flake.
+3. Keep P2 branch-protection / OIDC-WIF / dependency hardening separate from product-intelligence work.
