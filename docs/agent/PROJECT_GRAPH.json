@@ -115,10 +115,13 @@
     {"id":"TASK-BOUNDED-COACH-DATA-TOOLS-V1","kind":"task","title":"Implement typed user-scoped autonomous Coach data tools with transaction, evidence, idempotency and rollback boundaries","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"TASK-LONGITUDINAL-LEARNING-METRICS-V1","kind":"task","title":"Measure recommendation resolution through execution, outcome and later recommendation coverage","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"TASK-PERSONALIZATION-POLICY-V1","kind":"task","title":"Apply confidence-gated deterministic personalization constraints without automatic progression increase","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"CHANGE-PRODUCT-PR166","kind":"change","title":"PRODUCT PR #166 builds Autonomous Intelligence Loop v1 at 173f2515","status":"in_progress","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-PR166","kind":"change","title":"PRODUCT PR #166 builds Autonomous Intelligence Loop v1 and merges as 5483b848","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-PR166-HEAD","kind":"verification","title":"PR #166 exact-head Release Gate #1530 / 35505697471 attempt 2 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-AUTONOMOUS-INTELLIGENCE-PR-READY","kind":"result","title":"Autonomous Intelligence Loop v1 is source/CI GREEN and review-ready, but not merged or deployed","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","kind":"task","title":"After Founder-approved merge, deploy and live-smoke bounded Coach write execution in production","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"}
+    {"id":"RESULT-AUTONOMOUS-INTELLIGENCE-PR-READY","kind":"result","title":"Autonomous Intelligence Loop v1 reached source/CI GREEN before merge","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","kind":"task","title":"After Founder-approved merge, deploy and live-smoke bounded Coach write execution in production","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-MAIN-1531","kind":"verification","title":"Post-merge PRODUCT main Release Gate #1531 / 35506440313 attempt 2 FULL GREEN for 5483b848","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RELEASE-PAGES-818","kind":"release","title":"Pages #818 / 35506439803 deploys PRODUCT main 5483b848 successfully","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RESULT-AUTONOMOUS-INTELLIGENCE-MAIN-GREEN","kind":"result","title":"Autonomous Intelligence Loop v1 is merged and web-released GREEN; production backend activation remains pending","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"}
   ],
   "edges": [
     {"from":"METRIC-REAL-DEVICE-CONFIDENCE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"measures"},
@@ -246,6 +249,11 @@
     {"from":"CHANGE-PRODUCT-PR166","to":"TASK-PERSONALIZATION-POLICY-V1","kind":"implements"},
     {"from":"VERIFY-PRODUCT-PR166-HEAD","to":"CHANGE-PRODUCT-PR166","kind":"verifies"},
     {"from":"RESULT-AUTONOMOUS-INTELLIGENCE-PR-READY","to":"VERIFY-PRODUCT-PR166-HEAD","kind":"depends-on"},
-    {"from":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","to":"CHANGE-PRODUCT-PR166","kind":"depends-on"}
+    {"from":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","to":"CHANGE-PRODUCT-PR166","kind":"depends-on"},
+    {"from":"VERIFY-PRODUCT-MAIN-1531","to":"CHANGE-PRODUCT-PR166","kind":"verifies"},
+    {"from":"RELEASE-PAGES-818","to":"CHANGE-PRODUCT-PR166","kind":"releases"},
+    {"from":"RESULT-AUTONOMOUS-INTELLIGENCE-MAIN-GREEN","to":"VERIFY-PRODUCT-MAIN-1531","kind":"depends-on"},
+    {"from":"RESULT-AUTONOMOUS-INTELLIGENCE-MAIN-GREEN","to":"RELEASE-PAGES-818","kind":"depends-on"},
+    {"from":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","to":"RESULT-AUTONOMOUS-INTELLIGENCE-MAIN-GREEN","kind":"depends-on"}
   ]
 }
