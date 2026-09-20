@@ -15,7 +15,7 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff — 2026-09-20
-- PRODUCT canonical main: `5483b848e2973f2bf66a1a67148f3c5a5142fb66`.
+- PRODUCT canonical main: `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
 - PR #164 outcome-attributed User Performance learning is merged.
 - PR #164 exact-head Release Gate #1525 / `35502377218`: GREEN.
 - Pages #816 / `35502863525`: SUCCESS for current main.
@@ -26,15 +26,15 @@
 - Release Gate #1529 / `35503623868`: FULL GREEN.
 - Pages #817 / `35503623353`: SUCCESS.
 
-## AI/Data merged — PR #166
-- PRODUCT PR #166 `Build Autonomous Intelligence Loop v1` is MERGED as `5483b848e2973f2bf66a1a67148f3c5a5142fb66`.
-- Exact-head Release Gate #1530 / `35505697471` attempt 2: FULL GREEN.
-- Post-merge Release Gate #1531 / `35506440313` attempt 2: FULL GREEN.
-- Pages #818 / `35506439803`: SUCCESS for merged main.
-- The merged change adds bounded typed user-scoped Coach write tools; explicit-evidence gates for factual records; authenticated Firestore transaction ownership; idempotency and rollback metadata; longitudinal learning metrics; deterministic Personalization Policy v1; and structured LLM tool calls.
-- Raw DB authority, delete/bulk/account/security/schema/secret/billing/production tools are not exposed to the LLM.
-- Production Coach backend remains on `fca5357d...`; Production Coach Activation #14 was SKIPPED, so the new write path is NOT deployed or live-smoke verified yet.
-- Post-merge attempt 1 hit the same unchanged Today bottom Check-in WebKit timing/assertion flake; identical merged SHA passed the full browser suite on attempt 2.
+## AI/Data production state — Autonomous Intelligence Loop v1
+- PRODUCT PR #166 merged the bounded Autonomous Intelligence Loop; subsequent structured-response/write hardening is included in current main `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
+- Production Coach Activation #18 / `35511759697`: SUCCESS.
+- Authenticated live Coach smoke: `source=llm`, provider `openai`, model `gpt-5.6-luna`, alignment verified.
+- Authenticated autonomous-write smoke: bounded `createPlan` executed and persisted; a sensitive write request remained denied/confirmation-gated; disposable account cleanup passed.
+- Pages #822 / `35511758482`: SUCCESS.
+- Release Gate #1543 / `35511759634` attempt 3: FULL GREEN.
+- Attempts 1–2 on the identical SHA failed different WebKit lifecycle/timing assertions; attempt 3 passed the full Golden Path / Real LLM / mobile suite. Treat this as release-integrity/runtime debt, not as a closed flake.
+- Raw DB authority and destructive/bulk/account/security/schema/secret/billing/production tools remain unavailable to the LLM.
 
 ## AI/Data released state
 - GARANG deterministic Intelligence remains the decision owner.
@@ -47,14 +47,15 @@
 - PR #164 adds read-only `attributedOutcomeScore` from fully attributed finalized learning cycles; it does not claim causality.
 
 ## Production parity
-- Current commercial web and production Coach backend both include PR #164 server-side User Performance attribution.
-- Production parity is VERIFIED by Activation #13 plus authenticated `source=llm` smoke.
-- Deterministic Decision Intelligence still owns judgment; UPM context remains read-only and confidence-gated.
+- Current commercial web and production Coach backend are both on PRODUCT main `c4da0000...`.
+- Production parity is VERIFIED by Activation #18 plus authenticated LLM and autonomous-write smoke.
+- Deterministic Decision Intelligence still owns judgment; typed server policy owns mutations.
 
 ## Next core work
-1. Separately gate production activation and authenticated live smoke for structured tool calls and actual transactional user-data writes.
-2. Measure real longitudinal behavior and recommendation usefulness over 2/4/8-week windows.
-3. Continue active-runtime simplification based on verified ownership conflicts, not inactive files.
+1. Fix recurrent WebKit lifecycle/timing nondeterminism in active Today / Golden Path runtime ownership.
+2. Measure real longitudinal behavior and recommendation usefulness over 2/4/8-week windows with external users and canonical funnel events.
+3. Continue active-runtime simplification and stale-PR/repository cleanup before adding new screens.
+4. Keep payment/subscription implementation gated behind external retained-value validation.
 
 ## Non-blocking debt
 - Main branches are not server-protected.

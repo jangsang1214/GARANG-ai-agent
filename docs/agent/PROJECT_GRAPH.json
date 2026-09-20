@@ -118,10 +118,16 @@
     {"id":"CHANGE-PRODUCT-PR166","kind":"change","title":"PRODUCT PR #166 builds Autonomous Intelligence Loop v1 and merges as 5483b848","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-PR166-HEAD","kind":"verification","title":"PR #166 exact-head Release Gate #1530 / 35505697471 attempt 2 FULL GREEN","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"RESULT-AUTONOMOUS-INTELLIGENCE-PR-READY","kind":"result","title":"Autonomous Intelligence Loop v1 reached source/CI GREEN before merge","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
-    {"id":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","kind":"task","title":"After Founder-approved merge, deploy and live-smoke bounded Coach write execution in production","status":"planned","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","kind":"task","title":"Deploy and live-smoke bounded Coach write execution in production","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"VERIFY-PRODUCT-MAIN-1531","kind":"verification","title":"Post-merge PRODUCT main Release Gate #1531 / 35506440313 attempt 2 FULL GREEN for 5483b848","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
     {"id":"RELEASE-PAGES-818","kind":"release","title":"Pages #818 / 35506439803 deploys PRODUCT main 5483b848 successfully","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
-    {"id":"RESULT-AUTONOMOUS-INTELLIGENCE-MAIN-GREEN","kind":"result","title":"Autonomous Intelligence Loop v1 is merged and web-released GREEN; production backend activation remains pending","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"}
+    {"id":"RESULT-AUTONOMOUS-INTELLIGENCE-MAIN-GREEN","kind":"result","title":"Autonomous Intelligence Loop v1 is merged, web-released and production-activated GREEN","status":"done","ownerWorkstream":"ai-data","repositoryId":"product"},
+    {"id":"CHANGE-PRODUCT-C4DA0000","kind":"change","title":"Structured-response and bounded-write hardening advances PRODUCT main to c4da0000","status":"done","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCTION-AUTONOMOUS-INTELLIGENCE-18","kind":"verification","title":"Production Coach Activation #18 / 35511759697 verifies authenticated LLM and bounded createPlan persistence with sensitive-write boundary","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"VERIFY-PRODUCT-MAIN-1543","kind":"verification","title":"PRODUCT main c4da0000 passes Release Gate #1543 / 35511759634 on attempt 3 after two same-SHA WebKit timing failures","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"RELEASE-PAGES-822","kind":"release","title":"Pages #822 / 35511758482 deploys PRODUCT main c4da0000 successfully","status":"done","ownerWorkstream":"release-qa","repositoryId":"product"},
+    {"id":"TASK-WEBKIT-LIFECYCLE-DETERMINISM","kind":"task","title":"Remove recurrent WebKit lifecycle/readiness nondeterminism from active Today and Golden Path runtime","status":"active","ownerWorkstream":"engineering","repositoryId":"product"},
+    {"id":"TASK-EXTERNAL-LONGITUDINAL-VALIDATION","kind":"task","title":"Validate activation, recommendation usefulness, execution and retention with unknown users over 2/4/8-week windows","status":"planned","ownerWorkstream":"growth-business","repositoryId":"product"}
   ],
   "edges": [
     {"from":"METRIC-REAL-DEVICE-CONFIDENCE","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"measures"},
@@ -254,6 +260,13 @@
     {"from":"RELEASE-PAGES-818","to":"CHANGE-PRODUCT-PR166","kind":"releases"},
     {"from":"RESULT-AUTONOMOUS-INTELLIGENCE-MAIN-GREEN","to":"VERIFY-PRODUCT-MAIN-1531","kind":"depends-on"},
     {"from":"RESULT-AUTONOMOUS-INTELLIGENCE-MAIN-GREEN","to":"RELEASE-PAGES-818","kind":"depends-on"},
-    {"from":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","to":"RESULT-AUTONOMOUS-INTELLIGENCE-MAIN-GREEN","kind":"depends-on"}
+    {"from":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","to":"RESULT-AUTONOMOUS-INTELLIGENCE-MAIN-GREEN","kind":"depends-on"},
+    {"from":"CHANGE-PRODUCT-C4DA0000","to":"CHANGE-PRODUCT-PR166","kind":"depends-on"},
+    {"from":"VERIFY-PRODUCTION-AUTONOMOUS-INTELLIGENCE-18","to":"TASK-AUTONOMOUS-INTELLIGENCE-PRODUCTION-ACTIVATION","kind":"verifies"},
+    {"from":"VERIFY-PRODUCT-MAIN-1543","to":"CHANGE-PRODUCT-C4DA0000","kind":"verifies"},
+    {"from":"RELEASE-PAGES-822","to":"CHANGE-PRODUCT-C4DA0000","kind":"releases"},
+    {"from":"RESULT-AUTONOMOUS-INTELLIGENCE-MAIN-GREEN","to":"VERIFY-PRODUCTION-AUTONOMOUS-INTELLIGENCE-18","kind":"depends-on"},
+    {"from":"TASK-WEBKIT-LIFECYCLE-DETERMINISM","to":"GOAL-PROTECT-GOLDEN-PATH","kind":"supports"},
+    {"from":"TASK-EXTERNAL-LONGITUDINAL-VALIDATION","to":"INIT-USER-PERFORMANCE-V1","kind":"supports"}
   ]
 }

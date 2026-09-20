@@ -3,11 +3,11 @@
 Last updated: 2026-09-20
 
 ## Overall decision
-- Production Real AI Coach: GREEN / VERIFIED on deployed backend `fca5357d1c844bd34353a118f9b23e81410e7ca9`.
-- Commercial web current main: GREEN / VERIFIED on `5483b848e2973f2bf66a1a67148f3c5a5142fb66`.
-- Current PRODUCT main: `5483b848e2973f2bf66a1a67148f3c5a5142fb66`.
-- Current verified production Coach backend deployment revision: `fca5357d1c844bd34353a118f9b23e81410e7ca9`.
-- Current web/main ↔ production Coach backend parity: YELLOW because Autonomous Intelligence Loop v1 is merged/web-deployed but not yet production-activated.
+- Production Real AI Coach + Autonomous Intelligence Loop v1: GREEN / VERIFIED.
+- Commercial web current main: GREEN / VERIFIED on `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
+- Current PRODUCT main: `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
+- Current verified production Coach backend deployment revision: `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
+- Current web/main ↔ production Coach backend parity: GREEN / VERIFIED.
 
 ## Production Coach
 Decision: GREEN / LIVE PROVIDER VERIFIED.
@@ -30,16 +30,15 @@ Decision: GREEN / CURRENT MAIN VERIFIED.
 - PR #165 explicitly activated current server-side UPM parity after Founder approval.
 
 ## Autonomous Intelligence Loop v1
-Decision: MAIN/WEB GREEN / PRODUCTION ACTIVATION PENDING.
-- PRODUCT PR #166 merged as `5483b848e2973f2bf66a1a67148f3c5a5142fb66`.
-- Exact-head Release Gate #1530 / `35505697471` attempt 2: FULL GREEN.
-- Post-merge Release Gate #1531 / `35506440313` attempt 2: FULL GREEN.
-- Pages #818 / `35506439803`: SUCCESS.
-- Core/build/dependency checks, Firestore emulator, authenticated Coach plan flow, Real LLM Golden Path, Golden Path complete journey and full WebKit regression: PASS.
-- Post-merge attempt 1 hit the unchanged Today bottom Check-in WebKit timing/assertion flake; identical merged SHA passed the full browser job on attempt 2.
-- The main release includes bounded typed Coach writes, authenticated transactions, explicit evidence gating, idempotency/audit/rollback metadata, longitudinal loop metrics and deterministic Personalization Policy v1.
+Decision: PRODUCTION GREEN / VERIFIED.
+- PRODUCT PR #166 introduced the bounded loop; structured-response/write hardening is included in current main `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
+- Production Coach Activation #18 / `35511759697`: SUCCESS.
+- Authenticated live Coach smoke: PASS with `source=llm`, provider `openai`, model `gpt-5.6-luna`, GARANG alignment verified.
+- Authenticated autonomous-write smoke: PASS; bounded `createPlan` executed and persisted, sensitive-write path remained denied/confirmation-gated, disposable account cleanup passed.
+- Pages #822 / `35511758482`: SUCCESS.
+- Release Gate #1543 / `35511759634` attempt 3: FULL GREEN.
+- Attempts 1–2 failed distinct WebKit lifecycle/timing waits on the identical SHA; this remains release-integrity debt despite final GREEN.
 - Raw database authority and destructive/bulk/account/security/schema/secret/billing/production actions remain unavailable to the LLM.
-- Production Coach Activation #14 was SKIPPED by design. The new server/write path remains NOT production-deployed or live-smoke verified.
 
 ## User Performance Model release state
 - Evidence-aware UPM v1: merged.
@@ -61,16 +60,15 @@ Decision: MAIN/WEB GREEN / PRODUCTION ACTIVATION PENDING.
 Competition derivatives remain separate release channels. Founder-reported Wanted / 롯데 / 브로제이 submission completion stays RECORDED unless submission artifacts are independently re-opened.
 
 ## Release gate
-Current source/web status: GREEN.
-Current production parity status: YELLOW until Autonomous Intelligence Loop v1 production activation/live smoke.
+Current source/web/production status: GREEN.
+Release confidence note: recurrent same-SHA WebKit timing failures remain a P2 determinism debt.
 - Provider connectivity: PASS.
 - Production authenticated live smoke: PASS.
 - Previous exact production revision gate: PASS.
 - Current main Pages deployment: PASS.
-- Current main post-merge Release Gate #1531 attempt 2: PASS.
-- PR #166 exact-head Release Gate #1530 attempt 2: PASS.
-- Pages #818: PASS.
-- Production Coach Activation #14: SKIPPED; prior deployed backend remains healthy.
+- Current main Release Gate #1543 attempt 3: PASS.
+- Pages #822: PASS.
+- Production Coach Activation #18: PASS, including authenticated live LLM + autonomous-write smoke and cleanup.
 - Current main server-side UPM parity in production: PASS.
 
 ## Remaining non-blocking debt
