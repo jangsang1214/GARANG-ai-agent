@@ -75,3 +75,10 @@ Date: 2026-09-16
 Decision: The commercial GARANG PRODUCT main is the canonical source product. Wanted/competition submission work starts by copying a verified stable snapshot into a separate derivative build/repository or deployment target; the competition build may optimize judge-facing clarity without redefining commercial GARANG or automatically merging those changes back.
 Reason: Competition constraints and presentation goals can differ from long-term commercial product priorities, while both should begin from the same verified technical foundation.
 Impact: Freeze and verify the commercial source first, then create the Wanted fork. Submission-specific demo state, copy or presentation changes stay isolated unless separately reviewed as valuable for commercial GARANG.
+
+## D-016 — LLM autonomy uses typed capability boundaries, not raw database authority
+Date: 2026-09-20
+Decision: GARANG may autonomously execute reversible, user-scoped state changes requested by the user only through a bounded typed tool registry and authenticated server transaction boundary. The LLM does not receive raw Firestore paths, arbitrary query/write authority, destructive/bulk/account/security/schema/secret/billing/production tools, or authority to override deterministic GARANG decisions. Factual workout, meal, body and check-in writes require explicit current-message or verified-source evidence; idempotency, audit evidence and rollback metadata are required. Personalization Policy may simplify or constrain recommendations from confidence-gated longitudinal evidence but cannot autonomously increase progression beyond deterministic Decision Intelligence.
+Reason: Agentic action is necessary for GARANG to become a Personal Performance OS, but unrestricted database authority would enlarge privacy, integrity and regression blast radius without improving the core learning loop.
+Impact: The operating model becomes `GARANG decides → LLM interprets/plans bounded actions → server policy validates → authenticated transaction acts → outcome is measured → GARANG learns`. High-impact operations remain Founder/user gated.
+
