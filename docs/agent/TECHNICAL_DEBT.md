@@ -90,3 +90,19 @@ Status: RESOLVED
 Previous severity: LOW / P4
 Area: personalization / AI·Data
 Resolution: PRODUCT now durably persists recommendation resolution evidence for accepted, rejected, dismissed and ignored recommendations through the canonical action-data boundary. User Performance Model v1 consumes this evidence, and PR #166 additionally measures resolution coverage in Longitudinal Learning Metrics v1. No separate truth store was introduced.
+
+## TD-015 — WebKit lifecycle timing is nondeterministic
+Severity: MEDIUM / P2
+Area: frontend runtime / release integrity
+Problem: current PRODUCT main `c4da00002dbce7489593a2097dc82dc4da5b8ba4` required three Release Gate attempts. Attempt 1 timed out waiting for Golden Path Coach actions; attempt 2 timed out waiting for Today bottom Check-in readiness; attempt 3 passed the complete suite on the identical SHA.
+Risk: nondeterministic lifecycle/observer/readiness behavior can hide a real mobile regression and makes release confidence depend on reruns.
+Mitigation: the frozen runtime contract defines single owners and the full WebKit suite ultimately passes unchanged.
+Recommended fix: trace active boot/lifecycle events and overlapping observers, remove duplicate reconciliation/retry ownership, and prefer explicit readiness/lifecycle contracts over arbitrary timeout increases.
+
+## TD-016 — Commercial documentation and monetization artifacts are stale
+Severity: LOW / P6
+Area: product documentation / business readiness
+Problem: PRODUCT README still describes User Performance Model v1 as roadmap work even though it is released, and `08_business/pricing-and-unit-economics.json` remains a FitMind V6 draft. The app explicitly says real payment integration is not yet connected.
+Risk: stale docs create false implementation assumptions and pricing artifacts can be mistaken for validated monetization.
+Mitigation: implementation and CONTROL state remain authoritative.
+Recommended fix: refresh commercial docs after current validation priorities settle; keep payment/subscription build gated behind external retained-value evidence.
