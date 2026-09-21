@@ -1,6 +1,6 @@
 # GARANG Technical Debt
 
-Last updated: 2026-09-20
+Last updated: 2026-09-21
 
 ## TD-001 — No external always-on provider/runtime
 Severity: MEDIUM
@@ -94,7 +94,7 @@ Resolution: PRODUCT now durably persists recommendation resolution evidence for 
 ## TD-015 — WebKit lifecycle timing is nondeterministic
 Severity: MEDIUM / P2
 Area: frontend runtime / release integrity
-Problem: current PRODUCT main `c4da00002dbce7489593a2097dc82dc4da5b8ba4` required three Release Gate attempts. Attempt 1 timed out waiting for Golden Path Coach actions; attempt 2 timed out waiting for Today bottom Check-in readiness; attempt 3 passed the complete suite on the identical SHA.
+Problem: PRODUCT main `c4da00002dbce7489593a2097dc82dc4da5b8ba4` required three Release Gate attempts. Attempt 1 timed out waiting for Golden Path Coach actions; attempt 2 timed out waiting for Today bottom Check-in readiness; attempt 3 passed unchanged. During P1 PR #176 verification, Gate #1558 on head `581cbc85...` again failed the complete Golden Path due to route/proposal readiness timing, while the corrected exact-head Gate #1559 later passed the full suite.
 Risk: nondeterministic lifecycle/observer/readiness behavior can hide a real mobile regression and makes release confidence depend on reruns.
 Mitigation: the frozen runtime contract defines single owners and the full WebKit suite ultimately passes unchanged.
 Recommended fix: trace active boot/lifecycle events and overlapping observers, remove duplicate reconciliation/retry ownership, and prefer explicit readiness/lifecycle contracts over arbitrary timeout increases.
@@ -108,10 +108,8 @@ Mitigation: implementation and CONTROL state remain authoritative.
 Recommended fix: refresh commercial docs after current validation priorities settle; keep payment/subscription build gated behind external retained-value evidence.
 
 ## TD-017 — Coach server/browser write semantics diverged
-Severity: HIGH / P1
+Status: RESOLVED
+Previous severity: HIGH / P1
 Area: Coach action ownership / Golden Path
-Evidence status: INFERRED runtime risk from VERIFIED source contracts; duplicate production behavior has not yet been reproduced.
-Problem: the production server can autonomously execute a bounded low-risk `createPlan` for an explicit user write request, while active browser Coach Agent v4 still runs the same user text through a mock confirmation-only Agent adapter and can render another `createPlan` proposal. Browser tests encode the older confirmation-only behavior and do not consume server `toolResults`.
-Risk: one user request could create misleading UI state or a duplicate plan if the server write succeeds and the user then approves the browser proposal.
-Mitigation: server writes remain bounded/idempotent within their own call path and browser proposal writes remain confirmation-gated, but they currently use different call IDs/contracts.
-Recommended fix: unify the action lifecycle end to end. Carry server tool execution/result metadata into Coach message state, suppress local mock proposals when the server already handled the intent, and keep the mock adapter only for explicit offline/fallback mode. Add an authenticated browser regression before further feature expansion.
+Resolution: PRODUCT PR #176 established one online action owner. Authenticated LLM responses persist sanitized server action metadata into Coach thread state and are marked server-owned; the browser Agent suppresses mock proposal regeneration for those messages. Explicit local/offline fallback retains confirmation-first browser proposals. Exact-head Release Gate #1559 / `35580756829` passed the complete core/WebKit/verify suite before merge to PRODUCT main `0a07c4c5bd19397f43bfe9eaedd20c524f7620da`. Duplicate P1 PRs #173–#175 were closed as superseded.
+
