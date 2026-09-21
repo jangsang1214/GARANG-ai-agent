@@ -2,6 +2,32 @@
 
 Last updated: 2026-09-21
 
+## Active P4 — Personalized Intelligence Loop v1
+Status: IMPLEMENTED IN MAIN / SOURCE+WEB VERIFIED GREEN / PRODUCTION BACKEND PENDING EXPLICIT APPROVAL
+Owner: AI Data / Engineering / Release QA
+Goal: make observed recommendation outcomes change later personalization without transferring decision ownership to the LLM.
+
+Implemented in PRODUCT PR #186:
+- Intelligence Episode v1 derives context → decision → recommendation → user response → execution → outcome evidence from the existing learning graph. ✅
+- User Response Model v1 derives confidence-weighted acceptance, execution, observed outcome and duration-response patterns. ✅
+- Recommendation Policy Evaluation v1 creates bounded candidates and transparent scores. ✅
+- Response learning is connected to Personalization Policy as constraint-only; it cannot increase intensity/volume/duration beyond deterministic Decision Intelligence. ✅
+- Agent Context and Coach receive compact episode/response/policy context. ✅
+- Browser/server parity and conservative-policy regressions are included in the standard gate. ✅
+
+Verification:
+- PR #186 head `da755b62726be55e5f96f23272d99129054bb45e`.
+- Exact-head Release Gate #1591 / `35596002250`: FULL GREEN. ✅
+- PR #186 merged as PRODUCT main `56ff9c788cac69b8106da66598ecbe4da35c0fcc`. ✅
+- Post-merge Release Gate #1592 / `35596512205`: FULL GREEN. ✅
+- Pages #829 / `35596510796`: SUCCESS. ✅
+- Production Coach Activation #19: SKIPPED by the deployment approval boundary; server-side PR #186 behavior is not yet claimed live in production. ✅ safety boundary / ⏳ activation pending.
+
+Next acceptance:
+- Explicit Founder-approved production Coach activation for `56ff9c78...` followed by authenticated live LLM + bounded-write smoke.
+- External 2/4/8-week episode collection and response-policy usefulness measurement.
+- Keep response learning conservative until real-user evidence supports broader adaptation.
+
 ## Active P4 — Autonomous Intelligence Loop v1
 Status: IMPLEMENTED IN PRODUCTION / VERIFIED GREEN
 Owner: AI Data / Engineering / Release QA
