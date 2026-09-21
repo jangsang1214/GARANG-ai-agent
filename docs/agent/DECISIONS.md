@@ -82,3 +82,8 @@ Decision: GARANG may autonomously execute reversible, user-scoped state changes 
 Reason: Agentic action is necessary for GARANG to become a Personal Performance OS, but unrestricted database authority would enlarge privacy, integrity and regression blast radius without improving the core learning loop.
 Impact: The operating model becomes `GARANG decides → LLM interprets/plans bounded actions → server policy validates → authenticated transaction acts → outcome is measured → GARANG learns`. High-impact operations remain Founder/user gated.
 
+## D-017 — Personalized response learning is constraint-first until longitudinal validation
+Date: 2026-09-21
+Decision: Intelligence Episode and User Response evidence may influence candidate evaluation and Personalization Policy only inside the deterministic GARANG Decision envelope. Response-derived policy may shorten, simplify, cap intensity/volume or suppress progression, but it cannot autonomously increase progression beyond the deterministic decision until external longitudinal evidence justifies a separately reviewed policy change.
+Reason: GARANG now has enough attribution structure to learn user response patterns, but current beta evidence is observational and sparse; treating early correlations as causal optimization would create overfitting and safety risk.
+Impact: The product can begin compounding personalized response evidence immediately while preserving Decision Intelligence ownership, transparent candidate scoring and the existing safety architecture.
