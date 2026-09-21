@@ -15,7 +15,7 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff — 2026-09-21
-- PRODUCT canonical main: `0a07c4c5bd19397f43bfe9eaedd20c524f7620da`.
+- PRODUCT canonical main: `9fa951b30be4981b8081e649dd05ab229df44218`.
 - PR #164 outcome-attributed User Performance learning is merged.
 - PR #164 exact-head Release Gate #1525 / `35502377218`: GREEN.
 - Pages #816 / `35502863525`: SUCCESS for current main.
@@ -54,16 +54,22 @@
 - Duplicate P1 PRs #173–#175 are closed as superseded.
 - Production Functions were not redeployed by this source-only ownership fix.
 
+## WebKit lifecycle determinism
+- PRODUCT PR #177 merged to main `9fa951b3...`.
+- Exact-head Release Gate #1562 / `35582093879`: FULL GREEN.
+- The same exact SHA browser-webkit job was rerun and passed the complete WebKit suite again.
+- Root cause was no-op `#garangTodayFlow` replacement during lifecycle events; unchanged semantic state now preserves DOM/CTA identity.
+- No arbitrary timeout increase or new retry/observer owner was added.
+
 ## Production parity
-- Production Coach backend remains VERIFIED on activated revision `c4da0000...`; current web/source main is `0a07c4c5...`.
-- The new P1 change does not require a Functions code change, but source/backend SHA parity is no longer literal after the browser-only merge.
+- Production Coach backend remains VERIFIED on activated revision `c4da0000...`; current source main is `9fa951b3...`.
+- PR #176 and #177 are browser/runtime ownership changes and do not require a Functions redeploy.
 - Deterministic Decision Intelligence still owns judgment; typed server policy owns mutations.
 
 ## Next core work
-1. Fix recurrent WebKit lifecycle/timing nondeterminism in active Today / Golden Path runtime ownership.
-2. Measure real longitudinal behavior and recommendation usefulness over 2/4/8-week windows with external users and canonical funnel events.
-3. Continue active-runtime simplification and stale-PR/repository cleanup before adding new screens.
-4. Keep payment/subscription implementation gated behind external retained-value validation.
+1. Measure real longitudinal behavior and recommendation usefulness over 2/4/8-week windows with external users and canonical funnel events.
+2. Continue active-runtime simplification and stale-PR/repository cleanup before adding new screens.
+3. Keep payment/subscription implementation gated behind external retained-value validation.
 
 ## Non-blocking debt
 - Main branches are not server-protected.
