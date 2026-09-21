@@ -1,6 +1,6 @@
 # GARANG Tasks
 
-Last updated: 2026-09-20
+Last updated: 2026-09-21
 
 ## Active P4 — Autonomous Intelligence Loop v1
 Status: IMPLEMENTED IN PRODUCTION / VERIFIED GREEN
@@ -77,21 +77,20 @@ Evidence:
 - Release Gate #1529 / `35503623868`: FULL GREEN.
 - Pages #817 / `35503623353`: SUCCESS.
 
-## Active P1 — Coach write ownership unification
-Status: VERIFICATION REQUIRED / CONTRACT DRIFT FOUND
+## Closed P1 — Coach write ownership unification
+Status: DONE / VERIFIED GREEN
 Owner: Engineering / AI Data / Product / Release QA
-Problem: production server `/coach` now executes bounded low-risk writes when the current user explicitly requests them, but active browser `garang-coach-agent-v4.js` independently replays the same user message through `GarangAgentContract.createMockAdapter()` and can produce a second confirmation-only `createPlan` proposal.
-Evidence:
-- Production Activation #18 proves server `createPlan` execution + persistence.
-- Active Coach Agent v4 lines 86–105 create a local mock session from the preceding user message and render its proposals.
-- Agent Contract mock adapter creates `createPlan` for plan/schedule intent and states nothing is saved until approval.
-- Current browser Real LLM/Coach-plan tests still expect Planner to remain unchanged until proposal approval and do not model production `toolResults`.
-Acceptance:
-- Reproduce with one authenticated disposable/staging user using an explicit save-plan request.
-- Establish one canonical action owner: server-executed tool result OR browser confirmation proposal, never both for the same intent.
-- Persist/display action result and audit status consistently.
-- Add regression covering explicit server write + rendered Coach response + no duplicate proposal/write.
-- Run full Release Gate and production-safe smoke before activation.
+Resolution:
+- PRODUCT PR #176 merged to main as `0a07c4c5bd19397f43bfe9eaedd20c524f7620da`.
+- Online authenticated LLM responses preserve sanitized `source`, `requestId`, and `toolResults` in Coach thread messages and are marked server-owned.
+- `garang-coach-agent-v4.js` does not regenerate a browser mock proposal for server-owned responses.
+- Explicit local/offline fallback remains confirmation-first through the existing mock Agent path.
+- Real LLM browser regression asserts server-owned `createPlan` => zero browser proposal and zero mirrored local Planner/actionLog write.
+- Complete Golden Path regression now explicitly exercises local fallback where browser confirmation is still expected.
+Verification:
+- PR #176 exact-head Release Gate #1559 / `35580756829`: FULL GREEN.
+- Earlier Gate #1558 exposed a separate WebKit lifecycle timing failure; this remains P2 release-integrity debt, not a P1 ownership failure.
+- Duplicate P1 PRs #173–#175 were closed as superseded by #176.
 
 ## Active P2 — WebKit lifecycle determinism
 Status: OPEN / RELEASE-INTEGRITY DEBT
