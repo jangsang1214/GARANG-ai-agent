@@ -3,7 +3,7 @@
 Last updated: 2026-09-21
 
 ## Active P4 — Personalized Intelligence Loop v1
-Status: IMPLEMENTED IN MAIN / SOURCE+WEB VERIFIED GREEN / PRODUCTION BACKEND PENDING EXPLICIT APPROVAL
+Status: IMPLEMENTED IN PRODUCTION / VERIFIED GREEN
 Owner: AI Data / Engineering / Release QA
 Goal: make observed recommendation outcomes change later personalization without transferring decision ownership to the LLM.
 
@@ -21,11 +21,16 @@ Verification:
 - PR #186 merged as PRODUCT main `56ff9c788cac69b8106da66598ecbe4da35c0fcc`. ✅
 - Post-merge Release Gate #1592 / `35596512205`: FULL GREEN. ✅
 - Pages #829 / `35596510796`: SUCCESS. ✅
-- Production Coach Activation #19: SKIPPED by the deployment approval boundary; server-side PR #186 behavior is not yet claimed live in production. ✅ safety boundary / ⏳ activation pending.
+- Production Coach Activation #19: SKIPPED before approval. ✅ safety boundary
+- Founder-approved Activation #20 / `35598862426` deployed but failed bounded createPlan write smoke with `PLAN_TITLE_REQUIRED`; root cause was omitted display title. ⚠️ diagnosed
+- Deterministic display-title fallback hardening: `e2aa7ed...` + regression `895fb83...`. ✅
+- Activation #21 / `35599747682` on current main `08cfa18e...`: SUCCESS. Authenticated live LLM, bounded createPlan write, sensitive-write boundary and disposable cleanup all PASS. ✅
+- Release Gate #1600 / `35599747696`: FULL GREEN. ✅
+- Pages #831 / `35599747250`: SUCCESS. ✅
 
 Next acceptance:
-- Explicit Founder-approved production Coach activation for `56ff9c78...` followed by authenticated live LLM + bounded-write smoke.
-- External 2/4/8-week episode collection and response-policy usefulness measurement.
+- External 2/4/8-week Intelligence Episode collection and response-policy usefulness measurement.
+- Measure recommendation shown → accept/edit/reject → execution → outcome → next recommendation.
 - Keep response learning conservative until real-user evidence supports broader adaptation.
 
 ## Active P4 — Autonomous Intelligence Loop v1

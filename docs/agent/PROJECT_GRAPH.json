@@ -1030,14 +1030,30 @@
       "id": "TASK-PERSONALIZED-INTELLIGENCE-PROD-ACTIVATION",
       "kind": "task",
       "title": "Activate PR #186 server intelligence in production Coach after explicit Founder approval and live smoke",
-      "status": "planned",
+      "status": "done",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
     },
     {
       "id": "RESULT-PERSONALIZED-INTELLIGENCE-SOURCE-GREEN",
       "kind": "result",
-      "title": "Personalized Intelligence Loop v1 source and web release GREEN with production backend activation still gated",
+      "title": "Personalized Intelligence Loop v1 source/web/production GREEN",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCTION-PERSONALIZED-INTELLIGENCE-21",
+      "kind": "verification",
+      "title": "Production Coach Activation #21 and current main Release Gate #1600 verify Personalized Intelligence in production",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-PERSONALIZED-INTELLIGENCE-PRODUCTION-GREEN",
+      "kind": "result",
+      "title": "Personalized Intelligence Loop v1 is verified across source, web and production Coach",
       "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
@@ -1767,6 +1783,21 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-PERSONALIZED-INTELLIGENCE-SOURCE-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCTION-PERSONALIZED-INTELLIGENCE-21",
+      "to": "TASK-PERSONALIZED-INTELLIGENCE-PROD-ACTIVATION",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-PERSONALIZED-INTELLIGENCE-PRODUCTION-GREEN",
+      "to": "VERIFY-PRODUCTION-PERSONALIZED-INTELLIGENCE-21",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-PERSONALIZED-INTELLIGENCE-PRODUCTION-GREEN",
       "kind": "depends-on"
     }
   ]
