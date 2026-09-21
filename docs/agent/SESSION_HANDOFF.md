@@ -15,7 +15,7 @@
 12 select top 1–3 priorities and route authorized work.
 
 ## Current handoff — 2026-09-21
-- PRODUCT canonical main: `9fa951b30be4981b8081e649dd05ab229df44218`.
+- PRODUCT canonical main: `56ff9c788cac69b8106da66598ecbe4da35c0fcc`.
 - PR #164 outcome-attributed User Performance learning is merged.
 - PR #164 exact-head Release Gate #1525 / `35502377218`: GREEN.
 - Pages #816 / `35502863525`: SUCCESS for current main.
@@ -25,6 +25,15 @@
 - Authenticated disposable-user smoke returned `source=llm`, provider `openai`, model `gpt-5.6-luna`, alignment verified, then deleted the disposable identity.
 - Release Gate #1529 / `35503623868`: FULL GREEN.
 - Pages #817 / `35503623353`: SUCCESS.
+
+## AI/Data current handoff — Personalized Intelligence Loop v1
+- PRODUCT PR #186 merged Intelligence Episode v1 + User Response Model v1 + Recommendation Policy Evaluation v1.
+- Exact-head Gate #1591 / `35596002250`: FULL GREEN.
+- Post-merge Gate #1592 / `35596512205`: FULL GREEN.
+- Pages #829 / `35596510796`: SUCCESS.
+- Response learning can only constrain/simplify recommendations inside the deterministic GARANG Decision envelope.
+- Production Coach backend still runs verified revision `c4da0000...`; Production Coach Activation #19 was skipped because production activation is explicitly gated.
+- Next AI/Data action: obtain Founder approval before production activation, then run authenticated live LLM + bounded-write smoke; after parity is GREEN, collect 2/4/8-week external Intelligence Episodes.
 
 ## AI/Data production state — Autonomous Intelligence Loop v1
 - PRODUCT PR #166 merged the bounded Autonomous Intelligence Loop; subsequent structured-response/write hardening is included in current main `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.

@@ -8,10 +8,11 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main: `9fa951b30be4981b8081e649dd05ab229df44218` (PR #177 Today lifecycle DOM determinism merged).
+- Canonical PRODUCT main: `56ff9c788cac69b8106da66598ecbe4da35c0fcc` (PR #186 Personalized Intelligence Loop v1 merged).
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## VERIFIED commercial evidence
+- PRODUCT PR #186 exact-head Release Gate #1591 / `35596002250`: FULL GREEN across core/build, Firestore emulator, Golden Path complete, authenticated Coach, Real LLM Golden Path and full WebKit/mobile regression. PR #186 merged as PRODUCT main `56ff9c788cac69b8106da66598ecbe4da35c0fcc`; post-merge Release Gate #1592 / `35596512205` is FULL GREEN and Pages #829 / `35596510796` is SUCCESS.
 - PRODUCT PR #177 exact-head Release Gate #1562 / `35582093879`: FULL GREEN. The exact same SHA WebKit job was rerun and passed the complete suite again; PR #177 merged as main `9fa951b30be4981b8081e649dd05ab229df44218`.
 - Production Coach activation run #11 / `35502595878`: SUCCESS on main `e238b6164da976219da328ef0fe3bd20ea0e7807`.
 - The activation preserved the existing `GARANG_LLM_API_KEY`, deployed only Firebase Function `api`, minted a disposable Firebase identity, and ran authenticated live Coach smoke.
@@ -24,6 +25,10 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Release Gate #1543 / `35511759634` attempt 3: FULL GREEN for current PRODUCT main. Attempts 1–2 failed different WebKit lifecycle/timing assertions on the identical SHA; attempt 3 passed the complete Golden Path / Real LLM / mobile regression suite.
 
 ## Product / AI state
+- Personalized Intelligence Loop v1 is MERGED and SOURCE/WEB VERIFIED on PRODUCT main `56ff9c788cac69b8106da66598ecbe4da35c0fcc` via PR #186.
+- Intelligence Episode v1 derives recommendation episodes from the existing learning graph and durable resolution/execution/outcome evidence without raw-chat dependence.
+- User Response Model v1 derives confidence-weighted acceptance/execution/outcome and duration-response patterns from attributed episodes.
+- Recommendation Policy Evaluation v1 evaluates bounded candidates with transparent scoring; response learning is wired into Personalization Policy as constraint-only and cannot exceed the deterministic GARANG Decision envelope.
 - Autonomous Intelligence Loop v1 is MERGED and VERIFIED in production on current PRODUCT main `c4da0000...`.
 - PR #166 head `173f251542f7172dd8328f1a8c014b4035c7d0da` adds bounded typed Coach data tools, authenticated transactional writes with owner pinning/idempotency/rollback metadata, longitudinal loop metrics, deterministic confidence-gated Personalization Policy v1, and Coach tool-call integration.
 - PR #166 exact-head Gate #1530 and merge Gate #1531 were GREEN; subsequent structured-response/write hardening is included in current main `c4da0000...`, Production Activation #18 is GREEN, and Release Gate #1543 attempt 3 is FULL GREEN.
@@ -36,13 +41,14 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - User Performance Model v1 now includes durable recommendation-resolution evidence and outcome-attributed learning through fully linked Intelligence Learning Contract cycles (PR #164).
 
 ## Runtime / deployment boundary
-- Commercial web source of truth is PRODUCT main `c4da00002dbce7489593a2097dc82dc4da5b8ba4`; Pages #822 has deployed it.
+- Commercial web source of truth is PRODUCT main `56ff9c788cac69b8106da66598ecbe4da35c0fcc`; Pages #829 has deployed it.
 - Production Coach backend is VERIFIED on current commercial main `c4da00002dbce7489593a2097dc82dc4da5b8ba4` after explicit Founder approval.
 - Production Coach Activation #18 / `35511759697`: SUCCESS. It deployed only Firebase Function `api`, preserved the existing LLM secret, ran authenticated live LLM smoke plus authenticated autonomous-write smoke, and cleaned up the disposable Firebase identity.
 - Live evidence: `source=llm`, provider `openai`, model `gpt-5.6-luna`, GARANG alignment verified; bounded `createPlan` executed and persisted; sensitive-write request remained denied/confirmation-gated.
-- Commercial web/main and production Coach backend parity is VERIFIED GREEN.
+- Web/main now contains PR #186 server intelligence changes while production Coach backend remains on verified revision `c4da00002dbce7489593a2097dc82dc4da5b8ba4`; production parity is YELLOW until an explicitly approved Coach activation deploys and live-smoke verifies `56ff9c78...`. Automatic Production Coach Activation #19 was correctly skipped.
 
 ## Stable
+- Personalized Intelligence Loop v1 source/web release: VERIFIED GREEN on main `56ff9c78...`; production backend activation remains intentionally gated.
 - Production Real AI Coach connectivity: VERIFIED GREEN.
 - Commercial Coach decision/alignment boundary: VERIFIED GREEN.
 - User Performance Model v1 core contract: merged.
@@ -61,6 +67,6 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Main branch protection, OIDC/WIF deployment auth migration, Functions dependency-family upgrade and runtime ownership simplification remain non-blocking engineering debt.
 
 ## Next priorities
-1. P4/P5 real longitudinal validation: recommendation → resolution → execution → outcome → later recommendation quality over 2/4/8-week windows, plus activation/retention funnel measurement on external users.
-2. P3/P6 simplify active frontend ownership and repository noise before adding new screens; keep branch protection / OIDC-WIF / dependency hardening as dedicated integrity work.
-3. Defer payment/subscription build and broader feature expansion until external validation shows which retained value users will pay for.
+1. P4/P5 real longitudinal validation using Intelligence Episodes: recommendation → resolution → execution → outcome → later recommendation quality over 2/4/8-week windows, plus activation/retention funnel measurement on external users.
+2. P4 production activation of PR #186 server intelligence only after explicit Founder approval, followed by authenticated live LLM + bounded-write smoke and parity verification.
+3. P4/P5 expand response-model signal quality only from observed episode evidence; keep semantic RAG/model upgrades and broader feature expansion behind demonstrated longitudinal value.

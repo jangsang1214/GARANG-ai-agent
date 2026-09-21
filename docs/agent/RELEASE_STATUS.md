@@ -5,10 +5,21 @@ Last updated: 2026-09-21
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
-- Commercial web source main: `9fa951b30be4981b8081e649dd05ab229df44218` after PR #177.
-- Current PRODUCT main: `9fa951b30be4981b8081e649dd05ab229df44218`.
+- Commercial web source main: `56ff9c788cac69b8106da66598ecbe4da35c0fcc` after PR #186.
+- Current PRODUCT main: `56ff9c788cac69b8106da66598ecbe4da35c0fcc`.
 - Current verified production Coach backend deployment revision: `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
-- Current web/main ↔ production Coach backend parity: GREEN / VERIFIED.
+- Current web/main ↔ production Coach backend parity: YELLOW. Web/source includes PR #186 server intelligence changes; production Coach backend remains on `c4da00002dbce7489593a2097dc82dc4da5b8ba4` until explicit activation.
+
+## Personalized Intelligence Loop v1
+Decision: SOURCE/WEB GREEN / PRODUCTION BACKEND ACTIVATION PENDING.
+- PRODUCT PR #186 head `da755b62726be55e5f96f23272d99129054bb45e`.
+- Exact-head Release Gate #1591 / `35596002250`: FULL GREEN across core/build, Firestore emulator, Golden Path complete, authenticated Coach, Real LLM Golden Path and full WebKit/mobile regression.
+- PR #186 merged as PRODUCT main `56ff9c788cac69b8106da66598ecbe4da35c0fcc`.
+- Post-merge Release Gate #1592 / `35596512205`: FULL GREEN.
+- Pages #829 / `35596510796`: SUCCESS.
+- Intelligence Episode v1, User Response Model v1 and Recommendation Policy Evaluation v1 are merged.
+- Response-derived personalization is confidence-gated and constraint-only; it cannot exceed deterministic Decision Intelligence or create automatic progression increases.
+- Production Coach Activation #19 was SKIPPED by design. No claim is made that PR #186 server-side behavior is live until an explicit Founder-approved activation and authenticated live smoke pass.
 
 ## Production Coach
 Decision: GREEN / LIVE PROVIDER VERIFIED.
