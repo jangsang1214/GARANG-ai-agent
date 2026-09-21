@@ -917,8 +917,8 @@
     {
       "id": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
       "kind": "task",
-      "title": "Remove recurrent WebKit lifecycle/readiness nondeterminism from active Today and Golden Path runtime",
-      "status": "active",
+      "title": "Preserve Today DOM identity across no-op lifecycle events and verify repeatable WebKit stability",
+      "status": "done",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -950,6 +950,22 @@
       "id": "VERIFY-PRODUCT-PR176-HEAD",
       "kind": "verification",
       "title": "PR #176 exact-head Release Gate #1559 / 35580756829 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR177",
+      "kind": "change",
+      "title": "PRODUCT PR #177 stabilizes Today lifecycle DOM ownership and merges as 9fa951b3",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR177-HEAD",
+      "kind": "verification",
+      "title": "PR #177 exact-head Release Gate #1562 / 35582093879 FULL GREEN with same-SHA WebKit rerun GREEN",
       "status": "done",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
@@ -1609,6 +1625,16 @@
     {
       "from": "VERIFY-PRODUCT-PR176-HEAD",
       "to": "CHANGE-PRODUCT-PR176",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR177",
+      "to": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR177-HEAD",
+      "to": "CHANGE-PRODUCT-PR177",
       "kind": "verifies"
     }
   ]

@@ -92,18 +92,21 @@ Verification:
 - Earlier Gate #1558 exposed a separate WebKit lifecycle timing failure; this remains P2 release-integrity debt, not a P1 ownership failure.
 - Duplicate P1 PRs #173–#175 were closed as superseded by #176.
 
-## Active P2 — WebKit lifecycle determinism
-Status: OPEN / RELEASE-INTEGRITY DEBT
+## Closed P2 — WebKit lifecycle determinism
+Status: DONE / VERIFIED GREEN
 Owner: Engineering / Release QA
-Goal: make current-main browser verification deterministic without relying on repeated reruns.
-Evidence:
-- Release Gate #1543 attempt 1 failed a Golden Path Coach-action wait on `c4da0000...`.
-- Attempt 2 failed Today bottom Check-in readiness on the identical SHA.
-- Attempt 3 passed the entire browser/Golden Path suite unchanged.
-Acceptance:
-- Identify the active lifecycle/observer/readiness race.
-- Remove duplicate/retry ownership rather than increasing arbitrary waits.
-- Demonstrate repeated same-SHA WebKit success without functional regression.
+Root cause:
+- Active Today action flow rebuilt and `replaceWith()`-replaced `#garangTodayFlow` on lifecycle events even when the derived model was unchanged.
+- On mobile WebKit this could replace the active route CTA between pointer/touch phases and surface as route/readiness timing failures.
+Resolution:
+- PRODUCT PR #177 preserves Today flow/CTA DOM identity on no-op lifecycle events using a deterministic render key.
+- Full DOM replacement remains only when the semantic Today model changes.
+- No new observer/retry layer and no timeout increase were added.
+Verification:
+- PR #177 exact-head Release Gate #1562 / `35582093879`: FULL GREEN.
+- The same exact SHA browser-webkit job was manually rerun and passed the complete WebKit suite again, including Golden Path complete, authenticated Coach, Real LLM, Settings, button health and runtime stress.
+- PR #177 merged to PRODUCT main as `9fa951b30be4981b8081e649dd05ab229df44218`.
+- Merge diff from previous main contains only Today action flow runtime, its cache key, and the regression test.
 
 ## Active P5 — External longitudinal validation
 Status: PLANNED / PRODUCT CAPABILITY READY

@@ -5,8 +5,8 @@ Last updated: 2026-09-21
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
-- Commercial web source main: `0a07c4c5bd19397f43bfe9eaedd20c524f7620da` after PR #176.
-- Current PRODUCT main: `0a07c4c5bd19397f43bfe9eaedd20c524f7620da`.
+- Commercial web source main: `9fa951b30be4981b8081e649dd05ab229df44218` after PR #177.
+- Current PRODUCT main: `9fa951b30be4981b8081e649dd05ab229df44218`.
 - Current verified production Coach backend deployment revision: `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
 - Current web/main ↔ production Coach backend parity: GREEN / VERIFIED.
 
@@ -50,6 +50,16 @@ Decision: SOURCE/CI GREEN / MERGED.
 - Gate #1558 on an earlier same task head failed a known WebKit lifecycle/proposal readiness path; #1559 passed after the complete Golden Path fixture was made explicit about local fallback.
 - No production Function deployment was performed in this change.
 
+## WebKit lifecycle determinism
+Decision: SOURCE/CI GREEN / MERGED.
+- PRODUCT PR #177 exact head `137b3e55af5eb5e5dcdbda15bf9c78d19a1c251f`.
+- Release Gate #1562 / `35582093879`: FULL GREEN.
+- Same-SHA browser-webkit job rerun: FULL GREEN again, including Golden Path complete, authenticated Coach, Real LLM, Settings, button health and runtime stress.
+- Root cause was no-op lifecycle replacement of the Today action DOM; unchanged Today markup now preserves the live flow and route CTA node identity.
+- No timeout increase, new retry owner, schema change, backend change or production Function deployment.
+- PR #177 merged to PRODUCT main `9fa951b30be4981b8081e649dd05ab229df44218`.
+- Post-merge push-run visibility is unavailable through the current GitHub connector; merge drift was separately checked and only the three PR #177 files differ from previous main.
+
 ## User Performance Model release state
 - Evidence-aware UPM v1: merged.
 - Recovery/check-in legacy fallback defect: fixed.
@@ -72,7 +82,7 @@ Competition derivatives remain separate release channels. Founder-reported Wante
 ## Release gate
 Automated source/web/production gate status: GREEN.
 Product-action confidence: GREEN for the server/browser single-owner contract on merged source. Production backend remains on the previously activated `c4da0000...` revision until a separate deployment is explicitly authorized; PR #176 is a browser/runtime ownership fix and does not claim a new Functions deployment.
-Release confidence note: recurrent same-SHA WebKit timing failures remain a P2 determinism debt.
+Release confidence note: TD-015 WebKit lifecycle determinism is RESOLVED in PR #177; exact-head Gate #1562 is GREEN and the same SHA WebKit job passed a second complete run.
 - Provider connectivity: PASS.
 - Production authenticated live smoke: PASS.
 - Previous exact production revision gate: PASS.

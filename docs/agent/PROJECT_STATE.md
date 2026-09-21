@@ -8,10 +8,11 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main: `0a07c4c5bd19397f43bfe9eaedd20c524f7620da` (PR #176 Coach server/browser single-owner unification merged).
+- Canonical PRODUCT main: `9fa951b30be4981b8081e649dd05ab229df44218` (PR #177 Today lifecycle DOM determinism merged).
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## VERIFIED commercial evidence
+- PRODUCT PR #177 exact-head Release Gate #1562 / `35582093879`: FULL GREEN. The exact same SHA WebKit job was rerun and passed the complete suite again; PR #177 merged as main `9fa951b30be4981b8081e649dd05ab229df44218`.
 - Production Coach activation run #11 / `35502595878`: SUCCESS on main `e238b6164da976219da328ef0fe3bd20ea0e7807`.
 - The activation preserved the existing `GARANG_LLM_API_KEY`, deployed only Firebase Function `api`, minted a disposable Firebase identity, and ran authenticated live Coach smoke.
 - Live smoke returned `source=llm`, provider `openai`, model `gpt-5.6-luna`, with alignment verified; disposable identity cleanup passed.
@@ -56,10 +57,10 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #176 exact-head Release Gate #1559 / `35580756829`: FULL GREEN after updating the complete Golden Path test to use an explicit local-fallback scenario. The earlier same-SHA rerun on Gate #1558 again exposed WebKit lifecycle timing debt, strengthening P2 priority rather than reopening P1.
 - Autonomous Intelligence production activation is VERIFIED GREEN via Activation #18.
 - Server-side #164 UPM attribution is production-activated and live-smoke verified.
+- WebKit lifecycle determinism is RESOLVED by PR #177 with two complete same-SHA WebKit passes.
 - Main branch protection, OIDC/WIF deployment auth migration, Functions dependency-family upgrade and runtime ownership simplification remain non-blocking engineering debt.
 
 ## Next priorities
-1. P2 release integrity: remove recurrent WebKit lifecycle/timing nondeterminism on the active Today / Golden Path runtime instead of normalizing reruns.
-2. P4/P5 real longitudinal validation: recommendation → resolution → execution → outcome → later recommendation quality over 2/4/8-week windows, plus activation/retention funnel measurement on external users.
-3. P3/P6 simplify active frontend ownership and repository noise before adding new screens; keep branch protection / OIDC-WIF / dependency hardening as dedicated integrity work.
-4. Defer payment/subscription build and broader feature expansion until external validation shows which retained value users will pay for.
+1. P4/P5 real longitudinal validation: recommendation → resolution → execution → outcome → later recommendation quality over 2/4/8-week windows, plus activation/retention funnel measurement on external users.
+2. P3/P6 simplify active frontend ownership and repository noise before adding new screens; keep branch protection / OIDC-WIF / dependency hardening as dedicated integrity work.
+3. Defer payment/subscription build and broader feature expansion until external validation shows which retained value users will pay for.
