@@ -92,12 +92,12 @@ Area: personalization / AI·Data
 Resolution: PRODUCT now durably persists recommendation resolution evidence for accepted, rejected, dismissed and ignored recommendations through the canonical action-data boundary. User Performance Model v1 consumes this evidence, and PR #166 additionally measures resolution coverage in Longitudinal Learning Metrics v1. No separate truth store was introduced.
 
 ## TD-015 — WebKit lifecycle timing is nondeterministic
-Severity: MEDIUM / P2
+Status: RESOLVED
+Previous severity: MEDIUM / P2
 Area: frontend runtime / release integrity
-Problem: PRODUCT main `c4da00002dbce7489593a2097dc82dc4da5b8ba4` required three Release Gate attempts. Attempt 1 timed out waiting for Golden Path Coach actions; attempt 2 timed out waiting for Today bottom Check-in readiness; attempt 3 passed unchanged. During P1 PR #176 verification, Gate #1558 on head `581cbc85...` again failed the complete Golden Path due to route/proposal readiness timing, while the corrected exact-head Gate #1559 later passed the full suite.
-Risk: nondeterministic lifecycle/observer/readiness behavior can hide a real mobile regression and makes release confidence depend on reruns.
-Mitigation: the frozen runtime contract defines single owners and the full WebKit suite ultimately passes unchanged.
-Recommended fix: trace active boot/lifecycle events and overlapping observers, remove duplicate reconciliation/retry ownership, and prefer explicit readiness/lifecycle contracts over arbitrary timeout increases.
+Root cause: active `garang-today-action-flow-v1` remounted `#garangTodayFlow` after lifecycle events even when its derived markup had not changed, allowing WebKit route CTA identity to change during a touch sequence.
+Resolution: PRODUCT PR #177 adds a deterministic render identity and skips no-op Today DOM replacement while retaining real semantic updates. It adds a WebKit regression that dispatches no-op lifecycle events and requires both the Today flow and Coach CTA node identity to survive.
+Verification: exact-head Release Gate #1562 / `35582093879` passed core/build, the full WebKit suite and verify. The same exact SHA WebKit job was rerun after success and passed the complete suite a second time. PR #177 merged as PRODUCT main `9fa951b30be4981b8081e649dd05ab229df44218`.
 
 ## TD-016 — Commercial documentation and monetization artifacts are stale
 Severity: LOW / P6
