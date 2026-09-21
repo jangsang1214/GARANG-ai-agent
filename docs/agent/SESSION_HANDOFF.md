@@ -14,8 +14,8 @@
 11 reconcile evidence with state/graph
 12 select top 1–3 priorities and route authorized work.
 
-## Current handoff — 2026-09-20
-- PRODUCT canonical main: `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
+## Current handoff — 2026-09-21
+- PRODUCT canonical main: `0a07c4c5bd19397f43bfe9eaedd20c524f7620da`.
 - PR #164 outcome-attributed User Performance learning is merged.
 - PR #164 exact-head Release Gate #1525 / `35502377218`: GREEN.
 - Pages #816 / `35502863525`: SUCCESS for current main.
@@ -46,17 +46,24 @@
 - Confidence-gated User Performance context is available to Coach with `affectsDecision=false`.
 - PR #164 adds read-only `attributedOutcomeScore` from fully attributed finalized learning cycles; it does not claim causality.
 
+## Coach action ownership
+- PRODUCT PR #176 is merged to main `0a07c4c5...`.
+- Exact-head Release Gate #1559 / `35580756829`: FULL GREEN.
+- Online authenticated LLM responses are the canonical action owner and preserve sanitized server action metadata in Coach thread state.
+- Browser mock proposals are suppressed for server-owned responses; explicit local/offline fallback retains confirmation-first proposals.
+- Duplicate P1 PRs #173–#175 are closed as superseded.
+- Production Functions were not redeployed by this source-only ownership fix.
+
 ## Production parity
-- Current commercial web and production Coach backend are both on PRODUCT main `c4da0000...`.
-- Production parity is VERIFIED by Activation #18 plus authenticated LLM and autonomous-write smoke.
+- Production Coach backend remains VERIFIED on activated revision `c4da0000...`; current web/source main is `0a07c4c5...`.
+- The new P1 change does not require a Functions code change, but source/backend SHA parity is no longer literal after the browser-only merge.
 - Deterministic Decision Intelligence still owns judgment; typed server policy owns mutations.
 
 ## Next core work
-1. Verify/fix Coach action ownership drift: server-autonomous bounded write and browser mock confirmation proposal must not both act on the same intent.
-2. Fix recurrent WebKit lifecycle/timing nondeterminism in active Today / Golden Path runtime ownership.
-3. Measure real longitudinal behavior and recommendation usefulness over 2/4/8-week windows with external users and canonical funnel events.
-4. Continue active-runtime simplification and stale-PR/repository cleanup before adding new screens.
-5. Keep payment/subscription implementation gated behind external retained-value validation.
+1. Fix recurrent WebKit lifecycle/timing nondeterminism in active Today / Golden Path runtime ownership.
+2. Measure real longitudinal behavior and recommendation usefulness over 2/4/8-week windows with external users and canonical funnel events.
+3. Continue active-runtime simplification and stale-PR/repository cleanup before adding new screens.
+4. Keep payment/subscription implementation gated behind external retained-value validation.
 
 ## Non-blocking debt
 - Main branches are not server-protected.

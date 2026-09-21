@@ -1,12 +1,12 @@
 # GARANG Release Status
 
-Last updated: 2026-09-20
+Last updated: 2026-09-21
 
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
-- End-to-end Coach action ownership: YELLOW / newly identified contract-drift risk pending runtime reproduction and unification.
-- Commercial web current main: GREEN / VERIFIED on `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
-- Current PRODUCT main: `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
+- End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
+- Commercial web source main: `0a07c4c5bd19397f43bfe9eaedd20c524f7620da` after PR #176.
+- Current PRODUCT main: `0a07c4c5bd19397f43bfe9eaedd20c524f7620da`.
 - Current verified production Coach backend deployment revision: `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
 - Current web/main ↔ production Coach backend parity: GREEN / VERIFIED.
 
@@ -41,6 +41,15 @@ Decision: PRODUCTION GREEN / VERIFIED.
 - Attempts 1–2 failed distinct WebKit lifecycle/timing waits on the identical SHA; this remains release-integrity debt despite final GREEN.
 - Raw database authority and destructive/bulk/account/security/schema/secret/billing/production actions remain unavailable to the LLM.
 
+## Coach write ownership unification
+Decision: SOURCE/CI GREEN / MERGED.
+- PRODUCT PR #176 merged as `0a07c4c5bd19397f43bfe9eaedd20c524f7620da`.
+- Exact-head Release Gate #1559 / `35580756829`: FULL GREEN.
+- Online authenticated LLM messages preserve bounded server action metadata and suppress browser mock proposal regeneration.
+- Explicit local/offline fallback preserves the previous confirmation-first browser proposal path.
+- Gate #1558 on an earlier same task head failed a known WebKit lifecycle/proposal readiness path; #1559 passed after the complete Golden Path fixture was made explicit about local fallback.
+- No production Function deployment was performed in this change.
+
 ## User Performance Model release state
 - Evidence-aware UPM v1: merged.
 - Recovery/check-in legacy fallback defect: fixed.
@@ -62,7 +71,7 @@ Competition derivatives remain separate release channels. Founder-reported Wante
 
 ## Release gate
 Automated source/web/production gate status: GREEN.
-Product-action confidence: YELLOW until the server-autonomous-write vs browser-confirmation-proposal ownership drift is verified/fixed.
+Product-action confidence: GREEN for the server/browser single-owner contract on merged source. Production backend remains on the previously activated `c4da0000...` revision until a separate deployment is explicitly authorized; PR #176 is a browser/runtime ownership fix and does not claim a new Functions deployment.
 Release confidence note: recurrent same-SHA WebKit timing failures remain a P2 determinism debt.
 - Provider connectivity: PASS.
 - Production authenticated live smoke: PASS.

@@ -1,6 +1,6 @@
 # GARANG Project State
 
-Last updated: 2026-09-20
+Last updated: 2026-09-21
 
 ## Current objective
 Stabilize the canonical commercial GARANG after the Real AI Coach repair and User Performance Model v1 rollout, then move from feature construction to longitudinal external validation and measured behavior change.
@@ -8,7 +8,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main: `c4da00002dbce7489593a2097dc82dc4da5b8ba4` (production Autonomous Intelligence activation + structured-write hardening).
+- Canonical PRODUCT main: `0a07c4c5bd19397f43bfe9eaedd20c524f7620da` (PR #176 Coach server/browser single-owner unification merged).
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## VERIFIED commercial evidence
@@ -52,15 +52,14 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - No VERIFIED P0/P1 source or provider outage remains.
 
 ## Broken / blockers
-- INFERRED P1 Coach action-ownership risk requires runtime verification before more feature expansion: production server now autonomously persists explicit low-risk plan writes, while active browser `garang-coach-agent-v4.js` still reprocesses the same user message through a mock Agent adapter that can generate a second pending `createPlan` proposal. Existing browser tests still assert the older confirmation-only contract and do not exercise server `toolResults`.
-- Current PRODUCT main Release Gate #1543 attempt 3 is VERIFIED GREEN, so this is a newly identified contract-drift risk rather than a reproduced gate failure.
+- Coach write ownership drift is RESOLVED in PRODUCT PR #176 and merged to main `0a07c4c5...`. Online authenticated LLM responses now carry sanitized `toolResults` / request metadata into Coach thread state and are marked server-owned; `garang-coach-agent-v4.js` suppresses local mock proposals for server-owned responses while explicit local/offline fallback preserves confirmation-first proposals.
+- PR #176 exact-head Release Gate #1559 / `35580756829`: FULL GREEN after updating the complete Golden Path test to use an explicit local-fallback scenario. The earlier same-SHA rerun on Gate #1558 again exposed WebKit lifecycle timing debt, strengthening P2 priority rather than reopening P1.
 - Autonomous Intelligence production activation is VERIFIED GREEN via Activation #18.
 - Server-side #164 UPM attribution is production-activated and live-smoke verified.
 - Main branch protection, OIDC/WIF deployment auth migration, Functions dependency-family upgrade and runtime ownership simplification remain non-blocking engineering debt.
 
 ## Next priorities
-1. P1 verify/fix Coach write ownership: one user intent must produce one canonical write path, never a server write plus browser mock proposal.
-2. P2 release integrity: remove recurrent WebKit lifecycle/timing nondeterminism on the active Today / Golden Path runtime instead of normalizing reruns.
-3. P4/P5 real longitudinal validation: recommendation → resolution → execution → outcome → later recommendation quality over 2/4/8-week windows, plus activation/retention funnel measurement on external users.
-4. P3/P6 simplify active frontend ownership and repository noise before adding new screens; keep branch protection / OIDC-WIF / dependency hardening as dedicated integrity work.
-5. Defer payment/subscription build and broader feature expansion until external validation shows which retained value users will pay for.
+1. P2 release integrity: remove recurrent WebKit lifecycle/timing nondeterminism on the active Today / Golden Path runtime instead of normalizing reruns.
+2. P4/P5 real longitudinal validation: recommendation → resolution → execution → outcome → later recommendation quality over 2/4/8-week windows, plus activation/retention funnel measurement on external users.
+3. P3/P6 simplify active frontend ownership and repository noise before adding new screens; keep branch protection / OIDC-WIF / dependency hardening as dedicated integrity work.
+4. Defer payment/subscription build and broader feature expansion until external validation shows which retained value users will pay for.
