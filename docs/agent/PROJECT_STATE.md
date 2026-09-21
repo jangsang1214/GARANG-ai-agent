@@ -8,10 +8,13 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main: `56ff9c788cac69b8106da66598ecbe4da35c0fcc` (PR #186 Personalized Intelligence Loop v1 merged).
+- Canonical PRODUCT main: `08cfa18e725c919ce2893c3c042d20c5e38d15da` (production createPlan title fallback hardening + activation).
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## VERIFIED commercial evidence
+- PRODUCT main `08cfa18e725c919ce2893c3c042d20c5e38d15da`: Release Gate #1600 / `35599747696` FULL GREEN; Pages #831 / `35599747250` SUCCESS; Production Coach Activation #21 / `35599747682` SUCCESS.
+- Activation #21 deployed only Firebase Function `api`, preserved the existing GARANG LLM secret, passed authenticated live Coach smoke, authenticated autonomous-write smoke, sensitive-write boundary checks and disposable-user cleanup.
+- Activation #20 / `35598862426` on `1723a581...` failed only the bounded createPlan write smoke with `PLAN_TITLE_REQUIRED` because the provider omitted a display title; subsequent commits `e2aa7ed...` + `895fb83...` added and regressed a deterministic display-only fallback before reactivation.
 - PRODUCT PR #186 exact-head Release Gate #1591 / `35596002250`: FULL GREEN across core/build, Firestore emulator, Golden Path complete, authenticated Coach, Real LLM Golden Path and full WebKit/mobile regression. PR #186 merged as PRODUCT main `56ff9c788cac69b8106da66598ecbe4da35c0fcc`; post-merge Release Gate #1592 / `35596512205` is FULL GREEN and Pages #829 / `35596510796` is SUCCESS.
 - PRODUCT PR #177 exact-head Release Gate #1562 / `35582093879`: FULL GREEN. The exact same SHA WebKit job was rerun and passed the complete suite again; PR #177 merged as main `9fa951b30be4981b8081e649dd05ab229df44218`.
 - Production Coach activation run #11 / `35502595878`: SUCCESS on main `e238b6164da976219da328ef0fe3bd20ea0e7807`.
@@ -41,14 +44,14 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - User Performance Model v1 now includes durable recommendation-resolution evidence and outcome-attributed learning through fully linked Intelligence Learning Contract cycles (PR #164).
 
 ## Runtime / deployment boundary
-- Commercial web source of truth is PRODUCT main `56ff9c788cac69b8106da66598ecbe4da35c0fcc`; Pages #829 has deployed it.
-- Production Coach backend is VERIFIED on current commercial main `c4da00002dbce7489593a2097dc82dc4da5b8ba4` after explicit Founder approval.
+- Commercial web source of truth is PRODUCT main `08cfa18e725c919ce2893c3c042d20c5e38d15da`; Pages #831 has deployed it.
+- Production Coach backend is VERIFIED on current commercial main `08cfa18e725c919ce2893c3c042d20c5e38d15da` after Founder-approved Activation #21.
 - Production Coach Activation #18 / `35511759697`: SUCCESS. It deployed only Firebase Function `api`, preserved the existing LLM secret, ran authenticated live LLM smoke plus authenticated autonomous-write smoke, and cleaned up the disposable Firebase identity.
 - Live evidence: `source=llm`, provider `openai`, model `gpt-5.6-luna`, GARANG alignment verified; bounded `createPlan` executed and persisted; sensitive-write request remained denied/confirmation-gated.
-- Web/main now contains PR #186 server intelligence changes while production Coach backend remains on verified revision `c4da00002dbce7489593a2097dc82dc4da5b8ba4`; production parity is YELLOW until an explicitly approved Coach activation deploys and live-smoke verifies `56ff9c78...`. Automatic Production Coach Activation #19 was correctly skipped.
+- Web/main ↔ production Coach backend parity is VERIFIED GREEN on `08cfa18e...`.
 
 ## Stable
-- Personalized Intelligence Loop v1 source/web release: VERIFIED GREEN on main `56ff9c78...`; production backend activation remains intentionally gated.
+- Personalized Intelligence Loop v1 source/web/production release: VERIFIED GREEN on main `08cfa18e...`.
 - Production Real AI Coach connectivity: VERIFIED GREEN.
 - Commercial Coach decision/alignment boundary: VERIFIED GREEN.
 - User Performance Model v1 core contract: merged.
@@ -68,5 +71,5 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 
 ## Next priorities
 1. P4/P5 real longitudinal validation using Intelligence Episodes: recommendation → resolution → execution → outcome → later recommendation quality over 2/4/8-week windows, plus activation/retention funnel measurement on external users.
-2. P4 production activation of PR #186 server intelligence only after explicit Founder approval, followed by authenticated live LLM + bounded-write smoke and parity verification.
+2. P4/P5 collect real external Intelligence Episodes and evaluate whether response-aware personalization improves acceptance/execution/outcome without weakening guardrails.
 3. P4/P5 expand response-model signal quality only from observed episode evidence; keep semantic RAG/model upgrades and broader feature expansion behind demonstrated longitudinal value.
