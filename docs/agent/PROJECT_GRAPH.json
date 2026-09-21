@@ -969,6 +969,78 @@
       "status": "done",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-PERSONALIZED-INTELLIGENCE-LOOP-V1",
+      "kind": "initiative",
+      "title": "Close the outcome-to-next-recommendation loop with attributable personalized response learning",
+      "status": "active",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-INTELLIGENCE-EPISODE-V1",
+      "kind": "task",
+      "title": "Derive Intelligence Episode v1 from context, decision, recommendation, response, execution and outcome evidence",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-USER-RESPONSE-MODEL-V1",
+      "kind": "task",
+      "title": "Build confidence-weighted User Response Model v1 from attributed Intelligence Episodes",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-RECOMMENDATION-POLICY-EVAL-V1",
+      "kind": "task",
+      "title": "Evaluate bounded recommendation candidates with transparent constraint-first scoring",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR186",
+      "kind": "change",
+      "title": "PRODUCT PR #186 Personalized Intelligence Loop v1 merged as 56ff9c78",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR186-HEAD",
+      "kind": "verification",
+      "title": "PR #186 exact-head Release Gate #1591 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR186-POSTMERGE",
+      "kind": "verification",
+      "title": "PR #186 post-merge Release Gate #1592 FULL GREEN and Pages #829 SUCCESS",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-PERSONALIZED-INTELLIGENCE-PROD-ACTIVATION",
+      "kind": "task",
+      "title": "Activate PR #186 server intelligence in production Coach after explicit Founder approval and live smoke",
+      "status": "planned",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-PERSONALIZED-INTELLIGENCE-SOURCE-GREEN",
+      "kind": "result",
+      "title": "Personalized Intelligence Loop v1 source and web release GREEN with production backend activation still gated",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -1636,6 +1708,66 @@
       "from": "VERIFY-PRODUCT-PR177-HEAD",
       "to": "CHANGE-PRODUCT-PR177",
       "kind": "verifies"
+    },
+    {
+      "from": "INIT-PERSONALIZED-INTELLIGENCE-LOOP-V1",
+      "to": "INIT-USER-PERFORMANCE-V1",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-INTELLIGENCE-EPISODE-V1",
+      "to": "INIT-PERSONALIZED-INTELLIGENCE-LOOP-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-USER-RESPONSE-MODEL-V1",
+      "to": "INIT-PERSONALIZED-INTELLIGENCE-LOOP-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-RECOMMENDATION-POLICY-EVAL-V1",
+      "to": "INIT-PERSONALIZED-INTELLIGENCE-LOOP-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR186",
+      "to": "TASK-INTELLIGENCE-EPISODE-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR186",
+      "to": "TASK-USER-RESPONSE-MODEL-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR186",
+      "to": "TASK-RECOMMENDATION-POLICY-EVAL-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR186-HEAD",
+      "to": "CHANGE-PRODUCT-PR186",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR186-POSTMERGE",
+      "to": "CHANGE-PRODUCT-PR186",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-PERSONALIZED-INTELLIGENCE-SOURCE-GREEN",
+      "to": "VERIFY-PRODUCT-PR186-POSTMERGE",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-PERSONALIZED-INTELLIGENCE-PROD-ACTIVATION",
+      "to": "RESULT-PERSONALIZED-INTELLIGENCE-SOURCE-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-PERSONALIZED-INTELLIGENCE-SOURCE-GREEN",
+      "kind": "depends-on"
     }
   ]
 }
