@@ -5,13 +5,13 @@ Last updated: 2026-09-21
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
-- Commercial web source main: `56ff9c788cac69b8106da66598ecbe4da35c0fcc` after PR #186.
-- Current PRODUCT main: `56ff9c788cac69b8106da66598ecbe4da35c0fcc`.
-- Current verified production Coach backend deployment revision: `c4da00002dbce7489593a2097dc82dc4da5b8ba4`.
-- Current web/main ↔ production Coach backend parity: YELLOW. Web/source includes PR #186 server intelligence changes; production Coach backend remains on `c4da00002dbce7489593a2097dc82dc4da5b8ba4` until explicit activation.
+- Commercial web source main: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
+- Current PRODUCT main: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
+- Current verified production Coach backend deployment revision: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
+- Current web/main ↔ production Coach backend parity: GREEN / VERIFIED.
 
 ## Personalized Intelligence Loop v1
-Decision: SOURCE/WEB GREEN / PRODUCTION BACKEND ACTIVATION PENDING.
+Decision: SOURCE/WEB/PRODUCTION GREEN / VERIFIED.
 - PRODUCT PR #186 head `da755b62726be55e5f96f23272d99129054bb45e`.
 - Exact-head Release Gate #1591 / `35596002250`: FULL GREEN across core/build, Firestore emulator, Golden Path complete, authenticated Coach, Real LLM Golden Path and full WebKit/mobile regression.
 - PR #186 merged as PRODUCT main `56ff9c788cac69b8106da66598ecbe4da35c0fcc`.
@@ -19,10 +19,17 @@ Decision: SOURCE/WEB GREEN / PRODUCTION BACKEND ACTIVATION PENDING.
 - Pages #829 / `35596510796`: SUCCESS.
 - Intelligence Episode v1, User Response Model v1 and Recommendation Policy Evaluation v1 are merged.
 - Response-derived personalization is confidence-gated and constraint-only; it cannot exceed deterministic Decision Intelligence or create automatic progression increases.
-- Production Coach Activation #19 was SKIPPED by design. No claim is made that PR #186 server-side behavior is live until an explicit Founder-approved activation and authenticated live smoke pass.
+- Production Coach Activation #19 was correctly skipped before approval. Founder-approved Activation #20 deployed `1723a581...` but failed the bounded createPlan write smoke with `PLAN_TITLE_REQUIRED`; deterministic display-title fallback hardening followed. Activation #21 / `35599747682` on `08cfa18e...` then passed deployment, authenticated live LLM smoke, autonomous-write smoke, sensitive-write boundary checks and disposable identity cleanup.
 
 ## Production Coach
-Decision: GREEN / LIVE PROVIDER VERIFIED.
+Decision: GREEN / LIVE PROVIDER + PERSONALIZED INTELLIGENCE VERIFIED.
+- Production Coach Activation #21 / `35599747682`: SUCCESS on `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
+- Release Gate #1600 / `35599747696`: FULL GREEN.
+- Pages #831 / `35599747250`: SUCCESS.
+- Authenticated live Coach smoke: PASS.
+- Authenticated bounded createPlan write smoke: PASS after deterministic title fallback hardening.
+- Sensitive-write denial/confirmation boundary: PASS.
+- Disposable Firebase smoke identity cleanup: PASS.
 - Production Coach Activation run #13 / `35503623842`: SUCCESS on current commercial main.
 - Firebase project: `fitfind-ai`; deployed Function: `api`.
 - Existing `GARANG_LLM_API_KEY` was preserved.
@@ -92,7 +99,7 @@ Competition derivatives remain separate release channels. Founder-reported Wante
 
 ## Release gate
 Automated source/web/production gate status: GREEN.
-Product-action confidence: GREEN for the server/browser single-owner contract on merged source. Production backend remains on the previously activated `c4da0000...` revision until a separate deployment is explicitly authorized; PR #176 is a browser/runtime ownership fix and does not claim a new Functions deployment.
+Product-action confidence: GREEN for the server/browser single-owner contract on merged source. Production backend is activated and verified on current main `08cfa18e...`.
 Release confidence note: TD-015 WebKit lifecycle determinism is RESOLVED in PR #177; exact-head Gate #1562 is GREEN and the same SHA WebKit job passed a second complete run.
 - Provider connectivity: PASS.
 - Production authenticated live smoke: PASS.
