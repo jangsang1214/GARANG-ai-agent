@@ -86,3 +86,12 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Post-merge main Release Gate #1625 / `35691173610`: FULL GREEN. Founder OS Event Envelope #1407: SUCCESS. Pages #837 / `35691172814`: SUCCESS.
 - TD-015 WebKit lifecycle determinism is REOPENED as active P2 because the current-path Today DOM identity assertion recurred on PR #202 exact head. It is not a current release blocker because the exact-head rerun and post-merge main gate are GREEN; do not mask future recurrence with timeout inflation or broad retries.
 
+## 2026-09-22 Real Meal Scan v1 reconciliation
+- PRODUCT current main is `d926b12a35105c02e240e2c0e677432b53c99d76`.
+- Real Meal Scan v1 is MERGED / SOURCE+WEB VERIFIED. PR #206 introduced authenticated `POST /meal/scan`: Vision identifies visible food/aliases/portion/confidence only; GARANG Food DB remains nutrition authority; unmatched items require user review; user confirmation and the existing meal save remain the only write path.
+- Production Coach Activation #24 / `35707420848` deployed Firebase Function `api` from revision `8ee4f2c291ac6077cfd83b95ba948aec9450883d`, which already contained the merged Meal Scan backend route. The activation passed deploy/project/secret/Coach smoke, but did not run an authenticated Meal Scan Vision smoke. Therefore live authenticated provider execution remains UNKNOWN, not VERIFIED.
+- PR #209 exact-head Gate #1644 / `35709869410`: FULL GREEN, including Real Meal Scan WebKit mobile flow: photo → authenticated Vision request fixture → canonical Food DB match → user confirm → save → Photo Evidence.
+- Main Gate #1645 reproduced a separate Workout DOM stability failure twice. Root cause was asynchronous Workout Library hydration appending exercise cards one-by-one after route entry. PR #210 batches hydration through one DocumentFragment commit without relaxing the stability threshold.
+- PR #210 exact-head Gate #1649: FULL GREEN. Post-merge main Gate #1650 / `35715201276`: FULL GREEN. Pages #844 / `35715200771`: SUCCESS.
+- Current release status: SOURCE/WEB GREEN. Real Meal Scan production endpoint is deployed, but end-to-end authenticated live Vision result remains the final production verification gap.
+
