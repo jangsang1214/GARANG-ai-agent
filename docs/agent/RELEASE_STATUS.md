@@ -6,7 +6,7 @@ Last updated: 2026-09-22
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
 - Last VERIFIED application runtime/web baseline: `d926b12a35105c02e240e2c0e677432b53c99d76` via post-merge Gate #1650 + Pages #844; subsequent observed main commits are release/activation verification changes.
-- Current observed PRODUCT main: `5f630b6ec3ed8b757a9eb6bde52d5fff50887056`.
+- Current observed PRODUCT main: `0f15adbbde19b87efec31b85f3cd43599f6164fa`.
 - Current verified production Coach backend deployment revision: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
 - Current source/web release: GREEN / VERIFIED. Literal source/backend SHA parity is not expected after frontend-only PR #188; no Firebase Functions code changed.
 
@@ -168,3 +168,13 @@ Decision: SOURCE / WEB / PRODUCTION GREEN / VERIFIED.
 - Release Gate #1659 / `35721577131`: FULL GREEN.
 - Pages #848 / `35721576625`: SUCCESS.
 - Remaining deployment-auth note: WIF auth step was skipped; current ADC/service-account deployment path remains functional, while WIF migration stays non-blocking P2 debt.
+
+## External Validation Measurement Readiness — production closure
+Decision: GREEN / CURRENT MAIN VERIFIED.
+- PRODUCT PR #217 merged as `0f15adbbde19b87efec31b85f3cd43599f6164fa`.
+- Exact-head Gate #1675 / `35726479828`: FULL GREEN.
+- Post-merge Gate #1676 / `35727541902`: FULL GREEN.
+- Pages #849 / `35727541068`: SUCCESS.
+- Founder OS Event Envelope #1525 / `35727542003`: SUCCESS.
+- Current release includes explicit analytics consent control, excludes analytics/error logs from generic Cloud Sync, emits one-time first-record measurement, and gives no-food Meal Scan a non-saving retry UX.
+- External user validation can now start on a consent-safe, funnel-measurable web baseline.

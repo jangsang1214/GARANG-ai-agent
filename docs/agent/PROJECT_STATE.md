@@ -8,7 +8,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main observed: `5f630b6ec3ed8b757a9eb6bde52d5fff50887056` (PR #214 production activation trigger merged).
+- Canonical PRODUCT main observed: `0f15adbbde19b87efec31b85f3cd43599f6164fa` (PR #217 measurement-readiness release).
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## VERIFIED commercial evidence
@@ -129,3 +129,13 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #217 defaults analytics consent to false, exposes an explicit Settings opt-in, removes analytics/error logs from generic Firebase Cloud Sync, emits `first_record_created` once, and maps Meal Scan no-food responses to a clear retry UX without creating a draft.
 - External Validation remains the active objective, but the production web baseline is not yet measurement-ready until PR #217 is Founder-approved and merged/released.
 - Parallel PRODUCT PRs #215 and #216 also touch `01_app/app.js`; reconcile against latest main before merge if either lands first.
+
+## 2026-09-22 External Validation Measurement Readiness — PRODUCTION GREEN
+- Founder-approved PRODUCT PR #217 merged as current main `0f15adbbde19b87efec31b85f3cd43599f6164fa`.
+- Post-merge Release Gate #1676 / `35727541902`: FULL GREEN.
+- Pages #849 / `35727541068`: SUCCESS.
+- Founder OS Event Envelope #1525 / `35727542003`: SUCCESS.
+- Current main passes Real Meal Scan, truth-surface + first-record flow, Golden Path complete journey, authenticated app/Coach, Real LLM integration, Settings touch, mobile regression and runtime stability stress.
+- External-validation measurement readiness is now VERIFIED GREEN: analytics consent defaults off and is explicitly user-controlled; analytics/error logs do not piggyback on generic Cloud Sync; the first core record emits `first_record_created` once; Meal Scan no-food results remain non-saving and show a clear retry message.
+- The first 10–20 unknown-user validation batch is now the highest-value active work. Do not reopen feature construction before external evidence unless a verified P0/P1 issue appears.
+- PRODUCT PRs #215 and #216 became non-mergeable after #217 advanced `main`; they require latest-main reconciliation before any future merge and are not blockers to starting external validation.
