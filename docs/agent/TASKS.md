@@ -276,3 +276,19 @@ PRODUCT PR #217:
 Next:
 - Founder approval required before PRODUCT merge because merge updates the production web release.
 - After merge + post-merge gate/Pages verification, begin the first 10–20 unknown-user validation batch.
+
+## Closed P2/P4 — External Validation Measurement Readiness
+Status: DONE / PRODUCTION VERIFIED GREEN
+Owner: Engineering / Product / Growth Business / Release QA
+Result:
+- PRODUCT PR #217 merged as main `0f15adbbde19b87efec31b85f3cd43599f6164fa`.
+- Post-merge Release Gate #1676 / `35727541902`: FULL GREEN.
+- Pages #849 / `35727541068`: SUCCESS.
+- Event Envelope #1525 / `35727542003`: SUCCESS.
+- Explicit analytics opt-in, Cloud Sync observability separation, one-time `first_record_created`, and Meal Scan no-food UX are released.
+- Measurement/privacy readiness no longer blocks Anonymous External Validation.
+
+Next:
+- Execute the first 10–20 unknown-user validation batch.
+- Freeze new feature scope until the first evidence batch is reviewed except verified P0/P1 fixes.
+- PRs #215/#216 are stale against current main and require explicit reconciliation before any later release.
