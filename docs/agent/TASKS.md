@@ -223,3 +223,23 @@ Verification:
 - PR #210 Gate #1649: FULL GREEN.
 - Post-merge main Gate #1650: FULL GREEN, including mobile runtime stability stress.
 
+## Active P2 — Real Meal Scan production live-smoke closure
+Status: READY FOR FOUNDER PRODUCTION APPROVAL / LIVE RESULT UNKNOWN
+Owner: Release QA / Engineering / AI Data
+Goal: close the final gap between merged Meal Scan source/web behavior and authenticated live Vision provider execution.
+
+Current evidence:
+- PRODUCT main observed: `0eb2a11e117c50b208581e5987c45ed7515687de`.
+- PR #213 head `5f5ad45a56cf976e244b8fe8bacd7e6acaabd142` changes only the production smoke PNG fixture.
+- Exact-head Release Gate #1655 / `35717702324`: FULL GREEN.
+- Browser WebKit still passes Real Meal Scan photo → Vision fixture → Food DB → confirm → save → Photo Evidence.
+- PR #213 metadata records prior Activation #26 provider failure on the old 1×1 PNG fixture.
+
+Acceptance:
+- Founder explicitly approves the production-triggering merge.
+- PR #213 merges to current main without unrelated product scope.
+- Resulting production activation deploys only the intended Function boundary, authenticated Meal Scan live smoke passes, existing Coach/write/security smokes remain GREEN, and disposable identity cleanup passes.
+- CONTROL state is reconciled from actual activation evidence before claiming production GREEN.
+
+Next after acceptance:
+- Launch Anonymous External Validation Sprint and begin 2/4/8-week Intelligence Episode measurement.
