@@ -1113,6 +1113,54 @@
       "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-COMMERCIAL-HARDENING-20260922",
+      "kind": "initiative",
+      "title": "Close commercial production observability, privacy lifecycle and deployment IAM gaps",
+      "status": "active",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR203",
+      "kind": "change",
+      "title": "PR #203 closes device-local Photo Evidence account-deletion lifecycle",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR205",
+      "kind": "change",
+      "title": "PR #205 activates consent-gated production observability and authenticated account deletion",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR205",
+      "kind": "verification",
+      "title": "PR #205 exact-head Release Gate #1630 FULL GREEN; post-merge #1631 pending",
+      "status": "in_progress",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-WIF-LIVE-ACTIVATION",
+      "kind": "task",
+      "title": "Configure WIF trust/repository variables and verify one live production activation before credential retirement",
+      "status": "blocked",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "BLOCKER-WIF-REPO-VARS",
+      "kind": "blocker",
+      "title": "GCP_WORKLOAD_IDENTITY_PROVIDER and GCP_DEPLOY_SERVICE_ACCOUNT are not configured",
+      "status": "active",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -1900,6 +1948,31 @@
       "from": "RESULT-CURRENT-RELEASE-40E83-GREEN",
       "to": "RELEASE-PAGES-832",
       "kind": "depends-on"
+    },
+    {
+      "from": "INIT-COMMERCIAL-HARDENING-20260922",
+      "to": "CHANGE-PRODUCT-PR203",
+      "type": "includes"
+    },
+    {
+      "from": "INIT-COMMERCIAL-HARDENING-20260922",
+      "to": "CHANGE-PRODUCT-PR205",
+      "type": "includes"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR205",
+      "to": "VERIFY-PRODUCT-PR205",
+      "type": "verified_by"
+    },
+    {
+      "from": "INIT-COMMERCIAL-HARDENING-20260922",
+      "to": "TASK-WIF-LIVE-ACTIVATION",
+      "type": "includes"
+    },
+    {
+      "from": "BLOCKER-WIF-REPO-VARS",
+      "to": "TASK-WIF-LIVE-ACTIVATION",
+      "type": "blocks"
     }
   ]
 }
