@@ -5,8 +5,8 @@ Last updated: 2026-09-22
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
-- Commercial web source main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`.
-- Current PRODUCT main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`.
+- Last VERIFIED application runtime/web baseline: `d926b12a35105c02e240e2c0e677432b53c99d76` via post-merge Gate #1650 + Pages #844; subsequent observed main commits are release/activation verification changes.
+- Current observed PRODUCT main: `0eb2a11e117c50b208581e5987c45ed7515687de`.
 - Current verified production Coach backend deployment revision: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
 - Current source/web release: GREEN / VERIFIED. Literal source/backend SHA parity is not expected after frontend-only PR #188; no Firebase Functions code changed.
 
@@ -144,3 +144,11 @@ Decision: SOURCE/WEB GREEN / LIVE VISION SMOKE PENDING.
 - Pages #844 / `35715200771`: SUCCESS.
 - Release confidence: GREEN for source/web behavior; YELLOW only for the unverified authenticated live Vision provider call.
 
+## Real Meal Scan live production verification — latest 2026-09-22
+Decision: SOURCE/WEB GREEN; PRODUCTION LIVE VISION YELLOW / APPROVAL-GATED.
+- Current observed PRODUCT main: `0eb2a11e117c50b208581e5987c45ed7515687de`.
+- PR #212 exact-head Gate #1653 / `35716733566`: SUCCESS before merge. PR #212 adds mandatory authenticated production Meal Scan live-smoke enforcement.
+- PRODUCT PR #213 is open at `5f5ad45a56cf976e244b8fe8bacd7e6acaabd142`; its only changed file is `scripts/verify-production-meal-scan.cjs`.
+- PR #213 exact-head Release Gate #1655 / `35717702324`: FULL GREEN; all release jobs passed, including Real Meal Scan browser flow.
+- The PR metadata states Activation #26 reached the live provider but the old 1×1 PNG smoke fixture received `502 MEAL_SCAN_PROVIDER_ERROR`; PR #213 replaces that fixture with a valid 128×128 RGB PNG.
+- Do not claim live Meal Scan provider execution VERIFIED until the Founder approves the production-triggering merge and the resulting activation smoke succeeds with cleanup.
