@@ -1,5 +1,17 @@
 # GARANG Project State
 
+## 2026-09-22 commercial reconciliation — current
+- VERIFIED PRODUCT source main: `affe25cfd7336440e060de3cd3af40e6f82cda2a` after PR #205.
+- PR #202 shipped Photo Evidence v1.5; PR #203 closed the account-deletion lifecycle so device-local workout/meal evidence is deleted before local account keys.
+- PR #198 merged mobile social-auth redirect hardening and explicit foreground-only Running behavior; it does not claim native background GPS.
+- Exercise Knowledge taxonomy is present for all 300 exercise rows with equipment, movement type, compound flag, metadata status/source/confidence.
+- PR #205 activates production `/analytics/events`, `/telemetry/errors`, and authenticated `/account/delete`; client consent, server Firebase auth/consent, canonical event allowlist, and redaction remain enforced.
+- PR #205 exact-head Release Gate #1630 is FULL GREEN.
+- PRODUCT main before PR #205, `b746d57b...`, had Release Gate #1629 GREEN and Pages #839 SUCCESS.
+- Production Coach WIF activation #22 FAILED CLOSED before deploy because GitHub repository variables `GCP_WORKLOAD_IDENTITY_PROVIDER` and `GCP_DEPLOY_SERVICE_ACCOUNT` are not configured. This is an external IAM/configuration blocker, not a source regression.
+- Previous production Coach backend evidence remains GREEN from Activation #21 / `08cfa18e...`; do not claim WIF production activation until a live WIF run succeeds.
+- TD-015 Today lifecycle identity recurred once on main Gate #1622 attempt 1 and passed unchanged on attempt 2; keep it ACTIVE/MONITOR rather than resolved.
+
 Last updated: 2026-09-22
 
 ## Current objective
@@ -8,7 +20,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560` (PR #188 Photo Evidence v1 merged).
+- Canonical PRODUCT main: `affe25cfd7336440e060de3cd3af40e6f82cda2a` (PR #205 production observability activation merged).
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## VERIFIED commercial evidence
@@ -47,7 +59,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - User Performance Model v1 now includes durable recommendation-resolution evidence and outcome-attributed learning through fully linked Intelligence Learning Contract cycles (PR #164).
 
 ## Runtime / deployment boundary
-- Commercial web source of truth is PRODUCT main `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`; Pages #832 has deployed it.
+- Commercial web source of truth is PRODUCT main `affe25cfd7336440e060de3cd3af40e6f82cda2a`; post-merge Gate #1631 / Pages #840 are being verified.
 - Production Coach backend remains VERIFIED on `08cfa18e725c919ce2893c3c042d20c5e38d15da` after Founder-approved Activation #21. PR #188 contains no Firebase Functions change, so no backend redeploy is claimed or required by that merge.
 - Production Coach Activation #18 / `35511759697`: SUCCESS. It deployed only Firebase Function `api`, preserved the existing LLM secret, ran authenticated live LLM smoke plus authenticated autonomous-write smoke, and cleaned up the disposable Firebase identity.
 - Live evidence: `source=llm`, provider `openai`, model `gpt-5.6-luna`, GARANG alignment verified; bounded `createPlan` executed and persisted; sensitive-write request remained denied/confirmation-gated.
