@@ -139,3 +139,13 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - PR #217 is the immediate precondition for clean external validation measurement: explicit analytics consent, Cloud Sync observability separation, first-record event, and no-food Meal Scan UX.
 - Do not call this production-released until Founder-approved merge + post-merge Gate/Pages evidence.
 - PRs #215/#216 are concurrent PRODUCT branches and share `01_app/app.js`; re-check mergeability/drift before release.
+
+## Production measurement-readiness handoff — 2026-09-22
+- PRODUCT current main: `0f15adbbde19b87efec31b85f3cd43599f6164fa`.
+- PR #217: MERGED / RELEASED / VERIFIED GREEN.
+- Release Gate #1676: FULL GREEN.
+- Pages #849: SUCCESS.
+- Event Envelope #1525: SUCCESS.
+- External-validation measurement/privacy blocker is CLOSED.
+- Highest-value next work: recruit and observe the first 10–20 unknown users against signup/onboarding → first record → Coach → next action → plan → execution intent → accumulated-value comprehension, then classify acquisition/activation/comprehension/action/retention failures.
+- Do not prioritize PR #215/#216 feature scope ahead of the first external evidence batch; both currently require reconciliation with the new main.
