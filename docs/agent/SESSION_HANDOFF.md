@@ -133,3 +133,9 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - A separate post-merge mobile stability blocker was fixed in PR #210 by batching Workout Library async hydration; Gate #1649 and current-main Gate #1650 are FULL GREEN. Pages #844 is SUCCESS.
 - Next release action: obtain explicit Founder approval for production live Meal Scan smoke/activation before claiming end-to-end production VERIFIED.
 
+## Measurement readiness handoff — 2026-09-22
+- PRODUCT main remains `5f630b6ec3ed8b757a9eb6bde52d5fff50887056`.
+- PRODUCT PR #217 head `6bbe4c75d86ecded7d05ab11d3231aafa19885fa` is OPEN and exact-head GREEN via Release Gate #1675.
+- PR #217 is the immediate precondition for clean external validation measurement: explicit analytics consent, Cloud Sync observability separation, first-record event, and no-food Meal Scan UX.
+- Do not call this production-released until Founder-approved merge + post-merge Gate/Pages evidence.
+- PRs #215/#216 are concurrent PRODUCT branches and share `01_app/app.js`; re-check mergeability/drift before release.

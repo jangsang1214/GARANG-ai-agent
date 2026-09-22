@@ -121,3 +121,11 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - `TASK-EXTERNAL-LONGITUDINAL-VALIDATION` is now IN PROGRESS.
 - Immediate objective: validate unknown-user activation and whether recommendation → resolution → execution → outcome produces understandable retained value over 2/4/8-week windows.
 - No paid acquisition and no new feature scope before the first external evidence batch unless a P0/P1 blocker is discovered.
+
+## 2026-09-22 External Validation Measurement Readiness — PR #217
+- PRODUCT PR #217 is OPEN at head `6bbe4c75d86ecded7d05ab11d3231aafa19885fa`.
+- Exact-head Release Gate #1675 / `35726479828`: FULL GREEN.
+- Founder OS Event Envelope #1521 / `35726479746`: SUCCESS.
+- PR #217 defaults analytics consent to false, exposes an explicit Settings opt-in, removes analytics/error logs from generic Firebase Cloud Sync, emits `first_record_created` once, and maps Meal Scan no-food responses to a clear retry UX without creating a draft.
+- External Validation remains the active objective, but the production web baseline is not yet measurement-ready until PR #217 is Founder-approved and merged/released.
+- Parallel PRODUCT PRs #215 and #216 also touch `01_app/app.js`; reconcile against latest main before merge if either lands first.

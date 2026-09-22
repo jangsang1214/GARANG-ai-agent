@@ -258,3 +258,21 @@ Execution contract:
 - First batch target: 10–20 unknown users.
 - Stop feature expansion until at least the first external batch is reviewed, except P0/P1 fixes.
 - Any product change must map to a measured drop-off or repeated qualitative failure.
+
+## Active P2/P4 — External Validation Measurement Readiness
+Status: PR READY / EXACT-HEAD GREEN / RELEASE APPROVAL REQUIRED
+Owner: Engineering / Product / Growth Business / Release QA
+Goal: make the external validation sprint measurable without violating consent boundaries.
+
+PRODUCT PR #217:
+- Head: `6bbe4c75d86ecded7d05ab11d3231aafa19885fa`.
+- Release Gate #1675: FULL GREEN.
+- Event Envelope #1521: SUCCESS.
+- Analytics consent defaults false and is user-controlled in Settings.
+- Analytics events + local error logs no longer piggyback on general Cloud Sync.
+- Canonical `first_record_created` is emitted once for the first saved core record.
+- Meal Scan no-food result gives an explicit retry message and clears result draft state.
+
+Next:
+- Founder approval required before PRODUCT merge because merge updates the production web release.
+- After merge + post-merge gate/Pages verification, begin the first 10–20 unknown-user validation batch.
