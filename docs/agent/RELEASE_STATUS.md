@@ -1,12 +1,21 @@
 # GARANG Release Status
 
+## 2026-09-22 current commercial release
+Decision: YELLOW until post-merge #205 completes; exact-head is GREEN.
+- PRODUCT PR #205 head `d8059ee403e5b1974997f6556e3164b6bd9a08a3`: Release Gate #1630 FULL GREEN.
+- PR #205 merged as PRODUCT main `affe25cfd7336440e060de3cd3af40e6f82cda2a`.
+- Production analytics, error telemetry, and authenticated account deletion are now source-enabled with consent/auth/redaction boundaries.
+- PR #202 Photo Evidence v1.5 and PR #203 device-local evidence deletion lifecycle are merged.
+- WIF source contract is merged, but Activation #22 failed before deployment because required repository WIF variables are absent. Existing verified production Coach backend remains the last live production evidence.
+- Post-merge Release Gate #1631 and Pages #840 must be GREEN before this current-main release is promoted to GREEN.
+
 Last updated: 2026-09-22
 
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
-- Commercial web source main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`.
-- Current PRODUCT main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`.
+- Commercial web source main: `affe25cfd7336440e060de3cd3af40e6f82cda2a`.
+- Current PRODUCT main: `affe25cfd7336440e060de3cd3af40e6f82cda2a`.
 - Current verified production Coach backend deployment revision: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
 - Current source/web release: GREEN / VERIFIED. Literal source/backend SHA parity is not expected after frontend-only PR #188; no Firebase Functions code changed.
 
