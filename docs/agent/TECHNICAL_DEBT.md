@@ -1,6 +1,6 @@
 # GARANG Technical Debt
 
-Last updated: 2026-09-21
+Last updated: 2026-09-22
 
 ## TD-001 — No external always-on provider/runtime
 Severity: MEDIUM
@@ -92,12 +92,15 @@ Area: personalization / AI·Data
 Resolution: PRODUCT now durably persists recommendation resolution evidence for accepted, rejected, dismissed and ignored recommendations through the canonical action-data boundary. User Performance Model v1 consumes this evidence, and PR #166 additionally measures resolution coverage in Longitudinal Learning Metrics v1. No separate truth store was introduced.
 
 ## TD-015 — WebKit lifecycle timing is nondeterministic
-Status: RESOLVED
+Status: MONITOR / NON-BLOCKING
 Previous severity: MEDIUM / P2
 Area: frontend runtime / release integrity
-Root cause: active `garang-today-action-flow-v1` remounted `#garangTodayFlow` after lifecycle events even when its derived markup had not changed, allowing WebKit route CTA identity to change during a touch sequence.
-Resolution: PRODUCT PR #177 adds a deterministic render identity and skips no-op Today DOM replacement while retaining real semantic updates. It adds a WebKit regression that dispatches no-op lifecycle events and requires both the Today flow and Coach CTA node identity to survive.
-Verification: exact-head Release Gate #1562 / `35582093879` passed core/build, the full WebKit suite and verify. The same exact SHA WebKit job was rerun after success and passed the complete suite a second time. PR #177 merged as PRODUCT main `9fa951b30be4981b8081e649dd05ab229df44218`.
+Root cause: active `garang-today-action-flow-v1` could remount `#garangTodayFlow` after lifecycle events even when its derived markup had not changed, allowing WebKit route CTA identity to change during a touch sequence.
+Mitigation: PRODUCT PR #177 added deterministic render identity and no-op DOM preservation without timeout inflation or a new retry owner.
+Evidence nuance: exact-head Gate #1562 passed and same-SHA WebKit rerun passed, but immediate post-merge main Gate #1563 later reproduced the Today DOM identity assertion once.
+Current evidence: subsequent main Release Gates #1592 (`56ff9c78...`), #1600 (`08cfa18e...`) and #1601 (current main `40e83c32...`) all passed on attempt 1. Latest #1601 explicitly passes Today action flow plus the complete Golden Path / authenticated Coach / Real LLM / mobile WebKit suite.
+Current risk: no present release blocker, but recurrence would indicate lifecycle ownership is still nondeterministic.
+Recommended action: keep the identity regression; if it recurs on current-path code, reopen as active P2 and trace ownership. Do not hide it with broad retries or timeout increases.
 
 ## TD-016 — Commercial documentation and monetization artifacts are stale
 Severity: LOW / P6

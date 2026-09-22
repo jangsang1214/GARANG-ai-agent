@@ -1,14 +1,23 @@
 # GARANG Release Status
 
-Last updated: 2026-09-21
+Last updated: 2026-09-22
 
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
-- Commercial web source main: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
-- Current PRODUCT main: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
+- Commercial web source main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`.
+- Current PRODUCT main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`.
 - Current verified production Coach backend deployment revision: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
-- Current web/main ↔ production Coach backend parity: GREEN / VERIFIED.
+- Current source/web release: GREEN / VERIFIED. Literal source/backend SHA parity is not expected after frontend-only PR #188; no Firebase Functions code changed.
+
+## Current PRODUCT release — Photo Evidence v1
+Decision: GREEN / CURRENT MAIN VERIFIED.
+- PRODUCT PR #188 merged as `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`.
+- Exact-head Release Gate #1599 / `35599456886`: SUCCESS on attempt 1.
+- Post-merge Release Gate #1601 / `35601046564`: FULL GREEN on attempt 1.
+- Pages #832 / `35601045094`: SUCCESS.
+- Gate #1601 browser-webkit passes Today action flow, bottom Check-in CTA, mobile Planner shortcut, Today visual parity, Golden Path integration + complete journey, authenticated app/Coach, Real LLM Golden Path, recovery, WebKit mobile regression, Settings touch, button health and runtime stability stress.
+- PR #188 changes browser/runtime Photo Evidence, manifest/entry wiring and tests only; no Functions code is changed and no production Function deployment is claimed.
 
 ## Personalized Intelligence Loop v1
 Decision: SOURCE/WEB/PRODUCTION GREEN / VERIFIED.
@@ -41,12 +50,11 @@ Decision: GREEN / LIVE PROVIDER + PERSONALIZED INTELLIGENCE VERIFIED.
 
 ## Current commercial PRODUCT main
 Decision: GREEN / CURRENT MAIN VERIFIED.
-- Main: `5483b848e2973f2bf66a1a67148f3c5a5142fb66`.
-- PR #164: merged, outcome-attributed User Performance learning.
-- PR #164 exact-head Gate #1525 / `35502377218`: GREEN.
-- Pages #816 / `35502863525`: SUCCESS.
-- Post-merge Gate #1527 / `35502864020`: FULL GREEN.
-- PR #165 explicitly activated current server-side UPM parity after Founder approval.
+- Main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`.
+- PR #188 exact-head Gate #1599 / `35599456886`: PASS on attempt 1.
+- Post-merge Gate #1601 / `35601046564`: FULL GREEN on attempt 1.
+- Pages #832 / `35601045094`: SUCCESS.
+- Production Coach backend remains VERIFIED on Activation #21 revision `08cfa18e725c919ce2893c3c042d20c5e38d15da`; PR #188 has no Functions delta.
 
 ## Autonomous Intelligence Loop v1
 Decision: PRODUCTION GREEN / VERIFIED.
@@ -69,14 +77,12 @@ Decision: SOURCE/CI GREEN / MERGED.
 - No production Function deployment was performed in this change.
 
 ## WebKit lifecycle determinism
-Decision: SOURCE/CI GREEN / MERGED.
-- PRODUCT PR #177 exact head `137b3e55af5eb5e5dcdbda15bf9c78d19a1c251f`.
-- Release Gate #1562 / `35582093879`: FULL GREEN.
-- Same-SHA browser-webkit job rerun: FULL GREEN again, including Golden Path complete, authenticated Coach, Real LLM, Settings, button health and runtime stress.
-- Root cause was no-op lifecycle replacement of the Today action DOM; unchanged Today markup now preserves the live flow and route CTA node identity.
-- No timeout increase, new retry owner, schema change, backend change or production Function deployment.
-- PR #177 merged to PRODUCT main `9fa951b30be4981b8081e649dd05ab229df44218`.
-- Post-merge push-run visibility is unavailable through the current GitHub connector; merge drift was separately checked and only the three PR #177 files differ from previous main.
+Decision: CURRENT RELEASE GREEN / MONITOR.
+- PRODUCT PR #177 exact head `137b3e55af5eb5e5dcdbda15bf9c78d19a1c251f`; exact-head Gate #1562 / `35582093879` passed, including a successful same-SHA rerun.
+- Immediate post-merge main Gate #1563 / `35583816682` later failed the Today action-flow DOM identity assertion once: no-op lifecycle events replaced both the Today flow and active button node.
+- The current path has since stabilized across three later main gates: #1592 on `56ff9c78...`, #1600 on `08cfa18e...`, and #1601 on current main `40e83c32...`; all three completed GREEN on attempt 1.
+- Latest Gate #1601 explicitly passes Today action flow plus the complete Golden Path / authenticated Coach / Real LLM / mobile WebKit suite.
+- No current release blocker remains. Reopen TD-015 as P2 if the identity assertion or equivalent lifecycle replacement recurs; do not mask recurrence with broad retries or timeout inflation.
 
 ## User Performance Model release state
 - Evidence-aware UPM v1: merged.
@@ -98,17 +104,17 @@ Decision: SOURCE/CI GREEN / MERGED.
 Competition derivatives remain separate release channels. Founder-reported Wanted / 롯데 / 브로제이 submission completion stays RECORDED unless submission artifacts are independently re-opened.
 
 ## Release gate
-Automated source/web/production gate status: GREEN.
+Automated source/web gate status: GREEN on current main `40e83c32...`; production Coach backend remains VERIFIED GREEN on activated revision `08cfa18e...`.
 Product-action confidence: GREEN for the server/browser single-owner contract on merged source. Production backend is activated and verified on current main `08cfa18e...`.
-Release confidence note: TD-015 WebKit lifecycle determinism is RESOLVED in PR #177; exact-head Gate #1562 is GREEN and the same SHA WebKit job passed a second complete run.
+Release confidence note: TD-015 is monitor-only, not a current blocker. Historical main Gate #1563 reproduced the lifecycle assertion once after PR #177, but subsequent main Gates #1592, #1600 and #1601 all passed on attempt 1; latest #1601 covers the full browser gate.
 - Provider connectivity: PASS.
 - Production authenticated live smoke: PASS.
 - Previous exact production revision gate: PASS.
 - Current main Pages deployment: PASS.
-- Current main Release Gate #1543 attempt 3: PASS.
-- Pages #822: PASS.
-- Production Coach Activation #18: PASS, including authenticated live LLM + autonomous-write smoke and cleanup.
-- Current main server-side UPM parity in production: PASS.
+- Current main Release Gate #1601 attempt 1: PASS.
+- Current main Pages #832: PASS.
+- Production Coach Activation #21 on `08cfa18e...`: PASS, including authenticated live LLM + bounded createPlan write smoke, sensitive-write boundary and cleanup.
+- Current source/web main contains no newer Functions change than the activated backend revision.
 
 ## Remaining non-blocking debt
 - Server-enforced main branch protection.

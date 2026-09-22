@@ -14,8 +14,11 @@
 11 reconcile evidence with state/graph
 12 select top 1–3 priorities and route authorized work.
 
-## Current handoff — 2026-09-21
-- PRODUCT canonical main: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
+## Current handoff — 2026-09-22
+- PRODUCT canonical main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`.
+- Current main Release Gate #1601 / `35601046564`: FULL GREEN on attempt 1.
+- Pages #832 / `35601045094`: SUCCESS.
+- PR #188 exact-head Gate #1599 / `35599456886`: GREEN on attempt 1; Photo Evidence v1 is merged with no Firebase Functions delta.
 - PR #164 outcome-attributed User Performance learning is merged.
 - PR #164 exact-head Release Gate #1525 / `35502377218`: GREEN.
 - Pages #816 / `35502863525`: SUCCESS for current main.
@@ -68,14 +71,13 @@
 - Production Functions were not redeployed by this source-only ownership fix.
 
 ## WebKit lifecycle determinism
-- PRODUCT PR #177 merged to main `9fa951b3...`.
-- Exact-head Release Gate #1562 / `35582093879`: FULL GREEN.
-- The same exact SHA browser-webkit job was rerun and passed the complete WebKit suite again.
-- Root cause was no-op `#garangTodayFlow` replacement during lifecycle events; unchanged semantic state now preserves DOM/CTA identity.
-- No arbitrary timeout increase or new retry/observer owner was added.
+- PR #177 exact-head Gate #1562 passed, but immediate post-merge main Gate #1563 later reproduced the Today DOM identity assertion once.
+- Subsequent main Gates #1592, #1600 and #1601 all passed on attempt 1.
+- Current main #1601 passes Today action flow, Golden Path complete, authenticated Coach, Real LLM, recovery and the full mobile WebKit tail.
+- Treat TD-015 as monitor-only. Reopen as P2 on recurrence; do not add broad retry/timeout masking.
 
 ## Production parity
-- Current source/web/production Coach parity is VERIFIED GREEN on `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
+- Current source/web main is `40e83c32...`; production Coach backend remains VERIFIED on Activation #21 revision `08cfa18e...`. PR #188 has no Functions delta, so no backend redeploy is claimed.
 - Deterministic Decision Intelligence still owns judgment; typed server policy owns mutations.
 - Response-derived personalization remains constraint-only and cannot autonomously increase progression.
 
