@@ -116,3 +116,6 @@ Previous severity: HIGH / P1
 Area: Coach action ownership / Golden Path
 Resolution: PRODUCT PR #176 established one online action owner. Authenticated LLM responses persist sanitized server action metadata into Coach thread state and are marked server-owned; the browser Agent suppresses mock proposal regeneration for those messages. Explicit local/offline fallback retains confirmation-first browser proposals. Exact-head Release Gate #1559 / `35580756829` passed the complete core/WebKit/verify suite before merge to PRODUCT main `0a07c4c5bd19397f43bfe9eaedd20c524f7620da`. Duplicate P1 PRs #173–#175 were closed as superseded.
 
+### TD-015 update — 2026-09-22
+Status: MONITOR / NON-BLOCKING after PR #210.
+The latest mobile stability recurrence was isolated to Workout Library async hydration: exercise cards were appended one by one after route entry. PR #210 batches those additions in one DocumentFragment commit without changing the existing stability threshold. Exact-head Gate #1649 and post-merge main Gate #1650 are FULL GREEN. Keep monitoring the older Today identity history and trace any new recurrence to its concrete runtime owner.

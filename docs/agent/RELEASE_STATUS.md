@@ -133,3 +133,14 @@ Decision: MERGED / CURRENT MAIN GREEN.
 - During verification, legacy workout certification polish was found repeatedly rewriting the new Evidence card; the runtime now skips `.photo-evidence-card`, and the design contract covers the boundary.
 - TD-015 is active P2 again because Gate #1624 first attempt reproduced the Today DOM identity assertion. Exact-head rerun and post-merge Gate #1625 are GREEN, so it is not a current release blocker.
 
+## Real Meal Scan v1 — 2026-09-22
+Decision: SOURCE/WEB GREEN / LIVE VISION SMOKE PENDING.
+- Current PRODUCT main: `d926b12a35105c02e240e2c0e677432b53c99d76`.
+- Real Meal Scan backend/client source is merged. Vision returns food identity/aliases/grams/confidence only; GARANG Food DB calculates nutrition; user confirmation precedes the existing save path.
+- Production Coach Activation #24 / `35707420848` successfully deployed Function `api` from `8ee4f2c...`, which contains the Meal Scan route. That activation did not execute the Meal Scan Vision smoke, so authenticated live provider execution remains UNKNOWN.
+- PR #209 Gate #1644: FULL GREEN including Real Meal Scan WebKit flow.
+- PR #210 fixed a separate Workout async hydration mutation burst without changing Meal Scan.
+- Post-merge current-main Gate #1650 / `35715201276`: FULL GREEN.
+- Pages #844 / `35715200771`: SUCCESS.
+- Release confidence: GREEN for source/web behavior; YELLOW only for the unverified authenticated live Vision provider call.
+

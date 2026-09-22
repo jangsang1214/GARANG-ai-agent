@@ -104,3 +104,12 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - TD-015 is reopened as active P2 due recurrence of the Today DOM identity assertion on the first exact-head Gate #1624 attempt. The exact-head rerun and post-merge main gate are GREEN, so current release remains GREEN.
 - Next highest-value engineering/release task: isolate the remaining Today lifecycle identity owner before accepting reruns as normal release behavior; do not add broad retry or timeout masking.
 
+## 2026-09-22 Real Meal Scan v1 handoff
+- Current PRODUCT main: `d926b12a35105c02e240e2c0e677432b53c99d76`.
+- Real Meal Scan v1 is merged and web-released: photo → authenticated Vision food/portion candidates → GARANG Food DB nutrition → user confirmation → meal save → Photo Evidence.
+- Provider nutrition is ignored by contract; Vision cannot own kcal/macros or write meal state.
+- Activation #24 deployed Function `api` after Meal Scan backend merge. Authenticated live Meal Scan Vision smoke was not part of that activation, so live provider execution is still UNKNOWN.
+- PR #209 Gate #1644: FULL GREEN with Real Meal Scan WebKit flow.
+- A separate post-merge mobile stability blocker was fixed in PR #210 by batching Workout Library async hydration; Gate #1649 and current-main Gate #1650 are FULL GREEN. Pages #844 is SUCCESS.
+- Next release action: obtain explicit Founder approval for production live Meal Scan smoke/activation before claiming end-to-end production VERIFIED.
+
