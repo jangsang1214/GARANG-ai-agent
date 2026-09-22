@@ -1,5 +1,19 @@
 # GARANG Tasks
 
+## Current commercial hardening — 2026-09-22
+Status: IN PROGRESS
+Owner: Command Center / Engineering / Release QA
+- [x] Photo Evidence v1.5 merged via PRODUCT PR #202.
+- [x] Device-local workout/meal Photo Evidence is included in account-deletion cleanup via PRODUCT PR #203.
+- [x] Exercise Knowledge taxonomy v1 is present across 300 exercise rows.
+- [x] Mobile social-auth redirect behavior and foreground-only Running safety merged via PRODUCT PR #198.
+- [x] Production analytics/telemetry/account-delete wiring merged via PRODUCT PR #205; exact-head Gate #1630 FULL GREEN.
+- [ ] Verify PRODUCT main `affe25cf...` post-merge Gate #1631 + Pages #840.
+- [ ] Configure Google Cloud WIF trust and GitHub repository variables; rerun fail-closed production activation. Do not remove long-lived credential fallback before a live WIF activation passes.
+- [ ] After WIF GREEN, rotate/retire long-lived Firebase deployment key and record evidence.
+- [ ] Enable server-enforced PRODUCT/CONTROL main protection when repository administration capability is available.
+- [ ] Continue 2/4/8-week external Intelligence Episode validation only after production observability is verified on main.
+
 Last updated: 2026-09-22
 
 ## Release / QA baseline — current main
