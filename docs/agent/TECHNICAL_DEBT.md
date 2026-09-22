@@ -72,10 +72,12 @@ Recommended fix: modernize CONTROL Actions in a dedicated no-product-behavior PR
 ## TD-012 — Long-lived Firebase deployment key in GitHub Actions
 Severity: MEDIUM / P2
 Area: CI authentication / IAM
-Problem: production deployment still relies on a masked service-account JSON credential rather than short-lived workload identity.
-Risk: long-lived credentials have a larger lifecycle blast radius.
-Mitigation: credential material is not printed/committed and current production deployment is verified.
-Recommended fix: migrate to GitHub OIDC / Google Workload Identity Federation, then rotate/retire the JSON key only after replacement is VERIFIED.
+Status: PARTIAL — WIF source contract merged, live activation blocked by external configuration
+Evidence: PRODUCT main `b746d57b...` includes fail-closed WIF activation. Production Coach Activation #22 failed before deploy because `GCP_WORKLOAD_IDENTITY_PROVIDER` and `GCP_DEPLOY_SERVICE_ACCOUNT` are unset.
+Risk: production deployment still depends on the previously verified long-lived credential path until WIF trust is configured and a live activation succeeds.
+Mitigation: the WIF-required path refuses fallback when explicitly activated via WIF; no secret value was exposed and no failed WIF deploy occurred.
+Recommended fix: create/configure the Google Cloud Workload Identity Pool/provider and deploy service account trust, set the two GitHub repository variables, run one production activation with `mode=wif-service-account`, then rotate/retire the JSON key only after VERIFIED success.
+
 
 ## TD-013 — Superseded open PRs create repository noise
 Severity: LOW / P6
@@ -92,15 +94,15 @@ Area: personalization / AI·Data
 Resolution: PRODUCT now durably persists recommendation resolution evidence for accepted, rejected, dismissed and ignored recommendations through the canonical action-data boundary. User Performance Model v1 consumes this evidence, and PR #166 additionally measures resolution coverage in Longitudinal Learning Metrics v1. No separate truth store was introduced.
 
 ## TD-015 — WebKit lifecycle timing is nondeterministic
-Status: MONITOR / NON-BLOCKING
-Previous severity: MEDIUM / P2
+Severity: MEDIUM / P2
 Area: frontend runtime / release integrity
-Root cause: active `garang-today-action-flow-v1` could remount `#garangTodayFlow` after lifecycle events even when its derived markup had not changed, allowing WebKit route CTA identity to change during a touch sequence.
-Mitigation: PRODUCT PR #177 added deterministic render identity and no-op DOM preservation without timeout inflation or a new retry owner.
-Evidence nuance: exact-head Gate #1562 passed and same-SHA WebKit rerun passed, but immediate post-merge main Gate #1563 later reproduced the Today DOM identity assertion once.
-Current evidence: subsequent main Release Gates #1592 (`56ff9c78...`), #1600 (`08cfa18e...`) and #1601 (current main `40e83c32...`) all passed on attempt 1. Latest #1601 explicitly passes Today action flow plus the complete Golden Path / authenticated Coach / Real LLM / mobile WebKit suite.
-Current risk: no present release blocker, but recurrence would indicate lifecycle ownership is still nondeterministic.
-Recommended action: keep the identity regression; if it recurs on current-path code, reopen as active P2 and trace ownership. Do not hide it with broad retries or timeout increases.
+Status: ACTIVE MONITOR
+Root cause: lifecycle events can still replace the Today flow/button DOM identity despite no semantic state change.
+Latest evidence: PRODUCT main Gate #1622 on `9aa18ef...` failed attempt 1 at `Verify Today action flow` with `sameFlow:false, sameButton:false`; the same SHA passed the entire failed-job rerun unchanged on attempt 2.
+Risk: current-path nondeterminism can create false release RED and may expose touch-state instability under unlucky lifecycle timing.
+Mitigation: deterministic render identity regression remains in the standard browser gate; do not hide recurrence with timeout inflation or broad retries.
+Recommended action: trace the remaining owner/remount path when capacity allows. Treat same-SHA rerun success as nondeterminism evidence, not as proof of permanent resolution.
+
 
 ## TD-016 — Commercial documentation and monetization artifacts are stale
 Severity: LOW / P6
