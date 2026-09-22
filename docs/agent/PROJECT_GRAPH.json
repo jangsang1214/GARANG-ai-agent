@@ -1177,6 +1177,22 @@
       "status": "done",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR213-MEAL-SCAN-LIVE-SMOKE-FIXTURE",
+      "kind": "change",
+      "title": "PRODUCT PR #213 replaces the provider-invalid Meal Scan production smoke fixture",
+      "status": "in_progress",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-REAL-MEAL-SCAN-PR213-GATE-1655",
+      "kind": "verification",
+      "title": "PR #213 exact-head Release Gate #1655 is FULL GREEN including Real Meal Scan WebKit flow",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -2009,6 +2025,16 @@
       "from": "RELEASE-PAGES-844",
       "to": "CHANGE-PRODUCT-PR206",
       "kind": "releases"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR213-MEAL-SCAN-LIVE-SMOKE-FIXTURE",
+      "to": "TASK-REAL-MEAL-SCAN-LIVE-SMOKE",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-REAL-MEAL-SCAN-PR213-GATE-1655",
+      "to": "CHANGE-PRODUCT-PR213-MEAL-SCAN-LIVE-SMOKE-FIXTURE",
+      "kind": "verifies"
     }
   ]
 }
