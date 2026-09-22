@@ -1,5 +1,16 @@
 # GARANG Session Handoff & Recovery Protocol v7-lite
 
+## Latest production handoff — 2026-09-22
+- PRODUCT canonical main: `5f630b6ec3ed8b757a9eb6bde52d5fff50887056`.
+- Production Coach Activation #27 / `35721577034`: SUCCESS.
+- Live Meal Scan Vision: PASS.
+- Live Coach: PASS via OpenAI `gpt-5.6-luna`.
+- Bounded autonomous write: PASS; sensitive write blocked; disposable identity deleted.
+- Release Gate #1659 / `35721577131`: FULL GREEN.
+- Pages #848 / `35721576625`: SUCCESS.
+- Real Meal Scan v1 production gap is CLOSED.
+- Current highest-value work: Anonymous External Validation Sprint + 2/4/8-week longitudinal measurement. Do not return to feature expansion without external evidence or a verified critical blocker.
+
 ## Latest handoff — 2026-09-22 20:xx KST
 - CONTROL main observed: `2cd573dde3abd1aa5519150ad5342ce0d3c6102a`.
 - PRODUCT main observed: `0eb2a11e117c50b208581e5987c45ed7515687de`.
