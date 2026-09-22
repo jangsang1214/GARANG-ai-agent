@@ -197,3 +197,29 @@ Next:
 - Diagnose active Today lifecycle ownership against the recurring identity replacement signal.
 - Do not normalize reruns or add timeout inflation/retry masking.
 
+## Closed P1 — Real Meal Scan v1 source/web implementation
+Status: DONE / VERIFIED SOURCE+WEB GREEN
+Owner: Product / Engineering / AI Data / Release QA
+Resolution:
+- PRODUCT PR #206 connects meal photo → authenticated Vision identity/portion candidates → canonical GARANG Food DB nutrition → user confirmation → existing meal save + Photo Evidence.
+- Vision is prohibited from supplying kcal/protein/carbs/fat; unmatched foods are not silently fabricated.
+- Production Function `api` containing `/meal/scan` was deployed by Activation #24.
+Verification:
+- PR #209 exact-head Gate #1644: FULL GREEN, including Real Meal Scan WebKit mobile flow.
+- Current main `d926b12...` post-merge Gate #1650: FULL GREEN.
+- Pages #844: SUCCESS.
+Remaining production gate:
+- Authenticated live Meal Scan Vision smoke is UNKNOWN. Do not call provider execution VERIFIED until a live authenticated request proves it.
+
+## Closed P2 — Workout async hydration release blocker
+Status: DONE / VERIFIED GREEN
+Owner: Engineering / Release QA
+Root cause:
+- Workout Library v2 appended asynchronously loaded exercise cards directly to the live DOM one-by-one, creating a burst of child-list mutations during mobile route settle.
+Resolution:
+- PR #210 batches clones in a DocumentFragment and commits once.
+- Canonical mobile stability threshold was preserved unchanged; a static contract guards batched hydration.
+Verification:
+- PR #210 Gate #1649: FULL GREEN.
+- Post-merge main Gate #1650: FULL GREEN, including mobile runtime stability stress.
+
