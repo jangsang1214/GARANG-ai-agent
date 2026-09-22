@@ -1,6 +1,15 @@
 # GARANG Tasks
 
-Last updated: 2026-09-21
+Last updated: 2026-09-22
+
+## Release / QA baseline — current main
+Status: GREEN / VERIFIED
+- PRODUCT main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`.
+- PR #188 exact-head Release Gate #1599 / `35599456886`: attempt 1 GREEN.
+- Post-merge Release Gate #1601 / `35601046564`: attempt 1 FULL GREEN.
+- Pages #832 / `35601045094`: SUCCESS.
+- Latest browser gate passes Today action flow, Golden Path complete, authenticated Coach, Real LLM, recovery, WebKit mobile regression, Settings, button health and runtime stress.
+- Production Coach backend remains VERIFIED on Activation #21 revision `08cfa18e...`; PR #188 contains no Functions change.
 
 ## Active P4 — Personalized Intelligence Loop v1
 Status: IMPLEMENTED IN PRODUCTION / VERIFIED GREEN
@@ -124,20 +133,18 @@ Verification:
 - Duplicate P1 PRs #173–#175 were closed as superseded by #176.
 
 ## Closed P2 — WebKit lifecycle determinism
-Status: DONE / VERIFIED GREEN
+Status: DONE FOR CURRENT RELEASE / MONITOR
 Owner: Engineering / Release QA
 Root cause:
-- Active Today action flow rebuilt and `replaceWith()`-replaced `#garangTodayFlow` on lifecycle events even when the derived model was unchanged.
-- On mobile WebKit this could replace the active route CTA between pointer/touch phases and surface as route/readiness timing failures.
-Resolution:
-- PRODUCT PR #177 preserves Today flow/CTA DOM identity on no-op lifecycle events using a deterministic render key.
-- Full DOM replacement remains only when the semantic Today model changes.
-- No new observer/retry layer and no timeout increase were added.
-Verification:
-- PR #177 exact-head Release Gate #1562 / `35582093879`: FULL GREEN.
-- The same exact SHA browser-webkit job was manually rerun and passed the complete WebKit suite again, including Golden Path complete, authenticated Coach, Real LLM, Settings, button health and runtime stress.
-- PR #177 merged to PRODUCT main as `9fa951b30be4981b8081e649dd05ab229df44218`.
-- Merge diff from previous main contains only Today action flow runtime, its cache key, and the regression test.
+- Active Today action flow could rebuild and `replaceWith()`-replace `#garangTodayFlow` on lifecycle events even when the semantic model was unchanged.
+- On mobile WebKit this could replace the active CTA during a touch sequence.
+Resolution and evidence:
+- PR #177 introduced deterministic render identity and no-op DOM preservation without adding timeout inflation or a new retry owner.
+- Exact-head Gate #1562 passed, but immediate post-merge main Gate #1563 later reproduced the DOM identity assertion once.
+- Subsequent main Gates #1592, #1600 and #1601 all completed FULL GREEN on attempt 1.
+- Latest #1601 on current main `40e83c32...` passes Today action flow and the complete Golden Path / authenticated Coach / Real LLM / mobile WebKit suite.
+Reopen condition:
+- Reclassify to active P2 if the current-path DOM identity assertion or an equivalent lifecycle replacement recurs. Do not normalize reruns or add broad timeout/retry masking.
 
 ## Active P5 — External longitudinal validation
 Status: PLANNED / PRODUCT CAPABILITY READY
