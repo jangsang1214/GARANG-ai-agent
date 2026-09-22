@@ -95,3 +95,12 @@
 
 ## Handoff rule
 Never turn old handoff text into VERIFIED evidence without observing the source. DONE requires implementation + acceptance + verification + regression consideration + material state synchronization.
+
+## 2026-09-22 Photo Evidence v1.5 handoff
+- Current PRODUCT main: `a60bf56c2a2f69a0eed138c22ee45c5f4bf76082`.
+- PR #202 is merged. Workout/Nutrition Photo Evidence redesign is released with shared GARANG Evidence language and preserved device-local media ownership.
+- Post-merge Gate #1625 / `35691173610`: FULL GREEN. Pages #837 / `35691172814`: SUCCESS.
+- A real regression discovered during the redesign was fixed: legacy workout certification polish no longer rewrites the Photo Evidence card.
+- TD-015 is reopened as active P2 due recurrence of the Today DOM identity assertion on the first exact-head Gate #1624 attempt. The exact-head rerun and post-merge main gate are GREEN, so current release remains GREEN.
+- Next highest-value engineering/release task: isolate the remaining Today lifecycle identity owner before accepting reruns as normal release behavior; do not add broad retry or timeout masking.
+
