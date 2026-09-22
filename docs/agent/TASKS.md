@@ -223,23 +223,38 @@ Verification:
 - PR #210 Gate #1649: FULL GREEN.
 - Post-merge main Gate #1650: FULL GREEN, including mobile runtime stability stress.
 
-## Active P2 — Real Meal Scan production live-smoke closure
-Status: READY FOR FOUNDER PRODUCTION APPROVAL / LIVE RESULT UNKNOWN
+## Closed P2 — Real Meal Scan production live-smoke closure
+Status: DONE / VERIFIED GREEN
 Owner: Release QA / Engineering / AI Data
 Goal: close the final gap between merged Meal Scan source/web behavior and authenticated live Vision provider execution.
 
-Current evidence:
-- PRODUCT main observed: `0eb2a11e117c50b208581e5987c45ed7515687de`.
-- PR #213 head `5f5ad45a56cf976e244b8fe8bacd7e6acaabd142` changes only the production smoke PNG fixture.
-- Exact-head Release Gate #1655 / `35717702324`: FULL GREEN.
-- Browser WebKit still passes Real Meal Scan photo → Vision fixture → Food DB → confirm → save → Photo Evidence.
-- PR #213 metadata records prior Activation #26 provider failure on the old 1×1 PNG fixture.
+Verification:
+- PRODUCT main: `5f630b6ec3ed8b757a9eb6bde52d5fff50887056`.
+- Production Coach Activation #27 / `35721577034`: SUCCESS.
+- Authenticated live Meal Scan Vision smoke: PASS.
+- Authenticated live Coach smoke: PASS via OpenAI `gpt-5.6-luna`.
+- Authenticated autonomous write smoke: PASS.
+- Sensitive write boundary: PASS.
+- Disposable Firebase smoke account cleanup: PASS / deleted.
+- Release Gate #1659: FULL GREEN.
+- Pages #848: SUCCESS.
 
-Acceptance:
-- Founder explicitly approves the production-triggering merge.
-- PR #213 merges to current main without unrelated product scope.
-- Resulting production activation deploys only the intended Function boundary, authenticated Meal Scan live smoke passes, existing Coach/write/security smokes remain GREEN, and disposable identity cleanup passes.
-- CONTROL state is reconciled from actual activation evidence before claiming production GREEN.
+Result:
+- Real Meal Scan v1 is SOURCE / WEB / PRODUCTION VERIFIED GREEN.
 
-Next after acceptance:
-- Launch Anonymous External Validation Sprint and begin 2/4/8-week Intelligence Episode measurement.
+## Active P4/P5 — Anonymous External Validation Sprint
+Status: IN PROGRESS
+Owner: Growth Business / Product / AI Data / Command Center
+Goal: prove that unknown users understand and act on the GARANG Golden Path without founder explanation, then measure whether repeated Intelligence Episodes create retained value.
+
+Immediate acceptance:
+- Recruit unknown users without friend/family testing, GARANG brand-account seeding, or paid ads.
+- Observe signup/onboarding → first record → Coach interpretation → next action understanding → plan → execution intent → Progress/accumulated-value understanding.
+- Capture canonical funnel counts and qualitative confusion points without adding features during the first evidence batch.
+- Begin longitudinal follow-up at 2/4/8-week windows for recommendation shown → accept/edit/reject → execution → outcome → later recommendation.
+- Separate acquisition failure, comprehension failure, action failure, and retention failure before proposing product changes.
+
+Execution contract:
+- First batch target: 10–20 unknown users.
+- Stop feature expansion until at least the first external batch is reviewed, except P0/P1 fixes.
+- Any product change must map to a measured drop-off or repeated qualitative failure.

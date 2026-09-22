@@ -926,7 +926,7 @@
       "id": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "kind": "task",
       "title": "Validate activation, recommendation usefulness, execution and retention with unknown users over 2/4/8-week windows",
-      "status": "planned",
+      "status": "in_progress",
       "ownerWorkstream": "growth-business",
       "repositoryId": "product"
     },
@@ -1118,7 +1118,7 @@
       "id": "INIT-REAL-MEAL-SCAN-V1",
       "kind": "initiative",
       "title": "Connect nutrition photo evidence to bounded Meal Scan intelligence",
-      "status": "active",
+      "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     },
@@ -1150,7 +1150,7 @@
       "id": "TASK-REAL-MEAL-SCAN-LIVE-SMOKE",
       "kind": "task",
       "title": "Verify authenticated live production Meal Scan Vision execution",
-      "status": "blocked",
+      "status": "done",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
     },
@@ -1182,7 +1182,7 @@
       "id": "CHANGE-PRODUCT-PR213-MEAL-SCAN-LIVE-SMOKE-FIXTURE",
       "kind": "change",
       "title": "PRODUCT PR #213 replaces the provider-invalid Meal Scan production smoke fixture",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -1192,6 +1192,54 @@
       "title": "PR #213 exact-head Release Gate #1655 is FULL GREEN including Real Meal Scan WebKit flow",
       "status": "done",
       "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR214-MEAL-SCAN-ACTIVATION",
+      "kind": "change",
+      "title": "PRODUCT PR #214 triggers Founder-approved production Meal Scan live Vision activation",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCTION-MEAL-SCAN-27",
+      "kind": "verification",
+      "title": "Production Coach Activation #27 verifies live Meal Scan Vision, Coach, bounded write, security boundary and cleanup",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1659",
+      "kind": "verification",
+      "title": "Current PRODUCT main Release Gate #1659 is FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-848",
+      "kind": "release",
+      "title": "Pages #848 deploys current PRODUCT main successfully",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-REAL-MEAL-SCAN-PRODUCTION-GREEN",
+      "kind": "result",
+      "title": "Real Meal Scan v1 is source/web/production verified GREEN",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-ANONYMOUS-EXTERNAL-VALIDATION-SPRINT",
+      "kind": "initiative",
+      "title": "Validate unknown-user Golden Path activation and retained Intelligence value",
+      "status": "active",
+      "ownerWorkstream": "growth-business",
       "repositoryId": "product"
     }
   ],
@@ -2035,6 +2083,51 @@
       "from": "VERIFY-REAL-MEAL-SCAN-PR213-GATE-1655",
       "to": "CHANGE-PRODUCT-PR213-MEAL-SCAN-LIVE-SMOKE-FIXTURE",
       "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR214-MEAL-SCAN-ACTIVATION",
+      "to": "TASK-REAL-MEAL-SCAN-LIVE-SMOKE",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCTION-MEAL-SCAN-27",
+      "to": "CHANGE-PRODUCT-PR214-MEAL-SCAN-ACTIVATION",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1659",
+      "to": "CHANGE-PRODUCT-PR214-MEAL-SCAN-ACTIVATION",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-848",
+      "to": "CHANGE-PRODUCT-PR214-MEAL-SCAN-ACTIVATION",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-REAL-MEAL-SCAN-PRODUCTION-GREEN",
+      "to": "VERIFY-PRODUCTION-MEAL-SCAN-27",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-REAL-MEAL-SCAN-PRODUCTION-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-1659",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-REAL-MEAL-SCAN-PRODUCTION-GREEN",
+      "to": "RELEASE-PAGES-848",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "INIT-ANONYMOUS-EXTERNAL-VALIDATION-SPRINT",
+      "kind": "supports"
+    },
+    {
+      "from": "INIT-ANONYMOUS-EXTERNAL-VALIDATION-SPRINT",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
     }
   ]
 }
