@@ -1246,7 +1246,7 @@
       "id": "TASK-EXTERNAL-VALIDATION-MEASUREMENT-READINESS",
       "kind": "task",
       "title": "Make external validation consent-safe and funnel-measurable",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -1254,7 +1254,7 @@
       "id": "CHANGE-PRODUCT-PR217-MEASUREMENT-READINESS",
       "kind": "change",
       "title": "PRODUCT PR #217 hardens consent, first-record measurement and Meal Scan no-food UX",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -1264,6 +1264,30 @@
       "title": "PRODUCT PR #217 exact-head Release Gate #1675 is FULL GREEN",
       "status": "done",
       "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1676-MEASUREMENT-READINESS",
+      "kind": "verification",
+      "title": "Post-merge PRODUCT main Release Gate #1676 is FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-849-MEASUREMENT-READINESS",
+      "kind": "release",
+      "title": "Pages #849 releases measurement-ready current PRODUCT main",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-EXTERNAL-VALIDATION-MEASUREMENT-READY",
+      "kind": "result",
+      "title": "External validation web baseline is consent-safe and funnel-measurable",
+      "status": "done",
+      "ownerWorkstream": "command-center",
       "repositoryId": "product"
     }
   ],
@@ -2167,6 +2191,31 @@
       "from": "VERIFY-PRODUCT-PR217-GATE-1675",
       "to": "CHANGE-PRODUCT-PR217-MEASUREMENT-READINESS",
       "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1676-MEASUREMENT-READINESS",
+      "to": "CHANGE-PRODUCT-PR217-MEASUREMENT-READINESS",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-849-MEASUREMENT-READINESS",
+      "to": "CHANGE-PRODUCT-PR217-MEASUREMENT-READINESS",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-EXTERNAL-VALIDATION-MEASUREMENT-READY",
+      "to": "VERIFY-PRODUCT-MAIN-1676-MEASUREMENT-READINESS",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-EXTERNAL-VALIDATION-MEASUREMENT-READY",
+      "to": "RELEASE-PAGES-849-MEASUREMENT-READINESS",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-EXTERNAL-VALIDATION-MEASUREMENT-READY",
+      "kind": "depends-on"
     }
   ]
 }
