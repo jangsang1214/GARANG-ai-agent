@@ -175,3 +175,25 @@ Competition derivatives remain isolated and change-frozen except critical outage
 - Migrate production deployment auth to OIDC/WIF: PLANNED.
 - Functions dependency-family upgrade: PLANNED.
 - Firebase build-image cleanup: PLANNED / COST HYGIENE.
+
+## Closed P1 — Photo Evidence v1.5 redesign
+Status: DONE / VERIFIED GREEN
+Owner: Product / Design Brand / Engineering / Release QA
+Resolution:
+- PRODUCT PR #202 merged to main `a60bf56c2a2f69a0eed138c22ee45c5f4bf76082`.
+- Workout and Nutrition use one GARANG Evidence visual/copy system without changing record mutation ownership or device-local IndexedDB media storage.
+- Legacy workout certification polish is explicitly blocked from rewriting `.photo-evidence-card`.
+Verification:
+- Exact-head Gate #1624 passed on rerun after one unrelated/current-path Today lifecycle identity recurrence.
+- Post-merge main Gate #1625 / `35691173610`: FULL GREEN.
+- Pages #837 / `35691172814`: SUCCESS.
+
+## Active P2 — WebKit lifecycle determinism recurrence
+Status: ACTIVE / NON-BLOCKING FOR CURRENT RELEASE
+Evidence:
+- PR #202 exact-head Gate #1624 first attempt reproduced the Today no-op DOM identity assertion previously tracked as TD-015.
+- Same exact head passed the complete gate on rerun; post-merge main Gate #1625 passed the complete suite.
+Next:
+- Diagnose active Today lifecycle ownership against the recurring identity replacement signal.
+- Do not normalize reruns or add timeout inflation/retry masking.
+
