@@ -8,7 +8,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560` (PR #188 Photo Evidence v1 merged).
+- Canonical PRODUCT main observed: `0eb2a11e117c50b208581e5987c45ed7515687de` (PR #212 merged the fail-closed production Meal Scan live-smoke requirement; PR #213 is open on top of this main).
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## VERIFIED commercial evidence
@@ -95,3 +95,10 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #210 exact-head Gate #1649: FULL GREEN. Post-merge main Gate #1650 / `35715201276`: FULL GREEN. Pages #844 / `35715200771`: SUCCESS.
 - Current release status: SOURCE/WEB GREEN. Real Meal Scan production endpoint is deployed, but end-to-end authenticated live Vision result remains the final production verification gap.
 
+## 2026-09-22 Real Meal Scan live-smoke closure — latest
+- PRODUCT main is OBSERVED at `0eb2a11e117c50b208581e5987c45ed7515687de`.
+- PRODUCT PR #213 head `5f5ad45a56cf976e244b8fe8bacd7e6acaabd142` changes only `scripts/verify-production-meal-scan.cjs`, replacing the provider-invalid 1×1 smoke image with a valid 128×128 RGB PNG. Runtime Meal Scan behavior is unchanged by this PR.
+- PR #213 exact-head GARANG Release Gate #1655 / `35717702324`: FULL GREEN. `core-build-rules`, `browser-webkit` (including Real Meal Scan flow), and final `verify` all passed.
+- PR #213 records that Activation #26 reached the provider but returned `502 MEAL_SCAN_PROVIDER_ERROR` with the earlier 1×1 PNG fixture. Treat this activation-failure cause as RECORDED from current PR metadata unless separately re-opened from workflow logs.
+- End-to-end authenticated production Vision execution remains UNKNOWN until a Founder-approved PR #213 merge intentionally retriggers production activation and the live smoke passes.
+- Current Command Center priority order: (1) close live Meal Scan production verification, (2) launch anonymous external/longitudinal validation, (3) continue non-blocking release-integrity hardening (real-device coverage, WIF credential migration, TD-015 monitor).
