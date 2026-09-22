@@ -1241,6 +1241,30 @@
       "status": "active",
       "ownerWorkstream": "growth-business",
       "repositoryId": "product"
+    },
+    {
+      "id": "TASK-EXTERNAL-VALIDATION-MEASUREMENT-READINESS",
+      "kind": "task",
+      "title": "Make external validation consent-safe and funnel-measurable",
+      "status": "in_progress",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR217-MEASUREMENT-READINESS",
+      "kind": "change",
+      "title": "PRODUCT PR #217 hardens consent, first-record measurement and Meal Scan no-food UX",
+      "status": "in_progress",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR217-GATE-1675",
+      "kind": "verification",
+      "title": "PRODUCT PR #217 exact-head Release Gate #1675 is FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -2128,6 +2152,21 @@
       "from": "INIT-ANONYMOUS-EXTERNAL-VALIDATION-SPRINT",
       "to": "GOAL-PROTECT-GOLDEN-PATH",
       "kind": "supports"
+    },
+    {
+      "from": "TASK-EXTERNAL-VALIDATION-MEASUREMENT-READINESS",
+      "to": "INIT-ANONYMOUS-EXTERNAL-VALIDATION-SPRINT",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR217-MEASUREMENT-READINESS",
+      "to": "TASK-EXTERNAL-VALIDATION-MEASUREMENT-READINESS",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR217-GATE-1675",
+      "to": "CHANGE-PRODUCT-PR217-MEASUREMENT-READINESS",
+      "kind": "verifies"
     }
   ]
 }
