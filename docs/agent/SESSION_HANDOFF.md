@@ -1,5 +1,14 @@
 # GARANG Session Handoff & Recovery Protocol v7-lite
 
+## Latest handoff — 2026-09-22 20:xx KST
+- CONTROL main observed: `2cd573dde3abd1aa5519150ad5342ce0d3c6102a`.
+- PRODUCT main observed: `0eb2a11e117c50b208581e5987c45ed7515687de`.
+- PRODUCT PR #213 head: `5f5ad45a56cf976e244b8fe8bacd7e6acaabd142`; only the production Meal Scan smoke image fixture changes.
+- PR #213 exact-head Release Gate #1655 / `35717702324`: FULL GREEN across core/build, WebKit including Real Meal Scan, and final verify.
+- Production live Meal Scan Vision remains UNKNOWN. PR #213 metadata records Activation #26 reached the provider but failed with `502 MEAL_SCAN_PROVIDER_ERROR` using the old 1×1 PNG fixture.
+- Next Founder decision: explicitly approve PR #213 merge + the intentional production activation retry. Do not merge as an unattended safe action because the merge is designed to trigger production deployment/smoke.
+- After production live Vision is VERIFIED, shift the project from feature construction to anonymous external activation + 2/4/8-week longitudinal validation.
+
 ## PROJECT START order
 1 `AGENTS.md`
 2 `docs/agent/REPOSITORIES.json`
