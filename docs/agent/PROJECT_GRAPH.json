@@ -1057,6 +1057,62 @@
       "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-PHOTO-EVIDENCE-V1",
+      "kind": "initiative",
+      "title": "Attach optional user-confirmed workout and nutrition photo evidence to saved records without expanding cloud data authority",
+      "status": "done",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-PHOTO-EVIDENCE-V1",
+      "kind": "task",
+      "title": "Implement device-local Photo Evidence v1 for saved workout and nutrition records",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR188",
+      "kind": "change",
+      "title": "PR #188 merges Photo Evidence v1 as PRODUCT main 40e83c32",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR188-HEAD",
+      "kind": "verification",
+      "title": "PR #188 exact-head Release Gate #1599 passes on attempt 1",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1601",
+      "kind": "verification",
+      "title": "PRODUCT main 40e83c32 Release Gate #1601 passes on attempt 1 including Today, Golden Path, Real LLM and mobile WebKit",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-832",
+      "kind": "release",
+      "title": "Pages #832 deploys PRODUCT main 40e83c32",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-CURRENT-RELEASE-40E83-GREEN",
+      "kind": "result",
+      "title": "Current GARANG source/web release is GREEN on 40e83c32; production Coach remains verified on backend revision 08cfa18e with no Functions delta in PR #188",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -1798,6 +1854,51 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-PERSONALIZED-INTELLIGENCE-PRODUCTION-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-PHOTO-EVIDENCE-V1",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-PHOTO-EVIDENCE-V1",
+      "to": "INIT-PHOTO-EVIDENCE-V1",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR188",
+      "to": "TASK-PHOTO-EVIDENCE-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR188-HEAD",
+      "to": "CHANGE-PRODUCT-PR188",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1601",
+      "to": "CHANGE-PRODUCT-PR188",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1601",
+      "to": "CHANGE-PRODUCT-PR177",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-832",
+      "to": "CHANGE-PRODUCT-PR188",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-CURRENT-RELEASE-40E83-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-1601",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-CURRENT-RELEASE-40E83-GREEN",
+      "to": "RELEASE-PAGES-832",
       "kind": "depends-on"
     }
   ]
