@@ -1113,6 +1113,70 @@
       "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-REAL-MEAL-SCAN-V1",
+      "kind": "initiative",
+      "title": "Connect nutrition photo evidence to bounded Meal Scan intelligence",
+      "status": "active",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR206",
+      "kind": "change",
+      "title": "PRODUCT PR #206 connects authenticated Real Meal Scan v1",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-REAL-MEAL-SCAN-WEBKIT-1644",
+      "kind": "verification",
+      "title": "Gate #1644 verifies photo to Vision fixture to Food DB to confirm to save to Photo Evidence",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PRODUCTION-API-24-MEAL-SCAN",
+      "kind": "release",
+      "title": "Production Activation #24 deploys api revision containing Meal Scan route",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-REAL-MEAL-SCAN-LIVE-SMOKE",
+      "kind": "task",
+      "title": "Verify authenticated live production Meal Scan Vision execution",
+      "status": "blocked",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR210",
+      "kind": "change",
+      "title": "PRODUCT PR #210 batches Workout Library async hydration",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1650",
+      "kind": "verification",
+      "title": "Current PRODUCT main Gate #1650 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-844",
+      "kind": "release",
+      "title": "Pages #844 deploys current PRODUCT main",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -1900,6 +1964,51 @@
       "from": "RESULT-CURRENT-RELEASE-40E83-GREEN",
       "to": "RELEASE-PAGES-832",
       "kind": "depends-on"
+    },
+    {
+      "from": "INIT-REAL-MEAL-SCAN-V1",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR206",
+      "to": "INIT-REAL-MEAL-SCAN-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-REAL-MEAL-SCAN-WEBKIT-1644",
+      "to": "CHANGE-PRODUCT-PR206",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PRODUCTION-API-24-MEAL-SCAN",
+      "to": "CHANGE-PRODUCT-PR206",
+      "kind": "releases"
+    },
+    {
+      "from": "TASK-REAL-MEAL-SCAN-LIVE-SMOKE",
+      "to": "RELEASE-PRODUCTION-API-24-MEAL-SCAN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR210",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1650",
+      "to": "CHANGE-PRODUCT-PR210",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1650",
+      "to": "CHANGE-PRODUCT-PR206",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-844",
+      "to": "CHANGE-PRODUCT-PR206",
+      "kind": "releases"
     }
   ]
 }
