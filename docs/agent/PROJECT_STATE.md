@@ -8,7 +8,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main observed: `0eb2a11e117c50b208581e5987c45ed7515687de` (PR #212 merged the fail-closed production Meal Scan live-smoke requirement; PR #213 is open on top of this main).
+- Canonical PRODUCT main observed: `5f630b6ec3ed8b757a9eb6bde52d5fff50887056` (PR #214 production activation trigger merged).
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## VERIFIED commercial evidence
@@ -102,3 +102,22 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #213 records that Activation #26 reached the provider but returned `502 MEAL_SCAN_PROVIDER_ERROR` with the earlier 1×1 PNG fixture. Treat this activation-failure cause as RECORDED from current PR metadata unless separately re-opened from workflow logs.
 - End-to-end authenticated production Vision execution remains UNKNOWN until a Founder-approved PR #213 merge intentionally retriggers production activation and the live smoke passes.
 - Current Command Center priority order: (1) close live Meal Scan production verification, (2) launch anonymous external/longitudinal validation, (3) continue non-blocking release-integrity hardening (real-device coverage, WIF credential migration, TD-015 monitor).
+
+## 2026-09-22 Production Meal Scan GREEN — Activation #27
+- PRODUCT main is VERIFIED at `5f630b6ec3ed8b757a9eb6bde52d5fff50887056`.
+- Production Coach Activation #27 / `35721577034`: SUCCESS.
+- Activation #27 deployed only Firebase Function `api`, preserved the existing `GARANG_LLM_API_KEY`, and passed public Coach + Meal Scan auth/method boundaries.
+- Authenticated live Meal Scan smoke: PASS with `visionBoundary=live`.
+- Authenticated live Coach smoke: PASS with provider `openai`, model `gpt-5.6-luna`.
+- Authenticated autonomous-write smoke: PASS; sensitive-memory write remained blocked with `SENSITIVE_MEMORY_KEY_BLOCKED`.
+- Disposable Firebase smoke account cleanup: PASS / deleted.
+- Post-merge Release Gate #1659 / `35721577131`: FULL GREEN, including Real Meal Scan flow, Golden Path complete journey, Real LLM integration, and mobile runtime stability stress.
+- Pages #848 / `35721576625`: SUCCESS.
+- Real Meal Scan v1 is now SOURCE / WEB / PRODUCTION VERIFIED GREEN. The previous live Vision gap is CLOSED.
+- Deployment auth still used the existing ADC/service-account path; WIF was skipped because repository WIF configuration remains incomplete. Keep this as non-blocking P2 debt.
+
+## 2026-09-22 External Validation Sprint start
+- Feature construction is no longer the current bottleneck.
+- `TASK-EXTERNAL-LONGITUDINAL-VALIDATION` is now IN PROGRESS.
+- Immediate objective: validate unknown-user activation and whether recommendation → resolution → execution → outcome produces understandable retained value over 2/4/8-week windows.
+- No paid acquisition and no new feature scope before the first external evidence batch unless a P0/P1 blocker is discovered.
