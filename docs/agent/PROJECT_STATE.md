@@ -78,3 +78,11 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 1. P4/P5 real longitudinal validation using Intelligence Episodes: recommendation → resolution → execution → outcome → later recommendation quality over 2/4/8-week windows, plus activation/retention funnel measurement on external users.
 2. P4/P5 collect real external Intelligence Episodes and evaluate whether response-aware personalization improves acceptance/execution/outcome without weakening guardrails.
 3. P4/P5 expand response-model signal quality only from observed episode evidence; keep semantic RAG/model upgrades and broader feature expansion behind demonstrated longitudinal value.
+
+## 2026-09-22 Photo Evidence v1.5 reconciliation
+- PRODUCT main is VERIFIED at `a60bf56c2a2f69a0eed138c22ee45c5f4bf76082` after PR #202, `Ship Photo Evidence v1.5 on current main`.
+- Photo Evidence v1.5 is MERGED / SOURCE+CI+WEB VERIFIED: workout and nutrition now share the restrained GARANG Evidence language, saved records expose Evidence context, the viewer carries record metadata, and existing device-local IndexedDB media ownership is preserved.
+- PR #202 exact-head Release Gate #1624 required one rerun: the first attempt reproduced the Today no-op DOM identity assertion; the rerun passed the complete suite. A separate mobile-stability mutation failure found during the work was traced to legacy workout certification polish rewriting the new Photo Evidence card and was fixed with an explicit guard plus contract coverage.
+- Post-merge main Release Gate #1625 / `35691173610`: FULL GREEN. Founder OS Event Envelope #1407: SUCCESS. Pages #837 / `35691172814`: SUCCESS.
+- TD-015 WebKit lifecycle determinism is REOPENED as active P2 because the current-path Today DOM identity assertion recurred on PR #202 exact head. It is not a current release blocker because the exact-head rerun and post-merge main gate are GREEN; do not mask future recurrence with timeout inflation or broad retries.
+

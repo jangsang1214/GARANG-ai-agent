@@ -122,3 +122,14 @@ Release confidence note: TD-015 is monitor-only, not a current blocker. Historic
 - Firebase Functions dependency-family upgrade.
 - Firebase build-image cleanup/cost hygiene.
 - Active runtime ownership simplification where duplicate owners are VERIFIED.
+
+## Photo Evidence v1.5 — 2026-09-22
+Decision: MERGED / CURRENT MAIN GREEN.
+- PRODUCT PR #202 merged as `a60bf56c2a2f69a0eed138c22ee45c5f4bf76082`.
+- Post-merge Release Gate #1625 / `35691173610`: FULL GREEN.
+- Pages #837 / `35691172814`: SUCCESS.
+- Founder OS Event Envelope #1407: SUCCESS.
+- Photo Evidence remains optional and device-local; no cloud photo sync, new social surface, or automatic AI mutation was introduced.
+- During verification, legacy workout certification polish was found repeatedly rewriting the new Evidence card; the runtime now skips `.photo-evidence-card`, and the design contract covers the boundary.
+- TD-015 is active P2 again because Gate #1624 first attempt reproduced the Today DOM identity assertion. Exact-head rerun and post-merge Gate #1625 are GREEN, so it is not a current release blocker.
+
