@@ -1,6 +1,6 @@
 # GARANG Project State
 
-Last updated: 2026-09-21
+Last updated: 2026-09-22
 
 ## Current objective
 Stabilize the canonical commercial GARANG after the Real AI Coach repair and User Performance Model v1 rollout, then move from feature construction to longitudinal external validation and measured behavior change.
@@ -8,10 +8,13 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main: `08cfa18e725c919ce2893c3c042d20c5e38d15da` (production createPlan title fallback hardening + activation).
+- Canonical PRODUCT main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560` (PR #188 Photo Evidence v1 merged).
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## VERIFIED commercial evidence
+- Current PRODUCT main `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`: PR #188 exact-head Release Gate #1599 / `35599456886` SUCCESS on attempt 1; post-merge Release Gate #1601 / `35601046564` FULL GREEN on attempt 1; Pages #832 / `35601045094` SUCCESS.
+- Gate #1601 browser-webkit passed Today action flow, Today Check-in CTA, mobile Planner shortcut, Today visual parity, Golden Path integration + complete journey, authenticated app/Coach, Real LLM Golden Path, recovery, WebKit mobile regression, Settings touch, button health and runtime stability stress.
+- PR #188 changed browser/runtime Photo Evidence files, `index.html`, `package.json`, `runtime-manifest.json` and tests only; no Firebase Functions code changed and no production Function deployment is claimed for that merge.
 - PRODUCT main `08cfa18e725c919ce2893c3c042d20c5e38d15da`: Release Gate #1600 / `35599747696` FULL GREEN; Pages #831 / `35599747250` SUCCESS; Production Coach Activation #21 / `35599747682` SUCCESS.
 - Activation #21 deployed only Firebase Function `api`, preserved the existing GARANG LLM secret, passed authenticated live Coach smoke, authenticated autonomous-write smoke, sensitive-write boundary checks and disposable-user cleanup.
 - Activation #20 / `35598862426` on `1723a581...` failed only the bounded createPlan write smoke with `PLAN_TITLE_REQUIRED` because the provider omitted a display title; subsequent commits `e2aa7ed...` + `895fb83...` added and regressed a deterministic display-only fallback before reactivation.
@@ -44,14 +47,16 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - User Performance Model v1 now includes durable recommendation-resolution evidence and outcome-attributed learning through fully linked Intelligence Learning Contract cycles (PR #164).
 
 ## Runtime / deployment boundary
-- Commercial web source of truth is PRODUCT main `08cfa18e725c919ce2893c3c042d20c5e38d15da`; Pages #831 has deployed it.
-- Production Coach backend is VERIFIED on current commercial main `08cfa18e725c919ce2893c3c042d20c5e38d15da` after Founder-approved Activation #21.
+- Commercial web source of truth is PRODUCT main `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`; Pages #832 has deployed it.
+- Production Coach backend remains VERIFIED on `08cfa18e725c919ce2893c3c042d20c5e38d15da` after Founder-approved Activation #21. PR #188 contains no Firebase Functions change, so no backend redeploy is claimed or required by that merge.
 - Production Coach Activation #18 / `35511759697`: SUCCESS. It deployed only Firebase Function `api`, preserved the existing LLM secret, ran authenticated live LLM smoke plus authenticated autonomous-write smoke, and cleaned up the disposable Firebase identity.
 - Live evidence: `source=llm`, provider `openai`, model `gpt-5.6-luna`, GARANG alignment verified; bounded `createPlan` executed and persisted; sensitive-write request remained denied/confirmation-gated.
-- Web/main ↔ production Coach backend parity is VERIFIED GREEN on `08cfa18e...`.
+- Literal source/backend SHA parity is no longer claimed after frontend-only PR #188. Functional Coach compatibility remains VERIFIED GREEN: current main Gate #1601 includes authenticated Coach + Real LLM browser integration, while the production Coach backend remains the verified Activation #21 revision `08cfa18e...`.
 
 ## Stable
-- Personalized Intelligence Loop v1 source/web/production release: VERIFIED GREEN on main `08cfa18e...`.
+- Current commercial source/web release: VERIFIED GREEN on main `40e83c32...` via Gate #1601 attempt 1 + Pages #832.
+- Photo Evidence v1 is merged and web-released; raw media remains device-local and optional.
+- Personalized Intelligence Loop v1 production backend: VERIFIED GREEN on activated revision `08cfa18e...`.
 - Production Real AI Coach connectivity: VERIFIED GREEN.
 - Commercial Coach decision/alignment boundary: VERIFIED GREEN.
 - User Performance Model v1 core contract: merged.
@@ -66,7 +71,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #176 exact-head Release Gate #1559 / `35580756829`: FULL GREEN after updating the complete Golden Path test to use an explicit local-fallback scenario. The earlier same-SHA rerun on Gate #1558 again exposed WebKit lifecycle timing debt, strengthening P2 priority rather than reopening P1.
 - Autonomous Intelligence production activation is VERIFIED GREEN via Activation #18.
 - Server-side #164 UPM attribution is production-activated and live-smoke verified.
-- WebKit lifecycle determinism is RESOLVED by PR #177 with two complete same-SHA WebKit passes.
+- WebKit lifecycle timing is not a current release blocker. PR #177 exact-head Gate #1562 passed, but immediate post-merge main Gate #1563 later reproduced the Today DOM identity assertion once. Since then PRODUCT main Gates #1592, #1600 and #1601 have each passed on attempt 1; latest #1601 explicitly passes Today action flow and the complete browser gate. Track TD-015 as monitor-only unless the current-path identity assertion recurs.
 - Main branch protection, OIDC/WIF deployment auth migration, Functions dependency-family upgrade and runtime ownership simplification remain non-blocking engineering debt.
 
 ## Next priorities
