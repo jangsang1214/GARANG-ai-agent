@@ -6,7 +6,7 @@ Last updated: 2026-09-22
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
 - Last VERIFIED application runtime/web baseline: `d926b12a35105c02e240e2c0e677432b53c99d76` via post-merge Gate #1650 + Pages #844; subsequent observed main commits are release/activation verification changes.
-- Current observed PRODUCT main: `0eb2a11e117c50b208581e5987c45ed7515687de`.
+- Current observed PRODUCT main: `5f630b6ec3ed8b757a9eb6bde52d5fff50887056`.
 - Current verified production Coach backend deployment revision: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
 - Current source/web release: GREEN / VERIFIED. Literal source/backend SHA parity is not expected after frontend-only PR #188; no Firebase Functions code changed.
 
@@ -152,3 +152,19 @@ Decision: SOURCE/WEB GREEN; PRODUCTION LIVE VISION YELLOW / APPROVAL-GATED.
 - PR #213 exact-head Release Gate #1655 / `35717702324`: FULL GREEN; all release jobs passed, including Real Meal Scan browser flow.
 - The PR metadata states Activation #26 reached the live provider but the old 1×1 PNG smoke fixture received `502 MEAL_SCAN_PROVIDER_ERROR`; PR #213 replaces that fixture with a valid 128×128 RGB PNG.
 - Do not claim live Meal Scan provider execution VERIFIED until the Founder approves the production-triggering merge and the resulting activation smoke succeeds with cleanup.
+
+## Real Meal Scan production closure — Activation #27
+Decision: SOURCE / WEB / PRODUCTION GREEN / VERIFIED.
+- PRODUCT main: `5f630b6ec3ed8b757a9eb6bde52d5fff50887056`.
+- Production Coach Activation #27 / `35721577034`: SUCCESS.
+- Deploy scope: Firebase Function `api` only.
+- Existing GARANG LLM secret preserved.
+- Public Coach + Meal Scan auth/method boundaries: PASS.
+- Authenticated live Meal Scan Vision smoke: PASS (`visionBoundary=live`).
+- Authenticated live Coach smoke: PASS; provider `openai`, model `gpt-5.6-luna`.
+- Authenticated bounded write smoke: PASS.
+- Sensitive-write boundary: PASS (`SENSITIVE_MEMORY_KEY_BLOCKED`).
+- Disposable smoke identity cleanup: PASS / deleted.
+- Release Gate #1659 / `35721577131`: FULL GREEN.
+- Pages #848 / `35721576625`: SUCCESS.
+- Remaining deployment-auth note: WIF auth step was skipped; current ADC/service-account deployment path remains functional, while WIF migration stays non-blocking P2 debt.
