@@ -1461,8 +1461,8 @@
     {
       "id": "VERIFY-PRODUCT-PERSONALIZED-RESPONSE-CURRENT-MAIN",
       "kind": "verification",
-      "title": "Current-main Gate #1798 verifies PR #236 together with subsequent workout UI changes",
-      "status": "in_progress",
+      "title": "Current-main Gate #1798 and Pages #860 verify PR #236 with subsequent workout UI changes",
+      "status": "done",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
     },
@@ -1478,6 +1478,14 @@
       "id": "RESULT-PERSONALIZED-RESPONSE-SOURCE-GREEN",
       "kind": "result",
       "title": "Personalized Response Learning v2 is merged and exact-head source/CI verified",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-PERSONALIZED-RESPONSE-CURRENT-MAIN-GREEN",
+      "kind": "result",
+      "title": "Personalized Response Learning v2 remains GREEN on current PRODUCT main 990f67a",
       "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
@@ -2567,6 +2575,11 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-PERSONALIZED-RESPONSE-SOURCE-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-PERSONALIZED-RESPONSE-CURRENT-MAIN-GREEN",
+      "to": "VERIFY-PRODUCT-PERSONALIZED-RESPONSE-CURRENT-MAIN",
       "kind": "depends-on"
     }
   ]
