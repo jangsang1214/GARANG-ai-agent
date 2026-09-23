@@ -199,3 +199,17 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Workout web/PWA commercial parity is now substantially closed for the identified internal scope: Previous → GARANG Target → Actual, mixed set semantics/RIR, notes, reorder/replace, direct set lifecycle, rest, live PR, plate calculator, grouped Superset/Circuit draft UX, and reload recovery are merged and release-verified.
 - Apple Health / Health Connect / Watch connectivity is NOT claimed complete. PRODUCT package/runtime evidence shows a web/PWA + Firebase stack with no native HealthKit/Health Connect/Watch SDK dependency. Native provider integration remains a separate external/platform workstream and must not be represented as VERIFIED.
 - Highest-value project priority returns to anonymous external activation + longitudinal validation; native health/watch expansion remains evidence-gated unless external validation proves it critical.
+
+## 2026-09-24 Commercial Intelligence Reach v1 — PRODUCTION GREEN
+- PRODUCT PR #239 merged as `0e3ad6784d0171ef30afb3530da0f65ac8b9fd15`.
+- PR #239 exact-head Release Gate #1805 / `35910106988`: FULL GREEN after correcting the frozen runtime manifest for the new physiological core dependency.
+- Post-merge Release Gate #1807 / `35910744543`: FULL GREEN.
+- Pages #861 / `35910743274`: SUCCESS.
+- Founder-approved Production Coach Activation #34 / `35910744575`: SUCCESS.
+- Activation #34 deployed only Firebase Function `api`; public Coach / Meal Scan / nutrition route boundaries PASS; authenticated nutrition lookup, Meal Scan, live Coach, bounded autonomous write and disposable-user cleanup all PASS.
+- Workout Prescription Shadow v1.1 now emits exact next sets/reps/load/target-RPE advisory from observed exercise history. Progression proposals remain confirmation-gated and never silently increase state.
+- Adaptive Nutrition Learning v1.1 now emits an exact bounded daily-kcal proposal from observed intake + body-weight trend. Target changes remain confirmation-gated and never silently mutate state.
+- Physiological Signal Intelligence v1 adds a source-preserving contract for HRV, resting HR, sleep, stress, steps and active minutes with freshness/coverage/confidence handling. When usable signals exist, deterministic State Intelligence fuses them conservatively into readiness; missing signals remain unknown.
+- This does NOT mean Apple Health, Health Connect, WHOOP, Oura, Garmin or Watch connectivity exists. No native/provider ingestion path is implemented or device-verified.
+- This does NOT prove prospective recommendation uplift. External 2/4/8-week longitudinal validation remains required before causal claims or autonomous progression/target escalation.
+

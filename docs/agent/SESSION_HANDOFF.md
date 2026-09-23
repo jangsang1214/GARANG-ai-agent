@@ -205,3 +205,16 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - The initial #235 browser failure was an unrelated Coach touch-ownership flake; identical head rerun passed the full browser suite. Keep lifecycle/touch determinism monitored rather than masking with broader retries.
 - Current PRODUCT is web/PWA + Firebase; no native HealthKit/Health Connect/Watch SDK dependency is present. Do not claim native health/watch parity until a dedicated native integration path is designed, permissioned, implemented, and device-verified.
 - Next highest-value project work: Anonymous External Validation + 2/4/8-week longitudinal evidence. Native integrations stay evidence-gated.
+
+## 2026-09-24 Commercial Intelligence Reach handoff
+- PRODUCT current main: `0e3ad6784d0171ef30afb3530da0f65ac8b9fd15`.
+- PR #239 is MERGED / production activated.
+- Exact-head Gate #1805: FULL GREEN.
+- Post-merge Gate #1807 / `35910744543`: FULL GREEN.
+- Pages #861 / `35910743274`: SUCCESS.
+- Production Coach Activation #34 / `35910744575`: SUCCESS; deploy, nutrition lookup, Meal Scan, Coach, bounded-write and cleanup all PASS.
+- Workout prescription now produces exact next sets/reps/load/target-RPE proposals from observed history but never silently progresses.
+- Adaptive nutrition now produces exact bounded daily-kcal proposals from observed intake + weight trend but never silently mutates targets.
+- Optional physiological signals can be normalized and conservatively fused into deterministic readiness with source/freshness/coverage confidence. Native Apple Health / Health Connect / wearable ingestion is still absent.
+- Next highest-value AI/Data work is not another model feature. It is external 2/4/8-week prospective evidence and, if validated as necessary, a dedicated native/provider signal ingestion workstream.
+

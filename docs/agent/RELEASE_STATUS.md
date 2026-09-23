@@ -236,3 +236,20 @@ Decision: PRODUCT WEB/RUNTIME VERIFIED GREEN; NATIVE HEALTH/WATCH NOT IMPLEMENTE
 - #235 scope: visible/contiguous Superset/Circuit draft grouping, group event metadata, 45 lb imperial bar default.
 - No Firebase Functions deployment was required for either release.
 - Native HealthKit / Health Connect / Watch integration remains NOT VERIFIED / NOT IMPLEMENTED in the current web/PWA dependency stack.
+
+## 2026-09-24 Commercial Intelligence Reach v1 — GREEN
+Decision: SOURCE / WEB / PRODUCTION BACKEND VERIFIED GREEN.
+- PRODUCT PR #239 exact head: `1557317194756786955f3bc86157580301c9c119`.
+- Exact-head Release Gate #1805 / `35910106988`: FULL GREEN.
+- PRODUCT main after merge: `0e3ad6784d0171ef30afb3530da0f65ac8b9fd15`.
+- Post-merge Release Gate #1807 / `35910744543`: FULL GREEN.
+- Pages #861 / `35910743274`: SUCCESS.
+- Production Coach Activation #34 / `35910744575`: SUCCESS.
+- Deployment scope: Firebase Function `api` only; existing LLM secret preserved.
+- Public Coach / Meal Scan / nutrition lookup auth-method boundaries: PASS.
+- Authenticated nutrition lookup / Meal Scan / Coach / bounded-write smokes: PASS.
+- Disposable Firebase smoke identity cleanup: PASS.
+- Exact workout-dose and exact bounded nutrition-target proposals are live as advisory/confirmation-gated intelligence.
+- Physiological Signal Intelligence is live as an optional input contract and deterministic readiness-fusion path, but no native/provider wearable connector is claimed.
+- External longitudinal effectiveness remains unverified; no causal uplift or autonomous escalation claim is made.
+
