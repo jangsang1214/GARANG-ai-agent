@@ -425,7 +425,7 @@ Remaining:
 - Native HealthKit / Health Connect / Watch provider integration: external/native blocker, not web-complete.
 
 ## Closed P4 — Intelligence Hardening v1
-Status: DONE / SOURCE+WEB VERIFIED GREEN / PRODUCTION BACKEND ACTIVATION NOT REQUESTED
+Status: DONE / SOURCE+WEB+PRODUCTION VERIFIED GREEN
 Owner: AI Data / Engineering / Release QA
 Goal: close remaining code-addressable intelligence quality gaps without touching active design/workout UI work.
 
@@ -450,7 +450,7 @@ Verification:
 - PR #243 was closed as redundant after confirming #242 had already merged the same hardening changes.
 
 Remaining external acceptance:
-- Production Coach Activation #35 was SKIPPED; server-side hardening is not claimed production-live until separately approved.
+- Production Coach Activation #36 / `35917354539`: SUCCESS; server-side hardening is production-live. Post-merge Gate #1831 FULL GREEN; Pages #865 SUCCESS.
 - Native health/wearable ingestion still requires provider/native implementation and device evidence.
 - Recommendation uplift/causal personalization/proprietary data moat require real external longitudinal usage.
 
