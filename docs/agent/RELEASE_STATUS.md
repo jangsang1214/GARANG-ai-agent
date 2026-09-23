@@ -201,3 +201,16 @@ Decision: SOURCE / WEB / PRODUCTION BACKEND VERIFIED GREEN.
 - Release Gate #1767: FULL GREEN.
 - Pages #856: SUCCESS.
 - WIF remains non-blocking P2 debt; deployment used the existing `adc-service-account-fitfind` path.
+
+## 2026-09-24 Workout commercial parity v2 — GREEN
+Decision: SOURCE / WEB / RELEASE VERIFIED GREEN.
+- PRODUCT PR #232: MERGED.
+- PRODUCT main: `bd4aed95c8a43e0a1136d591ea2bb4484703115b`.
+- Exact-head Release Gate #1781: FULL GREEN.
+- Post-merge Release Gate #1782: FULL GREEN.
+- Pages #857: SUCCESS.
+- Founder OS Event Envelope #1751: SUCCESS.
+- Scope: Workout web/runtime only; no Firebase Functions deployment required.
+- Verified capabilities: unit-safe GARANG targets, mixed set types + per-set RIR, notes, Superset/Circuit grouping, reorder/replace-edit preservation, unit-aware plate loading, PR feedback, stable set lifecycle/reset/remount, and mobile WebKit touch/layout safety.
+- Known release-integrity note: an unrelated Golden Path Coach proposal timing assertion recurred during intermediate attempts, while exact-head Gate #1781 and post-merge Gate #1782 both passed the complete suite. Keep lifecycle determinism monitored; do not weaken the gate.
+

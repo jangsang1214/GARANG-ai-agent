@@ -322,3 +322,29 @@ Acceptance:
 - Release Gate #1767: FULL GREEN.
 - Pages #856: SUCCESS.
 - This task is CLOSED. Return priority to `TASK-EXTERNAL-LONGITUDINAL-VALIDATION`.
+
+## Closed P3/P4 — Workout commercial parity v2
+Status: DONE / SOURCE+WEB VERIFIED GREEN
+Owner: Product / Engineering / AI Data / Design Brand / Release QA
+Goal: close the commercial Workout execution gaps without regressing GARANG Intelligence or the Golden Path.
+
+Delivered:
+- Previous → GARANG Target → Actual execution guidance with canonical unit-safe target computation.
+- Mixed Warm-up / Working / Drop / Failure sets with row-level RIR persistence.
+- Exercise notes, Superset/Circuit grouping with required group IDs.
+- Exercise reorder plus replace/edit flow that preserves position and entered weights.
+- Unit-aware Plate Calculator for metric and imperial loading.
+- Pre-save all-time PR comparison with NEW PR vs maintained-PR feedback.
+- Stable live session timer/rest/set lifecycle, draft reset/remount, and mobile hit ownership.
+
+Verification:
+- PRODUCT PR #232 exact-head Release Gate #1781: FULL GREEN.
+- PRODUCT main `bd4aed95c8a43e0a1136d591ea2bb4484703115b`.
+- Post-merge Release Gate #1782: FULL GREEN.
+- Pages #857: SUCCESS.
+- Event Envelope #1751: SUCCESS.
+
+Result:
+- Workout commercial parity task is CLOSED.
+- Return priority to `TASK-EXTERNAL-LONGITUDINAL-VALIDATION`; further Workout scope requires external evidence or a verified P0/P1 blocker.
+

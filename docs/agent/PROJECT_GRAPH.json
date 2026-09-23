@@ -1353,6 +1353,54 @@
       "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
+    },
+    {
+      "id": "TASK-WORKOUT-COMMERCIAL-PARITY-V2",
+      "kind": "task",
+      "title": "Close Workout commercial execution parity while preserving GARANG Intelligence",
+      "status": "done",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR232-WORKOUT-PARITY",
+      "kind": "change",
+      "title": "PRODUCT PR #232 merged as bd4aed95 with Workout commercial parity v2",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR232-GATE-1781",
+      "kind": "verification",
+      "title": "PR #232 exact-head Release Gate #1781 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1782-WORKOUT-PARITY",
+      "kind": "verification",
+      "title": "Post-merge PRODUCT Release Gate #1782 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-857-WORKOUT-PARITY",
+      "kind": "release",
+      "title": "Pages #857 released PRODUCT main bd4aed95",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-WORKOUT-COMMERCIAL-PARITY-GREEN",
+      "kind": "result",
+      "title": "Workout commercial execution parity released GREEN",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -2329,6 +2377,46 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-NUTRITION-FALLBACK-PRODUCTION-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-WORKOUT-COMMERCIAL-PARITY-V2",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR232-WORKOUT-PARITY",
+      "to": "TASK-WORKOUT-COMMERCIAL-PARITY-V2",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR232-GATE-1781",
+      "to": "CHANGE-PRODUCT-PR232-WORKOUT-PARITY",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1782-WORKOUT-PARITY",
+      "to": "CHANGE-PRODUCT-PR232-WORKOUT-PARITY",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-857-WORKOUT-PARITY",
+      "to": "CHANGE-PRODUCT-PR232-WORKOUT-PARITY",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-WORKOUT-COMMERCIAL-PARITY-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-1782-WORKOUT-PARITY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-WORKOUT-COMMERCIAL-PARITY-GREEN",
+      "to": "RELEASE-PAGES-857-WORKOUT-PARITY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-WORKOUT-COMMERCIAL-PARITY-GREEN",
       "kind": "depends-on"
     }
   ]

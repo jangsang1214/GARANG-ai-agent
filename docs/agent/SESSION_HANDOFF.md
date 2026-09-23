@@ -172,3 +172,16 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Release Gate #1767: FULL GREEN.
 - Pages #856: SUCCESS.
 - Next highest-value work: resume Anonymous External Validation Sprint and recruit/observe the first 10–20 unknown users against the Golden Path. New feature work remains frozen unless evidence or a verified critical blocker justifies it.
+
+## 2026-09-24 Workout commercial parity handoff
+- PRODUCT current main: `bd4aed95c8a43e0a1136d591ea2bb4484703115b`.
+- PR #232 is MERGED.
+- Exact-head Release Gate #1781: FULL GREEN.
+- Post-merge Release Gate #1782: FULL GREEN.
+- Pages #857: SUCCESS.
+- Event Envelope #1751: SUCCESS.
+- Workout commercial parity scope is CLOSED: Previous → GARANG Target → Actual, unit-safe target logic, mixed set types/RIR, notes, Superset/Circuit, reorder/replace-edit, unit-aware Plate Calculator, PR feedback, stable execution lifecycle and mobile hit safety are released.
+- PR #223 was superseded by #232 after PRODUCT main drift; #232 was rebased/rebuilt cleanly on current main and preserved Meal Scan/Coach/Running changes.
+- No backend activation is pending for this Workout release.
+- Next highest-value project work is Anonymous External Validation + 2/4/8-week longitudinal evidence. New feature expansion should be justified by observed external-user failure or a verified critical blocker.
+
