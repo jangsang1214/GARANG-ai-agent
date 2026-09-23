@@ -1,4 +1,5 @@
 ## Latest AI/Data handoff — 2026-09-24
+- Latest verified production Coach backend before PR #236: `12a362d0ba80c1e78bf27cf5b6253306ade18033` via Activation #32 / `35841937362`; deploy + Meal Scan + Coach + bounded write + cleanup all PASS.
 - PRODUCT PR #236 Personalized Response Learning v2 is merged as `9c22843eb81d8397c4cfda3fc7294a632eecadf0`.
 - Exact-head Gate #1795 / `35906532826`: FULL GREEN; Pages #859 / `35907286397`: SUCCESS.
 - Current PRODUCT main observed: `990f67a20ffce9511617753d97bcf8313ee19e7d`; subsequent PR #235 changes only workout UI/app/test files and leaves PR #236 AI/Data files intact.
