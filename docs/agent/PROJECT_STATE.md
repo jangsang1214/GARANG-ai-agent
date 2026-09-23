@@ -16,7 +16,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #236 exact-head Release Gate #1795 / `35906532826`: FULL GREEN across core/build, Firestore, Commercial Core, WebKit/Golden Path and final verify.
 - Pages #859 / `35907286397`: SUCCESS for the merge revision.
 - Post-merge Gate #1797 was CANCELLED by a newer main push from unrelated workout UI polish; this is not treated as a test failure.
-- Current main `990f67a...` contains PR #236 unchanged plus PR #235 UI-only deltas; current-main Gate #1798 is the follow-up release verification.
+- Current main `990f67a...` contains PR #236 unchanged plus PR #235 UI-only deltas; current-main Gate #1798 / `35907860238` is FULL GREEN and Pages #860 / `35907859391` is SUCCESS.
 - Intelligence Episode v1.1 now captures time bucket/day-of-week and next-checkin recovery delta.
 - User Response Model v1.1 learns duration, intensity, volume, timing, accept/edit/reject and execution patterns from attributed episodes.
 - Recommendation Policy Evaluation v1.1 uses empirical response evidence while remaining bounded by deterministic GARANG Decision.
