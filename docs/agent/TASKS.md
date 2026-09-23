@@ -292,3 +292,22 @@ Next:
 - Execute the first 10–20 unknown-user validation batch.
 - Freeze new feature scope until the first evidence batch is reviewed except verified P0/P1 fixes.
 - PRs #215/#216 are stale against current main and require explicit reconciliation before any later release.
+
+## Active P2 — Production nutrition fallback activation
+Status: SOURCE/CI/WEB GREEN / PRODUCTION BACKEND ACTIVATION PENDING
+Owner: Engineering / Release QA
+Goal: activate the newly merged authenticated nutrition lookup route and verify it live without reopening product scope.
+
+Evidence:
+- PRODUCT PR #225 merged as main `e84e012c3e0a0269634637c85d62bf0d19b0ece9`.
+- Release Gate #1756: FULL GREEN.
+- Pages #851: SUCCESS.
+- Production Activation #28: SKIPPED because the workflow requires an explicit `Activate production Real AI Coach` commit phrase.
+
+Acceptance:
+- explicit Founder approval for production activation;
+- deploy only approved Firebase Function `api`;
+- public nutrition lookup auth/method preflight PASS;
+- authenticated live nutrition lookup smoke PASS;
+- existing live Meal Scan + Coach + bounded write smoke PASS;
+- disposable Firebase identity cleanup PASS.
