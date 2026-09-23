@@ -2,7 +2,7 @@
 - Latest verified production Coach backend before PR #236: `12a362d0ba80c1e78bf27cf5b6253306ade18033` via Activation #32 / `35841937362`; deploy + Meal Scan + Coach + bounded write + cleanup all PASS.
 - PRODUCT PR #236 Personalized Response Learning v2 is merged as `9c22843eb81d8397c4cfda3fc7294a632eecadf0`.
 - Exact-head Gate #1795 / `35906532826`: FULL GREEN; Pages #859 / `35907286397`: SUCCESS.
-- Current PRODUCT main observed: `990f67a20ffce9511617753d97bcf8313ee19e7d`; subsequent PR #235 changes only workout UI/app/test files and leaves PR #236 AI/Data files intact.
+- Current PRODUCT main observed: `c7599d9d593561980fcabbb5da10b205d9f78c72`; subsequent PR #235 changes only workout UI/app/test files and leaves PR #236 AI/Data files intact.
 - Post-merge Gate #1797 was cancelled by that newer main push; replacement current-main Gate #1798 / `35907860238` is FULL GREEN and Pages #860 / `35907859391` is SUCCESS.
 - User Response Model v1.1 learns duration/intensity/volume/timing and response/execution patterns.
 - Offline Policy Evaluation v1 performs chronological leave-future-out replay with no counterfactual claim.
@@ -218,3 +218,11 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Optional physiological signals can be normalized and conservatively fused into deterministic readiness with source/freshness/coverage confidence. Native Apple Health / Health Connect / wearable ingestion is still absent.
 - Next highest-value AI/Data work is not another model feature. It is external 2/4/8-week prospective evidence and, if validated as necessary, a dedicated native/provider signal ingestion workstream.
 
+## 2026-09-24 Workout commercial parity v3 final handoff
+- PRODUCT main: `c7599d9d593561980fcabbb5da10b205d9f78c72`.
+- PR #238 MERGED. Exact-head Gate #1809 FULL GREEN; post-merge Gate #1810 FULL GREEN; Pages #862 SUCCESS.
+- PR #240 MERGED. Exact-head Gate #1814 FULL GREEN; post-merge Gate #1819 FULL GREEN; Pages #863 SUCCESS; Event Envelope #1831 SUCCESS.
+- Warm-up Calculator is complete on main and release-verified. It derives warm-up rows from the visible live working-set target with selectable 50/70/85% or 60/80% schemes, plate rounding, canonical unit conversion, and preserved working rows.
+- A real integration bug was found and fixed: app-level warm-up rendering conflicted with execution runtime `liveSetCount`; the runtime now exposes authoritative `replaceSetPlan` ownership. The previously failing WebKit mobile regression then passed.
+- Remaining honest Workout gaps: (1) Superset/Circuit automatic round-aware A1 -> A2 -> A1 execution, (2) native Health/Watch provider integration. Grouping and interoperability contracts alone must not be called full parity for those two.
+- Highest-value next work: anonymous external activation / longitudinal evidence. If continuing Workout parity specifically, implement and verify real Superset/Circuit execution before adding more features.
