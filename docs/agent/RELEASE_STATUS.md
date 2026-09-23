@@ -7,7 +7,7 @@ Last updated: 2026-09-24
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
 - Last VERIFIED application runtime/web baseline: `d926b12a35105c02e240e2c0e677432b53c99d76` via post-merge Gate #1650 + Pages #844; subsequent observed main commits are release/activation verification changes.
 - Current observed PRODUCT main: `990f67a20ffce9511617753d97bcf8313ee19e7d`.
-- Current verified production Coach backend deployment revision: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
+- Current verified production Coach backend deployment revision: `12a362d0ba80c1e78bf27cf5b6253306ade18033` via Activation #32 / `35841937362`.
 - Current source/web release: GREEN / VERIFIED. Literal source/backend SHA parity is not expected after frontend-only PR #188; no Firebase Functions code changed.
 
 ## Current PRODUCT release — Photo Evidence v1
