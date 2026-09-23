@@ -1489,6 +1489,86 @@
       "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-COMMERCIAL-INTELLIGENCE-REACH-V1",
+      "kind": "initiative",
+      "title": "Raise code-addressable AI/Data gaps to commercial-grade advisory resolution",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-EXACT-WORKOUT-PRESCRIPTION-ADVISORY-V11",
+      "kind": "task",
+      "title": "Produce exact sets reps load and target-RPE advisory without silent progression",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-EXACT-ADAPTIVE-NUTRITION-PROPOSAL-V11",
+      "kind": "task",
+      "title": "Produce exact bounded daily-kcal proposal without automatic target mutation",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-PHYSIOLOGICAL-SIGNAL-INTELLIGENCE-V1",
+      "kind": "task",
+      "title": "Normalize optional physiological signals and fuse usable evidence into deterministic readiness",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR239",
+      "kind": "change",
+      "title": "PRODUCT PR #239 Commercial Intelligence Reach v1",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR239-GATE-1805",
+      "kind": "verification",
+      "title": "PR #239 exact-head Release Gate #1805 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-GATE-1807",
+      "kind": "verification",
+      "title": "Post-merge Release Gate #1807 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PRODUCTION-COACH-ACTIVATION-34",
+      "kind": "release",
+      "title": "Production Coach Activation #34 deploy and authenticated live smokes SUCCESS",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-COMMERCIAL-INTELLIGENCE-REACH-PRODUCTION-GREEN",
+      "kind": "result",
+      "title": "Commercial Intelligence Reach v1 source web and production GREEN",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-NATIVE-PHYSIOLOGICAL-SIGNAL-INGESTION",
+      "kind": "task",
+      "title": "Implement and device-verify Apple Health Health Connect or approved wearable ingestion if external evidence justifies it",
+      "status": "planned",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -2580,6 +2660,76 @@
     {
       "from": "RESULT-PERSONALIZED-RESPONSE-CURRENT-MAIN-GREEN",
       "to": "VERIFY-PRODUCT-PERSONALIZED-RESPONSE-CURRENT-MAIN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-COMMERCIAL-INTELLIGENCE-REACH-V1",
+      "to": "INIT-PERSONALIZED-RESPONSE-LEARNING-V2",
+      "kind": "advances"
+    },
+    {
+      "from": "TASK-EXACT-WORKOUT-PRESCRIPTION-ADVISORY-V11",
+      "to": "INIT-COMMERCIAL-INTELLIGENCE-REACH-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-EXACT-ADAPTIVE-NUTRITION-PROPOSAL-V11",
+      "to": "INIT-COMMERCIAL-INTELLIGENCE-REACH-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-PHYSIOLOGICAL-SIGNAL-INTELLIGENCE-V1",
+      "to": "INIT-COMMERCIAL-INTELLIGENCE-REACH-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR239",
+      "to": "TASK-EXACT-WORKOUT-PRESCRIPTION-ADVISORY-V11",
+      "kind": "delivers"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR239",
+      "to": "TASK-EXACT-ADAPTIVE-NUTRITION-PROPOSAL-V11",
+      "kind": "delivers"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR239",
+      "to": "TASK-PHYSIOLOGICAL-SIGNAL-INTELLIGENCE-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR239-GATE-1805",
+      "to": "CHANGE-PRODUCT-PR239",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-GATE-1807",
+      "to": "CHANGE-PRODUCT-PR239",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PRODUCTION-COACH-ACTIVATION-34",
+      "to": "CHANGE-PRODUCT-PR239",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-COMMERCIAL-INTELLIGENCE-REACH-PRODUCTION-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-GATE-1807",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-COMMERCIAL-INTELLIGENCE-REACH-PRODUCTION-GREEN",
+      "to": "RELEASE-PRODUCTION-COACH-ACTIVATION-34",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-COMMERCIAL-INTELLIGENCE-REACH-PRODUCTION-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-NATIVE-PHYSIOLOGICAL-SIGNAL-INGESTION",
+      "to": "TASK-PHYSIOLOGICAL-SIGNAL-INTELLIGENCE-V1",
       "kind": "depends-on"
     }
   ]
