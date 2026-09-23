@@ -178,3 +178,14 @@ Decision: GREEN / CURRENT MAIN VERIFIED.
 - Founder OS Event Envelope #1525 / `35727542003`: SUCCESS.
 - Current release includes explicit analytics consent control, excludes analytics/error logs from generic Cloud Sync, emits one-time first-record measurement, and gives no-food Meal Scan a non-saving retry UX.
 - External user validation can now start on a consent-safe, funnel-measurable web baseline.
+
+## 2026-09-23 PR #225 commercial polish release
+Decision: WEB GREEN / BACKEND NUTRITION FALLBACK ACTIVATION PENDING.
+- PRODUCT main: `e84e012c3e0a0269634637c85d62bf0d19b0ece9`.
+- PR #225: MERGED.
+- Post-merge Release Gate #1756 / `35833873560`: FULL GREEN.
+- Pages #851 / `35833872591`: SUCCESS.
+- Event Envelope #1691 / `35833873735`: SUCCESS.
+- Production Coach Activation #28 / `35833873751`: SKIPPED by the explicit activation-phrase guard.
+- Workout Execution UI v2 and Running integrity are web-released and regression-verified.
+- Meal Scan source-backed nutrition fallback is source/web-integrated, but the new authenticated nutrition lookup backend route is not yet claimed live until an explicitly approved production activation passes its live smoke.
