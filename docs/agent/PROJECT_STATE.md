@@ -176,3 +176,12 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - No Firebase Functions/backend deployment was introduced by PR #232. This is a PRODUCT web/runtime release.
 - Highest-value next work returns to Anonymous External Validation / longitudinal evidence; broad feature expansion should remain evidence-gated.
 
+
+## 2026-09-24 Workout execution resilience + grouping closure — GREEN
+- PRODUCT current main is VERIFIED at `990f67a20ffce9511617753d97bcf8313ee19e7d` after PRs #234 and #235.
+- PR #234 merged direct in-session set add/delete, session-scoped reload recovery for live rows + unsaved workout draft, and immediate live e1RM PR feedback. Exact-head Release Gate #1789 / `35905526659`: core-build-rules, browser-webkit, and verify all SUCCESS.
+- PR #235 merged visible/contiguous Superset/Circuit draft grouping plus a standard 45 lb imperial bar default. Gate #1796 / `35906643419` was GREEN after rerunning the failed WebKit job on the identical head `3ade70c81bd5dc3c78f0b50d517149825a260090`.
+- The first #235 WebKit attempt failed only the unrelated Coach conversational touch-ownership assertion; the identical-head job rerun passed Coach conversational logging and the full remaining mobile regression tail. Treat this as lifecycle/touch flake evidence, not a Workout regression, and do not weaken the release gate.
+- Workout web/PWA commercial parity is now substantially closed for the identified internal scope: Previous → GARANG Target → Actual, mixed set semantics/RIR, notes, reorder/replace, direct set lifecycle, rest, live PR, plate calculator, grouped Superset/Circuit draft UX, and reload recovery are merged and release-verified.
+- Apple Health / Health Connect / Watch connectivity is NOT claimed complete. PRODUCT package/runtime evidence shows a web/PWA + Firebase stack with no native HealthKit/Health Connect/Watch SDK dependency. Native provider integration remains a separate external/platform workstream and must not be represented as VERIFIED.
+- Highest-value project priority returns to anonymous external activation + longitudinal validation; native health/watch expansion remains evidence-gated unless external validation proves it critical.

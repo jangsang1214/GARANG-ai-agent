@@ -214,3 +214,14 @@ Decision: SOURCE / WEB / RELEASE VERIFIED GREEN.
 - Verified capabilities: unit-safe GARANG targets, mixed set types + per-set RIR, notes, Superset/Circuit grouping, reorder/replace-edit preservation, unit-aware plate loading, PR feedback, stable set lifecycle/reset/remount, and mobile WebKit touch/layout safety.
 - Known release-integrity note: an unrelated Golden Path Coach proposal timing assertion recurred during intermediate attempts, while exact-head Gate #1781 and post-merge Gate #1782 both passed the complete suite. Keep lifecycle determinism monitored; do not weaken the gate.
 
+
+## 2026-09-24 Workout resilience + grouped execution follow-up — GREEN
+Decision: PRODUCT WEB/RUNTIME VERIFIED GREEN; NATIVE HEALTH/WATCH NOT IMPLEMENTED.
+- PRODUCT PR #234: MERGED as main `b816a8bd5394660d7e0b3e0eea65d848dc25bdea`.
+- PR #234 exact-head Release Gate #1789 / `35905526659`: core-build-rules SUCCESS, browser-webkit SUCCESS, verify SUCCESS.
+- PRODUCT PR #235: MERGED; current PRODUCT main `990f67a20ffce9511617753d97bcf8313ee19e7d`.
+- PR #235 exact head `3ade70c81bd5dc3c78f0b50d517149825a260090`; Gate #1796 / `35906643419`: core SUCCESS; browser-webkit SUCCESS on identical-head job rerun; verify SUCCESS.
+- #234 scope: direct set add/delete, sessionStorage recovery of active workout + unsaved draft, immediate live e1RM PR cue.
+- #235 scope: visible/contiguous Superset/Circuit draft grouping, group event metadata, 45 lb imperial bar default.
+- No Firebase Functions deployment was required for either release.
+- Native HealthKit / Health Connect / Watch integration remains NOT VERIFIED / NOT IMPLEMENTED in the current web/PWA dependency stack.
