@@ -3,7 +3,7 @@
 Last updated: 2026-09-24
 
 ## Active P4/P5 — Personalized Response Learning v2
-Status: IMPLEMENTED IN MAIN / EXACT-HEAD VERIFIED GREEN / PRODUCTION BACKEND ACTIVATION PENDING
+Status: IMPLEMENTED IN MAIN / CURRENT-MAIN SOURCE+WEB VERIFIED GREEN / PRODUCTION BACKEND ACTIVATION PENDING
 Owner: AI Data / Engineering / Release QA
 Goal: close the non-UI personalization gaps by learning richer response patterns, evaluating policy offline, and creating safe exercise/nutrition adaptation shadows without autonomous escalation.
 
@@ -26,7 +26,8 @@ Verification:
 - Production Coach Activation #33: SKIPPED by approval boundary. ⏳
 
 Next acceptance:
-- Current-main Gate #1798 must complete GREEN after unrelated workout UI merge.
+- Current-main Gate #1798 / `35907860238`: FULL GREEN after unrelated workout UI merge. ✅
+- Pages #860 / `35907859391`: SUCCESS. ✅
 - Founder-approved Production Coach activation is required before claiming the v2 server context live.
 - External 2/4/8-week longitudinal data is required before claiming causal usefulness or enabling any autonomous progression/target increase.
 
