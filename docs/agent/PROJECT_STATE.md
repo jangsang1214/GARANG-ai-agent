@@ -8,7 +8,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main observed: `990f67a20ffce9511617753d97bcf8313ee19e7d` (contains PRODUCT PR #236 Personalized Response Learning v2 plus subsequent workout UI polish PR #235).
+- Canonical PRODUCT main observed: `c7599d9d593561980fcabbb5da10b205d9f78c72`.
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## Latest AI/Data evidence — Personalized Response Learning v2
@@ -213,3 +213,11 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - This does NOT mean Apple Health, Health Connect, WHOOP, Oura, Garmin or Watch connectivity exists. No native/provider ingestion path is implemented or device-verified.
 - This does NOT prove prospective recommendation uplift. External 2/4/8-week longitudinal validation remains required before causal claims or autonomous progression/target escalation.
 
+## 2026-09-24 Workout commercial parity v3 + Warm-up Calculator closure — GREEN
+- PRODUCT main is VERIFIED at `c7599d9d593561980fcabbb5da10b205d9f78c72`.
+- PR #238 `Reach workout commercial parity v3 on latest main` merged as `2d05f9873eec5ff9342664c7c7ef9cd098242864`; exact-head Gate #1809 FULL GREEN, post-merge Gate #1810 FULL GREEN, Pages #862 SUCCESS, Founder OS Event Envelope SUCCESS.
+- PR #240 `Add commercial workout warm-up calculator` merged as `c7599d9d593561980fcabbb5da10b205d9f78c72`; exact-head Gate #1814 FULL GREEN after fixing live execution state ownership, post-merge Gate #1819 FULL GREEN, Pages #863 SUCCESS, Founder OS Event Envelope #1831 SUCCESS.
+- Warm-up Calculator is now release-verified: visible working-set target -> selectable 50/70/85% or 60/80% scheme -> active plate rounding -> typed warm-up set generation -> existing working sets preserved. Completed live sets are protected from overwrite.
+- Superset/Circuit remains PARTIAL: group metadata, contiguous draft placement and visible group chip exist, but round-aware A1 -> A2 -> A1 automatic execution is not implemented/verified.
+- Health/Watch remains INTEROP-READY / NATIVE PENDING: native bridge contract + canonical JSON web export exist, but Apple Health / Health Connect / Watch provider authorization/sync is not implemented or device-verified.
+- Highest-value product priority returns to anonymous external activation + longitudinal validation. Further Workout expansion should be evidence-gated except for the explicit Superset/Circuit execution gap.
