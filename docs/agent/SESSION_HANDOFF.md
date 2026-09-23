@@ -238,3 +238,11 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Founder-approved Production Coach Activation #36 / `35917354539` succeeded. Intelligence Hardening v1 server changes are production-live on activation merge `3bbb37ea119e0f6de120bcb9e4e79d78c69d8450`; post-merge Gate #1831 FULL GREEN and Pages #865 SUCCESS.
 - Remaining honest AI/Data gaps are external: native/provider wearable ingestion, proprietary longitudinal data scale, and prospective 2/4/8-week recommendation uplift.
 
+## 2026-09-24 Smart grouped Workout final handoff
+- PRODUCT current main: `5174df812bf4e0e4ca71a159e8ab4ac7e0fd84db`.
+- PR #244 is MERGED.
+- Exact-head Gate #1833: FULL GREEN.
+- Post-merge Gate #1834: FULL GREEN. Pages #866: SUCCESS. Event Envelope #1870: SUCCESS.
+- Superset/Circuit is no longer partial for web execution: grouped sessions auto-advance A1 -> A2 -> A1 by round (and through all circuit members), rest at round boundaries, surface current group/round, and recover active grouped identity.
+- Workout's remaining honest platform gap is native Apple Health / Health Connect / Watch integration.
+- Product-level priority remains external activation / longitudinal validation rather than more Workout feature construction.
