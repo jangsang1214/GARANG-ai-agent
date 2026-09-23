@@ -377,3 +377,31 @@ Result:
 - Workout commercial parity task is CLOSED.
 - Return priority to `TASK-EXTERNAL-LONGITUDINAL-VALIDATION`; further Workout scope requires external evidence or a verified P0/P1 blocker.
 
+## Closed P4 — Commercial Intelligence Reach v1
+Status: DONE / SOURCE+WEB+PRODUCTION VERIFIED GREEN
+Owner: AI Data / Engineering / Release QA
+Goal: raise the remaining code-addressable personalization, workout, nutrition and physiological-signal capabilities without colliding with active Design/Workout UI work.
+
+Delivered:
+- exact exercise-dose advisory: next sets/reps/load/target RPE from observed exercise history;
+- recovery/high-RPE conservative reduction paths;
+- progression recommendation can be exact but is confirmation-gated and never silently applied;
+- exact bounded daily-kcal target proposal from observed intake + weight trend;
+- nutrition target changes are confirmation-gated and never silently applied;
+- optional physiological signal contract for HRV/resting HR/sleep/stress/steps/active minutes;
+- deterministic readiness fusion only when signal freshness/coverage confidence is usable;
+- no-medical-diagnosis, no-state-mutation, missing-signal-is-unknown guardrails.
+
+Verification:
+- PRODUCT PR #239 exact head `1557317194756786955f3bc86157580301c9c119`.
+- Exact-head Release Gate #1805 / `35910106988`: FULL GREEN.
+- PR #239 merged as `0e3ad6784d0171ef30afb3530da0f65ac8b9fd15`.
+- Post-merge Release Gate #1807 / `35910744543`: FULL GREEN.
+- Pages #861 / `35910743274`: SUCCESS.
+- Production Coach Activation #34 / `35910744575`: SUCCESS with deploy + authenticated nutrition lookup + Meal Scan + Coach + bounded-write + cleanup PASS.
+
+Remaining external acceptance:
+- Native Apple Health / Health Connect / wearable provider ingestion is NOT implemented or device-verified.
+- Proprietary data-scale / food-corpus-scale parity is NOT created by code alone.
+- Recommendation uplift and safe autonomous progression/target mutation require external prospective 2/4/8-week evidence.
+
