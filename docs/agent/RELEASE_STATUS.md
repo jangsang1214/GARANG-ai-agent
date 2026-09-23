@@ -253,3 +253,15 @@ Decision: SOURCE / WEB / PRODUCTION BACKEND VERIFIED GREEN.
 - Physiological Signal Intelligence is live as an optional input contract and deterministic readiness-fusion path, but no native/provider wearable connector is claimed.
 - External longitudinal effectiveness remains unverified; no causal uplift or autonomous escalation claim is made.
 
+## 2026-09-24 Workout commercial parity v3 + Warm-up Calculator — GREEN
+Decision: PRODUCT WEB/RUNTIME VERIFIED GREEN; Superset auto-execution PARTIAL; native Health/Watch PENDING.
+- PR #238: MERGED as `2d05f9873eec5ff9342664c7c7ef9cd098242864`.
+- PR #238 exact-head Gate #1809: FULL GREEN. Post-merge Gate #1810: FULL GREEN. Pages #862: SUCCESS.
+- PR #240: MERGED as current PRODUCT main `c7599d9d593561980fcabbb5da10b205d9f78c72`.
+- PR #240 exact-head Gate #1814: core-build-rules SUCCESS, browser-webkit SUCCESS, verify SUCCESS.
+- PR #240 post-merge Gate #1819: core-build-rules SUCCESS, browser-webkit SUCCESS, verify SUCCESS.
+- Pages #863: SUCCESS. Founder OS Event Envelope #1831: SUCCESS.
+- Warm-up Calculator release behavior: visible live working weight -> percentage scheme -> unit-safe plate rounding -> warm-up rows -> working rows, with execution runtime owning expanded set-plan state.
+- No timeout inflation or regression deletion was used to clear the WebKit blocker.
+- Superset/Circuit grouping is released, but automatic round-aware exercise switching is not claimed.
+- Native Apple Health / Health Connect / Watch authorization/sync is not claimed.
