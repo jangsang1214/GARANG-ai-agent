@@ -1289,6 +1289,38 @@
       "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR225-COMMERCIAL-POLISH",
+      "kind": "change",
+      "title": "PR #225 integrates Meal Scan nutrition fallback and Running integrity on Workout v2 main",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1756-COMMERCIAL-POLISH",
+      "kind": "verification",
+      "title": "Post-merge PRODUCT main Release Gate #1756 is FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-851-COMMERCIAL-POLISH",
+      "kind": "release",
+      "title": "Pages #851 releases PR #225 current PRODUCT main",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-PRODUCTION-NUTRITION-FALLBACK-ACTIVATION",
+      "kind": "task",
+      "title": "Activate and live-verify production nutrition fallback backend",
+      "status": "blocked_on_founder_approval",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -2215,6 +2247,26 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-EXTERNAL-VALIDATION-MEASUREMENT-READY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1756-COMMERCIAL-POLISH",
+      "to": "CHANGE-PRODUCT-PR225-COMMERCIAL-POLISH",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-851-COMMERCIAL-POLISH",
+      "to": "CHANGE-PRODUCT-PR225-COMMERCIAL-POLISH",
+      "kind": "releases"
+    },
+    {
+      "from": "TASK-PRODUCTION-NUTRITION-FALLBACK-ACTIVATION",
+      "to": "CHANGE-PRODUCT-PR225-COMMERCIAL-POLISH",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "TASK-PRODUCTION-NUTRITION-FALLBACK-ACTIVATION",
       "kind": "depends-on"
     }
   ]
