@@ -1318,8 +1318,40 @@
       "id": "TASK-PRODUCTION-NUTRITION-FALLBACK-ACTIVATION",
       "kind": "task",
       "title": "Activate and live-verify production nutrition fallback backend",
-      "status": "blocked_on_founder_approval",
+      "status": "done",
       "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCTION-NUTRITION-FALLBACK-32",
+      "kind": "verification",
+      "title": "Activation #32 live-verifies production nutrition fallback and existing AI boundaries",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1767-NUTRITION-FALLBACK",
+      "kind": "verification",
+      "title": "Post-activation PRODUCT main Release Gate #1767 is FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-856-NUTRITION-FALLBACK",
+      "kind": "release",
+      "title": "Pages #856 releases current PRODUCT main after final nutrition activation",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-NUTRITION-FALLBACK-PRODUCTION-GREEN",
+      "kind": "result",
+      "title": "Nutrition fallback is source/web/production verified green",
+      "status": "done",
+      "ownerWorkstream": "command-center",
       "repositoryId": "product"
     }
   ],
@@ -2267,6 +2299,36 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "TASK-PRODUCTION-NUTRITION-FALLBACK-ACTIVATION",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCTION-NUTRITION-FALLBACK-32",
+      "to": "TASK-PRODUCTION-NUTRITION-FALLBACK-ACTIVATION",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1767-NUTRITION-FALLBACK",
+      "to": "TASK-PRODUCTION-NUTRITION-FALLBACK-ACTIVATION",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-856-NUTRITION-FALLBACK",
+      "to": "VERIFY-PRODUCT-MAIN-1767-NUTRITION-FALLBACK",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-NUTRITION-FALLBACK-PRODUCTION-GREEN",
+      "to": "VERIFY-PRODUCTION-NUTRITION-FALLBACK-32",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-NUTRITION-FALLBACK-PRODUCTION-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-1767-NUTRITION-FALLBACK",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-NUTRITION-FALLBACK-PRODUCTION-GREEN",
       "kind": "depends-on"
     }
   ]
