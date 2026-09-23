@@ -26,7 +26,7 @@ Decision: SOURCE/CI GREEN / MERGED / PRODUCTION BACKEND PENDING EXPLICIT ACTIVAT
 - PR #236 merged as `9c22843eb81d8397c4cfda3fc7294a632eecadf0`.
 - Pages #859 / `35907286397`: SUCCESS.
 - Post-merge Gate #1797 was cancelled by a newer main push from workout UI PR #235; no failing step was recorded.
-- Current main `990f67a...` preserves the PR #236 AI/Data files unchanged; Gate #1798 is the current-main verification.
+- Current main `990f67a...` preserves the PR #236 AI/Data files unchanged; Gate #1798 / `35907860238` is FULL GREEN on current main; Pages #860 / `35907859391` is SUCCESS.
 - Production Coach Activation #33 was SKIPPED. No claim is made that PR #236 server-side Agent Context/Coach changes are live until explicitly approved and production-smoke verified.
 - New intelligence contracts remain constraint/shadow-first: no autonomous progression increase, no automatic nutrition-target mutation, no causal/counterfactual effectiveness claim.
 
