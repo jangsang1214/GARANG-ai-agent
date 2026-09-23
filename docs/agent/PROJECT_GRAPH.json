@@ -1569,6 +1569,94 @@
       "status": "planned",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-INTELLIGENCE-HARDENING-V1",
+      "kind": "initiative",
+      "title": "Harden retrieval personalization evaluation and adaptive intelligence quality",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-HYBRID-SEMANTIC-RETRIEVAL",
+      "kind": "task",
+      "title": "Add deterministic bilingual hybrid semantic retrieval for Memory and Coach grounding",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-RESPONSE-POLICY-CALIBRATION-V12",
+      "kind": "task",
+      "title": "Calibrate User Response Model and Recommendation Policy confidence",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-WORKOUT-PRESCRIPTION-V12",
+      "kind": "task",
+      "title": "Add RIR RPE failure and e1RM trend aware workout advisory",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-ADAPTIVE-NUTRITION-V12",
+      "kind": "task",
+      "title": "Add smoothed multi-window adaptive nutrition estimation",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-INTELLIGENCE-QUALITY-EVAL-V1",
+      "kind": "task",
+      "title": "Add intelligence data quality and recommendation quality evaluators",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR242",
+      "kind": "change",
+      "title": "PRODUCT PR #242 Intelligence Hardening v1 merged as 71de869",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-HARDENING-GATE-1822",
+      "kind": "verification",
+      "title": "Merged-tree Release Gate #1822 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-HARDENING-GATE-1824",
+      "kind": "verification",
+      "title": "Post-merge Release Gate #1824 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-INTELLIGENCE-HARDENING-SOURCE-WEB-GREEN",
+      "kind": "result",
+      "title": "Intelligence Hardening v1 source and web GREEN",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-INTELLIGENCE-HARDENING-PROD-ACTIVATION",
+      "kind": "task",
+      "title": "Activate Intelligence Hardening v1 server changes in production Coach after explicit approval",
+      "status": "planned",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -2730,6 +2818,91 @@
     {
       "from": "TASK-NATIVE-PHYSIOLOGICAL-SIGNAL-INGESTION",
       "to": "TASK-PHYSIOLOGICAL-SIGNAL-INTELLIGENCE-V1",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-INTELLIGENCE-HARDENING-V1",
+      "to": "INIT-COMMERCIAL-INTELLIGENCE-REACH-V1",
+      "kind": "advances"
+    },
+    {
+      "from": "TASK-HYBRID-SEMANTIC-RETRIEVAL",
+      "to": "INIT-INTELLIGENCE-HARDENING-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-RESPONSE-POLICY-CALIBRATION-V12",
+      "to": "INIT-INTELLIGENCE-HARDENING-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-WORKOUT-PRESCRIPTION-V12",
+      "to": "INIT-INTELLIGENCE-HARDENING-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-ADAPTIVE-NUTRITION-V12",
+      "to": "INIT-INTELLIGENCE-HARDENING-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-INTELLIGENCE-QUALITY-EVAL-V1",
+      "to": "INIT-INTELLIGENCE-HARDENING-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR242",
+      "to": "TASK-HYBRID-SEMANTIC-RETRIEVAL",
+      "kind": "delivers"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR242",
+      "to": "TASK-RESPONSE-POLICY-CALIBRATION-V12",
+      "kind": "delivers"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR242",
+      "to": "TASK-WORKOUT-PRESCRIPTION-V12",
+      "kind": "delivers"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR242",
+      "to": "TASK-ADAPTIVE-NUTRITION-V12",
+      "kind": "delivers"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR242",
+      "to": "TASK-INTELLIGENCE-QUALITY-EVAL-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-HARDENING-GATE-1822",
+      "to": "CHANGE-PRODUCT-PR242",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-HARDENING-GATE-1824",
+      "to": "CHANGE-PRODUCT-PR242",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-INTELLIGENCE-HARDENING-SOURCE-WEB-GREEN",
+      "to": "VERIFY-PRODUCT-HARDENING-GATE-1822",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-INTELLIGENCE-HARDENING-SOURCE-WEB-GREEN",
+      "to": "VERIFY-PRODUCT-HARDENING-GATE-1824",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-INTELLIGENCE-HARDENING-PROD-ACTIVATION",
+      "to": "RESULT-INTELLIGENCE-HARDENING-SOURCE-WEB-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-INTELLIGENCE-HARDENING-SOURCE-WEB-GREEN",
       "kind": "depends-on"
     }
   ]
