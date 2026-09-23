@@ -293,8 +293,8 @@ Next:
 - Freeze new feature scope until the first evidence batch is reviewed except verified P0/P1 fixes.
 - PRs #215/#216 are stale against current main and require explicit reconciliation before any later release.
 
-## Active P2 — Production nutrition fallback activation
-Status: SOURCE/CI/WEB GREEN / PRODUCTION BACKEND ACTIVATION PENDING
+## Closed P2 — Production nutrition fallback activation
+Status: DONE / SOURCE+WEB+PRODUCTION VERIFIED GREEN
 Owner: Engineering / Release QA
 Goal: activate the newly merged authenticated nutrition lookup route and verify it live without reopening product scope.
 
@@ -311,3 +311,14 @@ Acceptance:
 - authenticated live nutrition lookup smoke PASS;
 - existing live Meal Scan + Coach + bounded write smoke PASS;
 - disposable Firebase identity cleanup PASS.
+
+### Production closure — Activation #32
+- PRODUCT main `12a362d0ba80c1e78bf27cf5b6253306ade18033`.
+- Production Coach Activation #32 / `35841937362`: SUCCESS.
+- Public route boundaries: PASS.
+- Authenticated nutrition lookup / Meal Scan / Coach / bounded-write smokes: PASS.
+- Sensitive write boundary: PASS / blocked as expected.
+- Disposable Firebase identity cleanup: PASS.
+- Release Gate #1767: FULL GREEN.
+- Pages #856: SUCCESS.
+- This task is CLOSED. Return priority to `TASK-EXTERNAL-LONGITUDINAL-VALIDATION`.
