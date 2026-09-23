@@ -1401,6 +1401,86 @@
       "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-PERSONALIZED-RESPONSE-LEARNING-V2",
+      "kind": "initiative",
+      "title": "Close non-UI personalized response learning gaps with richer evidence and safe offline evaluation",
+      "status": "active",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-RESPONSE-MODEL-V11",
+      "kind": "task",
+      "title": "Learn duration, intensity, volume, timing and response/execution patterns from attributed episodes",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-OFFLINE-POLICY-EVAL-V1",
+      "kind": "task",
+      "title": "Evaluate bounded recommendation policy with chronological leave-future-out replay",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-WORKOUT-PRESCRIPTION-SHADOW-V1",
+      "kind": "task",
+      "title": "Derive exercise-level dose response shadow from sets, reps, load and RPE without autonomous progression",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-ADAPTIVE-NUTRITION-LEARNING-V1",
+      "kind": "task",
+      "title": "Derive observational intake and weight-trend adaptation shadow without automatic target mutation",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR236",
+      "kind": "change",
+      "title": "PRODUCT PR #236 Personalized Response Learning v2 merged as 9c22843e",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR236-HEAD",
+      "kind": "verification",
+      "title": "PR #236 exact-head Release Gate #1795 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PERSONALIZED-RESPONSE-CURRENT-MAIN",
+      "kind": "verification",
+      "title": "Current-main Gate #1798 verifies PR #236 together with subsequent workout UI changes",
+      "status": "in_progress",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-PERSONALIZED-RESPONSE-PROD-ACTIVATION",
+      "kind": "task",
+      "title": "Activate Personalized Response Learning v2 server context in production Coach after explicit Founder approval",
+      "status": "planned",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-PERSONALIZED-RESPONSE-SOURCE-GREEN",
+      "kind": "result",
+      "title": "Personalized Response Learning v2 is merged and exact-head source/CI verified",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -2417,6 +2497,76 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-WORKOUT-COMMERCIAL-PARITY-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-PERSONALIZED-RESPONSE-LEARNING-V2",
+      "to": "INIT-PERSONALIZED-INTELLIGENCE-LOOP-V1",
+      "kind": "advances"
+    },
+    {
+      "from": "TASK-RESPONSE-MODEL-V11",
+      "to": "INIT-PERSONALIZED-RESPONSE-LEARNING-V2",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-OFFLINE-POLICY-EVAL-V1",
+      "to": "INIT-PERSONALIZED-RESPONSE-LEARNING-V2",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-WORKOUT-PRESCRIPTION-SHADOW-V1",
+      "to": "INIT-PERSONALIZED-RESPONSE-LEARNING-V2",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-ADAPTIVE-NUTRITION-LEARNING-V1",
+      "to": "INIT-PERSONALIZED-RESPONSE-LEARNING-V2",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR236",
+      "to": "TASK-RESPONSE-MODEL-V11",
+      "kind": "delivers"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR236",
+      "to": "TASK-OFFLINE-POLICY-EVAL-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR236",
+      "to": "TASK-WORKOUT-PRESCRIPTION-SHADOW-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR236",
+      "to": "TASK-ADAPTIVE-NUTRITION-LEARNING-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR236-HEAD",
+      "to": "CHANGE-PRODUCT-PR236",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-PERSONALIZED-RESPONSE-SOURCE-GREEN",
+      "to": "VERIFY-PRODUCT-PR236-HEAD",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PERSONALIZED-RESPONSE-CURRENT-MAIN",
+      "to": "RESULT-PERSONALIZED-RESPONSE-SOURCE-GREEN",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-PERSONALIZED-RESPONSE-PROD-ACTIVATION",
+      "to": "RESULT-PERSONALIZED-RESPONSE-SOURCE-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-PERSONALIZED-RESPONSE-SOURCE-GREEN",
       "kind": "depends-on"
     }
   ]
