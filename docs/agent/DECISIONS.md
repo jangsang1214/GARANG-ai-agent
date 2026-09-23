@@ -87,3 +87,9 @@ Date: 2026-09-21
 Decision: Intelligence Episode and User Response evidence may influence candidate evaluation and Personalization Policy only inside the deterministic GARANG Decision envelope. Response-derived policy may shorten, simplify, cap intensity/volume or suppress progression, but it cannot autonomously increase progression beyond the deterministic decision until external longitudinal evidence justifies a separately reviewed policy change.
 Reason: GARANG now has enough attribution structure to learn user response patterns, but current beta evidence is observational and sparse; treating early correlations as causal optimization would create overfitting and safety risk.
 Impact: The product can begin compounding personalized response evidence immediately while preserving Decision Intelligence ownership, transparent candidate scoring and the existing safety architecture.
+
+## D-018 — Exercise and nutrition adaptation stay shadow-first until external response evidence is sufficient
+Date: 2026-09-24
+Decision: Exercise-level prescription learning and adaptive nutrition learning may derive observational recommendations, reductions, or progression/target review signals from durable user data, but they may not autonomously increase workout load or mutate nutrition targets. Offline replay must be chronological and leave future evidence out; it may measure calibration and guardrail behavior but must not claim causal or counterfactual uplift.
+Reason: PRODUCT PR #236 adds substantially richer personalized response evidence, but current beta data volume is not sufficient to justify autonomous escalation or causal claims. Fit to historical observations is not equivalent to proven prospective benefit.
+Impact: GARANG can accumulate and evaluate personalized exercise/nutrition response evidence now while preserving deterministic Decision ownership and a reversible path to future reviewed policy expansion after 2/4/8-week external validation.
