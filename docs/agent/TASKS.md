@@ -1,6 +1,35 @@
 # GARANG Tasks
 
-Last updated: 2026-09-22
+Last updated: 2026-09-24
+
+## Active P4/P5 — Personalized Response Learning v2
+Status: IMPLEMENTED IN MAIN / CURRENT-MAIN SOURCE+WEB VERIFIED GREEN / PRODUCTION BACKEND ACTIVATION PENDING
+Owner: AI Data / Engineering / Release QA
+Goal: close the non-UI personalization gaps by learning richer response patterns, evaluating policy offline, and creating safe exercise/nutrition adaptation shadows without autonomous escalation.
+
+Implemented in PRODUCT PR #236:
+- Intelligence Episode v1.1: time-of-day/day-of-week + next-checkin recovery delta. ✅
+- User Response Model v1.1: duration/intensity/volume/timing + accept/edit/reject/execution response patterns. ✅
+- Recommendation Policy Evaluation v1.1: empirical response-weighted transparent bounded candidate scoring. ✅
+- Offline Policy Evaluation v1: chronological leave-future-out replay, guardrail violation measurement, observational calibration only. ✅
+- Workout Prescription Shadow v1: exercise-level observed sets/reps/load/RPE learning; hold/reduce/review-progression only, never autonomous progression. ✅
+- Adaptive Nutrition Learning v1: observed intake + weight-trend estimate and bounded review direction; no automatic target mutation. ✅
+- Agent Context / Coach receive compact bounded outputs. ✅
+- Server/browser parity + conservative regression coverage included in standard gate. ✅
+
+Verification:
+- PR #236 exact head `56c4875a80378a74da33768cc4d23760e49bf155`. ✅
+- Release Gate #1795 / `35906532826`: FULL GREEN. ✅
+- PR #236 merged as `9c22843eb81d8397c4cfda3fc7294a632eecadf0`. ✅
+- Pages #859 / `35907286397`: SUCCESS. ✅
+- Gate #1797: CANCELLED by later unrelated main push, not a test failure.
+- Production Coach Activation #33: SKIPPED by approval boundary. ⏳
+
+Next acceptance:
+- Current-main Gate #1798 / `35907860238`: FULL GREEN after unrelated workout UI merge. ✅
+- Pages #860 / `35907859391`: SUCCESS. ✅
+- Founder-approved Production Coach activation is required before claiming the v2 server context live.
+- External 2/4/8-week longitudinal data is required before claiming causal usefulness or enabling any autonomous progression/target increase.
 
 ## Release / QA baseline — current main
 Status: GREEN / VERIFIED

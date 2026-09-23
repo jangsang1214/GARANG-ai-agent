@@ -1,3 +1,15 @@
+## Latest AI/Data handoff — 2026-09-24
+- Latest verified production Coach backend before PR #236: `12a362d0ba80c1e78bf27cf5b6253306ade18033` via Activation #32 / `35841937362`; deploy + Meal Scan + Coach + bounded write + cleanup all PASS.
+- PRODUCT PR #236 Personalized Response Learning v2 is merged as `9c22843eb81d8397c4cfda3fc7294a632eecadf0`.
+- Exact-head Gate #1795 / `35906532826`: FULL GREEN; Pages #859 / `35907286397`: SUCCESS.
+- Current PRODUCT main observed: `990f67a20ffce9511617753d97bcf8313ee19e7d`; subsequent PR #235 changes only workout UI/app/test files and leaves PR #236 AI/Data files intact.
+- Post-merge Gate #1797 was cancelled by that newer main push; replacement current-main Gate #1798 / `35907860238` is FULL GREEN and Pages #860 / `35907859391` is SUCCESS.
+- User Response Model v1.1 learns duration/intensity/volume/timing and response/execution patterns.
+- Offline Policy Evaluation v1 performs chronological leave-future-out replay with no counterfactual claim.
+- Workout Prescription Shadow v1 and Adaptive Nutrition Learning v1 are observation/shadow-only and cannot autonomously escalate progression or nutrition targets.
+- Production Coach Activation #33 was skipped by the explicit approval boundary; v2 server behavior is not yet claimed live.
+- Highest-value remaining AI/Data evidence is external 2/4/8-week longitudinal validation; do not confuse technical readiness with proven recommendation uplift.
+
 # GARANG Session Handoff & Recovery Protocol v7-lite
 
 ## Latest production handoff — 2026-09-22
