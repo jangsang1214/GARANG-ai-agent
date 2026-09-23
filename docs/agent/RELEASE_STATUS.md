@@ -277,3 +277,12 @@ Decision: SOURCE / WEB / PRODUCTION BACKEND VERIFIED GREEN.
 - Activation merge `3bbb37ea119e0f6de120bcb9e4e79d78c69d8450`; post-merge Release Gate #1831 / `35917354505`: FULL GREEN; Pages #865 / `35917353289`: SUCCESS.
 - No autonomous workout progression, automatic nutrition-target mutation, causal uplift claim, native wearable claim, or invented food provenance was added.
 
+## 2026-09-24 Smart Superset/Circuit execution — GREEN
+Decision: PRODUCT WEB/RUNTIME VERIFIED GREEN.
+- PR #244 `Add smart superset and circuit execution`: MERGED as current PRODUCT main `5174df812bf4e0e4ca71a159e8ab4ac7e0fd84db`.
+- Exact-head Release Gate #1833 / `35918285491`: FULL GREEN.
+- Post-merge Release Gate #1834 / `35919023081`: FULL GREEN.
+- Pages #866 / `35919022366`: SUCCESS.
+- Founder OS Event Envelope #1870: SUCCESS.
+- Verified behavior includes round-aware grouped progression, round-boundary rest semantics, group/round state visibility, and grouped-session recovery.
+- Native Health/Watch connectivity remains outside this web/runtime release.
