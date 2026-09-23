@@ -148,3 +148,18 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Production Coach Activation #28 / `35833873751` was SKIPPED by design because the merge commit did not carry the explicit activation phrase required by the production workflow.
 - Therefore the newly merged nutrition-web-lookup Firebase Function code is SOURCE/CI/WEB READY but its live production backend activation remains PENDING explicit Founder approval. Existing production Meal Scan / Coach backend from Activation #27 remains the last live-verified backend.
 - External validation remains the highest-value product objective once the nutrition fallback production activation gap is either intentionally closed or explicitly excluded from the validation scope.
+
+## 2026-09-23 Nutrition fallback production activation — GREEN
+- PRODUCT current main: `12a362d0ba80c1e78bf27cf5b6253306ade18033`.
+- Production Coach Activation #32 / `35841937362`: SUCCESS.
+- Activation #32 deployed only Firebase Function `api` and used fail-closed auth mode `adc-service-account-fitfind`; WIF remained unconfigured/skipped.
+- Public Coach / Meal Scan / nutrition lookup auth-method boundaries: PASS.
+- Authenticated live nutrition lookup smoke: PASS with an official Starbucks source URL and `nutritionStatus=estimated`.
+- Authenticated live Meal Scan smoke: PASS via OpenAI `gpt-5.6-luna`.
+- Authenticated live Coach smoke: PASS via OpenAI `gpt-5.6-luna`.
+- Authenticated bounded autonomous write smoke: PASS; sensitive write remained blocked with `SENSITIVE_MEMORY_KEY_BLOCKED`.
+- Disposable Firebase smoke identity cleanup: PASS / deleted.
+- Post-activation PRODUCT Release Gate #1767 / `35841936990`: FULL GREEN.
+- Pages #856 / `35841936175`: SUCCESS.
+- Nutrition fallback production activation gap is CLOSED. PRODUCT source/web/backend are now VERIFIED GREEN for this scope.
+- Highest-value next work returns to Anonymous External Validation Sprint with the first 10–20 unknown users; do not reopen feature construction without external evidence or a verified P0/P1 blocker.
