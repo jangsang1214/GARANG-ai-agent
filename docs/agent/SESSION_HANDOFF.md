@@ -185,3 +185,11 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - No backend activation is pending for this Workout release.
 - Next highest-value project work is Anonymous External Validation + 2/4/8-week longitudinal evidence. New feature expansion should be justified by observed external-user failure or a verified critical blocker.
 
+
+## 2026-09-24 Workout resilience/grouping handoff
+- PRODUCT current main: `990f67a20ffce9511617753d97bcf8313ee19e7d`.
+- PR #234: MERGED / Gate #1789 FULL GREEN. Direct set add/delete, active-session reload recovery, unsaved draft restoration, and live PR feedback are released.
+- PR #235: MERGED / Gate #1796 GREEN on identical-head WebKit rerun. Superset/Circuit grouped draft ordering + visible group badges and 45 lb imperial bar default are released.
+- The initial #235 browser failure was an unrelated Coach touch-ownership flake; identical head rerun passed the full browser suite. Keep lifecycle/touch determinism monitored rather than masking with broader retries.
+- Current PRODUCT is web/PWA + Firebase; no native HealthKit/Health Connect/Watch SDK dependency is present. Do not claim native health/watch parity until a dedicated native integration path is designed, permissioned, implemented, and device-verified.
+- Next highest-value project work: Anonymous External Validation + 2/4/8-week longitudinal evidence. Native integrations stay evidence-gated.
