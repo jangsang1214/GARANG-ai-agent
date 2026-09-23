@@ -265,3 +265,14 @@ Decision: PRODUCT WEB/RUNTIME VERIFIED GREEN; Superset auto-execution PARTIAL; n
 - No timeout inflation or regression deletion was used to clear the WebKit blocker.
 - Superset/Circuit grouping is released, but automatic round-aware exercise switching is not claimed.
 - Native Apple Health / Health Connect / Watch authorization/sync is not claimed.
+
+## 2026-09-24 Intelligence Hardening v1 — GREEN
+Decision: SOURCE / WEB VERIFIED GREEN; PRODUCTION BACKEND UPDATE PENDING EXPLICIT ACTIVATION.
+- PRODUCT PR #242 merged as `71de869744a533f8f492b93cec79e4a2745cd6e8`.
+- Release Gate #1822 / `35914976924`: FULL GREEN on the merged code tree.
+- Post-merge Release Gate #1824 / `35915693512`: FULL GREEN.
+- Pages #864 / `35915692551`: SUCCESS.
+- Initial Gate #1815 exposed a real semantic-memory performance regression; the implementation was optimized with feature caching and the existing benchmark limit was preserved.
+- Production Coach Activation #35 / `35915693591`: SKIPPED by the approval boundary. Current production backend remains the Activation #34 baseline until separately approved.
+- No autonomous workout progression, automatic nutrition-target mutation, causal uplift claim, native wearable claim, or invented food provenance was added.
+
