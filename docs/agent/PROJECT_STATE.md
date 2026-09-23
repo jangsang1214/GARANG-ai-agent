@@ -139,3 +139,12 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - External-validation measurement readiness is now VERIFIED GREEN: analytics consent defaults off and is explicitly user-controlled; analytics/error logs do not piggyback on generic Cloud Sync; the first core record emits `first_record_created` once; Meal Scan no-food results remain non-saving and show a clear retry message.
 - The first 10–20 unknown-user validation batch is now the highest-value active work. Do not reopen feature construction before external evidence unless a verified P0/P1 issue appears.
 - PRODUCT PRs #215 and #216 became non-mergeable after #217 advanced `main`; they require latest-main reconciliation before any future merge and are not blockers to starting external validation.
+
+## 2026-09-23 Commercial polish merge — PR #225
+- PRODUCT PR #225 merged as current main `e84e012c3e0a0269634637c85d62bf0d19b0ece9`.
+- Pages #851 / `35833872591`: SUCCESS.
+- Post-merge Release Gate #1756 / `35833873560`: FULL GREEN, including core/build/security, Real Meal Scan, Golden Path complete, authenticated Coach/Real LLM, WebKit mobile regression, Settings, button health and runtime stability stress.
+- Current web release contains Workout Execution UI v2, Running integrity, and the Meal Scan source-backed nutrition fallback client/source path.
+- Production Coach Activation #28 / `35833873751` was SKIPPED by design because the merge commit did not carry the explicit activation phrase required by the production workflow.
+- Therefore the newly merged nutrition-web-lookup Firebase Function code is SOURCE/CI/WEB READY but its live production backend activation remains PENDING explicit Founder approval. Existing production Meal Scan / Coach backend from Activation #27 remains the last live-verified backend.
+- External validation remains the highest-value product objective once the nutrition fallback production activation gap is either intentionally closed or explicitly excluded from the validation scope.

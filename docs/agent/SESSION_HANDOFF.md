@@ -149,3 +149,14 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - External-validation measurement/privacy blocker is CLOSED.
 - Highest-value next work: recruit and observe the first 10–20 unknown users against signup/onboarding → first record → Coach → next action → plan → execution intent → accumulated-value comprehension, then classify acquisition/activation/comprehension/action/retention failures.
 - Do not prioritize PR #215/#216 feature scope ahead of the first external evidence batch; both currently require reconciliation with the new main.
+
+## 2026-09-23 commercial polish handoff
+- PRODUCT current main: `e84e012c3e0a0269634637c85d62bf0d19b0ece9`.
+- PR #225 merged the final clean integration on top of Workout Execution UI v2.
+- Release Gate #1756: FULL GREEN.
+- Pages #851: SUCCESS.
+- Event Envelope #1691: SUCCESS.
+- Workout Execution UI v2 + Running integrity are released on current web main.
+- Nutrition web fallback code is merged, but Production Coach Activation #28 skipped because production deployment requires an explicit activation commit phrase. Treat the new nutrition lookup backend as NOT YET LIVE-VERIFIED.
+- Next release decision: Founder approval is required before intentionally triggering production Function activation + authenticated live nutrition lookup smoke.
+- After backend parity is closed, return immediately to the first 10–20 unknown-user external validation batch.
