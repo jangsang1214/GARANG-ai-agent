@@ -1,6 +1,6 @@
 # GARANG Project State
 
-Last updated: 2026-09-22
+Last updated: 2026-09-24
 
 ## Current objective
 Stabilize the canonical commercial GARANG after the Real AI Coach repair and User Performance Model v1 rollout, then move from feature construction to longitudinal external validation and measured behavior change.
@@ -8,8 +8,22 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main observed: `0f15adbbde19b87efec31b85f3cd43599f6164fa` (PR #217 measurement-readiness release).
+- Canonical PRODUCT main observed: `990f67a20ffce9511617753d97bcf8313ee19e7d` (contains PRODUCT PR #236 Personalized Response Learning v2 plus subsequent workout UI polish PR #235).
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
+
+## Latest AI/Data evidence — Personalized Response Learning v2
+- PRODUCT PR #236 merged as `9c22843eb81d8397c4cfda3fc7294a632eecadf0` with 15 AI/Data-only files; it did not touch the active workout UI/CSS runtime files.
+- PR #236 exact-head Release Gate #1795 / `35906532826`: FULL GREEN across core/build, Firestore, Commercial Core, WebKit/Golden Path and final verify.
+- Pages #859 / `35907286397`: SUCCESS for the merge revision.
+- Post-merge Gate #1797 was CANCELLED by a newer main push from unrelated workout UI polish; this is not treated as a test failure.
+- Current main `990f67a...` contains PR #236 unchanged plus PR #235 UI-only deltas; current-main Gate #1798 is the follow-up release verification.
+- Intelligence Episode v1.1 now captures time bucket/day-of-week and next-checkin recovery delta.
+- User Response Model v1.1 learns duration, intensity, volume, timing, accept/edit/reject and execution patterns from attributed episodes.
+- Recommendation Policy Evaluation v1.1 uses empirical response evidence while remaining bounded by deterministic GARANG Decision.
+- Offline Policy Evaluation v1 performs chronological, leave-future-out replay and explicitly makes no causal/counterfactual uplift claim.
+- Workout Prescription Shadow v1 derives exercise-level sets/reps/load/RPE evidence and can hold/reduce or flag progression for review, but never auto-increases.
+- Adaptive Nutrition Learning v1 derives an observational intake/weight-trend estimate and bounded review direction, but never mutates nutrition targets automatically.
+- Production Coach Activation #33 was SKIPPED by the explicit production-approval boundary. PR #236 server-side behavior is SOURCE/CI verified but is not yet claimed live in production.
 
 ## VERIFIED commercial evidence
 - Current PRODUCT main `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`: PR #188 exact-head Release Gate #1599 / `35599456886` SUCCESS on attempt 1; post-merge Release Gate #1601 / `35601046564` FULL GREEN on attempt 1; Pages #832 / `35601045094` SUCCESS.
