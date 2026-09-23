@@ -1,12 +1,12 @@
 # GARANG Release Status
 
-Last updated: 2026-09-22
+Last updated: 2026-09-24
 
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
 - Last VERIFIED application runtime/web baseline: `d926b12a35105c02e240e2c0e677432b53c99d76` via post-merge Gate #1650 + Pages #844; subsequent observed main commits are release/activation verification changes.
-- Current observed PRODUCT main: `0f15adbbde19b87efec31b85f3cd43599f6164fa`.
+- Current observed PRODUCT main: `990f67a20ffce9511617753d97bcf8313ee19e7d`.
 - Current verified production Coach backend deployment revision: `08cfa18e725c919ce2893c3c042d20c5e38d15da`.
 - Current source/web release: GREEN / VERIFIED. Literal source/backend SHA parity is not expected after frontend-only PR #188; no Firebase Functions code changed.
 
@@ -18,6 +18,17 @@ Decision: GREEN / CURRENT MAIN VERIFIED.
 - Pages #832 / `35601045094`: SUCCESS.
 - Gate #1601 browser-webkit passes Today action flow, bottom Check-in CTA, mobile Planner shortcut, Today visual parity, Golden Path integration + complete journey, authenticated app/Coach, Real LLM Golden Path, recovery, WebKit mobile regression, Settings touch, button health and runtime stability stress.
 - PR #188 changes browser/runtime Photo Evidence, manifest/entry wiring and tests only; no Functions code is changed and no production Function deployment is claimed.
+
+## Personalized Response Learning v2
+Decision: SOURCE/CI GREEN / MERGED / PRODUCTION BACKEND PENDING EXPLICIT ACTIVATION.
+- PRODUCT PR #236 exact head `56c4875a80378a74da33768cc4d23760e49bf155`.
+- Exact-head Release Gate #1795 / `35906532826`: FULL GREEN, including Commercial Core, Firestore emulator, Golden Path, authenticated Coach/Real LLM browser paths, WebKit/mobile regression and final verify.
+- PR #236 merged as `9c22843eb81d8397c4cfda3fc7294a632eecadf0`.
+- Pages #859 / `35907286397`: SUCCESS.
+- Post-merge Gate #1797 was cancelled by a newer main push from workout UI PR #235; no failing step was recorded.
+- Current main `990f67a...` preserves the PR #236 AI/Data files unchanged; Gate #1798 is the current-main verification.
+- Production Coach Activation #33 was SKIPPED. No claim is made that PR #236 server-side Agent Context/Coach changes are live until explicitly approved and production-smoke verified.
+- New intelligence contracts remain constraint/shadow-first: no autonomous progression increase, no automatic nutrition-target mutation, no causal/counterfactual effectiveness claim.
 
 ## Personalized Intelligence Loop v1
 Decision: SOURCE/WEB/PRODUCTION GREEN / VERIFIED.
