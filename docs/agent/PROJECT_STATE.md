@@ -8,7 +8,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main observed: `c7599d9d593561980fcabbb5da10b205d9f78c72`.
+- Canonical PRODUCT main observed: `5174df812bf4e0e4ca71a159e8ab4ac7e0fd84db`.
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## Latest AI/Data evidence — Personalized Response Learning v2
@@ -237,3 +237,9 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Activation merge `3bbb37ea119e0f6de120bcb9e4e79d78c69d8450`; post-merge Release Gate #1831 / `35917354505`: FULL GREEN; Pages #865 / `35917353289`: SUCCESS.
 - External 2/4/8-week recommendation uplift, native wearable ingestion, and proprietary data-scale parity remain external evidence/infrastructure gaps.
 
+## 2026-09-24 Smart Superset/Circuit execution closure — GREEN
+- PRODUCT current main is VERIFIED at `5174df812bf4e0e4ca71a159e8ab4ac7e0fd84db` after PR #244, `Add smart superset and circuit execution`.
+- PR #244 exact-head `bd1bb6e133d762f752e8ed25bf4e6ece5974e090`; Release Gate #1833 / `35918285491`: FULL GREEN.
+- PR #244 merged as `5174df812bf4e0e4ca71a159e8ab4ac7e0fd84db`; post-merge Release Gate #1834 / `35919023081`: FULL GREEN. Pages #866 / `35919022366`: SUCCESS. Founder OS Event Envelope #1870: SUCCESS.
+- Real grouped execution is now release-verified: explicit group launch, A1 -> A2 -> A1 round-aware auto-advance for supersets, equivalent all-member circuit progression, rest only at round boundaries, visible group/round state, and active grouped identity recovery.
+- The remaining Workout parity limitation is native Health/Watch provider connectivity, not web Workout execution.
