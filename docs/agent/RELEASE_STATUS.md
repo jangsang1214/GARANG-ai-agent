@@ -189,3 +189,15 @@ Decision: WEB GREEN / BACKEND NUTRITION FALLBACK ACTIVATION PENDING.
 - Production Coach Activation #28 / `35833873751`: SKIPPED by the explicit activation-phrase guard.
 - Workout Execution UI v2 and Running integrity are web-released and regression-verified.
 - Meal Scan source-backed nutrition fallback is source/web-integrated, but the new authenticated nutrition lookup backend route is not yet claimed live until an explicitly approved production activation passes its live smoke.
+
+## 2026-09-23 Nutrition fallback production release — GREEN
+Decision: SOURCE / WEB / PRODUCTION BACKEND VERIFIED GREEN.
+- PRODUCT main: `12a362d0ba80c1e78bf27cf5b6253306ade18033`.
+- Production Coach Activation #32 / `35841937362`: SUCCESS.
+- Authenticated nutrition lookup live smoke: PASS with official Starbucks primary-source evidence.
+- Authenticated Meal Scan live smoke: PASS.
+- Authenticated Coach live smoke: PASS.
+- Bounded write + sensitive boundary + disposable cleanup: PASS.
+- Release Gate #1767: FULL GREEN.
+- Pages #856: SUCCESS.
+- WIF remains non-blocking P2 debt; deployment used the existing `adc-service-account-fitfind` path.

@@ -160,3 +160,15 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Nutrition web fallback code is merged, but Production Coach Activation #28 skipped because production deployment requires an explicit activation commit phrase. Treat the new nutrition lookup backend as NOT YET LIVE-VERIFIED.
 - Next release decision: Founder approval is required before intentionally triggering production Function activation + authenticated live nutrition lookup smoke.
 - After backend parity is closed, return immediately to the first 10–20 unknown-user external validation batch.
+
+## 2026-09-23 nutrition fallback production closure
+- PRODUCT current main: `12a362d0ba80c1e78bf27cf5b6253306ade18033`.
+- Nutrition fallback production activation is CLOSED / VERIFIED GREEN.
+- Activation #32 / `35841937362`: SUCCESS.
+- Nutrition lookup live smoke: PASS with official Starbucks source.
+- Meal Scan live smoke: PASS via OpenAI `gpt-5.6-luna`.
+- Coach live smoke: PASS via OpenAI `gpt-5.6-luna`.
+- Bounded autonomous write: PASS; sensitive write blocked; disposable smoke account deleted.
+- Release Gate #1767: FULL GREEN.
+- Pages #856: SUCCESS.
+- Next highest-value work: resume Anonymous External Validation Sprint and recruit/observe the first 10–20 unknown users against the Golden Path. New feature work remains frozen unless evidence or a verified critical blocker justifies it.
