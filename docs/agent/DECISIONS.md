@@ -100,3 +100,9 @@ Decision: GARANG may compute exact exercise-dose proposals and exact bounded nut
 Reason: Exact proposals close a commercial capability gap without requiring GARANG to treat sparse observational evidence as causal. Automatic escalation and passive biometric parity require evidence and infrastructure that application logic alone cannot manufacture.
 Impact: AI/Data can reach commercial-grade recommendation resolution now while preserving safety. Remaining gaps are explicitly external: native/provider acquisition, proprietary data scale, and prospective longitudinal effectiveness.
 
+## D-020 — Intelligence confidence must be evidence-calibrated before richer automation
+Date: 2026-09-24
+Decision: GARANG may use deterministic hybrid semantic retrieval and richer response/workout/nutrition features, but personalization confidence must be shrunk for small samples, future evidence must be excluded from replay, episode integrity must be audited, and low evidence may not be presented as high-confidence recommendation quality. Semantic retrieval must stay inside the existing privacy boundary unless a separately reviewed external vector provider/store is introduced.
+Reason: Intelligence Hardening v1 showed that additional semantic/personalization capability can improve relevance while also creating performance and overconfidence risks. The release gate caught a real retrieval performance regression; preserving quality/performance/safety gates is more valuable than maximizing apparent intelligence.
+Impact: Future automation or escalation policies must cite calibrated longitudinal evidence and pass data-quality/recommendation-quality gates before authority is expanded.
+

@@ -221,3 +221,18 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Superset/Circuit remains PARTIAL: group metadata, contiguous draft placement and visible group chip exist, but round-aware A1 -> A2 -> A1 automatic execution is not implemented/verified.
 - Health/Watch remains INTEROP-READY / NATIVE PENDING: native bridge contract + canonical JSON web export exist, but Apple Health / Health Connect / Watch provider authorization/sync is not implemented or device-verified.
 - Highest-value product priority returns to anonymous external activation + longitudinal validation. Further Workout expansion should be evidence-gated except for the explicit Superset/Circuit execution gap.
+
+## 2026-09-24 Intelligence Hardening v1 — SOURCE/WEB GREEN
+- PRODUCT PR #242 merged as current main `71de869744a533f8f492b93cec79e4a2745cd6e8`.
+- Exact merged-tree Release Gate #1822 / `35914976924`: FULL GREEN after eliminating a real hybrid-memory retrieval performance regression. Memory benchmark precision remained 1.0; semantic feature caching restored the performance gate.
+- Post-merge Release Gate #1824 / `35915693512`: FULL GREEN. Pages #864 / `35915692551`: SUCCESS.
+- User Response Model v1.2 adds posterior shrinkage, timing/day/readiness segmentation, evidence coverage and calibrated confidence.
+- Recommendation Policy v1.2 weights empirical evidence by segment confidence and applies an uncertainty penalty while remaining inside the deterministic Decision envelope.
+- Offline Policy Evaluation v1.1 excludes future episodes before replay.
+- Workout Prescription v1.2 adds RIR/RPE, failure-set and e1RM-trend awareness while keeping exact progression proposals confirmation-gated.
+- Adaptive Nutrition v1.2 adds smoothed weight trends, multi-window consistency, logging stability and maintenance uncertainty ranges.
+- Memory and Coach knowledge retrieval now use deterministic bilingual hybrid semantic scoring without an external embedding/vector provider.
+- Intelligence Data Quality v1 audits duplicate/future/broken episode evidence and coverage. Recommendation Quality Eval v1 exposes safety/personalization/actionability/calibration quality and prevents low evidence from being represented as high confidence.
+- Production Coach Activation #35 was SKIPPED by the explicit production approval boundary. These server-side v1.2 hardening changes are SOURCE/WEB verified but are not claimed production-live beyond the previously verified Activation #34 backend.
+- External 2/4/8-week recommendation uplift, native wearable ingestion, and proprietary data-scale parity remain external evidence/infrastructure gaps.
+

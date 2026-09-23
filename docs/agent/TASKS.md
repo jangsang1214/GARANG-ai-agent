@@ -423,3 +423,34 @@ Verification:
 Remaining:
 - Real Superset/Circuit round-aware automatic execution: PARTIAL / separate task candidate.
 - Native HealthKit / Health Connect / Watch provider integration: external/native blocker, not web-complete.
+
+## Closed P4 — Intelligence Hardening v1
+Status: DONE / SOURCE+WEB VERIFIED GREEN / PRODUCTION BACKEND ACTIVATION NOT REQUESTED
+Owner: AI Data / Engineering / Release QA
+Goal: close remaining code-addressable intelligence quality gaps without touching active design/workout UI work.
+
+Delivered:
+- deterministic bilingual hybrid semantic retrieval for Memory and Coach knowledge grounding;
+- User Response Model v1.2 with posterior shrinkage, timing/day/readiness segments and evidence-quality confidence;
+- Recommendation Policy v1.2 with confidence-weighted empirical evidence and uncertainty penalty;
+- Offline Policy Evaluation v1.1 with future-evidence exclusion;
+- Workout Prescription v1.2 with RIR/RPE, failure-set and e1RM-trend awareness;
+- Adaptive Nutrition v1.2 with 3-point median weight smoothing, multi-window consistency and uncertainty range;
+- Intelligence Data Quality v1 for duplicate/future/chain/coverage audits;
+- Recommendation Quality Eval v1 for safety/personalization/actionability/calibration observability;
+- dedicated Intelligence Hardening synthetic stress suite and expanded Korean/English memory benchmark.
+
+Verification:
+- Initial Gate #1815 correctly failed a memory retrieval performance regression: precision stayed 1.0 but retrieval100Ms exceeded the 7.5s limit.
+- Semantic feature caching and grounding-binding fixes were applied; no benchmark threshold weakening.
+- Release Gate #1822 / `35914976924`: FULL GREEN.
+- PR #242 merged as `71de869744a533f8f492b93cec79e4a2745cd6e8`.
+- Post-merge Release Gate #1824 / `35915693512`: FULL GREEN.
+- Pages #864 / `35915692551`: SUCCESS.
+- PR #243 was closed as redundant after confirming #242 had already merged the same hardening changes.
+
+Remaining external acceptance:
+- Production Coach Activation #35 was SKIPPED; server-side hardening is not claimed production-live until separately approved.
+- Native health/wearable ingestion still requires provider/native implementation and device evidence.
+- Recommendation uplift/causal personalization/proprietary data moat require real external longitudinal usage.
+
