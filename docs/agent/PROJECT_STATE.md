@@ -163,3 +163,16 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Pages #856 / `35841936175`: SUCCESS.
 - Nutrition fallback production activation gap is CLOSED. PRODUCT source/web/backend are now VERIFIED GREEN for this scope.
 - Highest-value next work returns to Anonymous External Validation Sprint with the first 10–20 unknown users; do not reopen feature construction without external evidence or a verified P0/P1 blocker.
+
+## 2026-09-24 Workout commercial parity release — GREEN
+- PRODUCT main is VERIFIED at `bd4aed95c8a43e0a1136d591ea2bb4484703115b` after PR #232, `Reach commercial workout parity v2`.
+- PR #232 exact-head Release Gate #1781: FULL GREEN across core/build, complete WebKit regression, Settings touch, button health, and runtime stability stress.
+- Post-merge Release Gate #1782: FULL GREEN.
+- Pages #857: SUCCESS.
+- Founder OS Event Envelope #1751: SUCCESS.
+- Workout commercial execution now includes Previous → GARANG Target → Actual guidance, canonical kg/lb target integrity, mixed Warm-up/Working/Drop/Failure set semantics, per-set RIR, notes, Superset/Circuit grouping, exercise reorder + replace/edit preservation, unit-aware Plate Calculator, PR comparison feedback, stable draft/remount/reset behavior, and mobile-safe hit areas.
+- During release verification, the mobile Workout Log width regression was traced to a 640px set-table header escaping its horizontal scroll owner; the header now stays inside the set scroll container and WebKit mobile regression passes.
+- The earlier PR #223 was superseded after PRODUCT main advanced with Meal Scan/Real AI Coach/Running changes; #232 was rebuilt cleanly on the then-current main to preserve those capabilities.
+- No Firebase Functions/backend deployment was introduced by PR #232. This is a PRODUCT web/runtime release.
+- Highest-value next work returns to Anonymous External Validation / longitudinal evidence; broad feature expansion should remain evidence-gated.
+
