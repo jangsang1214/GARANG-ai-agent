@@ -454,3 +454,20 @@ Remaining external acceptance:
 - Native health/wearable ingestion still requires provider/native implementation and device evidence.
 - Recommendation uplift/causal personalization/proprietary data moat require real external longitudinal usage.
 
+## Closed P3 — Smart Superset/Circuit execution
+Status: DONE / SOURCE+WEB+RELEASE VERIFIED GREEN
+Owner: Product / Engineering / Release QA
+Delivered:
+- explicit grouped-session launch;
+- round-aware A1 -> A2 -> A1 superset progression and all-member circuit progression;
+- set completion persisted into the draft owner before advancing;
+- rest only at round boundaries;
+- visible group / round execution state;
+- active grouped identity preserved through recovery.
+Verification:
+- PR #244 head `bd1bb6e133d762f752e8ed25bf4e6ece5974e090`.
+- Exact-head Gate #1833 / `35918285491`: FULL GREEN.
+- Merge `5174df812bf4e0e4ca71a159e8ab4ac7e0fd84db`.
+- Post-merge Gate #1834 / `35919023081`: FULL GREEN; Pages #866 SUCCESS.
+Remaining Workout external/native gap:
+- Apple Health / Health Connect / Watch provider integration.
