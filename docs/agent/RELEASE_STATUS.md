@@ -267,12 +267,13 @@ Decision: PRODUCT WEB/RUNTIME VERIFIED GREEN; Superset auto-execution PARTIAL; n
 - Native Apple Health / Health Connect / Watch authorization/sync is not claimed.
 
 ## 2026-09-24 Intelligence Hardening v1 — GREEN
-Decision: SOURCE / WEB VERIFIED GREEN; PRODUCTION BACKEND UPDATE PENDING EXPLICIT ACTIVATION.
+Decision: SOURCE / WEB / PRODUCTION BACKEND VERIFIED GREEN.
 - PRODUCT PR #242 merged as `71de869744a533f8f492b93cec79e4a2745cd6e8`.
 - Release Gate #1822 / `35914976924`: FULL GREEN on the merged code tree.
 - Post-merge Release Gate #1824 / `35915693512`: FULL GREEN.
 - Pages #864 / `35915692551`: SUCCESS.
 - Initial Gate #1815 exposed a real semantic-memory performance regression; the implementation was optimized with feature caching and the existing benchmark limit was preserved.
-- Production Coach Activation #35 / `35915693591`: SKIPPED by the approval boundary. Current production backend remains the Activation #34 baseline until separately approved.
+- Founder-approved Production Coach Activation #36 / `35917354539`: SUCCESS. Deployment scope was Firebase Function `api` only; public Coach / Meal Scan / nutrition boundaries PASS; authenticated nutrition lookup, Meal Scan, live Coach, bounded-write and disposable cleanup PASS.
+- Activation merge `3bbb37ea119e0f6de120bcb9e4e79d78c69d8450`; post-merge Release Gate #1831 / `35917354505`: FULL GREEN; Pages #865 / `35917353289`: SUCCESS.
 - No autonomous workout progression, automatic nutrition-target mutation, causal uplift claim, native wearable claim, or invented food provenance was added.
 

@@ -235,6 +235,6 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Memory + Coach grounding now use deterministic bilingual hybrid semantic retrieval.
 - Response Model v1.2, Policy v1.2, Offline Eval v1.1, Workout Prescription v1.2 and Adaptive Nutrition v1.2 are merged.
 - New Intelligence Data Quality and Recommendation Quality evaluators surface evidence integrity, calibration, actionability and safety quality to Agent Context/Coach observability.
-- Production Coach Activation #35 was skipped. Do not claim these server v1.2 changes are live until a separate production approval/activation succeeds.
+- Founder-approved Production Coach Activation #36 / `35917354539` succeeded. Intelligence Hardening v1 server changes are production-live on activation merge `3bbb37ea119e0f6de120bcb9e4e79d78c69d8450`; post-merge Gate #1831 FULL GREEN and Pages #865 SUCCESS.
 - Remaining honest AI/Data gaps are external: native/provider wearable ingestion, proprietary longitudinal data scale, and prospective 2/4/8-week recommendation uplift.
 
