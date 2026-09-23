@@ -1653,9 +1653,25 @@
     {
       "id": "TASK-INTELLIGENCE-HARDENING-PROD-ACTIVATION",
       "kind": "task",
-      "title": "Activate Intelligence Hardening v1 server changes in production Coach after explicit approval",
-      "status": "planned",
+      "title": "Production Coach Activation #36 deploy and live smokes SUCCESS",
+      "status": "done",
       "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-INTELLIGENCE-HARDENING-ACTIVATION-36",
+      "kind": "release",
+      "title": "Production Coach Activation #36 SUCCESS",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-INTELLIGENCE-HARDENING-PRODUCTION-GREEN",
+      "kind": "result",
+      "title": "Intelligence Hardening v1 source web and production GREEN",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     }
   ],
@@ -2903,6 +2919,21 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-INTELLIGENCE-HARDENING-SOURCE-WEB-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RELEASE-INTELLIGENCE-HARDENING-ACTIVATION-36",
+      "to": "TASK-INTELLIGENCE-HARDENING-PROD-ACTIVATION",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-INTELLIGENCE-HARDENING-PRODUCTION-GREEN",
+      "to": "RELEASE-INTELLIGENCE-HARDENING-ACTIVATION-36",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-INTELLIGENCE-HARDENING-PRODUCTION-GREEN",
+      "to": "VERIFY-PRODUCT-HARDENING-GATE-1824",
       "kind": "depends-on"
     }
   ]
