@@ -405,3 +405,21 @@ Remaining external acceptance:
 - Proprietary data-scale / food-corpus-scale parity is NOT created by code alone.
 - Recommendation uplift and safe autonomous progression/target mutation require external prospective 2/4/8-week evidence.
 
+## Closed P3 — Workout commercial parity v3 + Warm-up Calculator
+Status: DONE / SOURCE+WEB+RELEASE VERIFIED GREEN
+Owner: Product / Engineering / Release QA
+Goal: close code-addressable Workout commercial gaps without weakening Golden Path or release gates.
+
+Delivered:
+- PR #238: set-type execution semantics, LAST NOTE continuity, direct exercise replacement, advanced plate calculator, readiness/recent-trend GARANG targets, 7D/30D + muscle-load analytics, Planner-backed 1–8 week Workout Program flow, Health interoperability contract, active Planner context recovery. ✅
+- PR #240: percentage-based Warm-up Calculator using visible live working-set target, selectable 50/70/85% or 60/80% scheme, active plate rounding, typed warm-up generation, preserved working sets, completed-set overwrite guard. ✅
+- Live execution state ownership was fixed through an authoritative set-plan replacement contract instead of timeout/test weakening. ✅
+
+Verification:
+- PR #238 exact-head Gate #1809 FULL GREEN; post-merge Gate #1810 FULL GREEN; Pages #862 SUCCESS. ✅
+- PR #240 exact-head Gate #1814 FULL GREEN; post-merge Gate #1819 FULL GREEN; Pages #863 SUCCESS; Event Envelope #1831 SUCCESS. ✅
+- PRODUCT main: `c7599d9d593561980fcabbb5da10b205d9f78c72`. ✅
+
+Remaining:
+- Real Superset/Circuit round-aware automatic execution: PARTIAL / separate task candidate.
+- Native HealthKit / Health Connect / Watch provider integration: external/native blocker, not web-complete.
