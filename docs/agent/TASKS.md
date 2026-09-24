@@ -485,3 +485,12 @@ Goal: close immediately code-addressable Food matching, signal-ingestion and Int
 - Release Gate #1849 / `35939942308`: FULL GREEN. ✅
 - Merge/release remains approval-gated; do not claim PRODUCT main or production capability before merge/release evidence.
 - Real longitudinal calibration/uplift remains external evidence work, not a code-completion claim.
+
+## Closed P4 — AI/Data Validation Bundle v1
+Status: PRODUCT PR #246 MERGED / SOURCE+WEB+POST-MERGE CI GREEN
+- Merge commit: `75249fd04b2b60e643e27937c53f4cbea53f3d1a`. ✅
+- Exact-head Gate #1849 / `35939942308`: FULL GREEN. ✅
+- Post-merge Gate #1851 / `35941173457`: FULL GREEN. ✅
+- Pages #868 / `35941172498`: SUCCESS. ✅
+- Production Activation #37: SKIPPED by explicit production approval boundary; no new backend activation claimed.
+- Technical bundle is closed; external longitudinal usefulness and proprietary corpus scale remain separate evidence work.
