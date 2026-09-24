@@ -360,3 +360,11 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - All six male/female FRONT/SIDE/BACK v6 assets are versioned and explicitly precached for PWA/offline safety.
 - Next Body action is only real-phone visual QA. If blur or overlay drift remains in the deployed screenshot, treat that as new visual evidence and fix the smallest specific geometry/render issue; do not return to generic mannequin-path iteration.
 
+## Latest Design / Product handoff — Body Model v7 muscular/remap — 2026-09-25
+- PRODUCT PR #273 is MERGED as current main `dcc4fa2ac589f4f4b158b4f5c1941b472ffec645`.
+- Exact-head Gate #2007 FULL GREEN; post-merge Gate #2008 FULL GREEN; Pages #889 SUCCESS.
+- Founder screenshot drove this iteration: oversized/detached chest highlight, floating dark zones, insufficient male muscle mass and definition.
+- Male FRONT/SIDE/BACK dense meshes are now muscularized while preserving canvas bounds; polygon contrast is softened and a dedicated v7 anatomy definition layer is overlaid.
+- Chest/shoulder/arm/core/leg zones are tighter; non-selected hit zones are invisible; duplicate legacy body SVGs are removed before v7 mounts.
+- Next Body action is only fresh real-phone visual QA. Fix only specific residual visual evidence; do not return to generic architecture iteration if the deployed v7 is acceptable.
+
