@@ -1678,15 +1678,15 @@
       "id": "TASK-AI-DATA-VALIDATION-BUNDLE-V1",
       "kind": "task",
       "title": "Close code-addressable AI/Data validation and coverage gaps in PRODUCT PR #246",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     },
     {
       "id": "CHANGE-PRODUCT-PR246",
       "kind": "change",
-      "title": "PRODUCT PR #246 validation bundle exact head 165289d",
-      "status": "in_progress",
+      "title": "PRODUCT PR #246 merged as 75249fd",
+      "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     },
@@ -1696,6 +1696,30 @@
       "title": "PR #246 exact-head Release Gate #1849 FULL GREEN",
       "status": "done",
       "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR246-POSTMERGE-GATE-1851",
+      "kind": "verification",
+      "title": "PR #246 post-merge Release Gate #1851 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-868-AI-DATA-VALIDATION",
+      "kind": "release",
+      "title": "Pages #868 deploys merged AI/Data Validation Bundle v1",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-AI-DATA-VALIDATION-BUNDLE-GREEN",
+      "kind": "result",
+      "title": "AI/Data Validation Bundle v1 source web and post-merge CI GREEN",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     }
   ],
@@ -2979,6 +3003,31 @@
       "from": "VERIFY-PRODUCT-PR246-GATE-1849",
       "to": "CHANGE-PRODUCT-PR246",
       "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR246-POSTMERGE-GATE-1851",
+      "to": "CHANGE-PRODUCT-PR246",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-868-AI-DATA-VALIDATION",
+      "to": "CHANGE-PRODUCT-PR246",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-AI-DATA-VALIDATION-BUNDLE-GREEN",
+      "to": "VERIFY-PRODUCT-PR246-POSTMERGE-GATE-1851",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-AI-DATA-VALIDATION-BUNDLE-GREEN",
+      "to": "RELEASE-PAGES-868-AI-DATA-VALIDATION",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-AI-DATA-VALIDATION-BUNDLE-GREEN",
+      "kind": "depends-on"
     }
   ]
 }
