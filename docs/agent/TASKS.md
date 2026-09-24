@@ -1,5 +1,35 @@
 # GARANG Tasks
 
+## Active P4 — Nutrition Capture & Food Identity v1 production activation
+Status: SOURCE / WEB / RELEASE VERIFIED GREEN; PRODUCTION BACKEND ACTIVATION PENDING FOUNDER APPROVAL
+Owner: AI Data / Engineering / Product / Release QA
+Goal: turn the expanded 275,138-record Food corpus into fast, trustworthy packaged-food capture and identity.
+
+Delivered:
+- GTIN/EAN/UPC checksum validation and canonical GTIN-14 identity core. ✅
+- local BarcodeDetector path with authenticated Vision barcode fallback. ✅
+- nutrition-label extraction of visible barcode + K-FIND item-manufacturing report number. ✅
+- exact K-FIND report-number identity before fuzzy name resolution. ✅
+- GTIN-aware source-backed nutrition lookup with stricter fail-closed threshold. ✅
+- no similar-product substitution for unresolved GTINs. ✅
+- user confirmation required before a source-backed barcode candidate becomes a reusable local exact match. ✅
+- bounded per-account barcode mappings (300), miss signals (120), correction signals (120). ✅
+- client-only identity learning preserved across client/cloud merge but excluded from frozen canonical server transport. ✅
+- WebKit verified first GTIN lookup -> confirm -> second local exact reuse without another web lookup. ✅
+
+Release evidence:
+- PRODUCT PR #271 exact head `95e567a0e3a589dd41afa54e76aa1308527f0b2c`. ✅
+- Release Gate #2000 / `36043340582`: FULL GREEN. ✅
+- PR #271 merged as current PRODUCT main `8dd2d46e6b1008230c2847c1bbff722e9bd180c3`. ✅
+- Pages #887 / `36044158503`: SUCCESS. ✅
+- Post-merge Gate #2001 / `36044160665`: final same-SHA FULL GREEN; initial unrelated Workout superset timing failure passed on identical-SHA rerun without test/runtime changes. ✅
+- Production Coach Activation #41: SKIPPED by fail-closed approval boundary. ✅ expected
+
+Remaining acceptance:
+- Founder explicit approval for exact-current-main production Function activation. ⏳
+- after activation, live authenticated Meal Scan + Coach regression must PASS before barcode Vision/GTIN server behavior is called production-live. ⏳
+- real-user barcode/label miss-rate and correction-rate measurement should guide the next corpus/catalog investment. ⏳
+
 ## Active P3 — Body Model v5 reference-minimum remediation
 Status: DEPLOYED / TECHNICALLY VERIFIED / VISUAL ACCEPTANCE REQUIRED
 Owner: Product / Design / Engineering / Release QA
