@@ -1,4 +1,17 @@
 ## Latest Command Center handoff — K-FIND Food DB release complete — 2026-09-25
+
+## Latest AI/Data/Product handoff — Nutrition Capture & Food Identity v1 — 2026-09-25
+- PRODUCT current main: `8dd2d46e6b1008230c2847c1bbff722e9bd180c3`.
+- PR #271 is MERGED. Exact-head Gate #2000 FULL GREEN; Pages #887 SUCCESS; post-merge Gate #2001 final same-SHA FULL GREEN.
+- Released web/client capability: GTIN/EAN/UPC validation, barcode capture, native BarcodeDetector where available, Vision fallback contract, nutrition-label GTIN/report-number extraction, K-FIND report-number exact match, source-backed GTIN lookup, user-confirmed barcode exact reuse, bounded miss/correction learning.
+- Safety/truth boundary: K-FIND is not represented as a GTIN database. Unknown GTINs never map to similar products. Web candidates remain estimated and confirmation-required. Only user-confirmed mapping becomes local exact reuse.
+- Client foodIdentity state: barcodes <=300, misses <=120, corrections <=120; preserved in client/cloud state but intentionally omitted from the frozen server Intelligence transport contract.
+- WebKit verified first unknown GTIN -> source-backed candidate -> confirmation -> local mapping -> same GTIN resolves without a second web lookup.
+- Post-merge Gate #2001 first WebKit attempt failed an existing Workout superset timing wait; identical-SHA rerun passed the failing point and complete browser tail with no code/timeout change. Keep as TD-015 monitoring evidence, not a Nutrition regression.
+- Production Coach Activation #41 was safely SKIPPED. New server barcode Vision mode / GTIN-aware lookup are source-ready but NOT production-live.
+- Next action requiring Founder approval: run exact-SHA production activation for Firebase Function `api`, then verify authenticated Meal Scan and Coach live smokes. Do not claim production backend completion before that.
+- After activation, highest-value Nutrition work becomes external miss/correction measurement rather than blind corpus growth.
+
 - PRODUCT current main: `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
 - PR #260 is MERGED. Released local Food lookup layers: 500 GARANG canonical + 2,502 K-FIND general + 266,415 K-FIND processed + 5,721 USDA supplemental = 275,138 materialized records.
 - K-FIND processed corpus: 266,110 branded rows / 19,770 unique brands; verified provenance and no automatic canonical overwrite.
