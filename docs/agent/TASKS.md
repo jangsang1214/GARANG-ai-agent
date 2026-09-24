@@ -9,7 +9,7 @@ Goal: make the released body map meet or exceed the Founder-provided anatomy ref
 - Replace segmented mannequin construction with continuous human silhouette. ✅ in PR #261
 - Redraw FRONT/SIDE/BACK anatomy and muscle overlays on a taller 260×520 human proportion system. ✅ in PR #261
 - Remove legacy rendered hand/foot part geometry. ✅ in PR #261
-- Exact-head Release Gate #1972 / `36026450615`: ⏳ running
+- Exact-head Release Gate #1973 / `36026810946`: ⏳ running
 - Merge: ⏳ Founder approval required after GREEN
 - Final acceptance: ⏳ deployed real-device screenshot must meet the reference minimum before realism is marked REACHED
 
