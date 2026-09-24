@@ -257,10 +257,13 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Next design order: Workout execution simplification -> Progress simplification -> Coach simplification. Preserve advanced capability via progressive disclosure.
 
 ## Latest AI/Data handoff — Intelligence Quality Hardening v2
-- PRODUCT current main: `26f01ad829afeeaca0deb97d0159915c315f758c`.
+- PRODUCT current main: `788aa81135fe996d28e29beaa4c578541ee77453`.
 - PR #246 merged as `75249fd04b2b60e643e27937c53f4cbea53f3d1a`; post-merge Gate #1851 FULL GREEN; Pages #868 SUCCESS.
 - PR #248 merged as current main; exact-head Gate #1855 and post-merge Gate #1856 are FULL GREEN; Pages #869 SUCCESS.
 - v2 code closes the currently identified code-addressable gaps in measured calibration, drift observability, longitudinal integrity/outliers, deterministic semantic-vector reranking, recovery/physiology baselines, Meal Scan confidence separation, synthetic stress testing, and Food retrieval/coverage diagnostics.
-- Production Coach Activation #38 skipped by design because the merge commit omitted the explicit activation phrase. PR #250 is the approved trigger-only activation checkpoint.
-- Do not claim v2 server changes production-live until the activation workflow itself succeeds.
+- Production Coach Activation #38 skipped by design because the PR #248 merge commit omitted the explicit activation phrase.
+- Trigger-only PR #250 merged as current PRODUCT main `788aa81135fe996d28e29beaa4c578541ee77453`.
+- Production Coach Activation #39 / `35944749134`: SUCCESS. `api` deploy, public Coach/Meal Scan/nutrition boundaries, authenticated nutrition lookup, Meal Scan, live Coach, bounded-write, disposable-user cleanup and credential cleanup all PASS.
+- Post-activation Release Gate #1860 / `35944749127`: FULL GREEN. Pages #870 / `35944748708`: SUCCESS.
+- Intelligence Quality Hardening v2 server changes are now production-live for the verified scope.
 - Remaining honest gaps: external 2/4/8-week recommendation uplift, native HealthKit/Health Connect/Watch/provider integration, and substantially larger official/proprietary food-corpus scale.
