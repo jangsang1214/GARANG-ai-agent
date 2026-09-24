@@ -1673,6 +1673,30 @@
       "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
+    },
+    {
+      "id": "TASK-AI-DATA-VALIDATION-BUNDLE-V1",
+      "kind": "task",
+      "title": "Close code-addressable AI/Data validation and coverage gaps in PRODUCT PR #246",
+      "status": "in_progress",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR246",
+      "kind": "change",
+      "title": "PRODUCT PR #246 validation bundle exact head 165289d",
+      "status": "in_progress",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR246-GATE-1849",
+      "kind": "verification",
+      "title": "PR #246 exact-head Release Gate #1849 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -2935,6 +2959,26 @@
       "from": "RESULT-INTELLIGENCE-HARDENING-PRODUCTION-GREEN",
       "to": "VERIFY-PRODUCT-HARDENING-GATE-1824",
       "kind": "depends-on"
+    },
+    {
+      "from": "TASK-AI-DATA-VALIDATION-BUNDLE-V1",
+      "to": "INIT-USER-PERFORMANCE-V1",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-AI-DATA-VALIDATION-BUNDLE-V1",
+      "to": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR246",
+      "to": "TASK-AI-DATA-VALIDATION-BUNDLE-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR246-GATE-1849",
+      "to": "CHANGE-PRODUCT-PR246",
+      "kind": "verifies"
     }
   ]
 }
