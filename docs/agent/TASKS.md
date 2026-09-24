@@ -1,19 +1,19 @@
 # GARANG Tasks
 
 ## Active P3 — Body Model v5 reference-minimum remediation
-Status: IN PROGRESS / VISUAL ACCEPTANCE REQUIRED
+Status: DEPLOYED / TECHNICALLY VERIFIED / VISUAL ACCEPTANCE REQUIRED
 Owner: Product / Design / Engineering / Release QA
 Goal: make the released body map meet or exceed the Founder-provided anatomy reference minimum instead of merely functioning.
 - Real-device review of released v4: FAIL for realism/proportions/limb-hand-foot quality. ✅ observed
-- Keep v4 structural accomplishments separate: FRONT/SIDE/BACK and muscle interaction remain REACHED. ✅
-- Replace segmented mannequin construction with continuous human silhouette. ✅ in successor PR #262
-- Redraw FRONT/SIDE/BACK anatomy and muscle overlays on a taller 260×520 human proportion system. ✅ in PR #262
-- Remove legacy rendered hand/foot part geometry. ✅ in PR #262
-- PR #261: CLOSED / UNMERGED after main advanced. ✅ reconciled
-- PR #262 exact head `6bc643f965cef244a64c163a82fd8f148683f5eb`: Release Gate #1981 FULL GREEN. ✅
-- Current main `047ccb83...` differs only by non-overlapping Today lifecycle repair and has Gate #1982 FULL GREEN. ✅
-- Merge: ⏳ Founder approval required
-- Final acceptance: ⏳ deployed real-device screenshot must meet the reference minimum before realism is marked REACHED
+- Keep structural capability separate from visual acceptance: FRONT/SIDE/BACK and muscle interaction remain REACHED. ✅
+- Continuous human silhouette + 260×520 anatomy system + revised muscle overlays implemented. ✅
+- PR #261: CLOSED / UNMERGED after main advanced. ✅
+- Successor PR #262 exact head `6bc643f965cef244a64c163a82fd8f148683f5eb`: Gate #1981 FULL GREEN. ✅
+- Founder-approved PR #262 merged as PRODUCT main `7b5032418b49a43ea4504f7566542591ad783b60`. ✅
+- Pages #882 / `36031260217`: SUCCESS; live v5 runtime asset verified. ✅
+- Post-merge Gate #1983 / `36031262125`: final same-SHA FULL GREEN. ✅
+- Earlier #1983 WebKit attempts timed out at different waits; final identical SHA passed the full suite without code or timeout changes. TD-015 remains MONITOR. ✅
+- Final visual acceptance: ⏳ fresh deployed real-device screenshot must meet the Founder reference minimum before realism is marked REACHED.
 
 ### Current commercial-parity status snapshot
 | Area | Status |
@@ -25,9 +25,10 @@ Goal: make the released body map meet or exceed the Founder-provided anatomy ref
 | Nutrition entry UX | REACHED |
 | Body FRONT/SIDE/BACK structure | REACHED |
 | Body muscle interaction | REACHED |
-| Body human proportions | INSUFFICIENT |
-| Body visual realism | INSUFFICIENT |
-| Body reference-minimum compliance | INSUFFICIENT |
+| Body v5 technical implementation | REACHED |
+| Body human proportions | INSUFFICIENT — awaiting deployed phone acceptance |
+| Body visual realism | INSUFFICIENT — awaiting deployed phone acceptance |
+| Body reference-minimum compliance | INSUFFICIENT — awaiting deployed phone acceptance |
 | Exercise search/discovery | PARTIAL |
 | Progress data depth | PARTIAL |
 | Meal Scan coverage/accuracy | PARTIAL |
@@ -35,7 +36,6 @@ Goal: make the released body map meet or exceed the Founder-provided anatomy ref
 | Native Health / Watch | INSUFFICIENT |
 | External activation evidence | INSUFFICIENT |
 | D7/D30 longitudinal retention evidence | INSUFFICIENT |
-
 
 ## Active P2 — Reconcile and verify current PRODUCT main after PR #256/#257
 Status: DONE / CURRENT-MAIN VERIFIED GREEN
