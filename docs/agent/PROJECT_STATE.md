@@ -1,5 +1,17 @@
 # GARANG Project State
 
+## 2026-09-24 Engineering P2 release-integrity / WIF reconciliation
+- PRODUCT PR #255 `Add production WIF readiness audit` merged as current main `8e6733cf4878484b23fe75765b01988b8b0b4794`.
+- PR #255 exact-head Release Gate #1910: FULL GREEN. Production WIF Readiness #2 / `35969503578`: SUCCESS with non-secret status `NOT_CONFIGURED`; both `GCP_WORKLOAD_IDENTITY_PROVIDER` and `GCP_DEPLOY_SERVICE_ACCOUNT` are absent.
+- Post-merge Pages #875 / `35970284935`: SUCCESS.
+- Post-merge Release Gate #1912 attempt 1 failed only `browser-golden-path-complete` while waiting for Coach proposal readiness; core/build passed. No product/runtime delta existed between exact-head and merge SHA beyond the squash commit.
+- Same-SHA Release Gate #1912 attempt 2: FULL GREEN; the previously failing complete journey, authenticated Coach/LLM, recovery, WebKit mobile, button-health and runtime-stability tail all passed without timeout inflation or test weakening.
+- Treat the #1912 first-attempt failure as a nondeterministic lifecycle/readiness recurrence under TD-015, not a current release blocker.
+- Founder-approved WIF provisioning was attempted on isolated branch `ops/wif-provision-v1` via run `35970823847`. The existing verified deployment account `firebase-adminsdk-fbsvc@fitfind-ai.iam.gserviceaccount.com` authenticated successfully and resolved the project, but Google Cloud denied `iam.workloadIdentityPools.create`; no WIF pool/provider was created.
+- Browser-based Google Cloud setup was also blocked before authentication by Google reCAPTCHA with no reusable browser credential profile. This is an external access/authentication blocker, not a PRODUCT code defect.
+- Current WIF state: CODE READY / INFRA NOT CONFIGURED. Completion requires a human-authenticated Google Cloud principal with Workload Identity Pool admin capability, then repository WIF identifiers must be configured and a `via WIF` production activation must pass before any long-lived key is retired.
+- Main branch protection remains unconfigured. GitHub rulesets are empty for CONTROL and PRODUCT, and the installed GitHub integration cannot manage branch-protection endpoints (`403 Resource not accessible by integration`).
+
 ## 2026-09-24 Workout commercial UX v4 reconciliation
 - PRODUCT PR #253 is MERGED to `main` as `fc06d2b39c328fafa2c3755a54210163e3873744`.
 - PR #253 exact-head Release Gate #1899 / `35966021302`: FULL GREEN before merge.
@@ -17,7 +29,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main observed: `fc06d2b39c328fafa2c3755a54210163e3873744`.
+- Canonical PRODUCT main observed: `8e6733cf4878484b23fe75765b01988b8b0b4794`.
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## Latest AI/Data evidence — Personalized Response Learning v2
@@ -70,14 +82,14 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - User Performance Model v1 now includes durable recommendation-resolution evidence and outcome-attributed learning through fully linked Intelligence Learning Contract cycles (PR #164).
 
 ## Runtime / deployment boundary
-- Commercial web source of truth is PRODUCT main `fc06d2b39c328fafa2c3755a54210163e3873744`; Pages #874 / `35967055339` deployed that exact SHA.
+- Commercial web/source of truth is PRODUCT main `8e6733cf4878484b23fe75765b01988b8b0b4794`; Pages #875 / `35970284935` deployed that exact SHA. PR #255 changes release-integrity workflow/test assets only, so no production Function activation was required.
 - Production Coach backend is VERIFIED on `788aa81135fe996d28e29beaa4c578541ee77453` via Production Coach Activation #39 / `35944749134`; deployment and the authenticated production smoke suite succeeded.
 - Production Coach Activation #18 / `35511759697`: SUCCESS. It deployed only Firebase Function `api`, preserved the existing LLM secret, ran authenticated live LLM smoke plus authenticated autonomous-write smoke, and cleaned up the disposable Firebase identity.
 - Live evidence: `source=llm`, provider `openai`, model `gpt-5.6-luna`, GARANG alignment verified; bounded `createPlan` executed and persisted; sensitive-write request remained denied/confirmation-gated.
 - Literal source/backend SHA parity is not used as the release criterion. The latest verified production backend evidence is Activation #39 on `788aa811...`, while current source/web main is `fc06d2b...`; any later Functions delta still requires its own activation evidence before being called production-live.
 
 ## Stable
-- Current commercial source/web release: VERIFIED GREEN on main `fc06d2b...` via Gate #1900 attempt 1 + Pages #874.
+- Current commercial source/web release: VERIFIED GREEN on main `8e6733cf...` via Gate #1912 attempt 2 + Pages #875. Gate #1912 attempt 1 reproduced a nondeterministic Coach readiness wait and is retained as TD-015 evidence.
 - Photo Evidence v1 is merged and web-released; raw media remains device-local and optional.
 - Personalized Intelligence Loop v1 production backend: VERIFIED GREEN on activated revision `08cfa18e...`.
 - Production Real AI Coach connectivity: VERIFIED GREEN.
@@ -95,7 +107,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Autonomous Intelligence production activation is VERIFIED GREEN via Activation #18.
 - Server-side #164 UPM attribution is production-activated and live-smoke verified.
 - WebKit lifecycle timing is not a current release blocker. PR #177 exact-head Gate #1562 passed, but immediate post-merge main Gate #1563 later reproduced the Today DOM identity assertion once. Subsequent release lines have remained green; latest current-main Gate #1900 passed the full browser/WebKit, Golden Path, authenticated Coach/Real LLM and runtime-stability gate on attempt 1. Track TD-015 as monitor-only unless the identity assertion or an equivalent lifecycle replacement recurs.
-- Main branch protection, OIDC/WIF deployment auth migration, Functions dependency-family upgrade and runtime ownership simplification remain non-blocking engineering debt.
+- Main branch protection and OIDC/WIF deployment auth migration remain P2 external-permission blockers; Functions dependency-family upgrade and runtime ownership simplification remain non-blocking engineering debt.
 
 ## Next priorities
 1. P4/P5 real longitudinal validation using Intelligence Episodes: recommendation → resolution → execution → outcome → later recommendation quality over 2/4/8-week windows, plus activation/retention funnel measurement on external users.
