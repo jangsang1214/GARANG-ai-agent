@@ -14,10 +14,10 @@ Last updated: 2026-09-24
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
-- Last VERIFIED application runtime/web baseline: `d926b12a35105c02e240e2c0e677432b53c99d76` via post-merge Gate #1650 + Pages #844; subsequent observed main commits are release/activation verification changes.
-- Current observed PRODUCT main: `990f67a20ffce9511617753d97bcf8313ee19e7d`.
-- Current verified production Coach backend deployment revision: `12a362d0ba80c1e78bf27cf5b6253306ade18033` via Activation #32 / `35841937362`.
-- Current source/web release: GREEN / VERIFIED. Literal source/backend SHA parity is not expected after frontend-only PR #188; no Firebase Functions code changed.
+- Last VERIFIED application runtime/web baseline: `fc06d2b39c328fafa2c3755a54210163e3873744` via post-merge Gate #1900 / `35967056029` + Pages #874 / `35967055339`.
+- Current observed PRODUCT main: `fc06d2b39c328fafa2c3755a54210163e3873744`.
+- Current verified production Coach backend deployment revision: `788aa81135fe996d28e29beaa4c578541ee77453` via Production Coach Activation #39 / `35944749134`.
+- Current source/web release: GREEN / VERIFIED on `fc06d2b...`. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live.
 
 ## Current PRODUCT release — Photo Evidence v1
 Decision: GREEN / CURRENT MAIN VERIFIED.
@@ -29,14 +29,14 @@ Decision: GREEN / CURRENT MAIN VERIFIED.
 - PR #188 changes browser/runtime Photo Evidence, manifest/entry wiring and tests only; no Functions code is changed and no production Function deployment is claimed.
 
 ## Personalized Response Learning v2
-Decision: SOURCE/CI GREEN / MERGED / PRODUCTION BACKEND PENDING EXPLICIT ACTIVATION.
+Decision: SOURCE/CI GREEN / MERGED / PRODUCTION BACKEND VERIFIED VIA LATER DESCENDANT ACTIVATION.
 - PRODUCT PR #236 exact head `56c4875a80378a74da33768cc4d23760e49bf155`.
 - Exact-head Release Gate #1795 / `35906532826`: FULL GREEN, including Commercial Core, Firestore emulator, Golden Path, authenticated Coach/Real LLM browser paths, WebKit/mobile regression and final verify.
 - PR #236 merged as `9c22843eb81d8397c4cfda3fc7294a632eecadf0`.
 - Pages #859 / `35907286397`: SUCCESS.
 - Post-merge Gate #1797 was cancelled by a newer main push from workout UI PR #235; no failing step was recorded.
-- Current main `990f67a...` preserves the PR #236 AI/Data files unchanged; Gate #1798 / `35907860238` is FULL GREEN on current main; Pages #860 / `35907859391` is SUCCESS.
-- Production Coach Activation #33 was SKIPPED. No claim is made that PR #236 server-side Agent Context/Coach changes are live until explicitly approved and production-smoke verified.
+- PR #236 remained in the main lineage through later releases; current main `fc06d2b...` is FULL GREEN via Gate #1900 and Pages #874.
+- Production Coach Activation #33 was SKIPPED at merge time as designed. Later Production Coach Activation #39 / `35944749134` on descendant main `788aa811...` succeeded, so PR #236 server-side Agent Context/Coach changes are included in the verified production backend lineage.
 - New intelligence contracts remain constraint/shadow-first: no autonomous progression increase, no automatic nutrition-target mutation, no causal/counterfactual effectiveness claim.
 
 ## Personalized Intelligence Loop v1
@@ -70,11 +70,11 @@ Decision: GREEN / LIVE PROVIDER + PERSONALIZED INTELLIGENCE VERIFIED.
 
 ## Current commercial PRODUCT main
 Decision: GREEN / CURRENT MAIN VERIFIED.
-- Main: `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`.
-- PR #188 exact-head Gate #1599 / `35599456886`: PASS on attempt 1.
-- Post-merge Gate #1601 / `35601046564`: FULL GREEN on attempt 1.
-- Pages #832 / `35601045094`: SUCCESS.
-- Production Coach backend remains VERIFIED on Activation #21 revision `08cfa18e725c919ce2893c3c042d20c5e38d15da`; PR #188 has no Functions delta.
+- Main: `fc06d2b39c328fafa2c3755a54210163e3873744`.
+- PR #253 exact-head Gate #1899 / `35966021302`: FULL GREEN before merge.
+- Post-merge Gate #1900 / `35967056029`: FULL GREEN on attempt 1.
+- Pages #874 / `35967055339`: SUCCESS on the same SHA.
+- Production Coach backend remains separately VERIFIED on Activation #39 revision `788aa81135fe996d28e29beaa4c578541ee77453`.
 
 ## Autonomous Intelligence Loop v1
 Decision: PRODUCTION GREEN / VERIFIED.
@@ -100,8 +100,8 @@ Decision: SOURCE/CI GREEN / MERGED.
 Decision: CURRENT RELEASE GREEN / MONITOR.
 - PRODUCT PR #177 exact head `137b3e55af5eb5e5dcdbda15bf9c78d19a1c251f`; exact-head Gate #1562 / `35582093879` passed, including a successful same-SHA rerun.
 - Immediate post-merge main Gate #1563 / `35583816682` later failed the Today action-flow DOM identity assertion once: no-op lifecycle events replaced both the Today flow and active button node.
-- The current path has since stabilized across three later main gates: #1592 on `56ff9c78...`, #1600 on `08cfa18e...`, and #1601 on current main `40e83c32...`; all three completed GREEN on attempt 1.
-- Latest Gate #1601 explicitly passes Today action flow plus the complete Golden Path / authenticated Coach / Real LLM / mobile WebKit suite.
+- The path subsequently stabilized across multiple later release lines, including #1592, #1600 and #1601.
+- Latest current-main Gate #1900 / `35967056029` passes the complete browser/WebKit, Golden Path, authenticated Coach/Real LLM and runtime-stability gate on attempt 1.
 - No current release blocker remains. Reopen TD-015 as P2 if the identity assertion or equivalent lifecycle replacement recurs; do not mask recurrence with broad retries or timeout inflation.
 
 ## User Performance Model release state
@@ -124,17 +124,15 @@ Decision: CURRENT RELEASE GREEN / MONITOR.
 Competition derivatives remain separate release channels. Founder-reported Wanted / 롯데 / 브로제이 submission completion stays RECORDED unless submission artifacts are independently re-opened.
 
 ## Release gate
-Automated source/web gate status: GREEN on current main `40e83c32...`; production Coach backend remains VERIFIED GREEN on activated revision `08cfa18e...`.
-Product-action confidence: GREEN for the server/browser single-owner contract on merged source. Production backend is activated and verified on current main `08cfa18e...`.
-Release confidence note: TD-015 is monitor-only, not a current blocker. Historical main Gate #1563 reproduced the lifecycle assertion once after PR #177, but subsequent main Gates #1592, #1600 and #1601 all passed on attempt 1; latest #1601 covers the full browser gate.
-- Provider connectivity: PASS.
-- Production authenticated live smoke: PASS.
-- Previous exact production revision gate: PASS.
-- Current main Pages deployment: PASS.
-- Current main Release Gate #1601 attempt 1: PASS.
-- Current main Pages #832: PASS.
-- Production Coach Activation #21 on `08cfa18e...`: PASS, including authenticated live LLM + bounded createPlan write smoke, sensitive-write boundary and cleanup.
-- Current source/web main contains no newer Functions change than the activated backend revision.
+Automated source/web gate status: GREEN on current main `fc06d2b...` via Gate #1900; production Coach backend remains VERIFIED GREEN on activated revision `788aa811...` via Activation #39.
+Product-action confidence: GREEN for the server/browser single-owner contract on merged source; production backend evidence is tracked independently from newer source/web commits.
+Release confidence note: TD-015 is monitor-only, not a current blocker. Historical lifecycle recurrence remains regression-covered; latest Gate #1900 passed the full browser/WebKit and runtime-stability gate on attempt 1.
+- Provider connectivity: PASS on the latest verified production activation lineage.
+- Production authenticated live smoke: PASS on Activation #39.
+- Current main Pages deployment: PASS via Pages #874 / `35967055339`.
+- Current main Release Gate #1900 / `35967056029`: PASS on attempt 1.
+- Current source/web main: `fc06d2b39c328fafa2c3755a54210163e3873744`.
+- Current verified production backend revision: `788aa81135fe996d28e29beaa4c578541ee77453`.
 
 ## Remaining non-blocking debt
 - Server-enforced main branch protection.
