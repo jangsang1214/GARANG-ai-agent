@@ -243,3 +243,13 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #244 merged as `5174df812bf4e0e4ca71a159e8ab4ac7e0fd84db`; post-merge Release Gate #1834 / `35919023081`: FULL GREEN. Pages #866 / `35919022366`: SUCCESS. Founder OS Event Envelope #1870: SUCCESS.
 - Real grouped execution is now release-verified: explicit group launch, A1 -> A2 -> A1 round-aware auto-advance for supersets, equivalent all-member circuit progression, rest only at round boundaries, visible group/round state, and active grouped identity recovery.
 - The remaining Workout parity limitation is native Health/Watch provider connectivity, not web Workout execution.
+
+## 2026-09-24 AI/Data Validation Bundle v1 — PR OPEN / EXACT-HEAD CI GREEN
+- PRODUCT PR #246 `Reach data coverage and validation bundle v1` is open and mergeable at head `165289dabd593f8af3d209dc01ff633d4faa447e`.
+- Exact-head GARANG Release Gate #1849 / `35939942308`: FULL GREEN across core-build-rules, browser-webkit and final verify.
+- Existing bundle scope adds Food Intelligence v2 matching/ambiguity handling, explicit Health signal file import, schema v9 physiologicalSignals persistence and 150+ deterministic Intelligence Validation Harness assertions.
+- AI/Data follow-up on the same PR adds `confidence-calibration-v1` (ECE/MCE/Brier/log-loss + over/under-confidence alerts), `intelligence-observability-v1` (quality/calibration/execution/data-quality drift) and a recommendation-quality benchmark covering grounding/relevance, safety, actionability, personalization, calibration and longitudinal drift.
+- These additions are diagnostic/evaluation-only and do not mutate recommendation policy or user state.
+- Changed-file overlap with active Design PR #247 is empty as observed at this head.
+- PR #246 is NOT merged and NOT released; no production activation is claimed.
+- External 2/4/8-week prospective recommendation usefulness remains the highest-value unverified AI/Data evidence.
