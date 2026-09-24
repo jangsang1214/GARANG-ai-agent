@@ -17,7 +17,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main observed: `eee151ee8fe021a5ce43cbaa65c57ba878c19201`.
+- Canonical PRODUCT main observed: `fc06d2b39c328fafa2c3755a54210163e3873744`.
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## Latest AI/Data evidence — Personalized Response Learning v2
@@ -25,14 +25,14 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #236 exact-head Release Gate #1795 / `35906532826`: FULL GREEN across core/build, Firestore, Commercial Core, WebKit/Golden Path and final verify.
 - Pages #859 / `35907286397`: SUCCESS for the merge revision.
 - Post-merge Gate #1797 was CANCELLED by a newer main push from unrelated workout UI polish; this is not treated as a test failure.
-- Current main `990f67a...` contains PR #236 unchanged plus PR #235 UI-only deltas; current-main Gate #1798 / `35907860238` is FULL GREEN and Pages #860 / `35907859391` is SUCCESS.
+- The PR #236 lineage remained intact through later PRODUCT main advances; current source/web main `fc06d2b39c328fafa2c3755a54210163e3873744` is FULL GREEN via Gate #1900 / `35967056029` and Pages #874 / `35967055339`.
 - Intelligence Episode v1.1 now captures time bucket/day-of-week and next-checkin recovery delta.
 - User Response Model v1.1 learns duration, intensity, volume, timing, accept/edit/reject and execution patterns from attributed episodes.
 - Recommendation Policy Evaluation v1.1 uses empirical response evidence while remaining bounded by deterministic GARANG Decision.
 - Offline Policy Evaluation v1 performs chronological, leave-future-out replay and explicitly makes no causal/counterfactual uplift claim.
 - Workout Prescription Shadow v1 derives exercise-level sets/reps/load/RPE evidence and can hold/reduce or flag progression for review, but never auto-increases.
 - Adaptive Nutrition Learning v1 derives an observational intake/weight-trend estimate and bounded review direction, but never mutates nutrition targets automatically.
-- Production Coach Activation #33 was SKIPPED by the explicit production-approval boundary. PR #236 server-side behavior is SOURCE/CI verified but is not yet claimed live in production.
+- Production Coach Activation #33 was SKIPPED by the explicit production-approval boundary at merge time. A later descendant activation, Production Coach Activation #39 / `35944749134` on `788aa81135fe996d28e29beaa4c578541ee77453`, succeeded; PR #236 server-side intelligence is therefore included in the VERIFIED production backend lineage.
 
 ## VERIFIED commercial evidence
 - Current PRODUCT main `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`: PR #188 exact-head Release Gate #1599 / `35599456886` SUCCESS on attempt 1; post-merge Release Gate #1601 / `35601046564` FULL GREEN on attempt 1; Pages #832 / `35601045094` SUCCESS.
@@ -70,14 +70,14 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - User Performance Model v1 now includes durable recommendation-resolution evidence and outcome-attributed learning through fully linked Intelligence Learning Contract cycles (PR #164).
 
 ## Runtime / deployment boundary
-- Commercial web source of truth is PRODUCT main `40e83c32eac8fd7791ee1d6023d1458cc6e6d560`; Pages #832 has deployed it.
-- Production Coach backend is VERIFIED on `12a362d0ba80c1e78bf27cf5b6253306ade18033` via Production Coach Activation #32 / `35841937362`; deployment, authenticated Meal Scan, live Coach, bounded autonomous write and disposable-user cleanup all passed.
+- Commercial web source of truth is PRODUCT main `fc06d2b39c328fafa2c3755a54210163e3873744`; Pages #874 / `35967055339` deployed that exact SHA.
+- Production Coach backend is VERIFIED on `788aa81135fe996d28e29beaa4c578541ee77453` via Production Coach Activation #39 / `35944749134`; deployment and the authenticated production smoke suite succeeded.
 - Production Coach Activation #18 / `35511759697`: SUCCESS. It deployed only Firebase Function `api`, preserved the existing LLM secret, ran authenticated live LLM smoke plus authenticated autonomous-write smoke, and cleaned up the disposable Firebase identity.
 - Live evidence: `source=llm`, provider `openai`, model `gpt-5.6-luna`, GARANG alignment verified; bounded `createPlan` executed and persisted; sensitive-write request remained denied/confirmation-gated.
-- Current source/main contains PR #236 server intelligence beyond production backend `12a362d0...`; source/backend parity for Personalized Response Learning v2 is therefore YELLOW until an explicit production activation and live smoke.
+- Literal source/backend SHA parity is not used as the release criterion. The latest verified production backend evidence is Activation #39 on `788aa811...`, while current source/web main is `fc06d2b...`; any later Functions delta still requires its own activation evidence before being called production-live.
 
 ## Stable
-- Current commercial source/web release: VERIFIED GREEN on main `40e83c32...` via Gate #1601 attempt 1 + Pages #832.
+- Current commercial source/web release: VERIFIED GREEN on main `fc06d2b...` via Gate #1900 attempt 1 + Pages #874.
 - Photo Evidence v1 is merged and web-released; raw media remains device-local and optional.
 - Personalized Intelligence Loop v1 production backend: VERIFIED GREEN on activated revision `08cfa18e...`.
 - Production Real AI Coach connectivity: VERIFIED GREEN.
@@ -94,7 +94,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #176 exact-head Release Gate #1559 / `35580756829`: FULL GREEN after updating the complete Golden Path test to use an explicit local-fallback scenario. The earlier same-SHA rerun on Gate #1558 again exposed WebKit lifecycle timing debt, strengthening P2 priority rather than reopening P1.
 - Autonomous Intelligence production activation is VERIFIED GREEN via Activation #18.
 - Server-side #164 UPM attribution is production-activated and live-smoke verified.
-- WebKit lifecycle timing is not a current release blocker. PR #177 exact-head Gate #1562 passed, but immediate post-merge main Gate #1563 later reproduced the Today DOM identity assertion once. Since then PRODUCT main Gates #1592, #1600 and #1601 have each passed on attempt 1; latest #1601 explicitly passes Today action flow and the complete browser gate. Track TD-015 as monitor-only unless the current-path identity assertion recurs.
+- WebKit lifecycle timing is not a current release blocker. PR #177 exact-head Gate #1562 passed, but immediate post-merge main Gate #1563 later reproduced the Today DOM identity assertion once. Subsequent release lines have remained green; latest current-main Gate #1900 passed the full browser/WebKit, Golden Path, authenticated Coach/Real LLM and runtime-stability gate on attempt 1. Track TD-015 as monitor-only unless the identity assertion or an equivalent lifecycle replacement recurs.
 - Main branch protection, OIDC/WIF deployment auth migration, Functions dependency-family upgrade and runtime ownership simplification remain non-blocking engineering debt.
 
 ## Next priorities
