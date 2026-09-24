@@ -2014,8 +2014,32 @@
       "id": "TASK-VERIFY-PRODUCT-MAIN-0DAFA0AA",
       "kind": "task",
       "title": "Observe post-merge Release Gate and Pages for PRODUCT main 0dafa0aa",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1925-KOREAN-FOOD",
+      "kind": "verification",
+      "title": "Post-merge PRODUCT Release Gate #1925 FULL GREEN on 0dafa0aa",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-877-KOREAN-FOOD",
+      "kind": "release",
+      "title": "Pages #877 deployed PRODUCT main 0dafa0aa",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-KOREAN-FOOD-SCALE-PIPELINE-GREEN",
+      "kind": "result",
+      "title": "Korean official Food DB scaling pipeline released GREEN; corpus generation remains source-access blocked",
+      "status": "done",
+      "ownerWorkstream": "command-center",
       "repositoryId": "product"
     }
   ],
@@ -3548,6 +3572,26 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "TASK-VERIFY-PRODUCT-MAIN-0DAFA0AA",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1925-KOREAN-FOOD",
+      "to": "CHANGE-PRODUCT-PR257-KOREAN-FOOD-SCALE",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-877-KOREAN-FOOD",
+      "to": "CHANGE-PRODUCT-PR257-KOREAN-FOOD-SCALE",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-KOREAN-FOOD-SCALE-PIPELINE-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-1925-KOREAN-FOOD",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-KOREAN-FOOD-SCALE-PIPELINE-GREEN",
+      "to": "RELEASE-PAGES-877-KOREAN-FOOD",
       "kind": "depends-on"
     }
   ]
