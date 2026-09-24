@@ -504,3 +504,28 @@ Goal: activate the merged code-addressable AI/Data maturity improvements in prod
 - Production Coach Activation #39 / `35944749134`: deploy + public boundaries + authenticated nutrition lookup + Meal Scan + Coach + bounded-write + cleanup all PASS. ✅
 - Post-activation Release Gate #1860 / `35944749127`: FULL GREEN; Pages #870 SUCCESS. ✅
 - External longitudinal effectiveness, native provider integration and proprietary food-data scale remain evidence/infrastructure gaps and must not be labeled solved.
+
+## Closed P4 — Food DB Scale v1
+Status: DONE / SOURCE+WEB+RELEASE VERIFIED GREEN
+Owner: AI Data / Product / Release QA
+Goal: materially expand verified nutrition coverage without bloating first-load UX or weakening the Korean canonical database.
+
+Delivered:
+- preserved existing 500-row curated Korean canonical Food DB as primary. ✅
+- generated 5,721-row USDA supplemental corpus from public Foundation + FNDDS bulk releases. ✅
+- accepted rows: Foundation 311, FNDDS 5,430. ✅
+- verified-only gate, provider/dataset/recordId provenance required, no fabricated aliases, no automatic canonical overwrite. ✅
+- lazy supplemental load only on canonical miss; initial app DB hydration remains unchanged. ✅
+- Meal Scan fallback order: canonical -> USDA supplemental -> source-backed web lookup. ✅
+- exact/prefix supplemental index prevents full 5,721-row fuzzy scan on every miss. ✅
+- regression tests cover scale, provenance, dedupe and fallback ordering. ✅
+
+Verification:
+- corpus build workflow #1 / `35947597274`: SUCCESS.
+- PR #251 exact-head Gate #1876 / `35948950490`: FULL GREEN.
+- PR #251 merged as `f6fc6277e59b9b2a59592ad51bc6067cc1ffdfc9`.
+- current combined PRODUCT main `3b21f20a0df1dd483475f7b84b517ae03fb13537`: Pages #873 SUCCESS; Release Gate #1896 / `35961274355` FULL GREEN.
+
+Remaining:
+- K-FIND / Korean branded / restaurant-specific data breadth remains a separate corpus-acquisition task.
+- Do not represent USDA supplemental coverage as Korean-brand parity.
