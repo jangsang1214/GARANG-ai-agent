@@ -15,13 +15,15 @@ Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
 - No Firebase Functions/backend/schema/secret/billing change was required for the #264 repair.
 
 ## Body Model v4 visual acceptance correction / v5 remediation — 2026-09-25
-Decision: CURRENT RELEASE TECHNICALLY GREEN / BODY REALISM ACCEPTANCE YELLOW.
-- PRODUCT current main remains `0da445691dc7c4107f6491d45461450f465327ed`; Gate #1967 and Pages #879 remain valid GREEN release evidence.
+Decision: CURRENT RELEASE TECHNICALLY GREEN / BODY REALISM ACCEPTANCE YELLOW / PR #262 MERGE-READY.
+- PRODUCT current main is `047ccb839447b6c54a1b381d39cb887cac9c8bc9`; current-main Gate #1982 and Pages #881 are GREEN.
 - Founder real-device screenshot review shows Body Model v4 does NOT meet the explicit anatomy reference minimum. This is a product/design acceptance failure, not a CI/runtime failure.
 - Released v4 FRONT/SIDE/BACK switching and muscle interaction remain VERIFIED functional.
 - Released v4 human proportions, anatomical realism and reference-minimum visual quality are NOT ACCEPTED.
-- Replacement PRODUCT PR #261 is OPEN. Exact-head Release Gate #1973 is running.
-- Do not mark Body realism GREEN until #261 (or successor) is merged/deployed and a new real-device screenshot is visually accepted.
+- PR #261 is CLOSED / UNMERGED after main advanced. Successor PR #262 is OPEN / MERGEABLE.
+- PR #262 exact head `6bc643f965cef244a64c163a82fd8f148683f5eb`: Release Gate #1981 / `36029644905` FULL GREEN.
+- The later main change is a non-overlapping Today planner lifecycle repair; current-main Gate #1982 is also FULL GREEN.
+- Do not mark Body realism GREEN until #262 (or successor) is Founder-approved, merged/deployed, and a new real-device screenshot is visually accepted.
 
 
 ## Essential-first UX + Body Model v4 — PR #259 — 2026-09-24
