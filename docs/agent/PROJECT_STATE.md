@@ -1,5 +1,14 @@
 # GARANG Project State
 
+## 2026-09-24 Command Center reconciliation — PRODUCT PR #256/#257
+- PRODUCT actual main is `0dafa0aab536548b1b80964d108228ee819155c6`, ahead of the previously recorded `8e6733cf...`.
+- PR #256 `Fix workout session controls and ship real-human anatomy v3` merged as `473eba3559ae1a8863de4291f7d40c5dbf7de99e`; exact-head Release Gate #1921 / `35973077815` was FULL GREEN across core-build-rules, browser-webkit and final verify.
+- PR #257 `Prepare Korean official food corpus scaling and Korean-first retrieval` exact head `dbcbf617916b301fcf28c2db1a3aa5082162b70a` passed Release Gate #1924 / `35976213135` FULL GREEN and was Founder-authorized squash-merged as current main `0dafa0aa...`.
+- PR #257 adds Korean official-corpus build/sharding/retrieval infrastructure and preserves lookup precedence: canonical Korean -> Korean official supplemental -> USDA supplemental -> source-backed lookup.
+- The actual Korean official supplemental corpus is NOT generated yet. `DATA_GO_KR_SERVICE_KEY` is not available to the repository workflow; current verified local lookup coverage therefore remains 6,221 rows (500 curated canonical + 5,721 USDA supplemental) until official Korean rows are generated and audited.
+- PRODUCT PR #254 remains OPEN / NON-MERGEABLE from stale base `fc06d2b...`; it overlaps Food retrieval and also carries Running/Personal Performance scope. Do not merge it without rebase/scope reconciliation against current main.
+- Current release evidence after #257: merge is VERIFIED and exact-head gate is GREEN; post-merge main Gate/Pages evidence is not yet observed in this session, so release classification is YELLOW until that evidence is observed.
+
 ## 2026-09-24 Engineering P2 release-integrity / WIF reconciliation
 - PRODUCT PR #255 `Add production WIF readiness audit` merged as current main `8e6733cf4878484b23fe75765b01988b8b0b4794`.
 - PR #255 exact-head Release Gate #1910: FULL GREEN. Production WIF Readiness #2 / `35969503578`: SUCCESS with non-secret status `NOT_CONFIGURED`; both `GCP_WORKLOAD_IDENTITY_PROVIDER` and `GCP_DEPLOY_SERVICE_ACCOUNT` are absent.
