@@ -1,5 +1,18 @@
 # GARANG Release Status
 
+## Essential-first UX + Body Model v4 — PR #259 — 2026-09-24
+Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
+- PRODUCT PR #259 merged as current main `0da445691dc7c4107f6491d45461450f465327ed`.
+- Exact head `7f51725416acc441d94ce7b2307d583e18b84fa3`: Release Gate #1951 / `36020573110` FULL GREEN.
+- Post-merge Release Gate #1967 / `36022832225`: FULL GREEN; `core-build-rules`, `browser-webkit`, and final `verify` all SUCCESS.
+- Pages #879 / `36022831829`: `build`, `report-build-status`, and `deploy` all SUCCESS.
+- Live asset fetch verified deployed `garang-polish-v3.js?v=4.0.0-body-v4`, `garang-experience-v4.js?v=1.7.0-essential-first`, and `garang-workout-execution-v2.js?v=2.3.0-simplicity`.
+- Verified browser scope includes Simplified Shell, Nutrition recommendation, Real Meal Scan, truth/first-record, Golden Path integration, Golden Path complete journey, authenticated app/Coach, Real LLM, recovery, WebKit mobile regression, Settings touch, button health, and runtime stability stress.
+- Workout essential path is exercise + weight + reps + completion; advanced workout inputs remain available through progressive disclosure.
+- Body Model v4 is FRONT / SIDE / BACK with dedicated side geometry; interactive muscle selection and male/female variants remain intact.
+- No Firebase Functions production activation was required or performed for PR #259.
+
+
 ## Current-main reconciliation — PR #256/#257 — 2026-09-24
 Decision: GREEN / CURRENT MAIN SOURCE+WEB VERIFIED.
 - Current PRODUCT main: `0dafa0aab536548b1b80964d108228ee819155c6`.
@@ -36,10 +49,10 @@ Last updated: 2026-09-24
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
-- Last VERIFIED application runtime/web baseline: `8e6733cf4878484b23fe75765b01988b8b0b4794` via post-merge Gate #1912 attempt 2 / `35970286558` + Pages #875 / `35970284935`.
-- Current observed PRODUCT main: `8e6733cf4878484b23fe75765b01988b8b0b4794`.
+- Last VERIFIED application runtime/web baseline: `0da445691dc7c4107f6491d45461450f465327ed` via post-merge Gate #1967 / `36022832225` + Pages #879 / `36022831829`.
+- Current observed PRODUCT main: `0da445691dc7c4107f6491d45461450f465327ed`.
 - Current verified production Coach backend deployment revision: `788aa81135fe996d28e29beaa4c578541ee77453` via Production Coach Activation #39 / `35944749134`.
-- Current source/web release: GREEN / VERIFIED on `8e6733cf...` after Gate #1912 attempt 2. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live.
+- Current source/web release: GREEN / VERIFIED on `0da445691dc7c4107f6491d45461450f465327ed` after Gate #1967 and Pages #879. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live.
 
 ## Current PRODUCT release — Photo Evidence v1
 Decision: GREEN / CURRENT MAIN VERIFIED.
