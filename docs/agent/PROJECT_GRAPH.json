@@ -2161,6 +2161,62 @@
       "status": "in_progress",
       "ownerWorkstream": "design-brand",
       "repositoryId": "product"
+    },
+    {
+      "id": "TASK-BODY-V7-MUSCULAR-REMAP",
+      "kind": "task",
+      "title": "Increase Body muscle mass, improve anatomy definition, and remap detached muscle overlays",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR273-BODY-V7",
+      "kind": "change",
+      "title": "PRODUCT PR #273 builds Body v7 muscular model and anatomical zone remap",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR273-GATE-2007",
+      "kind": "verification",
+      "title": "PR #273 exact-head Release Gate #2007 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-2008-BODY-V7",
+      "kind": "verification",
+      "title": "Post-merge PRODUCT main Release Gate #2008 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-889-BODY-V7",
+      "kind": "release",
+      "title": "Pages #889 SUCCESS on PRODUCT main dcc4fa2a",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-BODY-V7-TECHNICAL-GREEN",
+      "kind": "result",
+      "title": "Body v7 muscular geometry, anatomy definition, and remapped overlays released GREEN",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-BODY-V7-FOUNDER-VISUAL-ACCEPTANCE",
+      "kind": "task",
+      "title": "Confirm deployed Body v7 muscularity and overlay alignment on a real phone",
+      "status": "in_progress",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -3807,6 +3863,51 @@
     {
       "from": "TASK-BODY-V6-FOUNDER-VISUAL-ACCEPTANCE",
       "to": "RESULT-BODY-V6-TECHNICAL-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-BODY-V7-MUSCULAR-REMAP",
+      "to": "INIT-UI-BRAND-SIMPLIFICATION-V1",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR273-BODY-V7",
+      "to": "TASK-BODY-V7-MUSCULAR-REMAP",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR273-GATE-2007",
+      "to": "CHANGE-PRODUCT-PR273-BODY-V7",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-2008-BODY-V7",
+      "to": "CHANGE-PRODUCT-PR273-BODY-V7",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-889-BODY-V7",
+      "to": "CHANGE-PRODUCT-PR273-BODY-V7",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-BODY-V7-TECHNICAL-GREEN",
+      "to": "VERIFY-PRODUCT-PR273-GATE-2007",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-BODY-V7-TECHNICAL-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-2008-BODY-V7",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-BODY-V7-TECHNICAL-GREEN",
+      "to": "RELEASE-PAGES-889-BODY-V7",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-BODY-V7-FOUNDER-VISUAL-ACCEPTANCE",
+      "to": "RESULT-BODY-V7-TECHNICAL-GREEN",
       "kind": "depends-on"
     }
   ]
