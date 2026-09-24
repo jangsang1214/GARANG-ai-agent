@@ -13,17 +13,17 @@
 - Experimental PR #263 was closed unmerged after #264 superseded the same release-integrity blocker with a smaller patch.
 - Food + Running + Personal Performance Intelligence Founder-approved scope is now DONE / VERIFIED GREEN. Body Model visual realism remains a separate P3 acceptance track and is not implied GREEN by this release.
 
-## 2026-09-25 Body Model visual acceptance reconciliation
-- PRODUCT current main is `047ccb839447b6c54a1b381d39cb887cac9c8bc9`; current-main Gate #1982 and Pages #881 are GREEN.
-- Real-device Founder screenshot review REJECTED Body Model v4 visual quality. The deployed model is functionally correct (FRONT/SIDE/BACK + interaction), but its human realism, proportions, limb/hand/foot anatomy and muscle-surface fidelity do not meet the Founder-provided reference minimum.
-- Corrected capability status: 3-view structure = REACHED; interaction = REACHED; realistic human proportions = INSUFFICIENT; anatomy visual quality = INSUFFICIENT; reference-minimum compliance = INSUFFICIENT.
-- PR #261 is CLOSED / UNMERGED after main advanced. Successor PRODUCT PR #262 `Rebuild body model v5 to meet anatomy quality floor` is OPEN / MERGEABLE and rebased on the newer Food main.
-- PR #262 exact head `6bc643f965cef244a64c163a82fd8f148683f5eb` passed Release Gate #1981 / `36029644905` FULL GREEN across core-build-rules, browser-webkit, and final verify.
-- The only later PRODUCT main delta is PR #264's one-file Today planner lifecycle repair in `06_features/ui/runtime/garang-product-consolidation-v1.js`; it does not overlap the Body v5 files. Current-main Gate #1982 is also FULL GREEN.
-- Body v5 still requires Founder-approved merge and deployed real-device screenshot acceptance before realistic proportions/visual quality/reference-minimum compliance can move from INSUFFICIENT to REACHED.
-- Product quality status: current source/web release GREEN, Body realism acceptance YELLOW.
-- Priority: P3 critical UX/brand quality. Do not add new Body features before the reference-minimum visual floor is met.
-
+## 2026-09-25 Body Model v5 release reconciliation
+- PRODUCT current main is `7b5032418b49a43ea4504f7566542591ad783b60`.
+- Founder-approved PR #262 `Rebuild body model v5 to meet anatomy quality floor` is MERGED. Exact head `6bc643f965cef244a64c163a82fd8f148683f5eb` passed Release Gate #1981 / `36029644905` FULL GREEN before merge.
+- Merge preserved the later non-overlapping Today planner lifecycle repair and produced current main `7b5032418b49a43ea4504f7566542591ad783b60`.
+- Pages #882 / `36031260217`: build, report-build-status, and deploy all SUCCESS. Live `garang-polish-v3.js?v=5.0.0-anatomy-v5` was fetched successfully after deployment.
+- Post-merge Release Gate #1983 / `36031262125`: final same-SHA run FULL GREEN across core-build-rules, browser-webkit, and final verify.
+- The first two same-SHA WebKit attempts timed out at different unrelated waits (Planner draft state settlement, then superset completion settlement). The third identical-SHA run passed both prior points and the complete Golden Path/authenticated Coach/Real LLM/recovery/mobile-stability tail without code changes or timeout inflation. Track this as TD-015 monitoring evidence, not as a confirmed Body regression.
+- Body v5 implementation is technically VERIFIED: continuous full-body silhouette, dedicated FRONT/SIDE/BACK geometry, revised muscle overlays, 260×520 proportion/detail canvas, and preserved muscle interaction.
+- Real-device Founder screenshot review of v4 remains the last visual acceptance evidence and was FAIL. Therefore realistic proportions, anatomy visual quality, and reference-minimum compliance remain INSUFFICIENT/YELLOW until a fresh deployed v5 phone screenshot is reviewed.
+- Corrected capability status: 3-view structure = REACHED; interaction = REACHED; v5 technical implementation = REACHED; realistic human proportions = INSUFFICIENT pending visual acceptance; anatomy visual quality = INSUFFICIENT pending visual acceptance; reference-minimum compliance = INSUFFICIENT pending visual acceptance.
+- Priority remains P3 critical UX/brand quality. Next action is deployed real-phone visual QA, not another Body feature expansion.
 
 ## 2026-09-24 Command Center reconciliation — PRODUCT PR #258/#259
 - PRODUCT actual main is `0da445691dc7c4107f6491d45461450f465327ed`.

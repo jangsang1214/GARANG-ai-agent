@@ -14,17 +14,17 @@ Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
 - Current-main Release Gate #1982 / `36029807445`: FULL GREEN; core-build-rules, browser-webkit and verify all SUCCESS.
 - No Firebase Functions/backend/schema/secret/billing change was required for the #264 repair.
 
-## Body Model v4 visual acceptance correction / v5 remediation — 2026-09-25
-Decision: CURRENT RELEASE TECHNICALLY GREEN / BODY REALISM ACCEPTANCE YELLOW / PR #262 MERGE-READY.
-- PRODUCT current main is `047ccb839447b6c54a1b381d39cb887cac9c8bc9`; current-main Gate #1982 and Pages #881 are GREEN.
-- Founder real-device screenshot review shows Body Model v4 does NOT meet the explicit anatomy reference minimum. This is a product/design acceptance failure, not a CI/runtime failure.
-- Released v4 FRONT/SIDE/BACK switching and muscle interaction remain VERIFIED functional.
-- Released v4 human proportions, anatomical realism and reference-minimum visual quality are NOT ACCEPTED.
-- PR #261 is CLOSED / UNMERGED after main advanced. Successor PR #262 is OPEN / MERGEABLE.
+## Body Model v5 — PR #262 — 2026-09-25
+Decision: GREEN / MERGED / WEB DEPLOYED / TECHNICALLY VERIFIED / BODY REALISM ACCEPTANCE YELLOW.
+- Founder-approved PRODUCT PR #262 merged as current main `7b5032418b49a43ea4504f7566542591ad783b60`.
 - PR #262 exact head `6bc643f965cef244a64c163a82fd8f148683f5eb`: Release Gate #1981 / `36029644905` FULL GREEN.
-- The later main change is a non-overlapping Today planner lifecycle repair; current-main Gate #1982 is also FULL GREEN.
-- Do not mark Body realism GREEN until #262 (or successor) is Founder-approved, merged/deployed, and a new real-device screenshot is visually accepted.
-
+- Pages #882 / `36031260217`: build, report-build-status, deploy all SUCCESS.
+- Live deployed `garang-polish-v3.js?v=5.0.0-anatomy-v5` fetch succeeded.
+- Post-merge Release Gate #1983 / `36031262125`: final same-SHA attempt FULL GREEN across core-build-rules, browser-webkit, and final verify.
+- First two #1983 WebKit attempts timed out at different unrelated waits; both prior failure points passed on the final identical-SHA run. No timeout, threshold, or runtime code was weakened to obtain GREEN.
+- Body v5 technical contracts are VERIFIED: continuous silhouette, FRONT/SIDE/BACK, revised muscle overlays, preserved male/female + muscle interaction contracts.
+- Visual realism is NOT yet accepted. The last real-device visual evidence is the rejected v4 screenshot. A fresh deployed v5 phone screenshot is required before human proportions, visual realism, or Founder reference-minimum compliance can be marked REACHED.
+- No Firebase Functions/backend/schema/secret/billing change was introduced by PR #262.
 
 ## Essential-first UX + Body Model v4 — PR #259 — 2026-09-24
 Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.

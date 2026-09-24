@@ -97,15 +97,16 @@ Previous severity: LOW / P4
 Area: personalization / AI·Data
 Resolution: PRODUCT now durably persists recommendation resolution evidence for accepted, rejected, dismissed and ignored recommendations through the canonical action-data boundary. User Performance Model v1 consumes this evidence, and PR #166 additionally measures resolution coverage in Longitudinal Learning Metrics v1. No separate truth store was introduced.
 
-## TD-015 — WebKit / Today lifecycle timing
-Status: MONITOR / NON-BLOCKING AFTER 2026-09-25 REPAIR
+## TD-015 — WebKit / lifecycle timing variance
+Status: MONITOR / NON-BLOCKING
 Previous severity: MEDIUM / P2
 Area: frontend runtime / release integrity
-Root cause lineage: Today has multiple bounded presentation/orchestration layers. PR #177 fixed same-key DOM replacement, but the #259 + #260 combined tree later exposed a second mount-order race where Product Consolidation could observe `#garangTodayFlow` before its nested track subtree was ready.
-Recurrence evidence: post-merge Gate #1974 on `e1e8a5c...` failed across three same-SHA attempts at different Today readiness points: Coach proposal readiness, recovery modal readiness, and compact Planner utility readiness. This was treated as active P2 rather than masked by retries.
-Repair: PRODUCT PR #264 delays `data-gpc-today=1` until required Today nodes exist and observes only added descendants relevant to `#garangTodayFlow` / `.gtf-track-visual`. No timeout inflation.
-Verification: PR #264 exact-head Gate #1977 FULL GREEN; merged main `047ccb839447b6c54a1b381d39cb887cac9c8bc9`; Pages #881 SUCCESS; post-merge Gate #1982 FULL GREEN across the complete WebKit/Golden Path/authenticated Coach/Real LLM/mobile-stability tail and final verify.
-Current risk: non-blocking, but keep regression coverage. Any recurrence should again be traced to a concrete lifecycle owner rather than normalized as expected flakiness.
+Root cause lineage: Today has multiple bounded presentation/orchestration layers. PR #177 fixed same-key DOM replacement; PR #264 later repaired a concrete Today Product Consolidation mount-order race by delaying readiness until required nodes exist and observing only relevant nested Today-flow additions.
+Verified repair baseline: PR #264 exact-head Gate #1977 FULL GREEN; merged main `047ccb839447b6c54a1b381d39cb887cac9c8bc9`; Pages #881 SUCCESS; Gate #1982 FULL GREEN.
+Latest monitoring evidence: after Body v5 PR #262 merged as `7b5032418b49a43ea4504f7566542591ad783b60`, post-merge Gate #1983 showed two same-SHA WebKit timing timeouts at different owners: attempt 1 timed out waiting for Planner draft state settlement in Golden Path; attempt 2 passed that point and later timed out waiting for superset completion settlement. A third identical-SHA WebKit run passed both prior points and the entire downstream suite, including Golden Path complete journey, authenticated Coach/Real LLM, recovery, mobile regression, Settings touch, button health and runtime stability. Core and final verify also passed.
+Interpretation: this specific #1983 evidence is consistent with scheduling/timing variance rather than one confirmed deterministic owner regression because the failure location moved and both prior points passed without any code, timeout, or threshold change.
+Mitigation: no timeout inflation and no retry-based product claim. Keep exact same-location recurrence as the threshold for instrumentation/root-cause work; if a concrete owner repeats, fix that owner rather than normalizing it as flakiness.
+Current risk: non-blocking monitoring debt; current main Gate #1983 final same-SHA result is FULL GREEN.
 
 ## TD-016 — Commercial documentation and monetization artifacts are stale
 Severity: LOW / P6
