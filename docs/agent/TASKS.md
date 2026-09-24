@@ -529,3 +529,13 @@ Verification:
 Remaining:
 - K-FIND / Korean branded / restaurant-specific data breadth remains a separate corpus-acquisition task.
 - Do not represent USDA supplemental coverage as Korean-brand parity.
+
+## UI / Brand Simplification v2 — RELEASE VERIFIED GREEN
+- Status: DONE / RELEASE VERIFIED GREEN.
+- PRODUCT PR #249 merged to main `3b21f20a0df1dd483475f7b84b517ae03fb13537`.
+- Done: classical Greco-Roman-inspired body model; current-set-first Workout execution; mobile no-horizontal-table contract; active-set progressive details; Group/Warm-up/Plate/Program/Health/Evidence progressive disclosure; Progress/Coach low-density refinement; P5 cleanup; mobile draft action touch-safety.
+- Regression closure: PRODUCT PR #252 fixed Real Meal Scan latency introduced by USDA supplemental corpus expansion without weakening DB/provenance guardrails.
+- Verification: PR #252 Gate #1891 GREEN; PR #249 Gate #1895 GREEN; post-merge Gate #1896 GREEN; Pages #873 SUCCESS; Event #2003 SUCCESS.
+- Acceptance: Golden Path, Real Meal Scan, authenticated Coach/LLM/recovery, mobile regression, Settings touch, button health and runtime stability all pass in the final release gate.
+- Next: external/longitudinal validation and human visual review of the final body model; new feature scope remains lower priority than measured user comprehension/retention.
+
