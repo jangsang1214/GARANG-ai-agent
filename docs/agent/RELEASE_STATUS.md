@@ -286,3 +286,13 @@ Decision: PRODUCT WEB/RUNTIME VERIFIED GREEN.
 - Founder OS Event Envelope #1870: SUCCESS.
 - Verified behavior includes round-aware grouped progression, round-boundary rest semantics, group/round state visibility, and grouped-session recovery.
 - Native Health/Watch connectivity remains outside this web/runtime release.
+
+## 2026-09-24 UI / Brand Simplification v1 — Today + Body Model GREEN
+Decision: PRODUCT WEB/RUNTIME VERIFIED GREEN.
+- PR #247 `Simplify Today and rebuild the GARANG body model`: MERGED as current PRODUCT main `eee151ee8fe021a5ce43cbaa65c57ba878c19201`.
+- Exact-head Release Gate #1845: core-build-rules SUCCESS, browser-webkit SUCCESS, verify SUCCESS.
+- Post-merge Release Gate #1850: core-build-rules SUCCESS, browser-webkit SUCCESS, verify SUCCESS.
+- Pages #867: SUCCESS.
+- Founder OS Event Envelope #1901: SUCCESS.
+- Verified regressions include Today action flow, bottom Check-in, Planner shortcut touch target, Today visual parity, Simplified Shell, Planner execution, Meal Scan, Golden Path, authenticated Coach/recovery, mobile regression, Settings touch, button health and runtime stability stress.
+- No core state/write owner was replaced. This release is a presentation/interaction simplification plus anatomy visual-system replacement.
