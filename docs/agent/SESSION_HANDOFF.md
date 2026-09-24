@@ -246,3 +246,12 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Superset/Circuit is no longer partial for web execution: grouped sessions auto-advance A1 -> A2 -> A1 by round (and through all circuit members), rest at round boundaries, surface current group/round, and recover active grouped identity.
 - Workout's remaining honest platform gap is native Apple Health / Health Connect / Watch integration.
 - Product-level priority remains external activation / longitudinal validation rather than more Workout feature construction.
+
+## 2026-09-24 UI / Brand Simplification v1 handoff
+- PRODUCT current main: `eee151ee8fe021a5ce43cbaa65c57ba878c19201`.
+- PR #247 is MERGED.
+- Exact-head Gate #1845 FULL GREEN; post-merge Gate #1850 FULL GREEN; Pages #867 SUCCESS; Event Envelope #1901 SUCCESS.
+- Today now exposes one clear hierarchy: state -> GARANG judgment -> one primary next action -> quiet Coach explanation. Full plan detail and legacy dashboard density are internalized; compact Planner access remains touch-safe.
+- The rendered body model owner is `garang-polish-v3`, not the older app-level SVG. It now uses smoother profile-aware performance silhouettes and restrained GARANG brand states while retaining existing muscle mappings/interactions.
+- Two genuine pre-merge regressions were caught and fixed. Do not reintroduce hidden ancestors around the mobile Planner shortcut, and avoid later CSS rules that override Today internalization ownership.
+- Next design order: Workout execution simplification -> Progress simplification -> Coach simplification. Preserve advanced capability via progressive disclosure.
