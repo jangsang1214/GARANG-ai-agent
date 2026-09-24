@@ -471,3 +471,21 @@ Verification:
 - Post-merge Gate #1834 / `35919023081`: FULL GREEN; Pages #866 SUCCESS.
 Remaining Workout external/native gap:
 - Apple Health / Health Connect / Watch provider integration.
+
+## UI / Brand Simplification v1
+Status: IN PROGRESS — Slice 1 DONE / RELEASE VERIFIED GREEN
+Owner: Design / Product / Engineering / Release QA
+Goal: make GARANG understandable and premium without reducing core capability.
+
+Done — Today + Body Model:
+- Today reduced to state -> judgment -> one next action -> Coach explanation.
+- Legacy dashboard density internalized; compact Planner shortcut preserved.
+- Final anatomy visual owner replaced with premium performance silhouette, male/female proportion awareness, quieter muscle treatment and existing interaction mapping preserved.
+- PR #247 merged as `eee151ee8fe021a5ce43cbaa65c57ba878c19201`.
+- Exact-head Gate #1845 FULL GREEN; post-merge Gate #1850 FULL GREEN; Pages #867 SUCCESS; Event Envelope #1901 SUCCESS.
+- Pre-merge regressions found and fixed: Planner shortcut zero-size touch target and conflicting `display:grid!important` ownership. No timeout inflation or test deletion.
+
+Next slices:
+- Workout execution: remove default horizontal-density / advanced-tool overload while preserving one-tap access to advanced capabilities.
+- Progress: lead with change -> GARANG interpretation -> detail instead of metric dashboard density.
+- Coach: lead with one interpretation + one recommended action; keep conversation and provenance secondary.
