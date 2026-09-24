@@ -1673,6 +1673,70 @@
       "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-UI-BRAND-SIMPLIFICATION-V1",
+      "kind": "initiative",
+      "title": "Simplify GARANG primary surfaces into a premium low-cognitive-load Personal Performance OS",
+      "status": "active",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-TODAY-BODY-SIMPLIFICATION-V1",
+      "kind": "task",
+      "title": "Reduce Today to one next action and replace the mannequin-like body model",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR247",
+      "kind": "change",
+      "title": "PRODUCT PR #247 Today simplification and premium performance silhouette merged as eee151e",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-UI-GATE-1845",
+      "kind": "verification",
+      "title": "PR #247 exact-head Release Gate #1845 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-UI-GATE-1850",
+      "kind": "verification",
+      "title": "PR #247 post-merge Release Gate #1850 FULL GREEN; Pages #867 GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-TODAY-BODY-SIMPLIFIED-GREEN",
+      "kind": "result",
+      "title": "Today and Body Model simplification slice release-verified GREEN without Golden Path regression",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-WORKOUT-UX-SIMPLIFICATION",
+      "kind": "task",
+      "title": "Simplify Workout execution while preserving advanced capabilities through progressive disclosure",
+      "status": "planned",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-PROGRESS-COACH-SIMPLIFICATION",
+      "kind": "task",
+      "title": "Simplify Progress and Coach around interpretation and one next action",
+      "status": "planned",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -2935,6 +2999,51 @@
       "from": "RESULT-INTELLIGENCE-HARDENING-PRODUCTION-GREEN",
       "to": "VERIFY-PRODUCT-HARDENING-GATE-1824",
       "kind": "depends-on"
+    },
+    {
+      "from": "INIT-UI-BRAND-SIMPLIFICATION-V1",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-TODAY-BODY-SIMPLIFICATION-V1",
+      "to": "INIT-UI-BRAND-SIMPLIFICATION-V1",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR247",
+      "to": "TASK-TODAY-BODY-SIMPLIFICATION-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-UI-GATE-1845",
+      "to": "CHANGE-PRODUCT-PR247",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-UI-GATE-1850",
+      "to": "CHANGE-PRODUCT-PR247",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-TODAY-BODY-SIMPLIFIED-GREEN",
+      "to": "VERIFY-PRODUCT-UI-GATE-1845",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-TODAY-BODY-SIMPLIFIED-GREEN",
+      "to": "VERIFY-PRODUCT-UI-GATE-1850",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-WORKOUT-UX-SIMPLIFICATION",
+      "to": "INIT-UI-BRAND-SIMPLIFICATION-V1",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-PROGRESS-COACH-SIMPLIFICATION",
+      "to": "INIT-UI-BRAND-SIMPLIFICATION-V1",
+      "kind": "supports"
     }
   ]
 }
