@@ -5,7 +5,7 @@
 - Real-device Founder screenshot review REJECTED Body Model v4 visual quality. The deployed model is functionally correct (FRONT/SIDE/BACK + interaction), but its human realism, proportions, limb/hand/foot anatomy and muscle-surface fidelity do not meet the Founder-provided reference minimum.
 - Corrected capability status: 3-view structure = REACHED; interaction = REACHED; realistic human proportions = INSUFFICIENT; anatomy visual quality = INSUFFICIENT; reference-minimum compliance = INSUFFICIENT.
 - PRODUCT PR #261 `Rebuild body model v5 to meet anatomy quality floor` is OPEN from current main. v5 replaces segmented mannequin construction with one continuous human silhouette, dedicated FRONT/SIDE/BACK geometry, higher 260×520 proportion/detail floor, revised muscle overlays, and removes legacy rendered hand/foot part geometry.
-- PR #261 exact head at creation: `620075950b9d27442fc765808d97d888c0cec2b8`. Release Gate #1972 / `36026450615` is currently running; do not call v5 VERIFIED or visually accepted until CI passes and a deployed real-device screenshot meets the reference floor.
+- PR #261 exact head at creation: `213d563a9f31ce598a192bcfb36ddbc6c1503143`. Release Gate #1973 / `36026810946` is currently running; do not call v5 VERIFIED or visually accepted until CI passes and a deployed real-device screenshot meets the reference floor.
 - Product quality status: source/web release GREEN, Body realism acceptance YELLOW until v5 visual QA passes.
 - Priority: P3 critical UX/brand quality. Do not add new Body features before the reference-minimum visual floor is met.
 
