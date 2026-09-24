@@ -1,3 +1,16 @@
+## Latest Command Center handoff — PRODUCT PR #259 — 2026-09-24
+- PRODUCT main: `0da445691dc7c4107f6491d45461450f465327ed`.
+- PR #259 `Ship essential-first UX and Body Model v4` is MERGED after Founder approval.
+- Exact-head Release Gate #1951 / `36020573110`: FULL GREEN.
+- Post-merge Release Gate #1967 / `36022832225`: FULL GREEN across core-build-rules, browser-webkit and final verify.
+- Pages #879 / `36022831829`: SUCCESS across build/report/deploy; live deployed Body Model v4 + essential-first runtime assets were fetched successfully.
+- Workout Golden Path now proves a user can complete logging with weight + reps as the essential path; RPE/RIR/duration/notes/set type remain available through progressive disclosure and are regression-covered separately.
+- Progress simplification preserves the canonical Accumulation anchor/truth surface; secondary KPI grids are disclosed only when requested.
+- Nutrition defaults to Meal Scan while manual entry remains available and automatically opens when a draft requires saving.
+- Body Model v4 has dedicated FRONT / SIDE / BACK geometry and preserves interactive muscle selection plus male/female rendering.
+- PR #259 is web/runtime/test only; no Firebase Function production activation is required.
+- Next: real-phone visual QA of the deployed Workout/Body v4 surface. If no functional/visual blocker is found, return to Anonymous External Validation and 2/4/8-week longitudinal measurement instead of adding more surface complexity.
+
 ## Latest Command Center handoff — PRODUCT #256/#257 — 2026-09-24
 - PRODUCT main: `0dafa0aab536548b1b80964d108228ee819155c6`.
 - PR #256 is MERGED; exact-head Release Gate #1921 / `35973077815` FULL GREEN. Scope is workout UI/runtime/tests only; no Firebase Functions change.
