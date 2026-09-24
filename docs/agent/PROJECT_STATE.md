@@ -253,3 +253,13 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #247 merged as `eee151ee8fe021a5ce43cbaa65c57ba878c19201`; post-merge Release Gate #1850 FULL GREEN; Pages #867 SUCCESS; Founder OS Event Envelope #1901 SUCCESS.
 - Two regressions were caught before merge and fixed without weakening behavior: hidden Planner shortcut touch target, then conflicting Today CSS ownership. A diagnostic-only boot assertion was added without extending its timeout.
 - Next design scope: simplify Workout execution surface, then Progress, then Coach; preserve capability via progressive disclosure rather than deleting functionality.
+
+## 2026-09-24 AI/Data Validation Bundle v1 — MERGED / POST-MERGE GREEN
+- PRODUCT PR #246 merged to main as `75249fd04b2b60e643e27937c53f4cbea53f3d1a`.
+- Merge preserved the Design release already on main; PR #246 merge parents are `eee151ee...` and exact AI/Data head `165289da...`.
+- Exact-head Release Gate #1849 / `35939942308`: FULL GREEN.
+- Post-merge Release Gate #1851 / `35941173457`: FULL GREEN.
+- Pages #868 / `35941172498`: SUCCESS.
+- Event Envelope #1905 / `35941173535`: SUCCESS.
+- Production Coach Activation #37 was SKIPPED by the explicit activation guard; no new Function deployment is claimed.
+- Follow-up PRODUCT PR #248 `Harden Intelligence quality and remaining AI/Data gaps v2` is IN PROGRESS; keep it separate until exact-head and post-merge evidence are complete.
