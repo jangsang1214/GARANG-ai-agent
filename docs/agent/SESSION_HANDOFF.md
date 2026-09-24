@@ -10,14 +10,16 @@
 - Food / Running / Personal Performance Intelligence approved scope is complete. Keep Body Model v5 visual acceptance separate; current release-integrity GREEN does not resolve that P3 design-quality track.
 - Highest-value next product action after the separate Body visual gate is external activation/retention + 2/4/8-week longitudinal validation, not another Food feature expansion.
 
-## Latest Design / Product handoff — Body Model v5 remediation — 2026-09-25
-- PRODUCT current main is `047ccb839447b6c54a1b381d39cb887cac9c8bc9`; current-main Gate #1982 + Pages #881 are GREEN.
-- Founder real-device screenshot review rejected Body Model v4 as below the explicit anatomy reference minimum. Treat realism/proportion/muscle-surface quality as INSUFFICIENT, not partial/reached.
-- PR #261 is CLOSED / UNMERGED after main advanced. Successor PR #262 is OPEN / MERGEABLE and carries the Body v5 remediation on the newer baseline.
-- PR #262 exact head `6bc643f965cef244a64c163a82fd8f148683f5eb`; Release Gate #1981 / `36029644905` FULL GREEN.
-- Later main delta is only the non-overlapping Today planner lifecycle repair; current-main Gate #1982 is FULL GREEN.
-- Do not merge #262 without Founder approval. After merge/deploy, require a fresh real-phone screenshot before changing Body realism to REACHED.
-- Current Body status table: 3-view structure REACHED; interaction REACHED; proportions INSUFFICIENT; visual realism INSUFFICIENT; reference-minimum compliance INSUFFICIENT.
+## Latest Design / Product handoff — Body Model v5 release — 2026-09-25
+- PRODUCT current main: `7b5032418b49a43ea4504f7566542591ad783b60`.
+- Founder-approved PR #262 is MERGED. Exact-head Gate #1981 / `36029644905`: FULL GREEN.
+- Pages #882 / `36031260217`: SUCCESS; live v5 runtime asset fetch succeeded.
+- Post-merge Gate #1983 / `36031262125`: final same-SHA run FULL GREEN across core-build-rules, browser-webkit, final verify, Golden Path complete journey, authenticated Coach/Real LLM, recovery, Settings touch, button health, and mobile stability.
+- Two earlier same-SHA WebKit attempts timed out at different waits and both prior failure points passed on the final run without code or timeout changes. Keep TD-015 at MONITOR; do not normalize a repeated same-location failure as flakiness.
+- Body v5 technical structure is VERIFIED: continuous silhouette, FRONT/SIDE/BACK, 260×520 anatomy canvas, revised muscle overlays, preserved interaction.
+- Visual acceptance is still OPEN. v4 was rejected on a real phone; v5 must be reviewed on a fresh deployed real-device screenshot before proportions/realism/reference-minimum compliance can move from INSUFFICIENT to REACHED.
+- Current Body status: structure REACHED; interaction REACHED; v5 technical implementation REACHED; proportions/visual realism/reference-minimum compliance INSUFFICIENT pending real-device acceptance.
+- Next: Founder real-phone screenshot of deployed v5. If accepted, update the status table; if rejected, iterate against the same reference floor rather than adding unrelated features.
 
 ## Latest Command Center handoff — PRODUCT PR #259 — 2026-09-24
 - PRODUCT main: `0da445691dc7c4107f6491d45461450f465327ed`.
