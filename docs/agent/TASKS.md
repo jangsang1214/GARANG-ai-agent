@@ -489,3 +489,18 @@ Next slices:
 - Workout execution: remove default horizontal-density / advanced-tool overload while preserving one-tap access to advanced capabilities.
 - Progress: lead with change -> GARANG interpretation -> detail instead of metric dashboard density.
 - Coach: lead with one interpretation + one recommended action; keep conversation and provenance secondary.
+
+## Closed P4 — Intelligence Quality Hardening v2 production activation
+Status: PRODUCT SOURCE / WEB / PRODUCTION BACKEND VERIFIED GREEN
+Owner: AI Data / Release QA
+Goal: activate the merged code-addressable AI/Data maturity improvements in production without expanding autonomous authority.
+- PR #246 validation bundle: merged; post-merge Gate #1851 FULL GREEN; Pages #868 SUCCESS. ✅
+- PR #248 Intelligence Quality Hardening v2: merged as `26f01ad829afeeaca0deb97d0159915c315f758c`. ✅
+- exact-head Gate #1855: FULL GREEN. ✅
+- post-merge Gate #1856: FULL GREEN. ✅
+- Pages #869: SUCCESS. ✅
+- Production activation #38 skipped by the explicit fail-closed phrase boundary. Expected / safe. ✅
+- Trigger-only PR #250 merged as current PRODUCT main `788aa81135fe996d28e29beaa4c578541ee77453`. ✅
+- Production Coach Activation #39 / `35944749134`: deploy + public boundaries + authenticated nutrition lookup + Meal Scan + Coach + bounded-write + cleanup all PASS. ✅
+- Post-activation Release Gate #1860 / `35944749127`: FULL GREEN; Pages #870 SUCCESS. ✅
+- External longitudinal effectiveness, native provider integration and proprietary food-data scale remain evidence/infrastructure gaps and must not be labeled solved.
