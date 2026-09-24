@@ -253,3 +253,12 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Changed-file overlap with active Design PR #247 is empty as observed at this head.
 - PR #246 is NOT merged and NOT released; no production activation is claimed.
 - External 2/4/8-week prospective recommendation usefulness remains the highest-value unverified AI/Data evidence.
+
+## 2026-09-24 AI/Data Validation Bundle v1 — MERGED / POST-MERGE GREEN
+- PRODUCT PR #246 merged to main as `75249fd04b2b60e643e27937c53f4cbea53f3d1a`.
+- Merge preserved active Design PR #247: PR #246 merge parents are Design merge `eee151ee...` and exact AI/Data head `165289da...`.
+- Post-merge GARANG Release Gate #1851 / `35941173457`: FULL GREEN across core-build-rules, browser-webkit and final verify.
+- Pages #868 / `35941172498`: SUCCESS.
+- Founder OS Event Envelope #1905 / `35941173535`: SUCCESS.
+- Production Coach Activation #37 was SKIPPED by the explicit activation-phrase guard; no new production Function deployment is claimed.
+- PRODUCT follow-up PR #248 is separate in-progress AI/Data hardening and must not be conflated with this closed #246 release.
