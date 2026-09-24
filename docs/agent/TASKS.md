@@ -489,3 +489,24 @@ Next slices:
 - Workout execution: remove default horizontal-density / advanced-tool overload while preserving one-tap access to advanced capabilities.
 - Progress: lead with change -> GARANG interpretation -> detail instead of metric dashboard density.
 - Coach: lead with one interpretation + one recommended action; keep conversation and provenance secondary.
+
+## Closed P4 — AI/Data Validation Bundle v1
+Status: PRODUCT PR #246 MERGED / SOURCE+WEB+POST-MERGE CI GREEN
+- Merge `75249fd04b2b60e643e27937c53f4cbea53f3d1a`. ✅
+- Exact-head Gate #1849 and post-merge Gate #1851 FULL GREEN. ✅
+- Pages #868 SUCCESS. ✅
+- Production Activation #37 SKIPPED by explicit activation boundary; no backend activation claim.
+
+## Active P4 — Intelligence Quality Hardening v2
+Status: PRODUCT PR #248 OPEN / VERIFICATION IN PROGRESS
+Owner: AI Data / Release QA
+Goal: close remaining code-addressable partial/insufficient AI/Data gaps without expanding autonomous authority.
+- measured replay calibration → Recommendation Quality;
+- calibration/quality/execution/data-quality drift observability → Agent Context/Coach telemetry;
+- deterministic sparse-vector hybrid retrieval for Memory and Coach grounding;
+- longitudinal missing/range/outlier diagnostics;
+- robust physiological baseline + cross-signal disagreement confidence penalty;
+- Meal Scan identity vs portion confidence + confirmation policy;
+- 1,500+ deterministic synthetic stress assertions;
+- Food corpus coverage diagnostics, brand/product retrieval, current data.go.kr endpoint + CSV import.
+- No production Function deployment is included without separate Founder production activation approval.
