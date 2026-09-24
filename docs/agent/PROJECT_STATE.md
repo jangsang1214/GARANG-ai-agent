@@ -1,5 +1,18 @@
 # GARANG Project State
 
+## 2026-09-25 Nutrition Capture & Food Identity v1 — SOURCE/WEB GREEN, PRODUCTION BACKEND ACTIVATION PENDING
+- PRODUCT current main is `8dd2d46e6b1008230c2847c1bbff722e9bd180c3`.
+- PRODUCT PR #271 `Add Nutrition Capture & Food Identity v1` is MERGED. Exact head `95e567a0e3a589dd41afa54e76aa1308527f0b2c`.
+- PR exact-head Release Gate #2000 / `36043340582`: FULL GREEN after correcting one missing barcode-schema module export; core-build-rules, browser-webkit, and final verify all SUCCESS.
+- Post-merge Pages #887 / `36044158503`: SUCCESS.
+- Post-merge Release Gate #2001 / `36044160665`: final same-SHA result FULL GREEN. First WebKit attempt failed only the existing Workout superset lifecycle timing assertion at browser-webkit-regression line 387; identical-main-SHA rerun passed that point and the entire 36-step WebKit job without code or timeout changes.
+- Nutrition Capture now supports GTIN/EAN/UPC checksum validation, canonical GTIN-14 identity, local BarcodeDetector when available, authenticated Vision barcode fallback for browsers without native detection, visible GTIN/report-number extraction from nutrition labels, K-FIND report-number exact identity before fuzzy name resolution, and GTIN-aware source-backed nutrition lookup.
+- Unknown barcodes remain fail-closed: no similar-product substitution. Source-backed web candidates remain estimated + confirmation-required.
+- A barcode becomes a local exact match only after user confirmation. Confirmed mappings are bounded to 300 per account; misses and manual corrections are bounded learning signals. Client food-identity state is intentionally excluded from the frozen server Intelligence transport contract.
+- Real Meal Scan WebKit verification covered the full barcode loop: first unknown GTIN -> source-backed candidate -> user confirmation -> persisted mapping -> same GTIN second lookup resolved locally without another web lookup.
+- Production Coach Activation #41 was SKIPPED by the explicit approval boundary. The PRODUCT source/web release is GREEN, but the new server-side barcode Vision mode and GTIN-aware production nutrition lookup are NOT yet claimed live.
+- Next release task requiring Founder approval: exact-SHA Firebase Function `api` production activation + live authenticated Meal Scan/Coach regression. No production deploy should occur without explicit approval.
+
 ## 2026-09-25 Command Center reconciliation — K-FIND Food DB release complete
 - PRODUCT current main is `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
 - PR #260 `Ingest official K-FIND Korean food corpus` is MERGED. The released corpus includes 2,502 K-FIND general-food rows and 266,415 K-FIND processed-food rows; processed metadata records 266,110 branded rows across 19,770 unique brands. Existing USDA supplemental remains 5,721 rows and GARANG canonical remains 500 rows, for 275,138 materialized local lookup records across the four layers.
