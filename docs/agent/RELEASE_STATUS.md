@@ -286,3 +286,13 @@ Decision: PRODUCT WEB/RUNTIME VERIFIED GREEN.
 - Founder OS Event Envelope #1870: SUCCESS.
 - Verified behavior includes round-aware grouped progression, round-boundary rest semantics, group/round state visibility, and grouped-session recovery.
 - Native Health/Watch connectivity remains outside this web/runtime release.
+
+## 2026-09-24 AI/Data Validation Bundle v1 — exact-head GREEN, unreleased
+Decision: SOURCE / CI GREEN; PR OPEN / NOT MERGED / NOT RELEASED.
+- PRODUCT PR #246 head: `165289dabd593f8af3d209dc01ff633d4faa447e`.
+- GARANG Release Gate #1849 / `35939942308`: FULL GREEN.
+- core-build-rules: SUCCESS, including new recommendation-quality calibration/observability benchmark in the core test chain.
+- browser-webkit: SUCCESS across the complete browser/mobile/Golden Path tail.
+- final verify: SUCCESS.
+- No production deployment or activation is claimed for PR #246.
+- The evaluation additions are diagnostic-only and do not expand LLM mutation authority.
