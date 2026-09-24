@@ -1737,6 +1737,86 @@
       "status": "planned",
       "ownerWorkstream": "design-brand",
       "repositoryId": "product"
+    },
+    {
+      "id": "TASK-AI-DATA-VALIDATION-BUNDLE-V1",
+      "kind": "task",
+      "title": "Close code-addressable AI/Data validation and coverage gaps",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR246-AI-DATA",
+      "kind": "change",
+      "title": "PRODUCT PR #246 validation bundle merged as 75249fd",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1851-AI-DATA",
+      "kind": "verification",
+      "title": "PR #246 post-merge Release Gate #1851 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-INTELLIGENCE-QUALITY-HARDENING-V2",
+      "kind": "initiative",
+      "title": "Close remaining code-addressable Intelligence quality gaps",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR248",
+      "kind": "change",
+      "title": "PRODUCT PR #248 Intelligence Quality Hardening v2 merged as 26f01ad",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR248-GATE-1855",
+      "kind": "verification",
+      "title": "PR #248 exact-head Release Gate #1855 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1856-AI-DATA",
+      "kind": "verification",
+      "title": "PR #248 post-merge Release Gate #1856 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-869-AI-DATA",
+      "kind": "release",
+      "title": "Pages #869 releases PRODUCT main 26f01ad",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-AI-DATA-HARDENING-V2-PROD-ACTIVATION",
+      "kind": "task",
+      "title": "Activate Intelligence Quality Hardening v2 production API and live smokes",
+      "status": "in_progress",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR250-ACTIVATION",
+      "kind": "change",
+      "title": "PRODUCT PR #250 trigger-only production activation checkpoint",
+      "status": "in_progress",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -3044,6 +3124,61 @@
       "from": "TASK-PROGRESS-COACH-SIMPLIFICATION",
       "to": "INIT-UI-BRAND-SIMPLIFICATION-V1",
       "kind": "supports"
+    },
+    {
+      "from": "TASK-AI-DATA-VALIDATION-BUNDLE-V1",
+      "to": "INIT-INTELLIGENCE-HARDENING-V1",
+      "kind": "advances"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR246-AI-DATA",
+      "to": "TASK-AI-DATA-VALIDATION-BUNDLE-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1851-AI-DATA",
+      "to": "CHANGE-PRODUCT-PR246-AI-DATA",
+      "kind": "verifies"
+    },
+    {
+      "from": "INIT-INTELLIGENCE-QUALITY-HARDENING-V2",
+      "to": "INIT-INTELLIGENCE-HARDENING-V1",
+      "kind": "advances"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR248",
+      "to": "INIT-INTELLIGENCE-QUALITY-HARDENING-V2",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR248-GATE-1855",
+      "to": "CHANGE-PRODUCT-PR248",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1856-AI-DATA",
+      "to": "CHANGE-PRODUCT-PR248",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-869-AI-DATA",
+      "to": "CHANGE-PRODUCT-PR248",
+      "kind": "releases"
+    },
+    {
+      "from": "TASK-AI-DATA-HARDENING-V2-PROD-ACTIVATION",
+      "to": "CHANGE-PRODUCT-PR248",
+      "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR250-ACTIVATION",
+      "to": "TASK-AI-DATA-HARDENING-V2-PROD-ACTIVATION",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "VERIFY-PRODUCT-MAIN-1856-AI-DATA",
+      "kind": "depends-on"
     }
   ]
 }
