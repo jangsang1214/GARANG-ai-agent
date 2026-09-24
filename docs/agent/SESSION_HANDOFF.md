@@ -1,3 +1,12 @@
+## Latest product handoff — Workout commercial UX v4 — 2026-09-24
+- PRODUCT main: `fc06d2b39c328fafa2c3755a54210163e3873744` after PR #253.
+- PR #253 exact-head Gate #1899 / `35966021302`: FULL GREEN.
+- Post-merge main Gate #1900 / `35967056029`: FULL GREEN.
+- Pages `35967055339`: SUCCESS; live web deployment verified at `https://jangsang1214.github.io/-fitmind-ai/`.
+- Workout UX changes: explicit session Start/Finish lifecycle, magnifier → existing Exercise Library search, search result → Log return, dark input/current-set visual system, Classical Body Model v2 proportions.
+- Existing set completion/rest timer/PR/group execution and canonical workout state/write ownership were preserved by regression coverage.
+- Next product action: verify the new live workout screen visually on a real phone and only then address residual visual polish; do not reopen the execution architecture without evidence of a functional regression.
+
 ## Latest AI/Data handoff — 2026-09-24
 - Latest verified production Coach backend before PR #236: `12a362d0ba80c1e78bf27cf5b6253306ade18033` via Activation #32 / `35841937362`; deploy + Meal Scan + Coach + bounded write + cleanup all PASS.
 - PRODUCT PR #236 Personalized Response Learning v2 is merged as `9c22843eb81d8397c4cfda3fc7294a632eecadf0`.

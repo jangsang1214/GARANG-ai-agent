@@ -1,5 +1,14 @@
 # GARANG Project State
 
+## 2026-09-24 Workout commercial UX v4 reconciliation
+- PRODUCT PR #253 is MERGED to `main` as `fc06d2b39c328fafa2c3755a54210163e3873744`.
+- PR #253 exact-head Release Gate #1899 / `35966021302`: FULL GREEN before merge.
+- Post-merge main Release Gate #1900 / `35967056029`: FULL GREEN; `core-build-rules`, `browser-webkit`, and final `verify` all SUCCESS.
+- GitHub Pages deployment run `35967055339`: SUCCESS for the same main SHA. Live URL: `https://jangsang1214.github.io/-fitmind-ai/`.
+- Live asset fetch verified the deployed workout execution v2.1 and Classical Body Model v2 files.
+- Workout flow now uses explicit READY → 운동 시작 → LIVE SESSION → 운동 종료 semantics, existing Exercise Library search via a Log magnifier, direct return to Log after selection, unified dark execution controls, and rebuilt classical-athletic body proportions.
+- No backend/Firebase Function/data-schema/secret/billing change was part of PR #253.
+
 Last updated: 2026-09-24
 
 ## Current objective

@@ -1,5 +1,14 @@
 # GARANG Release Status
 
+## Workout commercial UX v4 — PR #253
+Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
+- PRODUCT PR #253 merged to `main` as `fc06d2b39c328fafa2c3755a54210163e3873744`.
+- Exact-head Release Gate #1899 / `35966021302`: FULL GREEN.
+- Post-merge Release Gate #1900 / `35967056029`: FULL GREEN; core/build, Firestore, Commercial Core, WebKit/Golden Path, authenticated Coach/Real LLM paths, mobile regression, button health, runtime stability and final verify all passed.
+- Pages deployment `35967055339`: SUCCESS for the same main SHA.
+- Live deployed assets were fetched and verified after deployment.
+- Scope is frontend/runtime/test only; no Firebase Function production activation was required or performed.
+
 Last updated: 2026-09-24
 
 ## Overall decision
