@@ -398,3 +398,15 @@ Decision: PRODUCT SOURCE / WEB / RELEASE VERIFIED GREEN.
 - Founder OS Event Envelope #2003: SUCCESS.
 - Release classification: GREEN for source/web/runtime regression scope. No production Firebase Function change was introduced by the design PR; Meal Scan PR #252 changes client-side supplemental retrieval behavior only.
 
+## Body Model v6 sharp/aligned — PR #272 — 2026-09-25
+Decision: GREEN / MERGED / WEB DEPLOYED / TECHNICALLY VERIFIED / HUMAN VISUAL ACCEPTANCE REQUIRED.
+- Exact head: `1a2154edfe5b349a013da91c98ac80d7008117b0`.
+- Exact-head Release Gate #2004: FULL GREEN.
+- Merge commit / PRODUCT main: `c09e00530b325f68e0cf90bfb16de97331a10b12`.
+- Post-merge Release Gate #2005: FULL GREEN across core-build-rules, browser-webkit, final verify.
+- Pages #888: SUCCESS.
+- Six male/female FRONT/SIDE/BACK dense mesh assets render without intentional Gaussian blur.
+- v6 muscle highlight/hit zones use the same native 720×1100 coordinate space as the mesh rather than a scaled v5 map.
+- Whole-model CSS filter is removed; exact mesh assets are explicitly precached for offline/PWA safety.
+- Functional/regression release status is VERIFIED GREEN. Subjective visual quality still requires fresh Founder real-device review.
+
