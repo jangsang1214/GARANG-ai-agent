@@ -1,5 +1,26 @@
 # GARANG Tasks
 
+## Active P2 — Reconcile and verify current PRODUCT main after PR #256/#257
+Status: IN PROGRESS / EXACT-HEAD GREEN / POST-MERGE EVIDENCE PENDING
+Owner: Command Center / Release QA
+Goal: restore one canonical current-main release baseline before further product expansion.
+- PRODUCT main is `0dafa0aab536548b1b80964d108228ee819155c6`. ✅
+- PR #256 exact-head Gate #1921 FULL GREEN. ✅
+- PR #257 exact-head Gate #1924 FULL GREEN. ✅
+- PR #257 merged successfully to current main. ✅
+- Observe post-merge Release Gate and Pages on `0dafa0aa...`. ⏳
+- Keep PR #254 out of merge path until stale-base conflicts and overlapping Food scope are reconciled. ⏳
+
+## Active P4 — Korean official Food DB scale v1
+Status: PIPELINE MERGED / EXTERNAL SOURCE ACCESS BLOCKED
+Owner: AI Data / Release QA
+Goal: expand Korean brand/product coverage without weakening canonical precedence or provenance.
+- Korean normalization, deterministic aliases, full DATA.GO.KR pagination builder, choseong/latin sharding and lazy lookup are merged in PR #257. ✅
+- Exact-head Release Gate #1924 FULL GREEN. ✅
+- Actual official Korean corpus generation is blocked because `DATA_GO_KR_SERVICE_KEY` is not connected to the repository workflow. ⛔ external
+- Until generation + audit completes, verified local lookup coverage remains 6,221 rows. Do not claim 100k+ Korean coverage.
+- After source access is available: run builder -> audit verified/provenance counts -> verify app lookup/performance -> post-merge release evidence -> update coverage result.
+
 Last updated: 2026-09-24
 
 ## Active P4/P5 — Personalized Response Learning v2

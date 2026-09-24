@@ -1961,6 +1961,62 @@
       "status": "done",
       "ownerWorkstream": "design-brand",
       "repositoryId": "product"
+    },
+    {
+      "id": "TASK-KOREAN-OFFICIAL-CORPUS-SCALE-V1",
+      "kind": "task",
+      "title": "Generate and audit Korean official supplemental Food DB corpus",
+      "status": "in_progress",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR256-WORKOUT-ANATOMY-V3",
+      "kind": "change",
+      "title": "PRODUCT PR #256 merged workout session controls and Real Human Anatomy v3",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR256-GATE-1921",
+      "kind": "verification",
+      "title": "PR #256 exact-head Release Gate #1921 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR257-KOREAN-FOOD-SCALE",
+      "kind": "change",
+      "title": "PRODUCT PR #257 merged Korean official corpus scaling infrastructure",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR257-GATE-1924",
+      "kind": "verification",
+      "title": "PR #257 exact-head Release Gate #1924 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CONSTRAINT-DATA-GO-KR-SERVICE-KEY",
+      "kind": "constraint",
+      "title": "DATA.GO.KR service key is required to generate the official Korean supplemental corpus",
+      "status": "active",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-VERIFY-PRODUCT-MAIN-0DAFA0AA",
+      "kind": "task",
+      "title": "Observe post-merge Release Gate and Pages for PRODUCT main 0dafa0aa",
+      "status": "in_progress",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -3457,6 +3513,41 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-DESIGN-SIMPLIFICATION-V2-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-KOREAN-OFFICIAL-CORPUS-SCALE-V1",
+      "to": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR257-KOREAN-FOOD-SCALE",
+      "to": "TASK-KOREAN-OFFICIAL-CORPUS-SCALE-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR257-GATE-1924",
+      "to": "CHANGE-PRODUCT-PR257-KOREAN-FOOD-SCALE",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-KOREAN-OFFICIAL-CORPUS-SCALE-V1",
+      "to": "CONSTRAINT-DATA-GO-KR-SERVICE-KEY",
+      "kind": "blocked-by"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR256-GATE-1921",
+      "to": "CHANGE-PRODUCT-PR256-WORKOUT-ANATOMY-V3",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-VERIFY-PRODUCT-MAIN-0DAFA0AA",
+      "to": "CHANGE-PRODUCT-PR257-KOREAN-FOOD-SCALE",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "TASK-VERIFY-PRODUCT-MAIN-0DAFA0AA",
       "kind": "depends-on"
     }
   ]

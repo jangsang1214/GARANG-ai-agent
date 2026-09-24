@@ -1,3 +1,12 @@
+## Latest Command Center handoff — PRODUCT #256/#257 — 2026-09-24
+- PRODUCT main: `0dafa0aab536548b1b80964d108228ee819155c6`.
+- PR #256 is MERGED; exact-head Release Gate #1921 / `35973077815` FULL GREEN. Scope is workout UI/runtime/tests only; no Firebase Functions change.
+- PR #257 is MERGED; exact-head Release Gate #1924 / `35976213135` FULL GREEN. It prepares Korean official Food DB scaling, Korean normalization, sharded loading and Korean-first supplemental lookup.
+- Actual Korean official corpus generation is externally blocked by missing `DATA_GO_KR_SERVICE_KEY`; do not claim 100k+ Korean rows are live. Current verified local coverage remains 6,221 rows.
+- PR #254 is still open and non-mergeable on stale base `fc06d2b...`; reconcile or supersede its overlapping Food changes before considering its unique Running/Personal Performance scope.
+- Immediate Release/QA action: observe post-merge main Gate + Pages for `0dafa0aa...`; until observed, current-main release readiness is YELLOW even though #257 exact-head CI is GREEN.
+- Strategic highest-value product action after release evidence closes: run Anonymous External Validation + 2/4/8-week longitudinal measurement rather than expanding primary surfaces.
+
 ## Latest Engineering handoff — Release integrity / WIF — 2026-09-24
 - PRODUCT main: `8e6733cf4878484b23fe75765b01988b8b0b4794` after PR #255.
 - PR #255 exact-head Gate #1910: FULL GREEN; Pages #875 SUCCESS after merge.
