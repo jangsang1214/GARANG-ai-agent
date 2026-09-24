@@ -6,7 +6,7 @@ Decision: CURRENT RELEASE TECHNICALLY GREEN / BODY REALISM ACCEPTANCE YELLOW.
 - Founder real-device screenshot review shows Body Model v4 does NOT meet the explicit anatomy reference minimum. This is a product/design acceptance failure, not a CI/runtime failure.
 - Released v4 FRONT/SIDE/BACK switching and muscle interaction remain VERIFIED functional.
 - Released v4 human proportions, anatomical realism and reference-minimum visual quality are NOT ACCEPTED.
-- Replacement PRODUCT PR #261 is OPEN. Exact-head Release Gate #1972 is running.
+- Replacement PRODUCT PR #261 is OPEN. Exact-head Release Gate #1973 is running.
 - Do not mark Body realism GREEN until #261 (or successor) is merged/deployed and a new real-device screenshot is visually accepted.
 
 
