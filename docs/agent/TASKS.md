@@ -471,3 +471,17 @@ Verification:
 - Post-merge Gate #1834 / `35919023081`: FULL GREEN; Pages #866 SUCCESS.
 Remaining Workout external/native gap:
 - Apple Health / Health Connect / Watch provider integration.
+
+## Active P4 — AI/Data Validation Bundle v1
+Status: PRODUCT PR #246 OPEN / EXACT-HEAD SOURCE+CI GREEN / NOT MERGED
+Owner: AI Data / Release QA
+Goal: close immediately code-addressable Food matching, signal-ingestion and Intelligence evaluation gaps without inventing external evidence or expanding autonomous authority.
+- Food Intelligence v2: bilingual alias/typo-aware matching, broad-query fail-closed behavior, ambiguity margin and combined Vision+DB confidence. ✅ PR
+- Health Signal Import v1: explicit JSON/CSV/Apple Health XML import into canonical physiologicalSignals with stable IDs/dedupe. ✅ PR
+- Intelligence Validation Harness v2: 150+ deterministic policy/workout/nutrition/data-quality/food/grouped-execution safety assertions. ✅ PR
+- Confidence Calibration v1: ECE/MCE/Brier/log-loss and systematic over/under-confidence diagnostics. ✅ PR
+- Intelligence Observability v1: recommendation-quality/calibration/execution/data-quality drift diagnostics. ✅ PR
+- Recommendation Quality benchmark: grounding/relevance, safety, actionability, personalization, calibration and longitudinal drift. ✅ PR
+- Release Gate #1849 / `35939942308`: FULL GREEN. ✅
+- Merge/release remains approval-gated; do not claim PRODUCT main or production capability before merge/release evidence.
+- Real longitudinal calibration/uplift remains external evidence work, not a code-completion claim.
