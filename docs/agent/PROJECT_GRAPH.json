@@ -1806,7 +1806,7 @@
       "id": "TASK-AI-DATA-HARDENING-V2-PROD-ACTIVATION",
       "kind": "task",
       "title": "Activate Intelligence Quality Hardening v2 production API and live smokes",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
     },
@@ -1814,8 +1814,48 @@
       "id": "CHANGE-PRODUCT-PR250-ACTIVATION",
       "kind": "change",
       "title": "PRODUCT PR #250 trigger-only production activation checkpoint",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR250-GATE-1858",
+      "kind": "verification",
+      "title": "PR #250 exact-head Release Gate #1858 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-AI-DATA-HARDENING-ACTIVATION-39",
+      "kind": "release",
+      "title": "Production Coach Activation #39 SUCCESS on main 788aa811",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1860-AI-DATA",
+      "kind": "verification",
+      "title": "Post-activation Release Gate #1860 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-870-AI-DATA",
+      "kind": "release",
+      "title": "Pages #870 SUCCESS on main 788aa811",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-INTELLIGENCE-QUALITY-HARDENING-V2-PRODUCTION-GREEN",
+      "kind": "result",
+      "title": "Intelligence Quality Hardening v2 source web and production GREEN",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     }
   ],
@@ -3178,6 +3218,46 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "VERIFY-PRODUCT-MAIN-1856-AI-DATA",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR250-GATE-1858",
+      "to": "CHANGE-PRODUCT-PR250-ACTIVATION",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-AI-DATA-HARDENING-ACTIVATION-39",
+      "to": "TASK-AI-DATA-HARDENING-V2-PROD-ACTIVATION",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1860-AI-DATA",
+      "to": "CHANGE-PRODUCT-PR250-ACTIVATION",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-870-AI-DATA",
+      "to": "CHANGE-PRODUCT-PR250-ACTIVATION",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-INTELLIGENCE-QUALITY-HARDENING-V2-PRODUCTION-GREEN",
+      "to": "RELEASE-AI-DATA-HARDENING-ACTIVATION-39",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-INTELLIGENCE-QUALITY-HARDENING-V2-PRODUCTION-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-1860-AI-DATA",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-INTELLIGENCE-QUALITY-HARDENING-V2-PRODUCTION-GREEN",
+      "to": "RELEASE-PAGES-870-AI-DATA",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-INTELLIGENCE-QUALITY-HARDENING-V2-PRODUCTION-GREEN",
       "kind": "depends-on"
     }
   ]
