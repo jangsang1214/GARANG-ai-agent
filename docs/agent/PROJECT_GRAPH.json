@@ -1678,7 +1678,7 @@
       "id": "INIT-UI-BRAND-SIMPLIFICATION-V1",
       "kind": "initiative",
       "title": "Simplify GARANG primary surfaces into a premium low-cognitive-load Personal Performance OS",
-      "status": "active",
+      "status": "done",
       "ownerWorkstream": "design-brand",
       "repositoryId": "product"
     },
@@ -1726,7 +1726,7 @@
       "id": "TASK-WORKOUT-UX-SIMPLIFICATION",
       "kind": "task",
       "title": "Simplify Workout execution while preserving advanced capabilities through progressive disclosure",
-      "status": "planned",
+      "status": "done",
       "ownerWorkstream": "design-brand",
       "repositoryId": "product"
     },
@@ -1734,7 +1734,7 @@
       "id": "TASK-PROGRESS-COACH-SIMPLIFICATION",
       "kind": "task",
       "title": "Simplify Progress and Coach around interpretation and one next action",
-      "status": "planned",
+      "status": "done",
       "ownerWorkstream": "design-brand",
       "repositoryId": "product"
     },
@@ -1904,6 +1904,62 @@
       "title": "Effective local Food DB lookup coverage reaches 6,221 rows",
       "status": "done",
       "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR252-MEAL-SCAN-LATENCY",
+      "kind": "change",
+      "title": "PRODUCT PR #252 fixes supplemental Meal Scan latency and merges as 384f9446",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR252-GATE-1891",
+      "kind": "verification",
+      "title": "PR #252 exact-head Release Gate #1891 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR249-DESIGN-V2",
+      "kind": "change",
+      "title": "PRODUCT PR #249 merges GARANG Design Simplification v2 as main 3b21f20a",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR249-GATE-1895",
+      "kind": "verification",
+      "title": "PR #249 exact-head Release Gate #1895 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1896-DESIGN-V2",
+      "kind": "verification",
+      "title": "Post-merge PRODUCT main Release Gate #1896 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-873-DESIGN-V2",
+      "kind": "release",
+      "title": "Pages #873 SUCCESS on PRODUCT main 3b21f20a",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-DESIGN-SIMPLIFICATION-V2-GREEN",
+      "kind": "result",
+      "title": "Body Workout Progress Coach and P5 simplification released GREEN",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
       "repositoryId": "product"
     }
   ],
@@ -3341,6 +3397,66 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-FOOD-DB-6221-VERIFIED-COVERAGE",
+      "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR252-MEAL-SCAN-LATENCY",
+      "to": "INIT-FOOD-DB-SCALE-V1",
+      "kind": "stabilizes"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR252-GATE-1891",
+      "to": "CHANGE-PRODUCT-PR252-MEAL-SCAN-LATENCY",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR249-DESIGN-V2",
+      "to": "INIT-UI-BRAND-SIMPLIFICATION-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR249-DESIGN-V2",
+      "to": "TASK-WORKOUT-UX-SIMPLIFICATION",
+      "kind": "delivers"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR249-DESIGN-V2",
+      "to": "TASK-PROGRESS-COACH-SIMPLIFICATION",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR249-GATE-1895",
+      "to": "CHANGE-PRODUCT-PR249-DESIGN-V2",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1896-DESIGN-V2",
+      "to": "CHANGE-PRODUCT-PR249-DESIGN-V2",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-873-DESIGN-V2",
+      "to": "CHANGE-PRODUCT-PR249-DESIGN-V2",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-DESIGN-SIMPLIFICATION-V2-GREEN",
+      "to": "VERIFY-PRODUCT-PR249-GATE-1895",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-DESIGN-SIMPLIFICATION-V2-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-1896-DESIGN-V2",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-DESIGN-SIMPLIFICATION-V2-GREEN",
+      "to": "RELEASE-PAGES-873-DESIGN-V2",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-DESIGN-SIMPLIFICATION-V2-GREEN",
       "kind": "depends-on"
     }
   ]
