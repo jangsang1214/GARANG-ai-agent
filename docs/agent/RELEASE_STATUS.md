@@ -318,3 +318,14 @@ Decision: PRODUCT SOURCE / WEB / RELEASE VERIFIED GREEN.
 - Food DB effective local lookup coverage is 6,221 rows: 500 curated Korean canonical + 5,721 verified USDA supplemental.
 - Supplemental rows are lazy-loaded and preserve canonical-first lookup precedence.
 - No Firebase Functions deployment was required for this Food DB expansion; it is a web/data release.
+
+## 2026-09-24 Design Simplification v2 / Meal Scan closure
+- PRODUCT PR #252 `Fix Meal Scan supplemental corpus latency`: MERGED as `384f9446737c341d0d3a841abd596acfbd153496`.
+- PR #252 exact-head Release Gate #1891: FULL GREEN.
+- PRODUCT PR #249 `Apply GARANG luxury design simplification v2 across P1-P5`: MERGED as current PRODUCT main `3b21f20a0df1dd483475f7b84b517ae03fb13537`.
+- PR #249 exact-head Release Gate #1895: FULL GREEN.
+- Post-merge Release Gate #1896 on exact current main: FULL GREEN.
+- Pages #873 on exact current main: SUCCESS.
+- Founder OS Event Envelope #2003: SUCCESS.
+- Release classification: GREEN for source/web/runtime regression scope. No production Firebase Function change was introduced by the design PR; Meal Scan PR #252 changes client-side supplemental retrieval behavior only.
+
