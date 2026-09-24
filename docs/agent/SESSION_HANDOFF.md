@@ -246,3 +246,12 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Superset/Circuit is no longer partial for web execution: grouped sessions auto-advance A1 -> A2 -> A1 by round (and through all circuit members), rest at round boundaries, surface current group/round, and recover active grouped identity.
 - Workout's remaining honest platform gap is native Apple Health / Health Connect / Watch integration.
 - Product-level priority remains external activation / longitudinal validation rather than more Workout feature construction.
+
+## Latest AI/Data handoff — PR #246 validation bundle
+- PRODUCT main remains `5174df812bf4e0e4ca71a159e8ab4ac7e0fd84db`; PR #246 is not merged.
+- PRODUCT PR #246 head is `165289dabd593f8af3d209dc01ff633d4faa447e`, mergeable, with exact-head Release Gate #1849 / `35939942308` FULL GREEN.
+- PR #246 adds Food Intelligence v2, explicit Health signal import + schema v9 physiologicalSignals, Intelligence Validation Harness v2, Confidence Calibration v1, Intelligence Observability v1 and recommendation-quality benchmark coverage.
+- Core and browser regression gates both pass; active Design PR #247 has no changed-file overlap with PR #246 at the observed heads.
+- Food corpus scale remains materially limited: observed canonical corpus has 500 rows, 232 verified-provenance rows, 265 estimated rows, only 5 rows with aliases, and no serving-normalization rows.
+- Hybrid semantic retrieval is deterministic lexical/semantic-feature retrieval, not an embedding/vector index.
+- Highest-value remaining AI/Data evidence is still external 2/4/8-week longitudinal validation; technical evaluation readiness must not be described as proven recommendation uplift.
