@@ -410,3 +410,16 @@ Decision: GREEN / MERGED / WEB DEPLOYED / TECHNICALLY VERIFIED / HUMAN VISUAL AC
 - Whole-model CSS filter is removed; exact mesh assets are explicitly precached for offline/PWA safety.
 - Functional/regression release status is VERIFIED GREEN. Subjective visual quality still requires fresh Founder real-device review.
 
+## Body Model v7 muscular/remap — PR #273 — 2026-09-25
+Decision: GREEN / MERGED / WEB DEPLOYED / TECHNICALLY VERIFIED / HUMAN VISUAL ACCEPTANCE REQUIRED.
+- Exact head: `231a759b70139f8c4e00a25d01b4877ad63d6951`.
+- Exact-head Release Gate #2007: FULL GREEN.
+- Merge commit / PRODUCT main: `dcc4fa2ac589f4f4b158b4f5c1941b472ffec645`.
+- Post-merge Release Gate #2008: FULL GREEN across core-build-rules, browser-webkit, final verify.
+- Pages #889: SUCCESS.
+- Male FRONT/SIDE/BACK mesh mass increased with bounded silhouette; FRONT/BACK verified inside x 23.4..696.6.
+- Polygon contrast reduced to suppress wireframe dominance; v7 anatomy definition layer added.
+- Chest/shoulder/arm/core/leg hit/highlight geometry tightened; non-selected zones are visually transparent and duplicate legacy SVG layers are removed.
+- PWA cache rotated to app-shell v30 and six Body assets remain explicitly precached.
+- Functional/release integrity is VERIFIED GREEN. Subjective visual approval requires fresh Founder real-device review.
+
