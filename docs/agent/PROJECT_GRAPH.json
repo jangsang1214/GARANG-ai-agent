@@ -1857,6 +1857,54 @@
       "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-FOOD-DB-SCALE-V1",
+      "kind": "initiative",
+      "title": "Expand verified food coverage without weakening canonical Korean lookup",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-FOOD-DB-USDA-SUPPLEMENTAL-V1",
+      "kind": "task",
+      "title": "Build and integrate verified USDA supplemental food corpus",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR251-FOOD-DB-SCALE",
+      "kind": "change",
+      "title": "PRODUCT PR #251 Food DB Scale v1 merged",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR251-GATE-1876",
+      "kind": "verification",
+      "title": "PR #251 exact-head Release Gate #1876 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1896-FOOD-DB",
+      "kind": "verification",
+      "title": "Current main Release Gate #1896 FULL GREEN with Food DB expansion preserved",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-FOOD-DB-6221-VERIFIED-COVERAGE",
+      "kind": "result",
+      "title": "Effective local Food DB lookup coverage reaches 6,221 rows",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -3258,6 +3306,41 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-INTELLIGENCE-QUALITY-HARDENING-V2-PRODUCTION-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-FOOD-DB-SCALE-V1",
+      "to": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "kind": "advances"
+    },
+    {
+      "from": "TASK-FOOD-DB-USDA-SUPPLEMENTAL-V1",
+      "to": "INIT-FOOD-DB-SCALE-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR251-FOOD-DB-SCALE",
+      "to": "TASK-FOOD-DB-USDA-SUPPLEMENTAL-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR251-GATE-1876",
+      "to": "CHANGE-PRODUCT-PR251-FOOD-DB-SCALE",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1896-FOOD-DB",
+      "to": "CHANGE-PRODUCT-PR251-FOOD-DB-SCALE",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-FOOD-DB-6221-VERIFIED-COVERAGE",
+      "to": "VERIFY-PRODUCT-MAIN-1896-FOOD-DB",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-FOOD-DB-6221-VERIFIED-COVERAGE",
       "kind": "depends-on"
     }
   ]
