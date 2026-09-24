@@ -2041,6 +2041,70 @@
       "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR260-KFIND-CORPUS",
+      "kind": "change",
+      "title": "PRODUCT PR #260 merged official K-FIND general and processed Food corpora",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR260-GATE-1971",
+      "kind": "verification",
+      "title": "PR #260 exact-head Release Gate #1971 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-FOOD-DB-275138-COVERAGE",
+      "kind": "result",
+      "title": "Materialized local Food lookup coverage reaches 275,138 records",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR264-TODAY-LIFECYCLE",
+      "kind": "change",
+      "title": "PRODUCT PR #264 repairs post-merge Today planner consolidation race",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR264-GATE-1977",
+      "kind": "verification",
+      "title": "PR #264 exact-head Release Gate #1977 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-881-KFIND",
+      "kind": "release",
+      "title": "Pages #881 deploys PRODUCT main 047ccb83 with K-FIND corpus and lifecycle repair",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-1982-KFIND",
+      "kind": "verification",
+      "title": "Current main Release Gate #1982 FULL GREEN after K-FIND release and lifecycle repair",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-KFIND-RELEASE-GREEN",
+      "kind": "result",
+      "title": "K-FIND Food DB expansion is merged, deployed and current-main verified GREEN",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -3592,6 +3656,56 @@
     {
       "from": "RESULT-KOREAN-FOOD-SCALE-PIPELINE-GREEN",
       "to": "RELEASE-PAGES-877-KOREAN-FOOD",
+      "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR260-KFIND-CORPUS",
+      "to": "TASK-KOREAN-OFFICIAL-CORPUS-SCALE-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR260-GATE-1971",
+      "to": "CHANGE-PRODUCT-PR260-KFIND-CORPUS",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-FOOD-DB-275138-COVERAGE",
+      "to": "VERIFY-PRODUCT-PR260-GATE-1971",
+      "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR264-TODAY-LIFECYCLE",
+      "to": "CHANGE-PRODUCT-PR260-KFIND-CORPUS",
+      "kind": "stabilizes"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR264-GATE-1977",
+      "to": "CHANGE-PRODUCT-PR264-TODAY-LIFECYCLE",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-881-KFIND",
+      "to": "CHANGE-PRODUCT-PR264-TODAY-LIFECYCLE",
+      "kind": "releases"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-1982-KFIND",
+      "to": "CHANGE-PRODUCT-PR264-TODAY-LIFECYCLE",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-KFIND-RELEASE-GREEN",
+      "to": "RESULT-FOOD-DB-275138-COVERAGE",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-KFIND-RELEASE-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-1982-KFIND",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-KFIND-RELEASE-GREEN",
+      "to": "RELEASE-PAGES-881-KFIND",
       "kind": "depends-on"
     }
   ]
