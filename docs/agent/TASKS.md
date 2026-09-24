@@ -622,3 +622,23 @@ Remaining acceptance:
 
 Do not reopen renderer architecture or add another Body version unless the fresh deployed visual evidence still fails.
 
+## Active P3 — Body Model v7 deployed visual acceptance
+Status: TECHNICALLY DONE / DEPLOYED / FOUNDER VISUAL ACCEPTANCE REQUIRED
+
+Verified:
+- PR #273 exact-head Gate #2007 FULL GREEN.
+- PRODUCT main `dcc4fa2ac589f4f4b158b4f5c1941b472ffec645`.
+- Post-merge Gate #2008 FULL GREEN.
+- Pages #889 SUCCESS.
+- Male FRONT/SIDE/BACK muscular geometry upgrade is deployed without canvas clipping.
+- v7 muscle-definition layer is present; mesh contrast is reduced.
+- Chest and related interaction/highlight zones are remapped; non-selected zones no longer render as floating silhouettes.
+- Duplicate legacy Body SVG layers are removed at mount.
+
+Remaining acceptance:
+- Fresh real-device screenshot confirms the male physique is sufficiently muscular for the Founder target.
+- Selected chest/shoulder/arm/core/leg overlays visually sit on the intended anatomy in FRONT/SIDE/BACK.
+- Founder confirms muscle definition is visible without the wireframe dominating.
+
+Do not create another Body architecture/version unless the new deployed screenshot shows a concrete residual defect.
+
