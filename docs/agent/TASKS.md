@@ -6,11 +6,13 @@ Owner: Product / Design / Engineering / Release QA
 Goal: make the released body map meet or exceed the Founder-provided anatomy reference minimum instead of merely functioning.
 - Real-device review of released v4: FAIL for realism/proportions/limb-hand-foot quality. ✅ observed
 - Keep v4 structural accomplishments separate: FRONT/SIDE/BACK and muscle interaction remain REACHED. ✅
-- Replace segmented mannequin construction with continuous human silhouette. ✅ in PR #261
-- Redraw FRONT/SIDE/BACK anatomy and muscle overlays on a taller 260×520 human proportion system. ✅ in PR #261
-- Remove legacy rendered hand/foot part geometry. ✅ in PR #261
-- Exact-head Release Gate #1973 / `36026810946`: ⏳ running
-- Merge: ⏳ Founder approval required after GREEN
+- Replace segmented mannequin construction with continuous human silhouette. ✅ in successor PR #262
+- Redraw FRONT/SIDE/BACK anatomy and muscle overlays on a taller 260×520 human proportion system. ✅ in PR #262
+- Remove legacy rendered hand/foot part geometry. ✅ in PR #262
+- PR #261: CLOSED / UNMERGED after main advanced. ✅ reconciled
+- PR #262 exact head `6bc643f965cef244a64c163a82fd8f148683f5eb`: Release Gate #1981 FULL GREEN. ✅
+- Current main `047ccb83...` differs only by non-overlapping Today lifecycle repair and has Gate #1982 FULL GREEN. ✅
+- Merge: ⏳ Founder approval required
 - Final acceptance: ⏳ deployed real-device screenshot must meet the reference minimum before realism is marked REACHED
 
 ### Current commercial-parity status snapshot
