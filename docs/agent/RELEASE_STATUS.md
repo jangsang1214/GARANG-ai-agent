@@ -382,3 +382,18 @@ Decision: PRODUCT SOURCE / WEB / RELEASE VERIFIED GREEN.
 - Founder OS Event Envelope #2003: SUCCESS.
 - Release classification: GREEN for source/web/runtime regression scope. No production Firebase Function change was introduced by the design PR; Meal Scan PR #252 changes client-side supplemental retrieval behavior only.
 
+## 2026-09-25 Korean Food DB Scale v2 — GREEN
+Decision: PRODUCT SOURCE / WEB / RELEASE VERIFIED GREEN.
+- PRODUCT PR #260 exact head: `a49341c4339ac2e6241b9f979a5d08cc0eaefe39`.
+- PR #260 Release Gate #1971 / `36026150645`: FULL GREEN.
+- PR #260 merged as `e1e8a5c31830c4a51076509cb0cb91ecc024920a`.
+- K-FIND 음식: 19,617 raw -> 2,502 verified gram-basis records.
+- K-FIND 가공식품: 316,734 raw -> 266,415 verified gram-basis records.
+- Processed brand coverage: 266,110 rows / 19,770 unique brands; report-number provenance rate 100%; incomplete-core 0; invalid 0.
+- With canonical 500 + USDA 5,721, current materialized local records across layers = 275,138. This is not a global unique-food count.
+- #260 post-merge Gate #1974 failed only the Today compact Planner utility due a render race; Pages #880 succeeded. Release remained RED until the regression was corrected.
+- PRODUCT PR #264 exact head: `f12fcb29e9ad411e1671b3177ba825d1a96cd523`; Gate #1977 / `36029006404`: FULL GREEN.
+- PR #264 merged as current PRODUCT main `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
+- Pages #881 / `36029804809`: SUCCESS.
+- Post-merge Release Gate #1982 / `36029807445`: FULL GREEN.
+- No Firebase Functions production deployment was required for this corpus/data/web release.
