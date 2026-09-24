@@ -7,7 +7,7 @@
 - PR #257 adds Korean official-corpus build/sharding/retrieval infrastructure and preserves lookup precedence: canonical Korean -> Korean official supplemental -> USDA supplemental -> source-backed lookup.
 - The actual Korean official supplemental corpus is NOT generated yet. `DATA_GO_KR_SERVICE_KEY` is not available to the repository workflow; current verified local lookup coverage therefore remains 6,221 rows (500 curated canonical + 5,721 USDA supplemental) until official Korean rows are generated and audited.
 - PRODUCT PR #254 remains OPEN / NON-MERGEABLE from stale base `fc06d2b...`; it overlaps Food retrieval and also carries Running/Personal Performance scope. Do not merge it without rebase/scope reconciliation against current main.
-- Current release evidence after #257: merge is VERIFIED and exact-head gate is GREEN; post-merge main Gate/Pages evidence is not yet observed in this session, so release classification is YELLOW until that evidence is observed.
+- Current release evidence after #257: post-merge Release Gate #1925 / `35981031534` is FULL GREEN (`core-build-rules`, `browser-webkit`, `verify` all SUCCESS), and Pages #877 / `35981030735` is SUCCESS (`build`, `report-build-status`, `deploy`). Current source/web release is GREEN.
 
 ## 2026-09-24 Engineering P2 release-integrity / WIF reconciliation
 - PRODUCT PR #255 `Add production WIF readiness audit` merged as current main `8e6733cf4878484b23fe75765b01988b8b0b4794`.

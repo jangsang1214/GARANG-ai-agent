@@ -1,14 +1,15 @@
 # GARANG Tasks
 
 ## Active P2 — Reconcile and verify current PRODUCT main after PR #256/#257
-Status: IN PROGRESS / EXACT-HEAD GREEN / POST-MERGE EVIDENCE PENDING
+Status: DONE / CURRENT-MAIN VERIFIED GREEN
 Owner: Command Center / Release QA
 Goal: restore one canonical current-main release baseline before further product expansion.
 - PRODUCT main is `0dafa0aab536548b1b80964d108228ee819155c6`. ✅
 - PR #256 exact-head Gate #1921 FULL GREEN. ✅
 - PR #257 exact-head Gate #1924 FULL GREEN. ✅
 - PR #257 merged successfully to current main. ✅
-- Observe post-merge Release Gate and Pages on `0dafa0aa...`. ⏳
+- Post-merge Release Gate #1925 / `35981031534`: FULL GREEN. ✅
+- Pages #877 / `35981030735`: build/report/deploy SUCCESS. ✅
 - Keep PR #254 out of merge path until stale-base conflicts and overlapping Food scope are reconciled. ⏳
 
 ## Active P4 — Korean official Food DB scale v1
