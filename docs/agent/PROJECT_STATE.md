@@ -254,12 +254,14 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Two regressions were caught before merge and fixed without weakening behavior: hidden Planner shortcut touch target, then conflicting Today CSS ownership. A diagnostic-only boot assertion was added without extending its timeout.
 - Next design scope: simplify Workout execution surface, then Progress, then Coach; preserve capability via progressive disclosure rather than deleting functionality.
 
-## 2026-09-24 AI/Data Validation + Intelligence Quality Hardening v2 — SOURCE/WEB GREEN, PRODUCTION ACTIVATION PENDING
+## 2026-09-24 AI/Data Validation + Intelligence Quality Hardening v2 — PRODUCTION GREEN
 - PRODUCT PR #246 merged as `75249fd04b2b60e643e27937c53f4cbea53f3d1a`. Post-merge Release Gate #1851 / `35941173457`: FULL GREEN. Pages #868: SUCCESS.
 - PRODUCT PR #248 `Harden Intelligence quality and remaining AI/Data gaps v2` merged as current PRODUCT main `26f01ad829afeeaca0deb97d0159915c315f758c`.
 - PR #248 exact-head Release Gate #1855 / `35943417146`: FULL GREEN.
 - PR #248 post-merge Release Gate #1856 / `35943855044`: FULL GREEN. Pages #869 / `35943854066`: SUCCESS.
 - v2 adds measured chronological-replay confidence calibration, Intelligence drift observability, deterministic sparse semantic-vector reranking, longitudinal range/missing-attribution/outlier diagnostics, robust physiological baselines, readiness disagreement confidence handling, Meal Scan identity-vs-portion confidence boundaries, 1,500+ deterministic synthetic stress assertions, Food coverage/provenance diagnostics, brand/product retrieval, and current data.go.kr/CSV adapter hardening.
 - Deterministic GARANG Decision remains the judgment owner; no automatic workout progression or nutrition-target mutation was introduced.
-- Production Coach Activation #38 on merge was SKIPPED because the fail-closed activation phrase was absent. Trigger-only PRODUCT PR #250 is open to activate the already verified server revision without runtime-code changes.
+- Initial Production Coach Activation #38 on PR #248 merge was safely SKIPPED because the fail-closed activation phrase was absent. Trigger-only PR #250 then merged as current PRODUCT main `788aa81135fe996d28e29beaa4c578541ee77453` and intentionally activated the verified server revision without runtime-code changes.
+- Production Coach Activation #39 / `35944749134`: SUCCESS. Firebase Function `api` deploy PASS; public Coach / Meal Scan / nutrition lookup boundaries PASS; authenticated nutrition lookup / Meal Scan / live Coach / bounded autonomous-write smokes PASS; disposable identity and temporary credential cleanup PASS.
+- Post-activation Release Gate #1860 / `35944749127`: FULL GREEN. Pages #870 / `35944748708`: SUCCESS.
 - External/proprietary food-corpus scale, native Health/Watch provider authorization/sync, and prospective 2/4/8-week recommendation uplift remain outside code-only completion.
