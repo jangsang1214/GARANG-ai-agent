@@ -8,7 +8,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main observed: `5174df812bf4e0e4ca71a159e8ab4ac7e0fd84db`.
+- Canonical PRODUCT main observed: `eee151ee8fe021a5ce43cbaa65c57ba878c19201`.
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## Latest AI/Data evidence — Personalized Response Learning v2
@@ -243,3 +243,13 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #244 merged as `5174df812bf4e0e4ca71a159e8ab4ac7e0fd84db`; post-merge Release Gate #1834 / `35919023081`: FULL GREEN. Pages #866 / `35919022366`: SUCCESS. Founder OS Event Envelope #1870: SUCCESS.
 - Real grouped execution is now release-verified: explicit group launch, A1 -> A2 -> A1 round-aware auto-advance for supersets, equivalent all-member circuit progression, rest only at round boundaries, visible group/round state, and active grouped identity recovery.
 - The remaining Workout parity limitation is native Health/Watch provider connectivity, not web Workout execution.
+
+## 2026-09-24 UI / Brand Simplification v1 — Today + Body Model GREEN
+- PRODUCT current main is VERIFIED at `eee151ee8fe021a5ce43cbaa65c57ba878c19201` after PR #247, `Simplify Today and rebuild the GARANG body model`.
+- Today default hierarchy is now state -> GARANG judgment -> one primary next action -> one quiet Coach explanation entry. The full Training / Recovery / Nutrition plan remains in the underlying contract but is internalized; only a compact Planner utility entry remains visible.
+- Legacy Today dashboard density (snapshot, status card, duplicated plan card, quick-record grid, section headers) is internalized from the primary Today surface; canonical Record / Planner / Coach routes remain available.
+- The latest visual anatomy owner (`garang-polish-v3`) now renders a smoother premium performance silhouette with separated torso/limb/pelvis geometry, male/female profile-aware proportions, quieter neutral muscle regions, and restrained GARANG jade/onggi interaction states. Existing muscle keys and click behavior are preserved.
+- PR #247 exact-head `dbc7210b15c6c411c2ab5a0f3e75a2a4f8b8d03f`; Release Gate #1845 FULL GREEN.
+- PR #247 merged as `eee151ee8fe021a5ce43cbaa65c57ba878c19201`; post-merge Release Gate #1850 FULL GREEN; Pages #867 SUCCESS; Founder OS Event Envelope #1901 SUCCESS.
+- Two regressions were caught before merge and fixed without weakening behavior: hidden Planner shortcut touch target, then conflicting Today CSS ownership. A diagnostic-only boot assertion was added without extending its timeout.
+- Next design scope: simplify Workout execution surface, then Progress, then Coach; preserve capability via progressive disclosure rather than deleting functionality.
