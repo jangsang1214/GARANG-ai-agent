@@ -277,3 +277,16 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - The first WebKit attempt exposed a real performance regression from scanning all 5,721 supplemental rows. It was fixed with a prebuilt exact/prefix candidate index; no timeout was increased.
 - Current PRODUCT main later advanced through Design PR #249 to `3b21f20a0df1dd483475f7b84b517ae03fb13537`; Pages #873 SUCCESS and post-merge Release Gate #1896 / `35961274355`: FULL GREEN, proving the Food DB expansion survives the current combined main.
 - Remaining food-data gap is Korean/local/brand corpus breadth beyond the current canonical 500; USDA expansion improves broad verified coverage but does not replace K-FIND/brand-specific Korean data.
+
+## 2026-09-24 Design Simplification v2 + Meal Scan release closure
+- PRODUCT main is VERIFIED at `3b21f20a0df1dd483475f7b84b517ae03fb13537`.
+- Real Meal Scan supplemental-corpus regression was traced to the expanded 5,721-row USDA corpus path. PRODUCT PR #252 prefilters Meal Scan supplemental candidates before fuzzy resolution while preserving canonical GARANG DB priority, USDA-before-web fallback, provenance, and confirmation rules.
+- PR #252 exact-head Release Gate #1891: FULL GREEN; PR #252 merged as `384f9446737c341d0d3a841abd596acfbd153496`.
+- UI / Brand Simplification v2 PRODUCT PR #249 is MERGED. Scope includes classical Greco-Roman-inspired body-model proportions, current-set-first Workout execution, progressive-disclosure advanced Workout utilities, quieter Progress/Coach surfaces, and P5 low-density cleanup without replacing canonical state/write ownership.
+- PR #249 exact-head Release Gate #1895: FULL GREEN.
+- Post-merge PRODUCT Release Gate #1896 on `3b21f20a...`: FULL GREEN across core-build-rules, browser-webkit, and final verify.
+- Pages #873: SUCCESS on exact current main `3b21f20a...`.
+- Founder OS Event Envelope #2003: SUCCESS.
+- Current release status for this scope: VERIFIED GREEN. Subjective visual quality of the classical body model still requires Founder/human judgment; automated evidence verifies integration, interaction, layout contracts, and regression safety rather than aesthetics.
+- Immediate product priority returns to external/longitudinal validation and measured activation/retention unless Founder requests another design iteration.
+
