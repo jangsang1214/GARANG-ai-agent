@@ -1,5 +1,15 @@
 # GARANG Release Status
 
+## Body Model v4 visual acceptance correction / v5 remediation — 2026-09-25
+Decision: CURRENT RELEASE TECHNICALLY GREEN / BODY REALISM ACCEPTANCE YELLOW.
+- PRODUCT current main remains `0da445691dc7c4107f6491d45461450f465327ed`; Gate #1967 and Pages #879 remain valid GREEN release evidence.
+- Founder real-device screenshot review shows Body Model v4 does NOT meet the explicit anatomy reference minimum. This is a product/design acceptance failure, not a CI/runtime failure.
+- Released v4 FRONT/SIDE/BACK switching and muscle interaction remain VERIFIED functional.
+- Released v4 human proportions, anatomical realism and reference-minimum visual quality are NOT ACCEPTED.
+- Replacement PRODUCT PR #261 is OPEN. Exact-head Release Gate #1973 is running.
+- Do not mark Body realism GREEN until #261 (or successor) is merged/deployed and a new real-device screenshot is visually accepted.
+
+
 ## Essential-first UX + Body Model v4 — PR #259 — 2026-09-24
 Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
 - PRODUCT PR #259 merged as current main `0da445691dc7c4107f6491d45461450f465327ed`.

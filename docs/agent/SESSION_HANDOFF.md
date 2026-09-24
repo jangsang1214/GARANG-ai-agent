@@ -1,3 +1,11 @@
+## Latest Design / Product handoff — Body Model v5 remediation — 2026-09-25
+- PRODUCT released main remains `0da445691dc7c4107f6491d45461450f465327ed`; PR #259 release itself is technically GREEN.
+- Founder real-device screenshot review rejected Body Model v4 as below the explicit anatomy reference minimum. Treat realism/proportion/muscle-surface quality as INSUFFICIENT, not partial/reached.
+- PRODUCT PR #261 is OPEN. It moves the model from segmented body parts to a continuous silhouette and dedicated FRONT/SIDE/BACK v5 anatomy geometry while preserving interactive muscle selection.
+- Current PR #261 exact head at creation: `213d563a9f31ce598a192bcfb36ddbc6c1503143`; Gate #1973 is running.
+- Do not merge #261 without exact-head GREEN and Founder approval. After merge/deploy, require a fresh real-phone screenshot before changing Body realism to REACHED.
+- Current Body status table: 3-view structure REACHED; interaction REACHED; proportions INSUFFICIENT; visual realism INSUFFICIENT; reference-minimum compliance INSUFFICIENT.
+
 ## Latest Command Center handoff — PRODUCT PR #259 — 2026-09-24
 - PRODUCT main: `0da445691dc7c4107f6491d45461450f465327ed`.
 - PR #259 `Ship essential-first UX and Body Model v4` is MERGED after Founder approval.

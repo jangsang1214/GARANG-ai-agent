@@ -1,5 +1,40 @@
 # GARANG Tasks
 
+## Active P3 — Body Model v5 reference-minimum remediation
+Status: IN PROGRESS / VISUAL ACCEPTANCE REQUIRED
+Owner: Product / Design / Engineering / Release QA
+Goal: make the released body map meet or exceed the Founder-provided anatomy reference minimum instead of merely functioning.
+- Real-device review of released v4: FAIL for realism/proportions/limb-hand-foot quality. ✅ observed
+- Keep v4 structural accomplishments separate: FRONT/SIDE/BACK and muscle interaction remain REACHED. ✅
+- Replace segmented mannequin construction with continuous human silhouette. ✅ in PR #261
+- Redraw FRONT/SIDE/BACK anatomy and muscle overlays on a taller 260×520 human proportion system. ✅ in PR #261
+- Remove legacy rendered hand/foot part geometry. ✅ in PR #261
+- Exact-head Release Gate #1973 / `36026810946`: ⏳ running
+- Merge: ⏳ Founder approval required after GREEN
+- Final acceptance: ⏳ deployed real-device screenshot must meet the reference minimum before realism is marked REACHED
+
+### Current commercial-parity status snapshot
+| Area | Status |
+| --- | --- |
+| Workout essential logging | REACHED |
+| Advanced workout progressive disclosure | REACHED |
+| Workout session lifecycle | REACHED |
+| Progress essential-first IA | REACHED |
+| Nutrition entry UX | REACHED |
+| Body FRONT/SIDE/BACK structure | REACHED |
+| Body muscle interaction | REACHED |
+| Body human proportions | INSUFFICIENT |
+| Body visual realism | INSUFFICIENT |
+| Body reference-minimum compliance | INSUFFICIENT |
+| Exercise search/discovery | PARTIAL |
+| Progress data depth | PARTIAL |
+| Meal Scan coverage/accuracy | PARTIAL |
+| Coach/personalization effectiveness evidence | PARTIAL |
+| Native Health / Watch | INSUFFICIENT |
+| External activation evidence | INSUFFICIENT |
+| D7/D30 longitudinal retention evidence | INSUFFICIENT |
+
+
 ## Active P2 — Reconcile and verify current PRODUCT main after PR #256/#257
 Status: DONE / CURRENT-MAIN VERIFIED GREEN
 Owner: Command Center / Release QA
