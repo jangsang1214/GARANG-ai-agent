@@ -1,3 +1,15 @@
+## Latest Command Center handoff — K-FIND Food DB release complete — 2026-09-25
+- PRODUCT current main: `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
+- PR #260 is MERGED. Released local Food lookup layers: 500 GARANG canonical + 2,502 K-FIND general + 266,415 K-FIND processed + 5,721 USDA supplemental = 275,138 materialized records.
+- K-FIND processed corpus: 266,110 branded rows / 19,770 unique brands; verified provenance and no automatic canonical overwrite.
+- PR #260 exact-head Gate #1971 FULL GREEN; Pages #880 succeeded after merge.
+- The first post-merge main Gate #1974 exposed a real Today lifecycle race on the #259 + #260 combined tree. Three same-SHA attempts failed at different Today/Coach readiness points, so it was not dismissed as a one-off flake.
+- PR #264 fixed the concrete Product Consolidation mount race without timeout inflation. Exact-head Gate #1977 FULL GREEN.
+- PR #264 merged as current main `047ccb83...`; Pages #881 SUCCESS; post-merge Gate #1982 FULL GREEN across core-build-rules, browser-webkit and final verify.
+- PR #263 is closed unmerged as superseded by the smaller #264 fix.
+- Food / Running / Personal Performance Intelligence approved scope is complete. Keep Body Model v5 visual acceptance separate; current release-integrity GREEN does not resolve that P3 design-quality track.
+- Highest-value next product action after the separate Body visual gate is external activation/retention + 2/4/8-week longitudinal validation, not another Food feature expansion.
+
 ## Latest Design / Product handoff — Body Model v5 remediation — 2026-09-25
 - PRODUCT released main remains `0da445691dc7c4107f6491d45461450f465327ed`; PR #259 release itself is technically GREEN.
 - Founder real-device screenshot review rejected Body Model v4 as below the explicit anatomy reference minimum. Treat realism/proportion/muscle-surface quality as INSUFFICIENT, not partial/reached.

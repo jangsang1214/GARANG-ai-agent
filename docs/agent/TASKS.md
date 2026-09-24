@@ -47,15 +47,19 @@ Goal: restore one canonical current-main release baseline before further product
 - Pages #877 / `35981030735`: build/report/deploy SUCCESS. ✅
 - Keep PR #254 out of merge path until stale-base conflicts and overlapping Food scope are reconciled. ⏳
 
-## Active P4 — Korean official Food DB scale v1
-Status: PIPELINE MERGED / EXTERNAL SOURCE ACCESS BLOCKED
+## Closed P4 — Korean official Food DB scale v1
+Status: DONE / VERIFIED GREEN
 Owner: AI Data / Release QA
 Goal: expand Korean brand/product coverage without weakening canonical precedence or provenance.
-- Korean normalization, deterministic aliases, full DATA.GO.KR pagination builder, choseong/latin sharding and lazy lookup are merged in PR #257. ✅
-- Exact-head Release Gate #1924 FULL GREEN. ✅
-- Actual official Korean corpus generation is blocked because `DATA_GO_KR_SERVICE_KEY` is not connected to the repository workflow. ⛔ external
-- Until generation + audit completes, verified local lookup coverage remains 6,221 rows. Do not claim 100k+ Korean coverage.
-- After source access is available: run builder -> audit verified/provenance counts -> verify app lookup/performance -> post-merge release evidence -> update coverage result.
+- PR #257 infrastructure remains the Korean-first sharding/retrieval foundation. ✅
+- PR #260 acquired and materialized official K-FIND data without requiring the previously blocked DATA.GO.KR service-key path. ✅
+- Released K-FIND general corpus: 2,502 rows. ✅
+- Released K-FIND processed corpus: 266,415 rows; 266,110 branded rows / 19,770 unique brands. ✅
+- Existing USDA supplemental: 5,721 rows; GARANG canonical: 500 rows. ✅
+- Total materialized local lookup records across canonical + K-FIND general + K-FIND processed + USDA: 275,138. ✅
+- PR #260 exact-head Gate #1971 FULL GREEN. ✅
+- Post-merge lifecycle regression was repaired by PR #264; exact-head Gate #1977 FULL GREEN, Pages #881 SUCCESS, current-main Gate #1982 FULL GREEN. ✅
+- No automatic canonical overwrite; provenance/verified-only guardrails preserved. ✅
 
 Last updated: 2026-09-24
 

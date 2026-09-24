@@ -97,16 +97,15 @@ Previous severity: LOW / P4
 Area: personalization / AI·Data
 Resolution: PRODUCT now durably persists recommendation resolution evidence for accepted, rejected, dismissed and ignored recommendations through the canonical action-data boundary. User Performance Model v1 consumes this evidence, and PR #166 additionally measures resolution coverage in Longitudinal Learning Metrics v1. No separate truth store was introduced.
 
-## TD-015 — WebKit lifecycle timing is nondeterministic
-Status: MONITOR / NON-BLOCKING
+## TD-015 — WebKit / Today lifecycle timing
+Status: MONITOR / NON-BLOCKING AFTER 2026-09-25 REPAIR
 Previous severity: MEDIUM / P2
 Area: frontend runtime / release integrity
-Root cause: active `garang-today-action-flow-v1` could remount `#garangTodayFlow` after lifecycle events even when its derived markup had not changed, allowing WebKit route CTA identity to change during a touch sequence.
-Mitigation: PRODUCT PR #177 added deterministic render identity and no-op DOM preservation without timeout inflation or a new retry owner.
-Evidence nuance: exact-head Gate #1562 passed and same-SHA WebKit rerun passed, but immediate post-merge main Gate #1563 later reproduced the Today DOM identity assertion once.
-Current evidence: subsequent main Release Gates #1592 (`56ff9c78...`), #1600 (`08cfa18e...`) and #1601 (current main `40e83c32...`) all passed on attempt 1. Latest #1601 explicitly passes Today action flow plus the complete Golden Path / authenticated Coach / Real LLM / mobile WebKit suite.
-Current risk: no present release blocker, but recurrence would indicate lifecycle ownership is still nondeterministic.
-Recommended action: keep the identity regression; if it recurs on current-path code, reopen as active P2 and trace ownership. Do not hide it with broad retries or timeout increases.
+Root cause lineage: Today has multiple bounded presentation/orchestration layers. PR #177 fixed same-key DOM replacement, but the #259 + #260 combined tree later exposed a second mount-order race where Product Consolidation could observe `#garangTodayFlow` before its nested track subtree was ready.
+Recurrence evidence: post-merge Gate #1974 on `e1e8a5c...` failed across three same-SHA attempts at different Today readiness points: Coach proposal readiness, recovery modal readiness, and compact Planner utility readiness. This was treated as active P2 rather than masked by retries.
+Repair: PRODUCT PR #264 delays `data-gpc-today=1` until required Today nodes exist and observes only added descendants relevant to `#garangTodayFlow` / `.gtf-track-visual`. No timeout inflation.
+Verification: PR #264 exact-head Gate #1977 FULL GREEN; merged main `047ccb839447b6c54a1b381d39cb887cac9c8bc9`; Pages #881 SUCCESS; post-merge Gate #1982 FULL GREEN across the complete WebKit/Golden Path/authenticated Coach/Real LLM/mobile-stability tail and final verify.
+Current risk: non-blocking, but keep regression coverage. Any recurrence should again be traced to a concrete lifecycle owner rather than normalized as expected flakiness.
 
 ## TD-016 — Commercial documentation and monetization artifacts are stale
 Severity: LOW / P6
