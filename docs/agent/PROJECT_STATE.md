@@ -253,3 +253,13 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - PR #247 merged as `eee151ee8fe021a5ce43cbaa65c57ba878c19201`; post-merge Release Gate #1850 FULL GREEN; Pages #867 SUCCESS; Founder OS Event Envelope #1901 SUCCESS.
 - Two regressions were caught before merge and fixed without weakening behavior: hidden Planner shortcut touch target, then conflicting Today CSS ownership. A diagnostic-only boot assertion was added without extending its timeout.
 - Next design scope: simplify Workout execution surface, then Progress, then Coach; preserve capability via progressive disclosure rather than deleting functionality.
+
+## 2026-09-24 AI/Data Validation + Intelligence Quality Hardening v2 — SOURCE/WEB GREEN, PRODUCTION ACTIVATION PENDING
+- PRODUCT PR #246 merged as `75249fd04b2b60e643e27937c53f4cbea53f3d1a`. Post-merge Release Gate #1851 / `35941173457`: FULL GREEN. Pages #868: SUCCESS.
+- PRODUCT PR #248 `Harden Intelligence quality and remaining AI/Data gaps v2` merged as current PRODUCT main `26f01ad829afeeaca0deb97d0159915c315f758c`.
+- PR #248 exact-head Release Gate #1855 / `35943417146`: FULL GREEN.
+- PR #248 post-merge Release Gate #1856 / `35943855044`: FULL GREEN. Pages #869 / `35943854066`: SUCCESS.
+- v2 adds measured chronological-replay confidence calibration, Intelligence drift observability, deterministic sparse semantic-vector reranking, longitudinal range/missing-attribution/outlier diagnostics, robust physiological baselines, readiness disagreement confidence handling, Meal Scan identity-vs-portion confidence boundaries, 1,500+ deterministic synthetic stress assertions, Food coverage/provenance diagnostics, brand/product retrieval, and current data.go.kr/CSV adapter hardening.
+- Deterministic GARANG Decision remains the judgment owner; no automatic workout progression or nutrition-target mutation was introduced.
+- Production Coach Activation #38 on merge was SKIPPED because the fail-closed activation phrase was absent. Trigger-only PRODUCT PR #250 is open to activate the already verified server revision without runtime-code changes.
+- External/proprietary food-corpus scale, native Health/Watch provider authorization/sync, and prospective 2/4/8-week recommendation uplift remain outside code-only completion.
