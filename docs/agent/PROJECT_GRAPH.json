@@ -1965,8 +1965,8 @@
     {
       "id": "TASK-KOREAN-OFFICIAL-CORPUS-SCALE-V1",
       "kind": "task",
-      "title": "Generate and audit Korean official supplemental Food DB corpus",
-      "status": "in_progress",
+      "title": "Generate, integrate and audit official K-FIND Korean Food DB corpora",
+      "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     },
@@ -2005,8 +2005,8 @@
     {
       "id": "CONSTRAINT-DATA-GO-KR-SERVICE-KEY",
       "kind": "constraint",
-      "title": "DATA.GO.KR service key is required to generate the official Korean supplemental corpus",
-      "status": "active",
+      "title": "DATA.GO.KR service-key path no longer blocks released Korean corpus after official K-FIND acquisition",
+      "status": "resolved",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     },
@@ -2037,7 +2037,7 @@
     {
       "id": "RESULT-KOREAN-FOOD-SCALE-PIPELINE-GREEN",
       "kind": "result",
-      "title": "Korean official Food DB scaling pipeline released GREEN; corpus generation remains source-access blocked",
+      "title": "Korean official Food DB scaling pipeline released GREEN; official K-FIND source acquisition resolved corpus generation",
       "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
@@ -3619,11 +3619,6 @@
       "kind": "verifies"
     },
     {
-      "from": "TASK-KOREAN-OFFICIAL-CORPUS-SCALE-V1",
-      "to": "CONSTRAINT-DATA-GO-KR-SERVICE-KEY",
-      "kind": "blocked-by"
-    },
-    {
       "from": "VERIFY-PRODUCT-PR256-GATE-1921",
       "to": "CHANGE-PRODUCT-PR256-WORKOUT-ANATOMY-V3",
       "kind": "verifies"
@@ -3707,6 +3702,11 @@
       "from": "RESULT-KFIND-RELEASE-GREEN",
       "to": "RELEASE-PAGES-881-KFIND",
       "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR260-KFIND-CORPUS",
+      "to": "CONSTRAINT-DATA-GO-KR-SERVICE-KEY",
+      "kind": "resolves"
     }
   ]
 }
