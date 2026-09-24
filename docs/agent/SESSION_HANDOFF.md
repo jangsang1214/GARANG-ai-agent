@@ -255,3 +255,10 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Food corpus scale remains materially limited: observed canonical corpus has 500 rows, 232 verified-provenance rows, 265 estimated rows, only 5 rows with aliases, and no serving-normalization rows.
 - Hybrid semantic retrieval is deterministic lexical/semantic-feature retrieval, not an embedding/vector index.
 - Highest-value remaining AI/Data evidence is still external 2/4/8-week longitudinal validation; technical evaluation readiness must not be described as proven recommendation uplift.
+
+## Latest AI/Data handoff — Validation Bundle v1 merged
+- PRODUCT PR #246 is merged as main `75249fd04b2b60e643e27937c53f4cbea53f3d1a`.
+- Exact-head Gate #1849 and post-merge Gate #1851 are FULL GREEN; Pages #868 is SUCCESS.
+- Confidence Calibration v1, Intelligence Observability v1, Food Intelligence v2, explicit Health Signal Import, schema v9 physiologicalSignals and the validation benchmark are now on PRODUCT main.
+- Production Activation #37 was skipped by the explicit activation-phrase guard; do not claim a new Functions deployment from #246.
+- Follow-up PRODUCT PR #248 is actively hardening measured calibration wiring, sparse-vector retrieval, Recovery confidence, Meal Scan portion confidence, Food ingestion and synthetic stress. Treat it separately until merged.
