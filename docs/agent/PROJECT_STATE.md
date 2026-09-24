@@ -371,3 +371,16 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Technical status is VERIFIED GREEN for sharp-vector rendering contract, native-coordinate muscle overlay contract, offline mesh availability, mobile WebKit regression, and Golden Path preservation.
 - Founder visual acceptance remains a human gate: a fresh deployed real-device screenshot must confirm that blur is gone and muscle overlays visually sit on the intended body regions before aesthetic realism/reference-minimum compliance is marked REACHED.
 
+## 2026-09-25 Body Model v7 muscular/remap reconciliation
+- Founder real-device screenshot of deployed Body v6 confirmed the mesh itself was materially improved, but exposed two remaining P3 visual defects: chest/highlight regions were oversized and visibly detached from the mannequin, and the male physique still lacked the requested muscular mass/definition.
+- PRODUCT PR #273 `Build Body v7 muscular model and anatomical zone remap` directly remediates that evidence.
+- Male FRONT/SIDE/BACK dense mesh geometry is warped toward a larger trained physique while keeping the 720×1100 canvas contract and preventing clipping. Verified bounds before CI: FRONT/BACK x 23.4..696.6, SIDE x 197.4..515.5.
+- Surface polygon contrast is reduced (luminance range 88 → 54.3) so mesh/wireframe noise recedes while a new v7 definition layer exposes pec, delt, arm, abdominal/oblique, quad/calf and posterior anatomy lines.
+- FRONT chest/shoulder/arm/core/leg zones were redrawn tighter to visible anatomy; SIDE/BACK zones were also remapped.
+- Non-selected hit zones are now visually transparent while remaining pointer-interactive, removing the floating dark silhouettes seen in the Founder screenshot.
+- Body renderer now removes duplicate legacy SVGs before mounting v7 and requires `data-garang-visual-revision="7"`.
+- PR #273 final exact head `231a759b70139f8c4e00a25d01b4877ad63d6951` passed Release Gate #2007 FULL GREEN across core-build-rules, browser-webkit, and final verify.
+- PR #273 merged as PRODUCT main `dcc4fa2ac589f4f4b158b4f5c1941b472ffec645`.
+- Pages #889 SUCCESS and post-merge Release Gate #2008 FULL GREEN on PRODUCT main.
+- Technical status is VERIFIED GREEN. Human visual acceptance remains open until a fresh deployed phone screenshot confirms the new muscular proportions and zone alignment meet Founder expectations.
+
