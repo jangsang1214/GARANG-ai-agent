@@ -352,3 +352,11 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Do not spend design time debugging Real Meal Scan latency again unless the post-#252 path regresses; main was RED because the 5,721-row USDA supplemental corpus was being fully fuzzily scanned before web fallback.
 - Next default priority: external/longitudinal validation and measured activation/retention, unless Founder explicitly redirects to another implementation task.
 
+## Latest Design / Product handoff — Body Model v6 sharp/aligned — 2026-09-25
+- PRODUCT PR #272 is MERGED as current main `c09e00530b325f68e0cf90bfb16de97331a10b12`.
+- Exact-head Gate #2004 FULL GREEN; post-merge Gate #2005 FULL GREEN; Pages #888 SUCCESS.
+- The Founder-reported blur was traced to intentional SVG Gaussian blur plus whole-SVG CSS filtering; both are removed.
+- The Founder-reported detached muscle highlight was traced to v5 260×520 zones scaled over a 720×1100 v6 mesh; v6 zones now use native mesh coordinates with no legacy scale transform.
+- All six male/female FRONT/SIDE/BACK v6 assets are versioned and explicitly precached for PWA/offline safety.
+- Next Body action is only real-phone visual QA. If blur or overlay drift remains in the deployed screenshot, treat that as new visual evidence and fix the smallest specific geometry/render issue; do not return to generic mannequin-path iteration.
+
