@@ -306,3 +306,15 @@ Decision: PRODUCT SOURCE / CI / WEB / PRODUCTION BACKEND VERIFIED GREEN.
 - Trigger-only PR #250 exact-head Gate #1858: FULL GREEN; PR #250 merged as current PRODUCT main `788aa81135fe996d28e29beaa4c578541ee77453`.
 - Production Coach Activation #39 / `35944749134`: SUCCESS. Firebase Function `api` deploy PASS; public Coach / Meal Scan / nutrition lookup boundaries PASS; authenticated nutrition lookup / Meal Scan / live Coach / bounded autonomous-write smokes PASS; disposable-user and temporary credential cleanup PASS.
 - Post-activation Release Gate #1860 / `35944749127`: FULL GREEN. Pages #870 / `35944748708`: SUCCESS.
+
+## 2026-09-24 Food DB Scale v1 — GREEN
+Decision: PRODUCT SOURCE / WEB / RELEASE VERIFIED GREEN.
+- PR #251 exact head: `432e6ea47ecba3bb03b8df5354dfc83663422bcb`.
+- PR #251 exact-head Release Gate #1876 / `35948950490`: FULL GREEN.
+- PR #251 merged as `f6fc6277e59b9b2a59592ad51bc6067cc1ffdfc9`.
+- Current PRODUCT main: `3b21f20a0df1dd483475f7b84b517ae03fb13537` after subsequent Design PR #249.
+- Pages #873 / `35961273643`: SUCCESS.
+- Current-main Release Gate #1896 / `35961274355`: FULL GREEN.
+- Food DB effective local lookup coverage is 6,221 rows: 500 curated Korean canonical + 5,721 verified USDA supplemental.
+- Supplemental rows are lazy-loaded and preserve canonical-first lookup precedence.
+- No Firebase Functions deployment was required for this Food DB expansion; it is a web/data release.

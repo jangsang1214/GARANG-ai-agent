@@ -265,3 +265,15 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Production Coach Activation #39 / `35944749134`: SUCCESS. Firebase Function `api` deploy PASS; public Coach / Meal Scan / nutrition lookup boundaries PASS; authenticated nutrition lookup / Meal Scan / live Coach / bounded autonomous-write smokes PASS; disposable identity and temporary credential cleanup PASS.
 - Post-activation Release Gate #1860 / `35944749127`: FULL GREEN. Pages #870 / `35944748708`: SUCCESS.
 - External/proprietary food-corpus scale, native Health/Watch provider authorization/sync, and prospective 2/4/8-week recommendation uplift remain outside code-only completion.
+
+## 2026-09-24 Food DB Scale v1 — RELEASE VERIFIED GREEN
+- PRODUCT PR #251 `Expand GARANG Food DB with verified USDA supplemental corpus` merged as `f6fc6277e59b9b2a59592ad51bc6067cc1ffdfc9`.
+- PR #251 exact-head `432e6ea47ecba3bb03b8df5354dfc83663422bcb`; Release Gate #1876 / `35948950490`: FULL GREEN.
+- The curated Korean canonical Food DB remains unchanged at 500 rows and remains the primary lookup source.
+- A lazy-loaded USDA supplemental corpus adds 5,721 verified rows: Foundation 311 + FNDDS 5,430. Effective local lookup coverage is 6,221 rows.
+- Supplemental audit: 5,721/5,721 verified, traceable provenance rate 100%, audit errors 0, duplicate normalized names after dedupe 0.
+- Supplemental corpus is approximately 5.3 MB and is NOT part of initial app DB hydration. It is lazy-loaded only after canonical miss.
+- Meal Scan fallback order is canonical GARANG Food DB -> USDA supplemental corpus -> source-backed web lookup.
+- The first WebKit attempt exposed a real performance regression from scanning all 5,721 supplemental rows. It was fixed with a prebuilt exact/prefix candidate index; no timeout was increased.
+- Current PRODUCT main later advanced through Design PR #249 to `3b21f20a0df1dd483475f7b84b517ae03fb13537`; Pages #873 SUCCESS and post-merge Release Gate #1896 / `35961274355`: FULL GREEN, proving the Food DB expansion survives the current combined main.
+- Remaining food-data gap is Korean/local/brand corpus breadth beyond the current canonical 500; USDA expansion improves broad verified coverage but does not replace K-FIND/brand-specific Korean data.

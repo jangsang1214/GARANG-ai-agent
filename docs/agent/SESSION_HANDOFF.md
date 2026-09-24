@@ -267,3 +267,14 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Post-activation Release Gate #1860 / `35944749127`: FULL GREEN. Pages #870 / `35944748708`: SUCCESS.
 - Intelligence Quality Hardening v2 server changes are now production-live for the verified scope.
 - Remaining honest gaps: external 2/4/8-week recommendation uplift, native HealthKit/Health Connect/Watch/provider integration, and substantially larger official/proprietary food-corpus scale.
+
+## Latest AI/Data handoff — Food DB Scale v1
+- PRODUCT PR #251 merged as `f6fc6277e59b9b2a59592ad51bc6067cc1ffdfc9`.
+- Curated Korean canonical Food DB remains 500 rows and primary.
+- USDA supplemental corpus: 5,721 verified rows, Foundation 311 + FNDDS 5,430, provenance coverage 100%, audit errors 0.
+- Effective local lookup coverage: 6,221 rows.
+- Supplemental corpus is lazy-loaded after canonical miss; Meal Scan uses canonical -> supplemental -> web lookup.
+- A WebKit timeout caused by whole-corpus fuzzy scanning was fixed with exact/prefix prefilter indexing rather than increasing test timeouts.
+- PR #251 exact-head Gate #1876 FULL GREEN.
+- Current PRODUCT main is `3b21f20a0df1dd483475f7b84b517ae03fb13537` after later Design PR #249; Pages #873 SUCCESS and current-main Gate #1896 FULL GREEN, so the Food DB path is preserved on the combined latest main.
+- Next food-data leverage: K-FIND / Korean brand / restaurant corpus acquisition and normalization, not further UI expansion.
