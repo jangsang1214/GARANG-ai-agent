@@ -296,3 +296,11 @@ Decision: SOURCE / CI GREEN; PR OPEN / NOT MERGED / NOT RELEASED.
 - final verify: SUCCESS.
 - No production deployment or activation is claimed for PR #246.
 - The evaluation additions are diagnostic-only and do not expand LLM mutation authority.
+
+## 2026-09-24 AI/Data Validation Bundle v1 — MERGED GREEN
+Decision: SOURCE / WEB / POST-MERGE CI GREEN; no new production Function activation claimed.
+- PRODUCT PR #246 merge: `75249fd04b2b60e643e27937c53f4cbea53f3d1a`.
+- Post-merge GARANG Release Gate #1851 / `35941173457`: FULL GREEN.
+- Pages #868 / `35941172498`: SUCCESS.
+- Event Envelope #1905 / `35941173535`: SUCCESS.
+- Production Coach Activation #37: SKIPPED by explicit activation guard.
