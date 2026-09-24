@@ -70,12 +70,18 @@ Mitigation: PRODUCT root production audit is clean; tooling audit is reported se
 Recommended fix: modernize CONTROL Actions in a dedicated no-product-behavior PR, and isolate dependency/toolchain upgrades with full verification.
 
 ## TD-012 — Long-lived Firebase deployment key in GitHub Actions
+Status: ACTIVE / EXTERNAL IAM BLOCKER
 Severity: MEDIUM / P2
 Area: CI authentication / IAM
 Problem: production deployment still relies on a masked service-account JSON credential rather than short-lived workload identity.
 Risk: long-lived credentials have a larger lifecycle blast radius.
-Mitigation: credential material is not printed/committed and current production deployment is verified.
-Recommended fix: migrate to GitHub OIDC / Google Workload Identity Federation, then rotate/retire the JSON key only after replacement is VERIFIED.
+Mitigation: credential material is not printed/committed; current production deployment is verified; PRODUCT main now contains fail-closed WIF support plus a non-deploying readiness audit.
+Latest evidence:
+- PR #255 merged as PRODUCT main `8e6733cf...`; WIF Readiness #2 reports `NOT_CONFIGURED`.
+- Both repository identifiers `GCP_WORKLOAD_IDENTITY_PROVIDER` and `GCP_DEPLOY_SERVICE_ACCOUNT` are currently absent.
+- Founder-approved bootstrap run `35970823847` authenticated the existing deploy identity `firebase-adminsdk-fbsvc@fitfind-ai.iam.gserviceaccount.com` but failed safely because it lacks `iam.workloadIdentityPools.create`.
+- No WIF pool/provider or new service-account key was created.
+Recommended fix: use a human-authenticated Google Cloud principal with Workload Identity Pool Admin capability to create the GitHub OIDC pool/provider and grant `roles/iam.workloadIdentityUser` to the existing verified deploy service account for PRODUCT main only. Configure the two non-secret repo identifiers, require a `via WIF` production activation to pass, then rotate/retire the JSON key only after replacement is VERIFIED.
 
 ## TD-013 — Superseded open PRs create repository noise
 Severity: LOW / P6
@@ -119,3 +125,17 @@ Resolution: PRODUCT PR #176 established one online action owner. Authenticated L
 ### TD-015 update — 2026-09-22
 Status: MONITOR / NON-BLOCKING after PR #210.
 The latest mobile stability recurrence was isolated to Workout Library async hydration: exercise cards were appended one by one after route entry. PR #210 batches those additions in one DocumentFragment commit without changing the existing stability threshold. Exact-head Gate #1649 and post-merge main Gate #1650 are FULL GREEN. Keep monitoring the older Today identity history and trace any new recurrence to its concrete runtime owner.
+
+
+## TD-017 — Main branches are not server-protected
+Status: ACTIVE / EXTERNAL GITHUB ADMIN BLOCKER
+Severity: MEDIUM / P2
+Area: repository release integrity
+Problem: CONTROL and PRODUCT main have no active ruleset / server-enforced branch protection.
+Evidence:
+- GitHub branch metadata reports PRODUCT main unprotected.
+- Ruleset reads return an empty list for both repositories.
+- The installed GitHub integration cannot access or mutate branch-protection administration endpoints and returns `403 Resource not accessible by integration`.
+Risk: CI exists but GitHub does not independently prevent an authorized direct push or merge that bypasses required checks.
+Mitigation: operating policy continues to require branch → PR → Release Gate → merge; current releases remain verified.
+Recommended fix: from an authenticated GitHub owner/admin session, add a main ruleset requiring PRs and the repository’s release/CI checks while preserving production activation semantics. Verify with a harmless docs-only PR before treating this debt as resolved.

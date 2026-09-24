@@ -1,3 +1,13 @@
+## Latest Engineering handoff — Release integrity / WIF — 2026-09-24
+- PRODUCT main: `8e6733cf4878484b23fe75765b01988b8b0b4794` after PR #255.
+- PR #255 exact-head Gate #1910: FULL GREEN; Pages #875 SUCCESS after merge.
+- Main Gate #1912 attempt 1 failed only the complete-journey Coach proposal readiness wait; same-SHA attempt 2 is FULL GREEN across browser/WebKit, authenticated Coach/Real LLM, recovery, mobile regression, button health, runtime stability and final verify.
+- WIF readiness workflow is merged and reports `NOT_CONFIGURED`; both non-secret WIF repository identifiers are absent.
+- Founder-approved WIF provisioning run `35970823847` used the existing verified deploy account and failed safely at missing `iam.workloadIdentityPools.create`. No WIF pool/provider/key was created.
+- To finish WIF, an authenticated Google Cloud admin must create the pool/provider and service-account impersonation binding; then configure repository identifiers and run a fail-closed `via WIF` production activation before removing the JSON key.
+- CONTROL/PRODUCT main protection is also blocked on authenticated GitHub admin access; repo rulesets are currently empty.
+- Engineering status: GREEN for current release, YELLOW for unresolved P2 infrastructure hardening.
+
 ## Latest product handoff — Workout commercial UX v4 — 2026-09-24
 - PRODUCT main: `fc06d2b39c328fafa2c3755a54210163e3873744` after PR #253.
 - PR #253 exact-head Gate #1899 / `35966021302`: FULL GREEN.
