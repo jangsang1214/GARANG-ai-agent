@@ -337,3 +337,18 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Do not spend design time debugging Real Meal Scan latency again unless the post-#252 path regresses; main was RED because the 5,721-row USDA supplemental corpus was being fully fuzzily scanned before web fallback.
 - Next default priority: external/longitudinal validation and measured activation/retention, unless Founder explicitly redirects to another implementation task.
 
+## Latest AI/Data handoff — Korean Food DB Scale v2
+- PRODUCT current main: `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
+- PR #260 merged official K-FIND corpus ingestion. PR #264 then fixed the unrelated Today Planner consolidation race exposed by post-merge Gate #1974.
+- Current official corpus materialization:
+  - GARANG curated canonical: 500
+  - K-FIND 음식: 2,502 from 19,617 raw rows
+  - K-FIND 가공식품: 266,415 from 316,734 raw rows
+  - USDA supplemental: 5,721
+  - total materialized local records: 275,138; not a globally deduplicated unique-food claim.
+- K-FIND processed corpus: 266,110 brand rows / 19,770 unique brands / report-number provenance 100% / incomplete-core 0 / invalid 0.
+- Lookup remains canonical-first, then Korean official 음식+가공식품 shards, then USDA, then source-backed web.
+- Large Korean data is lazy/sharded; raw official workbooks are not committed.
+- PR #260 exact-head Gate #1971 GREEN. PR #264 exact-head Gate #1977 GREEN. Current-main Gate #1982 GREEN. Pages #881 SUCCESS.
+- DATA.GO.KR service key is no longer a blocker for the released Korean corpus; official K-FIND acquisition replaced that blocked path.
+- Highest-value next step is real-user food-search/Meal-Scan miss measurement and external longitudinal validation, not another blind corpus-size sprint.
