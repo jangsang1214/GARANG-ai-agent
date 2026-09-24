@@ -14,12 +14,14 @@
 - Food + Running + Personal Performance Intelligence Founder-approved scope is now DONE / VERIFIED GREEN. Body Model visual realism remains a separate P3 acceptance track and is not implied GREEN by this release.
 
 ## 2026-09-25 Body Model visual acceptance reconciliation
-- PRODUCT current released main remains `0da445691dc7c4107f6491d45461450f465327ed`; source/web release evidence is still GREEN.
+- PRODUCT current main is `047ccb839447b6c54a1b381d39cb887cac9c8bc9`; current-main Gate #1982 and Pages #881 are GREEN.
 - Real-device Founder screenshot review REJECTED Body Model v4 visual quality. The deployed model is functionally correct (FRONT/SIDE/BACK + interaction), but its human realism, proportions, limb/hand/foot anatomy and muscle-surface fidelity do not meet the Founder-provided reference minimum.
 - Corrected capability status: 3-view structure = REACHED; interaction = REACHED; realistic human proportions = INSUFFICIENT; anatomy visual quality = INSUFFICIENT; reference-minimum compliance = INSUFFICIENT.
-- PRODUCT PR #261 `Rebuild body model v5 to meet anatomy quality floor` is OPEN from current main. v5 replaces segmented mannequin construction with one continuous human silhouette, dedicated FRONT/SIDE/BACK geometry, higher 260×520 proportion/detail floor, revised muscle overlays, and removes legacy rendered hand/foot part geometry.
-- PR #261 exact head at creation: `213d563a9f31ce598a192bcfb36ddbc6c1503143`. Release Gate #1973 / `36026810946` is currently running; do not call v5 VERIFIED or visually accepted until CI passes and a deployed real-device screenshot meets the reference floor.
-- Product quality status: source/web release GREEN, Body realism acceptance YELLOW until v5 visual QA passes.
+- PR #261 is CLOSED / UNMERGED after main advanced. Successor PRODUCT PR #262 `Rebuild body model v5 to meet anatomy quality floor` is OPEN / MERGEABLE and rebased on the newer Food main.
+- PR #262 exact head `6bc643f965cef244a64c163a82fd8f148683f5eb` passed Release Gate #1981 / `36029644905` FULL GREEN across core-build-rules, browser-webkit, and final verify.
+- The only later PRODUCT main delta is PR #264's one-file Today planner lifecycle repair in `06_features/ui/runtime/garang-product-consolidation-v1.js`; it does not overlap the Body v5 files. Current-main Gate #1982 is also FULL GREEN.
+- Body v5 still requires Founder-approved merge and deployed real-device screenshot acceptance before realistic proportions/visual quality/reference-minimum compliance can move from INSUFFICIENT to REACHED.
+- Product quality status: current source/web release GREEN, Body realism acceptance YELLOW.
 - Priority: P3 critical UX/brand quality. Do not add new Body features before the reference-minimum visual floor is met.
 
 
