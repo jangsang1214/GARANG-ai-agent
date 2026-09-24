@@ -1,5 +1,16 @@
 # GARANG Release Status
 
+## Engineering P2 release-integrity / WIF readiness — 2026-09-24
+Decision: CURRENT PRODUCT RELEASE GREEN / WIF INFRA BLOCKED.
+- PRODUCT PR #255 merged as current main `8e6733cf4878484b23fe75765b01988b8b0b4794`.
+- PR #255 exact-head Gate #1910: FULL GREEN.
+- Pages #875 / `35970284935`: SUCCESS.
+- Main Gate #1912 attempt 1: core/build SUCCESS, browser-webkit FAILURE only at complete Golden Path Coach proposal readiness timeout.
+- Same-SHA Gate #1912 attempt 2: FULL GREEN; final verify SUCCESS. No test threshold or timeout was weakened.
+- Production WIF Readiness #2 / `35969503578`: SUCCESS, status `NOT_CONFIGURED`; both repository WIF variables are absent.
+- Founder-approved one-time WIF provisioning run `35970823847`: FAILED safely at `iam.workloadIdentityPools.create` using the existing Firebase deploy service account. No WIF resource or service-account key was created.
+- Production Coach backend remains VERIFIED on Activation #39 revision `788aa81135fe996d28e29beaa4c578541ee77453`; PR #255 has no Functions runtime delta.
+
 ## Workout commercial UX v4 — PR #253
 Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
 - PRODUCT PR #253 merged to `main` as `fc06d2b39c328fafa2c3755a54210163e3873744`.
@@ -14,10 +25,10 @@ Last updated: 2026-09-24
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
-- Last VERIFIED application runtime/web baseline: `fc06d2b39c328fafa2c3755a54210163e3873744` via post-merge Gate #1900 / `35967056029` + Pages #874 / `35967055339`.
-- Current observed PRODUCT main: `fc06d2b39c328fafa2c3755a54210163e3873744`.
+- Last VERIFIED application runtime/web baseline: `8e6733cf4878484b23fe75765b01988b8b0b4794` via post-merge Gate #1912 attempt 2 / `35970286558` + Pages #875 / `35970284935`.
+- Current observed PRODUCT main: `8e6733cf4878484b23fe75765b01988b8b0b4794`.
 - Current verified production Coach backend deployment revision: `788aa81135fe996d28e29beaa4c578541ee77453` via Production Coach Activation #39 / `35944749134`.
-- Current source/web release: GREEN / VERIFIED on `fc06d2b...`. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live.
+- Current source/web release: GREEN / VERIFIED on `8e6733cf...` after Gate #1912 attempt 2. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live.
 
 ## Current PRODUCT release — Photo Evidence v1
 Decision: GREEN / CURRENT MAIN VERIFIED.
@@ -70,10 +81,11 @@ Decision: GREEN / LIVE PROVIDER + PERSONALIZED INTELLIGENCE VERIFIED.
 
 ## Current commercial PRODUCT main
 Decision: GREEN / CURRENT MAIN VERIFIED.
-- Main: `fc06d2b39c328fafa2c3755a54210163e3873744`.
-- PR #253 exact-head Gate #1899 / `35966021302`: FULL GREEN before merge.
-- Post-merge Gate #1900 / `35967056029`: FULL GREEN on attempt 1.
-- Pages #874 / `35967055339`: SUCCESS on the same SHA.
+- Main: `8e6733cf4878484b23fe75765b01988b8b0b4794`.
+- PR #255 exact-head Gate #1910: FULL GREEN.
+- Post-merge Gate #1912 / `35970286558`: attempt 1 browser-only nondeterministic readiness failure; attempt 2 FULL GREEN on the identical SHA.
+- Pages #875 / `35970284935`: SUCCESS on the same main SHA.
+- PR #255 changes WIF readiness workflow/test contracts only; commercial workout/runtime behavior from PR #253 remains preserved.
 - Production Coach backend remains separately VERIFIED on Activation #39 revision `788aa81135fe996d28e29beaa4c578541ee77453`.
 
 ## Autonomous Intelligence Loop v1
@@ -124,14 +136,14 @@ Decision: CURRENT RELEASE GREEN / MONITOR.
 Competition derivatives remain separate release channels. Founder-reported Wanted / 롯데 / 브로제이 submission completion stays RECORDED unless submission artifacts are independently re-opened.
 
 ## Release gate
-Automated source/web gate status: GREEN on current main `fc06d2b...` via Gate #1900; production Coach backend remains VERIFIED GREEN on activated revision `788aa811...` via Activation #39.
+Automated source/web gate status: GREEN on current main `8e6733cf...` via Gate #1912 attempt 2; production Coach backend remains VERIFIED GREEN on activated revision `788aa811...` via Activation #39.
 Product-action confidence: GREEN for the server/browser single-owner contract on merged source; production backend evidence is tracked independently from newer source/web commits.
 Release confidence note: TD-015 is monitor-only, not a current blocker. Historical lifecycle recurrence remains regression-covered; latest Gate #1900 passed the full browser/WebKit and runtime-stability gate on attempt 1.
 - Provider connectivity: PASS on the latest verified production activation lineage.
 - Production authenticated live smoke: PASS on Activation #39.
-- Current main Pages deployment: PASS via Pages #874 / `35967055339`.
-- Current main Release Gate #1900 / `35967056029`: PASS on attempt 1.
-- Current source/web main: `fc06d2b39c328fafa2c3755a54210163e3873744`.
+- Current main Pages deployment: PASS via Pages #875 / `35970284935`.
+- Current main Release Gate #1912 / `35970286558`: PASS on attempt 2 after one nondeterministic browser readiness recurrence.
+- Current source/web main: `8e6733cf4878484b23fe75765b01988b8b0b4794`.
 - Current verified production backend revision: `788aa81135fe996d28e29beaa4c578541ee77453`.
 
 ## Remaining non-blocking debt
