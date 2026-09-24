@@ -360,3 +360,14 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Current release status for this scope: VERIFIED GREEN. Subjective visual quality of the classical body model still requires Founder/human judgment; automated evidence verifies integration, interaction, layout contracts, and regression safety rather than aesthetics.
 - Immediate product priority returns to external/longitudinal validation and measured activation/retention unless Founder requests another design iteration.
 
+## 2026-09-25 Body Model v6 sharp/aligned release reconciliation
+- PRODUCT PR #269 split Body visual mesh from muscle interaction/highlight zones and merged after exact-head Release Gate #1994 GREEN.
+- PRODUCT PR #270 completed six-view male/female FRONT/SIDE/BACK dense mesh coverage; exact-head Gate #1997 GREEN, post-merge Gate #1998 GREEN, Pages #886 SUCCESS.
+- Founder real-device review then identified two residual defects: the mannequin appeared blurry and muscle highlight/hit geometry visibly drifted from the rendered body.
+- PRODUCT PR #272 `Sharpen Body v6 and align muscle zones to mesh` fixes the observed causes: removes `feGaussianBlur` from all six dense mesh SVGs, removes the whole-SVG CSS filter, replaces scaled v5 interaction geometry with native 720×1100 v6 zones, reduces detached-looking highlight opacity, and precaches all six versioned mesh assets.
+- PR #272 exact head `1a2154edfe5b349a013da91c98ac80d7008117b0` passed Release Gate #2004 FULL GREEN across core-build-rules, browser-webkit, and final verify.
+- PR #272 merged as PRODUCT main `c09e00530b325f68e0cf90bfb16de97331a10b12`.
+- Post-merge PRODUCT main Release Gate #2005 FULL GREEN and Pages #888 SUCCESS on the same main SHA.
+- Technical status is VERIFIED GREEN for sharp-vector rendering contract, native-coordinate muscle overlay contract, offline mesh availability, mobile WebKit regression, and Golden Path preservation.
+- Founder visual acceptance remains a human gate: a fresh deployed real-device screenshot must confirm that blur is gone and muscle overlays visually sit on the intended body regions before aesthetic realism/reference-minimum compliance is marked REACHED.
+
