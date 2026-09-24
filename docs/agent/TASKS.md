@@ -200,8 +200,9 @@ Status: DONE / RECORDED COMPLETE BY FOUNDER REPORT
 Competition derivatives remain isolated and change-frozen except critical outage/organizer-required fixes.
 
 ## P2 — Release integrity
-- Protect CONTROL + PRODUCT main: PLANNED.
-- Migrate production deployment auth to OIDC/WIF: PLANNED.
+- Protect CONTROL + PRODUCT main: BLOCKED / EXTERNAL GITHUB ADMIN. Rulesets are empty; installed GitHub integration cannot manage branch protection.
+- Migrate production deployment auth to OIDC/WIF: PARTIAL / CODE READY / EXTERNAL GCP IAM BLOCKER. PR #255 merged; readiness audit works and reports NOT_CONFIGURED; existing deploy SA lacks `iam.workloadIdentityPools.create`.
+- Restore current main release after PR #255: DONE / VERIFIED. Gate #1912 attempt 1 reproduced a browser Coach-readiness timing failure; same-SHA attempt 2 FULL GREEN without threshold weakening; Pages #875 SUCCESS.
 - Functions dependency-family upgrade: PLANNED.
 - Firebase build-image cleanup: PLANNED / COST HYGIENE.
 
