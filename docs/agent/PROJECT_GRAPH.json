@@ -2105,6 +2105,62 @@
       "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
+    },
+    {
+      "id": "TASK-BODY-V6-SHARP-ALIGNED",
+      "kind": "task",
+      "title": "Remove Body v6 blur and align muscle interaction overlays to the native mesh",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR272-BODY-SHARP",
+      "kind": "change",
+      "title": "PRODUCT PR #272 sharpens Body v6 and aligns muscle zones",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR272-GATE-2004",
+      "kind": "verification",
+      "title": "PR #272 exact-head Release Gate #2004 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-2005-BODY-V6",
+      "kind": "verification",
+      "title": "Post-merge PRODUCT main Release Gate #2005 FULL GREEN on c09e0053",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-888-BODY-V6",
+      "kind": "release",
+      "title": "Pages #888 SUCCESS on PRODUCT main c09e0053",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-BODY-V6-TECHNICAL-GREEN",
+      "kind": "result",
+      "title": "Body v6 sharp-vector and native-coordinate overlay contracts released GREEN",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-BODY-V6-FOUNDER-VISUAL-ACCEPTANCE",
+      "kind": "task",
+      "title": "Confirm deployed Body v6 sharpness and muscle-overlay alignment on a real phone",
+      "status": "in_progress",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -3707,6 +3763,51 @@
       "from": "CHANGE-PRODUCT-PR260-KFIND-CORPUS",
       "to": "CONSTRAINT-DATA-GO-KR-SERVICE-KEY",
       "kind": "resolves"
+    },
+    {
+      "from": "TASK-BODY-V6-SHARP-ALIGNED",
+      "to": "INIT-UI-BRAND-SIMPLIFICATION-V1",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR272-BODY-SHARP",
+      "to": "TASK-BODY-V6-SHARP-ALIGNED",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR272-GATE-2004",
+      "to": "CHANGE-PRODUCT-PR272-BODY-SHARP",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-2005-BODY-V6",
+      "to": "CHANGE-PRODUCT-PR272-BODY-SHARP",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-888-BODY-V6",
+      "to": "CHANGE-PRODUCT-PR272-BODY-SHARP",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-BODY-V6-TECHNICAL-GREEN",
+      "to": "VERIFY-PRODUCT-PR272-GATE-2004",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-BODY-V6-TECHNICAL-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-2005-BODY-V6",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-BODY-V6-TECHNICAL-GREEN",
+      "to": "RELEASE-PAGES-888-BODY-V6",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-BODY-V6-FOUNDER-VISUAL-ACCEPTANCE",
+      "to": "RESULT-BODY-V6-TECHNICAL-GREEN",
+      "kind": "depends-on"
     }
   ]
 }
