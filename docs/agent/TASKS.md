@@ -597,3 +597,32 @@ Remaining:
 - Acceptance: Golden Path, Real Meal Scan, authenticated Coach/LLM/recovery, mobile regression, Settings touch, button health and runtime stability all pass in the final release gate.
 - Next: external/longitudinal validation and human visual review of the final body model; new feature scope remains lower priority than measured user comprehension/retention.
 
+## Closed P4 — Korean Food DB Scale v2
+Status: DONE / PRODUCT SOURCE+WEB+RELEASE VERIFIED GREEN
+Owner: AI Data / Product / Release QA
+Goal: materially expand Korean food, brand and processed-product coverage while preserving canonical-first lookup and mobile performance.
+
+Delivered:
+- official K-FIND 음식 DB acquisition through declared usage-registration flow; raw source workbook not committed. ✅
+- 19,617 raw 음식 rows -> 2,502 verified gram-basis representative records / 18 lazy shards. ✅
+- official K-FIND 가공식품 DB acquisition; 316,734 raw rows -> 266,415 verified gram-basis records / 47 lazy shards. ✅
+- processed corpus brand coverage: 266,110 rows / 19,770 unique brands. ✅
+- report-number provenance coverage: 100%; incomplete-core rows: 0; invalid rows: 0. ✅
+- canonical 500 remains primary; USDA 5,721 remains later fallback. ✅
+- runtime path: canonical -> Korean official 음식+가공식품 -> USDA supplemental -> source-backed web. ✅
+- materialized local records across layers: 275,138. This is not a globally deduplicated unique-food count. ✅
+- raw 12 MB / 201 MB official workbooks are not committed; runtime uses compact sharded materialization. ✅
+
+Verification:
+- PR #260 exact-head Gate #1971 / `36026150645`: FULL GREEN.
+- PR #260 merged as `e1e8a5c31830c4a51076509cb0cb91ecc024920a`.
+- first post-merge Gate #1974 caught an unrelated Today Planner render race; release remained RED despite Pages #880 SUCCESS.
+- PR #264 exact-head Gate #1977 / `36029006404`: FULL GREEN.
+- PR #264 merged as current PRODUCT main `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
+- current-main Gate #1982 / `36029807445`: FULL GREEN.
+- Pages #881 / `36029804809`: SUCCESS.
+
+Next evidence-gated work:
+- measure actual Korean search misses / ambiguous matches from real users;
+- add restaurant/menu/barcode/commercial catalog sources only when miss evidence justifies the maintenance cost;
+- do not optimize for raw row count alone.
