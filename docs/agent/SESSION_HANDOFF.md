@@ -278,3 +278,13 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - PR #251 exact-head Gate #1876 FULL GREEN.
 - Current PRODUCT main is `3b21f20a0df1dd483475f7b84b517ae03fb13537` after later Design PR #249; Pages #873 SUCCESS and current-main Gate #1896 FULL GREEN, so the Food DB path is preserved on the combined latest main.
 - Next food-data leverage: K-FIND / Korean brand / restaurant corpus acquisition and normalization, not further UI expansion.
+
+## 2026-09-24 handoff — Design Simplification v2 complete
+- PRODUCT main: `3b21f20a0df1dd483475f7b84b517ae03fb13537`.
+- PR #252 fixed the Real Meal Scan supplemental-corpus latency regression; Gate #1891 GREEN; merged as `384f944...`.
+- PR #249 completed Body Model + Workout + Progress + Coach + P5 simplification; Gate #1895 GREEN; merged as current main.
+- Post-merge Gate #1896 GREEN; Pages #873 SUCCESS; Event #2003 SUCCESS.
+- Preserve these UI contracts on future changes: current Workout set is primary; advanced utilities stay progressive disclosure but remain fully operable; draft actions remain touch-safe; mobile duration remains editable; long completion labels stay mobile-only; classical body model remains final visual owner unless Founder explicitly requests another redesign.
+- Do not spend design time debugging Real Meal Scan latency again unless the post-#252 path regresses; main was RED because the 5,721-row USDA supplemental corpus was being fully fuzzily scanned before web fallback.
+- Next default priority: external/longitudinal validation and measured activation/retention, unless Founder explicitly redirects to another implementation task.
+
