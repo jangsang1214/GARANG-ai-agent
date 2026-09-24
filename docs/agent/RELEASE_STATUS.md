@@ -1,5 +1,20 @@
 # GARANG Release Status
 
+## Nutrition Capture & Food Identity v1 — PR #271 — 2026-09-25
+Decision: SOURCE / WEB / RELEASE GREEN; PRODUCTION BACKEND ACTIVATION PENDING.
+- PRODUCT PR #271 exact head: `95e567a0e3a589dd41afa54e76aa1308527f0b2c`.
+- Exact-head Release Gate #2000 / `36043340582`: FULL GREEN.
+- PR #271 merged as current PRODUCT main `8dd2d46e6b1008230c2847c1bbff722e9bd180c3`.
+- Pages #887 / `36044158503`: SUCCESS.
+- Post-merge Release Gate #2001 / `36044160665`: final identical-main-SHA FULL GREEN across core-build-rules, browser-webkit, and verify.
+- First #2001 WebKit attempt timed out only at existing Workout superset A1->A2->A1 transition; exact same main SHA rerun passed that assertion and full remaining suite. No timeout/threshold/runtime weakening.
+- Verified client path includes barcode/GTIN input, source-backed first lookup, user confirmation, bounded mapping persistence, and same-GTIN local exact reuse without another web lookup.
+- Verified label path extracts visible GTIN/report number and retains confirmation boundaries.
+- Unknown GTIN behavior is fail-closed; no similar-product substitution.
+- Production Coach Activation #41 was SKIPPED by design because no explicit production activation approval phrase was supplied.
+- Therefore the new `functions/src/meal-scan.cjs` barcode Vision mode and GTIN-aware `nutrition-web-lookup.cjs` behavior are SOURCE/CI READY but not yet claimed live in Firebase production.
+- No production backend deployment, secret change, schema migration, billing change, or autonomous nutrition-target mutation occurred in this release.
+
 ## K-FIND Food DB expansion + post-merge lifecycle repair — 2026-09-25
 Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
 - PRODUCT PR #260 merged the official K-FIND corpus. Materialized local Food lookup coverage: 500 canonical + 2,502 K-FIND general + 266,415 K-FIND processed + 5,721 USDA = 275,138 records.
