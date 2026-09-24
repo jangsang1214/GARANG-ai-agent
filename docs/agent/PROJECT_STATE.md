@@ -1,5 +1,18 @@
 # GARANG Project State
 
+## 2026-09-25 Command Center reconciliation — K-FIND Food DB release complete
+- PRODUCT current main is `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
+- PR #260 `Ingest official K-FIND Korean food corpus` is MERGED. The released corpus includes 2,502 K-FIND general-food rows and 266,415 K-FIND processed-food rows; processed metadata records 266,110 branded rows across 19,770 unique brands. Existing USDA supplemental remains 5,721 rows and GARANG canonical remains 500 rows, for 275,138 materialized local lookup records across the four layers.
+- K-FIND processed corpus provenance is fixed to 식품의약품안전처 K-FIND / 식품영양성분 데이터베이스, with verified-only, gram-basis, traceable-provenance and no-canonical-overwrite guardrails.
+- PR #260 exact-head `a49341c4339ac2e6241b9f979a5d08cc0eaefe39` passed Release Gate #1971 / `36026150645` FULL GREEN.
+- PR #260 squash-merged as `e1e8a5c31830c4a51076509cb0cb91ecc024920a`; Pages #880 / `36026908418` succeeded.
+- Post-merge Gate #1974 reproduced three Today/WebKit lifecycle readiness failures on the combined #259 + #260 tree. The failures were not Food corpus assertions. TD-015 was reopened as active P2 rather than hidden with timeout inflation.
+- PR #264 `Fix post-merge Today planner consolidation race` applied the smallest runtime fix in Product Consolidation: do not publish Today readiness until required nodes exist, and observe only relevant nested Today-flow additions.
+- PR #264 exact-head Gate #1977 / `36029006404`: FULL GREEN. It merged as current PRODUCT main `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
+- Current-main Pages #881 / `36029804809`: SUCCESS. Current-main Release Gate #1982 / `36029807445`: FULL GREEN; `core-build-rules`, `browser-webkit`, and final `verify` all SUCCESS.
+- Experimental PR #263 was closed unmerged after #264 superseded the same release-integrity blocker with a smaller patch.
+- Food + Running + Personal Performance Intelligence Founder-approved scope is now DONE / VERIFIED GREEN. Body Model visual realism remains a separate P3 acceptance track and is not implied GREEN by this release.
+
 ## 2026-09-25 Body Model visual acceptance reconciliation
 - PRODUCT current released main remains `0da445691dc7c4107f6491d45461450f465327ed`; source/web release evidence is still GREEN.
 - Real-device Founder screenshot review REJECTED Body Model v4 visual quality. The deployed model is functionally correct (FRONT/SIDE/BACK + interaction), but its human realism, proportions, limb/hand/foot anatomy and muscle-surface fidelity do not meet the Founder-provided reference minimum.
