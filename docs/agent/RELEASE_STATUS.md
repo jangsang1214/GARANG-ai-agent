@@ -296,3 +296,12 @@ Decision: PRODUCT WEB/RUNTIME VERIFIED GREEN.
 - Founder OS Event Envelope #1901: SUCCESS.
 - Verified regressions include Today action flow, bottom Check-in, Planner shortcut touch target, Today visual parity, Simplified Shell, Planner execution, Meal Scan, Golden Path, authenticated Coach/recovery, mobile regression, Settings touch, button health and runtime stability stress.
 - No core state/write owner was replaced. This release is a presentation/interaction simplification plus anatomy visual-system replacement.
+
+## 2026-09-24 Intelligence Quality Hardening v2 — SOURCE/WEB GREEN, BACKEND ACTIVATION PENDING
+Decision: PRODUCT SOURCE / CI / WEB VERIFIED GREEN; production backend activation not yet complete.
+- PR #246 merge: `75249fd04b2b60e643e27937c53f4cbea53f3d1a`; Gate #1851 FULL GREEN; Pages #868 SUCCESS.
+- PR #248 exact head: `07406d53bcb923148ba931eb24f58a7792f26c79`; Gate #1855 FULL GREEN.
+- PR #248 merged main: `26f01ad829afeeaca0deb97d0159915c315f758c`; post-merge Gate #1856 FULL GREEN; Pages #869 SUCCESS.
+- Production Coach Activation #38: SKIPPED by explicit activation-phrase boundary.
+- Trigger-only PR #250 is pending exact-head verification and merge.
+- No production-live claim for the new server intelligence until activation + authenticated live smokes are SUCCESS.
