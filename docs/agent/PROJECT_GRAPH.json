@@ -1965,8 +1965,8 @@
     {
       "id": "TASK-KOREAN-OFFICIAL-CORPUS-SCALE-V1",
       "kind": "task",
-      "title": "Generate and audit Korean official supplemental Food DB corpus",
-      "status": "in_progress",
+      "title": "Generate, integrate and audit Korean official K-FIND supplemental Food DB corpus",
+      "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     },
@@ -2005,8 +2005,8 @@
     {
       "id": "CONSTRAINT-DATA-GO-KR-SERVICE-KEY",
       "kind": "constraint",
-      "title": "DATA.GO.KR service key is required to generate the official Korean supplemental corpus",
-      "status": "active",
+      "title": "DATA.GO.KR service-key path no longer blocks released Korean corpus after official K-FIND acquisition",
+      "status": "resolved",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     },
@@ -2037,9 +2037,73 @@
     {
       "id": "RESULT-KOREAN-FOOD-SCALE-PIPELINE-GREEN",
       "kind": "result",
-      "title": "Korean official Food DB scaling pipeline released GREEN; corpus generation remains source-access blocked",
+      "title": "Korean official Food DB scaling pipeline released GREEN; source access later resolved through K-FIND",
       "status": "done",
       "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR260-KFIND-SCALE-V2",
+      "kind": "change",
+      "title": "PRODUCT PR #260 ingests official K-FIND food and processed-food corpora",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR260-GATE-1971",
+      "kind": "verification",
+      "title": "PR #260 exact-head Release Gate #1971 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-GATE-1974-REGRESSION",
+      "kind": "verification",
+      "title": "Post-merge Gate #1974 correctly catches Today Planner render race",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR264-TODAY-RACE",
+      "kind": "change",
+      "title": "PRODUCT PR #264 fixes post-merge Today Planner consolidation race",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR264-GATE-1977",
+      "kind": "verification",
+      "title": "PR #264 exact-head Release Gate #1977 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-GATE-1982-KFIND",
+      "kind": "verification",
+      "title": "Current PRODUCT main Release Gate #1982 FULL GREEN with K-FIND corpora",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-881-KFIND",
+      "kind": "release",
+      "title": "Pages #881 deployed current PRODUCT main with K-FIND corpora",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-KFIND-275138-MATERIALIZED-RECORDS",
+      "kind": "result",
+      "title": "Food intelligence has 275,138 materialized local records across canonical, K-FIND and USDA layers",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     }
   ],
@@ -3592,6 +3656,66 @@
     {
       "from": "RESULT-KOREAN-FOOD-SCALE-PIPELINE-GREEN",
       "to": "RELEASE-PAGES-877-KOREAN-FOOD",
+      "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR260-KFIND-SCALE-V2",
+      "to": "TASK-KOREAN-OFFICIAL-CORPUS-SCALE-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR260-GATE-1971",
+      "to": "CHANGE-PRODUCT-PR260-KFIND-SCALE-V2",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-GATE-1974-REGRESSION",
+      "to": "CHANGE-PRODUCT-PR260-KFIND-SCALE-V2",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR264-TODAY-RACE",
+      "to": "VERIFY-PRODUCT-MAIN-GATE-1974-REGRESSION",
+      "kind": "resolves"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR264-GATE-1977",
+      "to": "CHANGE-PRODUCT-PR264-TODAY-RACE",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-GATE-1982-KFIND",
+      "to": "CHANGE-PRODUCT-PR264-TODAY-RACE",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-GATE-1982-KFIND",
+      "to": "CHANGE-PRODUCT-PR260-KFIND-SCALE-V2",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-881-KFIND",
+      "to": "CHANGE-PRODUCT-PR260-KFIND-SCALE-V2",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-KFIND-275138-MATERIALIZED-RECORDS",
+      "to": "VERIFY-PRODUCT-MAIN-GATE-1982-KFIND",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-KFIND-275138-MATERIALIZED-RECORDS",
+      "to": "RELEASE-PAGES-881-KFIND",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-KFIND-275138-MATERIALIZED-RECORDS",
+      "to": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "kind": "advances"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-KFIND-275138-MATERIALIZED-RECORDS",
       "kind": "depends-on"
     }
   ]
