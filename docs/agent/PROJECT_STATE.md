@@ -345,3 +345,18 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Current release status for this scope: VERIFIED GREEN. Subjective visual quality of the classical body model still requires Founder/human judgment; automated evidence verifies integration, interaction, layout contracts, and regression safety rather than aesthetics.
 - Immediate product priority returns to external/longitudinal validation and measured activation/retention unless Founder requests another design iteration.
 
+## 2026-09-25 Korean Food DB Scale v2 — RELEASE VERIFIED GREEN
+- PRODUCT PR #260 `Ingest official K-FIND Korean food corpus` merged as `e1e8a5c31830c4a51076509cb0cb91ecc024920a`.
+- PR #260 exact head `a49341c4339ac2e6241b9f979a5d08cc0eaefe39`; Release Gate #1971 / `36026150645`: FULL GREEN.
+- Official K-FIND source acquisition is VERIFIED through the site's declared usage-registration flow. Raw workbooks are not committed.
+- K-FIND 음식 DB 2026-08-28: 19,617 raw rows -> 2,502 verified gram-basis representative records across 18 shards.
+- K-FIND 가공식품 DB 2026-08-28: 316,734 raw rows -> 266,415 verified gram-basis records across 47 shards.
+- Processed-food corpus has 266,110 brand-bearing rows, 19,770 unique brands, 100% report-number coverage, 0 incomplete-core rows and 0 invalid rows.
+- Existing curated canonical 500 and USDA supplemental 5,721 remain. Total materialized local records across the four layers are 275,138 (=500 + 2,502 + 266,415 + 5,721). This is a materialized-record count, not a claim of globally unique foods after cross-layer deduplication.
+- Runtime lookup remains canonical-first; Korean official 음식+가공식품 shards are searched before USDA supplemental, then source-backed web fallback. Large Korean corpora remain lazy/sharded rather than first-load payloads.
+- PRODUCT post-merge Gate #1974 correctly caught an unrelated Today Planner consolidation render race after #260. Pages #880 was SUCCESS, but release stayed RED until fixed.
+- PRODUCT PR #264 `Fix post-merge Today planner consolidation race` exact head `f12fcb29e9ad411e1671b3177ba825d1a96cd523`; Release Gate #1977 / `36029006404`: FULL GREEN.
+- PR #264 merged as current PRODUCT main `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
+- Current-main Pages #881 / `36029804809`: SUCCESS. Post-merge Release Gate #1982 / `36029807445`: FULL GREEN.
+- The previous DATA.GO.KR service-key constraint no longer blocks Korean Food DB scale because the current corpus was acquired from official K-FIND releases through the documented download contract.
+- Food DB scale is now code/data/release complete for the current official K-FIND + USDA scope. Future corpus work should be evidence-gated around restaurant/menu freshness, barcode/commercial catalogs, and real search miss data rather than raw row-count expansion.
