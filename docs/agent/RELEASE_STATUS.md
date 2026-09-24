@@ -1,5 +1,19 @@
 # GARANG Release Status
 
+## K-FIND Food DB expansion + post-merge lifecycle repair — 2026-09-25
+Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
+- PRODUCT PR #260 merged the official K-FIND corpus. Materialized local Food lookup coverage: 500 canonical + 2,502 K-FIND general + 266,415 K-FIND processed + 5,721 USDA = 275,138 records.
+- Processed K-FIND metadata: 266,110 branded rows, 19,770 unique brands, 100% report-number coverage, zero invalid rows in generated metadata.
+- PR #260 exact-head Gate #1971 / `36026150645`: FULL GREEN.
+- PR #260 merge SHA: `e1e8a5c31830c4a51076509cb0cb91ecc024920a`; Pages #880 / `36026908418`: SUCCESS.
+- Post-merge Gate #1974 failed across three same-SHA attempts at different Today lifecycle readiness points (Coach proposal readiness, recovery modal readiness, compact Planner section readiness). These were release-integrity/runtime lifecycle failures, not K-FIND corpus validation failures.
+- PRODUCT PR #264 repaired the Today Product Consolidation race with a one-file minimal fix and no timeout/retry inflation.
+- PR #264 exact-head Gate #1977 / `36029006404`: FULL GREEN.
+- Current PRODUCT main: `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
+- Current-main Pages #881 / `36029804809`: SUCCESS.
+- Current-main Release Gate #1982 / `36029807445`: FULL GREEN; core-build-rules, browser-webkit and verify all SUCCESS.
+- No Firebase Functions/backend/schema/secret/billing change was required for the #264 repair.
+
 ## Body Model v4 visual acceptance correction / v5 remediation — 2026-09-25
 Decision: CURRENT RELEASE TECHNICALLY GREEN / BODY REALISM ACCEPTANCE YELLOW.
 - PRODUCT current main remains `0da445691dc7c4107f6491d45461450f465327ed`; Gate #1967 and Pages #879 remain valid GREEN release evidence.
