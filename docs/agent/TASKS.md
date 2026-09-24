@@ -603,3 +603,22 @@ Remaining:
 - Acceptance: Golden Path, Real Meal Scan, authenticated Coach/LLM/recovery, mobile regression, Settings touch, button health and runtime stability all pass in the final release gate.
 - Next: external/longitudinal validation and human visual review of the final body model; new feature scope remains lower priority than measured user comprehension/retention.
 
+## Active P3 — Body Model v6 deployed visual acceptance
+Status: TECHNICALLY DONE / DEPLOYED / HUMAN VISUAL ACCEPTANCE REQUIRED
+
+Acceptance evidence already VERIFIED:
+- PR #272 exact-head Gate #2004 FULL GREEN.
+- PRODUCT main `c09e00530b325f68e0cf90bfb16de97331a10b12`.
+- Post-merge Gate #2005 FULL GREEN.
+- Pages #888 SUCCESS.
+- Gaussian blur removed from all six mesh assets.
+- Muscle highlight/hit zones moved to native 720×1100 mesh coordinates.
+- Offline/PWA precache includes all six exact Body v6 assets.
+
+Remaining acceptance:
+- Fresh real-device screenshot confirms the Body is no longer visibly blurry.
+- Selected muscle overlay visually aligns with the rendered anatomy in FRONT/SIDE/BACK.
+- Founder accepts the deployed model against the intended anatomy/reference quality floor.
+
+Do not reopen renderer architecture or add another Body version unless the fresh deployed visual evidence still fails.
+
