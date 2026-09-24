@@ -1,13 +1,14 @@
 # GARANG Release Status
 
 ## Current-main reconciliation — PR #256/#257 — 2026-09-24
-Decision: YELLOW / SOURCE MERGED / EXACT-HEAD CI GREEN / POST-MERGE MAIN EVIDENCE PENDING.
+Decision: GREEN / CURRENT MAIN SOURCE+WEB VERIFIED.
 - Current PRODUCT main: `0dafa0aab536548b1b80964d108228ee819155c6`.
 - PR #256 exact head `a60f4369...`: Release Gate #1921 / `35973077815` FULL GREEN.
 - PR #257 exact head `dbcbf617...`: Release Gate #1924 / `35976213135` FULL GREEN; core-build-rules, browser-webkit and verify all SUCCESS.
 - PR #257 squash merge succeeded as `0dafa0aa...`.
 - No Firebase Functions production activation is required by the #256/#257 changed-file scopes.
-- Post-merge main Release Gate / GitHub Pages evidence for `0dafa0aa...` has not yet been observed in this session; keep current-main release classification YELLOW until observed.
+- Post-merge Release Gate #1925 / `35981031534`: FULL GREEN; `core-build-rules`, `browser-webkit`, and `verify` all SUCCESS.
+- Pages #877 / `35981030735`: `build`, `report-build-status`, and `deploy` all SUCCESS.
 - Korean official supplemental corpus data remains ungenerated because `DATA_GO_KR_SERVICE_KEY` is absent; verified local Food DB coverage remains 6,221 rows.
 
 ## Engineering P2 release-integrity / WIF readiness — 2026-09-24
