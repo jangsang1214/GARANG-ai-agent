@@ -1,5 +1,20 @@
 # GARANG Project State
 
+## 2026-09-24 Command Center reconciliation — PRODUCT PR #258/#259
+- PRODUCT actual main is `0da445691dc7c4107f6491d45461450f465327ed`.
+- Prior PRODUCT main `6a91d5841360e5450c34fd9149e46d0876166c83` includes PR #258 Food, Running, and Personal Performance Intelligence work and is preserved as the baseline parent of #259.
+- PR #259 `Ship essential-first UX and Body Model v4` exact head `7f51725416acc441d94ce7b2307d583e18b84fa3` passed Release Gate #1951 / `36020573110` FULL GREEN across core-build-rules, browser-webkit, and final verify.
+- Founder-approved squash merge completed as `0da445691dc7c4107f6491d45461450f465327ed`.
+- Post-merge Release Gate #1967 / `36022832225`: FULL GREEN; core-build-rules, browser-webkit, and final verify all SUCCESS.
+- Pages #879 / `36022831829`: SUCCESS across build, report-build-status, and deploy. Live URL remains `https://jangsang1214.github.io/-fitmind-ai/`.
+- Live deployed asset fetch verified Body Model v4 and essential-first runtime assets after Pages deployment.
+- Released UX: Workout defaults to exercise + weight + reps + completion; RPE/RIR/duration/notes/set type remain available through progressive disclosure. Progress keeps canonical accumulation ownership while secondary KPIs are disclosed on demand. Nutrition is Meal Scan-first while manual entry remains available and reopens when a draft needs saving.
+- Body Model v4 exposes dedicated FRONT / SIDE / BACK geometry, adds hands/feet and side-profile muscle zones, and preserves male/female plus muscle-zone interactions.
+- No Firebase Functions/backend/data-schema/secret/billing change was introduced by PR #259; this is a PRODUCT web/runtime/test release.
+- Current source/web release decision: GREEN / MERGED / WEB DEPLOYED / VERIFIED.
+- Highest-value next action after real-phone visual QA is Anonymous External Validation plus 2/4/8-week longitudinal measurement; avoid expanding primary surfaces without user evidence.
+
+
 ## 2026-09-24 Command Center reconciliation — PRODUCT PR #256/#257
 - PRODUCT actual main is `0dafa0aab536548b1b80964d108228ee819155c6`, ahead of the previously recorded `8e6733cf...`.
 - PR #256 `Fix workout session controls and ship real-human anatomy v3` merged as `473eba3559ae1a8863de4291f7d40c5dbf7de99e`; exact-head Release Gate #1921 / `35973077815` was FULL GREEN across core-build-rules, browser-webkit and final verify.
@@ -38,7 +53,7 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main observed: `8e6733cf4878484b23fe75765b01988b8b0b4794`.
+- Canonical PRODUCT main observed: `0da445691dc7c4107f6491d45461450f465327ed`.
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## Latest AI/Data evidence — Personalized Response Learning v2
