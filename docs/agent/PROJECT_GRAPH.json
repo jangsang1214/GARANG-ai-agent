@@ -2553,6 +2553,30 @@
       "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-NUTRITION-IDENTITY-REAL-USAGE-BASELINE-20260925",
+      "kind": "verification",
+      "title": "Production aggregate baseline measures Food Identity real usage without raw identity data",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-NUTRITION-IDENTITY-ZERO-SAMPLE-BASELINE",
+      "kind": "result",
+      "title": "Food Identity quality rates are not yet measurable because production sample is zero",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-NUTRITION-IDENTITY-MEASUREMENT-DENOMINATORS",
+      "kind": "task",
+      "title": "Add consent-gated attempt/result denominators for exact Food Identity quality rates",
+      "status": "active",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -4524,6 +4548,26 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-NUTRITION-IDENTITY-PRODUCTION-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-NUTRITION-IDENTITY-REAL-USAGE-BASELINE-20260925",
+      "to": "RESULT-NUTRITION-IDENTITY-PRODUCTION-GREEN",
+      "kind": "measures"
+    },
+    {
+      "from": "RESULT-NUTRITION-IDENTITY-ZERO-SAMPLE-BASELINE",
+      "to": "VERIFY-NUTRITION-IDENTITY-REAL-USAGE-BASELINE-20260925",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-NUTRITION-IDENTITY-MEASUREMENT-DENOMINATORS",
+      "to": "RESULT-NUTRITION-IDENTITY-ZERO-SAMPLE-BASELINE",
+      "kind": "responds-to"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "TASK-NUTRITION-IDENTITY-MEASUREMENT-DENOMINATORS",
       "kind": "depends-on"
     }
   ]

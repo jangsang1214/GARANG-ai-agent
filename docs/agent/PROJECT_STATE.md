@@ -441,3 +441,13 @@ Move from code-addressable commercial parity uplift to anonymous external valida
 - Current-main Pages #893: SUCCESS.
 - Therefore Body v7.1 is VERIFIED preserved after the later Nutrition/Running merges. No new Body code change is required until fresh Founder real-device visual evidence is reviewed.
 
+## 2026-09-25 Nutrition Identity real-usage baseline — MEASURED / SAMPLE NOT YET SUFFICIENT
+- Aggregate-only production Firestore measurement ran at 2026-09-25T13:08:01.734Z (22:08 KST). No user IDs, GTINs, product names, or raw records were emitted.
+- Production state docs observed: 3.
+- Analytics-consented state docs: 1.
+- Telemetry is functioning: 30 analytics documents / 30 canonical events / 0 error documents. Event mix: today_viewed 5, coach_opened 15, accumulation_viewed 7, planned_action_completed 3.
+- Food Identity adoption in persisted production state is currently 0: usersWithIdentity 0, confirmed barcode mappings 0, barcode/report-number meal items 0, misses 0, corrections 0.
+- Existing meal items observed: 2; identity-assisted meal items: 0 (0%).
+- Therefore barcode/label miss rate, mismatch rate, and correction rate are NOT statistically measurable yet. This is a sample-availability limitation, not evidence of product failure or success.
+- Current persisted state supports counts of mappings/misses/corrections, but exact attempt denominators and mismatch events are not stored. A dedicated consent-gated measurement contract is required before claiming exact rates.
+- Highest-value next measurement work: add canonical Nutrition Identity attempt/result/correction events under the existing analytics-consent boundary, then re-measure after real external usage.

@@ -725,3 +725,24 @@ Remaining evidence, not implementation blocker:
 - Body v7.1 overlay-fit implementation remains present after later Nutrition/Running merges.
 - Remaining task is unchanged: fresh real-device visual acceptance only.
 
+## Active P5 — Nutrition Identity real-user measurement denominators
+Status: BASELINE MEASURED / EXACT RATES BLOCKED BY ZERO SAMPLE + MISSING ATTEMPT DENOMINATORS
+Owner: AI Data / Growth Business / Release QA
+Goal: measure real barcode/label identity quality from consented production usage without collecting raw GTINs or product names.
+
+Baseline evidence — 2026-09-25 22:08 KST:
+- production state docs: 3
+- analytics-consented docs: 1
+- telemetry: 30 canonical events / 0 telemetry errors
+- persisted Food Identity usage: 0 users / 0 mappings / 0 misses / 0 corrections
+- meal items: 2; identity-assisted items: 0
+- exact miss rate: unavailable
+- mismatch rate: unavailable
+- correction rate: unavailable
+
+Acceptance criteria:
+- canonical consent-gated events capture attempt/result class for barcode and label flows without raw barcode/product identity.
+- result classes distinguish local exact hit, exact source-backed hit, fail-closed miss, user correction, and confirmed mapping reuse.
+- aggregate report exposes attempts, hit rate, fail-closed miss rate, correction rate, reuse rate, and 7d/30d windows.
+- no user IDs, GTIN values, product names, label text, or nutrition payloads appear in aggregate output.
+- only use measured real-user evidence to justify future catalog expansion.
