@@ -375,3 +375,11 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - v7.1 refits FRONT limb/chest/shoulder geometry, splits bilateral limb zones, alpha-masks overlays to the exact body asset, removes overlay strokes, and reduces highlight opacity.
 - Next action is fresh real-device visual QA only. If it still looks wrong, use the new screenshot as geometry evidence rather than starting another generic Body architecture pass.
 
+## Latest AI/Data handoff — Nutrition Capture & Food Identity v1/v1.1
+- PRODUCT current main: `08ae9240e26b118097c99ccc1d7a168579a91aed`.
+- PR #271 shipped Barcode/GTIN capture, user-confirmed exact mappings, Vision fallback, GTIN-aware source-backed lookup and label identity extraction; exact-head Gate #2000 GREEN.
+- PR #274 adds exact K-FIND item-manufacturing report-number matching before fuzzy product identity; exact-head Gate #2009 GREEN; merge `3aa1284b3e99e10b293bc513042fc7ab782fed01`.
+- Later Body PR #276 advanced main but preserved Nutrition Identity v1/v1.1.
+- Pages #891 SUCCESS. Gate #2013 final same-SHA attempt 2 FULL GREEN; first attempt only hit the known class of non-deterministic Today/Coach lifecycle timing, while Nutrition/Barcode/Label paths passed.
+- Production backend status remains PENDING: Activation #41 was safely SKIPPED because explicit production approval was absent. Do not claim live barcode Vision / GTIN-aware production lookup until an approved Function activation and authenticated live smoke succeed.
+- Next approval-gated action: Firebase Function `api` activation on exact current main + live barcode/Meal Scan/Coach verification.
