@@ -81,6 +81,7 @@ Latest evidence:
 - Both repository identifiers `GCP_WORKLOAD_IDENTITY_PROVIDER` and `GCP_DEPLOY_SERVICE_ACCOUNT` are currently absent.
 - Founder-approved bootstrap run `35970823847` authenticated the existing deploy identity `firebase-adminsdk-fbsvc@fitfind-ai.iam.gserviceaccount.com` but failed safely because it lacks `iam.workloadIdentityPools.create`.
 - No WIF pool/provider or new service-account key was created.
+- 2026-09-25 Production Coach Activation #48 / `36113706298` succeeded on PRODUCT main `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d` using `adc-service-account-fitfind`; WIF auth was skipped because repository WIF variables remain absent. This verifies the fallback still works but does not resolve the long-lived credential risk.
 Recommended fix: use a human-authenticated Google Cloud principal with Workload Identity Pool Admin capability to create the GitHub OIDC pool/provider and grant `roles/iam.workloadIdentityUser` to the existing verified deploy service account for PRODUCT main only. Configure the two non-secret repo identifiers, require a `via WIF` production activation to pass, then rotate/retire the JSON key only after replacement is VERIFIED.
 
 ## TD-013 — Superseded open PRs create repository noise
