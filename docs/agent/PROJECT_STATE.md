@@ -1,5 +1,18 @@
 # GARANG Project State
 
+## 2026-09-25 Nutrition Capture & Food Identity — PRODUCTION VERIFIED GREEN
+- PRODUCT current main is `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
+- Production-smoke hardening culminated in PR #286 exact head `abaa3381eb02b92829225f00f0ce4b6b59eda97d`; Release Gate #2031 / `36087286032`: FULL GREEN. WIF Readiness #10 / `36087286007`: SUCCESS with WIF still NOT_CONFIGURED.
+- Founder-approved merge/activation produced current main `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d` with the required `Activate production Real AI Coach` trigger.
+- Production Coach Activation #48 / `36113706298`: SUCCESS. Firebase `functions:api` deployment PASS using the verified `adc-service-account-fitfind` fallback; WIF authentication was skipped because repository WIF variables remain unconfigured.
+- Activation live checks PASS: public Coach / Meal Scan / nutrition route boundaries, authenticated nutrition lookup, authenticated Meal Scan, authenticated Coach, Nutrition Identity smoke, bounded autonomous write, disposable Firebase identity deletion, and temporary credential cleanup.
+- Nutrition Identity production smoke is fail-closed by contract: Barcode Vision accepts only a valid canonical GTIN or the explicit no-valid-GTIN outcome; GTIN-aware nutrition lookup accepts only an exact same-barcode source-backed match or an explicit trusted-source unresolved result. Similar-product substitution is not accepted.
+- Pages #899 / `36113705680`: SUCCESS on the same current-main SHA.
+- Current-main Release Gate #2032 / `36113706246`: attempt 1 failed only at the known Today -> Coach proposal readiness timeout after Real Meal Scan and Golden Path integration had passed; same-SHA failed-job rerun attempt 2 passed Golden Path complete, authenticated Coach/Real LLM, recovery, mobile regression, Settings, button health, runtime stability, and final verify. Final status: FULL GREEN.
+- Nutrition Capture & Food Identity v1/v1.1 is therefore SOURCE + WEB + PRODUCTION BACKEND VERIFIED GREEN.
+- Remaining product evidence is real-user barcode/label miss/correction rate and downstream retention/outcome value; do not expand the catalog or surface without that evidence.
+
+
 ## 2026-09-25 Commercial parity uplift reconciliation — Label Scan + Adaptive Nutrition Apply + Running Analysis v2
 - PRODUCT current main is `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`; no open PRODUCT PRs were observed at reconciliation time.
 - PR #265 `Add AI nutrition label scan to Food logging` is MERGED as `343985808ca913da58ded294d634130f8f640fc8`. Exact head `3ff480048526f92a39eeac370bb9e59b66c3ebbe` passed Release Gate #1987 / `36035658986` FULL GREEN.
