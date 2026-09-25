@@ -423,3 +423,13 @@ Decision: GREEN / MERGED / WEB DEPLOYED / TECHNICALLY VERIFIED / HUMAN VISUAL AC
 - PWA cache rotated to app-shell v30 and six Body assets remain explicitly precached.
 - Functional/release integrity is VERIFIED GREEN. Subjective visual approval requires fresh Founder real-device review.
 
+## Body Model v7.1 overlay-fit — PR #276 — 2026-09-25
+Decision: GREEN / MERGED / WEB DEPLOYED / TECHNICALLY VERIFIED / HUMAN VISUAL ACCEPTANCE REQUIRED.
+- Exact head: `f4fd2d9201e4cb3c6faf99275ae77e67e31801aa`.
+- Exact-head Release Gate #2011: FULL GREEN.
+- Merge commit / PRODUCT main: `08ae9240e26b118097c99ccc1d7a168579a91aed`.
+- Pages #891: SUCCESS.
+- Post-merge Release Gate #2013: attempt 1 hit an unrelated/timing-sensitive Golden Path Coach proposal timeout; attempt 2 on the same main SHA completed SUCCESS, including Golden Path complete + browser-webkit + final verify.
+- v7.1 uses the Body asset itself as an alpha mask for definition/highlight overlays and splits FRONT limb zones into independent fitted regions.
+- Functional/release integrity is VERIFIED GREEN; fresh Founder real-device visual acceptance remains required.
+

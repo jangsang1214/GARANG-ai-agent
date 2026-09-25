@@ -384,3 +384,14 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Pages #889 SUCCESS and post-merge Release Gate #2008 FULL GREEN on PRODUCT main.
 - Technical status is VERIFIED GREEN. Human visual acceptance remains open until a fresh deployed phone screenshot confirms the new muscular proportions and zone alignment meet Founder expectations.
 
+## 2026-09-25 Body Model v7.1 overlay-fit reconciliation
+- Fresh Founder iPhone screenshots of deployed v7 showed remaining P3 geometry defects: biceps highlights floated beside the upper arms, leg highlights formed wedge/block shapes, and anatomy definition strokes leaked outside the visible body.
+- PRODUCT PR #276 `Fit Body v7.1 muscle overlays to visible anatomy` fixes the screenshot-backed defects.
+- FRONT biceps/triceps were moved onto the visible upper-arm anatomy; FRONT chest/shoulder geometry was tightened; legs were redrawn as independent left/right thigh/calf zones.
+- Definition + interaction overlays are now alpha-masked by the exact rendered Body asset, preventing visible overlay spill outside the mannequin. Selected overlay stroke is removed and opacity reduced.
+- PR #276 exact head `f4fd2d9201e4cb3c6faf99275ae77e67e31801aa` passed Release Gate #2011 FULL GREEN.
+- PR #276 merged as PRODUCT main `08ae9240e26b118097c99ccc1d7a168579a91aed`.
+- Pages #891 SUCCESS.
+- Post-merge Gate #2013 attempt 1 had one Golden Path complete timeout while the Body/WebKit checks before it had passed. Same main SHA rerun attempt 2 passed core-build-rules, browser-webkit, Golden Path complete, and final verify; final Gate #2013 status is SUCCESS.
+- Technical/release status is VERIFIED GREEN. Founder visual acceptance still requires a fresh deployed screenshot because CI cannot judge anatomy aesthetics.
+

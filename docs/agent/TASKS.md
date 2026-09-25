@@ -642,3 +642,23 @@ Remaining acceptance:
 
 Do not create another Body architecture/version unless the new deployed screenshot shows a concrete residual defect.
 
+## Active P3 — Body Model v7.1 deployed visual acceptance
+Status: TECHNICALLY DONE / DEPLOYED / FOUNDER VISUAL ACCEPTANCE REQUIRED
+
+Verified:
+- PR #276 exact-head Gate #2011 FULL GREEN.
+- PRODUCT main `08ae9240e26b118097c99ccc1d7a168579a91aed`.
+- Pages #891 SUCCESS.
+- Post-merge Gate #2013 final SUCCESS on attempt 2.
+- FRONT biceps/triceps/chest/shoulder/legs remapped from Founder screenshot evidence.
+- FRONT legs are independent left/right thigh/calf zones.
+- Definition/highlight overlays are alpha-masked to the exact visible Body asset.
+- Selected overlay stroke removed and opacity reduced.
+
+Remaining acceptance:
+- Fresh phone screenshot confirms biceps no longer float beside the arms.
+- Leg highlights no longer form detached wedges/blocks.
+- Definition lines remain inside the visible body and overall anatomy reads naturally.
+
+Only fix concrete residual screenshot evidence after this point.
+

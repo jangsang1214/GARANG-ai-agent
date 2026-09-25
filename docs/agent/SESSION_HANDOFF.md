@@ -368,3 +368,10 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Chest/shoulder/arm/core/leg zones are tighter; non-selected hit zones are invisible; duplicate legacy body SVGs are removed before v7 mounts.
 - Next Body action is only fresh real-phone visual QA. Fix only specific residual visual evidence; do not return to generic architecture iteration if the deployed v7 is acceptable.
 
+## Latest Design / Product handoff — Body Model v7.1 overlay-fit — 2026-09-25
+- PRODUCT PR #276 merged as main `08ae9240e26b118097c99ccc1d7a168579a91aed`.
+- Exact-head Gate #2011 FULL GREEN; Pages #891 SUCCESS; post-merge Gate #2013 final SUCCESS on rerun attempt 2.
+- Founder screenshots exposed detached biceps ovals, wedge/block leg highlights, and definition lines outside the body.
+- v7.1 refits FRONT limb/chest/shoulder geometry, splits bilateral limb zones, alpha-masks overlays to the exact body asset, removes overlay strokes, and reduces highlight opacity.
+- Next action is fresh real-device visual QA only. If it still looks wrong, use the new screenshot as geometry evidence rather than starting another generic Body architecture pass.
+
