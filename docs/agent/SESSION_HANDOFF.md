@@ -1,4 +1,17 @@
 ## Latest Command Center handoff — K-FIND Food DB release complete — 2026-09-25
+
+## Latest Command Center handoff — Commercial parity uplift complete — 2026-09-25
+- PRODUCT main: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
+- PR #265 AI Nutrition Label Scan is merged; exact-head Gate #1987 FULL GREEN.
+- PR #277 Adaptive Nutrition Apply Loop is merged; exact-head Gate #2014 FULL GREEN.
+- PR #278 Running Analysis v2 is merged; exact-head Gate #2016 FULL GREEN.
+- Current-main Gate #2017 / `36078348231` is FULL GREEN; Pages #893 / `36078346509` is SUCCESS.
+- User-facing code-addressable scope is closed: photo/label nutrition capture, confirmation-gated adaptive calorie target application, and deeper evidence-bounded Running analysis are all present on current main.
+- Keep production evidence separate: Nutrition Identity / barcode Vision / GTIN-aware server deltas are still NOT production-live until the existing approval-gated Firebase Function activation + authenticated smoke succeeds.
+- Do not reopen parity feature work by default. Next highest-value work is Anonymous External Validation + 2/4/8-week measurement of activation, comprehension, recommendation -> action conversion, repeated logging, retention, and goal-relevant outcomes.
+- Body v7.1 technical preservation remains GREEN on the same current main; fresh real-device aesthetic acceptance remains a separate human judgment track.
+
+
 - PRODUCT current main: `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
 - PR #260 is MERGED. Released local Food lookup layers: 500 GARANG canonical + 2,502 K-FIND general + 266,415 K-FIND processed + 5,721 USDA supplemental = 275,138 materialized records.
 - K-FIND processed corpus: 266,110 branded rows / 19,770 unique brands; verified provenance and no automatic canonical overwrite.
