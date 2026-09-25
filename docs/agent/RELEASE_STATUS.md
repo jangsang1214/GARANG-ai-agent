@@ -423,3 +423,15 @@ Decision: GREEN / MERGED / WEB DEPLOYED / TECHNICALLY VERIFIED / HUMAN VISUAL AC
 - PWA cache rotated to app-shell v30 and six Body assets remain explicitly precached.
 - Functional/release integrity is VERIFIED GREEN. Subjective visual approval requires fresh Founder real-device review.
 
+## Nutrition Capture & Food Identity v1/v1.1 — 2026-09-25
+Decision: SOURCE / WEB / RELEASE GREEN; PRODUCTION BACKEND ACTIVATION PENDING.
+- PR #271 exact head `95e567a0e3a589dd41afa54e76aa1308527f0b2c`; Release Gate #2000 / `36043340582`: FULL GREEN.
+- v1 release path: GTIN validation, BarcodeDetector/Vision fallback, label barcode/report-number extraction, GTIN-aware primary-source lookup, fail-closed unresolved behavior, confirmation learning and repeat local exact match.
+- PR #274 exact head `2ad99735949f5d381d3e2fcd4437f9abfbc59cc9`; Release Gate #2009 / `36076210786`: FULL GREEN.
+- PR #274 merged as `3aa1284b3e99e10b293bc513042fc7ab782fed01`.
+- v1.1 behavior: exact K-FIND `report_no` identity is preferred before fuzzy name resolution.
+- Current PRODUCT main after later Body PR #276: `08ae9240e26b118097c99ccc1d7a168579a91aed`; Nutrition Identity changes verified present.
+- Pages #891 / `36076811217`: SUCCESS.
+- Release Gate #2013 / `36076811640`: final attempt 2 FULL GREEN on the same main SHA. Attempt 1 failed only Golden Path Today -> Coach timing; same-SHA rerun passed the complete browser suite without code/timeout/threshold changes.
+- Activation #41 was SKIPPED by design. No production Function deploy, secret change, schema migration or billing change was performed for this task.
+- Server barcode Vision mode and GTIN-aware nutrition lookup are SOURCE/CI READY but remain production-live UNKNOWN until explicit Founder-approved activation + live authenticated smoke.
