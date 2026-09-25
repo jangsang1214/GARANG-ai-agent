@@ -2385,6 +2385,110 @@
       "status": "done",
       "ownerWorkstream": "design-brand",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "kind": "initiative",
+      "title": "Close code-addressable commercial parity gaps in Nutrition capture, adaptive targets, and Running analysis",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-NUTRITION-LABEL-SCAN-V1",
+      "kind": "task",
+      "title": "Add AI nutrition-label capture through the canonical Nutrition draft path",
+      "status": "done",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR265-LABEL-SCAN",
+      "kind": "change",
+      "title": "PRODUCT PR #265 adds AI nutrition label scan",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR265-GATE-1987",
+      "kind": "verification",
+      "title": "PR #265 exact-head Release Gate #1987 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-ADAPTIVE-NUTRITION-APPLY-V1",
+      "kind": "task",
+      "title": "Close adaptive nutrition proposal to explicit target-apply and reset loop",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR277-ADAPTIVE-NUTRITION-APPLY",
+      "kind": "change",
+      "title": "PRODUCT PR #277 closes the adaptive nutrition target apply loop",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR277-GATE-2014",
+      "kind": "verification",
+      "title": "PR #277 exact-head Release Gate #2014 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-RUNNING-ANALYSIS-V2",
+      "kind": "task",
+      "title": "Add evidence-bounded Running Analysis v2",
+      "status": "done",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR278-RUNNING-ANALYSIS-V2",
+      "kind": "change",
+      "title": "PRODUCT PR #278 adds Running Analysis v2 on current main",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR278-GATE-2016",
+      "kind": "verification",
+      "title": "PR #278 exact-head Release Gate #2016 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-2017-PARITY-UPLIFT",
+      "kind": "verification",
+      "title": "Current PRODUCT main Gate #2017 FULL GREEN after adaptive nutrition and Running Analysis merges",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-893-PARITY-UPLIFT",
+      "kind": "release",
+      "title": "Pages #893 deploys PRODUCT main f72b3ef7 with commercial parity uplift",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "kind": "result",
+      "title": "Code-addressable Nutrition and Running parity uplift is source/web release-verified GREEN",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -4202,6 +4306,96 @@
       "from": "RESULT-BODY-V7-1-PRESERVED-CURRENT-MAIN",
       "to": "TASK-BODY-V7-1-FOUNDER-VISUAL-ACCEPTANCE",
       "kind": "supports"
+    },
+    {
+      "from": "INIT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-NUTRITION-LABEL-SCAN-V1",
+      "to": "INIT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-NUTRITION-LABEL-SCAN-V1",
+      "to": "INIT-NUTRITION-CAPTURE-IDENTITY-V1",
+      "kind": "advances"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR265-LABEL-SCAN",
+      "to": "TASK-NUTRITION-LABEL-SCAN-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR265-GATE-1987",
+      "to": "CHANGE-PRODUCT-PR265-LABEL-SCAN",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-ADAPTIVE-NUTRITION-APPLY-V1",
+      "to": "INIT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-ADAPTIVE-NUTRITION-APPLY-V1",
+      "to": "INIT-COMMERCIAL-INTELLIGENCE-REACH-V1",
+      "kind": "advances"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR277-ADAPTIVE-NUTRITION-APPLY",
+      "to": "TASK-ADAPTIVE-NUTRITION-APPLY-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR277-GATE-2014",
+      "to": "CHANGE-PRODUCT-PR277-ADAPTIVE-NUTRITION-APPLY",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-RUNNING-ANALYSIS-V2",
+      "to": "INIT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR278-RUNNING-ANALYSIS-V2",
+      "to": "TASK-RUNNING-ANALYSIS-V2",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR278-GATE-2016",
+      "to": "CHANGE-PRODUCT-PR278-RUNNING-ANALYSIS-V2",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "to": "VERIFY-PRODUCT-PR265-GATE-1987",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "to": "VERIFY-PRODUCT-PR277-GATE-2014",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "to": "VERIFY-PRODUCT-PR278-GATE-2016",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "to": "VERIFY-PRODUCT-MAIN-2017-PARITY-UPLIFT",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "to": "RELEASE-PAGES-893-PARITY-UPLIFT",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "kind": "depends-on"
     }
   ]
 }
