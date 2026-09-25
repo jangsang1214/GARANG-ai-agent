@@ -1,5 +1,18 @@
 # GARANG Project State
 
+## 2026-09-25 Commercial parity uplift reconciliation — Label Scan + Adaptive Nutrition Apply + Running Analysis v2
+- PRODUCT current main is `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`; no open PRODUCT PRs were observed at reconciliation time.
+- PR #265 `Add AI nutrition label scan to Food logging` is MERGED as `343985808ca913da58ded294d634130f8f640fc8`. Exact head `3ff480048526f92a39eeac370bb9e59b66c3ebbe` passed Release Gate #1987 / `36035658986` FULL GREEN.
+- Label Scan reuses the canonical Meal Scan/Nutrition draft path, reads visible product/serving/kcal/P/C/F values, prefers GARANG/K-FIND matching, and keeps unmatched printed values approximate + confirmation-required rather than silently treating OCR as verified nutrition.
+- PR #277 `Close adaptive nutrition target apply loop on latest main` is MERGED as `f8c78317a41621a81dd4745b5dcab2a2b4ed41a9`. Exact head `323058fae9e1c25042b5295156831f931d736d2b` passed Release Gate #2014 / `36077139186` FULL GREEN.
+- Adaptive Nutrition now closes proposal -> explanation -> explicit user approval -> canonical target application -> reversible reset. Confirmed targets are bounded by adult/evidence gates and remain user-confirmed rather than automatic mutation.
+- PR #278 `Add Running Analysis v2 on current main` is MERGED as current PRODUCT main `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`. Exact head `11598cd7da7c74634a1d5ebea6aa2fb5095e076a` passed Release Gate #2016 / `36077757353` FULL GREEN.
+- Running Analysis v2 adds recorded-split consistency and negative/even/positive split classification, 28-day relative Pace Guide, observed easy/steady/fast distribution, 5K/10K progression, and bounded 10K/half estimates. It explicitly does not claim heart-rate/lactate zones, elevation/GAP, routes, or sensor-derived physiology without evidence.
+- Current-main Release Gate #2017 / `36078348231`: FULL GREEN. Pages #893 / `36078346509`: SUCCESS.
+- This closes the code-addressable parity uplift scope as DONE / VERIFIED GREEN on source + web release. It does not convert newer Firebase server deltas into production-live evidence: Nutrition Identity / barcode Vision / GTIN-aware server behavior remains under the existing explicit production-activation gate.
+- Highest-value next default work is Anonymous External Validation + 2/4/8-week longitudinal measurement of activation, recommendation-to-action conversion, retention, and outcome signals rather than another parity feature expansion.
+
+
 ## 2026-09-25 Command Center reconciliation — K-FIND Food DB release complete
 - PRODUCT current main is `047ccb839447b6c54a1b381d39cb887cac9c8bc9`.
 - PR #260 `Ingest official K-FIND Korean food corpus` is MERGED. The released corpus includes 2,502 K-FIND general-food rows and 266,415 K-FIND processed-food rows; processed metadata records 266,110 branded rows across 19,770 unique brands. Existing USDA supplemental remains 5,721 rows and GARANG canonical remains 500 rows, for 275,138 materialized local lookup records across the four layers.
@@ -70,15 +83,15 @@
 - Workout flow now uses explicit READY → 운동 시작 → LIVE SESSION → 운동 종료 semantics, existing Exercise Library search via a Log magnifier, direct return to Log after selection, unified dark execution controls, and rebuilt classical-athletic body proportions.
 - No backend/Firebase Function/data-schema/secret/billing change was part of PR #253.
 
-Last updated: 2026-09-24
+Last updated: 2026-09-25
 
 ## Current objective
-Stabilize the canonical commercial GARANG after the Real AI Coach repair and User Performance Model v1 rollout, then move from feature construction to longitudinal external validation and measured behavior change.
+Move from code-addressable commercial parity uplift to anonymous external validation and 2/4/8-week longitudinal proof of retained Personal Performance Intelligence value.
 
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main observed: `0da445691dc7c4107f6491d45461450f465327ed`.
+- Canonical PRODUCT main observed: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## Latest AI/Data evidence — Personalized Response Learning v2
