@@ -642,3 +642,23 @@ Remaining acceptance:
 
 Do not create another Body architecture/version unless the new deployed screenshot shows a concrete residual defect.
 
+## Active P4 — Nutrition Capture & Food Identity production activation
+Status: SOURCE / WEB / RELEASE VERIFIED GREEN; PRODUCTION BACKEND ACTIVATION PENDING FOUNDER APPROVAL
+Owner: AI Data / Engineering / Product / Release QA
+Goal: make packaged-food capture fast and exact without substituting similar products.
+
+Delivered:
+- GTIN/EAN/UPC checksum validation + canonical GTIN-14 identity. ✅
+- BarcodeDetector path + authenticated Vision barcode fallback. ✅
+- Label Scan extraction of visible barcode and K-FIND item-manufacturing report number. ✅
+- exact K-FIND report-number match before fuzzy product matching. ✅
+- GTIN-aware source-backed nutrition lookup; unknown GTIN remains fail-closed. ✅
+- confirmation-required first lookup; confirmed barcode mapping reused locally on later scans. ✅
+- bounded account learning: barcode mappings 300 / misses 120 / corrections 120. ✅
+- PR #271 Gate #2000 FULL GREEN; PR #274 Gate #2009 FULL GREEN. ✅
+- latest PRODUCT main `08ae9240e26b118097c99ccc1d7a168579a91aed`: Pages #891 SUCCESS; Gate #2013 final same-SHA attempt 2 FULL GREEN. ✅
+
+Remaining:
+- explicit Founder approval for Firebase Function `api` production activation. ⏳
+- live authenticated barcode Vision + GTIN-aware lookup + existing Meal Scan/Coach regression after activation. ⏳
+- real-user barcode/label miss and correction rates should determine future catalog investment. ⏳
