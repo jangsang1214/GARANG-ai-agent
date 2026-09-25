@@ -1,3 +1,14 @@
+## Latest Command Center handoff — Nutrition Identity production closure — 2026-09-25
+- PRODUCT main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
+- PR #286 exact-head Gate #2031 FULL GREEN.
+- Founder-approved Production Coach Activation #48 / `36113706298`: SUCCESS.
+- Live authenticated checks PASS for nutrition lookup, Meal Scan, Coach, Nutrition Identity, bounded autonomous write and cleanup.
+- Nutrition Identity is now production-live with an exact-or-fail-closed contract: no similar-product substitution when GTIN identity is unverified.
+- Pages #899 SUCCESS.
+- Current-main Gate #2032 final same-SHA attempt 2 FULL GREEN. Attempt 1 reproduced the monitored Today -> Coach readiness timing class; no timeout or product-code weakening was used to obtain GREEN.
+- WIF remains NOT_CONFIGURED; the successful deployment used the existing verified service-account fallback. TD-012 remains active.
+- Next highest-value product work is Anonymous External Validation + 2/4/8-week longitudinal measurement, including barcode/label miss/correction rates and recommendation -> action -> outcome evidence.
+
 ## Latest Command Center handoff — K-FIND Food DB release complete — 2026-09-25
 
 ## Latest Command Center handoff — Commercial parity uplift complete — 2026-09-25
