@@ -388,14 +388,17 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - v7.1 refits FRONT limb/chest/shoulder geometry, splits bilateral limb zones, alpha-masks overlays to the exact body asset, removes overlay strokes, and reduces highlight opacity.
 - Next action is fresh real-device visual QA only. If it still looks wrong, use the new screenshot as geometry evidence rather than starting another generic Body architecture pass.
 
-## Latest AI/Data handoff — Nutrition Capture & Food Identity v1/v1.1
-- PRODUCT current main: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
+## Latest AI/Data handoff — Nutrition Capture & Food Identity v1/v1.1 — PRODUCTION GREEN
+- PRODUCT current main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
 - PR #271 shipped Barcode/GTIN capture, user-confirmed exact mappings, Vision fallback, GTIN-aware source-backed lookup and label identity extraction; exact-head Gate #2000 GREEN.
-- PR #274 adds exact K-FIND item-manufacturing report-number matching before fuzzy product identity; exact-head Gate #2009 GREEN; merge `3aa1284b3e99e10b293bc513042fc7ab782fed01`.
-- Later adaptive-nutrition #277 and Running Analysis v2 #278 advanced main; GitHub compare from #274 merge to current main is ahead-only (3 commits / 0 behind), preserving Nutrition Identity v1/v1.1.
-- Current-main Pages #893 SUCCESS. Gate #2017 FULL GREEN.
-- Production backend status remains PENDING: Activation #41 was safely SKIPPED because explicit production approval was absent. Do not claim live barcode Vision / GTIN-aware production lookup until an approved Function activation and authenticated live smoke succeed.
-- Next approval-gated action: Firebase Function `api` activation on exact current main + live barcode/Meal Scan/Coach verification.
+- PR #274 added exact K-FIND item-manufacturing report-number matching before fuzzy product identity; exact-head Gate #2009 GREEN.
+- Founder approved production activation.
+- Activation hardening culminated in PR #286, which defines the live GTIN contract as exact same-barcode source-backed match OR explicit fail-closed unresolved; substitute/mismatched products remain failure.
+- Production Coach Activation #48 / `36113706298`: SUCCESS. Deploy, public auth/method boundaries, authenticated nutrition lookup, Meal Scan, Coach, Nutrition Identity, bounded autonomous write, disposable-user deletion and temporary credential cleanup all passed.
+- Pages #899 / `36113705680`: SUCCESS.
+- Release Gate #2032 / `36113706246`: final identical-SHA attempt 2 FULL GREEN after attempt 1 hit the known Today→Coach lifecycle timing recurrence. No timeout/threshold weakening was used.
+- Nutrition Identity is now VERIFIED live in production. Do not describe barcode Vision / GTIN-aware lookup as pending.
+- Highest-value next AI/Data work is real-user miss/correction measurement and external longitudinal validation, not blind corpus expansion.
 
 ## Current-main preservation note — Body v7.1 — 2026-09-25
 - PRODUCT main is now `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5` after #277 and #278.
