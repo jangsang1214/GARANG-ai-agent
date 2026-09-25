@@ -1,5 +1,31 @@
 # GARANG Tasks
 
+## Closed P4 — Commercial parity uplift: Label Scan + Adaptive Nutrition Apply + Running Analysis v2
+Status: DONE / CURRENT-MAIN SOURCE+WEB+RELEASE VERIFIED GREEN
+Owner: Product / AI Data / Engineering / Release QA
+Goal: convert already-built Food, Nutrition Intelligence, and Running foundations into commercially legible user-facing capability without creating duplicate state owners.
+
+Delivered:
+- AI Nutrition Label Scan through the existing authenticated Meal Scan/Nutrition draft owner. ✅
+- visible-label-only extraction with K-FIND/GARANG match priority and confirmation-required OCR fallback. ✅
+- Adaptive Nutrition proposal -> explicit apply -> canonical calorie target -> reversible reset loop. ✅
+- adult/evidence/confidence guardrails; no silent nutrition target mutation. ✅
+- Running Analysis v2: split pattern/consistency, relative Pace Guide, training distribution, 5K/10K progression, bounded race estimates. ✅
+- sensor/elevation/HR-zone claims remain fail-closed when evidence is absent. ✅
+
+Verification:
+- PR #265 exact-head Gate #1987 / `36035658986`: FULL GREEN; merged as `343985808ca913da58ded294d634130f8f640fc8`. ✅
+- PR #277 exact-head Gate #2014 / `36077139186`: FULL GREEN; merged as `f8c78317a41621a81dd4745b5dcab2a2b4ed41a9`. ✅
+- PR #278 exact-head Gate #2016 / `36077757353`: FULL GREEN; merged as current main `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`. ✅
+- current-main Gate #2017 / `36078348231`: FULL GREEN. ✅
+- Pages #893 / `36078346509`: SUCCESS. ✅
+
+Boundary:
+- Source/web release is GREEN.
+- Newer Firebase server behavior for Nutrition Identity / barcode Vision / GTIN-aware lookup is not called production-live until the existing explicit production activation + authenticated live smoke passes.
+- Next product priority is external activation/retention and 2/4/8-week longitudinal outcome evidence, not another code-only parity pass.
+
+
 ## Active P3 — Body Model v5 reference-minimum remediation
 Status: DEPLOYED / TECHNICALLY VERIFIED / VISUAL ACCEPTANCE REQUIRED
 Owner: Product / Design / Engineering / Release QA
@@ -63,7 +89,7 @@ Goal: expand Korean brand/product coverage without weakening canonical precedenc
 - Post-merge lifecycle regression was repaired by PR #264; exact-head Gate #1977 FULL GREEN, Pages #881 SUCCESS, current-main Gate #1982 FULL GREEN. ✅
 - No automatic canonical overwrite; provenance/verified-only guardrails preserved. ✅
 
-Last updated: 2026-09-24
+Last updated: 2026-09-25
 
 ## Active P4/P5 — Personalized Response Learning v2
 Status: IMPLEMENTED IN MAIN / CURRENT-MAIN SOURCE+WEB VERIFIED GREEN / PRODUCTION BACKEND ACTIVATION PENDING

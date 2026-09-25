@@ -1,5 +1,16 @@
 # GARANG Release Status
 
+## Commercial parity uplift — Label Scan + Adaptive Nutrition Apply + Running Analysis v2 — 2026-09-25
+Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
+- PRODUCT current main: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
+- PR #265 Label Scan: Gate #1987 / `36035658986` FULL GREEN; merge `343985808ca913da58ded294d634130f8f640fc8`.
+- PR #277 Adaptive Nutrition Apply: Gate #2014 / `36077139186` FULL GREEN; merge `f8c78317a41621a81dd4745b5dcab2a2b4ed41a9`.
+- PR #278 Running Analysis v2: Gate #2016 / `36077757353` FULL GREEN; merge/current main `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
+- Current-main Gate #2017 / `36078348231`: FULL GREEN across release gate.
+- Pages #893 / `36078346509`: SUCCESS.
+- Release status applies to source/web capability and regression safety. Existing Nutrition Identity production-backend activation remains separately approval-gated and must not be inferred from Pages/Release Gate success.
+
+
 ## K-FIND Food DB expansion + post-merge lifecycle repair — 2026-09-25
 Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
 - PRODUCT PR #260 merged the official K-FIND corpus. Materialized local Food lookup coverage: 500 canonical + 2,502 K-FIND general + 266,415 K-FIND processed + 5,721 USDA = 275,138 records.
@@ -70,15 +81,14 @@ Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
 - Live deployed assets were fetched and verified after deployment.
 - Scope is frontend/runtime/test only; no Firebase Function production activation was required or performed.
 
-Last updated: 2026-09-24
+Last updated: 2026-09-25
 
 ## Overall decision
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
-- Last VERIFIED application runtime/web baseline: `0da445691dc7c4107f6491d45461450f465327ed` via post-merge Gate #1967 / `36022832225` + Pages #879 / `36022831829`.
-- Current observed PRODUCT main: `0da445691dc7c4107f6491d45461450f465327ed`.
+- Last VERIFIED application runtime/web baseline: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5` via current-main Gate #2017 / `36078348231` + Pages #893 / `36078346509`.nt observed PRODUCT main: `0da445691dc7c4107f6491d45461450f465327ed`.
 - Current verified production Coach backend deployment revision: `788aa81135fe996d28e29beaa4c578541ee77453` via Production Coach Activation #39 / `35944749134`.
-- Current source/web release: GREEN / VERIFIED on `0da445691dc7c4107f6491d45461450f465327ed` after Gate #1967 and Pages #879. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live.
+- Current source/web release: GREEN / VERIFIED on `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5` via Gate #2017 and Pages #893. Source/backend production SHA parity remains tracked separately; newer Functions deltas require explicit activation evidence before being called production-live.nd Pages #879. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live.
 
 ## Current PRODUCT release — Photo Evidence v1
 Decision: GREEN / CURRENT MAIN VERIFIED.
@@ -226,7 +236,7 @@ Decision: SOURCE/WEB GREEN / LIVE VISION SMOKE PENDING.
 
 ## Real Meal Scan live production verification — latest 2026-09-22
 Decision: SOURCE/WEB GREEN; PRODUCTION LIVE VISION YELLOW / APPROVAL-GATED.
-- Current observed PRODUCT main: `0eb2a11e117c50b208581e5987c45ed7515687de`.
+- Current observed PRODUCT main: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
 - PR #212 exact-head Gate #1653 / `35716733566`: SUCCESS before merge. PR #212 adds mandatory authenticated production Meal Scan live-smoke enforcement.
 - PRODUCT PR #213 is open at `5f5ad45a56cf976e244b8fe8bacd7e6acaabd142`; its only changed file is `scripts/verify-production-meal-scan.cjs`.
 - PR #213 exact-head Release Gate #1655 / `35717702324`: FULL GREEN; all release jobs passed, including Real Meal Scan browser flow.
