@@ -407,3 +407,11 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Current-main Release Gate #2013 / `36076811640`: final identical-main-SHA attempt 2 FULL GREEN. Attempt 1 failed only complete Golden Path Today -> Coach re-entry timing; attempt 2 passed without code/timeout/threshold changes. Nutrition/Barcode/Label paths passed in both attempts.
 - Production Coach Activation #41 was SKIPPED by the fail-closed approval boundary. The new server barcode Vision mode and GTIN-aware production nutrition lookup remain SOURCE/CI READY but are NOT yet claimed live in Firebase production.
 - Next approval-gated action: explicit Founder approval for exact-current-main Firebase Function `api` production activation, followed by authenticated live Meal Scan/Barcode/Coach smoke and cleanup.
+
+## 2026-09-25 Body v7.1 current-main preservation check
+- PRODUCT main advanced after Body v7.1 through adaptive nutrition #277 and Running Analysis v2 #278 to `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
+- The current main still contains Body v7.1: `data-garang-visual-revision="7.1"`, body-alpha overlay masking, fitted bilateral biceps/triceps zones, split thigh/calf zones, v7.1 cache URLs, and the v31 PWA cache contract.
+- Current-main Release Gate #2017: FULL GREEN.
+- Current-main Pages #893: SUCCESS.
+- Therefore Body v7.1 is VERIFIED preserved after the later Nutrition/Running merges. No new Body code change is required until fresh Founder real-device visual evidence is reviewed.
+
