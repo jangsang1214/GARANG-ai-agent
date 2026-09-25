@@ -2489,6 +2489,22 @@
       "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-2017-NUTRITION-IDENTITY",
+      "kind": "verification",
+      "title": "Current PRODUCT main Gate #2017 FULL GREEN preserving Nutrition Identity v1/v1.1",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-893-NUTRITION-IDENTITY",
+      "kind": "release",
+      "title": "Pages #893 deploys current PRODUCT main preserving Nutrition Identity v1/v1.1",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -4395,6 +4411,26 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-COMMERCIAL-PARITY-UPLIFT-V1",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-2017-NUTRITION-IDENTITY",
+      "to": "CHANGE-PRODUCT-PR274-NUTRITION-IDENTITY-V11",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-893-NUTRITION-IDENTITY",
+      "to": "CHANGE-PRODUCT-PR274-NUTRITION-IDENTITY-V11",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-NUTRITION-IDENTITY-WEB-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-2017-NUTRITION-IDENTITY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-NUTRITION-IDENTITY-WEB-GREEN",
+      "to": "RELEASE-PAGES-893-NUTRITION-IDENTITY",
       "kind": "depends-on"
     }
   ]

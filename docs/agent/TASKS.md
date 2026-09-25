@@ -702,7 +702,7 @@ Delivered:
 - confirmation-required first lookup; confirmed barcode mapping reused locally on later scans. ✅
 - bounded account learning: barcode mappings 300 / misses 120 / corrections 120. ✅
 - PR #271 Gate #2000 FULL GREEN; PR #274 Gate #2009 FULL GREEN. ✅
-- latest PRODUCT main `08ae9240e26b118097c99ccc1d7a168579a91aed`: Pages #891 SUCCESS; Gate #2013 final same-SHA attempt 2 FULL GREEN. ✅
+- current PRODUCT main `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`: Nutrition Identity v1/v1.1 preserved by ahead-only GitHub comparison; Pages #893 SUCCESS; Gate #2017 FULL GREEN. ✅
 
 Remaining:
 - explicit Founder approval for Firebase Function `api` production activation. ⏳
