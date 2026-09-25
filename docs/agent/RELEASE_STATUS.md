@@ -1,5 +1,18 @@
 # GARANG Release Status
 
+## Nutrition Capture & Food Identity production closure — 2026-09-25
+Decision: GREEN / MERGED / WEB DEPLOYED / PRODUCTION BACKEND VERIFIED.
+- PRODUCT current main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
+- PR #286 exact-head Gate #2031 / `36087286032`: FULL GREEN.
+- Production Coach Activation #48 / `36113706298`: SUCCESS.
+- Firebase deploy scope: `functions:api` only; auth mode `adc-service-account-fitfind`; WIF remained NOT_CONFIGURED and was not falsely claimed.
+- Authenticated production PASS: nutrition lookup, Meal Scan, Coach, Nutrition Identity exact-or-fail-closed smoke, bounded autonomous write.
+- Cleanup PASS: disposable Firebase identity deleted; temporary credential material removed.
+- Pages #899 / `36113705680`: SUCCESS.
+- Post-activation main Gate #2032 / `36113706246`: attempt 1 hit the monitored Today -> Coach readiness timeout; identical-SHA failed-job rerun attempt 2 FULL GREEN with final verify SUCCESS.
+- Production claim boundary: valid Barcode Vision + exact-or-fail-closed GTIN-aware nutrition identity is now production-live. This does not change the separate WIF/OIDC infrastructure debt or prove real-user retention/uplift.
+
+
 ## Commercial parity uplift — Label Scan + Adaptive Nutrition Apply + Running Analysis v2 — 2026-09-25
 Decision: GREEN / MERGED / WEB DEPLOYED / CURRENT MAIN VERIFIED.
 - PRODUCT current main: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
@@ -87,7 +100,7 @@ Last updated: 2026-09-25
 - Production Real AI Coach + Autonomous Intelligence backend activation: GREEN / VERIFIED.
 - End-to-end Coach action ownership: GREEN / VERIFIED in PR #176 exact-head Gate #1559 and merged to current main.
 - Last VERIFIED application runtime/web baseline: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5` via current-main Gate #2017 / `36078348231` + Pages #893 / `36078346509`.nt observed PRODUCT main: `0da445691dc7c4107f6491d45461450f465327ed`.
-- Current verified production Coach backend deployment revision: `788aa81135fe996d28e29beaa4c578541ee77453` via Production Coach Activation #39 / `35944749134`.
+- Current verified production Coach backend deployment revision: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d` via Production Coach Activation #48 / `36113706298`.
 - Current source/web release: GREEN / VERIFIED on `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5` via Gate #2017 and Pages #893. Source/backend production SHA parity remains tracked separately; newer Functions deltas require explicit activation evidence before being called production-live.nd Pages #879. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live. Source/backend SHA parity is tracked separately; later Functions deltas require explicit activation evidence before being called production-live.
 
 ## Current PRODUCT release — Photo Evidence v1

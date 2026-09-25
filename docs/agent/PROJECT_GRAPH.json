@@ -2341,16 +2341,16 @@
     {
       "id": "TASK-NUTRITION-IDENTITY-PROD-ACTIVATION",
       "kind": "task",
-      "title": "Activate exact-current-main Firebase api Function for barcode Vision and GTIN-aware lookup",
-      "status": "blocked",
+      "title": "Activate and verify production Firebase api for Barcode Vision and GTIN-aware lookup",
+      "status": "done",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
     },
     {
       "id": "CONSTRAINT-FOUNDER-APPROVAL-NUTRITION-IDENTITY-PROD",
       "kind": "constraint",
-      "title": "Explicit Founder approval required for Nutrition Identity production Function activation",
-      "status": "active",
+      "title": "Founder approval granted for Nutrition Identity production activation",
+      "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "control"
     },
@@ -2504,6 +2504,54 @@
       "title": "Pages #893 deploys current PRODUCT main preserving Nutrition Identity v1/v1.1",
       "status": "done",
       "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR286-NUTRITION-IDENTITY-PROD-SMOKE",
+      "kind": "change",
+      "title": "PR #286 hardens Nutrition Identity production smoke to exact-or-fail-closed",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR286-GATE-2031",
+      "kind": "verification",
+      "title": "PR #286 exact-head Release Gate #2031 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PROD-ACTIVATION-48-NUTRITION-IDENTITY",
+      "kind": "release",
+      "title": "Production Coach Activation #48 deploys and live-verifies Nutrition Identity",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-2032-NUTRITION-IDENTITY",
+      "kind": "verification",
+      "title": "PRODUCT main Gate #2032 final same-SHA attempt 2 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-899-NUTRITION-IDENTITY",
+      "kind": "release",
+      "title": "Pages #899 deploys PRODUCT main 3bf04c96",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-NUTRITION-IDENTITY-PRODUCTION-GREEN",
+      "kind": "result",
+      "title": "Nutrition Capture & Food Identity is source web and production-backend VERIFIED GREEN",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     }
   ],
@@ -4431,6 +4479,51 @@
     {
       "from": "RESULT-NUTRITION-IDENTITY-WEB-GREEN",
       "to": "RELEASE-PAGES-893-NUTRITION-IDENTITY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR286-NUTRITION-IDENTITY-PROD-SMOKE",
+      "to": "TASK-NUTRITION-IDENTITY-PROD-ACTIVATION",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR286-GATE-2031",
+      "to": "CHANGE-PRODUCT-PR286-NUTRITION-IDENTITY-PROD-SMOKE",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PROD-ACTIVATION-48-NUTRITION-IDENTITY",
+      "to": "TASK-NUTRITION-IDENTITY-PROD-ACTIVATION",
+      "kind": "releases"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-2032-NUTRITION-IDENTITY",
+      "to": "RELEASE-PROD-ACTIVATION-48-NUTRITION-IDENTITY",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-899-NUTRITION-IDENTITY",
+      "to": "RESULT-NUTRITION-IDENTITY-WEB-GREEN",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-NUTRITION-IDENTITY-PRODUCTION-GREEN",
+      "to": "RELEASE-PROD-ACTIVATION-48-NUTRITION-IDENTITY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-NUTRITION-IDENTITY-PRODUCTION-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-2032-NUTRITION-IDENTITY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-NUTRITION-IDENTITY-PRODUCTION-GREEN",
+      "to": "RELEASE-PAGES-899-NUTRITION-IDENTITY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-NUTRITION-IDENTITY-PRODUCTION-GREEN",
       "kind": "depends-on"
     }
   ]

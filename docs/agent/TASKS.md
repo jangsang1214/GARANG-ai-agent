@@ -688,8 +688,8 @@ Remaining acceptance:
 
 Only fix concrete residual screenshot evidence after this point.
 
-## Active P4 — Nutrition Capture & Food Identity production activation
-Status: SOURCE / WEB / RELEASE VERIFIED GREEN; PRODUCTION BACKEND ACTIVATION PENDING FOUNDER APPROVAL
+## Closed P4 — Nutrition Capture & Food Identity production activation
+Status: DONE / SOURCE + WEB + PRODUCTION BACKEND VERIFIED GREEN
 Owner: AI Data / Engineering / Product / Release QA
 Goal: make packaged-food capture fast and exact without substituting similar products.
 
@@ -698,16 +698,26 @@ Delivered:
 - BarcodeDetector path + authenticated Vision barcode fallback. ✅
 - Label Scan extraction of visible barcode and K-FIND item-manufacturing report number. ✅
 - exact K-FIND report-number match before fuzzy product matching. ✅
-- GTIN-aware source-backed nutrition lookup; unknown GTIN remains fail-closed. ✅
+- GTIN-aware source-backed nutrition lookup; unknown/unverified GTIN remains fail-closed. ✅
 - confirmation-required first lookup; confirmed barcode mapping reused locally on later scans. ✅
 - bounded account learning: barcode mappings 300 / misses 120 / corrections 120. ✅
-- PR #271 Gate #2000 FULL GREEN; PR #274 Gate #2009 FULL GREEN. ✅
-- current PRODUCT main `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`: Nutrition Identity v1/v1.1 preserved by ahead-only GitHub comparison; Pages #893 SUCCESS; Gate #2017 FULL GREEN. ✅
+- production smoke contract hardened through PR #286: exact same-barcode source-backed result OR explicit fail-closed unresolved; no similar-product substitution. ✅
 
-Remaining:
-- explicit Founder approval for Firebase Function `api` production activation. ⏳
-- live authenticated barcode Vision + GTIN-aware lookup + existing Meal Scan/Coach regression after activation. ⏳
-- real-user barcode/label miss and correction rates should determine future catalog investment. ⏳
+Verification:
+- PR #271 Gate #2000 FULL GREEN; PR #274 Gate #2009 FULL GREEN. ✅
+- PR #286 exact head `abaa3381eb02b92829225f00f0ce4b6b59eda97d`: Gate #2031 / `36087286032` FULL GREEN. ✅
+- Founder-approved PRODUCT main `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`. ✅
+- Production Coach Activation #48 / `36113706298`: `functions:api` deploy SUCCESS. ✅
+- authenticated nutrition lookup / Meal Scan / Coach / Nutrition Identity / bounded-write smokes PASS. ✅
+- disposable identity + temporary credential cleanup PASS. ✅
+- Pages #899 / `36113705680`: SUCCESS. ✅
+- current-main Gate #2032 / `36113706246`: final same-SHA attempt 2 FULL GREEN after one monitored Today -> Coach readiness timeout. ✅
+
+Remaining evidence, not implementation blocker:
+- measure real-user barcode/label miss, correction and exact-match reuse rates.
+- use those rates plus activation/retention evidence to decide future catalog investment.
+- WIF/OIDC migration remains separate TD-012 external IAM debt.
+
 
 ### Body v7.1 current-main verification update — 2026-09-25
 - Current PRODUCT main is `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
