@@ -2353,6 +2353,14 @@
       "status": "active",
       "ownerWorkstream": "command-center",
       "repositoryId": "control"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR271-GATE-2000",
+      "kind": "verification",
+      "title": "PR #271 exact-head Release Gate #2000 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
     }
   ],
   "edges": [
