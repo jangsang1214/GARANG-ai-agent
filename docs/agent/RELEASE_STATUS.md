@@ -444,17 +444,23 @@ Decision: GREEN / MERGED / WEB DEPLOYED / TECHNICALLY VERIFIED / HUMAN VISUAL AC
 - Functional/release integrity is VERIFIED GREEN; fresh Founder real-device visual acceptance remains required.
 
 ## Nutrition Capture & Food Identity v1/v1.1 — 2026-09-25
-Decision: SOURCE / WEB / RELEASE GREEN; PRODUCTION BACKEND ACTIVATION PENDING.
+Decision: SOURCE / WEB / PRODUCTION BACKEND / LIVE SMOKE GREEN.
 - PR #271 exact head `95e567a0e3a589dd41afa54e76aa1308527f0b2c`; Release Gate #2000 / `36043340582`: FULL GREEN.
-- v1 release path: GTIN validation, BarcodeDetector/Vision fallback, label barcode/report-number extraction, GTIN-aware primary-source lookup, fail-closed unresolved behavior, confirmation learning and repeat local exact match.
 - PR #274 exact head `2ad99735949f5d381d3e2fcd4437f9abfbc59cc9`; Release Gate #2009 / `36076210786`: FULL GREEN.
-- PR #274 merged as `3aa1284b3e99e10b293bc513042fc7ab782fed01`.
-- v1.1 behavior: exact K-FIND `report_no` identity is preferred before fuzzy name resolution.
-- Current PRODUCT main after later adaptive-nutrition #277 and Running Analysis v2 #278: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`; comparison from PR #274 merge `3aa1284b3e99e10b293bc513042fc7ab782fed01` is ahead-only, proving Nutrition Identity v1/v1.1 remains in current main.
-- Pages #893 / `36078346509`: SUCCESS.
-- Current-main Release Gate #2017 / `36078348231`: FULL GREEN across core-build-rules, browser-webkit and final verify.
-- Activation #41 was SKIPPED by design. No production Function deploy, secret change, schema migration or billing change was performed for this task.
-- Server barcode Vision mode and GTIN-aware nutrition lookup are SOURCE/CI READY but remain production-live UNKNOWN until explicit Founder-approved activation + live authenticated smoke.
+- Founder explicitly approved production activation on 2026-09-25.
+- Activation hardening PR #286 merged as current PRODUCT main `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
+- Production Coach Activation #48 / `36113706298`: SUCCESS.
+- Activation #48 deployed Firebase Function `api`; public Coach, Meal Scan and nutrition lookup auth/method boundaries passed.
+- Authenticated live nutrition lookup: PASS.
+- Authenticated live Meal Scan: PASS.
+- Authenticated live Coach: PASS.
+- Authenticated live Nutrition Identity exact-or-fail-closed smoke: PASS.
+- Authenticated bounded autonomous write: PASS.
+- Disposable Firebase smoke identity deletion: PASS.
+- Temporary Firebase credential material cleanup: PASS.
+- Pages #899 / `36113705680`: SUCCESS.
+- Current-main Release Gate #2032 / `36113706246`: attempt 1 failed only complete Golden Path Today→Coach readiness timing; attempt 2 on identical main SHA FULL GREEN (core-build-rules 20/20, browser-webkit 36/36, verify 3/3). No timeout or assertion weakening.
+- Production activation gap is CLOSED. Barcode Vision and GTIN-aware production lookup may now be described as live-verified for this release scope.
 
 ## Body v7.1 preservation on current PRODUCT main — 2026-09-25
 - Current PRODUCT main: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
