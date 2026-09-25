@@ -450,9 +450,9 @@ Decision: SOURCE / WEB / RELEASE GREEN; PRODUCTION BACKEND ACTIVATION PENDING.
 - PR #274 exact head `2ad99735949f5d381d3e2fcd4437f9abfbc59cc9`; Release Gate #2009 / `36076210786`: FULL GREEN.
 - PR #274 merged as `3aa1284b3e99e10b293bc513042fc7ab782fed01`.
 - v1.1 behavior: exact K-FIND `report_no` identity is preferred before fuzzy name resolution.
-- Current PRODUCT main after later Body PR #276: `08ae9240e26b118097c99ccc1d7a168579a91aed`; Nutrition Identity changes verified present.
-- Pages #891 / `36076811217`: SUCCESS.
-- Release Gate #2013 / `36076811640`: final attempt 2 FULL GREEN on the same main SHA. Attempt 1 failed only Golden Path Today -> Coach timing; same-SHA rerun passed the complete browser suite without code/timeout/threshold changes.
+- Current PRODUCT main after later adaptive-nutrition #277 and Running Analysis v2 #278: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`; comparison from PR #274 merge `3aa1284b3e99e10b293bc513042fc7ab782fed01` is ahead-only, proving Nutrition Identity v1/v1.1 remains in current main.
+- Pages #893 / `36078346509`: SUCCESS.
+- Current-main Release Gate #2017 / `36078348231`: FULL GREEN across core-build-rules, browser-webkit and final verify.
 - Activation #41 was SKIPPED by design. No production Function deploy, secret change, schema migration or billing change was performed for this task.
 - Server barcode Vision mode and GTIN-aware nutrition lookup are SOURCE/CI READY but remain production-live UNKNOWN until explicit Founder-approved activation + live authenticated smoke.
 
