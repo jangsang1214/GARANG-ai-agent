@@ -408,18 +408,20 @@ Move from code-addressable commercial parity uplift to anonymous external valida
 - Post-merge Gate #2013 attempt 1 had one Golden Path complete timeout while the Body/WebKit checks before it had passed. Same main SHA rerun attempt 2 passed core-build-rules, browser-webkit, Golden Path complete, and final verify; final Gate #2013 status is SUCCESS.
 - Technical/release status is VERIFIED GREEN. Founder visual acceptance still requires a fresh deployed screenshot because CI cannot judge anatomy aesthetics.
 
-## 2026-09-25 Nutrition Capture & Food Identity v1/v1.1 — SOURCE/WEB GREEN, PRODUCTION BACKEND ACTIVATION PENDING
+## 2026-09-25 Nutrition Capture & Food Identity v1/v1.1 — SOURCE / WEB / PRODUCTION GREEN
 - PRODUCT PR #271 `Add Nutrition Capture & Food Identity v1` merged from exact head `95e567a0e3a589dd41afa54e76aa1308527f0b2c`; exact-head Release Gate #2000 / `36043340582`: FULL GREEN.
 - v1 delivers GTIN/EAN/UPC checksum validation, canonical GTIN-14 identity, native BarcodeDetector when available, authenticated Vision barcode fallback, visible barcode + K-FIND item-manufacturing report-number extraction from nutrition labels, GTIN-aware source-backed nutrition lookup, fail-closed unknown-GTIN behavior, and bounded user-confirmed barcode mappings.
-- WebKit release verification covers unknown GTIN -> source-backed candidate -> user confirmation -> persisted exact mapping -> same GTIN local reuse without another web lookup.
-- PRODUCT PR #274 `Tighten nutrition product identity with exact report-number matching` closes the remaining Korean packaged-product ambiguity by preferring exact K-FIND `report_no` identity before fuzzy product-name resolution.
-- PR #274 exact head `2ad99735949f5d381d3e2fcd4437f9abfbc59cc9`; Release Gate #2009 / `36076210786`: FULL GREEN.
-- PR #274 merged as `3aa1284b3e99e10b293bc513042fc7ab782fed01`.
-- PRODUCT main later advanced through adaptive nutrition #277 and Running Analysis v2 #278 to `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`; comparison from PR #274 merge `3aa1284b3e99e10b293bc513042fc7ab782fed01` to current main is ahead-only (3 commits, 0 behind), so Nutrition Identity v1/v1.1 is VERIFIED preserved on the exact current tree.
-- Current-main Pages #893 / `36078346509`: SUCCESS.
-- Current-main Release Gate #2017 / `36078348231`: FULL GREEN. Nutrition/Barcode/Label source/web behavior therefore remains release-verified after the later adaptive-nutrition and Running merges.
-- Production Coach Activation #41 was SKIPPED by the fail-closed approval boundary. The new server barcode Vision mode and GTIN-aware production nutrition lookup remain SOURCE/CI READY but are NOT yet claimed live in Firebase production.
-- Next approval-gated action: explicit Founder approval for exact-current-main Firebase Function `api` production activation, followed by authenticated live Meal Scan/Barcode/Coach smoke and cleanup.
+- PRODUCT PR #274 `Tighten nutrition product identity with exact report-number matching` prefers exact K-FIND `report_no` identity before fuzzy product-name resolution; exact-head Gate #2009 / `36076210786`: FULL GREEN.
+- Founder explicitly approved production activation in chat on 2026-09-25.
+- Activation hardening PRs #280-#286 refined only production smoke/verification contracts. The final activation contract requires GTIN lookup to be exact source-backed for the same canonical barcode or explicitly fail closed; mismatched/substitute products remain RED.
+- PRODUCT PR #286 merged as current main `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
+- Production Coach Activation #48 / `36113706298`: SUCCESS.
+- Activation #48 deployed only Firebase Function `api`, preserved the existing GARANG LLM secret, passed public Coach / Meal Scan / nutrition lookup auth-method boundaries, minted a disposable authenticated smoke identity, and passed authenticated live nutrition lookup, Meal Scan, Coach, Nutrition Identity and bounded autonomous-write smokes.
+- Disposable Firebase smoke identity deletion and temporary credential-material cleanup both passed.
+- Pages #899 / `36113705680`: SUCCESS on the same current main.
+- Current-main Release Gate #2032 / `36113706246`: attempt 1 failed only the known Today→Coach complete-journey lifecycle timing wait; attempt 2 on the identical SHA completed FULL GREEN (core-build-rules 20/20, browser-webkit 36/36, verify 3/3) without timeout/threshold weakening.
+- Nutrition Capture & Food Identity v1/v1.1 is therefore VERIFIED GREEN across source, web, production backend, authenticated live smoke, cleanup and current-main regression evidence.
+- Next Food/Nutrition work is evidence-gated: measure real-user barcode/label misses, corrections and ambiguous identity before adding more catalog breadth.
 
 ## 2026-09-25 Body v7.1 current-main preservation check
 - PRODUCT main advanced after Body v7.1 through adaptive nutrition #277 and Running Analysis v2 #278 to `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
