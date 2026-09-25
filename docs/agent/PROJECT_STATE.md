@@ -384,3 +384,15 @@ Stabilize the canonical commercial GARANG after the Real AI Coach repair and Use
 - Pages #889 SUCCESS and post-merge Release Gate #2008 FULL GREEN on PRODUCT main.
 - Technical status is VERIFIED GREEN. Human visual acceptance remains open until a fresh deployed phone screenshot confirms the new muscular proportions and zone alignment meet Founder expectations.
 
+## 2026-09-25 Nutrition Capture & Food Identity v1/v1.1 — SOURCE/WEB GREEN, PRODUCTION BACKEND ACTIVATION PENDING
+- PRODUCT PR #271 `Add Nutrition Capture & Food Identity v1` merged from exact head `95e567a0e3a589dd41afa54e76aa1308527f0b2c`; exact-head Release Gate #2000 / `36043340582`: FULL GREEN.
+- v1 delivers GTIN/EAN/UPC checksum validation, canonical GTIN-14 identity, native BarcodeDetector when available, authenticated Vision barcode fallback, visible barcode + K-FIND item-manufacturing report-number extraction from nutrition labels, GTIN-aware source-backed nutrition lookup, fail-closed unknown-GTIN behavior, and bounded user-confirmed barcode mappings.
+- WebKit release verification covers unknown GTIN -> source-backed candidate -> user confirmation -> persisted exact mapping -> same GTIN local reuse without another web lookup.
+- PRODUCT PR #274 `Tighten nutrition product identity with exact report-number matching` closes the remaining Korean packaged-product ambiguity by preferring exact K-FIND `report_no` identity before fuzzy product-name resolution.
+- PR #274 exact head `2ad99735949f5d381d3e2fcd4437f9abfbc59cc9`; Release Gate #2009 / `36076210786`: FULL GREEN.
+- PR #274 merged as `3aa1284b3e99e10b293bc513042fc7ab782fed01`.
+- PRODUCT main then advanced through Body PR #276 to `08ae9240e26b118097c99ccc1d7a168579a91aed`; the Nutrition Identity v1/v1.1 code is VERIFIED preserved on that tree.
+- Pages #891 / `36076811217`: SUCCESS.
+- Current-main Release Gate #2013 / `36076811640`: final identical-main-SHA attempt 2 FULL GREEN. Attempt 1 failed only complete Golden Path Today -> Coach re-entry timing; attempt 2 passed without code/timeout/threshold changes. Nutrition/Barcode/Label paths passed in both attempts.
+- Production Coach Activation #41 was SKIPPED by the fail-closed approval boundary. The new server barcode Vision mode and GTIN-aware production nutrition lookup remain SOURCE/CI READY but are NOT yet claimed live in Firebase production.
+- Next approval-gated action: explicit Founder approval for exact-current-main Firebase Function `api` production activation, followed by authenticated live Meal Scan/Barcode/Coach smoke and cleanup.
