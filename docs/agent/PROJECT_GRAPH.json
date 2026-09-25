@@ -2217,6 +2217,94 @@
       "status": "in_progress",
       "ownerWorkstream": "design-brand",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-NUTRITION-CAPTURE-IDENTITY-V1",
+      "kind": "initiative",
+      "title": "Close packaged-food capture and identity gaps after Food DB scale",
+      "status": "active",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-GTIN-FOOD-IDENTITY-V1",
+      "kind": "task",
+      "title": "Implement GTIN/report-number identity, confirmation learning, and fail-closed lookup",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR271-NUTRITION-IDENTITY",
+      "kind": "change",
+      "title": "PRODUCT PR #271 adds Nutrition Capture & Food Identity v1",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR271-GATE-2000",
+      "kind": "verification",
+      "title": "PR #271 exact-head Release Gate #2000 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR274-NUTRITION-IDENTITY-V11",
+      "kind": "change",
+      "title": "PRODUCT PR #274 adds exact K-FIND report-number product identity",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR274-GATE-2009",
+      "kind": "verification",
+      "title": "PR #274 exact-head Release Gate #2009 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-2013-NUTRITION-IDENTITY",
+      "kind": "verification",
+      "title": "Latest PRODUCT main Gate #2013 final same-SHA attempt FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-891-NUTRITION-IDENTITY",
+      "kind": "release",
+      "title": "Pages #891 deploys latest PRODUCT main preserving Nutrition Identity v1/v1.1",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-NUTRITION-IDENTITY-WEB-GREEN",
+      "kind": "result",
+      "title": "Packaged-food barcode/label identity web path is release-verified GREEN",
+      "status": "done",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-NUTRITION-IDENTITY-PROD-ACTIVATION",
+      "kind": "task",
+      "title": "Activate exact-current-main Firebase api Function for barcode Vision and GTIN-aware lookup",
+      "status": "blocked",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CONSTRAINT-FOUNDER-APPROVAL-NUTRITION-IDENTITY-PROD",
+      "kind": "constraint",
+      "title": "Explicit Founder approval required for Nutrition Identity production Function activation",
+      "status": "active",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "control"
     }
   ],
   "edges": [
@@ -3908,6 +3996,71 @@
     {
       "from": "TASK-BODY-V7-FOUNDER-VISUAL-ACCEPTANCE",
       "to": "RESULT-BODY-V7-TECHNICAL-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-NUTRITION-CAPTURE-IDENTITY-V1",
+      "to": "INIT-KNOWLEDGE-NUTRITION-V2",
+      "kind": "advances"
+    },
+    {
+      "from": "TASK-GTIN-FOOD-IDENTITY-V1",
+      "to": "INIT-NUTRITION-CAPTURE-IDENTITY-V1",
+      "kind": "implements"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR271-NUTRITION-IDENTITY",
+      "to": "TASK-GTIN-FOOD-IDENTITY-V1",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR271-GATE-2000",
+      "to": "CHANGE-PRODUCT-PR271-NUTRITION-IDENTITY",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR274-NUTRITION-IDENTITY-V11",
+      "to": "TASK-GTIN-FOOD-IDENTITY-V1",
+      "kind": "hardens"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR274-GATE-2009",
+      "to": "CHANGE-PRODUCT-PR274-NUTRITION-IDENTITY-V11",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-2013-NUTRITION-IDENTITY",
+      "to": "CHANGE-PRODUCT-PR274-NUTRITION-IDENTITY-V11",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-891-NUTRITION-IDENTITY",
+      "to": "CHANGE-PRODUCT-PR274-NUTRITION-IDENTITY-V11",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-NUTRITION-IDENTITY-WEB-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-2013-NUTRITION-IDENTITY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-NUTRITION-IDENTITY-WEB-GREEN",
+      "to": "RELEASE-PAGES-891-NUTRITION-IDENTITY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-NUTRITION-IDENTITY-PROD-ACTIVATION",
+      "to": "RESULT-NUTRITION-IDENTITY-WEB-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-NUTRITION-IDENTITY-PROD-ACTIVATION",
+      "to": "CONSTRAINT-FOUNDER-APPROVAL-NUTRITION-IDENTITY-PROD",
+      "kind": "blocked-by"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-NUTRITION-IDENTITY-WEB-GREEN",
       "kind": "depends-on"
     }
   ]
