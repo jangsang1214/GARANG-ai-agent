@@ -2361,6 +2361,30 @@
       "status": "done",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-2017-BODY-V7-1",
+      "kind": "verification",
+      "title": "Current PRODUCT main Gate #2017 FULL GREEN preserving Body v7.1",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-893-BODY-V7-1",
+      "kind": "release",
+      "title": "Pages #893 SUCCESS on current PRODUCT main f72b3ef7",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-BODY-V7-1-PRESERVED-CURRENT-MAIN",
+      "kind": "result",
+      "title": "Body v7.1 remains preserved on current PRODUCT main after later Nutrition and Running merges",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -4163,6 +4187,21 @@
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-NUTRITION-IDENTITY-WEB-GREEN",
       "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-2017-BODY-V7-1",
+      "to": "RESULT-BODY-V7-1-PRESERVED-CURRENT-MAIN",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-893-BODY-V7-1",
+      "to": "RESULT-BODY-V7-1-PRESERVED-CURRENT-MAIN",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-BODY-V7-1-PRESERVED-CURRENT-MAIN",
+      "to": "TASK-BODY-V7-1-FOUNDER-VISUAL-ACCEPTANCE",
+      "kind": "supports"
     }
   ]
 }
