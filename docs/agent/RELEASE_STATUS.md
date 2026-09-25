@@ -445,3 +445,11 @@ Decision: SOURCE / WEB / RELEASE GREEN; PRODUCTION BACKEND ACTIVATION PENDING.
 - Release Gate #2013 / `36076811640`: final attempt 2 FULL GREEN on the same main SHA. Attempt 1 failed only Golden Path Today -> Coach timing; same-SHA rerun passed the complete browser suite without code/timeout/threshold changes.
 - Activation #41 was SKIPPED by design. No production Function deploy, secret change, schema migration or billing change was performed for this task.
 - Server barcode Vision mode and GTIN-aware nutrition lookup are SOURCE/CI READY but remain production-live UNKNOWN until explicit Founder-approved activation + live authenticated smoke.
+
+## Body v7.1 preservation on current PRODUCT main — 2026-09-25
+- Current PRODUCT main: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
+- Release Gate #2017: FULL GREEN.
+- Pages #893: SUCCESS.
+- Body v7.1 renderer/overlay/PWA contracts verified present on the same current tree after PR #277 and PR #278.
+- Release status remains GREEN; only Founder real-device visual acceptance remains open.
+
