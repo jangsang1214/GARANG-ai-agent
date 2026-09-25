@@ -383,3 +383,9 @@ Never turn old handoff text into VERIFIED evidence without observing the source.
 - Pages #891 SUCCESS. Gate #2013 final same-SHA attempt 2 FULL GREEN; first attempt only hit the known class of non-deterministic Today/Coach lifecycle timing, while Nutrition/Barcode/Label paths passed.
 - Production backend status remains PENDING: Activation #41 was safely SKIPPED because explicit production approval was absent. Do not claim live barcode Vision / GTIN-aware production lookup until an approved Function activation and authenticated live smoke succeed.
 - Next approval-gated action: Firebase Function `api` activation on exact current main + live barcode/Meal Scan/Coach verification.
+
+## Current-main preservation note — Body v7.1 — 2026-09-25
+- PRODUCT main is now `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5` after #277 and #278.
+- Body v7.1 remains present on that tree; Gate #2017 FULL GREEN and Pages #893 SUCCESS.
+- Do not create another Body implementation branch solely because older Body branch refs diverged. Use current main as the source and wait for fresh deployed phone evidence before another visual fix.
+
