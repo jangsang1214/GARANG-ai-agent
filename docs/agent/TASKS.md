@@ -682,3 +682,10 @@ Remaining:
 - explicit Founder approval for Firebase Function `api` production activation. ⏳
 - live authenticated barcode Vision + GTIN-aware lookup + existing Meal Scan/Coach regression after activation. ⏳
 - real-user barcode/label miss and correction rates should determine future catalog investment. ⏳
+
+### Body v7.1 current-main verification update — 2026-09-25
+- Current PRODUCT main is `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
+- Gate #2017 FULL GREEN; Pages #893 SUCCESS.
+- Body v7.1 overlay-fit implementation remains present after later Nutrition/Running merges.
+- Remaining task is unchanged: fresh real-device visual acceptance only.
+
