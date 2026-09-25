@@ -688,8 +688,8 @@ Remaining acceptance:
 
 Only fix concrete residual screenshot evidence after this point.
 
-## Active P4 — Nutrition Capture & Food Identity production activation
-Status: SOURCE / WEB / RELEASE VERIFIED GREEN; PRODUCTION BACKEND ACTIVATION PENDING FOUNDER APPROVAL
+## Closed P4 — Nutrition Capture & Food Identity production activation
+Status: DONE / SOURCE + WEB + PRODUCTION VERIFIED GREEN
 Owner: AI Data / Engineering / Product / Release QA
 Goal: make packaged-food capture fast and exact without substituting similar products.
 
@@ -698,20 +698,20 @@ Delivered:
 - BarcodeDetector path + authenticated Vision barcode fallback. ✅
 - Label Scan extraction of visible barcode and K-FIND item-manufacturing report number. ✅
 - exact K-FIND report-number match before fuzzy product matching. ✅
-- GTIN-aware source-backed nutrition lookup; unknown GTIN remains fail-closed. ✅
+- GTIN-aware source-backed nutrition lookup; unknown/unverified GTIN remains fail-closed. ✅
 - confirmation-required first lookup; confirmed barcode mapping reused locally on later scans. ✅
 - bounded account learning: barcode mappings 300 / misses 120 / corrections 120. ✅
 - PR #271 Gate #2000 FULL GREEN; PR #274 Gate #2009 FULL GREEN. ✅
-- current PRODUCT main `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`: Nutrition Identity v1/v1.1 preserved by ahead-only GitHub comparison; Pages #893 SUCCESS; Gate #2017 FULL GREEN. ✅
+- Founder-approved production activation executed. ✅
+- PR #286 merged as PRODUCT main `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`. ✅
+- Production Coach Activation #48 / `36113706298`: SUCCESS. ✅
+- live authenticated nutrition lookup / Meal Scan / Coach / Nutrition Identity / bounded write: PASS. ✅
+- disposable smoke identity + temporary credential cleanup: PASS. ✅
+- Pages #899 / `36113705680`: SUCCESS. ✅
+- current-main Gate #2032 / `36113706246`: identical-SHA attempt 2 FULL GREEN after attempt 1 hit only the known Today→Coach lifecycle timing recurrence. ✅
 
-Remaining:
-- explicit Founder approval for Firebase Function `api` production activation. ⏳
-- live authenticated barcode Vision + GTIN-aware lookup + existing Meal Scan/Coach regression after activation. ⏳
-- real-user barcode/label miss and correction rates should determine future catalog investment. ⏳
-
-### Body v7.1 current-main verification update — 2026-09-25
-- Current PRODUCT main is `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
-- Gate #2017 FULL GREEN; Pages #893 SUCCESS.
-- Body v7.1 overlay-fit implementation remains present after later Nutrition/Running merges.
-- Remaining task is unchanged: fresh real-device visual acceptance only.
+Next:
+- collect real-user barcode/label miss, correction and ambiguous-match rates.
+- expand restaurant/menu/barcode/commercial catalog sources only from measured miss evidence.
+- do not optimize for raw catalog row count alone.
 
