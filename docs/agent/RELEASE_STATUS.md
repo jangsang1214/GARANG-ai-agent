@@ -1,5 +1,13 @@
 # GARANG Release Status
 
+## Design / Brand Body v7.2 reconciliation — 2026-09-27
+Decision: **CURRENT RELEASE GREEN / PR #288 NOT YET RELEASED**.
+- Current PRODUCT release remains `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`; existing Gate #2032 final SUCCESS, Pages #899 SUCCESS and Production Coach Activation #48 SUCCESS remain the release baseline.
+- PR #279 was stale/diverged and is now CLOSED / UNMERGED as superseded by #288; its historical Gate #2018 success remains evidence for the preserved visual delta only.
+- PR #288 head `e9a7f6c499767fa0253d7c0ffd7ef74e81ecea7c` replays the exact seven-file Body v7.2 delta on current main with no unrelated PRODUCT changes.
+- PR #288 Release Gate #2037 / `36257522818`: attempt 1 FAILED only `browser-webkit` at superset round-two transition (`browser-webkit-regression.test.cjs:392`); identical-SHA failed-job rerun passed browser-webkit, core-build-rules and final verify with no code/timeout/threshold change. Final gate conclusion: SUCCESS; repeatability classification: YELLOW / TD-015 recurrence.
+- Body v7.2 remains NOT RELEASED. Human visual quality/reference-floor compliance remains UNKNOWN until deployed real-device review; final CI success does not convert visual acceptance or runtime repeatability to GREEN.
+
 ## AI/Data open-PR reconciliation — 2026-09-27
 Decision: CURRENT MAIN GREEN / PR #287 NOT MERGE-READY.
 - PRODUCT main remains `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`; its current-main release evidence remains the previously recorded Gate #2032 final SUCCESS, Pages #899 SUCCESS, Production Coach Activation #48 SUCCESS.

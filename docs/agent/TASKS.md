@@ -1,5 +1,18 @@
 # GARANG Tasks
 
+## Active P3 — Body v7.2 current-main integration
+Status: SUCCESSOR PR OPEN / EXACT-HEAD FINAL GATE SUCCESS / REPEATABILITY YELLOW / VISUAL ACCEPTANCE REQUIRED
+Owner: Design Brand / Release QA
+Goal: preserve the Founder-requested stronger muscle volume and fiber definition without regressing the current PRODUCT lineage.
+- Original PR #279: exact visual delta preserved, but branch drifted 22 commits behind current main; CLOSED / UNMERGED as superseded by #288. ✅
+- Verified overlap against current-main advancement: 0 of 7 Body files. ✅
+- Successor PR #288 created from current main `3bf04c96...`. ✅
+- Exact diff parity with #279: 7 files, +135 / -26. ✅
+- #288 head `e9a7f6c499767fa0253d7c0ffd7ef74e81ecea7c`: 7 ahead / 0 behind, mergeable. ✅
+- Release Gate #2037 / `36257522818`: attempt 1 browser-webkit FAIL at superset second-round transition (`browser-webkit-regression.test.cjs:392`); identical-SHA failed-job rerun FULL GREEN including final verify. ⚠️ TD-015 recurrence
+- Acceptance: exact-head final gate is GREEN but first-attempt determinism is not; deployed real-phone visual review is still required before any merge/release consideration.
+- Priority boundary: this P3 visual track does not displace active P2 TD-015 runtime determinism.
+
 ## Active P4 — PR #287 Decision Loop v2 ownership repair
 Status: BLOCKED BEFORE MERGE / EXACT-HEAD CI GREEN
 Owner: AI Data requirement + Engineering shared-runtime integration

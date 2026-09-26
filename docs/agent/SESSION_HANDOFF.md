@@ -1,3 +1,13 @@
+## Design / Brand handoff update — 2026-09-27
+- PRODUCT main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
+- Old Body v7.2 PR #279 was stale/diverged: 7 ahead / 22 behind; it is now CLOSED / UNMERGED as superseded by #288.
+- No changed-file overlap exists between #279 and the commits that advanced main.
+- Successor PR #288 replays the exact Body v7.2 seven-file delta on current main; head `e9a7f6c499767fa0253d7c0ffd7ef74e81ecea7c`, 7 ahead / 0 behind, mergeable.
+- PR #288 Gate #2037 final result is SUCCESS after a same-SHA failed-job rerun. Attempt 1 timed out at `browser-webkit-regression.test.cjs:392` during second-round superset transition; attempt 2 passed the same mobile regression plus Settings, button health, runtime stability and final verify without code/timeout changes. Treat this as TD-015 repeatability evidence, not Body acceptance.
+- Do not merge or claim release/visual acceptance until deployed phone visual QA meets the Founder reference floor; P2 runtime determinism remains active.
+- #287 remains a separate AI/Data ownership-repair track and must not be conflated with Body work.
+- Project priority remains P2 WebKit determinism → longitudinal external validation; Body v7.2 is preserved P3 visual-quality work.
+
 ## AI/Data handoff update — 2026-09-27
 - PRODUCT repo connection re-verified with admin/push/pull access.
 - Current PRODUCT main remains `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`. CONTROL PR #99 merged as `8cf6de2a7d44c6fe6e070f8999a79eb990699168` with post-merge CI #245 SUCCESS; resolve the live CONTROL `main` ref from GitHub rather than treating an embedded state SHA as self-current.
