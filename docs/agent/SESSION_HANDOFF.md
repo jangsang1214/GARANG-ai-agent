@@ -1,5 +1,5 @@
 ## Latest PROJECT START handoff — 2026-09-27
-- CONTROL main: `fa621c260b8d564f38d1d60ba83116474f281f15`; latest CONTROL CI #239 / `36139317869` SUCCESS.
+- CONTROL baseline before reconciliation PR #97: `fa621c260b8d564f38d1d60ba83116474f281f15`; PR #97 merged as `069e270411f3218199018d9388df962ed2969c97`, with PR-head CI #240 and post-merge CI #241 SUCCESS. Always resolve the live CONTROL `main` ref from GitHub rather than treating an embedded SHA as self-current.
 - PRODUCT main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`; current-main Gate #2032 / `36113706246` final attempt 2 SUCCESS, Pages #899 SUCCESS, Production Coach Activation #48 SUCCESS.
 - Open PRs: CONTROL 0 / PRODUCT 0.
 - PRODUCT PR #177 is CLOSED / MERGED as `9fa951b30be4981b8081e649dd05ab229df44218`.
