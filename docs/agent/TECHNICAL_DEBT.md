@@ -109,6 +109,13 @@ Interpretation: current required release checks are GREEN, but first-attempt rep
 Mitigation: instrument the active Today/Coach lifecycle owners, identify a concrete repeated owner or race, and make the smallest deterministic fix. Do not normalize same-SHA reruns, inflate timeouts, add broad retries, or weaken assertions to obtain GREEN.
 Closure evidence required: relevant WebKit/Golden Path regression plus exact-head/current-main release evidence should pass on first attempt after the fix; unresolved recurrence remains active debt.
 
+### TD-015 update — 2026-09-27 Body v7.2 successor gate
+- PRODUCT PR #288 exact head `e9a7f6c499767fa0253d7c0ffd7ef74e81ecea7c` Gate #2037 / `36257522818` attempt 1 passed core/build, Golden Path complete journey, authenticated Coach/Real LLM, recovery and prior browser checks, then timed out in `browser-webkit-regression.test.cjs:392` while waiting for the second-round superset transition from 바벨 벤치프레스 to Squat.
+- PR #288 does not modify the workout execution runtime or `browser-webkit-regression.test.cjs`; its seven-file Body delta was replayed exactly from the previously GREEN #279 visual branch.
+- The identical-SHA failed-job rerun passed the same WebKit mobile regression suite, Settings touch, button-health, runtime-stability stress and final `verify` without product-code, timeout, retry-policy or assertion changes.
+- Classification: fresh TD-015 nondeterministic lifecycle/execution timing evidence. Body v7.2 is not established as the root cause; first-attempt repeatability remains unresolved.
+- Keep closure criteria unchanged: deterministic first-attempt WebKit/Golden Path evidence after a concrete runtime fix. Do not normalize the rerun as proof that TD-015 is resolved.
+
 ## TD-016 — Commercial documentation and monetization artifacts are stale
 Severity: LOW / P6
 Area: product documentation / business readiness
