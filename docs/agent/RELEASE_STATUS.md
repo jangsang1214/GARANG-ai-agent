@@ -1,5 +1,13 @@
 # GARANG Release Status
 
+## Design / Brand Body v7.2 reconciliation — 2026-09-27
+Decision: **CURRENT RELEASE GREEN / PR #288 NOT YET RELEASED**.
+- Current PRODUCT release remains `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`; existing Gate #2032 final SUCCESS, Pages #899 SUCCESS and Production Coach Activation #48 SUCCESS remain the release baseline.
+- PR #279 is stale/diverged and is not a safe current-lineage release candidate despite its historical Gate #2018 success.
+- PR #288 head `e9a7f6c499767fa0253d7c0ffd7ef74e81ecea7c` replays the exact seven-file Body v7.2 delta on current main with no unrelated PRODUCT changes.
+- Release Gate #2037 / `36257522818` is running. No release claim is made from an in-progress gate.
+- Body v7.2 human visual quality/reference-floor compliance remains UNKNOWN until deployed real-device review.
+
 ## AI/Data open-PR reconciliation — 2026-09-27
 Decision: CURRENT MAIN GREEN / PR #287 NOT MERGE-READY.
 - PRODUCT main remains `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`; its current-main release evidence remains the previously recorded Gate #2032 final SUCCESS, Pages #899 SUCCESS, Production Coach Activation #48 SUCCESS.
