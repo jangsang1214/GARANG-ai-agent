@@ -1,7 +1,7 @@
 # GARANG Project State
 
 # AI/Data reconciliation — 2026-09-27 (after PRODUCT reconnect)
-- VERIFIED CONTROL main: `79513a2906ddf85c06bddb261f78a634bc278eb6`.
+- CONTROL reconciliation baseline before PR #99: `79513a2906ddf85c06bddb261f78a634bc278eb6`; PR #99 merged as `8cf6de2a7d44c6fe6e070f8999a79eb990699168` and post-merge CI #245 / `36257332078` succeeded. Resolve live CONTROL `main` from GitHub because state-only reconciliation advances the ref.
 - VERIFIED PRODUCT main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
 - VERIFIED open PRs: CONTROL 0; PRODUCT 2 — #287 `Add Personal Performance Decision Loop v2` and #279 `Increase Body v7.2 muscle volume and fiber definition`. Earlier "PRODUCT 0 open PRs" records are stale.
 - VERIFIED PR #287 exact head `0f6810a14bafff2d9a892d501a8547d3b850f05a`; Release Gate #2035 / `36145896165` SUCCESS on attempt 1.
