@@ -917,8 +917,8 @@
     {
       "id": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
       "kind": "task",
-      "title": "Preserve Today DOM identity across no-op lifecycle events and verify repeatable WebKit stability",
-      "status": "done",
+      "title": "Restore repeatable Today/Coach WebKit lifecycle determinism on current main",
+      "status": "active",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -2576,6 +2576,44 @@
       "title": "Add consent-gated attempt/result denominators for exact Food Identity quality rates",
       "status": "active",
       "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-2032-WEBKIT-RERUN",
+      "kind": "verification",
+      "title": "PRODUCT main 3bf04c96 Gate #2032 attempt 1 times out at Today→Coach readiness and identical-SHA rerun passes",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-FUNNEL-EVIDENCE-DRIVEN-PRODUCT-IMPROVEMENT",
+      "kind": "task",
+      "title": "Improve Product only from measured external funnel failures",
+      "status": "planned",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-INFRA-SECURITY-HARDENING-AFTER-FUNNEL",
+      "kind": "task",
+      "title": "Harden release infrastructure and security after evidence-driven Product fixes",
+      "status": "planned",
+      "ownerWorkstream": "engineering"
+    },
+    {
+      "id": "TASK-MONETIZATION-VALIDATION",
+      "kind": "task",
+      "title": "Validate commercial willingness-to-pay and packaging before payments",
+      "status": "planned",
+      "ownerWorkstream": "growth-business"
+    },
+    {
+      "id": "TASK-PAYMENT-IMPLEMENTATION",
+      "kind": "task",
+      "title": "Implement payment only after monetization validation",
+      "status": "planned",
+      "ownerWorkstream": "engineering",
       "repositoryId": "product"
     }
   ],
@@ -4568,6 +4606,36 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "TASK-NUTRITION-IDENTITY-MEASUREMENT-DENOMINATORS",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-2032-WEBKIT-RERUN",
+      "to": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
+      "kind": "measures"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-FUNNEL-EVIDENCE-DRIVEN-PRODUCT-IMPROVEMENT",
+      "to": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-INFRA-SECURITY-HARDENING-AFTER-FUNNEL",
+      "to": "TASK-FUNNEL-EVIDENCE-DRIVEN-PRODUCT-IMPROVEMENT",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-MONETIZATION-VALIDATION",
+      "to": "TASK-INFRA-SECURITY-HARDENING-AFTER-FUNNEL",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-PAYMENT-IMPLEMENTATION",
+      "to": "TASK-MONETIZATION-VALIDATION",
       "kind": "depends-on"
     }
   ]
