@@ -2615,6 +2615,30 @@
       "status": "planned",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR287-DECISION-LOOP-V2",
+      "kind": "change",
+      "title": "PRODUCT PR #287 adds Personal Performance Decision Loop v2",
+      "status": "blocked",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR287-GATE-2035",
+      "kind": "verification",
+      "title": "PR #287 exact-head Release Gate #2035 succeeds on attempt 1",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-PR287-NUTRITION-TARGET-OWNERSHIP",
+      "kind": "task",
+      "title": "Unify Decision Loop nutrition target acceptance with canonical reversible Adaptive Nutrition ownership",
+      "status": "active",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -4637,6 +4661,21 @@
       "from": "TASK-PAYMENT-IMPLEMENTATION",
       "to": "TASK-MONETIZATION-VALIDATION",
       "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR287-DECISION-LOOP-V2",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR287-GATE-2035",
+      "to": "CHANGE-PRODUCT-PR287-DECISION-LOOP-V2",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-PR287-NUTRITION-TARGET-OWNERSHIP",
+      "to": "CHANGE-PRODUCT-PR287-DECISION-LOOP-V2",
+      "kind": "blocks"
     }
   ]
 }
