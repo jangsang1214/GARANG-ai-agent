@@ -1,5 +1,15 @@
 # GARANG Tasks
 
+## Current strategic queue — 2026-09-27
+1. **P2 Engineering runtime/WebKit determinism** — active first priority. Current release is GREEN, but Gate #2032 required a same-SHA rerun after a Today → Coach readiness timeout.
+2. **P4/P5 longitudinal external validation** — next after the P2 determinism pass; use existing consent-safe funnel/episode measurement.
+3. **Funnel-evidence-driven Product improvement** — change Product only against measured acquisition/activation/comprehension/action/retention failures.
+4. **Infra/Security hardening** — WIF/OIDC, main protection, dependency/toolchain and related integrity work after the evidence-driven Product pass unless a security/release incident promotes it.
+5. **Monetization validation** — validate willingness-to-pay / packaging / commercial value before building payment plumbing.
+6. **Payment implementation** — last in this sequence; do not build before monetization evidence.
+
+No new feature scope may jump this queue without Founder direction or a verified P0/P1 blocker.
+
 ## Closed P4 — Commercial parity uplift: Label Scan + Adaptive Nutrition Apply + Running Analysis v2
 Status: DONE / CURRENT-MAIN SOURCE+WEB+RELEASE VERIFIED GREEN
 Owner: Product / AI Data / Engineering / Release QA
@@ -63,7 +73,7 @@ Goal: make the released body map meet or exceed the Founder-provided anatomy ref
 | External activation evidence | INSUFFICIENT |
 | D7/D30 longitudinal retention evidence | INSUFFICIENT |
 
-## Active P2 — Reconcile and verify current PRODUCT main after PR #256/#257
+## Closed P2 — Reconcile and verify current PRODUCT main after PR #256/#257
 Status: DONE / CURRENT-MAIN VERIFIED GREEN
 Owner: Command Center / Release QA
 Goal: restore one canonical current-main release baseline before further product expansion.
@@ -251,7 +261,7 @@ Verification:
 - Duplicate P1 PRs #173–#175 were closed as superseded by #176.
 
 ## Closed P2 — WebKit lifecycle determinism
-Status: DONE FOR CURRENT RELEASE / MONITOR
+Status: HISTORICAL CLOSURE / SUPERSEDED BY ACTIVE P2 RECURRENCE
 Owner: Engineering / Release QA
 Root cause:
 - Active Today action flow could rebuild and `replaceWith()`-replace `#garangTodayFlow` on lifecycle events even when the semantic model was unchanged.
@@ -262,10 +272,11 @@ Resolution and evidence:
 - Subsequent main Gates #1592, #1600 and #1601 all completed FULL GREEN on attempt 1.
 - Latest #1601 on current main `40e83c32...` passes Today action flow and the complete Golden Path / authenticated Coach / Real LLM / mobile WebKit suite.
 Reopen condition:
-- Reclassify to active P2 if the current-path DOM identity assertion or an equivalent lifecycle replacement recurs. Do not normalize reruns or add broad timeout/retry masking.
+- Reclassify to active P2 if the current-path DOM identity assertion or an equivalent lifecycle/readiness replacement recurs. Do not normalize reruns or add broad timeout/retry masking.
+- This condition is met again by current-main Gate #2032: attempt 1 timed out on Today → Coach proposal readiness and the identical SHA passed only on the failed-job rerun. The active recurrence task below is therefore authoritative.
 
 ## Active P5 — External longitudinal validation
-Status: PLANNED / PRODUCT CAPABILITY READY
+Status: READY / NEXT AFTER P2 RUNTIME-WEBKIT DETERMINISM
 Owner: Product / Growth Business / AI Data
 Goal: prove that GARANG's connected loop changes behavior and becomes more useful over time.
 Acceptance:
@@ -308,13 +319,17 @@ Verification:
 - Pages #837 / `35691172814`: SUCCESS.
 
 ## Active P2 — WebKit lifecycle determinism recurrence
-Status: ACTIVE / NON-BLOCKING FOR CURRENT RELEASE
-Evidence:
-- PR #202 exact-head Gate #1624 first attempt reproduced the Today no-op DOM identity assertion previously tracked as TD-015.
-- Same exact head passed the complete gate on rerun; post-merge main Gate #1625 passed the complete suite.
-Next:
-- Diagnose active Today lifecycle ownership against the recurring identity replacement signal.
-- Do not normalize reruns or add timeout inflation/retry masking.
+Status: ACTIVE / TOP STRATEGIC PRIORITY / CURRENT RELEASE GREEN AFTER SAME-SHA RERUN
+Owner: Engineering / Release QA
+Current evidence:
+- PRODUCT current main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
+- Current-main Release Gate #2032 / `36113706246`: attempt 1 reproduced a Today → Coach proposal-readiness timeout; failed-job rerun attempt 2 completed FULL GREEN on the identical SHA.
+- Pages #899 and Production Coach Activation #48 are GREEN, so this is not a current production-release blocker.
+- The recurrence still violates the desired deterministic release property because a required WebKit/Golden Path path did not pass first-attempt on an unchanged tree.
+Acceptance / next:
+- instrument and isolate the concrete active Today/Coach lifecycle owner(s) behind the readiness variance;
+- make the smallest runtime fix supported by evidence, without timeout inflation, broad retries, or threshold weakening;
+- verify the relevant WebKit/Golden Path path plus exact-head/current-main release gate on first attempt before returning strategic priority to longitudinal validation.
 
 ## Closed P1 — Real Meal Scan v1 source/web implementation
 Status: DONE / VERIFIED SOURCE+WEB GREEN
@@ -362,7 +377,7 @@ Result:
 - Real Meal Scan v1 is SOURCE / WEB / PRODUCTION VERIFIED GREEN.
 
 ## Active P4/P5 — Anonymous External Validation Sprint
-Status: IN PROGRESS
+Status: READY / STRATEGIC POSITION #2 AFTER P2 RUNTIME-WEBKIT DETERMINISM
 Owner: Growth Business / Product / AI Data / Command Center
 Goal: prove that unknown users understand and act on the GARANG Golden Path without founder explanation, then measure whether repeated Intelligence Episodes create retained value.
 
