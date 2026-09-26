@@ -99,15 +99,15 @@ Area: personalization / AI·Data
 Resolution: PRODUCT now durably persists recommendation resolution evidence for accepted, rejected, dismissed and ignored recommendations through the canonical action-data boundary. User Performance Model v1 consumes this evidence, and PR #166 additionally measures resolution coverage in Longitudinal Learning Metrics v1. No separate truth store was introduced.
 
 ## TD-015 — WebKit / lifecycle timing variance
-Status: MONITOR / NON-BLOCKING
-Previous severity: MEDIUM / P2
+Status: ACTIVE / P2 / NON-BLOCKING CURRENT RELEASE
+Severity: MEDIUM / P2
 Area: frontend runtime / release integrity
 Root cause lineage: Today has multiple bounded presentation/orchestration layers. PR #177 fixed same-key DOM replacement; PR #264 later repaired a concrete Today Product Consolidation mount-order race by delaying readiness until required nodes exist and observing only relevant nested Today-flow additions.
-Verified repair baseline: PR #264 exact-head Gate #1977 FULL GREEN; merged main `047ccb839447b6c54a1b381d39cb887cac9c8bc9`; Pages #881 SUCCESS; Gate #1982 FULL GREEN.
-Latest monitoring evidence: after Body v5 PR #262 merged as `7b5032418b49a43ea4504f7566542591ad783b60`, post-merge Gate #1983 showed two same-SHA WebKit timing timeouts at different owners: attempt 1 timed out waiting for Planner draft state settlement in Golden Path; attempt 2 passed that point and later timed out waiting for superset completion settlement. A third identical-SHA WebKit run passed both prior points and the entire downstream suite, including Golden Path complete journey, authenticated Coach/Real LLM, recovery, mobile regression, Settings touch, button health and runtime stability. Core and final verify also passed.
-Interpretation: this specific #1983 evidence is consistent with scheduling/timing variance rather than one confirmed deterministic owner regression because the failure location moved and both prior points passed without any code, timeout, or threshold change.
-Mitigation: no timeout inflation and no retry-based product claim. Keep exact same-location recurrence as the threshold for instrumentation/root-cause work; if a concrete owner repeats, fix that owner rather than normalizing it as flakiness.
-Current risk: non-blocking monitoring debt; current main Gate #1983 final same-SHA result is FULL GREEN.
+Verified repair baselines: PR #177 merged; PR #264 exact-head Gate #1977 FULL GREEN and main Gate #1982 FULL GREEN. Later same-SHA timing variance remained visible in Gate #1983.
+Latest evidence — 2026-09-25 current PRODUCT main `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`: Release Gate #2032 / `36113706246` attempt 1 timed out at Today → Coach proposal readiness after earlier Golden Path work had passed; the failed-job rerun on the identical SHA completed FULL GREEN. No product-code, timeout, or threshold change separated the attempts.
+Interpretation: current required release checks are GREEN, but first-attempt repeatability is not deterministic. The latest recurrence satisfies the reopen condition for P2 runtime/WebKit work even though it does not justify calling the release RED.
+Mitigation: instrument the active Today/Coach lifecycle owners, identify a concrete repeated owner or race, and make the smallest deterministic fix. Do not normalize same-SHA reruns, inflate timeouts, add broad retries, or weaken assertions to obtain GREEN.
+Closure evidence required: relevant WebKit/Golden Path regression plus exact-head/current-main release evidence should pass on first attempt after the fix; unresolved recurrence remains active debt.
 
 ## TD-016 — Commercial documentation and monetization artifacts are stale
 Severity: LOW / P6
@@ -140,3 +140,4 @@ Evidence:
 Risk: CI exists but GitHub does not independently prevent an authorized direct push or merge that bypasses required checks.
 Mitigation: operating policy continues to require branch → PR → Release Gate → merge; current releases remain verified.
 Recommended fix: from an authenticated GitHub owner/admin session, add a main ruleset requiring PRs and the repository’s release/CI checks while preserving production activation semantics. Verify with a harmless docs-only PR before treating this debt as resolved.
+Strategic queue note: this Infra/Security work follows funnel-evidence-driven Product improvement under the 2026-09-27 Founder priority order unless it becomes a live security/release blocker.
