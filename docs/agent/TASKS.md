@@ -1,5 +1,39 @@
 # GARANG Tasks
 
+## Active P3/P4 — Commercial Supremacy Gate before external validation
+Status: ACTIVE / FOUNDER-DIRECTED / PRE-VALIDATION
+Owner: Command Center + Product + Engineering + AI Data + Design Brand + Release QA
+Goal: make GARANG materially superior or at least non-inferior in every in-scope app dimension before unknown-user validation begins.
+
+Acceptance:
+- P2 runtime/WebKit determinism closes with first-attempt exact-head and current-main evidence.
+- A current benchmark matrix covers Workout, programming/progression, Nutrition capture/depth, Running, Recovery/physiology, native health/wearable ingestion, AI Coach, cross-domain Intelligence, Progress/longitudinal insight, onboarding/navigation, visual/interactions, reliability/performance, privacy/security, accessibility/i18n, and relevant Coach/PT/accountability capability.
+- No material core dimension remains below the agreed commercial floor; GARANG moat dimensions (cross-domain state → interpretation → recommendation → action → outcome → learning, next-action clarity, longitudinal personal model) must show a clear implementation advantage.
+- Commodity capabilities required by the Golden Path are at commercial parity or better; gaps are closed with the smallest coherent implementation rather than feature-count bloat.
+- Hardware/network-effect categories are satisfied by equivalent user value through integration/interoperability unless the Founder explicitly expands scope to building those ecosystems.
+- Premium mobile design is reviewed against current native commercial references; no known P0-P3 UX/design blocker remains.
+- Release/security/accessibility gates are GREEN and repeatable without same-SHA rerun normalization.
+- Only after the gate is recorded PASS may Anonymous External Validation / 2-4-8 week longitudinal validation move to active execution.
+
+Execution order:
+1. P2 Today→Coach/WebKit determinism.
+2. Freeze a current best-in-class benchmark and quantified gap matrix.
+3. Close Workout + programming gaps.
+4. Close Nutrition depth/data gaps.
+5. Implement/verify Health + Recovery + native signal ingestion needed for Personal Performance OS.
+6. Close Running/activity-analysis gaps.
+7. Strengthen cross-domain Personal Performance Intelligence and longitudinal Progress.
+8. Premium mobile/native UX, navigation, motion, empty/error/loading states and Body/Progress consistency.
+9. Privacy/security/accessibility/i18n/release hardening.
+10. Commercial Supremacy Gate review.
+11. External validation only after PASS.
+
+## Deferred P4/P5 — Anonymous / longitudinal external validation
+Status: READY-BUT-DEFERRED / BLOCKED BY COMMERCIAL SUPREMACY GATE
+- Existing consent-safe measurement and 2/4/8-week methodology are preserved.
+- Do not recruit or start unknown-user validation before the Commercial Supremacy Gate is PASS.
+- Once PASS, use the existing funnel + recommendation/action/outcome measurement rather than rebuilding validation infrastructure.
+
 ## Active P3 — Body v7.2 current-main integration
 Status: SUCCESSOR PR OPEN / EXACT-HEAD FINAL GATE SUCCESS / REPEATABILITY YELLOW / VISUAL ACCEPTANCE REQUIRED
 Owner: Design Brand / Release QA
@@ -27,14 +61,17 @@ Goal: preserve one reversible nutrition-target state owner while keeping Decisio
 
 
 ## Current strategic queue — 2026-09-27
-1. **P2 Engineering runtime/WebKit determinism** — active first priority. Current release is GREEN, but Gate #2032 required a same-SHA rerun after a Today → Coach readiness timeout.
-2. **P4/P5 longitudinal external validation** — next after the P2 determinism pass; use existing consent-safe funnel/episode measurement.
-3. **Funnel-evidence-driven Product improvement** — change Product only against measured acquisition/activation/comprehension/action/retention failures.
-4. **Infra/Security hardening** — WIF/OIDC, main protection, dependency/toolchain and related integrity work after the evidence-driven Product pass unless a security/release incident promotes it.
-5. **Monetization validation** — validate willingness-to-pay / packaging / commercial value before building payment plumbing.
-6. **Payment implementation** — last in this sequence; do not build before monetization evidence.
+1. **P2 Engineering runtime/WebKit determinism** — close first-attempt repeatability.
+2. **Commercial Supremacy benchmark + gap closure** — no external users yet.
+3. **Workout + Nutrition commercial depth** — parity or better on Golden Path commodity capability.
+4. **Health/Recovery + native signal ingestion** — close physiology/input ceiling before validation.
+5. **Running + cross-domain Personal Performance Intelligence** — unify training/nutrition/recovery/activity into one action-learning loop.
+6. **Premium UX/Design + Release/Security/Accessibility** — current native-commercial quality floor.
+7. **Commercial Supremacy Gate PASS**.
+8. **P4/P5 anonymous + longitudinal external validation** — only after gate PASS.
+9. **Evidence-driven Product refinement / monetization validation / payment** after validation unless Founder changes the order.
 
-No new feature scope may jump this queue without Founder direction or a verified P0/P1 blocker.
+No new scope may jump this queue without Founder direction or a verified P0/P1 blocker; feature-count parity alone does not satisfy the Supremacy Gate.
 
 ## Closed P4 — Commercial parity uplift: Label Scan + Adaptive Nutrition Apply + Running Analysis v2
 Status: DONE / CURRENT-MAIN SOURCE+WEB+RELEASE VERIFIED GREEN
