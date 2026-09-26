@@ -1,3 +1,12 @@
+## Founder Commercial Supremacy handoff — 2026-09-27
+- Founder changed the pre-validation rule: do not recruit unknown users merely after P2. External validation starts only after a documented Commercial Supremacy Gate PASS.
+- Current PRODUCT main observed during this decision update: `7d7fc263d019915c212b480bf62736ad103e1f6d` (Personal Performance Decision Loop v2).
+- Current P2 repair track: PRODUCT PR #291, based on that main, targets Today→Coach touch-route preservation plus deterministic Coach prompt-strip/action lifecycle. Do not mark P2 closed until exact-head and post-merge current-main Release Gates pass on first attempt.
+- Pre-validation queue: P2 determinism → quantified commercial benchmark/gap closure → Workout/Nutrition depth → Health/Recovery/native ingestion → Running → cross-domain Intelligence/Progress → premium UX/Design → privacy/security/accessibility/release hardening → Commercial Supremacy Gate → external validation.
+- External validation measurement code is preserved and ready, but execution/recruitment is deferred.
+- D-022 supersedes the D-021 sequence where D-021 put external validation immediately after P2.
+- Do not interpret “beat every commercial app” as fabricating proprietary hardware or a 16M-user social graph before validation; require equivalent in-app user value through interoperability unless Founder explicitly expands scope.
+
 ## Design / Brand handoff update — 2026-09-27
 - PRODUCT main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
 - Old Body v7.2 PR #279 was stale/diverged: 7 ahead / 22 behind; it is now CLOSED / UNMERGED as superseded by #288.
