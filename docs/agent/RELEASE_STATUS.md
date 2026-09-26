@@ -1,5 +1,16 @@
 # GARANG Release Status
 
+## PROJECT START current release reconciliation — 2026-09-27
+Decision: **CURRENT RELEASE GREEN / P2 RUNTIME DETERMINISM ACTIVE**.
+- CONTROL main: `fa621c260b8d564f38d1d60ba83116474f281f15`. CI #239 / `36139317869`: SUCCESS. Latest Event Envelope #517 / `36139344724`: SUCCESS.
+- PRODUCT main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`. Open PRODUCT PRs: 0. Open CONTROL PRs: 0.
+- PRODUCT PR #177 is CLOSED / MERGED as `9fa951b30be4981b8081e649dd05ab229df44218`; it is historical repair evidence, not an open work item.
+- PRODUCT current-main Pages #899 / `36113705680`: SUCCESS.
+- PRODUCT current-main Production Coach Activation #48 / `36113706298`: SUCCESS.
+- PRODUCT current-main Release Gate #2032 / `36113706246`: final conclusion SUCCESS on attempt 2; attempt 1 reproduced the monitored Today → Coach readiness timeout on the identical SHA.
+- Release gate classification remains GREEN because the required same-SHA gate ultimately passed and production/web evidence is successful. Runtime repeatability is separately YELLOW/ACTIVE as TD-015 P2 until deterministic first-attempt evidence is restored.
+- Strategic next order: P2 runtime/WebKit determinism → P4/P5 longitudinal validation → funnel-driven Product improvement → Infra/Security → monetization validation → payment implementation.
+
 ## Nutrition Capture & Food Identity production closure — 2026-09-25
 Decision: GREEN / MERGED / WEB DEPLOYED / PRODUCTION BACKEND VERIFIED.
 - PRODUCT current main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.

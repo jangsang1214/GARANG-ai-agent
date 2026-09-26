@@ -1,3 +1,12 @@
+## Latest PROJECT START handoff — 2026-09-27
+- CONTROL main: `fa621c260b8d564f38d1d60ba83116474f281f15`; latest CONTROL CI #239 / `36139317869` SUCCESS.
+- PRODUCT main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`; current-main Gate #2032 / `36113706246` final attempt 2 SUCCESS, Pages #899 SUCCESS, Production Coach Activation #48 SUCCESS.
+- Open PRs: CONTROL 0 / PRODUCT 0.
+- PRODUCT PR #177 is CLOSED / MERGED as `9fa951b30be4981b8081e649dd05ab229df44218`.
+- Fresh runtime evidence: Gate #2032 attempt 1 reproduced Today → Coach readiness timing on the identical current-main SHA. Current release remains GREEN, but TD-015 is reopened ACTIVE P2.
+- Strategic queue is fixed unless Founder changes it or a P0/P1 incident overrides it: P2 runtime/WebKit determinism → P4/P5 longitudinal external validation → funnel-evidence Product improvement → Infra/Security hardening → monetization validation → payment implementation.
+- Immediate next work: isolate/fix the runtime/WebKit determinism recurrence without retry/timeout masking; only then promote longitudinal validation to top priority.
+
 ## Latest Command Center handoff — Nutrition Identity production closure — 2026-09-25
 - PRODUCT main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
 - PR #286 exact-head Gate #2031 FULL GREEN.

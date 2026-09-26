@@ -106,3 +106,8 @@ Decision: GARANG may use deterministic hybrid semantic retrieval and richer resp
 Reason: Intelligence Hardening v1 showed that additional semantic/personalization capability can improve relevance while also creating performance and overconfidence risks. The release gate caught a real retrieval performance regression; preserving quality/performance/safety gates is more valuable than maximizing apparent intelligence.
 Impact: Future automation or escalation policies must cite calibrated longitudinal evidence and pass data-quality/recommendation-quality gates before authority is expanded.
 
+## D-021 — Evidence-first commercial execution order
+Date: 2026-09-27
+Decision: Until changed by the Founder or superseded by a verified P0/P1 incident, GARANG executes in this order: P2 Engineering runtime/WebKit determinism → P4/P5 longitudinal external validation → funnel-evidence-driven Product improvement → Infra/Security hardening → monetization validation → payment implementation. New feature scope does not jump this sequence by default.
+Reason: current PRODUCT capability is already broad enough that release repeatability and external evidence are more valuable than additional feature construction, and payment plumbing should follow rather than precede commercial validation.
+Impact: Command Center and Project Graph must keep later work dependent on earlier evidence; Infra/Security can be promoted only by an actual release/security blocker, and monetization evidence must exist before payment implementation.

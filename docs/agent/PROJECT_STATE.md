@@ -1,5 +1,16 @@
 # GARANG Project State
 
+## 2026-09-27 PROJECT START reconciliation — GitHub current truth
+- CONTROL current main: `fa621c260b8d564f38d1d60ba83116474f281f15`.
+- PRODUCT current main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
+- PRODUCT PR #177 `Stabilize Today lifecycle DOM ownership`: CLOSED / MERGED on 2026-09-21 as `9fa951b30be4981b8081e649dd05ab229df44218`; exact PR head was `137b3e55af5eb5e5dcdbda15bf9c78d19a1c251f`.
+- Open PRs observed: CONTROL 0 / PRODUCT 0.
+- CONTROL current-main CI #239 / `36139317869`: SUCCESS. Latest Founder OS Event Envelope #517 / `36139344724`: SUCCESS.
+- PRODUCT current-main release evidence: Release Gate #2032 / `36113706246` finished SUCCESS on attempt 2 after attempt 1 reproduced a Today → Coach readiness timeout on the identical SHA; Pages #899 / `36113705680`: SUCCESS; Production Coach Activation #48 / `36113706298`: SUCCESS; latest Founder OS Event Envelope #2319 / `36146637010`: SUCCESS.
+- Release interpretation: required current-main release checks are GREEN, but identical-SHA rerun dependence is fresh evidence that WebKit/lifecycle determinism is not closed. TD-015 is ACTIVE P2 and must not be normalized as harmless flakiness or masked with broader retries/timeouts.
+- Strategic order until the Founder changes it or a P0/P1 incident overrides it: **P2 Engineering runtime/WebKit determinism → P4/P5 longitudinal external validation → funnel-evidence-driven Product improvement → Infra/Security hardening → monetization validation → payment implementation**.
+- Historical sections below retain point-in-time "current main" wording. This reconciliation block and the Repository observations section are the canonical current truth.
+
 ## 2026-09-25 Nutrition Capture & Food Identity — PRODUCTION VERIFIED GREEN
 - PRODUCT current main is `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
 - Production-smoke hardening culminated in PR #286 exact head `abaa3381eb02b92829225f00f0ce4b6b59eda97d`; Release Gate #2031 / `36087286032`: FULL GREEN. WIF Readiness #10 / `36087286007`: SUCCESS with WIF still NOT_CONFIGURED.
@@ -96,7 +107,7 @@
 - Workout flow now uses explicit READY → 운동 시작 → LIVE SESSION → 운동 종료 semantics, existing Exercise Library search via a Log magnifier, direct return to Log after selection, unified dark execution controls, and rebuilt classical-athletic body proportions.
 - No backend/Firebase Function/data-schema/secret/billing change was part of PR #253.
 
-Last updated: 2026-09-25
+Last updated: 2026-09-27
 
 ## Current objective
 Move from code-addressable commercial parity uplift to anonymous external validation and 2/4/8-week longitudinal proof of retained Personal Performance Intelligence value.
@@ -104,7 +115,8 @@ Move from code-addressable commercial parity uplift to anonymous external valida
 ## Repository observations
 - CONTROL: `jangsang1214/GARANG-ai-agent`.
 - PRODUCT: `jangsang1214/-fitmind-ai`.
-- Canonical PRODUCT main observed: `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
+- Canonical PRODUCT main observed: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
+- Canonical CONTROL main observed: `fa621c260b8d564f38d1d60ba83116474f281f15`.
 - Wanted remains an isolated competition derivative. Competition submissions remain RECORDED complete by Founder report and must not redefine commercial main.
 
 ## Latest AI/Data evidence — Personalized Response Learning v2
