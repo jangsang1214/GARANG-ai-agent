@@ -1,3 +1,12 @@
+## AI/Data handoff update — 2026-09-27
+- PRODUCT repo connection re-verified with admin/push/pull access.
+- Current PRODUCT main remains `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`; CONTROL main is `79513a2906ddf85c06bddb261f78a634bc278eb6`.
+- Actual open PRODUCT PRs are #287 and #279; earlier handoff text saying PRODUCT 0 open PRs is stale.
+- #287 exact head `0f6810a14bafff2d9a892d501a8547d3b850f05a` passed Release Gate #2035 on attempt 1.
+- AI/Data review found a merge blocker: Decision Loop nutrition acceptance writes calorie target through a new source/owner and bypasses the existing Adaptive Nutrition reversible apply/reset owner. A PR comment records the blocker.
+- Do not merge #287 until the target write is unified with the canonical owner and reset/recommendation-linkage regression is added.
+- Do not let this feature PR displace the current project order: Engineering TD-015 first, then external 2/4/8-week longitudinal evidence.
+
 ## Latest PROJECT START handoff — 2026-09-27
 - CONTROL baseline before reconciliation PR #97: `fa621c260b8d564f38d1d60ba83116474f281f15`; PR #97 merged as `069e270411f3218199018d9388df962ed2969c97`, with PR-head CI #240 and post-merge CI #241 SUCCESS. Always resolve the live CONTROL `main` ref from GitHub rather than treating an embedded SHA as self-current.
 - PRODUCT main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`; current-main Gate #2032 / `36113706246` final attempt 2 SUCCESS, Pages #899 SUCCESS, Production Coach Activation #48 SUCCESS.
