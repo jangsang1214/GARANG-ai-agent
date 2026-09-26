@@ -2644,7 +2644,7 @@
       "id": "TASK-BODY-V7-2-CURRENT-MAIN-INTEGRATION",
       "kind": "task",
       "title": "Rebase Body v7.2 muscle volume and fiber definition onto current PRODUCT main",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "design-brand",
       "repositoryId": "product"
     },
@@ -2652,15 +2652,15 @@
       "id": "CHANGE-PRODUCT-PR288-BODY-V7-2",
       "kind": "change",
       "title": "PRODUCT PR #288 replays the exact Body v7.2 seven-file delta on current main",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "design-brand",
       "repositoryId": "product"
     },
     {
       "id": "VERIFY-PRODUCT-PR288-GATE-2037",
       "kind": "verification",
-      "title": "PR #288 exact-head GARANG Release Gate #2037",
-      "status": "in_progress",
+      "title": "PR #288 Gate #2037 final SUCCESS after same-SHA rerun; attempt 1 exposed TD-015 superset timing recurrence",
+      "status": "done",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
     },
@@ -2668,8 +2668,24 @@
       "id": "TASK-BODY-V7-2-FOUNDER-VISUAL-ACCEPTANCE",
       "kind": "task",
       "title": "Confirm deployed Body v7.2 muscle volume and fiber definition against Founder reference floor",
-      "status": "planned",
+      "status": "in_progress",
       "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR288-WEBKIT-ATTEMPT1-FAIL",
+      "kind": "verification",
+      "title": "PR #288 Gate #2037 attempt 1 times out on second-round superset transition at browser-webkit-regression line 392",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR288-WEBKIT-RERUN-PASS",
+      "kind": "verification",
+      "title": "Identical PR #288 SHA rerun passes WebKit mobile regression and final release verify without code or timeout changes",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
       "repositoryId": "product"
     }
   ],
@@ -4728,6 +4744,16 @@
       "from": "TASK-BODY-V7-2-FOUNDER-VISUAL-ACCEPTANCE",
       "to": "VERIFY-PRODUCT-PR288-GATE-2037",
       "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR288-WEBKIT-ATTEMPT1-FAIL",
+      "to": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
+      "kind": "measures"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR288-WEBKIT-RERUN-PASS",
+      "to": "VERIFY-PRODUCT-PR288-WEBKIT-ATTEMPT1-FAIL",
+      "kind": "classifies"
     }
   ]
 }
