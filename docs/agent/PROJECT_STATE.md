@@ -1,5 +1,13 @@
 # GARANG Project State
 
+## Founder direction update — Commercial Supremacy Gate — 2026-09-27
+- Founder decision: unknown-user / longitudinal external validation does **not** begin merely because measurement is ready. It begins only after GARANG passes a pre-validation **Commercial Supremacy Gate** across in-scope app functionality, design, usability, intelligence, reliability and platform quality against current best-in-class commercial benchmarks.
+- Current PRODUCT observation: main advanced to `7d7fc263d019915c212b480bf62736ad103e1f6d` with Personal Performance Decision Loop v2. P2 WebKit/Today→Coach determinism remains active; successor PRODUCT PR #291 is the current repair track and must pass first-attempt exact-head + post-merge main gates before P2 can close.
+- External validation tasks are READY-BUT-DEFERRED, not cancelled. Existing consent/funnel instrumentation remains useful once the Supremacy Gate is met.
+- Pre-validation build order is now: P2 deterministic runtime → commercial benchmark/gap closure → Workout/Nutrition depth → Health/Recovery & native signal ingestion → Running parity → cross-domain Personal Performance Intelligence → premium mobile/native UX & design → privacy/security/accessibility/release hardening → Commercial Supremacy Gate → only then external validation.
+- Network-effect or proprietary-hardware scale is not faked as an app feature. Where GARANG cannot rationally reproduce a commercial network/hardware moat, the gate requires equivalent user value through interoperable integrations plus no material Golden Path deficit.
+- D-021 is superseded where it placed external validation immediately after P2. D-022 is canonical for the pre-validation sequence.
+
 ## Design / Brand reconciliation — 2026-09-27
 - VERIFIED PRODUCT main remains `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
 - PR #279 Body v7.2 preserved the intended visual delta but diverged from current main: 7 commits ahead / 22 behind from merge base `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`; it is now CLOSED / UNMERGED as superseded by #288.
