@@ -2639,6 +2639,38 @@
       "status": "active",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
+    },
+    {
+      "id": "TASK-BODY-V7-2-CURRENT-MAIN-INTEGRATION",
+      "kind": "task",
+      "title": "Rebase Body v7.2 muscle volume and fiber definition onto current PRODUCT main",
+      "status": "in_progress",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR288-BODY-V7-2",
+      "kind": "change",
+      "title": "PRODUCT PR #288 replays the exact Body v7.2 seven-file delta on current main",
+      "status": "in_progress",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR288-GATE-2037",
+      "kind": "verification",
+      "title": "PR #288 exact-head GARANG Release Gate #2037",
+      "status": "in_progress",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-BODY-V7-2-FOUNDER-VISUAL-ACCEPTANCE",
+      "kind": "task",
+      "title": "Confirm deployed Body v7.2 muscle volume and fiber definition against Founder reference floor",
+      "status": "planned",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -4676,6 +4708,26 @@
       "from": "TASK-PR287-NUTRITION-TARGET-OWNERSHIP",
       "to": "CHANGE-PRODUCT-PR287-DECISION-LOOP-V2",
       "kind": "blocks"
+    },
+    {
+      "from": "TASK-BODY-V7-2-CURRENT-MAIN-INTEGRATION",
+      "to": "TASK-BODY-V7-1-FOUNDER-VISUAL-ACCEPTANCE",
+      "kind": "refines"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR288-BODY-V7-2",
+      "to": "TASK-BODY-V7-2-CURRENT-MAIN-INTEGRATION",
+      "kind": "delivers"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR288-GATE-2037",
+      "to": "CHANGE-PRODUCT-PR288-BODY-V7-2",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-BODY-V7-2-FOUNDER-VISUAL-ACCEPTANCE",
+      "to": "VERIFY-PRODUCT-PR288-GATE-2037",
+      "kind": "depends-on"
     }
   ]
 }
