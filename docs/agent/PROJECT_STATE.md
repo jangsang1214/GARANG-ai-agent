@@ -2,11 +2,12 @@
 
 ## Design / Brand reconciliation — 2026-09-27
 - VERIFIED PRODUCT main remains `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
-- PR #279 Body v7.2 preserved the intended visual delta but diverged from current main: 7 commits ahead / 22 behind from merge base `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`.
+- PR #279 Body v7.2 preserved the intended visual delta but diverged from current main: 7 commits ahead / 22 behind from merge base `f72b3ef7d2546747896e64b5c5d9bbbc9c54f8f5`; it is now CLOSED / UNMERGED as superseded by #288.
 - The seven PR #279 files had zero overlap with the 22 commits that advanced PRODUCT main.
 - Successor PR #288 `Rebase Body v7.2 definition onto current main` was recreated from current main with the exact same seven-file diff statistics as #279: 7 files, +135 / -26.
 - PR #288 exact head is `e9a7f6c499767fa0253d7c0ffd7ef74e81ecea7c`; branch is 7 commits ahead / 0 behind current main and GitHub reports it mergeable.
-- Release Gate #2037 / `36257522818` is currently running. Until exact-head CI completes and deployed real-device visual QA passes, Body v7.2 is NOT part of current release and visual acceptance remains open.
+- PR #288 Release Gate #2037 / `36257522818`: attempt 1 FAILED only in `browser-webkit` at `tests/browser-webkit-regression.test.cjs:392`, waiting for the second-round superset transition to `Squat`; prior Golden Path, Coach, Real LLM, Recovery and Body-related checks had passed. The identical-SHA failed-job rerun passed `browser-webkit`, `core-build-rules`, and final `verify` with no code/timeout/threshold change. This is fresh TD-015 nondeterminism evidence, not a verified Body v7.2 regression.
+- Body v7.2 exact-head release evidence is therefore FINAL GATE SUCCESS / REPEATABILITY YELLOW. It is NOT part of current release and visual acceptance remains open until deployed real-device QA.
 - Active P2 TD-015 runtime/WebKit determinism remains ahead of this P3 Design track in the strategic queue.
 
 # AI/Data reconciliation — 2026-09-27 (after PRODUCT reconnect)
