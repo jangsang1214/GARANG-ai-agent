@@ -1,5 +1,15 @@
 # GARANG Project State
 
+# AI/Data reconciliation — 2026-09-27 (after PRODUCT reconnect)
+- VERIFIED CONTROL main: `79513a2906ddf85c06bddb261f78a634bc278eb6`.
+- VERIFIED PRODUCT main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.
+- VERIFIED open PRs: CONTROL 0; PRODUCT 2 — #287 `Add Personal Performance Decision Loop v2` and #279 `Increase Body v7.2 muscle volume and fiber definition`. Earlier "PRODUCT 0 open PRs" records are stale.
+- VERIFIED PR #287 exact head `0f6810a14bafff2d9a892d501a8547d3b850f05a`; Release Gate #2035 / `36145896165` SUCCESS on attempt 1.
+- VERIFIED AI/Data merge blocker in #287: `applyPerformanceDecision()` directly writes `state.profile.calorieTarget` with source `personal_performance_decision_loop_v2`, while the existing canonical Adaptive Nutrition reset path owns only `adaptive_nutrition_learning_v1`. This can split write ownership and break reversibility even though CI is GREEN.
+- Required repair before #287 merge: route nutrition-target acceptance through one canonical apply/reset owner (or one shared typed helper) and regression-test explicit confirmation → one canonical write → reversible reset → recommendation/action linkage.
+- AI/Data must not independently edit shared `01_app/app.js` while the P2 TD-015 Engineering runtime-determinism track is active. AI/Data owns the requirement/logic contract; shared runtime integration is coordinated after the active runtime owner is clear.
+- Strategic order remains: P2 runtime/WebKit determinism → P4/P5 longitudinal external validation → funnel-evidence Product improvement. #287 does not jump this queue merely because its exact-head gate is GREEN.
+
 ## 2026-09-27 PROJECT START reconciliation — GitHub current truth
 - CONTROL observation baseline before reconciliation PR #97: `fa621c260b8d564f38d1d60ba83116474f281f15`. PR #97 merged successfully as `069e270411f3218199018d9388df962ed2969c97`; resolve the live CONTROL `main` ref from GitHub because any state-only merge necessarily advances it.
 - PRODUCT current main: `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`.

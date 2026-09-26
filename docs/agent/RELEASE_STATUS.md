@@ -1,5 +1,14 @@
 # GARANG Release Status
 
+## AI/Data open-PR reconciliation — 2026-09-27
+Decision: CURRENT MAIN GREEN / PR #287 NOT MERGE-READY.
+- PRODUCT main remains `3bf04c961b0378ba3c611a4b554dd3baeb8b6e8d`; its current-main release evidence remains the previously recorded Gate #2032 final SUCCESS, Pages #899 SUCCESS, Production Coach Activation #48 SUCCESS.
+- Current PRODUCT open PRs are #287 and #279, not zero.
+- PR #287 exact head `0f6810a14bafff2d9a892d501a8547d3b850f05a` passed Release Gate #2035 / `36145896165` on attempt 1.
+- GREEN CI does not make #287 merge-ready: AI/Data review verified a split nutrition-target write/reset ownership path. Merge remains YELLOW/BLOCKED until canonical ownership + reversible reset regression is restored.
+- This reconciliation changes CONTROL evidence only; no PRODUCT code, deployment, or production state was changed.
+
+
 ## PROJECT START current release reconciliation — 2026-09-27
 Decision: **CURRENT RELEASE GREEN / P2 RUNTIME DETERMINISM ACTIVE**.
 - CONTROL baseline before reconciliation PR #97: `fa621c260b8d564f38d1d60ba83116474f281f15`. PR #97 merged as `069e270411f3218199018d9388df962ed2969c97`; PR-head CI #240 / `36256416126` and post-merge CI #241 / `36256443581` are SUCCESS. Resolve the live CONTROL `main` ref from GitHub.
