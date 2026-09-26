@@ -1,5 +1,18 @@
 # GARANG Tasks
 
+## Active P4 — PR #287 Decision Loop v2 ownership repair
+Status: BLOCKED BEFORE MERGE / EXACT-HEAD CI GREEN
+Owner: AI Data requirement + Engineering shared-runtime integration
+Goal: preserve one reversible nutrition-target state owner while keeping Decision Loop recommendation → action → outcome linkage.
+- PRODUCT PR #287 exact head `0f6810a14bafff2d9a892d501a8547d3b850f05a`. ✅
+- Release Gate #2035 / `36145896165`: SUCCESS on attempt 1. ✅
+- Review found direct `calorieTarget` mutation under source `personal_performance_decision_loop_v2`. ⚠️
+- Existing reset owner only resets `adaptive_nutrition_learning_v1`; therefore reversibility/ownership is split. ⚠️
+- Acceptance: one canonical apply owner, one reversible reset path, explicit user confirmation retained, decisionId/recommendationId/experiment linkage retained, regression test covers the full write/reset contract.
+- Coordination boundary: AI/Data does not independently modify shared `01_app/app.js` while Engineering TD-015 runtime work is active.
+- Priority boundary: this repair is required before #287 can merge, but does not outrank active P2 runtime determinism.
+
+
 ## Current strategic queue — 2026-09-27
 1. **P2 Engineering runtime/WebKit determinism** — active first priority. Current release is GREEN, but Gate #2032 required a same-SHA rerun after a Today → Coach readiness timeout.
 2. **P4/P5 longitudinal external validation** — next after the P2 determinism pass; use existing consent-safe funnel/episode measurement.
