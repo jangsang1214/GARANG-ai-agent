@@ -1,3 +1,13 @@
+## P2 determinism closure + Commercial Supremacy execution — 2026-09-27
+- VERIFIED PRODUCT P2 closure line: PR #296 `Make superset round transitions exact`, exact head `2aff5925bd34a78e325f336caa56c9e644daaf32`.
+- VERIFIED PR #296 Release Gate #2074 / `36295327699`: FULL GREEN on attempt 1 across core/build/rules, Golden Path, Today→Coach, authenticated Coach/Recovery, WebKit superset regression, Settings touch, mobile button health, runtime stress and final verify.
+- VERIFIED PR #296 squash merge: `680b30bae59ef071ca1783ef06741fc6697f641c`.
+- VERIFIED post-merge current-main Gate #2075 / `36295684301`: FULL GREEN on attempt 1. This satisfies the dedicated TD-015 closure acceptance without same-SHA rerun, timeout inflation, broad retry or assertion weakening.
+- PRODUCT main subsequently advanced independently to Body v7.2 `ef51c83cee9d5c695864175035d8e52de997b9c2`; its Gate #2076 is separate current-release evidence and was still running at this observation.
+- Commercial Supremacy work has started. Current Workout successor PR #299 `Make workout prescriptions equipment and experience aware` is based directly on `ef51c83...`, head `b78db4413a3113812b1d1b4b9f9b6d5ab4684db8`, mergeable, Gate #2077 attempt 1 in progress.
+- #299 closes a concrete Programming/Adaptive Prescription gap by combining available equipment, onboarding experience, time, recovery and recent load while preserving one canonical Workout state/set-entry owner.
+- External validation remains deferred until D-022 Commercial Supremacy Gate PASS.
+
 # AI/Data release reconciliation — 2026-09-27 / PR #287 merged
 - VERIFIED PRODUCT main: `7d7fc263d019915c212b480bf62736ad103e1f6d`.
 - VERIFIED PR #287 `Add Personal Performance Decision Loop v2` merged successfully from exact head `360171a9251375e8246c6ccd981c2af133272db0`.

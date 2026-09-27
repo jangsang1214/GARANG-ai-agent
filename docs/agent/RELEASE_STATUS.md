@@ -1,3 +1,12 @@
+## P2 determinism release closure — 2026-09-27
+Decision: GREEN / TD-015 RESOLVED.
+- PR #296 head `2aff5925bd34a78e325f336caa56c9e644daaf32`.
+- Exact-head Gate #2074 / `36295327699`: SUCCESS attempt 1.
+- Merge commit `680b30bae59ef071ca1783ef06741fc6697f641c`.
+- Post-merge Gate #2075 / `36295684301`: SUCCESS attempt 1.
+- Scope includes deterministic exact superset member transitions while preserving Today→Coach lifecycle fixes already on main.
+- PRODUCT later advanced to Body v7.2 `ef51c83...`; Gate #2076 is tracked separately and does not invalidate the dedicated #296/#2075 closure evidence.
+
 ## PR #287 Decision Loop v2 release closure — 2026-09-27
 Decision: GREEN / MERGED / WEB RELEASE VERIFIED.
 - PRODUCT main: `7d7fc263d019915c212b480bf62736ad103e1f6d`.

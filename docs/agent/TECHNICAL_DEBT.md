@@ -1,3 +1,12 @@
+## TD-015 closure — 2026-09-27
+Status: RESOLVED / VERIFIED
+- Dedicated fix PR #296 exact-head Gate #2074 / `36295327699`: FULL GREEN on attempt 1.
+- PR #296 merged as `680b30bae59ef071ca1783ef06741fc6697f641c`.
+- Post-merge main Gate #2075 / `36295684301`: FULL GREEN on attempt 1.
+- The prior Today→Coach and grouped Workout WebKit timing recurrences now have dedicated deterministic fixes plus exact-head/current-main first-attempt evidence.
+- No timeout inflation, broad retry, assertion weakening or same-SHA rerun normalization was used for closure.
+- Reopen only on fresh current-lineage repeatability evidence.
+
 ### TD-015 evidence update — 2026-09-27 after PR #287
 - PRODUCT PR #287 exact-head Gate #2050 and post-merge current-main Gate #2052 both passed the complete core/build/WebKit/final-verify suite; #2052 passed on first attempt.
 - This is positive first-attempt repeatability evidence on current main `7d7fc263d019915c212b480bf62736ad103e1f6d`.

@@ -1,3 +1,11 @@
+## P2 closed / Commercial Supremacy execution handoff — 2026-09-27
+- P2 TD-015 is VERIFIED RESOLVED by PR #296 Gate #2074 attempt-1 GREEN + post-merge Gate #2075 attempt-1 GREEN.
+- PRODUCT main then advanced to Body v7.2 `ef51c83cee9d5c695864175035d8e52de997b9c2`; observe its Gate #2076 separately.
+- Commercial Supremacy execution is now the top build track; external validation remains deferred.
+- Current implementation: Workout Prescription Context v2 PR #299, head `b78db4413a3113812b1d1b4b9f9b6d5ab4684db8`, based on Body v7.2 main; Gate #2077 attempt 1 running.
+- #299 adds equipment-aware + experience-aware workout prescription using existing exercise metadata while keeping recovery/history/time inputs and one canonical state owner.
+- If #299 exact-head + post-merge gates pass first attempt, continue Workout commercial gap closure (progression/weekly interpretation/program quality) before moving to Nutrition depth.
+
 ## Latest AI/Data handoff — PR #287 merged GREEN — 2026-09-27
 - PRODUCT main is now `7d7fc263d019915c212b480bf62736ad103e1f6d`.
 - PR #287 is MERGED. Exact head `360171a9251375e8246c6ccd981c2af133272db0` passed Gate #2050; post-merge main passed Gate #2052 on first attempt; Pages #900 succeeded.

@@ -918,7 +918,7 @@
       "id": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
       "kind": "task",
       "title": "Restore repeatable Today/Coach WebKit lifecycle determinism on current main",
-      "status": "active",
+      "status": "done",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -2759,6 +2759,54 @@
       "status": "active",
       "ownerWorkstream": "command-center",
       "repositoryId": "control"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR296",
+      "kind": "change",
+      "title": "PR #296 makes grouped Workout transitions exact after dedicated WebKit lifecycle stabilization",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR296-GATE-2074",
+      "kind": "verification",
+      "title": "PR #296 exact-head Release Gate #2074 FULL GREEN attempt 1",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-GATE-2075",
+      "kind": "verification",
+      "title": "Post-merge PRODUCT main 680b30b Gate #2075 FULL GREEN attempt 1",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-TD015-DETERMINISM-CLOSED",
+      "kind": "result",
+      "title": "TD-015 runtime/WebKit determinism closed with exact-head and current-main first-attempt GREEN evidence",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-WORKOUT-PRESCRIPTION-CONTEXT-V2",
+      "kind": "task",
+      "title": "Use equipment, experience, time, recovery and history in Workout prescription",
+      "status": "in_progress",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR299",
+      "kind": "change",
+      "title": "PRODUCT PR #299 Workout Prescription Context v2",
+      "status": "in_progress",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -4901,6 +4949,46 @@
       "from": "METRIC-COMMERCIAL-SUPREMACY-SCORE",
       "to": "INIT-COMMERCIAL-SUPREMACY-GATE",
       "kind": "measures"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR296",
+      "to": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR296-GATE-2074",
+      "to": "CHANGE-PRODUCT-PR296",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-GATE-2075",
+      "to": "CHANGE-PRODUCT-PR296",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-TD015-DETERMINISM-CLOSED",
+      "to": "VERIFY-PRODUCT-PR296-GATE-2074",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-TD015-DETERMINISM-CLOSED",
+      "to": "VERIFY-PRODUCT-MAIN-GATE-2075",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-WORKOUT-PRESCRIPTION-CONTEXT-V2",
+      "to": "INIT-COMMERCIAL-SUPREMACY-GATE",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR299",
+      "to": "TASK-WORKOUT-PRESCRIPTION-CONTEXT-V2",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-WORKOUT-PRESCRIPTION-CONTEXT-V2",
+      "to": "RESULT-TD015-DETERMINISM-CLOSED",
+      "kind": "depends-on"
     }
   ]
 }
