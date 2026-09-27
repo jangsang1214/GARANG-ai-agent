@@ -1,3 +1,14 @@
+## Commercial Mobile Design PR #335 — 2026-09-28
+Decision: GREEN PRE-MERGE / MERGE READY / FOUNDER APPROVAL REQUIRED.
+- Base PRODUCT main: `126c27ee1e5bd822c85a85ba2565ffdcc4e90bef`.
+- Exact PR head: `008d5e94b93731f6d20b601622b5dfa7a1e5bbba`.
+- PR state: OPEN, mergeable, behind main 0.
+- Exact-head Release Gate #2187 / `36329130168`: SUCCESS.
+- Jobs: core-build-rules SUCCESS; browser-webkit SUCCESS; verify SUCCESS.
+- Browser coverage includes Golden Path, nutrition, workout execution, Body v7.4, running, Coach conversational logging/undo, recovery, Settings touch, button health and runtime stability.
+- Release is not complete until Founder-approved merge and a fresh post-merge current-main Gate succeed.
+- 98+ is a design target, not a CI-derived factual score; deployed real-device visual acceptance is still required for that claim.
+
 ## P2 determinism release closure — 2026-09-27
 Decision: GREEN / TD-015 RESOLVED.
 - PR #296 head `2aff5925bd34a78e325f336caa56c9e644daaf32`.

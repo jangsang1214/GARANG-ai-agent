@@ -1,3 +1,13 @@
+## Active P3 — Commercial Mobile Design 98+ final pass
+Status: IMPLEMENTED / PR #335 MERGE-READY / EXACT-HEAD GATE GREEN
+Goal: replace the responsive-web/dashboard impression with one premium commercial-mobile visual language while preserving GARANG's Golden Path and Intelligence ownership.
+- App shell, native four-axis tab bar, compact chrome, typography, surfaces, controls, sheets and motion baseline implemented.
+- Today/Record, Workout/Nutrition, Running/Body, Coach/Progress rebuilt into object-first mobile surfaces.
+- Auth, Settings, Profile, Onboarding and secondary capability screens aligned to the same system.
+- PRODUCT PR #335 head `008d5e94b93731f6d20b601622b5dfa7a1e5bbba`; main drift 0; mergeable.
+- Exact-head Release Gate #2187 / `36329130168`: FULL GREEN.
+Acceptance remaining: Founder visual review/merge approval → merge → post-merge current-main Gate. Do not claim the subjective 98+ aesthetic target as measured until real-device visual review.
+
 ## Completed P2 — TD-015 WebKit / lifecycle determinism closure
 Status: DONE / VERIFIED FIRST-ATTEMPT GREEN
 - PR #296 exact head `2aff5925...` Release Gate #2074: FULL GREEN attempt 1. ✅

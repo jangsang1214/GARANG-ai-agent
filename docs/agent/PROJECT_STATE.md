@@ -1,3 +1,12 @@
+## Commercial Mobile Design Final pass — 2026-09-28
+- VERIFIED PRODUCT main baseline: `126c27ee1e5bd822c85a85ba2565ffdcc4e90bef`.
+- VERIFIED PRODUCT PR #335 `Rebuild GARANG as a commercial mobile app shell` is OPEN / mergeable, exact head `008d5e94b93731f6d20b601622b5dfa7a1e5bbba`, 0 commits behind main.
+- VERIFIED PR #335 exact-head Release Gate #2187 / `36329130168`: FULL GREEN across core-build-rules, browser-webkit and final verify.
+- VERIFIED browser scope includes Today action/visual parity, Record canonical routes, Nutrition recommendation + Meal Scan, Workout live execution + Body v7.4, Running live/map surface, Coach plan/Real LLM/conversational undo touch, Golden Path complete, authenticated recovery, WebKit mobile regression, Settings touch, mobile button health and runtime stability stress.
+- Implemented commercial-mobile visual runtime now owns final presentation for app shell, Today, Record, Workout, Nutrition, Running, Body, Coach, Progress plus Auth, Settings, Profile, Onboarding and secondary surfaces while preserving canonical data/routing owners.
+- The internal target is 98+ commercial-mobile design quality. CI verifies structure, interaction, overflow, touch and regression integrity; it does NOT independently prove a subjective 98+ aesthetic score. Final real-device visual acceptance remains a human Founder QA item.
+- Merge remains approval-gated. PR #335 has not been merged.
+
 ## P2 determinism closure + Commercial Supremacy execution — 2026-09-27
 - VERIFIED PRODUCT P2 closure line: PR #296 `Make superset round transitions exact`, exact head `2aff5925bd34a78e325f336caa56c9e644daaf32`.
 - VERIFIED PR #296 Release Gate #2074 / `36295327699`: FULL GREEN on attempt 1 across core/build/rules, Golden Path, Today→Coach, authenticated Coach/Recovery, WebKit superset regression, Settings touch, mobile button health, runtime stress and final verify.

@@ -2807,6 +2807,38 @@
       "status": "in_progress",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-COMMERCIAL-MOBILE-DESIGN-98",
+      "kind": "initiative",
+      "title": "Rebuild GARANG into one premium commercial-mobile visual system",
+      "status": "in_progress",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR335",
+      "kind": "change",
+      "title": "PRODUCT PR #335 Commercial Mobile Design final pass",
+      "status": "in_progress",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR335-GATE-2187",
+      "kind": "verification",
+      "title": "PR #335 exact-head Release Gate #2187 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-COMMERCIAL-MOBILE-MERGE-READY",
+      "kind": "result",
+      "title": "Commercial Mobile Design is regression-verified and merge-ready pending Founder visual/merge approval",
+      "status": "in_progress",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -4988,6 +5020,26 @@
     {
       "from": "TASK-WORKOUT-PRESCRIPTION-CONTEXT-V2",
       "to": "RESULT-TD015-DETERMINISM-CLOSED",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-COMMERCIAL-MOBILE-DESIGN-98",
+      "to": "INIT-COMMERCIAL-SUPREMACY-GATE",
+      "kind": "supports"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR335",
+      "to": "INIT-COMMERCIAL-MOBILE-DESIGN-98",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR335-GATE-2187",
+      "to": "CHANGE-PRODUCT-PR335",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-COMMERCIAL-MOBILE-MERGE-READY",
+      "to": "VERIFY-PRODUCT-PR335-GATE-2187",
       "kind": "depends-on"
     }
   ]
