@@ -1,3 +1,15 @@
+# AI/Data release reconciliation — 2026-09-27 / PR #287 merged
+- VERIFIED PRODUCT main: `7d7fc263d019915c212b480bf62736ad103e1f6d`.
+- VERIFIED PR #287 `Add Personal Performance Decision Loop v2` merged successfully from exact head `360171a9251375e8246c6ccd981c2af133272db0`.
+- VERIFIED PR exact-head Release Gate #2050 / `36260952602`: SUCCESS. Core/build, browser-webkit and final verify all passed.
+- VERIFIED current-main Release Gate #2052 / `36261330201`: SUCCESS on first attempt; core-build-rules, browser-webkit and final verify all passed.
+- VERIFIED Pages #900 / `36261329535`: SUCCESS on current main.
+- Released scope: execution-ready Running prescription, shared Today/Coach Next Action, simplified Progress evidence disclosure, same-domain Personal Experiment baseline, Food Identity attempt/result denominators, canonical Adaptive Nutrition ownership, and explicit-consent gate for remote analytics.
+- Earlier #287 nutrition-target ownership blocker is RESOLVED by the canonical apply/reset ownership path and regression coverage.
+- This closes the code-addressable AI/Data commercial-advantage + simplification pass as DONE / VERIFIED GREEN on PRODUCT main.
+- Evidence-only gaps remain separate: 2/4/8-week longitudinal outcome uplift, passive/native wearable ingestion, and proprietary cohort advantage are not claimed REACHED without real usage evidence.
+- TD-015 remains a separate P2 runtime-determinism workstream. Current main #2052 first-attempt GREEN is positive evidence but does not by itself close the debt while dedicated determinism PRs remain active.
+
 # GARANG Project State
 
 ## Founder direction update — Commercial Supremacy Gate — 2026-09-27
