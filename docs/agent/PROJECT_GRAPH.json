@@ -2759,6 +2759,46 @@
       "status": "active",
       "ownerWorkstream": "command-center",
       "repositoryId": "control"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR290-TD015-DETERMINISM",
+      "kind": "change",
+      "title": "PR #290 stabilizes Today → Coach WebKit lifecycle determinism",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR290-GATE-2065",
+      "kind": "verification",
+      "title": "PR #290 exact-head GARANG Release Gate #2065",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR295-BODY-V7-2",
+      "kind": "change",
+      "title": "PR #295 Body v7.2 on stabilized current main",
+      "status": "in_progress",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR295-GATE-2073",
+      "kind": "verification",
+      "title": "PR #295 exact-head GARANG Release Gate #2073",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-BODY-V7-2-REAL-DEVICE-ACCEPTANCE-FINAL",
+      "kind": "task",
+      "title": "Verify Body v7.2 on deployed real device against Founder reference floor",
+      "status": "in_progress",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -4901,6 +4941,26 @@
       "from": "METRIC-COMMERCIAL-SUPREMACY-SCORE",
       "to": "INIT-COMMERCIAL-SUPREMACY-GATE",
       "kind": "measures"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR290-GATE-2065",
+      "to": "CHANGE-PRODUCT-PR290-TD015-DETERMINISM",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR295-BODY-V7-2",
+      "to": "CHANGE-PRODUCT-PR290-TD015-DETERMINISM",
+      "kind": "builds-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR295-GATE-2073",
+      "to": "CHANGE-PRODUCT-PR295-BODY-V7-2",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-BODY-V7-2-REAL-DEVICE-ACCEPTANCE-FINAL",
+      "to": "VERIFY-PRODUCT-PR295-GATE-2073",
+      "kind": "depends-on"
     }
   ]
 }
