@@ -2620,7 +2620,7 @@
       "id": "CHANGE-PRODUCT-PR287-DECISION-LOOP-V2",
       "kind": "change",
       "title": "PRODUCT PR #287 adds Personal Performance Decision Loop v2",
-      "status": "blocked",
+      "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     },
@@ -2636,7 +2636,7 @@
       "id": "TASK-PR287-NUTRITION-TARGET-OWNERSHIP",
       "kind": "task",
       "title": "Unify Decision Loop nutrition target acceptance with canonical reversible Adaptive Nutrition ownership",
-      "status": "active",
+      "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     },
@@ -2718,6 +2718,38 @@
       "title": "Verify no material in-scope commercial gap and repeatable release/design quality before external users",
       "status": "planned",
       "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR287-GATE-2050",
+      "kind": "verification",
+      "title": "PR #287 exact head 360171a9 passes Release Gate #2050 including first-attempt WebKit and final verify",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-2052-DECISION-LOOP-V2",
+      "kind": "verification",
+      "title": "PRODUCT main 7d7fc263 passes Release Gate #2052 on first attempt after PR #287 merge",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PAGES-900-DECISION-LOOP-V2",
+      "kind": "release",
+      "title": "Pages #900 succeeds for PRODUCT main 7d7fc263 after PR #287 merge",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-PR287-DECISION-LOOP-V2-GREEN",
+      "kind": "result",
+      "title": "Decision Loop v2 commercial-advantage and simplification pass is merged and release-verified GREEN",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     }
   ],
@@ -4821,6 +4853,41 @@
       "from": "TASK-NATIVE-PHYSIOLOGICAL-SIGNAL-INGESTION",
       "to": "INIT-COMMERCIAL-SUPREMACY-GATE",
       "kind": "supports"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR287-GATE-2050",
+      "to": "CHANGE-PRODUCT-PR287-DECISION-LOOP-V2",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-2052-DECISION-LOOP-V2",
+      "to": "CHANGE-PRODUCT-PR287-DECISION-LOOP-V2",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PAGES-900-DECISION-LOOP-V2",
+      "to": "CHANGE-PRODUCT-PR287-DECISION-LOOP-V2",
+      "kind": "releases"
+    },
+    {
+      "from": "RESULT-PR287-DECISION-LOOP-V2-GREEN",
+      "to": "VERIFY-PRODUCT-PR287-GATE-2050",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-PR287-DECISION-LOOP-V2-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-2052-DECISION-LOOP-V2",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-PR287-DECISION-LOOP-V2-GREEN",
+      "to": "RELEASE-PAGES-900-DECISION-LOOP-V2",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-PR287-DECISION-LOOP-V2-GREEN",
+      "kind": "depends-on"
     }
   ]
 }
