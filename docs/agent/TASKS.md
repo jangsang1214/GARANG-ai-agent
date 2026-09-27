@@ -1,3 +1,22 @@
+## Completed P2 — TD-015 WebKit / lifecycle determinism closure
+Status: DONE / VERIFIED FIRST-ATTEMPT GREEN
+- PR #296 exact head `2aff5925...` Release Gate #2074: FULL GREEN attempt 1. ✅
+- Squash merge `680b30b...`. ✅
+- Post-merge main Release Gate #2075: FULL GREEN attempt 1. ✅
+- No retry/timeout/assertion masking used. ✅
+- Dedicated P2 determinism acceptance is satisfied; later feature releases must still preserve first-attempt repeatability.
+
+## Active P3/P4 — Workout Prescription Context v2
+Status: IMPLEMENTED / PR #299 OPEN / GATE #2077 RUNNING
+Goal: raise Programming / Adaptive Prescription toward the Commercial Supremacy floor without feature-count bloat.
+- Persist user equipment environment: full gym / home gym / dumbbells+bodyweight / bodyweight.
+- Allow per-session equipment override.
+- Use the existing 300-exercise equipment taxonomy to exclude unavailable exercises.
+- Combine equipment + experience + available time + recovery + recent muscle load in Daily Workout generation.
+- Bound beginner hard-session requests to conservative RPE/set/rest limits; no silent progression escalation.
+- Preserve one canonical Workout set-entry/state owner.
+Acceptance: exact-head Gate first-attempt GREEN → merge → post-merge current-main first-attempt GREEN.
+
 ## Completed P4 — PR #287 Decision Loop v2 commercial-advantage pass
 Status: DONE / VERIFIED GREEN / MERGED
 Goal: close code-addressable AI/Data partial-reach gaps while simplifying GARANG around one actionable decision.
