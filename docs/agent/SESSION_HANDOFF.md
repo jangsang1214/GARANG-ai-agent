@@ -1,3 +1,12 @@
+## Execution Surface Pass handoff — 2026-09-27
+- VERIFIED PRODUCT main: `9be4ca29c02d2f8337487d073847364f30b52ac9`.
+- Founder-approved Execution Surface Pass PR #331 is MERGED.
+- PR #331 exact head `f3732d6a4d9c03ccda9bc9c208c3111082fd58f1`: Release Gate #2154 SUCCESS across core-build-rules, browser-webkit, and final verify.
+- Post-merge PRODUCT main Gate #2155: SUCCESS; Pages #915: SUCCESS.
+- Released scope: visibly live workout session/timer state, Body v7.4 organic fiber texture, and physiological readiness wired into workout intelligence/prescription while preserving Adaptive Nutrition beta.22 runtime.
+- The prior #328 WebKit mobile-regression timeout is resolved by the current-main replay; mobile regression, Settings touch, button health, and runtime stability stress all passed on #331 and post-merge main.
+- This improves the code-addressable commercial gap in workout execution, recovery-to-prescription linkage, and visual polish. It does not prove native wearable breadth or longitudinal outcome superiority.
+
 ## Commercial Advantage Pass handoff — 2026-09-27
 - VERIFIED PRODUCT main: `30a194f02b2b05a01fa941ac0f717fad44a2b072`.
 - Founder-approved Commercial Advantage Pass PR #323 is MERGED.
