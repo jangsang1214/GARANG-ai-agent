@@ -1,3 +1,13 @@
+## Latest AI/Data handoff — PR #287 merged GREEN — 2026-09-27
+- PRODUCT main is now `7d7fc263d019915c212b480bf62736ad103e1f6d`.
+- PR #287 is MERGED. Exact head `360171a9251375e8246c6ccd981c2af133272db0` passed Gate #2050; post-merge main passed Gate #2052 on first attempt; Pages #900 succeeded.
+- The former split Adaptive Nutrition ownership blocker is fixed and regression-covered.
+- Released AI/Data scope: executable running prescription, shared Today/Coach Next Action, simplified Progress evidence disclosure, same-domain experiment calibration, Food Identity attempt/result measurement, and remote analytics explicit-consent gating.
+- Treat the code-addressable #287 pass as DONE / VERIFIED GREEN.
+- Do not claim 2/4/8-week personalization/outcome superiority, native continuous wearable ingestion, or proprietary cohort advantage until real evidence exists.
+- Separate P2 TD-015 runtime-determinism work remains active; current PRODUCT open determinism PRs must be reconciled independently.
+- After TD-015 closure, highest-value AI/Data work is external prospective longitudinal validation, not another feature expansion.
+
 ## Founder Commercial Supremacy handoff — 2026-09-27
 - Founder changed the pre-validation rule: do not recruit unknown users merely after P2. External validation starts only after a documented Commercial Supremacy Gate PASS.
 - Current PRODUCT main observed during this decision update: `7d7fc263d019915c212b480bf62736ad103e1f6d` (Personal Performance Decision Loop v2).
