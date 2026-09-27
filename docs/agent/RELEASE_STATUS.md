@@ -1,3 +1,15 @@
+## PR #287 Decision Loop v2 release closure — 2026-09-27
+Decision: GREEN / MERGED / WEB RELEASE VERIFIED.
+- PRODUCT main: `7d7fc263d019915c212b480bf62736ad103e1f6d`.
+- PR #287 exact head `360171a9251375e8246c6ccd981c2af133272db0`.
+- Exact-head Release Gate #2050 / `36260952602`: SUCCESS across core-build-rules, browser-webkit and final verify.
+- Squash merge: `7d7fc263d019915c212b480bf62736ad103e1f6d`.
+- Post-merge Release Gate #2052 / `36261330201`: SUCCESS on first attempt across core-build-rules, browser-webkit and final verify.
+- Pages #900 / `36261329535`: SUCCESS.
+- Release includes Decision Loop execution prescriptions, one shared Today/Coach Next Action, simplified learning disclosure, calibrated Personal Experiment baselines, Food Identity denominator events, canonical Adaptive Nutrition ownership, and explicit analytics-consent enforcement.
+- Outcome superiority over specialist commercial apps is not claimed from CI alone; that requires prospective external-user and 2/4/8-week longitudinal evidence.
+- TD-015 remains separately ACTIVE pending the dedicated runtime-determinism line; #2052 first-attempt GREEN is supporting evidence, not debt closure by itself.
+
 # GARANG Release Status
 
 ## Design / Brand Body v7.2 reconciliation — 2026-09-27

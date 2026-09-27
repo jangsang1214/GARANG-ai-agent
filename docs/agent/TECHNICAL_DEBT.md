@@ -1,3 +1,9 @@
+### TD-015 evidence update — 2026-09-27 after PR #287
+- PRODUCT PR #287 exact-head Gate #2050 and post-merge current-main Gate #2052 both passed the complete core/build/WebKit/final-verify suite; #2052 passed on first attempt.
+- This is positive first-attempt repeatability evidence on current main `7d7fc263d019915c212b480bf62736ad103e1f6d`.
+- Do NOT mark TD-015 resolved solely from this release. Dedicated determinism PRs #290/#291 are active and must be reconciled to one concrete fix line, then verified on exact head and current main without retry/timeout/assertion weakening.
+- Status remains ACTIVE / P2 until that dedicated closure evidence is complete.
+
 # GARANG Technical Debt
 
 Last updated: 2026-09-22
