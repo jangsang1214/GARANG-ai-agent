@@ -13,7 +13,7 @@ Goal: close code-addressable AI/Data partial-reach gaps while simplifying GARANG
 - Personal Experiment baseline now uses same-domain evidence with minimum baseline/experiment samples before observed status. ✅
 - Acceptance met: implementation + regression + exact-head gate + post-merge main gate + Pages evidence.
 - Do not relabel evidence-only longitudinal/native-signal gaps as REACHED until prospective usage data exists.
-- Next project priority remains P2 TD-015 determinism while its dedicated fix PRs are active; after that, promote external 2/4/8-week longitudinal validation.
+- Next project priority remains P2 TD-015 determinism while its dedicated fix PRs are active; after that, execute the D-022 Commercial Supremacy build queue. External 2/4/8-week validation remains deferred until the Supremacy Gate passes.
 
 # GARANG Tasks
 
@@ -44,6 +44,34 @@ Execution order:
 9. Privacy/security/accessibility/i18n/release hardening.
 10. Commercial Supremacy Gate review.
 11. External validation only after PASS.
+
+### Commercial Supremacy product scorecard — analyst baseline, 2026-09-27
+This is a decision rubric, not measured market outcome evidence. Scores combine current PRODUCT implementation/release evidence with current official competitor capabilities. Market retention, revenue, installed-base and proprietary-hardware scale are intentionally excluded until external validation.
+
+| Dimension | Weight | Current | Pre-validation floor | Direction |
+| --- | ---: | ---: | ---: | --- |
+| Reliability / deterministic release | 7% | 82 | 95 | close TD-015; first-attempt exact-head + main gates |
+| Workout logging / execution | 7% | 90 | 93 | preserve fast set flow; eliminate remaining friction |
+| Programming / adaptive prescription | 5% | 82 | 93 | goal/equipment/recovery/history-aware program generation and substitution |
+| Exercise / program content value | 3% | 78 | 90 | personalized coverage over raw library-count imitation |
+| Nutrition capture | 5% | 90 | 94 | preserve photo/barcode/label/manual identity flow |
+| Nutrition depth / food data | 5% | 74 | 92 | micronutrients, recipes/import, verified coverage and provenance |
+| Adaptive nutrition | 4% | 84 | 93 | trend-weight/expenditure-calibrated bounded target adaptation |
+| Running acquisition + analysis | 5% | 68 | 92 | GPS/provider activity, HR/elevation/zones + existing analysis |
+| Recovery / physiology | 6% | 58 | 92 | sleep/HRV/RHR/load/stress-informed readiness |
+| Native health / wearable ingestion | 6% | 42 | 90 | Apple Health / Health Connect first; interoperable provider path |
+| AI Coach | 7% | 90 | 95 | grounded explanation + action/tool execution without chatbot bloat |
+| Cross-domain Personal Performance Intelligence | 8% | 94 | 97 | Workout+Nutrition+Recovery+Running one-next-action learning loop |
+| Progress / longitudinal insight | 5% | 84 | 94 | evidence→change→next-action clarity and comparisons |
+| UX / onboarding / navigation | 6% | 80 | 94 | progressive disclosure, first-action clarity, low cognitive load |
+| Visual / interaction design | 5% | 85 | 95 | premium restrained mobile consistency; real-device visual acceptance |
+| Accessibility / i18n | 3% | 76 | 92 | touch, keyboard, screen-reader semantics, Korean/English parity |
+| Privacy / security | 5% | 84 | 95 | consent, account pinning, release infra/security hardening |
+| PT / accountability / interoperability | 3% | 50 | 88 | coach/share/integration value; do not fabricate an empty social network |
+| Performance / offline / PWA resilience | 5% | 82 | 94 | fast boot, offline-safe core, recovery from lifecycle/network changes |
+
+Weighted current product-only baseline: **~79/100**. Commercial Supremacy Gate target: **>=93/100 weighted**, no critical in-scope dimension below **90**, GARANG moat dimensions **>=97**, no known P0-P3 blocker, and repeatable first-attempt release evidence. These thresholds are Founder operating targets, not claims of measured user superiority.
+
 
 ## Deferred P4/P5 — Anonymous / longitudinal external validation
 Status: READY-BUT-DEFERRED / BLOCKED BY COMMERCIAL SUPREMACY GATE
