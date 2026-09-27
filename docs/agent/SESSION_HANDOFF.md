@@ -1,3 +1,12 @@
+## Commercial Mobile Design final handoff — 2026-09-28
+- PRODUCT main observed: `126c27ee1e5bd822c85a85ba2565ffdcc4e90bef`.
+- PR #335 `Rebuild GARANG as a commercial mobile app shell` is OPEN / mergeable / 0 behind main.
+- Exact head: `008d5e94b93731f6d20b601622b5dfa7a1e5bbba`.
+- Exact-head Release Gate #2187 / `36329130168`: FULL GREEN across core-build-rules, browser-webkit and final verify.
+- Scope: central commercial-mobile CSS/runtime, native shell/tab bar, Today/Record, Workout/Nutrition, Running/Body, Coach/Progress, Auth/Settings/Profile/Onboarding/secondary surfaces; Body v7.4 and Workout live-session behavior preserved.
+- A repeated Coach conversational undo touch failure was investigated without timeout inflation; final exact-head run passed the touch flow plus subsequent mobile regression, Settings touch, button health and runtime stability stress.
+- Next action: Founder visual review + explicit merge approval. After merge, run current-main Release Gate. Do not start external validation solely from this PR; D-022 Commercial Supremacy Gate still governs.
+
 ## Execution Surface Pass handoff — 2026-09-27
 - VERIFIED PRODUCT main: `9be4ca29c02d2f8337487d073847364f30b52ac9`.
 - Founder-approved Execution Surface Pass PR #331 is MERGED.
