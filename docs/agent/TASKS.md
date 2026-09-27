@@ -1,3 +1,20 @@
+## Completed P4 — PR #287 Decision Loop v2 commercial-advantage pass
+Status: DONE / VERIFIED GREEN / MERGED
+Goal: close code-addressable AI/Data partial-reach gaps while simplifying GARANG around one actionable decision.
+- PR #287 exact head `360171a9251375e8246c6ccd981c2af133272db0` passed Release Gate #2050 / `36260952602`. ✅
+- Squash merge produced PRODUCT main `7d7fc263d019915c212b480bf62736ad103e1f6d`. ✅
+- Current-main Release Gate #2052 / `36261330201`: first-attempt FULL GREEN. ✅
+- Pages #900 / `36261329535`: SUCCESS. ✅
+- Canonical nutrition target ownership/reset blocker: RESOLVED. ✅
+- Running analysis → executable pace/duration prescription: released. ✅
+- Today/Coach one Next Action + simplified Progress evidence disclosure: released. ✅
+- Food Identity attempt/result denominator instrumentation: released. ✅
+- Remote analytics requires explicit in-app analytics consent: released. ✅
+- Personal Experiment baseline now uses same-domain evidence with minimum baseline/experiment samples before observed status. ✅
+- Acceptance met: implementation + regression + exact-head gate + post-merge main gate + Pages evidence.
+- Do not relabel evidence-only longitudinal/native-signal gaps as REACHED until prospective usage data exists.
+- Next project priority remains P2 TD-015 determinism while its dedicated fix PRs are active; after that, promote external 2/4/8-week longitudinal validation.
+
 # GARANG Tasks
 
 ## Active P3/P4 — Commercial Supremacy Gate before external validation
