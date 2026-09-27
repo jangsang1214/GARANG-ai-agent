@@ -2751,6 +2751,14 @@
       "status": "done",
       "ownerWorkstream": "ai-data",
       "repositoryId": "product"
+    },
+    {
+      "id": "METRIC-COMMERCIAL-SUPREMACY-SCORE",
+      "kind": "metric",
+      "title": "Pre-validation product-only supremacy score: >=93 weighted, critical dimensions >=90, GARANG moat >=97",
+      "status": "active",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "control"
     }
   ],
   "edges": [
@@ -4888,6 +4896,11 @@
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-PR287-DECISION-LOOP-V2-GREEN",
       "kind": "depends-on"
+    },
+    {
+      "from": "METRIC-COMMERCIAL-SUPREMACY-SCORE",
+      "to": "INIT-COMMERCIAL-SUPREMACY-GATE",
+      "kind": "measures"
     }
   ]
 }
