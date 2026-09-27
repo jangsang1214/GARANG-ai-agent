@@ -10,6 +10,16 @@
 - Evidence-only gaps remain separate: 2/4/8-week longitudinal outcome uplift, passive/native wearable ingestion, and proprietary cohort advantage are not claimed REACHED without real usage evidence.
 - TD-015 remains a separate P2 runtime-determinism workstream. Current main #2052 first-attempt GREEN is positive evidence but does not by itself close the debt while dedicated determinism PRs remain active.
 
+## P2 determinism + Body v7.2 bundled execution — 2026-09-27
+- PRODUCT main advanced through merged PR #290 to `8be4bba307c628c3523fea884dfe68e0f7dd9260`, stabilizing Today → Coach WebKit lifecycle determinism.
+- PR #290 exact head `a2244657c0d54592216ae6b198f468b18954cf94` passed GARANG Release Gate #2065 / `36289615950` SUCCESS.
+- Final Body v7.2 successor PR #295 was recreated directly on stabilized main. Head: `d00edb8186130d5fee3298f4a7d9fe90d84549b9`.
+- #295 is 7 commits ahead / 0 behind stabilized main and contains the seven-file Body delta only: +135 / -26.
+- #295 exact-head Release Gate #2073 / `36294876797` completed SUCCESS across core-build-rules, browser-webkit, and verify.
+- Decision Loop v2, Router touch-intent fix, Coach hydration context, and Core Loop coach-mount lifecycle ownership are preserved on #295.
+- Code/regression status for the bundled P2 + Body track is GREEN. Human Body visual acceptance remains OPEN until deployed real-device review.
+- Merge/deploy of #295 remains approval-gated.
+
 # GARANG Project State
 
 ## Founder direction update — Commercial Supremacy Gate — 2026-09-27

@@ -10,6 +10,15 @@ Decision: GREEN / MERGED / WEB RELEASE VERIFIED.
 - Outcome superiority over specialist commercial apps is not claimed from CI alone; that requires prospective external-user and 2/4/8-week longitudinal evidence.
 - TD-015 remains separately ACTIVE pending the dedicated runtime-determinism line; #2052 first-attempt GREEN is supporting evidence, not debt closure by itself.
 
+## P2 determinism + Body v7.2 bundled gate — 2026-09-27
+Decision: **P2 MERGED GREEN / BODY V7.2 EXACT-HEAD GREEN / BODY NOT YET RELEASED**.
+- Stabilized PRODUCT main after PR #290: `8be4bba307c628c3523fea884dfe68e0f7dd9260`.
+- PR #290 exact head Gate #2065 / `36289615950`: SUCCESS.
+- PR #295 exact head `d00edb8186130d5fee3298f4a7d9fe90d84549b9`: Gate #2073 / `36294876797` SUCCESS across core-build-rules, browser-webkit and verify.
+- #295 preserves current intelligence/runtime fixes and changes only the intended seven Body files relative to stabilized main.
+- Body v7.2 is technically/regression VERIFIED but remains UNMERGED / UNDEPLOYED.
+- Human visual quality remains UNKNOWN until deployed real-device review.
+
 # GARANG Release Status
 
 ## Design / Brand Body v7.2 reconciliation — 2026-09-27
