@@ -1,3 +1,13 @@
+## Commercial Advantage Pass handoff — 2026-09-27
+- VERIFIED PRODUCT main: `30a194f02b2b05a01fa941ac0f717fad44a2b072`.
+- Founder-approved Commercial Advantage Pass PR #323 is MERGED.
+- PR #323 exact-head `f30553782bdff59fb03b415e240a49ef1bc2979b`: Release Gate #2142 / `36318638095` SUCCESS across core-build-rules, browser-webkit, and final verify.
+- Post-merge PRODUCT main Gate #2145 / `36319032763`: SUCCESS; Pages #912 / `36319032342`: SUCCESS.
+- Released scope: source-backed physiological readiness in Today/fallback Coach, Running v1.3 observed-load weekly structure, Longitudinal Learning v1.2 recency-weighted outcome evidence with no-causal guardrails, Today evidence labels instead of raw confidence percentage, Progress score/trend details moved behind disclosure, and Running weekly structure exposed inside existing advanced analysis.
+- Superseded readiness PRs #319/#320/#321 are CLOSED after #323 release.
+- This pass does NOT claim 2/4/8-week outcome superiority or native continuous wearable ingestion; those still require real longitudinal/provider evidence.
+- CONTROL PR #105 currently owns PROJECT_STATE/TASKS/RELEASE_STATUS/PROJECT_GRAPH. Reconcile this release into those files after #105 resolves rather than creating an overlapping state conflict.
+
 ## P2 closed / Commercial Supremacy execution handoff — 2026-09-27
 - P2 TD-015 is VERIFIED RESOLVED by PR #296 Gate #2074 attempt-1 GREEN + post-merge Gate #2075 attempt-1 GREEN.
 - PRODUCT main then advanced to Body v7.2 `ef51c83cee9d5c695864175035d8e52de997b9c2`; observe its Gate #2076 separately.
