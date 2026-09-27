@@ -15,6 +15,15 @@ Goal: close code-addressable AI/Data partial-reach gaps while simplifying GARANG
 - Do not relabel evidence-only longitudinal/native-signal gaps as REACHED until prospective usage data exists.
 - Next project priority remains P2 TD-015 determinism while its dedicated fix PRs are active; after that, execute the D-022 Commercial Supremacy build queue. External 2/4/8-week validation remains deferred until the Supremacy Gate passes.
 
+## Bundled P2 + Body v7.2 execution — 2026-09-27
+Status: CODE/REGRESSION GREEN / BODY VISUAL ACCEPTANCE OPEN / MERGE APPROVAL REQUIRED
+- PR #290 Today → Coach WebKit determinism: MERGED to PRODUCT main `8be4bba307c628c3523fea884dfe68e0f7dd9260`. ✅
+- PR #290 exact-head Gate #2065: SUCCESS. ✅
+- PR #295 Body v7.2 on stabilized main: open, 7 ahead / 0 behind, seven-file +135/-26 delta only. ✅
+- PR #295 exact-head Gate #2073: core-build-rules SUCCESS, browser-webkit SUCCESS, verify SUCCESS. ✅
+- Acceptance remaining: deployed real-device Body review against Founder reference floor. ⏳
+- Merge/deploy: explicit Founder approval required.
+
 # GARANG Tasks
 
 ## Active P3/P4 — Commercial Supremacy Gate before external validation
