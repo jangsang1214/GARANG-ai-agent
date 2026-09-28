@@ -1,3 +1,14 @@
+## Passive Physiological Ingestion runtime — PR #350 — 2026-09-28
+Decision: **GREEN / MERGED / SOURCE-RUNTIME VERIFIED; NATIVE HOST/DEVICE EVIDENCE OPEN**.
+- PRODUCT main: `03ad6e2334591cdb66a09ee5ea6b08978fed84ea`.
+- Exact head: `3c139592a49757aa9047eafc714cedb37fff1123`.
+- Exact-head GARANG Release Gate `36380753503`: SUCCESS.
+- Founder OS Event Envelope `36380753471`: SUCCESS.
+- Runtime path persists pulled physiological evidence into canonical `state.physiologicalSignals` only after explicit user sync and only when provider data added/updated.
+- Merge preservation: all four touched main blobs equal exact-head GREEN blobs.
+- No production/native-device claim is made: the PRODUCT repository still lacks verified iOS/Android host implementation and real-device provider ingestion evidence.
+- No separate post-merge main-push Release Gate run ID is claimed because the current connector does not enumerate push-triggered runs.
+
 ## Native Health Signal Pull — PR #346 — 2026-09-28
 Decision: **GREEN / MERGED / EXACT-HEAD VERIFIED; E2E NATIVE HOST INTEGRATION PARTIAL**.
 - PRODUCT main: `2e7178260c5e6196c75df91c0636b9e4a77b1fa6`.
