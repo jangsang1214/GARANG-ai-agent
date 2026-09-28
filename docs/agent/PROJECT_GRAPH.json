@@ -19,8 +19,8 @@
     {
       "id": "INIT-BETA-VALIDATION",
       "kind": "initiative",
-      "title": "Validate GARANG externally only after Commercial Supremacy Gate PASS",
-      "status": "planned",
+      "title": "Validate GARANG externally after P2 closure with consent-safe longitudinal evidence",
+      "status": "active",
       "ownerWorkstream": "product",
       "repositoryId": "product"
     },
@@ -926,7 +926,7 @@
       "id": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "kind": "task",
       "title": "Validate activation, recommendation usefulness, execution and retention with unknown users over 2/4/8-week windows",
-      "status": "planned",
+      "status": "in_progress",
       "ownerWorkstream": "growth-business",
       "repositoryId": "product"
     },
@@ -2691,7 +2691,7 @@
     {
       "id": "DECISION-COMMERCIAL-SUPREMACY-BEFORE-VALIDATION",
       "kind": "decision",
-      "title": "External validation starts only after Commercial Supremacy Gate PASS",
+      "title": "Historical D-022: Commercial Supremacy Gate before validation — superseded by D-023",
       "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "control"
@@ -2699,8 +2699,8 @@
     {
       "id": "INIT-COMMERCIAL-SUPREMACY-GATE",
       "kind": "initiative",
-      "title": "Close current best-in-class feature/design/platform gaps before unknown-user validation",
-      "status": "active",
+      "title": "Maintain commercial benchmark gap analysis without blocking external validation",
+      "status": "planned",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
     },
@@ -2878,6 +2878,78 @@
       "title": "GARANG has a real compilable iOS HealthKit host; physical-device HealthKit evidence and Android host remain open",
       "status": "in_progress",
       "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "DECISION-D023-EVIDENCE-FIRST-VALIDATION",
+      "kind": "decision",
+      "title": "D-023 restores P2 → longitudinal validation → funnel-evidence Product sequence",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "control"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR356-PERSONAL-SLEEP-DEBT",
+      "kind": "change",
+      "title": "PRODUCT PR #356 adds personal-baseline accumulated sleep debt recovery evidence and merges as 6ed99719",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR356-GATE-2241",
+      "kind": "verification",
+      "title": "PR #356 exact-head Release Gate #2241 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-GATE-2243",
+      "kind": "verification",
+      "title": "Post-merge PRODUCT main Gate #2243 FULL GREEN attempt 1 after PR #356",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-PERSONAL-SLEEP-DEBT-READY",
+      "kind": "result",
+      "title": "Personal-baseline repeated sleep debt is deterministic descriptive recovery evidence with no clinical target or silent mutation",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR335-COMMERCIAL-MOBILE",
+      "kind": "change",
+      "title": "PRODUCT PR #335 commercial mobile shell merges as current main 96f8a596",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-GATE-2247",
+      "kind": "verification",
+      "title": "Current PRODUCT main 96f8a596 Gate #2247 FULL GREEN attempt 1",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RELEASE-PRODUCT-PAGES-931",
+      "kind": "release",
+      "title": "Pages #931 succeeds for current PRODUCT main 96f8a596",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-CURRENT-PRODUCT-96F8-GREEN",
+      "kind": "result",
+      "title": "Current PRODUCT main 96f8a596 is release-verified GREEN and ready for longitudinal external validation",
+      "status": "done",
+      "ownerWorkstream": "command-center",
       "repositoryId": "product"
     }
   ],
@@ -4963,11 +5035,6 @@
       "kind": "verifies"
     },
     {
-      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
-      "to": "VERIFY-COMMERCIAL-SUPREMACY-GATE",
-      "kind": "depends-on"
-    },
-    {
       "from": "INIT-ANONYMOUS-EXTERNAL-VALIDATION-SPRINT",
       "to": "VERIFY-COMMERCIAL-SUPREMACY-GATE",
       "kind": "depends-on"
@@ -5120,6 +5187,61 @@
     {
       "from": "RESULT-IOS-HEALTHKIT-HOST-SOURCE-READY",
       "to": "TASK-NATIVE-PHYSIOLOGICAL-SIGNAL-INGESTION",
+      "kind": "depends-on"
+    },
+    {
+      "from": "DECISION-D023-EVIDENCE-FIRST-VALIDATION",
+      "to": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "kind": "governs"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-TD015-DETERMINISM-CLOSED",
+      "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR356-PERSONAL-SLEEP-DEBT",
+      "to": "TASK-NATIVE-PHYSIOLOGICAL-SIGNAL-INGESTION",
+      "kind": "supports"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR356-GATE-2241",
+      "to": "CHANGE-PRODUCT-PR356-PERSONAL-SLEEP-DEBT",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-GATE-2243",
+      "to": "CHANGE-PRODUCT-PR356-PERSONAL-SLEEP-DEBT",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-PERSONAL-SLEEP-DEBT-READY",
+      "to": "CHANGE-PRODUCT-PR356-PERSONAL-SLEEP-DEBT",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-GATE-2247",
+      "to": "CHANGE-PRODUCT-PR335-COMMERCIAL-MOBILE",
+      "kind": "verifies"
+    },
+    {
+      "from": "RELEASE-PRODUCT-PAGES-931",
+      "to": "CHANGE-PRODUCT-PR335-COMMERCIAL-MOBILE",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-CURRENT-PRODUCT-96F8-GREEN",
+      "to": "VERIFY-PRODUCT-MAIN-GATE-2247",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-CURRENT-PRODUCT-96F8-GREEN",
+      "to": "RELEASE-PRODUCT-PAGES-931",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "RESULT-CURRENT-PRODUCT-96F8-GREEN",
       "kind": "depends-on"
     }
   ]
