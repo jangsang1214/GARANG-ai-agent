@@ -1,13 +1,12 @@
-## Live handoff — 2026-09-28 P2 recurrence / PR #372 active
-- CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL PR #114 owns state reconciliation.
-- PRODUCT main: `0c5ab792491b9bba24f1d6b37b031a0bdb0487ae` after PR #369 merge.
-- PR #369 exact-head Gate #2286: FULL GREEN attempt 1.
-- Post-merge Gate #2288: RED at Coach conversational Undo touch ownership; repaired grouped Workout and Today→Coach paths passed before this failure.
-- Active PRODUCT repair: PR #372 `Keep Coach conversational undo above mobile tab bar`.
-- Do not resume P4/P5 until #372/successor exact-head first-attempt GREEN, merge, and post-merge first-attempt GREEN.
-- After P2 closure, replay validation-enabling Health/Recovery #360 on latest main; its three source/test blobs currently have no drift from its old base.
-- PR #356 remains merged/retained; sleep-only downstream propagation concern remains separately open.
-- Strategy: P2 determinism → longitudinal validation → funnel evidence → Infra/Security → monetization validation → payment.
+## Live handoff — 2026-09-28 P2 closed / longitudinal validation active
+- CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL PR #114 owns reconciliation.
+- PRODUCT main: `246df18111772449dbaff3011329850882b03b0e`.
+- PR #372 exact-head Gate #2295: FULL GREEN attempt 1.
+- Post-merge current-main Gate #2296: FULL GREEN attempt 1.
+- TD-015 is RESOLVED / MONITOR ONLY.
+- Next authorized strategy step: P4/P5 longitudinal external validation; replay stale #360 safely on latest main if its three files remain conflict-free.
+- PR #356 remains merged/retained; sleep-only downstream fused-readiness propagation concern remains separately open.
+- Strategy remains: determinism → longitudinal validation → funnel evidence → Infra/Security → monetization validation → payment.
 
 ## Latest PROJECT START handoff — 2026-09-28 current truth
 - CONTROL main `8a563e708224813cd9c43e029cdc0bf872b8762b`; CI #276 SUCCESS.
