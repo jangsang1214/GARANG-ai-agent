@@ -918,7 +918,7 @@
       "id": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
       "kind": "task",
       "title": "Restore repeatable Today/Coach/Workout WebKit lifecycle determinism on current PRODUCT main",
-      "status": "done",
+      "status": "in_progress",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -926,7 +926,7 @@
       "id": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "kind": "task",
       "title": "Run longitudinal external validation after fresh P2 first-attempt closure",
-      "status": "in_progress",
+      "status": "planned",
       "ownerWorkstream": "growth-business",
       "repositoryId": "product"
     },
@@ -2787,8 +2787,8 @@
     {
       "id": "RESULT-TD015-DETERMINISM-CLOSED",
       "kind": "result",
-      "title": "TD-015 fresh current-lineage closure verified by PR #372 Gate #2295 + post-merge #2296 first-attempt GREEN",
-      "status": "done",
+      "title": "TD-015 reopened after #374 reproduced Coach touch interception on a validation-only branch",
+      "status": "in_progress",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
     },
@@ -2998,6 +2998,22 @@
       "title": "PR #372 Gate #2295 and post-merge #2296 both first-attempt FULL GREEN",
       "status": "done",
       "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR376-WEBKIT-SCROLL-END",
+      "kind": "change",
+      "title": "PRODUCT PR #376 adds a concrete Coach WebKit scroll-end spacer for deterministic inline action touch ownership",
+      "status": "in_progress",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR374-LONGITUDINAL-REPLAY",
+      "kind": "change",
+      "title": "PRODUCT PR #374 replays longitudinal physiological recovery evidence but is blocked by fresh P2 recurrence",
+      "status": "blocked",
+      "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     }
   ],
