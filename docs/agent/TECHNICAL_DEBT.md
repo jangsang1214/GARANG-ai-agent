@@ -1,3 +1,11 @@
+## TD-015 canonical status — 2026-09-28 reconciliation
+Status: RESOLVED / MONITOR ONLY.
+- Dedicated closure remains PR #296 Gate #2074 attempt 1 GREEN + post-merge Gate #2075 attempt 1 GREEN.
+- Current PRODUCT main `96f8a59649103b6827df0571919d1d251c0f9279` also passed Gate #2247 on attempt 1.
+- No fresh current-lineage WebKit/lifecycle recurrence was observed in this reconciliation.
+- Older sections that say ACTIVE / P2 are historical recurrence records and are superseded by this canonical status.
+- Reopen only on fresh reproducible current-lineage evidence; do not mask recurrence with retries, timeout inflation, or assertion weakening.
+
 ## TD-015 closure — 2026-09-27
 Status: RESOLVED / VERIFIED
 - Dedicated fix PR #296 exact-head Gate #2074 / `36295327699`: FULL GREEN on attempt 1.
