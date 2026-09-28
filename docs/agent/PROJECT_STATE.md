@@ -1,3 +1,12 @@
+## AI/Data Negative Feedback Personalization v1 — 2026-09-28
+- VERIFIED PRODUCT latest main after Founder-approved merge: `0c2f715141e33ea3eff0e49006a72b567c402e60` via PR #343 `Replay negative feedback personalization on deterministic Meal Scan main`.
+- PR #343 exact head `9bdfe3767f54921c1fcb30ceb11c1559a932fc82` passed GARANG Release Gate run `36376419010`: core-build-rules SUCCESS, browser-webkit SUCCESS, final verify SUCCESS.
+- VERIFIED implementation: response model now exposes band-level resolved/rejection evidence; recommendation policy applies deterministic negative-feedback penalty only after >=3 resolved samples and posterior rejection rate >=50%; one-off rejection cannot suppress; later positive evidence can release suppression.
+- VERIFIED safety/preservation: browser/server parity maintained, deterministic recommendation ceilings unchanged, no LLM/DB/schema/UI surface added, #341 deterministic Meal Scan WebKit picker change preserved.
+- VERIFIED merge-tree identity for the five AI/Data touched files: main blob SHAs exactly match the #343 exact-head GREEN blobs.
+- Post-merge main-push Release Gate run ID is UNKNOWN from the current GitHub connector because commit-run lookup exposes PR-triggered runs only; do not claim a separately observed main-push Gate until a run is visible through another source.
+- Commercial benchmark update: Accept/Modify/Reject learning is code-capability REACHED; 2/4/8-week outcome uplift and real-user retention remain evidence-only gaps.
+
 ## P2 determinism closure + Commercial Supremacy execution — 2026-09-27
 - VERIFIED PRODUCT P2 closure line: PR #296 `Make superset round transitions exact`, exact head `2aff5925bd34a78e325f336caa56c9e644daaf32`.
 - VERIFIED PR #296 Release Gate #2074 / `36295327699`: FULL GREEN on attempt 1 across core/build/rules, Golden Path, Today→Coach, authenticated Coach/Recovery, WebKit superset regression, Settings touch, mobile button health, runtime stress and final verify.
