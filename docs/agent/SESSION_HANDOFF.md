@@ -1,12 +1,11 @@
-## Live handoff — 2026-09-28 P2 closed / longitudinal validation active
+## Live handoff — 2026-09-28 P2 reopened / PR #376 active
 - CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL PR #114 owns reconciliation.
 - PRODUCT main: `246df18111772449dbaff3011329850882b03b0e`.
-- PR #372 exact-head Gate #2295: FULL GREEN attempt 1.
-- Post-merge current-main Gate #2296: FULL GREEN attempt 1.
-- TD-015 is RESOLVED / MONITOR ONLY.
-- Next authorized strategy step: P4/P5 longitudinal external validation; replay stale #360 safely on latest main if its three files remain conflict-free.
-- PR #356 remains merged/retained; sleep-only downstream fused-readiness propagation concern remains separately open.
-- Strategy remains: determinism → longitudinal validation → funnel evidence → Infra/Security → monetization validation → payment.
+- #372 Gates #2295/#2296 were first-attempt GREEN, but #374 Gate #2297 reproduced identical Coach Undo touch interception while changing only Intelligence Episode files.
+- TD-015 is REOPENED / P2 ACTIVE.
+- Active repair: PR #376 concrete Coach WebKit scroll-end spacer.
+- #374 longitudinal replay is blocked; after P2 closure, replay it fresh on the stabilized main.
+- Strategy remains determinism → longitudinal validation → funnel evidence → Infra/Security → monetization → payment.
 
 ## Latest PROJECT START handoff — 2026-09-28 current truth
 - CONTROL main `8a563e708224813cd9c43e029cdc0bf872b8762b`; CI #276 SUCCESS.
