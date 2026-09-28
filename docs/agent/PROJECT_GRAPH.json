@@ -918,7 +918,7 @@
       "id": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
       "kind": "task",
       "title": "Restore repeatable Today/Coach/Workout WebKit lifecycle determinism on current PRODUCT main",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -926,7 +926,7 @@
       "id": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "kind": "task",
       "title": "Run longitudinal external validation after fresh P2 first-attempt closure",
-      "status": "planned",
+      "status": "in_progress",
       "ownerWorkstream": "growth-business",
       "repositoryId": "product"
     },
@@ -2787,8 +2787,8 @@
     {
       "id": "RESULT-TD015-DETERMINISM-CLOSED",
       "kind": "result",
-      "title": "TD-015 remains reopened after #2288 conversational Undo touch recurrence; fresh first-attempt closure still required",
-      "status": "in_progress",
+      "title": "TD-015 fresh current-lineage closure verified by PR #372 Gate #2295 + post-merge #2296 first-attempt GREEN",
+      "status": "done",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
     },
@@ -2987,9 +2987,17 @@
     {
       "id": "CHANGE-PRODUCT-PR372-COACH-UNDO-TOUCH",
       "kind": "change",
-      "title": "PRODUCT PR #372 keeps final conversational Undo touch target above fixed mobile tab chrome",
-      "status": "in_progress",
+      "title": "PRODUCT PR #372 fixes conversational Undo touch clearance and merges as 246df181",
+      "status": "done",
       "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR372-P2-CLOSURE",
+      "kind": "verification",
+      "title": "PR #372 Gate #2295 and post-merge #2296 both first-attempt FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
       "repositoryId": "product"
     }
   ],
