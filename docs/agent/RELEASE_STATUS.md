@@ -1,13 +1,12 @@
 ## Current PRODUCT release — 2026-09-28 live reconciliation
 Decision: **RED / P2 RELEASE GATE BLOCKED**.
-- PRODUCT main: `55130b5179f8ebc3a7c8037305d07bf347eb096a` via PR #366.
-- PR #366 exact head `fd90476194355f2948c2af0f1df3a8574d25bc33`: Release Gate #2277 / `36429260948` FULL GREEN attempt 1.
-- Post-merge current-main Release Gate #2279 / `36430332602`: FAILED attempt 1 and FAILED attempt 2.
-- Attempt 1 failure: `browser-golden-path.test.cjs`, hidden `#skipWorkoutRest` during grouped Workout execution.
-- Attempt 2 failure: `browser-today-action-flow.test.cjs`, canonical Coach root absent after Coach screen identity became observable.
-- PRODUCT PR #369 is active remediation; until its exact-head and post-merge current-main gates both pass on attempt 1, current release status stays RED.
+- PRODUCT main: `0c5ab792491b9bba24f1d6b37b031a0bdb0487ae` via PR #369.
+- PR #369 exact head `8b5303e9...`: Release Gate #2286 / `36432745173` FULL GREEN attempt 1.
+- Post-merge current-main Release Gate #2288 / `36434339150`: FAILED in `browser-conversational-intelligence.test.cjs` after prior P2 repaired paths passed.
+- Failure evidence: conversational Undo button rect y=804..836, touch center y=820, fixed bottom-nav Progress owned that point.
+- PRODUCT PR #372 is active remediation; it changes only commercial-mobile CSS + cache key to preserve real touch clearance.
+- External longitudinal validation and Health #360 replay remain blocked until first-attempt current-main GREEN.
 - PR #356 remains historical GREEN/merged evidence and is not rolled back by this runtime failure.
-- External longitudinal validation, funnel-driven Product changes, Infra/Security sequencing, monetization and payments do not advance while this P2 release gate is RED.
 
 ## Current PRODUCT release — 2026-09-28 canonical reconciliation
 Decision: **GREEN / current main release-verified**.
