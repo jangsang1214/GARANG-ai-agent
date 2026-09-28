@@ -1,3 +1,19 @@
+## Current strategic queue — 2026-09-28 Founder reset
+Status: CANONICAL / supersedes older queue text below where it conflicts.
+1. **P2 Engineering runtime/WebKit determinism** — DONE / VERIFIED by PR #296 exact-head Gate #2074 and post-merge Gate #2075, both first-attempt GREEN. Monitor only unless fresh recurrence appears.
+2. **P4/P5 longitudinal external validation** — ACTIVE NEXT. Measure activation, recommendation→resolution→execution→outcome linkage, retention, and 2/4/8-week longitudinal evidence with consent-safe instrumentation already present.
+3. **Funnel-evidence Product improvement** — only after observed external-user friction or outcome gaps.
+4. **Infra/Security hardening** — preserve release/security integrity; promote only actual blockers.
+5. **Monetization validation** — validate willingness-to-pay/value packaging before payment plumbing.
+6. **Payment implementation** — last in this sequence.
+
+Boundary:
+- D-023 supersedes D-022's rule that Commercial Supremacy Gate must pass before external validation.
+- Commercial benchmark work may continue as analysis, but new feature construction does not jump ahead of longitudinal validation by default.
+- Health/Recovery work ahead of funnel evidence is limited to validation-enabling evidence/measurement, verified P0-P2 fixes, or explicit Founder scope.
+- PRODUCT main baseline for this queue: `96f8a59649103b6827df0571919d1d251c0f9279`, Gate #2247 attempt-1 GREEN.
+- Historical task sections below retain point-in-time status and are not canonical when they conflict with this block.
+
 ## Completed P2 — TD-015 WebKit / lifecycle determinism closure
 Status: DONE / VERIFIED FIRST-ATTEMPT GREEN
 - PR #296 exact head `2aff5925...` Release Gate #2074: FULL GREEN attempt 1. ✅
