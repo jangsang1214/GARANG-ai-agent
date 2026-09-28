@@ -1,13 +1,14 @@
-## PROJECT START live reconciliation — 2026-09-28 / P2 recurrence after validation replay
+## PROJECT START live reconciliation — 2026-09-29 / P2 closed, P4/P5 active
 - VERIFIED CONTROL main remains `8a563e708224813cd9c43e029cdc0bf872b8762b`; reconciliation remains on CONTROL PR #114.
-- VERIFIED PRODUCT current main remains `246df18111772449dbaff3011329850882b03b0e` via PR #372.
-- VERIFIED PR #372 exact-head Gate #2295 and post-merge current-main Gate #2296 were FULL GREEN on attempt 1.
-- VERIFIED fresh recurrence: validation-only PR #374 changed exactly three Intelligence Episode files, but exact-head Gate #2297 failed `browser-conversational-intelligence.test.cjs` with the identical touch diagnostic: Undo center y=820 was owned by fixed bottom-nav Progress.
-- Because #374 does not touch Coach CSS/runtime, this is current-lineage WebKit scroll-end nondeterminism, not a Health/validation regression.
-- TD-015 is REOPENED / P2 ACTIVE again. Longitudinal validation replay is blocked until deterministic closure is re-established.
-- VERIFIED active repair PR #376 from current main adds a concrete mobile Coach scroll-end spacer rather than relying on trailing padding being counted as scroll extent.
-- No retry/timeout/assertion weakening. PR #374 must not merge while P2 is open.
-- Strategy order remains P2 determinism → P4/P5 longitudinal validation → funnel evidence → Infra/Security → monetization validation → payment.
+- VERIFIED PRODUCT current main: `246df18111772449dbaff3011329850882b03b0e` via merged PR #372.
+- VERIFIED PR #372 exact head `c394729ccfa5df67d172ca6027ea19f4ee7ec6cb`: Release Gate #2295 / run `36436233503` FULL GREEN attempt 1.
+- VERIFIED post-merge current-main Release Gate #2296 / run `36437177597`: FULL GREEN attempt 1.
+- VERIFIED TD-015 / current-lineage P2 runtime-WebKit determinism is CLOSED again with fresh exact-head + post-merge first-attempt evidence.
+- VERIFIED canonical strategy advances to P4/P5 longitudinal external validation.
+- VERIFIED PRODUCT PR #378 is active on current GREEN main and replays only the three #360 longitudinal physiological recovery summary files with no intervening blob drift.
+- PR #378 behavior remains descriptive/attributed-only: sample size, improved/worsened/unchanged counts, mean readiness delta and normalized delta; no causal claim, policy mutation or clinical target.
+- PR #177 and PR #356 remain CLOSED/MERGED. PR #356 sleep-only downstream propagation concern remains separately open and does not jump ahead of the validation sequence.
+- Next gate: PR #378 exact-head attempt-1 GREEN → latest-main drift check → merge → post-merge current-main attempt-1 GREEN.
 
 ## PROJECT START canonical reconciliation — 2026-09-28 / current GitHub truth
 - VERIFIED CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL CI #276 / run `36403453975`: SUCCESS.
