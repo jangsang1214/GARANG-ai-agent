@@ -1,3 +1,13 @@
+## Negative Feedback Personalization v1 — PR #343 — 2026-09-28
+Decision: **GREEN / MERGED / EXACT-HEAD VERIFIED; POST-MERGE RUN OBSERVATION UNKNOWN**.
+- PRODUCT merge/main SHA: `0c2f715141e33ea3eff0e49006a72b567c402e60`.
+- PR #343 exact head: `9bdfe3767f54921c1fcb30ceb11c1559a932fc82`.
+- Exact-head GARANG Release Gate `36376419010`: core-build-rules SUCCESS, browser-webkit SUCCESS, final verify SUCCESS.
+- Scope: five AI/Data files only; +48/-18. No app.js/index/service-worker/schema/DB/route/visual-surface change.
+- Behavior: repeated rejected recommendation bands are sample-gated and deterministically penalized; one rejection is inert; later positive evidence releases suppression.
+- Merge preservation: all five main blobs exactly equal the exact-head GREEN blobs; #341 Meal Scan WebKit determinism remains preserved.
+- The available connector cannot enumerate main-push workflow runs, so no separate post-merge run ID is claimed here. Release code tree is verified; post-merge run observation remains UNKNOWN rather than falsely GREEN.
+
 ## P2 determinism release closure — 2026-09-27
 Decision: GREEN / TD-015 RESOLVED.
 - PR #296 head `2aff5925bd34a78e325f336caa56c9e644daaf32`.
