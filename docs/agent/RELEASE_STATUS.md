@@ -1,10 +1,11 @@
-## Current PRODUCT release — 2026-09-28 live reconciliation
-Decision: **RED / P2 RELEASE GATE BLOCKED**.
-- PRODUCT main remains `246df18111772449dbaff3011329850882b03b0e`.
-- Historical current-main Gate #2296 was first-attempt GREEN, but a fresh branch from that main (#374) reproduced the same WebKit Coach touch failure without touching Coach UI code.
-- Therefore release determinism is not considered closed.
-- Active remediation: PR #376; Gate #2303 attempt 1 running.
-- Longitudinal validation PR #374 is blocked and must not merge until P2 is re-closed.
+## Current PRODUCT release — 2026-09-29 live reconciliation
+Decision: **GREEN / P2 CLOSED; P4/P5 VALIDATION CHANGE IN FLIGHT**.
+- PRODUCT main: `246df18111772449dbaff3011329850882b03b0e` via PR #372.
+- PR #372 exact-head Gate #2295 / `36436233503`: FULL GREEN attempt 1.
+- Post-merge current-main Gate #2296 / `36437177597`: FULL GREEN attempt 1.
+- Current released main is therefore release-verified GREEN for P2 runtime/WebKit determinism.
+- PRODUCT PR #378 is open and not yet released; it carries only longitudinal physiological recovery summary evidence.
+- Until #378 exact-head + post-merge gates pass, its longitudinal aggregate must not be claimed released.
 
 ## Current PRODUCT release — 2026-09-28 canonical reconciliation
 Decision: **GREEN / current main release-verified**.
