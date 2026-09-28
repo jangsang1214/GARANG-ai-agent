@@ -1,13 +1,13 @@
-## Live handoff — 2026-09-28 P2 recurrence / active repair
-- CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL PR #114 is the active docs/state reconciliation branch.
-- PRODUCT main: `55130b5179f8ebc3a7c8037305d07bf347eb096a`.
-- PR #366 exact-head Gate #2277: FULL GREEN attempt 1. Post-merge Gate #2279: FAILED attempt 1 (grouped Workout rest transition) and FAILED attempt 2 (Today→Coach canonical mount readiness).
-- TD-015 is REOPENED / P2 ACTIVE.
-- Active PRODUCT repair: PR #369, latest branch removes grouped Workout timer-ordering race and mounts canonical Coach synchronously on `screen-rendered`.
-- Do not resume P4/P5 validation until PR #369/successor exact-head first-attempt GREEN, merge, and post-merge first-attempt GREEN.
-- After P2 closure, replay validation-enabling Health/Recovery PR #360 on latest main rather than merging its stale branch.
-- PR #356 remains merged/retained; separately track the review concern that sleep-only accumulated debt may not propagate through downstream readiness when multi-metric readiness is insufficient.
-- Strategy order remains: P2 determinism → longitudinal validation → funnel evidence → Infra/Security → monetization validation → payment.
+## Live handoff — 2026-09-28 P2 recurrence / PR #372 active
+- CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL PR #114 owns state reconciliation.
+- PRODUCT main: `0c5ab792491b9bba24f1d6b37b031a0bdb0487ae` after PR #369 merge.
+- PR #369 exact-head Gate #2286: FULL GREEN attempt 1.
+- Post-merge Gate #2288: RED at Coach conversational Undo touch ownership; repaired grouped Workout and Today→Coach paths passed before this failure.
+- Active PRODUCT repair: PR #372 `Keep Coach conversational undo above mobile tab bar`.
+- Do not resume P4/P5 until #372/successor exact-head first-attempt GREEN, merge, and post-merge first-attempt GREEN.
+- After P2 closure, replay validation-enabling Health/Recovery #360 on latest main; its three source/test blobs currently have no drift from its old base.
+- PR #356 remains merged/retained; sleep-only downstream propagation concern remains separately open.
+- Strategy: P2 determinism → longitudinal validation → funnel evidence → Infra/Security → monetization validation → payment.
 
 ## Latest PROJECT START handoff — 2026-09-28 current truth
 - CONTROL main `8a563e708224813cd9c43e029cdc0bf872b8762b`; CI #276 SUCCESS.
