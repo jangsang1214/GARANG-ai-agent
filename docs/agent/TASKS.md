@@ -1,24 +1,20 @@
 ## Current strategic queue — 2026-09-28 live reconciliation
 Status: CANONICAL / supersedes older queue text below where it conflicts.
-1. **P2 Engineering runtime/WebKit determinism — ACTIVE / REOPENED.** PRODUCT main `0c5ab792...`; PR #369 exact-head Gate #2286 GREEN attempt 1 and merged, but post-merge Gate #2288 failed conversational Undo touch ownership after earlier repaired paths passed. Active repair: PR #372.
-2. **P4/P5 longitudinal external validation — READY / BLOCKED BY P2.** Resume only after #372/successor exact-head first-attempt GREEN, merge, and post-merge current-main first-attempt GREEN.
+1. **P2 Engineering runtime/WebKit determinism — DONE / VERIFIED.** PR #372 exact-head Gate #2295 and post-merge current-main Gate #2296 both FULL GREEN on attempt 1.
+2. **P4/P5 longitudinal external validation — ACTIVE.** Fresh-replay longitudinal physiological recovery evidence from stale PR #360 onto current main, then use actual external episodes to measure recommendation → execution → recovery outcome evidence.
 3. **Funnel-evidence Product improvement** — only after observed external-user friction/outcome evidence.
-4. **Infra/Security hardening** — preserve release/security integrity; promote only actual blockers.
-5. **Monetization validation** — validate willingness-to-pay/value packaging before payment plumbing.
-6. **Payment implementation** — last in this sequence.
+4. **Infra/Security hardening**.
+5. **Monetization validation**.
+6. **Payment implementation**.
 
-Current P2 acceptance:
-- grouped Workout transition stays synchronous and deterministic;
-- canonical Coach mounts in the same screen-render event turn;
-- conversational inline actions must own their actual WebKit touch center above fixed mobile tab chrome;
-- no retry, timeout inflation, or weakened assertion;
-- exact-head Release Gate attempt 1 GREEN → merge → current-main Release Gate attempt 1 GREEN.
-
-Health/Recovery boundary:
-- PR #356 remains merged and retained.
-- PR #360 is still the validation-enabling longitudinal recovery summary candidate; replay only after P2 closure.
-- Current-main and #360 old-base blobs for its three touched files are identical, so replay is mechanically low-drift once authorized by sequence.
-- Sleep-only downstream propagation from #356 review remains a separate correctness gap after the validation gate.
+Current P4/P5 acceptance:
+- replay #360 only if current main still has no conflicting drift in its three touched files;
+- aggregate only fully-attributed physiological recovery outcomes;
+- descriptive evidence only, no causal claim, no automatic recommendation/policy mutation;
+- browser/server parity;
+- exact-head Release Gate GREEN before merge;
+- post-merge current-main Release Gate GREEN;
+- actual longitudinal outcome superiority remains UNKNOWN until external usage data exists.
 
 ## Completed P2 — TD-015 WebKit / lifecycle determinism closure
 Status: DONE / VERIFIED FIRST-ATTEMPT GREEN
