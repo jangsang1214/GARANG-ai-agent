@@ -1,3 +1,11 @@
+## Native iOS HealthKit host v1 — 2026-09-28
+- VERIFIED Founder-approved PRODUCT PR #357 merged as current main `79fff4417545ad446910c81ea9032828686c2a55`.
+- VERIFIED exact head `a0ab07a006198d966f677381f16816c91f5d392e`: Native iOS host workflow `36402449767` SUCCESS with actual `xcodebuild` iOS Simulator compile; GARANG Release Gate `36402449941` FULL GREEN; Founder OS Event Envelope `36402449902` SUCCESS.
+- VERIFIED host implementation: additive SwiftUI + WKWebView app, HealthKit entitlement/usage descriptions, injected `GarangNativeHealthBridge`, explicit authorization, workout write, HRV SDNN/resting HR/sleep duration/steps/Apple exercise-time reads, no fabricated stress/sleep-score data, no Firebase/Firestore authority.
+- VERIFIED merge preservation on key artifacts: HealthKit bridge, native workflow, and native contract-test blob SHAs exactly match the exact-head GREEN blobs.
+- Capability boundary: iOS host source + simulator compile are REACHED. Physical-iPhone HealthKit authorization/non-empty reads/canonical persistence/Recovery-Coach consumption remain UNVERIFIED. Android Health Connect host is not implemented yet.
+- Native physiological ingestion Project Graph task stays IN_PROGRESS until real-device iOS evidence and Android interoperability are closed.
+
 ## AI/Data Passive Physiological Ingestion runtime — 2026-09-28
 - VERIFIED PRODUCT main after Founder-approved merge: `03ad6e2334591cdb66a09ee5ea6b08978fed84ea` via PR #350 `Persist native Health recovery signals through app sync`.
 - VERIFIED PR #350 exact head `3c139592a49757aa9047eafc714cedb37fff1123` passed GARANG Release Gate `36380753503` and Founder OS Event Envelope `36380753471`: SUCCESS.
