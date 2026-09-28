@@ -1,3 +1,15 @@
+## Current PRODUCT release — 2026-09-28 canonical reconciliation
+Decision: **GREEN / current main release-verified**.
+- PRODUCT main: `96f8a59649103b6827df0571919d1d251c0f9279` via PR #335.
+- Current-main GARANG Release Gate #2247 / run `36403551503`: SUCCESS, attempt 1.
+- Pages #931 / run `36403550282`: SUCCESS.
+- Founder OS Event Envelope on the same SHA: SUCCESS.
+- PR #356 personal-baseline accumulated sleep debt: exact head `bd1433403ea4360bfd33e5b78f962f9a06a6e8d8`, Gate #2241 / `36388463542` SUCCESS; merged as `6ed99719...`; post-merge Gate #2243 / `36389071367` SUCCESS attempt 1.
+- PR #357 iOS HealthKit host merged next as `79fff441...`; its simulator/source evidence remains valid, but that SHA is no longer current main.
+- PR #335 then merged as current main `96f8a596...`; #356 core/server/test logic is preserved on the current tree.
+- Current release is not evidence of physical-iPhone HealthKit data, Android Health Connect, 2/4/8-week user outcome superiority, or monetization.
+- Strategic next state is longitudinal external validation, not another default feature-expansion pass.
+
 ## iOS HealthKit native host v1 — PR #357 — 2026-09-28
 Decision: **GREEN / MERGED / SOURCE+SIMULATOR VERIFIED; REAL-DEVICE EVIDENCE OPEN**.
 - PRODUCT main: `79fff4417545ad446910c81ea9032828686c2a55`.
