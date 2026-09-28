@@ -1,14 +1,15 @@
-## PROJECT START live reconciliation — 2026-09-28 / P2 recurrence reopened
-- VERIFIED CONTROL main remains `8a563e708224813cd9c43e029cdc0bf872b8762b`; this reconciliation is being updated on CONTROL PR #114, not direct main.
-- VERIFIED PRODUCT current main: `55130b5179f8ebc3a7c8037305d07bf347eb096a` via PR #366 `fix coach action clearance above mobile tab bar`.
-- VERIFIED PR #366 exact head `fd90476194355f2948c2af0f1df3a8574d25bc33`: Release Gate #2277 / run `36429260948` FULL GREEN on attempt 1.
-- VERIFIED post-merge current-main Release Gate #2279 / run `36430332602`: FAILED on attempt 1 and FAILED again on attempt 2. Attempt 1 failed `browser-golden-path.test.cjs` with hidden `#skipWorkoutRest`; attempt 2 failed `browser-today-action-flow.test.cjs` after `garangScreen=coach` became observable before canonical `.garang-coach-v2` mount.
-- VERIFIED TD-015/current P2 determinism is therefore REOPENED. Historical PR #296/#2074/#2075 closure remains valid point-in-time evidence but no longer describes current-lineage release readiness.
-- VERIFIED PRODUCT PR #369 is the active smallest-safe repair track on current main: synchronous exact grouped-Workout transition plus same-event-turn canonical Coach mount; no timeout/retry/assertion weakening and no Health/Product feature expansion.
-- VERIFIED PR #177 remains CLOSED/MERGED. PR #356 remains CLOSED/MERGED with exact-head Gate #2241 and immediate post-merge Gate #2243 GREEN; its personal-baseline sleep-debt behavior remains present in current code lineage.
+## PROJECT START live reconciliation — 2026-09-28 / P2 recurrence repair #372
+- VERIFIED CONTROL main remains `8a563e708224813cd9c43e029cdc0bf872b8762b`; reconciliation remains on CONTROL PR #114, not direct main.
+- VERIFIED PRODUCT current main: `0c5ab792491b9bba24f1d6b37b031a0bdb0487ae` via merged PR #369.
+- VERIFIED PR #369 exact head `8b5303e9c8f8fcd7d94392c14fa91b3de03ebf09`: Release Gate #2286 / run `36432745173` FULL GREEN attempt 1.
+- VERIFIED post-merge main Release Gate #2288 / run `36434339150`: core/build GREEN; WebKit passed prior grouped-Workout and Today→Coach regressions, then FAILED at `browser-conversational-intelligence.test.cjs` because the final conversational Undo touch center overlapped fixed bottom-nav Progress.
+- VERIFIED TD-015 remains REOPENED / P2 ACTIVE. This is a fresh current-lineage touch/viewport recurrence; no retry, timeout, or assertion weakening closes it.
+- VERIFIED PRODUCT PR #372 is the active smallest-safe repair on current main: final logged conversational action gets mobile trailing clearance and the actual Undo touch target gets bottom scroll-margin; CSS cache busted only.
+- VERIFIED PR #177 remains CLOSED/MERGED. PR #356 remains CLOSED/MERGED with Gate #2241 and post-merge #2243 GREEN; its personal-baseline sleep-debt code remains retained.
 - Canonical strategy remains D-023: P2 runtime/WebKit determinism → P4/P5 longitudinal external validation → funnel-evidence Product improvement → Infra/Security → monetization validation → payment implementation.
-- Longitudinal validation is BLOCKED on fresh first-attempt P2 closure evidence. Health/Recovery feature expansion does not jump this gate; validation-enabling evidence work resumes only after P2 GREEN.
-- PR #356 review still exposes an unresolved correctness gap to revisit after the strategy gate: sleep-only accumulated debt can be produced by Physiological Signal Intelligence while downstream fused readiness may discard it when multi-metric readiness quality is insufficient. Do not claim this propagation path VERIFIED until explicitly fixed/tested.
+- P4/P5 remains blocked until PR #372 (or successor) exact-head first-attempt GREEN, merge, and post-merge current-main first-attempt GREEN.
+- Health/Recovery next validation-enabling candidate remains PR #360 replayed on stabilized main. Its three touched blobs are byte-identical between old base `96f8a596...` and current main `0c5ab792...`, so no intervening code drift exists in those files.
+- PR #356 review concern remains open separately: sleep-only accumulated debt may not propagate through downstream fused readiness when multi-metric readiness is insufficient.
 
 ## PROJECT START canonical reconciliation — 2026-09-28 / current GitHub truth
 - VERIFIED CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL CI #276 / run `36403453975`: SUCCESS.
