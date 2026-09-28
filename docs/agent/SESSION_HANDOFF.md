@@ -1,3 +1,14 @@
+## Latest PROJECT START handoff — 2026-09-28 current truth
+- CONTROL main `8a563e708224813cd9c43e029cdc0bf872b8762b`; CI #276 SUCCESS.
+- PRODUCT main `96f8a59649103b6827df0571919d1d251c0f9279`; Release Gate #2247 SUCCESS attempt 1; Pages #931 SUCCESS.
+- PRODUCT PR #177 is historical CLOSED/MERGED as `9fa951b3...`.
+- PR #356 is already CLOSED/MERGED: head `bd143340...`, Gate #2241 SUCCESS, merge `6ed99719...`, post-merge Gate #2243 SUCCESS attempt 1.
+- Current open PRs: CONTROL #109/#105; PRODUCT #339/#333/#330/#318/#328/#322/#313. Do not infer current-main state from these branches.
+- TD-015 is canonical RESOLVED / monitor-only; no fresh recurrence on current main.
+- Founder strategy now follows D-023: P2 determinism → longitudinal external validation → funnel-evidence Product improvement → Infra/Security → monetization validation → payment implementation.
+- D-022's Commercial Supremacy Gate no longer blocks external validation. Do not move new feature scope ahead of the evidence sequence by default.
+- Health/Recovery validation boundary: source/runtime recovery intelligence is broad and #356 is preserved; physical-iPhone HealthKit evidence and Android Health Connect remain open. Any immediate Health/Recovery code work should primarily strengthen longitudinal measurement rather than expand surfaces.
+
 ## Execution Surface Pass handoff — 2026-09-27
 - VERIFIED PRODUCT main: `9be4ca29c02d2f8337487d073847364f30b52ac9`.
 - Founder-approved Execution Surface Pass PR #331 is MERGED.
