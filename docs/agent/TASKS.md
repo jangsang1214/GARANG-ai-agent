@@ -1,23 +1,24 @@
 ## Current strategic queue — 2026-09-28 live reconciliation
 Status: CANONICAL / supersedes older queue text below where it conflicts.
-1. **P2 Engineering runtime/WebKit determinism — ACTIVE / REOPENED.** Current main `55130b517...`; PR #366 exact-head Gate #2277 was first-attempt GREEN, but post-merge Gate #2279 failed both attempts on two distinct lifecycle races. Active repair: PR #369.
-2. **P4/P5 longitudinal external validation — READY / BLOCKED BY P2.** Resume only after PR #369 (or successor) exact-head first-attempt GREEN, merge, and post-merge current-main first-attempt GREEN.
+1. **P2 Engineering runtime/WebKit determinism — ACTIVE / REOPENED.** PRODUCT main `0c5ab792...`; PR #369 exact-head Gate #2286 GREEN attempt 1 and merged, but post-merge Gate #2288 failed conversational Undo touch ownership after earlier repaired paths passed. Active repair: PR #372.
+2. **P4/P5 longitudinal external validation — READY / BLOCKED BY P2.** Resume only after #372/successor exact-head first-attempt GREEN, merge, and post-merge current-main first-attempt GREEN.
 3. **Funnel-evidence Product improvement** — only after observed external-user friction/outcome evidence.
 4. **Infra/Security hardening** — preserve release/security integrity; promote only actual blockers.
 5. **Monetization validation** — validate willingness-to-pay/value packaging before payment plumbing.
 6. **Payment implementation** — last in this sequence.
 
 Current P2 acceptance:
-- grouped Workout transition must not depend on `setTimeout(0)` ordering after a completed grouped set;
-- canonical Coach surface must be mounted within the same screen-render event turn before screen readiness is observable;
-- no retry, timeout inflation, or weakened assertion may be used to create GREEN;
-- exact-head Release Gate must pass on attempt 1;
-- after merge, current-main Release Gate must pass on attempt 1.
+- grouped Workout transition stays synchronous and deterministic;
+- canonical Coach mounts in the same screen-render event turn;
+- conversational inline actions must own their actual WebKit touch center above fixed mobile tab chrome;
+- no retry, timeout inflation, or weakened assertion;
+- exact-head Release Gate attempt 1 GREEN → merge → current-main Release Gate attempt 1 GREEN.
 
 Health/Recovery boundary:
-- PR #356 is merged and its personal-baseline sleep debt evidence is retained.
-- PR #360 longitudinal physiological recovery summary is validation-enabling work, but its stale branch must not be merged ahead of P2; replay on stabilized current main after P2 closes.
-- The sleep-only downstream propagation concern from PR #356 review remains a separate correctness gap; do not add broader Health feature scope ahead of the canonical sequence.
+- PR #356 remains merged and retained.
+- PR #360 is still the validation-enabling longitudinal recovery summary candidate; replay only after P2 closure.
+- Current-main and #360 old-base blobs for its three touched files are identical, so replay is mechanically low-drift once authorized by sequence.
+- Sleep-only downstream propagation from #356 review remains a separate correctness gap after the validation gate.
 
 ## Completed P2 — TD-015 WebKit / lifecycle determinism closure
 Status: DONE / VERIFIED FIRST-ATTEMPT GREEN
