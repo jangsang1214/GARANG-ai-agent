@@ -1,3 +1,12 @@
+## Native Health Signal Pull — PR #346 — 2026-09-28
+Decision: **GREEN / MERGED / EXACT-HEAD VERIFIED; E2E NATIVE HOST INTEGRATION PARTIAL**.
+- PRODUCT main: `2e7178260c5e6196c75df91c0636b9e4a77b1fa6`.
+- Exact head: `72d8cea924c75b5d4dbadf7e826ae191cbb6b900`.
+- Release Gate `36378352971`: core-build-rules SUCCESS, browser-webkit SUCCESS, final verify SUCCESS.
+- Scope: `02_core/health-signal-import-v1.js` + `tests/health-signal-import-v1.test.cjs` only.
+- Merge blob identity for both files is exact.
+- No separate post-merge main-push run ID is claimed because the current connector does not enumerate push-triggered runs.
+
 ## Negative Feedback Personalization v1 — PR #343 — 2026-09-28
 Decision: **GREEN / MERGED / EXACT-HEAD VERIFIED; POST-MERGE RUN OBSERVATION UNKNOWN**.
 - PRODUCT merge/main SHA: `0c2f715141e33ea3eff0e49006a72b567c402e60`.
