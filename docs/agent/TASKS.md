@@ -1,18 +1,24 @@
-## Current strategic queue — 2026-09-28 live reconciliation
+## Current strategic queue — 2026-09-29 live reconciliation
 Status: CANONICAL / supersedes older queue text below where it conflicts.
-1. **P2 Engineering runtime/WebKit determinism — ACTIVE / REOPENED.** PR #374 Gate #2297 reproduced the same conversational Undo touch interception despite touching no Coach UI files. Active repair: PR #376.
-2. **P4/P5 longitudinal external validation — BLOCKED BY P2.** #374 replay is not mergeable until fresh deterministic closure.
-3. **Funnel-evidence Product improvement** — only after external evidence.
+1. **P2 Engineering runtime/WebKit determinism — DONE / VERIFIED CLOSED.** PR #372 Gate #2295 and post-merge main Gate #2296 both FULL GREEN on attempt 1.
+2. **P4/P5 longitudinal external validation — ACTIVE.** PR #378 replays attributed longitudinal physiological recovery summary on current GREEN main.
+3. **Funnel-evidence Product improvement** — only after observed external-user friction/outcome evidence.
 4. **Infra/Security hardening**.
 5. **Monetization validation**.
 6. **Payment implementation**.
 
-Current P2 acceptance:
-- Coach conversational inline action must own its actual WebKit touch center on every first-attempt exact-head/current-main release run;
-- scroll-end safety must not depend on WebKit treating trailing padding as usable scroll extent;
-- no retry, timeout inflation, or weakened assertion;
-- exact-head first-attempt FULL GREEN → merge → current-main first-attempt FULL GREEN;
-- then re-create/replay longitudinal validation change on the stabilized main.
+Current P4/P5 acceptance:
+- aggregate only fully-attributed physiological recovery outcomes;
+- expose sample size + direction counts + mean readiness delta without causal claims;
+- browser/server parity;
+- exact-head Release Gate attempt 1 GREEN;
+- latest-main drift recheck before merge;
+- post-merge current-main Release Gate attempt 1 GREEN.
+
+Health/Recovery boundary:
+- PR #356 personal-baseline sleep debt remains retained.
+- PR #378 is validation-enabling evidence infrastructure, not a new product surface.
+- Sleep-only downstream propagation concern remains a later correctness gap unless external evidence or release integrity elevates it.
 
 ## Completed P2 — TD-015 WebKit / lifecycle determinism closure
 Status: DONE / VERIFIED FIRST-ATTEMPT GREEN
