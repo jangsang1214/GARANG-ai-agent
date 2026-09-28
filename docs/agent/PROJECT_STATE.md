@@ -1,3 +1,11 @@
+## AI/Data Passive Physiological Ingestion core — 2026-09-28
+- VERIFIED PRODUCT main after Founder-approved merge: `2e7178260c5e6196c75df91c0636b9e4a77b1fa6` via PR #346 `Add native health signal pull contract`.
+- VERIFIED PR #346 exact head `72d8cea924c75b5d4dbadf7e826ae191cbb6b900` passed GARANG Release Gate `36378352971`: core-build-rules SUCCESS, browser-webkit SUCCESS, final verify SUCCESS.
+- VERIFIED behavior: provider-neutral native pull, explicit permission request only, passive pull does not prompt, latest canonical signal used as incremental cursor, stable source/timestamp upsert, sibling metric preservation on partial correction, no caller-state mutation/persistence.
+- VERIFIED merge preservation: both touched main blobs exactly match the exact-head GREEN blobs.
+- Current limitation: PRODUCT repo has no verified iOS/Android native host implementation, and shared `01_app/app.js` inbound persistence wiring remains separate while PR #334 owns that file. Passive physiological ingestion is therefore core-capability REACHED / end-to-end product integration PARTIAL.
+- Post-merge main-push Release Gate run remains UNKNOWN from the current connector because commit-run lookup exposes PR-triggered runs only.
+
 ## AI/Data Negative Feedback Personalization v1 — 2026-09-28
 - VERIFIED PRODUCT latest main after Founder-approved merge: `0c2f715141e33ea3eff0e49006a72b567c402e60` via PR #343 `Replay negative feedback personalization on deterministic Meal Scan main`.
 - PR #343 exact head `9bdfe3767f54921c1fcb30ceb11c1559a932fc82` passed GARANG Release Gate run `36376419010`: core-build-rules SUCCESS, browser-webkit SUCCESS, final verify SUCCESS.
