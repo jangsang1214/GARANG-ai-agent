@@ -1,18 +1,23 @@
-## Current strategic queue — 2026-09-28 Founder reset
+## Current strategic queue — 2026-09-28 live reconciliation
 Status: CANONICAL / supersedes older queue text below where it conflicts.
-1. **P2 Engineering runtime/WebKit determinism** — DONE / VERIFIED by PR #296 exact-head Gate #2074 and post-merge Gate #2075, both first-attempt GREEN. Monitor only unless fresh recurrence appears.
-2. **P4/P5 longitudinal external validation** — ACTIVE NEXT. Measure activation, recommendation→resolution→execution→outcome linkage, retention, and 2/4/8-week longitudinal evidence with consent-safe instrumentation already present.
-3. **Funnel-evidence Product improvement** — only after observed external-user friction or outcome gaps.
+1. **P2 Engineering runtime/WebKit determinism — ACTIVE / REOPENED.** Current main `55130b517...`; PR #366 exact-head Gate #2277 was first-attempt GREEN, but post-merge Gate #2279 failed both attempts on two distinct lifecycle races. Active repair: PR #369.
+2. **P4/P5 longitudinal external validation — READY / BLOCKED BY P2.** Resume only after PR #369 (or successor) exact-head first-attempt GREEN, merge, and post-merge current-main first-attempt GREEN.
+3. **Funnel-evidence Product improvement** — only after observed external-user friction/outcome evidence.
 4. **Infra/Security hardening** — preserve release/security integrity; promote only actual blockers.
 5. **Monetization validation** — validate willingness-to-pay/value packaging before payment plumbing.
 6. **Payment implementation** — last in this sequence.
 
-Boundary:
-- D-023 supersedes D-022's rule that Commercial Supremacy Gate must pass before external validation.
-- Commercial benchmark work may continue as analysis, but new feature construction does not jump ahead of longitudinal validation by default.
-- Health/Recovery work ahead of funnel evidence is limited to validation-enabling evidence/measurement, verified P0-P2 fixes, or explicit Founder scope.
-- PRODUCT main baseline for this queue: `96f8a59649103b6827df0571919d1d251c0f9279`, Gate #2247 attempt-1 GREEN.
-- Historical task sections below retain point-in-time status and are not canonical when they conflict with this block.
+Current P2 acceptance:
+- grouped Workout transition must not depend on `setTimeout(0)` ordering after a completed grouped set;
+- canonical Coach surface must be mounted within the same screen-render event turn before screen readiness is observable;
+- no retry, timeout inflation, or weakened assertion may be used to create GREEN;
+- exact-head Release Gate must pass on attempt 1;
+- after merge, current-main Release Gate must pass on attempt 1.
+
+Health/Recovery boundary:
+- PR #356 is merged and its personal-baseline sleep debt evidence is retained.
+- PR #360 longitudinal physiological recovery summary is validation-enabling work, but its stale branch must not be merged ahead of P2; replay on stabilized current main after P2 closes.
+- The sleep-only downstream propagation concern from PR #356 review remains a separate correctness gap; do not add broader Health feature scope ahead of the canonical sequence.
 
 ## Completed P2 — TD-015 WebKit / lifecycle determinism closure
 Status: DONE / VERIFIED FIRST-ATTEMPT GREEN
