@@ -1,3 +1,12 @@
+## AI/Data Passive Physiological Ingestion runtime — 2026-09-28
+- VERIFIED PRODUCT main after Founder-approved merge: `03ad6e2334591cdb66a09ee5ea6b08978fed84ea` via PR #350 `Persist native Health recovery signals through app sync`.
+- VERIFIED PR #350 exact head `3c139592a49757aa9047eafc714cedb37fff1123` passed GARANG Release Gate `36380753503` and Founder OS Event Envelope `36380753471`: SUCCESS.
+- VERIFIED app runtime path: one explicit combined authorization -> existing workout write -> canonical `GarangHealthSignalImportV1.pullNative(..., {requestAuthorization:false})` -> stable merge into `state.physiologicalSignals` -> canonical `saveState` only when added/updated -> `health_signals_synced` telemetry -> immediate re-render for Recovery/Coach consumption.
+- VERIFIED guardrails: no page-load/background permission prompt, no new truth store, no direct DB authority, permission denial fails closed, web workout JSON export fallback preserved.
+- VERIFIED merge preservation: `01_app/app.js`, `index.html`, `tests/health-signal-import-v1.test.cjs`, and `tests/real-meal-scan-v1.test.cjs` main blobs exactly match the exact-head GREEN blobs.
+- Capability boundary: native Health ingestion core + app-runtime persistence are REACHED in source/runtime; actual iOS/Android native host implementation and real-device HealthKit/Health Connect ingestion remain UNVERIFIED/IN_PROGRESS. Do not claim end-to-end device support until host/device evidence exists.
+- Post-merge main-push Release Gate run remains UNKNOWN from the current connector because commit-run lookup exposes PR-triggered runs only.
+
 ## AI/Data Passive Physiological Ingestion core — 2026-09-28
 - VERIFIED PRODUCT main after Founder-approved merge: `2e7178260c5e6196c75df91c0636b9e4a77b1fa6` via PR #346 `Add native health signal pull contract`.
 - VERIFIED PR #346 exact head `72d8cea924c75b5d4dbadf7e826ae191cbb6b900` passed GARANG Release Gate `36378352971`: core-build-rules SUCCESS, browser-webkit SUCCESS, final verify SUCCESS.
