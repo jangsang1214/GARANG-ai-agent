@@ -1,15 +1,13 @@
-## PROJECT START live reconciliation — 2026-09-28 / P2 recurrence repair #372
-- VERIFIED CONTROL main remains `8a563e708224813cd9c43e029cdc0bf872b8762b`; reconciliation remains on CONTROL PR #114, not direct main.
-- VERIFIED PRODUCT current main: `0c5ab792491b9bba24f1d6b37b031a0bdb0487ae` via merged PR #369.
-- VERIFIED PR #369 exact head `8b5303e9c8f8fcd7d94392c14fa91b3de03ebf09`: Release Gate #2286 / run `36432745173` FULL GREEN attempt 1.
-- VERIFIED post-merge main Release Gate #2288 / run `36434339150`: core/build GREEN; WebKit passed prior grouped-Workout and Today→Coach regressions, then FAILED at `browser-conversational-intelligence.test.cjs` because the final conversational Undo touch center overlapped fixed bottom-nav Progress.
-- VERIFIED TD-015 remains REOPENED / P2 ACTIVE. This is a fresh current-lineage touch/viewport recurrence; no retry, timeout, or assertion weakening closes it.
-- VERIFIED PRODUCT PR #372 is the active smallest-safe repair on current main: final logged conversational action gets mobile trailing clearance and the actual Undo touch target gets bottom scroll-margin; CSS cache busted only.
-- VERIFIED PR #177 remains CLOSED/MERGED. PR #356 remains CLOSED/MERGED with Gate #2241 and post-merge #2243 GREEN; its personal-baseline sleep-debt code remains retained.
-- Canonical strategy remains D-023: P2 runtime/WebKit determinism → P4/P5 longitudinal external validation → funnel-evidence Product improvement → Infra/Security → monetization validation → payment implementation.
-- P4/P5 remains blocked until PR #372 (or successor) exact-head first-attempt GREEN, merge, and post-merge current-main first-attempt GREEN.
-- Health/Recovery next validation-enabling candidate remains PR #360 replayed on stabilized main. Its three touched blobs are byte-identical between old base `96f8a596...` and current main `0c5ab792...`, so no intervening code drift exists in those files.
-- PR #356 review concern remains open separately: sleep-only accumulated debt may not propagate through downstream fused readiness when multi-metric readiness is insufficient.
+## PROJECT START live reconciliation — 2026-09-28 / P2 closed, longitudinal validation resumes
+- VERIFIED CONTROL main remains `8a563e708224813cd9c43e029cdc0bf872b8762b`; state reconciliation remains on CONTROL PR #114.
+- VERIFIED PRODUCT current main: `246df18111772449dbaff3011329850882b03b0e` via merged PR #372.
+- VERIFIED PR #372 exact head `c394729ccfa5df67d172ca6027ea19f4ee7ec6cb`: Release Gate #2295 / run `36436233503` FULL GREEN on attempt 1.
+- VERIFIED post-merge current-main Release Gate #2296 / run `36437177597`: core/build GREEN, browser-webkit GREEN, final verify GREEN on attempt 1.
+- VERIFIED conversational Undo touch recurrence is closed on current lineage; grouped Workout transition and Today→Coach deterministic mount also remain GREEN in the same post-merge run.
+- TD-015 is RESOLVED / MONITOR ONLY again on fresh first-attempt exact-head + current-main evidence.
+- Canonical strategy advances to P4/P5 longitudinal external validation. No funnel-driven Product changes precede actual external evidence.
+- Health/Recovery validation-enabling next candidate is fresh replay of stale PR #360 on current main. Its three touched files had no intervening blob drift through `0c5ab792...`; recheck current main before replay.
+- PR #356 remains merged/retained; sleep-only downstream fused-readiness propagation concern remains a separate correctness gap, not a reason to skip longitudinal validation.
 
 ## PROJECT START canonical reconciliation — 2026-09-28 / current GitHub truth
 - VERIFIED CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL CI #276 / run `36403453975`: SUCCESS.
