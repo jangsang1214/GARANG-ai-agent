@@ -1565,8 +1565,8 @@
     {
       "id": "TASK-NATIVE-PHYSIOLOGICAL-SIGNAL-INGESTION",
       "kind": "task",
-      "title": "Implement and device-verify native physiological signal ingestion required by the Commercial Supremacy Gate",
-      "status": "planned",
+      "title": "Complete native physiological signal ingestion host/device verification after source/runtime wiring",
+      "status": "in_progress",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -2806,6 +2806,46 @@
       "title": "PRODUCT PR #299 Workout Prescription Context v2",
       "status": "in_progress",
       "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR346-NATIVE-HEALTH-PULL",
+      "kind": "change",
+      "title": "PRODUCT PR #346 adds provider-neutral native Health signal pull contract and merges as 2e717826",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR346-GATE-36378352971",
+      "kind": "verification",
+      "title": "PR #346 exact-head Release Gate 36378352971 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR350-NATIVE-HEALTH-RUNTIME",
+      "kind": "change",
+      "title": "PRODUCT PR #350 persists native Health recovery signals through canonical app sync and merges as 03ad6e23",
+      "status": "done",
+      "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR350-GATE-36380753503",
+      "kind": "verification",
+      "title": "PR #350 exact-head Release Gate 36380753503 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-PASSIVE-PHYSIO-RUNTIME-READY",
+      "kind": "result",
+      "title": "Passive physiological ingestion core and app-runtime persistence are source/runtime ready; native host and real-device verification remain open",
+      "status": "in_progress",
+      "ownerWorkstream": "ai-data",
       "repositoryId": "product"
     }
   ],
@@ -4988,6 +5028,41 @@
     {
       "from": "TASK-WORKOUT-PRESCRIPTION-CONTEXT-V2",
       "to": "RESULT-TD015-DETERMINISM-CLOSED",
+      "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR346-NATIVE-HEALTH-PULL",
+      "to": "TASK-NATIVE-PHYSIOLOGICAL-SIGNAL-INGESTION",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR346-GATE-36378352971",
+      "to": "CHANGE-PRODUCT-PR346-NATIVE-HEALTH-PULL",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR350-NATIVE-HEALTH-RUNTIME",
+      "to": "TASK-NATIVE-PHYSIOLOGICAL-SIGNAL-INGESTION",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR350-GATE-36380753503",
+      "to": "CHANGE-PRODUCT-PR350-NATIVE-HEALTH-RUNTIME",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-PASSIVE-PHYSIO-RUNTIME-READY",
+      "to": "CHANGE-PRODUCT-PR346-NATIVE-HEALTH-PULL",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-PASSIVE-PHYSIO-RUNTIME-READY",
+      "to": "CHANGE-PRODUCT-PR350-NATIVE-HEALTH-RUNTIME",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-PASSIVE-PHYSIO-RUNTIME-READY",
+      "to": "TASK-NATIVE-PHYSIOLOGICAL-SIGNAL-INGESTION",
       "kind": "depends-on"
     }
   ]
