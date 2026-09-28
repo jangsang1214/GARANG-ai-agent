@@ -1,11 +1,13 @@
-## Live handoff — 2026-09-28 P2 reopened / PR #376 active
-- CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL PR #114 owns reconciliation.
+## Live handoff — 2026-09-29 P2 closed / P4-P5 active
+- CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL PR #114 owns state reconciliation.
 - PRODUCT main: `246df18111772449dbaff3011329850882b03b0e`.
-- #372 Gates #2295/#2296 were first-attempt GREEN, but #374 Gate #2297 reproduced identical Coach Undo touch interception while changing only Intelligence Episode files.
-- TD-015 is REOPENED / P2 ACTIVE.
-- Active repair: PR #376 concrete Coach WebKit scroll-end spacer.
-- #374 longitudinal replay is blocked; after P2 closure, replay it fresh on the stabilized main.
-- Strategy remains determinism → longitudinal validation → funnel evidence → Infra/Security → monetization → payment.
+- PR #372 exact-head Gate #2295: FULL GREEN attempt 1.
+- Post-merge main Gate #2296: FULL GREEN attempt 1.
+- TD-015 is RESOLVED / VERIFIED CLOSED on current lineage.
+- Active PRODUCT work: PR #378 `Replay longitudinal physiological recovery summary on current main`.
+- #378 touches only the three #360 files and was replayed on latest GREEN main with no intervening blob drift.
+- After #378 release verification, next work is external longitudinal validation execution; funnel-driven Product change remains later.
+- PR #356 sleep-only downstream propagation concern remains open but does not preempt the current validation sequence.
 
 ## Latest PROJECT START handoff — 2026-09-28 current truth
 - CONTROL main `8a563e708224813cd9c43e029cdc0bf872b8762b`; CI #276 SUCCESS.
