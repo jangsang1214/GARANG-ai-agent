@@ -1,3 +1,12 @@
+## Native Android Health Connect current-main closure — 2026-09-29
+- VERIFIED PRODUCT current main: `a933231c15133766c3469c0a3a0e4dcf59bf3ab0` via squash-merged PR #381.
+- VERIFIED PR #381 exact head `f93bec1264953a48070387ad9a4d63d23b0048e9`: Native Android host #6 / run `36445388196` SUCCESS including Health Connect contract, Android SDK 36 install and actual Android host build; Native iOS host #9 / run `36445388416` SUCCESS; Founder OS Event Envelope #2947 / run `36445387983` SUCCESS; GARANG Release Gate #2316 / run `36445388510` FULL GREEN across core-build-rules, browser-webkit and final verify.
+- VERIFIED merge precondition: PR #381 was mergeable=true and 0 behind latest PRODUCT main `d6a99f3a...` immediately before squash merge.
+- VERIFIED stale PR #375 is CLOSED / UNMERGED / superseded by #381.
+- Capability boundary: Android Health Connect source/build integration is REACHED on PRODUCT main. Real Android-device provider authorization/non-empty reads remain UNVERIFIED. iOS HealthKit source+simulator remains REACHED; physical-iPhone authorization/non-empty HRV/RHR/sleep/steps/exercise reads, canonical persistence, and Recovery/Coach consumption remain UNVERIFIED.
+- No separate push-triggered Release Gate is visible for merge SHA `a933231c...` through the current commit-run connector; post-merge push-run observation remains UNKNOWN rather than assumed GREEN.
+- Next strategic gate remains physical-device Health evidence before Running native/background expansion.
+
 ## PRODUCT commercial-supremacy reconciliation — 2026-09-29 / PR #379 merged
 - VERIFIED PRODUCT current main: `d6a99f3aac21eac840e2f9fd806b4ee931aace11` via squash-merged PR #379.
 - VERIFIED PR #379 supersedes stale/conflicted PR #365 and preserves the newer #369/#372/#376 deterministic runtime lineage.

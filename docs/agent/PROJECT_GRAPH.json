@@ -3052,7 +3052,7 @@
       "id": "TASK-NATIVE-HEALTH-CURRENT-MAIN-RECONCILIATION",
       "kind": "task",
       "title": "Replay/reconcile Android Health Connect PR #375 onto current main before merge and preserve iOS HealthKit/runtime determinism",
-      "status": "active",
+      "status": "done",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -3061,6 +3061,38 @@
       "kind": "verification",
       "title": "Verify real iPhone HealthKit and Android Health Connect authorization, non-empty reads, canonical persistence and Recovery/Coach consumption",
       "status": "planned",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR381-ANDROID-HEALTH-CURRENT",
+      "kind": "change",
+      "title": "PRODUCT PR #381 replays Android Health Connect native host onto current main and merges as a933231c",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR381-NATIVE-GATES",
+      "kind": "verification",
+      "title": "PR #381 exact head passes Android host build, iOS simulator preservation, Release Gate #2316 and Event Envelope #2947",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-ANDROID-HEALTH-SOURCE-BUILD-READY",
+      "kind": "result",
+      "title": "Android Health Connect source/build integration is on PRODUCT main; real-device provider evidence remains open",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-PHYSICAL-HEALTH-DEVICE-EVIDENCE",
+      "kind": "task",
+      "title": "Capture physical-device HealthKit/Health Connect authorization, non-empty reads, canonical persistence and Recovery/Coach consumption evidence",
+      "status": "active",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
     }
@@ -5404,6 +5436,26 @@
     {
       "from": "TASK-COMMERCIAL-SUPREMACY-BENCHMARK",
       "to": "RESULT-CURRENT-PRODUCT-D6A99-COMMERCIAL-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR381-NATIVE-GATES",
+      "to": "CHANGE-PRODUCT-PR381-ANDROID-HEALTH-CURRENT",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-ANDROID-HEALTH-SOURCE-BUILD-READY",
+      "to": "VERIFY-PRODUCT-PR381-NATIVE-GATES",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-PHYSICAL-HEALTH-DEVICE-EVIDENCE",
+      "to": "RESULT-ANDROID-HEALTH-SOURCE-BUILD-READY",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-NATIVE-HEALTH-PHYSICAL-DEVICES",
+      "to": "TASK-PHYSICAL-HEALTH-DEVICE-EVIDENCE",
       "kind": "depends-on"
     }
   ]
