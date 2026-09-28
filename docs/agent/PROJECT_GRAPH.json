@@ -3003,8 +3003,8 @@
     {
       "id": "CHANGE-PRODUCT-PR376-WEBKIT-SCROLL-END",
       "kind": "change",
-      "title": "PRODUCT PR #376 adds a concrete Coach WebKit scroll-end spacer for deterministic inline action touch ownership",
-      "status": "in_progress",
+      "title": "PRODUCT PR #376 deterministic Coach WebKit scroll-end clearance merged as 6bd2473b",
+      "status": "done",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -3022,6 +3022,46 @@
       "title": "PRODUCT PR #378 replays attributed longitudinal physiological recovery summary on current GREEN main",
       "status": "in_progress",
       "ownerWorkstream": "ai-data",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR379-WORKOUT-BODY-CURRENT",
+      "kind": "change",
+      "title": "PRODUCT PR #379 replays Workout active-set focus, Body anatomical-volume emphasis and deterministic rest-surface sync onto current deterministic main",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR379-GATE-2312",
+      "kind": "verification",
+      "title": "PR #379 exact head cabde6bf passes Release Gate #2312 and Founder OS Event Envelope #2939",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-CURRENT-PRODUCT-D6A99-COMMERCIAL-GREEN",
+      "kind": "result",
+      "title": "PRODUCT main d6a99f3a contains the 0-behind exact-head GREEN #379 tree; separate post-merge push Gate observation remains unknown",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-NATIVE-HEALTH-CURRENT-MAIN-RECONCILIATION",
+      "kind": "task",
+      "title": "Replay/reconcile Android Health Connect PR #375 onto current main before merge and preserve iOS HealthKit/runtime determinism",
+      "status": "active",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-NATIVE-HEALTH-PHYSICAL-DEVICES",
+      "kind": "verification",
+      "title": "Verify real iPhone HealthKit and Android Health Connect authorization, non-empty reads, canonical persistence and Recovery/Coach consumption",
+      "status": "planned",
+      "ownerWorkstream": "release-qa",
       "repositoryId": "product"
     }
   ],
@@ -5339,6 +5379,31 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "CHANGE-PRODUCT-PR369-P2-CURRENT",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR379-GATE-2312",
+      "to": "CHANGE-PRODUCT-PR379-WORKOUT-BODY-CURRENT",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-CURRENT-PRODUCT-D6A99-COMMERCIAL-GREEN",
+      "to": "VERIFY-PRODUCT-PR379-GATE-2312",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-NATIVE-HEALTH-CURRENT-MAIN-RECONCILIATION",
+      "to": "RESULT-CURRENT-PRODUCT-D6A99-COMMERCIAL-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-NATIVE-HEALTH-PHYSICAL-DEVICES",
+      "to": "TASK-NATIVE-HEALTH-CURRENT-MAIN-RECONCILIATION",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-COMMERCIAL-SUPREMACY-BENCHMARK",
+      "to": "RESULT-CURRENT-PRODUCT-D6A99-COMMERCIAL-GREEN",
       "kind": "depends-on"
     }
   ]
