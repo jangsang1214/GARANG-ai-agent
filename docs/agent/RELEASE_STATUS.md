@@ -1,12 +1,11 @@
 ## Current PRODUCT release — 2026-09-28 live reconciliation
-Decision: **RED / P2 RELEASE GATE BLOCKED**.
-- PRODUCT main: `0c5ab792491b9bba24f1d6b37b031a0bdb0487ae` via PR #369.
-- PR #369 exact head `8b5303e9...`: Release Gate #2286 / `36432745173` FULL GREEN attempt 1.
-- Post-merge current-main Release Gate #2288 / `36434339150`: FAILED in `browser-conversational-intelligence.test.cjs` after prior P2 repaired paths passed.
-- Failure evidence: conversational Undo button rect y=804..836, touch center y=820, fixed bottom-nav Progress owned that point.
-- PRODUCT PR #372 is active remediation; it changes only commercial-mobile CSS + cache key to preserve real touch clearance.
-- External longitudinal validation and Health #360 replay remain blocked until first-attempt current-main GREEN.
-- PR #356 remains historical GREEN/merged evidence and is not rolled back by this runtime failure.
+Decision: **GREEN / current-main release-verified**.
+- PRODUCT main: `246df18111772449dbaff3011329850882b03b0e` via PR #372.
+- PR #372 exact-head Gate #2295 / `36436233503`: FULL GREEN attempt 1.
+- Post-merge current-main Gate #2296 / `36437177597`: FULL GREEN attempt 1 across core-build-rules, browser-webkit and final verify.
+- P2 runtime/WebKit determinism is closed on current lineage.
+- Strategic release work now advances to longitudinal external validation evidence; no claim is made yet about 2/4/8-week outcome superiority.
+- PR #356 remains merged and preserved.
 
 ## Current PRODUCT release — 2026-09-28 canonical reconciliation
 Decision: **GREEN / current main release-verified**.
