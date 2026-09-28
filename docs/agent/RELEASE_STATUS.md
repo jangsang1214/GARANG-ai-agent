@@ -1,3 +1,18 @@
+## Current PRODUCT release — 2026-09-29 / PR #379 commercial mobile refinement
+Decision: **GREEN exact-head / MERGED; post-merge push run observation UNKNOWN**.
+- PRODUCT main: `d6a99f3aac21eac840e2f9fd806b4ee931aace11` via PR #379.
+- PR #379 exact head: `cabde6bfd07ebec909c165899d14a991b9918518`.
+- Founder OS Event Envelope #2939 / `36443660300`: SUCCESS.
+- GARANG Release Gate #2312 / `36443660193`: FULL GREEN.
+  - core-build-rules: SUCCESS
+  - browser-webkit: SUCCESS across Today, Simplified Shell, Planner, Nutrition, Meal Scan, Golden Path, authenticated Coach/LLM/Recovery, mobile regressions, Settings touch and runtime stability
+  - final verify: SUCCESS
+- Merge precondition was VERIFIED 0-behind against latest main `6bd2473b...`; squash merge produced current main `d6a99f3a...`.
+- Released scope: mobile Workout active-set hierarchy, demoted upcoming/completed set noise, Body anatomical-volume selection emphasis with visually silent hit zones, and deterministic rest-surface DOM reconciliation.
+- No AI schema, recommendation policy, DB authority, HealthKit/Health Connect ownership, backend, or production-secret change is part of #379.
+- A separate post-merge push-triggered Release Gate run is not visible through the current commit-run connector and remains UNKNOWN rather than assumed GREEN.
+- PR #375 Android Health Connect is not released: its exact head was previously GREEN, but it is now 2 commits behind current main and non-mergeable.
+
 ## Current PRODUCT release — 2026-09-29 live reconciliation
 Decision: **GREEN / P2 CLOSED; P4/P5 VALIDATION CHANGE IN FLIGHT**.
 - PRODUCT main: `246df18111772449dbaff3011329850882b03b0e` via PR #372.
