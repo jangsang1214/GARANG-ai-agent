@@ -1,3 +1,15 @@
+## PRODUCT commercial-supremacy reconciliation — 2026-09-29 / PR #379 merged
+- VERIFIED PRODUCT current main: `d6a99f3aac21eac840e2f9fd806b4ee931aace11` via squash-merged PR #379.
+- VERIFIED PR #379 supersedes stale/conflicted PR #365 and preserves the newer #369/#372/#376 deterministic runtime lineage.
+- VERIFIED PR #379 exact head `cabde6bfd07ebec909c165899d14a991b9918518`: Founder OS Event Envelope #2939 / run `36443660300` SUCCESS; GARANG Release Gate #2312 / run `36443660193` FULL GREEN, with core-build-rules, browser-webkit and final verify all SUCCESS.
+- RECORDED first #379 Gate attempt #2311 failed only because the new cache tag replaced #369's deterministic-group-transition cache-contract marker. The fix preserved the prior marker and added the rest-surface suffix; no timeout/retry/assertion weakening was used.
+- VERIFIED #379 merged only after latest-main drift check showed branch 0 behind `6bd2473b...` and mergeable=true. Current main then became `d6a99f3a...`.
+- VERIFIED PR #365 is CLOSED / UNMERGED / superseded by #379. PR #339 remains CLOSED / superseded.
+- VERIFIED next native-health candidate PR #375 is exact-head GREEN on its own prior base but is now 2 commits behind current main and GitHub reports mergeable=false. It must be replayed/reconciled onto current main before any merge.
+- VERIFIED PR #375 source/CI scope includes an Android Health Connect host and real assembleDebug verification; real Android-device provider reads remain UNVERIFIED. Existing iOS HealthKit host remains source+simulator verified; physical-iPhone non-empty HealthKit authorization/read/persistence/Recovery-Coach consumption remains UNVERIFIED.
+- Current Founder execution order for this commercial-supremacy phase: current-main Android Health Connect reconciliation + real iPhone HealthKit evidence → native/background Running with HR/elevation/zones/provider ingestion → accessibility/security/device hardening → Commercial Supremacy Gate. No large AI feature is authorized ahead of these gaps.
+- Post-merge push-triggered Release Gate for `d6a99f3a...` is UNKNOWN from the available commit-run connector; do not relabel it as separately observed post-merge GREEN.
+
 ## PROJECT START live reconciliation — 2026-09-29 / P2 closed, P4/P5 active
 - VERIFIED CONTROL main remains `8a563e708224813cd9c43e029cdc0bf872b8762b`; reconciliation remains on CONTROL PR #114.
 - VERIFIED PRODUCT current main: `246df18111772449dbaff3011329850882b03b0e` via merged PR #372.
