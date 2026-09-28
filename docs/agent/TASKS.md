@@ -1,20 +1,18 @@
 ## Current strategic queue — 2026-09-28 live reconciliation
 Status: CANONICAL / supersedes older queue text below where it conflicts.
-1. **P2 Engineering runtime/WebKit determinism — DONE / VERIFIED.** PR #372 exact-head Gate #2295 and post-merge current-main Gate #2296 both FULL GREEN on attempt 1.
-2. **P4/P5 longitudinal external validation — ACTIVE.** Fresh-replay longitudinal physiological recovery evidence from stale PR #360 onto current main, then use actual external episodes to measure recommendation → execution → recovery outcome evidence.
-3. **Funnel-evidence Product improvement** — only after observed external-user friction/outcome evidence.
+1. **P2 Engineering runtime/WebKit determinism — ACTIVE / REOPENED.** PR #374 Gate #2297 reproduced the same conversational Undo touch interception despite touching no Coach UI files. Active repair: PR #376.
+2. **P4/P5 longitudinal external validation — BLOCKED BY P2.** #374 replay is not mergeable until fresh deterministic closure.
+3. **Funnel-evidence Product improvement** — only after external evidence.
 4. **Infra/Security hardening**.
 5. **Monetization validation**.
 6. **Payment implementation**.
 
-Current P4/P5 acceptance:
-- replay #360 only if current main still has no conflicting drift in its three touched files;
-- aggregate only fully-attributed physiological recovery outcomes;
-- descriptive evidence only, no causal claim, no automatic recommendation/policy mutation;
-- browser/server parity;
-- exact-head Release Gate GREEN before merge;
-- post-merge current-main Release Gate GREEN;
-- actual longitudinal outcome superiority remains UNKNOWN until external usage data exists.
+Current P2 acceptance:
+- Coach conversational inline action must own its actual WebKit touch center on every first-attempt exact-head/current-main release run;
+- scroll-end safety must not depend on WebKit treating trailing padding as usable scroll extent;
+- no retry, timeout inflation, or weakened assertion;
+- exact-head first-attempt FULL GREEN → merge → current-main first-attempt FULL GREEN;
+- then re-create/replay longitudinal validation change on the stabilized main.
 
 ## Completed P2 — TD-015 WebKit / lifecycle determinism closure
 Status: DONE / VERIFIED FIRST-ATTEMPT GREEN
