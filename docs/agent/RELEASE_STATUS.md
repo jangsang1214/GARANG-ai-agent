@@ -1,3 +1,13 @@
+## iOS HealthKit native host v1 — PR #357 — 2026-09-28
+Decision: **GREEN / MERGED / SOURCE+SIMULATOR VERIFIED; REAL-DEVICE EVIDENCE OPEN**.
+- PRODUCT main: `79fff4417545ad446910c81ea9032828686c2a55`.
+- Exact head: `a0ab07a006198d966f677381f16816c91f5d392e`.
+- Native iOS host `36402449767`: SUCCESS including actual Xcode iOS Simulator compile.
+- GARANG Release Gate `36402449941`: core-build-rules SUCCESS, browser-webkit SUCCESS, final verify SUCCESS.
+- Founder OS Event Envelope `36402449902`: SUCCESS.
+- No App Store, signed-device, or non-empty real HealthKit read claim is made. Those require physical-iPhone evidence.
+- Android Health Connect remains separate work.
+
 ## Passive Physiological Ingestion runtime — PR #350 — 2026-09-28
 Decision: **GREEN / MERGED / SOURCE-RUNTIME VERIFIED; NATIVE HOST/DEVICE EVIDENCE OPEN**.
 - PRODUCT main: `03ad6e2334591cdb66a09ee5ea6b08978fed84ea`.
