@@ -1,13 +1,12 @@
 ## TD-015 live status — 2026-09-28 current-lineage recurrence
 Status: **REOPENED / P2 ACTIVE**.
-- Historical closure evidence remains: PR #296 exact-head Gate #2074 + post-merge Gate #2075 were first-attempt GREEN.
-- Fresh current-lineage evidence overrides the former monitor-only status for present release readiness.
-- PRODUCT main `55130b5179f8ebc3a7c8037305d07bf347eb096a` post-merge Gate #2279 FAILED attempt 1 in Golden Path grouped Workout rest transition and FAILED attempt 2 in Today→Coach canonical mount readiness.
-- PR #366 itself passed exact-head Gate #2277 on attempt 1, so the current problem is broader lifecycle determinism on the merged main, not a reason to weaken Coach touch assertions.
-- Active repair PR #369 removes the grouped `setTimeout(0)` ownership race and makes canonical Coach mounting synchronous within `screen-rendered`.
-- Closure requires: exact-head first-attempt FULL GREEN → merge after latest-main drift check → post-merge current-main first-attempt FULL GREEN.
-- Same-SHA rerun success is diagnostic only and cannot close TD-015.
-- No timeout inflation, broad retry, assertion weakening, or feature work may mask this debt.
+- Historical closure evidence remains valid point-in-time evidence only.
+- PRODUCT main `0c5ab792491b9bba24f1d6b37b031a0bdb0487ae` includes PR #369.
+- PR #369 exact-head Gate #2286 passed on attempt 1 and removed the grouped Workout timer race plus Today→Coach mount race.
+- Post-merge Gate #2288 still failed WebKit conversational Undo touch ownership: the Undo center at y=820 was intercepted by bottom-nav Progress.
+- Active repair PR #372 targets the actual final logged action/Undo touch geometry rather than broad scroll padding, with no state/route/logic change.
+- Closure requires exact-head first-attempt FULL GREEN → merge after drift check → post-merge current-main first-attempt FULL GREEN.
+- Same-SHA rerun success remains diagnostic only; no timeout/retry/assertion masking.
 
 ## TD-015 canonical status — 2026-09-28 reconciliation
 Status: RESOLVED / MONITOR ONLY.
