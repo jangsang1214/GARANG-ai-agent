@@ -917,16 +917,16 @@
     {
       "id": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
       "kind": "task",
-      "title": "Restore repeatable Today/Coach WebKit lifecycle determinism on current main",
-      "status": "done",
+      "title": "Restore repeatable Today/Coach/Workout WebKit lifecycle determinism on current PRODUCT main",
+      "status": "in_progress",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
     {
       "id": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "kind": "task",
-      "title": "Validate activation, recommendation usefulness, execution and retention with unknown users over 2/4/8-week windows",
-      "status": "in_progress",
+      "title": "Run longitudinal external validation after fresh P2 first-attempt closure",
+      "status": "planned",
       "ownerWorkstream": "growth-business",
       "repositoryId": "product"
     },
@@ -2787,8 +2787,8 @@
     {
       "id": "RESULT-TD015-DETERMINISM-CLOSED",
       "kind": "result",
-      "title": "TD-015 runtime/WebKit determinism closed with exact-head and current-main first-attempt GREEN evidence",
-      "status": "done",
+      "title": "TD-015 historical closure is reopened by fresh current-lineage recurrence; new first-attempt closure evidence required",
+      "status": "in_progress",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
     },
@@ -2950,6 +2950,38 @@
       "title": "Current PRODUCT main 96f8a596 is release-verified GREEN and ready for longitudinal external validation",
       "status": "done",
       "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR366-COACH-TOUCH",
+      "kind": "change",
+      "title": "PRODUCT PR #366 restores Coach action clearance and merges as main 55130b517",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR366-GATE-2277",
+      "kind": "verification",
+      "title": "PR #366 exact-head Release Gate #2277 FULL GREEN attempt 1",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-MAIN-GATE-2279-FAILED",
+      "kind": "verification",
+      "title": "Current-main Gate #2279 fails two attempts on distinct WebKit lifecycle races",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR369-P2-CURRENT",
+      "kind": "change",
+      "title": "PRODUCT PR #369 removes grouped Workout timer race and synchronous Coach mount race on current main",
+      "status": "in_progress",
+      "ownerWorkstream": "engineering",
       "repositoryId": "product"
     }
   ],
@@ -5242,6 +5274,31 @@
     {
       "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
       "to": "RESULT-CURRENT-PRODUCT-96F8-GREEN",
+      "kind": "depends-on"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR366-GATE-2277",
+      "to": "CHANGE-PRODUCT-PR366-COACH-TOUCH",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-MAIN-GATE-2279-FAILED",
+      "to": "CHANGE-PRODUCT-PR366-COACH-TOUCH",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR369-P2-CURRENT",
+      "to": "TASK-WEBKIT-LIFECYCLE-DETERMINISM",
+      "kind": "supports"
+    },
+    {
+      "from": "RESULT-TD015-DETERMINISM-CLOSED",
+      "to": "CHANGE-PRODUCT-PR369-P2-CURRENT",
+      "kind": "depends-on"
+    },
+    {
+      "from": "TASK-EXTERNAL-LONGITUDINAL-VALIDATION",
+      "to": "CHANGE-PRODUCT-PR369-P2-CURRENT",
       "kind": "depends-on"
     }
   ]
