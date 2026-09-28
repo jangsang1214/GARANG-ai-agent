@@ -1,3 +1,25 @@
+## Current strategic queue — 2026-09-29 live reconciliation
+Status: CANONICAL / supersedes older queue text below where it conflicts.
+1. **P2 Engineering runtime/WebKit determinism — DONE / VERIFIED CLOSED.** PR #372 Gate #2295 and post-merge main Gate #2296 both FULL GREEN on attempt 1.
+2. **P4/P5 longitudinal external validation — ACTIVE.** PR #378 replays attributed longitudinal physiological recovery summary on current GREEN main.
+3. **Funnel-evidence Product improvement** — only after observed external-user friction/outcome evidence.
+4. **Infra/Security hardening**.
+5. **Monetization validation**.
+6. **Payment implementation**.
+
+Current P4/P5 acceptance:
+- aggregate only fully-attributed physiological recovery outcomes;
+- expose sample size + direction counts + mean readiness delta without causal claims;
+- browser/server parity;
+- exact-head Release Gate attempt 1 GREEN;
+- latest-main drift recheck before merge;
+- post-merge current-main Release Gate attempt 1 GREEN.
+
+Health/Recovery boundary:
+- PR #356 personal-baseline sleep debt remains retained.
+- PR #378 is validation-enabling evidence infrastructure, not a new product surface.
+- Sleep-only downstream propagation concern remains a later correctness gap unless external evidence or release integrity elevates it.
+
 ## Completed P2 — TD-015 WebKit / lifecycle determinism closure
 Status: DONE / VERIFIED FIRST-ATTEMPT GREEN
 - PR #296 exact head `2aff5925...` Release Gate #2074: FULL GREEN attempt 1. ✅

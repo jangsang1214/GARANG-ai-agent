@@ -1,3 +1,20 @@
+## TD-015 live status — 2026-09-29 current-lineage closure
+Status: **RESOLVED / VERIFIED CLOSED**.
+- PR #372 exact-head Gate #2295 / `36436233503`: FULL GREEN attempt 1.
+- PR #372 merged as PRODUCT main `246df18111772449dbaff3011329850882b03b0e`.
+- Post-merge current-main Gate #2296 / `36437177597`: FULL GREEN attempt 1.
+- The prior grouped Workout, Today→Coach mount, and conversational Undo touch ownership recurrences are covered by fresh current-lineage first-attempt evidence.
+- No retry, timeout inflation or weakened assertion was used for closure.
+- Reopen only on fresh reproducible current-lineage failure.
+
+## TD-015 canonical status — 2026-09-28 reconciliation
+Status: RESOLVED / MONITOR ONLY.
+- Dedicated closure remains PR #296 Gate #2074 attempt 1 GREEN + post-merge Gate #2075 attempt 1 GREEN.
+- Current PRODUCT main `96f8a59649103b6827df0571919d1d251c0f9279` also passed Gate #2247 on attempt 1.
+- No fresh current-lineage WebKit/lifecycle recurrence was observed in this reconciliation.
+- Older sections that say ACTIVE / P2 are historical recurrence records and are superseded by this canonical status.
+- Reopen only on fresh reproducible current-lineage evidence; do not mask recurrence with retries, timeout inflation, or assertion weakening.
+
 ## TD-015 closure — 2026-09-27
 Status: RESOLVED / VERIFIED
 - Dedicated fix PR #296 exact-head Gate #2074 / `36295327699`: FULL GREEN on attempt 1.

@@ -1,3 +1,39 @@
+## PRODUCT commercial-supremacy reconciliation — 2026-09-29 / PR #379 merged
+- VERIFIED PRODUCT current main: `d6a99f3aac21eac840e2f9fd806b4ee931aace11` via squash-merged PR #379.
+- VERIFIED PR #379 supersedes stale/conflicted PR #365 and preserves the newer #369/#372/#376 deterministic runtime lineage.
+- VERIFIED PR #379 exact head `cabde6bfd07ebec909c165899d14a991b9918518`: Founder OS Event Envelope #2939 / run `36443660300` SUCCESS; GARANG Release Gate #2312 / run `36443660193` FULL GREEN, with core-build-rules, browser-webkit and final verify all SUCCESS.
+- RECORDED first #379 Gate attempt #2311 failed only because the new cache tag replaced #369's deterministic-group-transition cache-contract marker. The fix preserved the prior marker and added the rest-surface suffix; no timeout/retry/assertion weakening was used.
+- VERIFIED #379 merged only after latest-main drift check showed branch 0 behind `6bd2473b...` and mergeable=true. Current main then became `d6a99f3a...`.
+- VERIFIED PR #365 is CLOSED / UNMERGED / superseded by #379. PR #339 remains CLOSED / superseded.
+- VERIFIED next native-health candidate PR #375 is exact-head GREEN on its own prior base but is now 2 commits behind current main and GitHub reports mergeable=false. It must be replayed/reconciled onto current main before any merge.
+- VERIFIED PR #375 source/CI scope includes an Android Health Connect host and real assembleDebug verification; real Android-device provider reads remain UNVERIFIED. Existing iOS HealthKit host remains source+simulator verified; physical-iPhone non-empty HealthKit authorization/read/persistence/Recovery-Coach consumption remains UNVERIFIED.
+- Current Founder execution order for this commercial-supremacy phase: current-main Android Health Connect reconciliation + real iPhone HealthKit evidence → native/background Running with HR/elevation/zones/provider ingestion → accessibility/security/device hardening → Commercial Supremacy Gate. No large AI feature is authorized ahead of these gaps.
+- Post-merge push-triggered Release Gate for `d6a99f3a...` is UNKNOWN from the available commit-run connector; do not relabel it as separately observed post-merge GREEN.
+
+## PROJECT START live reconciliation — 2026-09-29 / P2 closed, P4/P5 active
+- VERIFIED CONTROL main remains `8a563e708224813cd9c43e029cdc0bf872b8762b`; reconciliation remains on CONTROL PR #114.
+- VERIFIED PRODUCT current main: `246df18111772449dbaff3011329850882b03b0e` via merged PR #372.
+- VERIFIED PR #372 exact head `c394729ccfa5df67d172ca6027ea19f4ee7ec6cb`: Release Gate #2295 / run `36436233503` FULL GREEN attempt 1.
+- VERIFIED post-merge current-main Release Gate #2296 / run `36437177597`: FULL GREEN attempt 1.
+- VERIFIED TD-015 / current-lineage P2 runtime-WebKit determinism is CLOSED again with fresh exact-head + post-merge first-attempt evidence.
+- VERIFIED canonical strategy advances to P4/P5 longitudinal external validation.
+- VERIFIED PRODUCT PR #378 is active on current GREEN main and replays only the three #360 longitudinal physiological recovery summary files with no intervening blob drift.
+- PR #378 behavior remains descriptive/attributed-only: sample size, improved/worsened/unchanged counts, mean readiness delta and normalized delta; no causal claim, policy mutation or clinical target.
+- PR #177 and PR #356 remain CLOSED/MERGED. PR #356 sleep-only downstream propagation concern remains separately open and does not jump ahead of the validation sequence.
+- Next gate: PR #378 exact-head attempt-1 GREEN → latest-main drift check → merge → post-merge current-main attempt-1 GREEN.
+
+## PROJECT START canonical reconciliation — 2026-09-28 / current GitHub truth
+- VERIFIED CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL CI #276 / run `36403453975`: SUCCESS.
+- VERIFIED PRODUCT current main: `96f8a59649103b6827df0571919d1d251c0f9279` after PR #335 merge. Current-main GARANG Release Gate #2247 / run `36403551503`: SUCCESS on attempt 1; Pages #931 / run `36403550282`: SUCCESS; Founder OS Event Envelope runs on the same SHA: SUCCESS.
+- VERIFIED PRODUCT PR #177 `Stabilize Today lifecycle DOM ownership`: CLOSED / MERGED on 2026-09-21 as `9fa951b30be4981b8081e649dd05ab229df44218`.
+- VERIFIED PRODUCT PR #356 exact head `bd1433403ea4360bfd33e5b78f962f9a06a6e8d8`: Release Gate #2241 / run `36388463542` SUCCESS. PR #356 MERGED as `6ed99719f0f74a2e8570b0a08bbd299caf6691df`; immediate post-merge main Gate #2243 / run `36389071367`: SUCCESS on attempt 1.
+- VERIFIED #356 preservation through current PRODUCT main: the four core/server/test logic files changed by #356 are unchanged since merge; only `index.html` changed later for subsequent runtime/native/design integration. Current main #2247 is GREEN.
+- VERIFIED PRODUCT then advanced through PR #357 iOS HealthKit host and PR #335 commercial mobile shell to current main `96f8a596...`; earlier `79fff441...` wording is historical, not current.
+- VERIFIED open PR snapshot: CONTROL #109 and #105; PRODUCT #339, #333, #330, #318, #328, #322, #313. Several are historical/stacked/superseded work and must not be treated as current-main state.
+- Canonical strategic order is restored by Founder direction: P2 runtime/WebKit determinism → P4/P5 longitudinal external validation → funnel-evidence Product improvement → Infra/Security hardening → monetization validation → payment implementation. TD-015 is RESOLVED on dedicated first-attempt evidence and remains monitor-only unless fresh recurrence appears.
+- D-022's Commercial-Supremacy-before-validation gate is superseded by D-023. Commercial benchmarking remains useful, but it no longer blocks external validation or authorizes feature expansion ahead of evidence.
+- Health/Recovery current boundary: personal-baseline accumulated sleep debt, recovery trajectory, evidence-specific next action, physiological outcome episodes, native Health runtime persistence, and iOS HealthKit source/simulator host are present. Physical-iPhone non-empty HealthKit evidence and Android Health Connect remain unverified/open.
+
 ## Native iOS HealthKit host v1 — 2026-09-28
 - VERIFIED Founder-approved PRODUCT PR #357 merged as current main `79fff4417545ad446910c81ea9032828686c2a55`.
 - VERIFIED exact head `a0ab07a006198d966f677381f16816c91f5d392e`: Native iOS host workflow `36402449767` SUCCESS with actual `xcodebuild` iOS Simulator compile; GARANG Release Gate `36402449941` FULL GREEN; Founder OS Event Envelope `36402449902` SUCCESS.

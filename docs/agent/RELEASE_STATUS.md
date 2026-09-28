@@ -1,3 +1,39 @@
+## Current PRODUCT release — 2026-09-29 / PR #379 commercial mobile refinement
+Decision: **GREEN exact-head / MERGED; post-merge push run observation UNKNOWN**.
+- PRODUCT main: `d6a99f3aac21eac840e2f9fd806b4ee931aace11` via PR #379.
+- PR #379 exact head: `cabde6bfd07ebec909c165899d14a991b9918518`.
+- Founder OS Event Envelope #2939 / `36443660300`: SUCCESS.
+- GARANG Release Gate #2312 / `36443660193`: FULL GREEN.
+  - core-build-rules: SUCCESS
+  - browser-webkit: SUCCESS across Today, Simplified Shell, Planner, Nutrition, Meal Scan, Golden Path, authenticated Coach/LLM/Recovery, mobile regressions, Settings touch and runtime stability
+  - final verify: SUCCESS
+- Merge precondition was VERIFIED 0-behind against latest main `6bd2473b...`; squash merge produced current main `d6a99f3a...`.
+- Released scope: mobile Workout active-set hierarchy, demoted upcoming/completed set noise, Body anatomical-volume selection emphasis with visually silent hit zones, and deterministic rest-surface DOM reconciliation.
+- No AI schema, recommendation policy, DB authority, HealthKit/Health Connect ownership, backend, or production-secret change is part of #379.
+- A separate post-merge push-triggered Release Gate run is not visible through the current commit-run connector and remains UNKNOWN rather than assumed GREEN.
+- PR #375 Android Health Connect is not released: its exact head was previously GREEN, but it is now 2 commits behind current main and non-mergeable.
+
+## Current PRODUCT release — 2026-09-29 live reconciliation
+Decision: **GREEN / P2 CLOSED; P4/P5 VALIDATION CHANGE IN FLIGHT**.
+- PRODUCT main: `246df18111772449dbaff3011329850882b03b0e` via PR #372.
+- PR #372 exact-head Gate #2295 / `36436233503`: FULL GREEN attempt 1.
+- Post-merge current-main Gate #2296 / `36437177597`: FULL GREEN attempt 1.
+- Current released main is therefore release-verified GREEN for P2 runtime/WebKit determinism.
+- PRODUCT PR #378 is open and not yet released; it carries only longitudinal physiological recovery summary evidence.
+- Until #378 exact-head + post-merge gates pass, its longitudinal aggregate must not be claimed released.
+
+## Current PRODUCT release — 2026-09-28 canonical reconciliation
+Decision: **GREEN / current main release-verified**.
+- PRODUCT main: `96f8a59649103b6827df0571919d1d251c0f9279` via PR #335.
+- Current-main GARANG Release Gate #2247 / run `36403551503`: SUCCESS, attempt 1.
+- Pages #931 / run `36403550282`: SUCCESS.
+- Founder OS Event Envelope on the same SHA: SUCCESS.
+- PR #356 personal-baseline accumulated sleep debt: exact head `bd1433403ea4360bfd33e5b78f962f9a06a6e8d8`, Gate #2241 / `36388463542` SUCCESS; merged as `6ed99719...`; post-merge Gate #2243 / `36389071367` SUCCESS attempt 1.
+- PR #357 iOS HealthKit host merged next as `79fff441...`; its simulator/source evidence remains valid, but that SHA is no longer current main.
+- PR #335 then merged as current main `96f8a596...`; #356 core/server/test logic is preserved on the current tree.
+- Current release is not evidence of physical-iPhone HealthKit data, Android Health Connect, 2/4/8-week user outcome superiority, or monetization.
+- Strategic next state is longitudinal external validation, not another default feature-expansion pass.
+
 ## iOS HealthKit native host v1 — PR #357 — 2026-09-28
 Decision: **GREEN / MERGED / SOURCE+SIMULATOR VERIFIED; REAL-DEVICE EVIDENCE OPEN**.
 - PRODUCT main: `79fff4417545ad446910c81ea9032828686c2a55`.
