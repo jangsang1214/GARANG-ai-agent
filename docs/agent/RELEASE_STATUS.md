@@ -1,3 +1,15 @@
+## Android Health Connect current-main release — 2026-09-29
+Decision: **GREEN exact-head / MERGED / DEVICE EVIDENCE OPEN**.
+- PRODUCT main: `a933231c15133766c3469c0a3a0e4dcf59bf3ab0` via PR #381.
+- Exact head: `f93bec1264953a48070387ad9a4d63d23b0048e9`.
+- Native Android host run `36445388196`: SUCCESS, including contract verification, SDK 36 install, and actual host build.
+- Native iOS host preservation run `36445388416`: SUCCESS.
+- Founder OS Event Envelope `36445387983`: SUCCESS.
+- GARANG Release Gate #2316 / `36445388510`: FULL GREEN; core-build-rules, browser-webkit, final verify all SUCCESS.
+- Scope is additive native host/source/build integration only; no native Firebase/Firestore authority, no invented physiological scores, and no page-load permission prompt.
+- Real Android-device Health Connect reads and physical-iPhone HealthKit reads are not release-verified and must remain UNVERIFIED until device evidence exists.
+- Separate post-merge push-run observation on `a933231c...` is UNKNOWN through the available connector.
+
 ## Current PRODUCT release — 2026-09-29 / PR #379 commercial mobile refinement
 Decision: **GREEN exact-head / MERGED; post-merge push run observation UNKNOWN**.
 - PRODUCT main: `d6a99f3aac21eac840e2f9fd806b4ee931aace11` via PR #379.
