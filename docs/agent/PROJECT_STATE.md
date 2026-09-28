@@ -1,13 +1,13 @@
-## PROJECT START live reconciliation — 2026-09-28 / P2 closed, longitudinal validation resumes
-- VERIFIED CONTROL main remains `8a563e708224813cd9c43e029cdc0bf872b8762b`; state reconciliation remains on CONTROL PR #114.
-- VERIFIED PRODUCT current main: `246df18111772449dbaff3011329850882b03b0e` via merged PR #372.
-- VERIFIED PR #372 exact head `c394729ccfa5df67d172ca6027ea19f4ee7ec6cb`: Release Gate #2295 / run `36436233503` FULL GREEN on attempt 1.
-- VERIFIED post-merge current-main Release Gate #2296 / run `36437177597`: core/build GREEN, browser-webkit GREEN, final verify GREEN on attempt 1.
-- VERIFIED conversational Undo touch recurrence is closed on current lineage; grouped Workout transition and Today→Coach deterministic mount also remain GREEN in the same post-merge run.
-- TD-015 is RESOLVED / MONITOR ONLY again on fresh first-attempt exact-head + current-main evidence.
-- Canonical strategy advances to P4/P5 longitudinal external validation. No funnel-driven Product changes precede actual external evidence.
-- Health/Recovery validation-enabling next candidate is fresh replay of stale PR #360 on current main. Its three touched files had no intervening blob drift through `0c5ab792...`; recheck current main before replay.
-- PR #356 remains merged/retained; sleep-only downstream fused-readiness propagation concern remains a separate correctness gap, not a reason to skip longitudinal validation.
+## PROJECT START live reconciliation — 2026-09-28 / P2 recurrence after validation replay
+- VERIFIED CONTROL main remains `8a563e708224813cd9c43e029cdc0bf872b8762b`; reconciliation remains on CONTROL PR #114.
+- VERIFIED PRODUCT current main remains `246df18111772449dbaff3011329850882b03b0e` via PR #372.
+- VERIFIED PR #372 exact-head Gate #2295 and post-merge current-main Gate #2296 were FULL GREEN on attempt 1.
+- VERIFIED fresh recurrence: validation-only PR #374 changed exactly three Intelligence Episode files, but exact-head Gate #2297 failed `browser-conversational-intelligence.test.cjs` with the identical touch diagnostic: Undo center y=820 was owned by fixed bottom-nav Progress.
+- Because #374 does not touch Coach CSS/runtime, this is current-lineage WebKit scroll-end nondeterminism, not a Health/validation regression.
+- TD-015 is REOPENED / P2 ACTIVE again. Longitudinal validation replay is blocked until deterministic closure is re-established.
+- VERIFIED active repair PR #376 from current main adds a concrete mobile Coach scroll-end spacer rather than relying on trailing padding being counted as scroll extent.
+- No retry/timeout/assertion weakening. PR #374 must not merge while P2 is open.
+- Strategy order remains P2 determinism → P4/P5 longitudinal validation → funnel evidence → Infra/Security → monetization validation → payment.
 
 ## PROJECT START canonical reconciliation — 2026-09-28 / current GitHub truth
 - VERIFIED CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL CI #276 / run `36403453975`: SUCCESS.
