@@ -1,12 +1,11 @@
-## TD-015 live status — 2026-09-28 current-lineage recurrence
-Status: **REOPENED / P2 ACTIVE**.
-- Historical closure evidence remains valid point-in-time evidence only.
-- PRODUCT main `0c5ab792491b9bba24f1d6b37b031a0bdb0487ae` includes PR #369.
-- PR #369 exact-head Gate #2286 passed on attempt 1 and removed the grouped Workout timer race plus Today→Coach mount race.
-- Post-merge Gate #2288 still failed WebKit conversational Undo touch ownership: the Undo center at y=820 was intercepted by bottom-nav Progress.
-- Active repair PR #372 targets the actual final logged action/Undo touch geometry rather than broad scroll padding, with no state/route/logic change.
-- Closure requires exact-head first-attempt FULL GREEN → merge after drift check → post-merge current-main first-attempt FULL GREEN.
-- Same-SHA rerun success remains diagnostic only; no timeout/retry/assertion masking.
+## TD-015 live status — 2026-09-28 fresh closure
+Status: **RESOLVED / MONITOR ONLY**.
+- PRODUCT PR #372 exact-head `c394729...` Release Gate #2295 / `36436233503`: FULL GREEN attempt 1.
+- PR #372 merged as current main `246df18111772449dbaff3011329850882b03b0e`.
+- Post-merge current-main Release Gate #2296 / `36437177597`: FULL GREEN attempt 1.
+- The same current-main run passed grouped Workout transition, Today→Coach mount, conversational Undo touch ownership, recovery touch, mobile regression, Settings touch, button health and runtime stability.
+- No retry, timeout inflation, or assertion weakening was used to claim closure.
+- Reopen only on a fresh current-lineage recurrence.
 
 ## TD-015 canonical status — 2026-09-28 reconciliation
 Status: RESOLVED / MONITOR ONLY.
