@@ -1,11 +1,10 @@
 ## Current PRODUCT release — 2026-09-28 live reconciliation
-Decision: **GREEN / current-main release-verified**.
-- PRODUCT main: `246df18111772449dbaff3011329850882b03b0e` via PR #372.
-- PR #372 exact-head Gate #2295 / `36436233503`: FULL GREEN attempt 1.
-- Post-merge current-main Gate #2296 / `36437177597`: FULL GREEN attempt 1 across core-build-rules, browser-webkit and final verify.
-- P2 runtime/WebKit determinism is closed on current lineage.
-- Strategic release work now advances to longitudinal external validation evidence; no claim is made yet about 2/4/8-week outcome superiority.
-- PR #356 remains merged and preserved.
+Decision: **RED / P2 RELEASE GATE BLOCKED**.
+- PRODUCT main remains `246df18111772449dbaff3011329850882b03b0e`.
+- Historical current-main Gate #2296 was first-attempt GREEN, but a fresh branch from that main (#374) reproduced the same WebKit Coach touch failure without touching Coach UI code.
+- Therefore release determinism is not considered closed.
+- Active remediation: PR #376; Gate #2303 attempt 1 running.
+- Longitudinal validation PR #374 is blocked and must not merge until P2 is re-closed.
 
 ## Current PRODUCT release — 2026-09-28 canonical reconciliation
 Decision: **GREEN / current main release-verified**.
