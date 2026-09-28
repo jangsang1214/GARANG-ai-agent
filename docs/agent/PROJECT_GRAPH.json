@@ -2787,7 +2787,7 @@
     {
       "id": "RESULT-TD015-DETERMINISM-CLOSED",
       "kind": "result",
-      "title": "TD-015 historical closure is reopened by fresh current-lineage recurrence; new first-attempt closure evidence required",
+      "title": "TD-015 remains reopened after #2288 conversational Undo touch recurrence; fresh first-attempt closure still required",
       "status": "in_progress",
       "ownerWorkstream": "command-center",
       "repositoryId": "product"
@@ -2979,7 +2979,15 @@
     {
       "id": "CHANGE-PRODUCT-PR369-P2-CURRENT",
       "kind": "change",
-      "title": "PRODUCT PR #369 removes grouped Workout timer race and synchronous Coach mount race on current main",
+      "title": "PRODUCT PR #369 removes grouped Workout timer race and synchronous Coach mount race; merged as 0c5ab792",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR372-COACH-UNDO-TOUCH",
+      "kind": "change",
+      "title": "PRODUCT PR #372 keeps final conversational Undo touch target above fixed mobile tab chrome",
       "status": "in_progress",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
