@@ -1,11 +1,10 @@
-## TD-015 live status — 2026-09-28 fresh closure
-Status: **RESOLVED / MONITOR ONLY**.
-- PRODUCT PR #372 exact-head `c394729...` Release Gate #2295 / `36436233503`: FULL GREEN attempt 1.
-- PR #372 merged as current main `246df18111772449dbaff3011329850882b03b0e`.
-- Post-merge current-main Release Gate #2296 / `36437177597`: FULL GREEN attempt 1.
-- The same current-main run passed grouped Workout transition, Today→Coach mount, conversational Undo touch ownership, recovery touch, mobile regression, Settings touch, button health and runtime stability.
-- No retry, timeout inflation, or assertion weakening was used to claim closure.
-- Reopen only on a fresh current-lineage recurrence.
+## TD-015 live status — 2026-09-28 recurrence after apparent closure
+Status: **REOPENED / P2 ACTIVE**.
+- PR #372 exact-head #2295 and post-merge #2296 were first-attempt GREEN.
+- PR #374 exact-head Gate #2297, with no Coach UI changes, reproduced the same conversational Undo touch interception at y=820 by bottom-nav Progress.
+- This invalidates treating #2295/#2296 as sufficient repeatability evidence for current WebKit scroll-end behavior.
+- Active repair PR #376 adds a concrete 72px + safe-area scroll-end pseudo-element so scrollIntoView can move the action above fixed tab chrome without relying on trailing padding.
+- Closure again requires first-attempt exact-head + post-merge current-main FULL GREEN, with no retries/timeouts/assertion weakening.
 
 ## TD-015 canonical status — 2026-09-28 reconciliation
 Status: RESOLVED / MONITOR ONLY.
