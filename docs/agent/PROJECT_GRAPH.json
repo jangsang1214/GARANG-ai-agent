@@ -3095,6 +3095,38 @@
       "status": "active",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
+    },
+    {
+      "id": "INIT-BEGINNER-NUTRITION-LOOP",
+      "kind": "initiative",
+      "title": "Beginner-first Nutrition Loop: reminder → capture → review → next meal → learning evidence",
+      "status": "active",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR386-391-NUTRITION-STACK",
+      "kind": "change",
+      "title": "PRODUCT PRs #386/#387/#389/#390/#391 implement the beginner Nutrition Loop as a stacked change set",
+      "status": "implemented",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-NUTRITION-STACK-GATES",
+      "kind": "verification",
+      "title": "Latest exact heads pass Gates #2346/#2347/#2352/#2355/#2362",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-NUTRITION-STACK-LATEST-MAIN-INTEGRATION",
+      "kind": "task",
+      "title": "Reconcile PR #388 shared app.js ownership, replay Nutrition stack on latest main, rerun exact-head gate, then merge safely",
+      "status": "active",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
     }
   ],
   "edges": [
@@ -5457,6 +5489,26 @@
       "from": "VERIFY-NATIVE-HEALTH-PHYSICAL-DEVICES",
       "to": "TASK-PHYSICAL-HEALTH-DEVICE-EVIDENCE",
       "kind": "depends-on"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR386-391-NUTRITION-STACK",
+      "to": "INIT-BEGINNER-NUTRITION-LOOP",
+      "kind": "implements"
+    },
+    {
+      "from": "VERIFY-PRODUCT-NUTRITION-STACK-GATES",
+      "to": "CHANGE-PRODUCT-PR386-391-NUTRITION-STACK",
+      "kind": "verifies"
+    },
+    {
+      "from": "TASK-NUTRITION-STACK-LATEST-MAIN-INTEGRATION",
+      "to": "VERIFY-PRODUCT-NUTRITION-STACK-GATES",
+      "kind": "depends-on"
+    },
+    {
+      "from": "INIT-BEGINNER-NUTRITION-LOOP",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
     }
   ]
 }

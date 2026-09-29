@@ -1,3 +1,14 @@
+## Beginner-first Nutrition Loop reconciliation — 2026-09-30
+- VERIFIED PRODUCT main: `0f7a3b5a88c52c083ed433ab64716bd73b92ec61`.
+- VERIFIED stacked Nutrition PRs are OPEN / UNMERGED / mergeable: #386 → #387 → #389 → #390 → #391.
+- VERIFIED exact-head Release Gates: #386 Gate #2346 GREEN; #387 #2347 GREEN; #389 #2352 GREEN; #390 #2355 GREEN; #391 #2362 GREEN.
+- Implemented stack: meal-time preferences → reminder-to-Meal-Scan route → beginner post-meal review → simplified deterministic next-meal guidance → consent-bounded recommendation/action/outcome evidence linkage.
+- VERIFIED Phase 5 analytics boundary: recommendation IDs use date/option/version/meal ordinal/semantic direction and do not encode calorie/protein measurements; remote analytics remains gated by existing explicit analytics consent.
+- VERIFIED no new nutrition truth store or save owner was introduced; existing Meal Scan / Nutrition draft/save path remains the mutation owner.
+- RELEASE STATUS: YELLOW / PARTIAL because the stack is not merged to PRODUCT main.
+- MERGE INTEGRITY BLOCKER: PRODUCT PR #388 is also OPEN and modifies shared `01_app/app.js`; current head is `5a81b37a...`. Earlier Gate #2354 was RED; latest Gate #2366 is PENDING. Temporary integration PR #392 proved the #388 ↔ Nutrition stacked branches are not automatically mergeable and was CLOSED / UNMERGED after serving that diagnostic purpose.
+- Next Engineering action: resolve/reconcile #388 separately, then replay/rebase the remaining shared-file stack on the resulting main and require a fresh exact-head Release Gate before merge.
+
 ## Native Android Health Connect current-main closure — 2026-09-29
 - VERIFIED PRODUCT current main: `a933231c15133766c3469c0a3a0e4dcf59bf3ab0` via squash-merged PR #381.
 - VERIFIED PR #381 exact head `f93bec1264953a48070387ad9a4d63d23b0048e9`: Native Android host #6 / run `36445388196` SUCCESS including Health Connect contract, Android SDK 36 install and actual Android host build; Native iOS host #9 / run `36445388416` SUCCESS; Founder OS Event Envelope #2947 / run `36445387983` SUCCESS; GARANG Release Gate #2316 / run `36445388510` FULL GREEN across core-build-rules, browser-webkit and final verify.
