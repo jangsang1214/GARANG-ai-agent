@@ -1,3 +1,11 @@
+## Workout execution UX closure — 2026-09-30 / PR #388 merged
+- VERIFIED PRODUCT main: `3362b8965506e574279a31d889272ba07e342cf6` via Founder-approved squash merge of PR #388.
+- VERIFIED PR #388 exact head `862d6c6f5bcf42fb219f1b8cf8cd96332d96042e`: GARANG Release Gate #2417 / run `36618350782` FULL GREEN with core-build-rules, browser-webkit and final verify all SUCCESS; Founder OS Event Envelope #3163 / run `36618352626` SUCCESS.
+- VERIFIED released behavior: no legacy `.garang-session-start` / `.garang-live-session` duplicate owner; canonical Workout session card transitions `준비 → LIVE · 기록 중`; Today exposes routine generation before a plan and Workout start only after routine readiness; drafted exercises use primary `기록` plus disclosed management actions with visible feedback; Golden Path regression suite passed.
+- VERIFIED merge integrity: GitHub accepted expected-head merge for `862d6c6...`, and PRODUCT `main` resolves to merge SHA `3362b896...`.
+- Post-merge push-triggered workflow observation on `3362b896...` is UNKNOWN through the current commit-run connector and must not be relabeled GREEN.
+- Nutrition integration impact: the prior #388 shared-`app.js` blocker is RESOLVED. PRs #386/#387/#389/#390/#391 remain UNMERGED and must now be replayed/rebased onto PRODUCT main `3362b896...` with a fresh exact-head Release Gate before any merge.
+
 ## Beginner-first Nutrition Loop reconciliation — 2026-09-30
 - VERIFIED PRODUCT main: `0f7a3b5a88c52c083ed433ab64716bd73b92ec61`.
 - VERIFIED stacked Nutrition PRs are OPEN / UNMERGED / mergeable: #386 → #387 → #389 → #390 → #391.
