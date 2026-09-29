@@ -8,7 +8,7 @@ Decision: **YELLOW / EXACT-HEAD GREEN / NOT MERGED**.
   - PR #390 `9d2af82b...` → Gate #2355 SUCCESS.
   - PR #391 `6e113b2d...` → Gate #2362 SUCCESS.
 - Phase 4 initial Gate #2353 and earlier Phase 5 heads failed during test refinement; latest exact heads supersede those failures and are GREEN.
-- PR #388 touches shared `01_app/app.js` and its latest Gate #2354 is RED; integration order is unresolved.
+- PR #388 touches shared `01_app/app.js`; current head `5a81b37a...` has latest Gate #2366 PENDING after targeted mobile touch/disclosure regression fixes. Temporary integration PR #392 confirmed automatic branch merge is not possible and was CLOSED / UNMERGED.
 - No production deploy, secret, backend authority, or notification-permission change is claimed by this Nutrition stack.
 - Required release gate: latest-main replay/rebase after shared-file ordering is settled → fresh exact-head GREEN → merge → post-merge current-main verification.
 
