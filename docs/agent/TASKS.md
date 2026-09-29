@@ -18,7 +18,7 @@ Verification:
 - #391 Gate #2362 GREEN.
 
 Acceptance remaining:
-- Shared-file drift with PR #388 must be reconciled against latest PRODUCT main before any merge.
+- Shared-file drift with PR #388 must be reconciled against latest PRODUCT main before any merge; direct stacked integration was tested by temporary PR #392 and was not automatically mergeable.
 - After replay/rebase, fresh exact-head Release Gate must be GREEN.
 - Merge/post-merge evidence must be recorded before status can become DONE/RELEASED.
 
