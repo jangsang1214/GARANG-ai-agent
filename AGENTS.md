@@ -36,6 +36,16 @@ Low-risk reversible work may execute. Medium-risk reversible work may execute an
 9. Update material graph/state/evidence only.
 10. Classify GREEN/YELLOW/RED.
 
+## Throughput & branch hygiene
+Founder priority is end-to-end completion speed, not maximizing parallel PR count. Apply these rules across all workstreams unless a verified P0/P1 incident or explicit Founder instruction requires otherwise.
+- Do not create overlapping PRs for the same user problem when one current-main integration line can carry the work.
+- Do not revive stale/stacked branches wholesale. Reconcile against latest PRODUCT main and replay only the still-needed delta.
+- Prefer one active integration line per problem area: implement → exact-head verify → drift check → merge → post-merge verify → close/supersede obsolete PRs → then start the next line.
+- Do not use repeated CI reruns, timeout inflation, retries, or weakened assertions to mask nondeterminism. Prefer first-attempt evidence; when a gate fails, diagnose and make the smallest safe fix.
+- Treat stale duplicate PRs as cleanup/supersede candidates, not parallel progress. Historical GREEN evidence does not make an old branch current-main safe.
+- Minimize redundant gates: run only the checks needed for the changed risk surface plus the canonical release gate required by policy.
+- Optimize for the shortest safe path to a verified merged result. Avoid branch churn, unnecessary spec-only work, and repeated rebase/replay caused by avoidable parallel overlap.
+
 ## Definition of Done
 DONE = Implemented + Acceptance Criteria Met + Verification Evidence + Regression Considered + Graph/State Updated when material. Otherwise report PARTIAL/YELLOW and state what remains unknown.
 
