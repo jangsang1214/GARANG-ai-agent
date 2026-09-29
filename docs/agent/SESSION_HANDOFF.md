@@ -1,3 +1,11 @@
+## Live handoff — 2026-09-30 Workout execution UX closed
+- PRODUCT main is `3362b8965506e574279a31d889272ba07e342cf6` after Founder-approved PR #388 squash merge.
+- PR #388 exact head `862d6c6...` passed Release Gate #2417 FULL GREEN and Founder OS Event #3163 SUCCESS.
+- Workout session ownership is canonical: duplicate legacy session chrome removed; same-card `준비 → LIVE · 기록 중`; Today shows `루틴 추천 생성` before routine readiness and `운동 시작` only after generation; drafted exercises use `기록` + disclosed `관리` actions.
+- WebKit regressions, button health, Settings touch, runtime stability and full Golden Path all passed on the exact head.
+- Post-merge push-triggered workflow status for `3362b896...` is UNKNOWN via the current connector; do not invent a separate post-merge GREEN.
+- Next Engineering task is the already-implemented Beginner Nutrition stack: replay/rebase #386 → #387 → #389 → #390 → #391 onto current main `3362b896...`, resolve shared-file drift, require a fresh exact-head Release Gate, then merge only with integrity evidence.
+
 ## Live handoff — 2026-09-30 Beginner-first Nutrition Loop
 - PRODUCT main observed: `0f7a3b5a88c52c083ed433ab64716bd73b92ec61`.
 - Nutrition stack is implemented in PRs #386 → #387 → #389 → #390 → #391 and all five latest exact heads are Release-Gate GREEN (#2346/#2347/#2352/#2355/#2362).
