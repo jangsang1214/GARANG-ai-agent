@@ -6,7 +6,7 @@
 - VERIFIED Phase 5 analytics boundary: recommendation IDs use date/option/version/meal ordinal/semantic direction and do not encode calorie/protein measurements; remote analytics remains gated by existing explicit analytics consent.
 - VERIFIED no new nutrition truth store or save owner was introduced; existing Meal Scan / Nutrition draft/save path remains the mutation owner.
 - RELEASE STATUS: YELLOW / PARTIAL because the stack is not merged to PRODUCT main.
-- MERGE INTEGRITY BLOCKER: PRODUCT PR #388 is also OPEN and modifies `01_app/app.js`; its latest exact-head Gate #2354 is RED. Do not merge the Nutrition stack or #388 without latest-main replay/drift reconciliation after the first shared-file change lands.
+- MERGE INTEGRITY BLOCKER: PRODUCT PR #388 is also OPEN and modifies shared `01_app/app.js`; current head is `5a81b37a...`. Earlier Gate #2354 was RED; latest Gate #2366 is PENDING. Temporary integration PR #392 proved the #388 ↔ Nutrition stacked branches are not automatically mergeable and was CLOSED / UNMERGED after serving that diagnostic purpose.
 - Next Engineering action: resolve/reconcile #388 separately, then replay/rebase the remaining shared-file stack on the resulting main and require a fresh exact-head Release Gate before merge.
 
 ## Native Android Health Connect current-main closure — 2026-09-29
