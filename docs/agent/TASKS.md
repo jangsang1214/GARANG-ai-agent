@@ -1,3 +1,22 @@
+## Completed P3 — Workout execution UX / button normalisation
+Status: DONE / EXACT-HEAD FULL GREEN / MERGED
+Owner: Engineering + Design Brand + Release QA
+Goal: make Workout execution visibly stateful, remove duplicate session ownership, and ensure every primary/secondary action has an observable effect on iPhone/WebKit.
+
+Verification:
+- PR #388 exact head `862d6c6f5bcf42fb219f1b8cf8cd96332d96042e`.
+- Release Gate #2417 / `36618350782`: core-build-rules ✅, browser-webkit ✅, final verify ✅.
+- Founder OS Event #3163 / `36618352626`: SUCCESS.
+- Squash merge: PRODUCT main `3362b8965506e574279a31d889272ba07e342cf6`.
+
+Acceptance met:
+- legacy duplicate session controls absent;
+- same canonical session card visibly enters LIVE state;
+- Workout start is hidden until routine recommendation exists;
+- exercise Record enters actual set-entry surface;
+- manage disclosure actions are touchable and visibly effective;
+- Golden Path and mobile regression suites pass.
+
 ## Active P3 — Beginner-first Nutrition Loop integration
 Status: IMPLEMENTED / EXACT-HEAD GREEN / STACKED PRS OPEN / MERGE-INTEGRITY YELLOW
 Owner: Engineering + AI Data + Product + Release QA
@@ -18,7 +37,7 @@ Verification:
 - #391 Gate #2362 GREEN.
 
 Acceptance remaining:
-- Shared-file drift with PR #388 must be reconciled against latest PRODUCT main before any merge; direct stacked integration was tested by temporary PR #392 and was not automatically mergeable.
+- PR #388 is now merged on PRODUCT main `3362b896...`; replay/rebase the Nutrition stack onto this latest main and resolve the previously proven shared-file drift before any Nutrition merge.
 - After replay/rebase, fresh exact-head Release Gate must be GREEN.
 - Merge/post-merge evidence must be recorded before status can become DONE/RELEASED.
 
