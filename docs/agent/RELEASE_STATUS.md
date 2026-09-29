@@ -1,3 +1,17 @@
+## Beginner-first Nutrition Loop — 2026-09-30
+Decision: **YELLOW / EXACT-HEAD GREEN / NOT MERGED**.
+- PRODUCT main remains `0f7a3b5a88c52c083ed433ab64716bd73b92ec61`; none of PRs #386/#387/#389/#390/#391 is released on main yet.
+- Exact-head evidence:
+  - PR #386 `98416e2c...` → Gate #2346 SUCCESS.
+  - PR #387 `181b5de8...` → Gate #2347 SUCCESS.
+  - PR #389 `ace25673...` → Gate #2352 SUCCESS.
+  - PR #390 `9d2af82b...` → Gate #2355 SUCCESS.
+  - PR #391 `6e113b2d...` → Gate #2362 SUCCESS.
+- Phase 4 initial Gate #2353 and earlier Phase 5 heads failed during test refinement; latest exact heads supersede those failures and are GREEN.
+- PR #388 touches shared `01_app/app.js` and its latest Gate #2354 is RED; integration order is unresolved.
+- No production deploy, secret, backend authority, or notification-permission change is claimed by this Nutrition stack.
+- Required release gate: latest-main replay/rebase after shared-file ordering is settled → fresh exact-head GREEN → merge → post-merge current-main verification.
+
 ## Android Health Connect current-main release — 2026-09-29
 Decision: **GREEN exact-head / MERGED / DEVICE EVIDENCE OPEN**.
 - PRODUCT main: `a933231c15133766c3469c0a3a0e4dcf59bf3ab0` via PR #381.
