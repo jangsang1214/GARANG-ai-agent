@@ -3123,9 +3123,33 @@
     {
       "id": "TASK-NUTRITION-STACK-LATEST-MAIN-INTEGRATION",
       "kind": "task",
-      "title": "Reconcile PR #388 shared app.js ownership, replay Nutrition stack on latest main, rerun exact-head gate, then merge safely",
+      "title": "Replay Nutrition stack on PRODUCT main 3362b896 after PR #388 merge, resolve shared-file drift, rerun exact-head gate, then merge safely",
       "status": "active",
       "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR388-WORKOUT-UX",
+      "kind": "change",
+      "title": "PRODUCT PR #388 Workout execution UX and action normalization merged as 3362b896",
+      "status": "done",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR388-GATE2417",
+      "kind": "verification",
+      "title": "PR #388 exact head 862d6c6 passes Release Gate #2417 and Founder OS Event #3163",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "RESULT-WORKOUT-EXECUTION-UX-CANONICAL",
+      "kind": "result",
+      "title": "Workout session ownership, routine gating and exercise action feedback are canonical on PRODUCT main",
+      "status": "done",
+      "ownerWorkstream": "design-brand",
       "repositoryId": "product"
     }
   ],
@@ -5509,6 +5533,26 @@
       "from": "INIT-BEGINNER-NUTRITION-LOOP",
       "to": "GOAL-PROTECT-GOLDEN-PATH",
       "kind": "supports"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR388-GATE2417",
+      "to": "CHANGE-PRODUCT-PR388-WORKOUT-UX",
+      "kind": "verifies"
+    },
+    {
+      "from": "RESULT-WORKOUT-EXECUTION-UX-CANONICAL",
+      "to": "VERIFY-PRODUCT-PR388-GATE2417",
+      "kind": "depends-on"
+    },
+    {
+      "from": "RESULT-WORKOUT-EXECUTION-UX-CANONICAL",
+      "to": "GOAL-PROTECT-GOLDEN-PATH",
+      "kind": "supports"
+    },
+    {
+      "from": "TASK-NUTRITION-STACK-LATEST-MAIN-INTEGRATION",
+      "to": "RESULT-WORKOUT-EXECUTION-UX-CANONICAL",
+      "kind": "depends-on"
     }
   ]
 }
