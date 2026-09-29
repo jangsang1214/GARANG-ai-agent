@@ -1,3 +1,17 @@
+## Workout execution UX / PR #388 — 2026-09-30
+Decision: **GREEN exact-head / MERGED; post-merge push-run observation UNKNOWN**.
+- PRODUCT main: `3362b8965506e574279a31d889272ba07e342cf6`.
+- PR #388 exact head: `862d6c6f5bcf42fb219f1b8cf8cd96332d96042e`.
+- GARANG Release Gate #2417 / `36618350782`: FULL GREEN.
+  - core-build-rules: SUCCESS
+  - browser-webkit: SUCCESS
+  - final verify: SUCCESS
+- Founder OS Event Envelope #3163 / `36618352626`: SUCCESS.
+- Released scope: single canonical Workout session owner; same-card live-state transition; routine-gated Workout start; primary exercise Record action with progressively disclosed management; repaired Today/WebKit disclosure/touch geometry; Golden Path preserved.
+- No backend authority, schema, secret, payment, or production deployment change is part of #388.
+- Separate post-merge push-triggered workflow observation is unavailable through the current connector; merge SHA/main identity is VERIFIED, but post-merge push-run status remains UNKNOWN.
+- Beginner Nutrition stack is still NOT released and now requires replay/rebase on this new main followed by a fresh exact-head Gate.
+
 ## Beginner-first Nutrition Loop — 2026-09-30
 Decision: **YELLOW / EXACT-HEAD GREEN / NOT MERGED**.
 - PRODUCT main remains `0f7a3b5a88c52c083ed433ab64716bd73b92ec61`; none of PRs #386/#387/#389/#390/#391 is released on main yet.
