@@ -1,3 +1,27 @@
+## Active P3 — Beginner-first Nutrition Loop integration
+Status: IMPLEMENTED / EXACT-HEAD GREEN / STACKED PRS OPEN / MERGE-INTEGRITY YELLOW
+Owner: Engineering + AI Data + Product + Release QA
+Goal: reduce beginner Nutrition cognitive load while preserving deterministic nutrition truth and closing recommendation → action → recorded-outcome evidence.
+
+Scope:
+- PR #386: beginner meal-time preferences.
+- PR #387: route in-app meal reminders into canonical Meal Scan.
+- PR #389: simple post-meal review with technical numbers behind progressive disclosure.
+- PR #390: one-sentence deterministic next-meal direction + one primary option; portions/macros/history collapsed by default.
+- PR #391: consent-bounded shown/accepted/modified/dismissed/recorded/review-viewed evidence linked to recommendation lineage.
+
+Verification:
+- #386 Gate #2346 GREEN.
+- #387 Gate #2347 GREEN.
+- #389 Gate #2352 GREEN.
+- #390 Gate #2355 GREEN.
+- #391 Gate #2362 GREEN.
+
+Acceptance remaining:
+- Shared-file drift with PR #388 must be reconciled against latest PRODUCT main before any merge.
+- After replay/rebase, fresh exact-head Release Gate must be GREEN.
+- Merge/post-merge evidence must be recorded before status can become DONE/RELEASED.
+
 ## Current strategic queue — 2026-09-29 live reconciliation
 Status: CANONICAL / supersedes older queue text below where it conflicts.
 1. **P2 Engineering runtime/WebKit determinism — DONE / VERIFIED CLOSED.** PR #372 Gate #2295 and post-merge main Gate #2296 both FULL GREEN on attempt 1.
