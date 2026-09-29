@@ -1,3 +1,12 @@
+## Live handoff — 2026-09-30 Beginner-first Nutrition Loop
+- PRODUCT main observed: `0f7a3b5a88c52c083ed433ab64716bd73b92ec61`.
+- Nutrition stack is implemented in PRs #386 → #387 → #389 → #390 → #391 and all five latest exact heads are Release-Gate GREEN (#2346/#2347/#2352/#2355/#2362).
+- Stack is NOT merged; status is YELLOW/PARTIAL, not DONE.
+- PR #388 is a separate Workout change that also edits `01_app/app.js`; its latest Gate #2354 is RED.
+- Preserve shared-file integrity: whichever change lands first, replay/rebase the other stack on latest main and rerun the exact-head gate before merge.
+- Nutrition architecture boundary: deterministic core owns nutrition judgment; UI translates to beginner language; Meal Scan/Nutrition draft-save remains mutation owner; analytics evidence is consent-bounded and does not carry nutrition measurements in recommendation IDs.
+- Do not claim released behavior until post-merge current-main evidence exists.
+
 ## Live handoff — 2026-09-29 P2 closed / P4-P5 active
 - CONTROL main: `8a563e708224813cd9c43e029cdc0bf872b8762b`; CONTROL PR #114 owns state reconciliation.
 - PRODUCT main: `246df18111772449dbaff3011329850882b03b0e`.
