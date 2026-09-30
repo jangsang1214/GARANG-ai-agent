@@ -1,3 +1,14 @@
+## Beginner-first Nutrition Loop current-main integration — 2026-09-30 / PR #397 exact-head GREEN
+- VERIFIED PRODUCT main: `3362b8965506e574279a31d889272ba07e342cf6`.
+- VERIFIED integration PR #397 `Integrate beginner-first Nutrition loop on Workout #388 main`: OPEN / UNMERGED / mergeable=true, exact head `6bb3e857203c0e63e1ade6fdb18955389ea67f69`.
+- VERIFIED drift: PR #397 is 21 commits ahead / 0 behind PRODUCT main; merge base is current main `3362b896...`.
+- VERIFIED GARANG Release Gate #2422 / run `36621586994`: FULL GREEN; core-build-rules SUCCESS, browser-webkit SUCCESS, verify SUCCESS.
+- VERIFIED Founder OS Event Envelope #3176 / run `36621587069`: SUCCESS.
+- VERIFIED replay scope: 20 files carrying Phase 1–5 behavior — meal-time preferences → in-app reminder to canonical Meal Scan → beginner post-meal review → simplified deterministic next-meal guidance → consent-bounded recommendation/action/outcome evidence.
+- VERIFIED guardrails from PR scope: no new nutrition truth store, no notification-permission auto-request, no production deploy, no secrets/billing change; Workout #388 current-main ownership is preserved.
+- RELEASE STATUS: YELLOW / MERGE-READY EVIDENCE. Main merge is still approval-gated; do not call the Nutrition Loop released until merge identity and post-merge evidence are recorded.
+- Next action: Founder-approved squash merge of PRODUCT PR #397 with expected head `6bb3e857...`, then reconcile PRODUCT main and record post-merge release evidence.
+
 ## Workout execution UX closure — 2026-09-30 / PR #388 merged
 - VERIFIED PRODUCT main: `3362b8965506e574279a31d889272ba07e342cf6` via Founder-approved squash merge of PR #388.
 - VERIFIED PR #388 exact head `862d6c6f5bcf42fb219f1b8cf8cd96332d96042e`: GARANG Release Gate #2417 / run `36618350782` FULL GREEN with core-build-rules, browser-webkit and final verify all SUCCESS; Founder OS Event Envelope #3163 / run `36618352626` SUCCESS.
