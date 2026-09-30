@@ -1,4 +1,15 @@
 ## Beginner-first Nutrition Loop / PR #397 — 2026-09-30
+Decision: **GREEN EXACT-HEAD / MERGED / RELEASED ON MAIN; POST-MERGE PUSH-RUN UNKNOWN**.
+- PRODUCT main: `60a76145df448a6103f2fc8da46674c3834e5f33`.
+- PR #397: CLOSED / MERGED.
+- Expected head merged: `6bb3e857203c0e63e1ade6fdb18955389ea67f69`.
+- GARANG Release Gate #2422 / run `36621586994`: FULL GREEN.
+- Founder OS Event Envelope #3176 / run `36621587069`: SUCCESS.
+- Released behavior: meal-time preferences, in-app reminder → canonical Meal Scan, beginner post-meal review, simplified deterministic next-meal direction, consent-bounded recommendation/action/outcome linkage.
+- No production deploy, secret/billing change, notification-permission auto-request, or competing Nutrition state/save owner was introduced.
+- Separate post-merge push-triggered workflow observation for `60a76145...` is not visible through the current commit-run connector and remains UNKNOWN.
+
+## Beginner-first Nutrition Loop / PR #397 — 2026-09-30
 Decision: **YELLOW / EXACT-HEAD FULL GREEN / MERGE-READY / NOT RELEASED**.
 - PRODUCT main: `3362b8965506e574279a31d889272ba07e342cf6`.
 - PR #397 exact head: `6bb3e857203c0e63e1ade6fdb18955389ea67f69`.
