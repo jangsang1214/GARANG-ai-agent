@@ -1,3 +1,11 @@
+## Latest handoff — canonical non-overlap owners — 2026-09-30
+- Do not create another Recovery replay: #400 is canonical and Gate #2427 FULL GREEN.
+- Do not create another Nutrition visibility line: #399 is canonical and touches only Nutrition runtime + meal reminder regression.
+- #399 does not provide background OS notifications; that capability remains genuinely missing.
+- #401 is the active Workout/Design owner and currently RED. Avoid touching its Workout/mobile files from Engineering.
+- #402/#378/#360 are closed as superseded Recovery duplicates.
+- Shortest safe sequence: stabilize/merge Workout owner → replay/recheck #399 and #400 tiny deltas on new main → merge them one at a time with exact-head evidence → then start native/background meal notifications as a separate line.
+
 ## Latest Engineering handoff — Nutrition reality + Recovery #402 — 2026-09-30
 - PRODUCT main `60a76145...` has the merged Beginner-first Nutrition Loop and is post-merge verified by Gate #2423 + Pages #943.
 - Meal-time Settings/save is present. Due-time behavior is an in-app Today reminder that opens canonical Meal Scan.
