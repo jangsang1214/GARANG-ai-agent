@@ -2,6 +2,38 @@
   "version": 1,
   "nodes": [
     {
+      "id": "VERIFY-PRODUCT-PR402-GATE2441",
+      "kind": "verification",
+      "title": "PR #402 core GREEN; Gate #2441 browser Golden Path RED at Workout rest visibility",
+      "status": "blocked",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR402",
+      "kind": "change",
+      "title": "PRODUCT PR #402 current-main Recovery longitudinal evidence replay",
+      "status": "in_progress",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-RECOVERY-LONGITUDINAL-CURRENT-MAIN",
+      "kind": "task",
+      "title": "Replay longitudinal physiological recovery evidence on current PRODUCT main",
+      "status": "in_progress",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-NATIVE-MEAL-NOTIFICATIONS",
+      "kind": "task",
+      "title": "Add explicit-opt-in native/background meal notifications routed to canonical Meal Scan",
+      "status": "planned",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
       "id": "RESULT-BEGINNER-NUTRITION-RELEASED",
       "kind": "result",
       "title": "Beginner-first Nutrition Loop released on PRODUCT main via PR #397",
