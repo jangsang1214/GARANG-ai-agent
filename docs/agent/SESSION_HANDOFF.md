@@ -1,3 +1,13 @@
+## Latest Engineering handoff — Beginner-first Nutrition current-main integration — 2026-09-30
+- CONTROL main observed: `b9be5365b213bf195c8d3856a579d3d1c6519956`.
+- PRODUCT main observed: `3362b8965506e574279a31d889272ba07e342cf6` after merged Workout PR #388.
+- Nutrition phases #386/#387/#389/#390/#391 have been replayed/reconciled onto current main as PRODUCT PR #397.
+- PR #397 exact head `6bb3e857203c0e63e1ade6fdb18955389ea67f69`: OPEN / UNMERGED / mergeable=true / 0 behind main.
+- Release Gate #2422 / `36621586994`: FULL GREEN across core-build-rules, browser-webkit, verify.
+- Founder OS Event #3176 / `36621587069`: SUCCESS.
+- No further code fix is indicated by current CI evidence. The next blocking action is approval-gated: merge PR #397, then observe resulting PRODUCT main and record post-merge release evidence.
+- Do not revive the older stacked Nutrition branches as release candidates; #397 is the current-main integration owner.
+
 ## Live handoff — 2026-09-30 Workout execution UX closed
 - PRODUCT main is `3362b8965506e574279a31d889272ba07e342cf6` after Founder-approved PR #388 squash merge.
 - PR #388 exact head `862d6c6...` passed Release Gate #2417 FULL GREEN and Founder OS Event #3163 SUCCESS.
