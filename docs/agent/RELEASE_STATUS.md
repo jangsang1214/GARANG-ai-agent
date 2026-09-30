@@ -1,3 +1,17 @@
+## Beginner-first Nutrition Loop / PR #397 — 2026-09-30
+Decision: **YELLOW / EXACT-HEAD FULL GREEN / MERGE-READY / NOT RELEASED**.
+- PRODUCT main: `3362b8965506e574279a31d889272ba07e342cf6`.
+- PR #397 exact head: `6bb3e857203c0e63e1ade6fdb18955389ea67f69`.
+- GitHub state: OPEN / UNMERGED / mergeable=true; 21 ahead / 0 behind current main.
+- GARANG Release Gate #2422 / run `36621586994`: FULL GREEN.
+  - core-build-rules: SUCCESS
+  - browser-webkit: SUCCESS
+  - verify: SUCCESS
+- Founder OS Event Envelope #3176 / run `36621587069`: SUCCESS.
+- Integrated scope: meal-time preferences, in-app meal reminder → canonical Meal Scan, simple post-meal review, deterministic simplified next-meal guidance, and consent-bounded recommendation/action/outcome linkage.
+- Guardrails: no production deploy, secrets/billing change, notification-permission auto-request, or competing Nutrition truth/save owner.
+- Release boundary: #397 is not on main yet. Merge remains Founder approval-gated; post-merge identity/evidence must be recorded before RELEASED/GREEN-on-main can be claimed.
+
 ## Workout execution UX / PR #388 — 2026-09-30
 Decision: **GREEN exact-head / MERGED; post-merge push-run observation UNKNOWN**.
 - PRODUCT main: `3362b8965506e574279a31d889272ba07e342cf6`.
