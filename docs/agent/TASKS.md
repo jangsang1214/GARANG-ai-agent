@@ -1,3 +1,14 @@
+## Completed P3 — Beginner-first Nutrition Loop integration
+Status: DONE / RELEASED / EXACT-HEAD FULL GREEN
+Owner: Engineering + AI Data + Product + Release QA
+- PRODUCT PR #397 exact head `6bb3e857203c0e63e1ade6fdb18955389ea67f69` passed Release Gate #2422 / `36621586994` FULL GREEN.
+- Founder OS Event #3176 / `36621587069`: SUCCESS.
+- Founder-approved expected-head squash merge succeeded.
+- PRODUCT main is now `60a76145df448a6103f2fc8da46674c3834e5f33`.
+- Phase 1–5 beginner Nutrition behavior is now on main.
+- Shared Workout #388 ownership remains preserved.
+- Post-merge push-run observation remains UNKNOWN through the current connector and is not required to claim the exact-head-verified merge itself.
+
 ## Active P3 — Beginner-first Nutrition Loop integration
 Status: IMPLEMENTED / CURRENT-MAIN REPLAY COMPLETE / EXACT-HEAD FULL GREEN / MERGE-READY YELLOW
 Owner: Engineering + AI Data + Product + Release QA
