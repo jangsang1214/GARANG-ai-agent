@@ -1,3 +1,9 @@
+## Current non-overlap queue — 2026-09-30
+1. **Design/Workout #401 — active owner, do not overlap.** Gate #2442 RED; Design/Brand owns the Workout/mobile geometry repair.
+2. **Nutrition visibility #399 — implemented, blocked by required browser gate.** Two files only; makes meal settings/reminder discoverable and adds compact open-app reminder. Gate #2438 fails in untouched Workout superset/rest regression.
+3. **Recovery longitudinal #400 — exact-head FULL GREEN.** Three files only; Gate #2427 FULL GREEN. Hold merge until active Workout current-main line settles to avoid unnecessary branch churn, then latest-main drift/replay + fresh gate if required.
+4. **Native/background meal notification — still missing.** Separate future line after shared UI/Workout stabilization; requires explicit user opt-in and iOS/Android notification scheduling.
+
 ## Active P3 — Native/background meal reminder gap
 Status: GAP VERIFIED / NOT IMPLEMENTED / DEFERRED FROM CURRENT OVERLAPPING UI LINE
 Owner: Engineering + Release QA
