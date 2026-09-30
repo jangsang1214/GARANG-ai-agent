@@ -1,3 +1,13 @@
+## Nutrition notification reality + Recovery #402 — 2026-09-30
+- VERIFIED PRODUCT main remains `60a76145df448a6103f2fc8da46674c3834e5f33`.
+- VERIFIED Nutrition post-merge evidence on this exact main: GARANG Release Gate #2423 / run `36723712606` SUCCESS; browser-webkit explicitly passed WebKit Settings touch, in-app meal reminder → canonical Meal Scan, and Nutrition recommendation flow. Pages #943 / run `36723711395` SUCCESS.
+- VERIFIED meal-time settings exist in current main and persist canonical `settings.mealSchedule` with local timezone mode.
+- VERIFIED current reminder capability is IN-APP ONLY: at the due meal time, Today becomes the meal reminder next action and routes directly to canonical Meal Scan.
+- VERIFIED missing capability: repository-wide code search finds no iOS `UNUserNotificationCenter`, Android `NotificationManager`, Web `PushManager`, or `Notification.requestPermission` implementation. App-closed/background OS meal notifications are therefore NOT IMPLEMENTED.
+- Active non-overlapping Engineering line: PRODUCT PR #402 `Replay longitudinal recovery evidence on current main`, exact head `93f65b30c0cf0d0b332a5985a1c8d8065f3a321e`, 3-file Recovery/Intelligence scope only.
+- PR #402 core-build-rules SUCCESS, including 15 autonomous intelligence loop tests and browser/server parity. Release Gate #2441 first attempt is RED because browser Golden Path timed out waiting for visible `#workoutExecutionRest`; no #402 file touches Workout/UI.
+- Status: Nutrition web/in-app loop GREEN; native/background meal notification GAP OPEN; Recovery #402 YELLOW pending Workout Golden Path stability without overlapping the active Design/Workout line.
+
 ## Beginner-first Nutrition Loop released — 2026-09-30 / PR #397 merged
 - VERIFIED PRODUCT main: `60a76145df448a6103f2fc8da46674c3834e5f33`.
 - VERIFIED PRODUCT PR #397 merged=true via Founder-approved expected-head squash merge from exact head `6bb3e857203c0e63e1ade6fdb18955389ea67f69`.
