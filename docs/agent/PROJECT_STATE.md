@@ -1,3 +1,14 @@
+## Beginner-first Nutrition Loop released — 2026-09-30 / PR #397 merged
+- VERIFIED PRODUCT main: `60a76145df448a6103f2fc8da46674c3834e5f33`.
+- VERIFIED PRODUCT PR #397 merged=true via Founder-approved expected-head squash merge from exact head `6bb3e857203c0e63e1ade6fdb18955389ea67f69`.
+- VERIFIED pre-merge Release Gate #2422 / run `36621586994`: FULL GREEN across core-build-rules, browser-webkit and verify.
+- VERIFIED Founder OS Event Envelope #3176 / run `36621587069`: SUCCESS.
+- VERIFIED main commit title: `Integrate beginner-first Nutrition loop on Workout #388 main (#397)`.
+- Released scope: meal-time preferences → in-app reminder → canonical Meal Scan → beginner post-meal review → simplified deterministic next-meal guidance → consent-bounded recommendation/action/outcome evidence.
+- Guardrails preserved: no competing Nutrition truth/save owner, no automatic notification-permission request, no production deploy, no secrets/billing change.
+- Post-merge push-triggered Release Gate observation is currently UNKNOWN from the available commit-run connector; do not relabel it separately GREEN without direct evidence.
+- Status: DONE / RELEASED ON PRODUCT MAIN with exact-head GREEN evidence.
+
 ## Beginner-first Nutrition Loop current-main integration — 2026-09-30 / PR #397 exact-head GREEN
 - VERIFIED PRODUCT main: `3362b8965506e574279a31d889272ba07e342cf6`.
 - VERIFIED integration PR #397 `Integrate beginner-first Nutrition loop on Workout #388 main`: OPEN / UNMERGED / mergeable=true, exact head `6bb3e857203c0e63e1ade6fdb18955389ea67f69`.
