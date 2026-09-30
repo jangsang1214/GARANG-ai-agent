@@ -1,3 +1,24 @@
+## Active integration evidence — 2026-09-30
+- #399 Nutrition visibility: **YELLOW / REQUIRED GATE RED**. Dedicated Nutrition change is isolated to 2 files; Gate #2438 fails in existing Workout superset/rest WebKit regression, not in the meal-reminder-specific path.
+- #400 Recovery longitudinal: **GREEN exact-head / NOT MERGED**. Gate #2427 / `36726080526` FULL GREEN; core-build-rules, browser-webkit, verify all SUCCESS.
+- #401 Workout mobile geometry: **RED exact-head** at current Gate #2442; active Design/Workout line.
+- #402 duplicate Recovery replay: CLOSED / superseded after byte-identical comparison with #400.
+- Main remains `60a76145...`; do not claim #399/#400 released until latest-main integration and merge are complete.
+
+## Nutrition post-merge verification + Recovery #402 — 2026-09-30
+Nutrition decision: **GREEN WEB/IN-APP / NATIVE OS NOTIFICATION NOT IMPLEMENTED**.
+- PRODUCT main `60a76145df448a6103f2fc8da46674c3834e5f33`.
+- Post-merge GARANG Release Gate #2423 / `36723712606`: SUCCESS.
+- browser-webkit PASS: Settings touch regression; in-app meal reminder → canonical Meal Scan; Nutrition recommendation flow.
+- Pages #943 / `36723711395`: SUCCESS.
+- This evidence verifies open-app in-app reminder behavior only. It does not establish background/closed-app OS notification capability.
+
+Recovery decision: **YELLOW / CORE VERIFIED / REQUIRED BROWSER GATE RED**.
+- PR #402 exact head `93f65b30c0cf0d0b332a5985a1c8d8065f3a321e`.
+- core-build-rules SUCCESS including Recovery/Intelligence parity tests.
+- Gate #2441 browser-webkit failed in existing Workout Golden Path while waiting for `#workoutExecutionRest`; #402 changes no Workout/UI files.
+- Merge blocked until latest-main Workout Golden Path is stable and a fresh exact-head required gate passes.
+
 ## Beginner-first Nutrition Loop / PR #397 — 2026-09-30
 Decision: **GREEN EXACT-HEAD / MERGED / RELEASED ON MAIN; POST-MERGE PUSH-RUN UNKNOWN**.
 - PRODUCT main: `60a76145df448a6103f2fc8da46674c3834e5f33`.

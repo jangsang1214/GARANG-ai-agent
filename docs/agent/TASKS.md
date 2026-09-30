@@ -1,3 +1,45 @@
+## Current non-overlap queue — 2026-09-30
+1. **Design/Workout #401 — active owner, do not overlap.** Gate #2442 RED; Design/Brand owns the Workout/mobile geometry repair.
+2. **Nutrition visibility #399 — implemented, blocked by required browser gate.** Two files only; makes meal settings/reminder discoverable and adds compact open-app reminder. Gate #2438 fails in untouched Workout superset/rest regression.
+3. **Recovery longitudinal #400 — exact-head FULL GREEN.** Three files only; Gate #2427 FULL GREEN. Hold merge until active Workout current-main line settles to avoid unnecessary branch churn, then latest-main drift/replay + fresh gate if required.
+4. **Native/background meal notification — still missing.** Separate future line after shared UI/Workout stabilization; requires explicit user opt-in and iOS/Android notification scheduling.
+
+## Active P3 — Native/background meal reminder gap
+Status: GAP VERIFIED / NOT IMPLEMENTED / DEFERRED FROM CURRENT OVERLAPPING UI LINE
+Owner: Engineering + Release QA
+Goal: make configured meal times produce an explicit user-opt-in OS notification when GARANG is backgrounded/closed, while preserving canonical Meal Scan routing and never auto-requesting permission.
+
+Verified current behavior:
+- meal schedule Settings UI/save exists on PRODUCT main `60a76145...`;
+- post-merge Gate #2423 passes Settings touch + in-app meal reminder → Meal Scan;
+- Pages #943 deployed the merged Nutrition loop;
+- current reminder only owns the open-app Today next action.
+
+Missing:
+- no iOS UNUserNotificationCenter implementation;
+- no Android NotificationManager implementation;
+- no Web Push/Notification permission implementation.
+
+Acceptance for future implementation:
+- explicit user opt-in before notification permission;
+- local-time breakfast/lunch/dinner scheduling with enable/disable updates;
+- notification tap routes to canonical Meal Scan;
+- no duplicate notification truth store;
+- iOS/Android host tests plus Golden Path regression;
+- do not overlap active Workout/Body shared UI work unless latest-main reconciliation proves safe.
+
+## Active P4/P5 — Recovery longitudinal evidence current-main replay
+Status: IMPLEMENTED / CORE GREEN / RELEASE GATE YELLOW
+Owner: Engineering + AI Data + Release QA
+- PRODUCT PR #402 head `93f65b30c0cf0d0b332a5985a1c8d8065f3a321e`.
+- Scope: exactly 3 files: browser/server Intelligence Episode + autonomous intelligence regression.
+- Current-main blobs matched the old #378 base before replay, so no intervening edits were overwritten.
+- core-build-rules SUCCESS; 15 autonomous intelligence loop tests PASS.
+- browser Meal Reminder, Nutrition recommendation, Real Meal Scan and other checks passed before the failure.
+- Gate #2441 failed at existing Workout Golden Path wait for `#workoutExecutionRest` to become visible.
+- No #402 file touches Workout/Body/Today UI.
+- Do not merge while required Gate is RED. Do not patch Workout from this workstream while Design owns that surface.
+
 ## Completed P3 — Beginner-first Nutrition Loop integration
 Status: DONE / RELEASED / EXACT-HEAD FULL GREEN
 Owner: Engineering + AI Data + Product + Release QA

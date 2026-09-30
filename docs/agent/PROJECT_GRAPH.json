@@ -2,6 +2,70 @@
   "version": 1,
   "nodes": [
     {
+      "id": "CHANGE-PRODUCT-PR401",
+      "kind": "change",
+      "title": "PRODUCT PR #401 active Workout mobile geometry repair",
+      "status": "blocked",
+      "ownerWorkstream": "design-brand",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR400-GATE2427",
+      "kind": "verification",
+      "title": "PR #400 Release Gate #2427 FULL GREEN",
+      "status": "done",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR400",
+      "kind": "change",
+      "title": "PRODUCT PR #400 current-main longitudinal recovery summary",
+      "status": "verified",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR399",
+      "kind": "change",
+      "title": "PRODUCT PR #399 makes meal-time settings and in-app reminders discoverable",
+      "status": "blocked",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR402-GATE2441",
+      "kind": "verification",
+      "title": "PR #402 core GREEN; Gate #2441 browser Golden Path RED at Workout rest visibility",
+      "status": "superseded",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR402",
+      "kind": "change",
+      "title": "PRODUCT PR #402 current-main Recovery longitudinal evidence replay",
+      "status": "superseded",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-RECOVERY-LONGITUDINAL-CURRENT-MAIN",
+      "kind": "task",
+      "title": "Replay longitudinal physiological recovery evidence on current PRODUCT main",
+      "status": "superseded",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-NATIVE-MEAL-NOTIFICATIONS",
+      "kind": "task",
+      "title": "Add explicit-opt-in native/background meal notifications routed to canonical Meal Scan",
+      "status": "planned",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
       "id": "RESULT-BEGINNER-NUTRITION-RELEASED",
       "kind": "result",
       "title": "Beginner-first Nutrition Loop released on PRODUCT main via PR #397",

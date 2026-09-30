@@ -1,3 +1,20 @@
+## Latest handoff — canonical non-overlap owners — 2026-09-30
+- Do not create another Recovery replay: #400 is canonical and Gate #2427 FULL GREEN.
+- Do not create another Nutrition visibility line: #399 is canonical and touches only Nutrition runtime + meal reminder regression.
+- #399 does not provide background OS notifications; that capability remains genuinely missing.
+- #401 is the active Workout/Design owner and currently RED. Avoid touching its Workout/mobile files from Engineering.
+- #402/#378/#360 are closed as superseded Recovery duplicates.
+- Shortest safe sequence: stabilize/merge Workout owner → replay/recheck #399 and #400 tiny deltas on new main → merge them one at a time with exact-head evidence → then start native/background meal notifications as a separate line.
+
+## Latest Engineering handoff — Nutrition reality + Recovery #402 — 2026-09-30
+- PRODUCT main `60a76145...` has the merged Beginner-first Nutrition Loop and is post-merge verified by Gate #2423 + Pages #943.
+- Meal-time Settings/save is present. Due-time behavior is an in-app Today reminder that opens canonical Meal Scan.
+- Background/closed-app phone notification is not implemented; code search found no iOS/Android/Web notification scheduling APIs.
+- Design/Brand is actively working Workout; avoid `01_app/app.js`, Workout/Body/Today shared UI unless explicitly reconciling after that line lands.
+- Engineering current non-overlapping candidate is PR #402, 3 Recovery/Intelligence files only.
+- #402 core tests are GREEN; full Gate #2441 is RED at an untouched Workout rest-timer Golden Path wait. Do not merge #402 yet and do not mask with blind reruns.
+- After Workout Design current-main integration stabilizes, rerun/recreate the smallest current-main Recovery line if needed, then implement explicit-opt-in native/background meal notifications as a separate line.
+
 ## Latest Engineering handoff — Beginner-first Nutrition merged — 2026-09-30
 - PRODUCT main: `60a76145df448a6103f2fc8da46674c3834e5f33`.
 - PRODUCT PR #397 is MERGED after Founder approval and expected-head protection.

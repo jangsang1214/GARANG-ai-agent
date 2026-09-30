@@ -1,3 +1,23 @@
+## Canonical active-line reconciliation — 2026-09-30 / #399 #400 #401
+- VERIFIED PRODUCT main: `60a76145df448a6103f2fc8da46674c3834e5f33`.
+- Nutrition discoverability owner is PRODUCT PR #399 `Make meal time settings and reminders visible`, exact head `bef4dfaf60767a9b0e856c153017e6471aa5bad5`, only 2 Nutrition-specific files. It adds a visible Nutrition entry for meal-time settings and a compact open-app due-time reminder routed through canonical Meal Scan. Boundary remains explicit: no background/closed-app OS notification implementation.
+- PR #399 Gate #2438 is RED because `browser-webkit-regression.test.cjs` timed out in the existing Workout superset/rest flow; its dedicated Nutrition scope does not modify Workout.
+- Recovery longitudinal evidence owner is PRODUCT PR #400 `Replay longitudinal recovery outcome summary on current main`, exact head `930c7d55969b0d418a25368bbfbc50cd9e946a2a`, exactly 3 non-Workout files.
+- VERIFIED #400 Release Gate #2427 / run `36726080526`: FULL GREEN across core-build-rules, browser-webkit and verify.
+- PR #402 was detected as an accidental duplicate of #400; all three changed file blob SHAs were byte-identical. #402 is CLOSED / superseded. Older #378 and #360 are also CLOSED / superseded by #400.
+- Active Design/Workout owner is PRODUCT PR #401 `Fix Workout mobile timer and full-width set geometry`, exact head `9b7cf6bfc6303a1ef0e6b27217c1b768d0ab35ec`; Gate #2442 is currently RED.
+- Throughput decision: do not advance main with #399/#400 while active Workout #401 is still being repaired if doing so would force avoidable latest-main replay. Let the Workout line settle, then replay/recheck the tiny independent #399/#400 deltas on the resulting main and merge with fresh evidence.
+
+## Nutrition notification reality + Recovery #402 — 2026-09-30
+- VERIFIED PRODUCT main remains `60a76145df448a6103f2fc8da46674c3834e5f33`.
+- VERIFIED Nutrition post-merge evidence on this exact main: GARANG Release Gate #2423 / run `36723712606` SUCCESS; browser-webkit explicitly passed WebKit Settings touch, in-app meal reminder → canonical Meal Scan, and Nutrition recommendation flow. Pages #943 / run `36723711395` SUCCESS.
+- VERIFIED meal-time settings exist in current main and persist canonical `settings.mealSchedule` with local timezone mode.
+- VERIFIED current reminder capability is IN-APP ONLY: at the due meal time, Today becomes the meal reminder next action and routes directly to canonical Meal Scan.
+- VERIFIED missing capability: repository-wide code search finds no iOS `UNUserNotificationCenter`, Android `NotificationManager`, Web `PushManager`, or `Notification.requestPermission` implementation. App-closed/background OS meal notifications are therefore NOT IMPLEMENTED.
+- Active non-overlapping Engineering line: PRODUCT PR #402 `Replay longitudinal recovery evidence on current main`, exact head `93f65b30c0cf0d0b332a5985a1c8d8065f3a321e`, 3-file Recovery/Intelligence scope only.
+- PR #402 core-build-rules SUCCESS, including 15 autonomous intelligence loop tests and browser/server parity. Release Gate #2441 first attempt is RED because browser Golden Path timed out waiting for visible `#workoutExecutionRest`; no #402 file touches Workout/UI.
+- Status: Nutrition web/in-app loop GREEN; native/background meal notification GAP OPEN; Recovery #402 YELLOW pending Workout Golden Path stability without overlapping the active Design/Workout line.
+
 ## Beginner-first Nutrition Loop released — 2026-09-30 / PR #397 merged
 - VERIFIED PRODUCT main: `60a76145df448a6103f2fc8da46674c3834e5f33`.
 - VERIFIED PRODUCT PR #397 merged=true via Founder-approved expected-head squash merge from exact head `6bb3e857203c0e63e1ade6fdb18955389ea67f69`.
