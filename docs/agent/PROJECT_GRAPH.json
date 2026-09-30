@@ -2,10 +2,18 @@
   "version": 1,
   "nodes": [
     {
+      "id": "RESULT-BEGINNER-NUTRITION-RELEASED",
+      "kind": "result",
+      "title": "Beginner-first Nutrition Loop released on PRODUCT main via PR #397",
+      "status": "done",
+      "ownerWorkstream": "command-center",
+      "repositoryId": "product"
+    },
+    {
       "id": "TASK-BEGINNER-NUTRITION-CURRENT-MAIN",
       "kind": "task",
       "title": "Integrate Beginner-first Nutrition Loop on current PRODUCT main",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
@@ -13,7 +21,7 @@
       "id": "CHANGE-PRODUCT-PR397",
       "kind": "change",
       "title": "PRODUCT PR #397 integrates Beginner-first Nutrition Loop on Workout #388 main",
-      "status": "in_progress",
+      "status": "done",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
     },
