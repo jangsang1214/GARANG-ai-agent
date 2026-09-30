@@ -1,3 +1,25 @@
+## Active P3 — Beginner-first Nutrition Loop integration
+Status: IMPLEMENTED / CURRENT-MAIN REPLAY COMPLETE / EXACT-HEAD FULL GREEN / MERGE-READY YELLOW
+Owner: Engineering + AI Data + Product + Release QA
+Goal: reduce beginner Nutrition cognitive load while preserving deterministic nutrition truth and closing recommendation → action → recorded-outcome evidence.
+
+Current integration:
+- PRODUCT main: `3362b8965506e574279a31d889272ba07e342cf6`.
+- PR #397 exact head: `6bb3e857203c0e63e1ade6fdb18955389ea67f69`.
+- PR #397: OPEN / UNMERGED / mergeable=true / 0 behind current main.
+- Release Gate #2422 / `36621586994`: core-build-rules ✅, browser-webkit ✅, verify ✅.
+- Founder OS Event #3176 / `36621587069`: SUCCESS.
+
+Acceptance met:
+- Phase 1–5 Nutrition behavior is replayed on the post-Workout-#388 current-main lineage.
+- Shared-file drift is reconciled; current branch is 0 behind main.
+- Fresh exact-head full Release Gate is GREEN.
+- No competing nutrition state/save owner or automatic notification-permission request is introduced.
+
+Acceptance remaining:
+- Founder-approved PRODUCT PR #397 merge.
+- Record resulting PRODUCT main identity and post-merge release evidence before marking DONE/RELEASED.
+
 ## Completed P3 — Workout execution UX / button normalisation
 Status: DONE / EXACT-HEAD FULL GREEN / MERGED
 Owner: Engineering + Design Brand + Release QA
