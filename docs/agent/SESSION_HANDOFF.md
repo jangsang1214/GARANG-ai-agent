@@ -1,3 +1,12 @@
+## Latest Engineering handoff — Beginner-first Nutrition merged — 2026-09-30
+- PRODUCT main: `60a76145df448a6103f2fc8da46674c3834e5f33`.
+- PRODUCT PR #397 is MERGED after Founder approval and expected-head protection.
+- Exact head `6bb3e857...` had Release Gate #2422 FULL GREEN and Event #3176 SUCCESS.
+- Beginner-first Nutrition Loop Phase 1–5 is now released on PRODUCT main.
+- Do not use older stacked PRs #386/#387/#389/#390/#391 as release candidates; #397 is the integrated released lineage.
+- Available connector shows no post-merge push-triggered run on the new merge SHA, so that observation remains UNKNOWN rather than assumed.
+- Next work should return to the canonical project priority queue rather than reopen Nutrition integration.
+
 ## Latest Engineering handoff — Beginner-first Nutrition current-main integration — 2026-09-30
 - CONTROL main observed: `b9be5365b213bf195c8d3856a579d3d1c6519956`.
 - PRODUCT main observed: `3362b8965506e574279a31d889272ba07e342cf6` after merged Workout PR #388.
