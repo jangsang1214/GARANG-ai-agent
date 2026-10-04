@@ -1,3 +1,6 @@
+## NEXT AGENT — Today reason-to-use — 2026-10-05
+PRODUCT main `cb572ad1...`; PR #410 is canonical owner, exact head `540e7184...`, mergeable=true. Gate #2523 is running; Event #3392 GREEN. Do not revive #405 or open another overlapping branch. Finish #2523; if RED, fix only the failing regression on #410. If FULL GREEN, recheck latest main/0-behind, then request/consume Founder merge approval. Core goal: **Today → workout → record → GARANG decides next**; Coach/Planner stay secondary; no Nutrition/social/referral/monetization/new-AI scope.
+
 ## Latest Product handoff — Today reason-to-use — 2026-10-04
 - PRODUCT main: `cb572ad1...`; Gate #2503 + Pages #946 GREEN.
 - Founder priority: "GARANG을 열면 오늘 뭘 해야 하는지 바로 알 수 있다."
