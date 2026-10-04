@@ -1,3 +1,14 @@
+## Today reason-to-use latest reconciliation — 2026-10-05
+- VERIFIED PRODUCT main remains `cb572ad1abd9fa13968d364c5cea8792ace93713` (PR #409).
+- VERIFIED current integration owner: PRODUCT PR #410 `Make Today the direct workout decision loop on current main`.
+- VERIFIED #410 exact head: `540e718402bae416f2ff03d64faccdd936ea185e`; base `cb572ad1...`; mergeable=true.
+- VERIFIED head has advanced beyond the original replay with fixes for async Today workout readiness, canonical workout generation independent of hidden DOM, focused live-session completion CTA, and moving 1RM detail behind advanced disclosure.
+- VERIFIED Founder OS Event Envelope #3392: SUCCESS.
+- VERIFIED GARANG Release Gate #2523 is currently IN PROGRESS on exact head `540e7184...`.
+- Current status: YELLOW / IMPLEMENTED ON CURRENT-MAIN PR / FINAL EXACT-HEAD VERIFICATION PENDING / NOT MERGED.
+- Do not revive stale PR #405. Do not open another overlapping Today line while #410 is active.
+- Scope remains P1: Today → Do this workout → Record → GARANG decides next. Nutrition, social, referral, monetization and new AI features remain outside this task.
+
 ## Today reason-to-use current-main execution — 2026-10-04
 - VERIFIED PRODUCT current main: `cb572ad1abd9fa13968d364c5cea8792ace93713` via PR #409; current-main Release Gate #2503 SUCCESS and Pages #946 SUCCESS.
 - VERIFIED intervening main releases: PR #401 Workout mobile geometry → `74e1662d...`; PR #406 dead-runtime cleanup + patched gRPC lock → `3eb34bc6...`; PR #409 orphan cleanup + active routine-import/Workout stability fixes → `cb572ad1...`.
