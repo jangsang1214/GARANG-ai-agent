@@ -1,3 +1,11 @@
+## Today workout live-set regression repair — 2026-10-05
+- VERIFIED PRODUCT PR #410 advanced to exact head `e66abb5271de02327ea91b5e9bbc0507ffaf311a`; mergeable=true; PRODUCT main remains `cb572ad1...`; branch remains 0 behind main.
+- VERIFIED Release Gate #2532 failed only at WebKit mobile regression: `tests/browser-webkit-regression.test.cjs:308` timed out filling `#wSets` because the canonical set-count input was not visible during live execution.
+- IMPLEMENTED minimal PRODUCT fix on #410 as commit `adc78b0b715d9246b9bdb46e651b4833823f29e9`: keep only the live set-count control explicitly visible without reopening unrelated preparation/advanced controls.
+- VERIFIED subsequent PR head `e66abb52...` preserves the CSS fix and adds Today workout readiness determinism only.
+- Release Gate #2536 was CANCELLED due to the subsequent head advance, not a product/test failure.
+- Current exact-head Release Gate #2537 is IN PROGRESS. Status remains YELLOW / FINAL EXACT-HEAD VERIFICATION PENDING / NOT MERGED.
+
 ## Today reason-to-use latest reconciliation — 2026-10-05
 - VERIFIED PRODUCT main remains `cb572ad1abd9fa13968d364c5cea8792ace93713` (PR #409).
 - VERIFIED current integration owner: PRODUCT PR #410 `Make Today the direct workout decision loop on current main`.
