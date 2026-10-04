@@ -1,3 +1,15 @@
+## P1 — Today → Do → Record → GARANG decides next — latest
+Status: ACTIVE / PR #410 / HEAD `540e7184...` / GATE #2523 RUNNING
+Acceptance remains:
+- 10s: Today states today's workout + why.
+- One primary workout CTA; Coach/Planner not required.
+- Canonical Workout owns sets/rest/record.
+- 10s post-save: result + next change visible.
+- Next visit carries prior outcome into next action.
+- Recovery Day explicit and non-contradictory.
+- Mobile / Simplified Shell / Golden Path / Release Gate required GREEN.
+Latest implementation evidence: async Today workout readiness and hidden-DOM generation were repaired; completion CTA remains in focused live session; 1RM detail moved behind advanced disclosure.
+
 ## P1 — Today → Do → Record → GARANG decides next
 Status: ACTIVE / IMPLEMENTED ON PR #410 / EXACT-HEAD GATE RUNNING
 Owner: Product + Engineering + Release QA
