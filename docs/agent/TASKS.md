@@ -1,3 +1,25 @@
+## P1 — Today → Do → Record → GARANG decides next
+Status: ACTIVE / IMPLEMENTED ON PR #410 / EXACT-HEAD GATE RUNNING
+Owner: Product + Engineering + Release QA
+Goal: make GARANG's immediate reason-to-use "open the app and know exactly what to do today."
+
+Acceptance:
+- Within 10 seconds on Today, show the concrete workout prescription and one-line reason.
+- Show exercise / sets / reps / starting load or explicit load choice.
+- Exactly one primary workout-start action; no required Coach or Planner navigation.
+- Preserve canonical Workout execution/record ownership and existing set/rest controls.
+- Within 10 seconds after save, show interpretation and what changes next.
+- On the next Today visit, the previous outcome must affect or at minimum visibly carry the next prescription interpretation.
+- If today is a Recovery Day, explicitly say not to train hard and expose no contradictory start CTA.
+- Coach/Planner/Progress remain reachable capabilities but do not fragment the default loop.
+- Mobile touch, Simplified Shell, Golden Path, runtime and release integrity remain GREEN.
+
+Evidence so far:
+- PRODUCT main `cb572ad1...` is release-verified GREEN (#2503) and web deployed (#946).
+- PR #410 head `00390374...`, current main base, 0 behind.
+- Stale #405 superseded/closed.
+- #410 exact-head Gate #2505 currently running; status remains YELLOW until completion and merge approval.
+
 ## Current non-overlap queue — 2026-09-30
 1. **Design/Workout #401 — active owner, do not overlap.** Gate #2442 RED; Design/Brand owns the Workout/mobile geometry repair.
 2. **Nutrition visibility #399 — implemented, blocked by required browser gate.** Two files only; makes meal settings/reminder discoverable and adds compact open-app reminder. Gate #2438 fails in untouched Workout superset/rest regression.

@@ -1,3 +1,16 @@
+## Latest Product handoff — Today reason-to-use — 2026-10-04
+- PRODUCT main: `cb572ad1...`; Gate #2503 + Pages #946 GREEN.
+- Founder priority: "GARANG을 열면 오늘 뭘 해야 하는지 바로 알 수 있다."
+- Current owner: PR #410, head `00390374...`, base current main, 0 behind.
+- #410 reuses existing engines/state owners and makes Today the default workout decision/execution entry.
+- Coach and Planner remain available but are hidden from the required workout path.
+- Check-in remains a bottom secondary utility.
+- Workout day + Recovery Day behavior are regression-covered.
+- Immediate post-workout Next/GARANG DECIDES and next-Today carryover are in the Golden Path regression.
+- PR #405 is closed/superseded. Do not revive it.
+- Gate #2505 is running; do not merge or call released until it is GREEN and main-merge approval is explicit.
+- Nutrition/#399/#400, social/#407, referral, monetization and new AI features do not preempt this P1.
+
 ## Latest handoff — canonical non-overlap owners — 2026-09-30
 - Do not create another Recovery replay: #400 is canonical and Gate #2427 FULL GREEN.
 - Do not create another Nutrition visibility line: #399 is canonical and touches only Nutrition runtime + meal reminder regression.

@@ -1,3 +1,17 @@
+## Today reason-to-use current-main execution — 2026-10-04
+- VERIFIED PRODUCT current main: `cb572ad1abd9fa13968d364c5cea8792ace93713` via PR #409; current-main Release Gate #2503 SUCCESS and Pages #946 SUCCESS.
+- VERIFIED intervening main releases: PR #401 Workout mobile geometry → `74e1662d...`; PR #406 dead-runtime cleanup + patched gRPC lock → `3eb34bc6...`; PR #409 orphan cleanup + active routine-import/Workout stability fixes → `cb572ad1...`.
+- Founder Product priority is now explicit: **GARANG을 열면 오늘 뭘 해야 하는지 바로 알 수 있다.**
+- Canonical core loop for this phase: **Open GARANG → Today tells me what to do → execute → record → GARANG interprets → GARANG prepares the next action.**
+- PRODUCT PR #410 is the current-main integration owner. Base `cb572ad1...`, head `00390374...`, 0 behind / 1 ahead / mergeable=true.
+- #410 connects existing Daily Plan → Workout Intelligence → canonical Workout recording → existing prescription shadow. It does not add a second state owner or new recommendation engine.
+- Default Today exposes concrete exercise / sets / reps / starting load + one-line reason + one primary workout start action; Coach/Planner stay available as secondary capabilities rather than required steps.
+- Recovery Day is explicit: Today tells the user to avoid high-intensity training and hides a contradictory workout-start CTA.
+- Post-workout surface exposes immediate next-dose interpretation and carries it back to the next Today visit.
+- Stale PR #405 is CLOSED / superseded by #410.
+- PR #410 exact-head Release Gate #2505 is IN PROGRESS. Do not call the change released or GREEN until the required gate completes and Founder-approved main merge occurs.
+- Out of current scope: Nutrition, social/HOT, referral, monetization and new AI feature expansion.
+
 ## Canonical active-line reconciliation — 2026-09-30 / #399 #400 #401
 - VERIFIED PRODUCT main: `60a76145df448a6103f2fc8da46674c3834e5f33`.
 - Nutrition discoverability owner is PRODUCT PR #399 `Make meal time settings and reminders visible`, exact head `bef4dfaf60767a9b0e856c153017e6471aa5bad5`, only 2 Nutrition-specific files. It adds a visible Nutrition entry for meal-time settings and a compact open-app due-time reminder routed through canonical Meal Scan. Boundary remains explicit: no background/closed-app OS notification implementation.
