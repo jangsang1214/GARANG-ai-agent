@@ -2,17 +2,25 @@
   "version": 1,
   "nodes": [
     {
+      "id": "VERIFY-PRODUCT-PR410-GATE2523",
+      "kind": "verification",
+      "title": "PR #410 exact-head Release Gate #2523 on 540e7184",
+      "status": "in_progress",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
       "id": "VERIFY-PRODUCT-PR410-GATE2505",
       "kind": "verification",
       "title": "PR #410 exact-head Release Gate #2505",
-      "status": "in_progress",
+      "status": "failed",
       "ownerWorkstream": "release-qa",
       "repositoryId": "product"
     },
     {
       "id": "CHANGE-PRODUCT-PR410",
       "kind": "change",
-      "title": "PRODUCT PR #410 makes Today the direct workout decision loop on current main",
+      "title": "PRODUCT PR #410 makes Today the direct workout decision loop on current main; head 540e7184",
       "status": "in_progress",
       "ownerWorkstream": "engineering",
       "repositoryId": "product"
@@ -3306,6 +3314,11 @@
     }
   ],
   "edges": [
+    {
+      "from": "VERIFY-PRODUCT-PR410-GATE2523",
+      "to": "CHANGE-PRODUCT-PR410",
+      "kind": "verifies"
+    },
     {
       "from": "VERIFY-PRODUCT-PR410-GATE2505",
       "to": "CHANGE-PRODUCT-PR410",
