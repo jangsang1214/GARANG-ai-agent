@@ -1,3 +1,12 @@
+## Today direct workout loop / PR #410 — latest 2026-10-05
+Decision: **YELLOW / EXACT-HEAD VERIFICATION IN PROGRESS / NOT RELEASED**.
+- Base/current PRODUCT main: `cb572ad1...`.
+- Exact head: `540e718402bae416f2ff03d64faccdd936ea185e`.
+- Mergeable: true.
+- Founder OS Event #3392: SUCCESS.
+- Release Gate #2523: IN PROGRESS; do not infer PASS.
+- Merge remains blocked until exact-head required jobs are GREEN and Founder approves main merge.
+
 ## Today direct workout loop / PR #410 — 2026-10-04
 Decision: **YELLOW / CURRENT-MAIN CLEAN / REQUIRED GATE RUNNING / NOT RELEASED**.
 - PRODUCT baseline: `cb572ad1abd9fa13968d364c5cea8792ace93713`.
