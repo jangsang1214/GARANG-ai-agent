@@ -2,10 +2,74 @@
   "version": 1,
   "nodes": [
     {
+      "id": "VERIFY-PRODUCT-PR410-GATE2523",
+      "kind": "verification",
+      "title": "PR #410 exact-head Release Gate #2523 on 540e7184",
+      "status": "in_progress",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "VERIFY-PRODUCT-PR410-GATE2505",
+      "kind": "verification",
+      "title": "PR #410 exact-head Release Gate #2505",
+      "status": "failed",
+      "ownerWorkstream": "release-qa",
+      "repositoryId": "product"
+    },
+    {
+      "id": "CHANGE-PRODUCT-PR410",
+      "kind": "change",
+      "title": "PRODUCT PR #410 makes Today the direct workout decision loop on current main; head 540e7184",
+      "status": "in_progress",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "TASK-TODAY-DIRECT-WORKOUT-LOOP",
+      "kind": "task",
+      "title": "Connect existing workout intelligence into one direct Today execution loop",
+      "status": "in_progress",
+      "ownerWorkstream": "engineering",
+      "repositoryId": "product"
+    },
+    {
+      "id": "INIT-TODAY-DO-RECORD-DECIDE",
+      "kind": "initiative",
+      "title": "Today → Do → Record → GARANG decides next",
+      "status": "active",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "METRIC-POSTWORKOUT-10S-NEXT",
+      "kind": "metric",
+      "title": "User understands today's result and next change within 10 seconds of saving",
+      "status": "active",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "METRIC-TODAY-10S-ACTION",
+      "kind": "metric",
+      "title": "User understands today's action within 10 seconds",
+      "status": "active",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
+      "id": "GOAL-TODAY-REASON-TO-USE",
+      "kind": "goal",
+      "title": "Opening GARANG immediately answers what to do today",
+      "status": "active",
+      "ownerWorkstream": "product",
+      "repositoryId": "product"
+    },
+    {
       "id": "CHANGE-PRODUCT-PR401",
       "kind": "change",
       "title": "PRODUCT PR #401 active Workout mobile geometry repair",
-      "status": "blocked",
+      "status": "done",
       "ownerWorkstream": "design-brand",
       "repositoryId": "product"
     },
@@ -3250,6 +3314,41 @@
     }
   ],
   "edges": [
+    {
+      "from": "VERIFY-PRODUCT-PR410-GATE2523",
+      "to": "CHANGE-PRODUCT-PR410",
+      "kind": "verifies"
+    },
+    {
+      "from": "VERIFY-PRODUCT-PR410-GATE2505",
+      "to": "CHANGE-PRODUCT-PR410",
+      "kind": "verifies"
+    },
+    {
+      "from": "CHANGE-PRODUCT-PR410",
+      "to": "TASK-TODAY-DIRECT-WORKOUT-LOOP",
+      "kind": "implements"
+    },
+    {
+      "from": "TASK-TODAY-DIRECT-WORKOUT-LOOP",
+      "to": "INIT-TODAY-DO-RECORD-DECIDE",
+      "kind": "implements"
+    },
+    {
+      "from": "INIT-TODAY-DO-RECORD-DECIDE",
+      "to": "GOAL-TODAY-REASON-TO-USE",
+      "kind": "supports"
+    },
+    {
+      "from": "METRIC-POSTWORKOUT-10S-NEXT",
+      "to": "GOAL-TODAY-REASON-TO-USE",
+      "kind": "measures"
+    },
+    {
+      "from": "METRIC-TODAY-10S-ACTION",
+      "to": "GOAL-TODAY-REASON-TO-USE",
+      "kind": "measures"
+    },
     {
       "from": "METRIC-REAL-DEVICE-CONFIDENCE",
       "to": "GOAL-PROTECT-GOLDEN-PATH",

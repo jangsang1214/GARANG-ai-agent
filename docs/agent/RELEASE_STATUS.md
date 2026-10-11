@@ -1,3 +1,23 @@
+## Today direct workout loop / PR #410 — latest 2026-10-05
+Decision: **YELLOW / EXACT-HEAD VERIFICATION IN PROGRESS / NOT RELEASED**.
+- Base/current PRODUCT main: `cb572ad1...`.
+- Exact head: `540e718402bae416f2ff03d64faccdd936ea185e`.
+- Mergeable: true.
+- Founder OS Event #3392: SUCCESS.
+- Release Gate #2523: IN PROGRESS; do not infer PASS.
+- Merge remains blocked until exact-head required jobs are GREEN and Founder approves main merge.
+
+## Today direct workout loop / PR #410 — 2026-10-04
+Decision: **YELLOW / CURRENT-MAIN CLEAN / REQUIRED GATE RUNNING / NOT RELEASED**.
+- PRODUCT baseline: `cb572ad1abd9fa13968d364c5cea8792ace93713`.
+- Baseline evidence: Release Gate #2503 SUCCESS; Pages #946 SUCCESS.
+- PR #410 head: `003903743d35745fc4bf44c8f8db0f79152a2a15`.
+- Drift: 0 behind / 1 ahead; mergeable=true.
+- Scope: 14 files; no dependency-lock replay, no Nutrition/social/referral/monetization/new AI engine.
+- Current-main #406 security fix and #409 cleanup/Workout routine-import stability are preserved.
+- Exact-head Release Gate #2505 is running. Required PASS has not yet been observed.
+- Release remains blocked on exact-head GREEN plus Founder approval for main merge.
+
 ## Active integration evidence — 2026-09-30
 - #399 Nutrition visibility: **YELLOW / REQUIRED GATE RED**. Dedicated Nutrition change is isolated to 2 files; Gate #2438 fails in existing Workout superset/rest WebKit regression, not in the meal-reminder-specific path.
 - #400 Recovery longitudinal: **GREEN exact-head / NOT MERGED**. Gate #2427 / `36726080526` FULL GREEN; core-build-rules, browser-webkit, verify all SUCCESS.

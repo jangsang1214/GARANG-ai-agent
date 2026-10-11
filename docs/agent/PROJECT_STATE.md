@@ -1,3 +1,36 @@
+## Today workout live-set regression repair — 2026-10-05
+- VERIFIED PRODUCT PR #410 advanced to exact head `e66abb5271de02327ea91b5e9bbc0507ffaf311a`; mergeable=true; PRODUCT main remains `cb572ad1...`; branch remains 0 behind main.
+- VERIFIED Release Gate #2532 failed only at WebKit mobile regression: `tests/browser-webkit-regression.test.cjs:308` timed out filling `#wSets` because the canonical set-count input was not visible during live execution.
+- IMPLEMENTED minimal PRODUCT fix on #410 as commit `adc78b0b715d9246b9bdb46e651b4833823f29e9`: keep only the live set-count control explicitly visible without reopening unrelated preparation/advanced controls.
+- VERIFIED subsequent PR head `e66abb52...` preserves the CSS fix and adds Today workout readiness determinism only.
+- Release Gate #2536 was CANCELLED due to the subsequent head advance, not a product/test failure.
+- Current exact-head Release Gate #2537 is IN PROGRESS. Status remains YELLOW / FINAL EXACT-HEAD VERIFICATION PENDING / NOT MERGED.
+
+## Today reason-to-use latest reconciliation — 2026-10-05
+- VERIFIED PRODUCT main remains `cb572ad1abd9fa13968d364c5cea8792ace93713` (PR #409).
+- VERIFIED current integration owner: PRODUCT PR #410 `Make Today the direct workout decision loop on current main`.
+- VERIFIED #410 exact head: `540e718402bae416f2ff03d64faccdd936ea185e`; base `cb572ad1...`; mergeable=true.
+- VERIFIED head has advanced beyond the original replay with fixes for async Today workout readiness, canonical workout generation independent of hidden DOM, focused live-session completion CTA, and moving 1RM detail behind advanced disclosure.
+- VERIFIED Founder OS Event Envelope #3392: SUCCESS.
+- VERIFIED GARANG Release Gate #2523 is currently IN PROGRESS on exact head `540e7184...`.
+- Current status: YELLOW / IMPLEMENTED ON CURRENT-MAIN PR / FINAL EXACT-HEAD VERIFICATION PENDING / NOT MERGED.
+- Do not revive stale PR #405. Do not open another overlapping Today line while #410 is active.
+- Scope remains P1: Today → Do this workout → Record → GARANG decides next. Nutrition, social, referral, monetization and new AI features remain outside this task.
+
+## Today reason-to-use current-main execution — 2026-10-04
+- VERIFIED PRODUCT current main: `cb572ad1abd9fa13968d364c5cea8792ace93713` via PR #409; current-main Release Gate #2503 SUCCESS and Pages #946 SUCCESS.
+- VERIFIED intervening main releases: PR #401 Workout mobile geometry → `74e1662d...`; PR #406 dead-runtime cleanup + patched gRPC lock → `3eb34bc6...`; PR #409 orphan cleanup + active routine-import/Workout stability fixes → `cb572ad1...`.
+- Founder Product priority is now explicit: **GARANG을 열면 오늘 뭘 해야 하는지 바로 알 수 있다.**
+- Canonical core loop for this phase: **Open GARANG → Today tells me what to do → execute → record → GARANG interprets → GARANG prepares the next action.**
+- PRODUCT PR #410 is the current-main integration owner. Base `cb572ad1...`, head `00390374...`, 0 behind / 1 ahead / mergeable=true.
+- #410 connects existing Daily Plan → Workout Intelligence → canonical Workout recording → existing prescription shadow. It does not add a second state owner or new recommendation engine.
+- Default Today exposes concrete exercise / sets / reps / starting load + one-line reason + one primary workout start action; Coach/Planner stay available as secondary capabilities rather than required steps.
+- Recovery Day is explicit: Today tells the user to avoid high-intensity training and hides a contradictory workout-start CTA.
+- Post-workout surface exposes immediate next-dose interpretation and carries it back to the next Today visit.
+- Stale PR #405 is CLOSED / superseded by #410.
+- PR #410 exact-head Release Gate #2505 is IN PROGRESS. Do not call the change released or GREEN until the required gate completes and Founder-approved main merge occurs.
+- Out of current scope: Nutrition, social/HOT, referral, monetization and new AI feature expansion.
+
 ## Canonical active-line reconciliation — 2026-09-30 / #399 #400 #401
 - VERIFIED PRODUCT main: `60a76145df448a6103f2fc8da46674c3834e5f33`.
 - Nutrition discoverability owner is PRODUCT PR #399 `Make meal time settings and reminders visible`, exact head `bef4dfaf60767a9b0e856c153017e6471aa5bad5`, only 2 Nutrition-specific files. It adds a visible Nutrition entry for meal-time settings and a compact open-app due-time reminder routed through canonical Meal Scan. Boundary remains explicit: no background/closed-app OS notification implementation.
